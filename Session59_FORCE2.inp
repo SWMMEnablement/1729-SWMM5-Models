@@ -1,0 +1,173 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/2014
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/2014
+REPORT_START_TIME    00:00:00
+END_DATE             01/02/2014
+END_TIME             01:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:05
+WET_STEP             00:01:00
+DRY_STEP             24:00:00
+ROUTING_STEP         0:00:05 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  FROUDE
+FORCE_MAIN_EQUATION  H-W
+SURCHARGE_METHOD     SLOT
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     5
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.001
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+Airpark          0          200        0          0          0         
+202              0          200        0          0          0         
+204              0          200        0          0          0         
+208              0          5          0          0          0         
+210              0          5          0          0          0         
+Airport          0          200        0          0          0         
+Westlake         0          200        0          0          0         
+218              0          5          0          0          0         
+222              0          200        0          0          0         
+224              0          200        0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+OUTFALL          0          FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+206              0        200        0          TABULAR    206_ST                       13591.4  0       
+Uppark           0        200        120        TABULAR    Uppark_ST                    13591.4  0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+forcemain        Airpark          202              1714       0.014      0          0          0          0         
+force1           202              204              4183       0.014      0          0          0          0         
+force3           204              206              7603       0.014      0          0          0          0         
+gravity1         206              208              6861       0.014      0          0          0          0         
+gravity2         208              210              5167       0.014      0          0          0          0         
+gravity3         210              OUTFALL          1379       0.014      0          0          0          0         
+force2           Airport          204              1080       0.012      0          0          0          0         
+force5           Westlake         206              200        0.014      0          0          0          0         
+gravity4         218              208              2000       0.014      0          0          0          0         
+
+[PUMPS]
+;;Name           From Node        To Node          Pump Curve       Status   Sartup Shutoff 
+;;-------------- ---------------- ---------------- ---------------- ------ -------- --------
+PUMP             Uppark           Airpark          PUMP             OFF      1        0       
+PUMP.1           222              Airport          PUMP.1           OFF      1        0       
+PUMP.2           224              Westlake         PUMP.2           OFF      1        0       
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+forcemain        FORCE_MAIN   0.75             122        0          0          1                    
+force1           CIRCULAR     0.75             0.0001     0          0          1                    
+force3           CIRCULAR     0.825            0.0001     0          0          1                    
+gravity1         CIRCULAR     1                0.0001     0          0          1                    
+gravity2         CIRCULAR     1                0.0001     0          0          1                    
+gravity3         CIRCULAR     1                0.0001     0          0          1                    
+force2           FORCE_MAIN   0.825            122        0          0          1                    
+force5           CIRCULAR     0.75             0.0001     0          0          1                    
+gravity4         CIRCULAR     1.25             0.0001     0          0          1                    
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+218              FLOW             ""               FLOW     1.0      1.0      450.000000
+222              FLOW             ""               FLOW     1.0      1.0      250.000000
+224              FLOW             ""               FLOW     1.0      1.0      650.000000
+Uppark           FLOW             ""               FLOW     1.0      1.0      700.000000
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+PUMP             Pump1      0          0         
+PUMP                        100        300       
+PUMP                        400        600       
+;
+PUMP.1           Pump1      0          0         
+PUMP.1                      100        325       
+PUMP.1                      400        650       
+;
+PUMP.2           Pump1      0          0         
+PUMP.2                      100        325       
+PUMP.2                      400        650       
+;
+206_ST           Storage    0          10000     
+206_ST                      1          10000     
+;
+Uppark_ST        Storage    0          1000      
+Uppark_ST                   1          1000      
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 11.000 414.000 209.000 546.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Airpark          20.000             440.000           
+202              20.000             480.000           
+204              80.000             480.000           
+208              160.000            480.000           
+210              160.000            440.000           
+Airport          80.000             440.000           
+Westlake         120.000            500.000           
+218              160.000            520.000           
+222              80.000             420.000           
+224              120.000            540.000           
+OUTFALL          200.000            440.000           
+206              120.000            480.000           
+Uppark           20.000             420.000           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[LABELS]
+;;X-Coord          Y-Coord            Label           
+33.571             518.595            "Force Main and Type1 Pumps" "" "Arial" 24 1 1
+

@@ -1,0 +1,178 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           GPM
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/2002
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/2002
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/2002
+END_TIME             12:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             5.000000
+REPORT_STEP          00:05:00
+WET_STEP             01:00:00
+DRY_STEP             23:00:00
+ROUTING_STEP         0:05:00 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.566
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+; New Manhole
+12               387.500000 0.000000   0.000000   1000.000000 0.000000  
+; New Manhole
+14               396.620000 0.000000   0.000000   1000.000000 0.000000  
+; New Manhole
+16               352.000000 0.000000   0.000000   1000.000000 0.000000  
+; New Manhole
+20               405.740000 0.260000   0.000000   0.000000   0.000000  
+; New Manhole
+22               350.200000 4.800000   0.000000   0.000000   0.000000  
+; New Manhole
+24               370.000000 11.500000  0.000000   0.000000   0.000000  
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+; New Manhole
+18               405.000000 FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+; New Wet Well
+9000             361.240000 8.850000   6.350000   FUNCTIONAL 0.000000  0.000000  28.274334 0.000000 0.000000
+; New Wet Well
+9002             349.000000 5.000000   2.000000   FUNCTIONAL 0.000000  0.000000  60.077082 0.000000 0.000000
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+; New Pipe
+11               12               14               2100.000000 0.010000   0.000000   0.000000   0.000000   0.000000  
+; New Pipe
+13               16               14               1000.000000 0.010000   0.000000   0.000000   0.000000   0.000000  
+; New Pipe
+15               14               20               2800.000000 0.010000   0.000000   0.000000   0.000000   0.000000  
+; New Pipe
+17               20               18               10.000000  0.013000   0.000000   0.000000   0.000000   0.000000  
+; New Pipe
+19               22               9002             10.000000  0.013000   0.000000   0.000000   0.000000   0.000000  
+; New Pipe
+21               24               9000             10.000000  0.013000   0.000000   0.000000   0.000000   0.000000  
+
+[PUMPS]
+;;Name           From Node        To Node          Pump Curve       Status   Sartup Shutoff 
+;;-------------- ---------------- ---------------- ---------------- ------ -------- --------
+; New Pump
+5000             9000             12               PC_5000          ON       0.000000 0.000000
+; New Pump
+5002             9002             16               PC_5002          ON       0.000000 0.000000
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+11               FORCE_MAIN   0.666667         130.000000 0.000000   0.000000   1          0         
+13               FORCE_MAIN   0.666667         130.000000 0.000000   0.000000   1          0         
+15               FORCE_MAIN   0.666667         130.000000 0.000000   0.000000   1          0         
+17               CIRCULAR     1.000000         0.000000   0.000000   0.000000   1          0         
+19               CIRCULAR     1.000000         0.000000   0.000000   0.000000   1          0         
+21               CIRCULAR     1.000000         0.000000   0.000000   0.000000   1          0         
+
+[LOSSES]
+;;Link           Kentry     Kexit      Kavg       Flap Gate  Seepage   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+11               0.000000   130.000000 0.000000   NO         0.000000  
+13               0.000000   130.000000 0.000000   NO         0.000000  
+15               0.000000   130.000000 0.000000   NO         0.000000  
+17               0.000000   0.013000   0.000000   NO         0.000000  
+19               0.000000   0.013000   0.000000   NO         0.000000  
+21               0.000000   0.013000   0.000000   NO         0.000000  
+
+[CONTROLS]
+
+
+
+
+
+[DWF]
+;;Node           Constituent      Baseline   Patterns  
+;;-------------- ---------------- ---------- ----------
+22               FLOW             400.000000
+24               FLOW             500.000000
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+PC_5000          PUMP3      52.000000  640.000000
+PC_5000                     63.000000  440.000000
+PC_5000                     89.000000  0.000000  
+;
+PC_5002          PUMP3      40.000000  570.000000
+PC_5002                     60.700000  230.000000
+PC_5002                     75.400000  0.000000  
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -12.613 148.613 470.677 377.839
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+12               75.161             367.097           
+14               256.452            365.806           
+16               259.032            219.355           
+20               428.710            364.839           
+22               258.387            159.032           
+24               9.355              367.419           
+18               448.710            363.871           
+9000             30.000             366.452           
+9002             259.032            185.806           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+11               257.097            366.452           
+
+[LABELS]
+;;X-Coord          Y-Coord            Label           
+90.666             267.329            "Type3 Pumps" "" "Arial" 26 1 1
+

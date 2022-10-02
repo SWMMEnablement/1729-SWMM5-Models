@@ -1,0 +1,671 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           GPM
+INFILTRATION         CURVE_NUMBER
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           06/16/2010
+START_TIME           00:00:00
+REPORT_START_DATE    06/16/2010
+REPORT_START_TIME    00:00:00
+END_DATE             06/17/2010
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:05:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+VBH              VOLUME    0:05     1.0      TIMESERIES June16Rainfall  
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+RDP6             VBH              J028             0.493847567 100      717.0666667 5.28     0                        
+RDP5             VBH              J028             0.021992654 100      31.93333333 6.22     0                        
+RDP4             VBH              J023             0.323852158 100      470.2333333 3.75     0                        
+RDP3C            VBH              J024             0.03117539 100      45.26666667 12.53    0                        
+RDP3B            VBH              J021             0.019100092 100      27.73333333 4.00     0                        
+RDP3A            VBH              J019             0.036662075 100      53.23333333 7.00     0                        
+RDP2A            VBH              J018             0.052640037 100      76.43333333 7.33     0                        
+RDP2             VBH              J014             0.336937557 100      489.2333333 5.70     0                        
+RDP3             VBH              J016             0.085307622 100      123.8666667 7.73     0                        
+RDP1             VBH              J011             0.018939394 100      27.5     6.44     0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+RDP6             0.013      0.1        0.05       0.05       25         OUTLET    
+RDP5             0.013      0.1        0.05       0.05       100        OUTLET    
+RDP4             0.013      0.1        0.05       0.05       100        OUTLET    
+RDP3C            0.013      0.1        0.05       0.05       100        OUTLET    
+RDP3B            0.013      0.1        0.05       0.05       100        OUTLET    
+RDP3A            0.013      0.1        0.05       0.05       100        OUTLET    
+RDP2A            0.013      0.1        0.05       0.05       100        OUTLET    
+RDP2             0.013      0.1        0.05       0.05       100        OUTLET    
+RDP3             0.013      0.1        0.05       0.05       25         OUTLET    
+RDP1             0.013      0.1        0          0.05       100        OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   CurveNum              DryTime   
+;;-------------- ---------- ---------- ----------
+RDP6             98         0.5        0.25      
+RDP5             98         0.5        0.25      
+RDP4             98         0.5        0.25      
+RDP3C            98         0.5        0.25      
+RDP3B            98         0.5        0.25      
+RDP3A            98         0.5        0.25      
+RDP2A            98         0.5        0.25      
+RDP2             98         0.5        0.25      
+RDP3             98         0.5        0.25      
+RDP1             98         0.5        0.25      
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+J04              605.44     5.86       0          0          0         
+J05              607.35     4.05       0          0          0         
+J06              608.39     4.51       0          0          0         
+J07              610.24     4.76       0          0          0         
+J08              611.56     5.74       0          0          0         
+J09              615.58     5.62       0          0          0         
+;Surcharged manhole
+;Top was found completely blown off frame.
+J010             618.06     3.84       0          0          0         
+;Surcharged manhole
+;Top was found completely blown off frame.
+;Input node for RDP basin 1
+J011             619.52     4.18       0          0          0         
+;Input node for RDP basin 1A
+J012             623.21     5.16       0          0          0         
+J013             625.88     6.62       0          0          0         
+;Bob Cranston's manhole
+;Input node for RDP basin 2
+J014             627.35     3.05       0          0          0         
+J015             631.38     9.26       0          0          0         
+;Old CSO Point 092
+;Input node for RDP basin 3
+J016             634.88     3.36       0          0          0         
+J03              604.69     6.41       0          0          0         
+J02              603.57     5.23       0          0          0         
+J017             637.58     6.75       0          0          0         
+;Input node for RDP basin 2A
+J018             641.80     7.55       0          0          0         
+;Input node for RDP basin 3A
+J019             644.15     9.29       0          0          0         
+J020             647.51     8.37       0          0          0         
+;Input node for RDP basin 3B
+J021             648.73     5.81       0          0          0         
+J022             654.04     5.8        0          0          0         
+;Input node for RDP basin 4
+J023             657.35     4.78       0          0          0         
+;input node for RDP basin 3C
+J024             664.74     6.57       0          0          0         
+J025             665.69     7.29       0          0          0         
+J026             666.71     8.8        0          0          0         
+J027             668.62     8.86       0          0          0         
+;input node for RDP basins 5 and 6
+J028             670.02     7.85       0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+J01              602.3      FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+C016             J016             J015             181        0.013      0          0          0          0         
+C015             J015             J014             407.55     0.013      0          0          0          0         
+C014             J014             J013             119.67     0.013      0          0          0          0         
+C013             J013             J012             164.16     0.013      0          0          0          0         
+C012             J012             J011             319.89     0.013      0          0          0          0         
+C011             J011             J010             97.58      0.013      0          0          0          0         
+C010             J010             J09              207.84     0.013      0          0          0          0         
+C09              J09              J08              345.06     0.013      0          0          0          0         
+C08              J08              J07              114.54     0.013      0          0          0          0         
+C07              J07              J06              153.14     0.013      0          0          0          0         
+C06              J06              J05              163.39     0.013      0          0          0          0         
+C05              J05              J04              240.02     0.013      0          0          0          0         
+C04              J04              J03              17.51      0.013      0          0          0          0         
+C03              J03              J02              130.91     0.013      0          0          0          0         
+C02              J02              J01              102.3      0.013      0          0          0          0         
+C028             J028             J027             109.8      0.013      0          0          0          0         
+C027             J027             J026             139.2      0.013      0          0          0          0         
+C026             J026             J025             103.66     0.013      0          0          0          0         
+C025             J025             J024             66.3       0.013      0          0          0          0         
+C024             J024             J023             255.7      0.013      0          0          0          0         
+C023             J023             J022             152.0      0.013      0          0          0          0         
+C022             J022             J021             183.18     0.013      0          0          0          0         
+C021             J021             J020             90.31      0.013      0          0          0          0         
+C020             J020             J019             170.87     0.013      0          0          0          0         
+C019             J019             J018             91.51      0.013      0          0          0          0         
+C018             J018             J017             191.88     0.013      0          0          0          0         
+C017             J017             J016             271.23     0.013      0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+C016             CIRCULAR     1                0          0          0          1                    
+C015             CIRCULAR     1                0          0          0          1                    
+C014             CIRCULAR     1                0          0          0          1                    
+C013             CIRCULAR     1                0          0          0          1                    
+C012             CIRCULAR     1                0          0          0          1                    
+C011             CIRCULAR     1                0          0          0          1                    
+C010             CIRCULAR     1                0          0          0          1                    
+C09              CIRCULAR     1                0          0          0          1                    
+C08              CIRCULAR     1                0          0          0          1                    
+C07              CIRCULAR     1                0          0          0          1                    
+C06              CIRCULAR     1                0          0          0          1                    
+C05              CIRCULAR     1                0          0          0          1                    
+C04              CIRCULAR     1                0          0          0          1                    
+C03              CIRCULAR     1                0          0          0          1                    
+C02              CIRCULAR     1                0          0          0          1                    
+C028             CIRCULAR     1                0          0          0          1                    
+C027             CIRCULAR     1                0          0          0          1                    
+C026             CIRCULAR     1                0          0          0          1                    
+C025             CIRCULAR     1                0          0          0          1                    
+C024             CIRCULAR     1                0          0          0          1                    
+C023             CIRCULAR     1                0          0          0          1                    
+C022             CIRCULAR     1                0          0          0          1                    
+C021             CIRCULAR     1                0          0          0          1                    
+C020             CIRCULAR     1                0          0          0          1                    
+C019             CIRCULAR     1                0          0          0          1                    
+C018             CIRCULAR     1                0          0          0          1                    
+C017             CIRCULAR     1                0          0          0          1                    
+
+[LOSSES]
+;;Link           Kentry     Kexit      Kavg       Flap Gate  Seepage   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+C016             0          .20        0          NO         0         
+C014             0          .2         0          NO         0         
+C011             0          .2         0          NO         0         
+C010             0          .2         0          NO         0         
+C07              0          .2         0          NO         0         
+C06              0          .2         0          NO         0         
+C05              0          .2         0          NO         0         
+C04              0          .2         0          NO         0         
+
+[DWF]
+;;Node           Constituent      Baseline   Patterns  
+;;-------------- ---------------- ---------- ----------
+J07              FLOW             0.35       "Base"
+J09              FLOW             1.04       "Base"
+J011             FLOW             2.5        "Base"
+J012             FLOW             0.8        "Base"
+J014             FLOW             7.7        "Base"
+J016             FLOW             21.1       "Base"
+J018             FLOW             1.3        "Base"
+J019             FLOW             5.0        "Base"
+J021             FLOW             1.9        "Base"
+J023             FLOW             19.0       "Base"
+J024             FLOW             3.1        "Base"
+J028             FLOW             49.0       "Base"
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+June16Rainfall   6/16/2010  0:00       0         
+June16Rainfall   6/16/2010  0:05       0.05      
+June16Rainfall   6/16/2010  0:10       0.11      
+June16Rainfall   6/16/2010  0:15       0.33      
+June16Rainfall   6/16/2010  0:20       0.43      
+June16Rainfall   6/16/2010  0:25       0.69      
+June16Rainfall   6/16/2010  0:30       0.62      
+June16Rainfall   6/16/2010  0:35       0.08      
+June16Rainfall   6/16/2010  0:40       0         
+June16Rainfall   6/16/2010  0:45       0         
+June16Rainfall   6/16/2010  0:50       0.01      
+June16Rainfall   6/16/2010  0:55       0.02      
+June16Rainfall   6/16/2010  1:00       0.01      
+June16Rainfall   6/16/2010  1:05       0.02      
+June16Rainfall   6/16/2010  1:10       0         
+June16Rainfall   6/16/2010  1:15       0         
+June16Rainfall   6/16/2010  1:20       0         
+June16Rainfall   6/16/2010  1:25       0         
+June16Rainfall   6/16/2010  1:30       0         
+June16Rainfall   6/16/2010  1:35       0         
+June16Rainfall   6/16/2010  1:40       0         
+June16Rainfall   6/16/2010  1:45       0         
+June16Rainfall   6/16/2010  1:50       0         
+June16Rainfall   6/16/2010  1:55       0         
+June16Rainfall   6/16/2010  2:00       0         
+June16Rainfall   6/16/2010  2:05       0         
+June16Rainfall   6/16/2010  2:10       0         
+June16Rainfall   6/16/2010  2:15       0         
+June16Rainfall   6/16/2010  2:20       0         
+June16Rainfall   6/16/2010  2:25       0         
+June16Rainfall   6/16/2010  2:30       0         
+June16Rainfall   6/16/2010  2:35       0         
+June16Rainfall   6/16/2010  2:40       0         
+June16Rainfall   6/16/2010  2:45       0         
+June16Rainfall   6/16/2010  2:50       0         
+June16Rainfall   6/16/2010  2:55       0         
+June16Rainfall   6/16/2010  3:00       0.05      
+June16Rainfall   6/16/2010  3:05       0.11      
+June16Rainfall   6/16/2010  3:10       0.33      
+June16Rainfall   6/16/2010  3:15       0.43      
+June16Rainfall   6/16/2010  3:20       0.69      
+June16Rainfall   6/16/2010  3:25       0.62      
+June16Rainfall   6/16/2010  3:30       0.08      
+June16Rainfall   6/16/2010  3:35       0         
+June16Rainfall   6/16/2010  3:40       0         
+June16Rainfall   6/16/2010  3:45       0.01      
+June16Rainfall   6/16/2010  3:50       0.02      
+June16Rainfall   6/16/2010  3:55       0.01      
+June16Rainfall   6/16/2010  4:00       0.02      
+June16Rainfall   6/16/2010  4:05       0         
+June16Rainfall   6/16/2010  4:10       0         
+June16Rainfall   6/16/2010  4:15       0         
+June16Rainfall   6/16/2010  4:20       0         
+June16Rainfall   6/16/2010  4:25       0         
+June16Rainfall   6/16/2010  4:30       0         
+June16Rainfall   6/16/2010  4:35       0         
+June16Rainfall   6/16/2010  4:40       0         
+June16Rainfall   6/16/2010  4:45       0         
+June16Rainfall   6/16/2010  4:50       0         
+June16Rainfall   6/16/2010  4:55       0         
+June16Rainfall   6/16/2010  5:00       0         
+June16Rainfall   6/16/2010  5:05       0         
+June16Rainfall   6/16/2010  5:10       0         
+June16Rainfall   6/16/2010  5:15       0         
+June16Rainfall   6/16/2010  5:20       0         
+June16Rainfall   6/16/2010  5:25       0         
+June16Rainfall   6/16/2010  5:30       0         
+June16Rainfall   6/16/2010  5:35       0         
+June16Rainfall   6/16/2010  5:40       0         
+June16Rainfall   6/16/2010  5:45       0         
+June16Rainfall   6/16/2010  5:50       0         
+June16Rainfall   6/16/2010  5:55       0         
+June16Rainfall   6/16/2010  6:00       0         
+June16Rainfall   6/16/2010  6:05       0         
+June16Rainfall   6/16/2010  6:10       0         
+June16Rainfall   6/16/2010  6:15       0         
+June16Rainfall   6/16/2010  6:20       0         
+June16Rainfall   6/16/2010  6:25       0         
+June16Rainfall   6/16/2010  6:30       0         
+June16Rainfall   6/16/2010  6:35       0         
+June16Rainfall   6/16/2010  6:40       0         
+June16Rainfall   6/16/2010  6:45       0         
+June16Rainfall   6/16/2010  6:50       0         
+June16Rainfall   6/16/2010  6:55       0         
+June16Rainfall   6/16/2010  7:00       0         
+June16Rainfall   6/16/2010  7:05       0         
+June16Rainfall   6/16/2010  7:10       0         
+June16Rainfall   6/16/2010  7:15       0         
+June16Rainfall   6/16/2010  7:20       0         
+June16Rainfall   6/16/2010  7:25       0         
+June16Rainfall   6/16/2010  7:30       0         
+June16Rainfall   6/16/2010  7:35       0         
+June16Rainfall   6/16/2010  7:40       0         
+June16Rainfall   6/16/2010  7:45       0         
+June16Rainfall   6/16/2010  7:50       0         
+June16Rainfall   6/16/2010  7:55       0         
+June16Rainfall   6/16/2010  8:00       0         
+June16Rainfall   6/16/2010  8:05       0         
+June16Rainfall   6/16/2010  8:10       0         
+June16Rainfall   6/16/2010  8:15       0         
+June16Rainfall   6/16/2010  8:20       0         
+June16Rainfall   6/16/2010  8:25       0         
+June16Rainfall   6/16/2010  8:30       0         
+June16Rainfall   6/16/2010  8:35       0         
+June16Rainfall   6/16/2010  8:40       0         
+June16Rainfall   6/16/2010  8:45       0         
+June16Rainfall   6/16/2010  8:50       0         
+June16Rainfall   6/16/2010  8:55       0         
+June16Rainfall   6/16/2010  9:00       0         
+June16Rainfall   6/16/2010  9:05       0         
+June16Rainfall   6/16/2010  9:10       0         
+June16Rainfall   6/16/2010  9:15       0         
+June16Rainfall   6/16/2010  9:20       0         
+June16Rainfall   6/16/2010  9:25       0         
+June16Rainfall   6/16/2010  9:30       0         
+June16Rainfall   6/16/2010  9:35       0         
+June16Rainfall   6/16/2010  9:40       0         
+June16Rainfall   6/16/2010  9:45       0         
+June16Rainfall   6/16/2010  9:50       0         
+June16Rainfall   6/16/2010  9:55       0.05      
+June16Rainfall   6/16/2010  10:00      0.11      
+June16Rainfall   6/16/2010  10:05      0.33      
+June16Rainfall   6/16/2010  10:10      0.43      
+June16Rainfall   6/16/2010  10:15      0.69      
+June16Rainfall   6/16/2010  10:20      0.62      
+June16Rainfall   6/16/2010  10:25      0.08      
+June16Rainfall   6/16/2010  10:30      0         
+June16Rainfall   6/16/2010  10:35      0         
+June16Rainfall   6/16/2010  10:40      0.01      
+June16Rainfall   6/16/2010  10:45      0.02      
+June16Rainfall   6/16/2010  10:50      0.01      
+June16Rainfall   6/16/2010  10:55      0.02      
+June16Rainfall   6/16/2010  11:00      0         
+June16Rainfall   6/16/2010  11:05      0         
+June16Rainfall   6/16/2010  11:10      0         
+June16Rainfall   6/16/2010  11:15      0         
+June16Rainfall   6/16/2010  11:20      0         
+June16Rainfall   6/16/2010  11:25      0         
+June16Rainfall   6/16/2010  11:30      0         
+June16Rainfall   6/16/2010  11:35      0         
+June16Rainfall   6/16/2010  11:40      0         
+June16Rainfall   6/16/2010  11:45      0         
+June16Rainfall   6/16/2010  11:50      0         
+June16Rainfall   6/16/2010  11:55      0         
+June16Rainfall   6/16/2010  12:00      0         
+June16Rainfall   6/16/2010  12:05      0         
+June16Rainfall   6/16/2010  12:10      0         
+June16Rainfall   6/16/2010  12:15      0         
+June16Rainfall   6/16/2010  12:20      0         
+June16Rainfall   6/16/2010  12:25      0         
+June16Rainfall   6/16/2010  12:30      0         
+June16Rainfall   6/16/2010  12:35      0         
+June16Rainfall   6/16/2010  12:40      0         
+June16Rainfall   6/16/2010  12:45      0         
+June16Rainfall   6/16/2010  12:50      0         
+June16Rainfall   6/16/2010  12:55      0         
+June16Rainfall   6/16/2010  13:00      0.05      
+June16Rainfall   6/16/2010  13:05      0.11      
+June16Rainfall   6/16/2010  13:10      0.33      
+June16Rainfall   6/16/2010  13:15      0.43      
+June16Rainfall   6/16/2010  13:20      0.69      
+June16Rainfall   6/16/2010  13:25      0.62      
+June16Rainfall   6/16/2010  13:30      0.08      
+June16Rainfall   6/16/2010  13:35      0         
+June16Rainfall   6/16/2010  13:40      0         
+June16Rainfall   6/16/2010  13:45      0.01      
+June16Rainfall   6/16/2010  13:50      0.02      
+June16Rainfall   6/16/2010  13:55      0.01      
+June16Rainfall   6/16/2010  14:00      0.02      
+June16Rainfall   6/16/2010  14:05      0         
+June16Rainfall   6/16/2010  14:10      0         
+June16Rainfall   6/16/2010  14:15      0         
+June16Rainfall   6/16/2010  14:20      0         
+June16Rainfall   6/16/2010  14:25      0         
+June16Rainfall   6/16/2010  14:30      0         
+June16Rainfall   6/16/2010  14:35      0         
+June16Rainfall   6/16/2010  14:40      0.05      
+June16Rainfall   6/16/2010  14:45      0.11      
+June16Rainfall   6/16/2010  14:50      0.33      
+June16Rainfall   6/16/2010  14:55      0.43      
+June16Rainfall   6/16/2010  15:00      0.69      
+June16Rainfall   6/16/2010  15:05      0.62      
+June16Rainfall   6/16/2010  15:10      0.08      
+June16Rainfall   6/16/2010  15:15      0         
+June16Rainfall   6/16/2010  15:20      0         
+June16Rainfall   6/16/2010  15:25      0.01      
+June16Rainfall   6/16/2010  15:30      0.02      
+June16Rainfall   6/16/2010  15:35      0.01      
+June16Rainfall   6/16/2010  15:40      0.02      
+June16Rainfall   6/16/2010  15:45      0         
+June16Rainfall   6/16/2010  15:50      0         
+June16Rainfall   6/16/2010  15:55      0         
+June16Rainfall   6/16/2010  16:00      0         
+June16Rainfall   6/16/2010  16:05      0         
+June16Rainfall   6/16/2010  16:10      0         
+June16Rainfall   6/16/2010  16:15      0         
+June16Rainfall   6/16/2010  16:20      0         
+June16Rainfall   6/16/2010  16:25      0         
+June16Rainfall   6/16/2010  16:30      0.05      
+June16Rainfall   6/16/2010  16:35      0.11      
+June16Rainfall   6/16/2010  16:40      0.33      
+June16Rainfall   6/16/2010  16:45      0.43      
+June16Rainfall   6/16/2010  16:50      0.69      
+June16Rainfall   6/16/2010  16:55      0.62      
+June16Rainfall   6/16/2010  17:00      0.08      
+June16Rainfall   6/16/2010  17:05      0         
+June16Rainfall   6/16/2010  17:10      0         
+June16Rainfall   6/16/2010  17:15      0.01      
+June16Rainfall   6/16/2010  17:20      0.02      
+June16Rainfall   6/16/2010  17:25      0.01      
+June16Rainfall   6/16/2010  17:30      0.02      
+June16Rainfall   6/16/2010  17:35      0         
+June16Rainfall   6/16/2010  17:40      0         
+June16Rainfall   6/16/2010  17:45      0         
+June16Rainfall   6/16/2010  17:50      0         
+June16Rainfall   6/16/2010  17:55      0.05      
+June16Rainfall   6/16/2010  18:00      0.11      
+June16Rainfall   6/16/2010  18:05      0.33      
+June16Rainfall   6/16/2010  18:10      0.43      
+June16Rainfall   6/16/2010  18:15      0.69      
+June16Rainfall   6/16/2010  18:20      0.62      
+June16Rainfall   6/16/2010  18:25      0.08      
+June16Rainfall   6/16/2010  18:30      0         
+June16Rainfall   6/16/2010  18:35      0         
+June16Rainfall   6/16/2010  18:40      0.01      
+June16Rainfall   6/16/2010  18:45      0.02      
+June16Rainfall   6/16/2010  18:50      0.01      
+June16Rainfall   6/16/2010  18:55      0.02      
+June16Rainfall   6/16/2010  19:00      0         
+June16Rainfall   6/16/2010  19:05      0         
+June16Rainfall   6/16/2010  19:10      0.01      
+June16Rainfall   6/16/2010  19:15      0.02      
+June16Rainfall   6/16/2010  19:20      0         
+June16Rainfall   6/16/2010  19:25      0         
+June16Rainfall   6/16/2010  19:30      0         
+June16Rainfall   6/16/2010  19:35      0         
+June16Rainfall   6/16/2010  19:40      0         
+June16Rainfall   6/16/2010  19:45      0         
+June16Rainfall   6/16/2010  19:50      0         
+June16Rainfall   6/16/2010  19:55      0         
+June16Rainfall   6/16/2010  20:00      0         
+June16Rainfall   6/16/2010  20:05      0         
+June16Rainfall   6/16/2010  20:10      0         
+June16Rainfall   6/16/2010  20:15      0         
+June16Rainfall   6/16/2010  20:20      0.05      
+June16Rainfall   6/16/2010  20:25      0.11      
+June16Rainfall   6/16/2010  20:30      0.33      
+June16Rainfall   6/16/2010  20:35      0.43      
+June16Rainfall   6/16/2010  20:40      0.69      
+June16Rainfall   6/16/2010  20:45      0.62      
+June16Rainfall   6/16/2010  20:50      0.08      
+June16Rainfall   6/16/2010  20:55      0         
+June16Rainfall   6/16/2010  21:00      0         
+June16Rainfall   6/16/2010  21:05      0.01      
+June16Rainfall   6/16/2010  21:10      0.02      
+June16Rainfall   6/16/2010  21:15      0.01      
+June16Rainfall   6/16/2010  21:20      0.02      
+June16Rainfall   6/16/2010  21:25      0         
+June16Rainfall   6/16/2010  21:30      0         
+June16Rainfall   6/16/2010  21:35      0         
+June16Rainfall   6/16/2010  21:40      0         
+June16Rainfall   6/16/2010  21:45      0         
+June16Rainfall   6/16/2010  21:50      0         
+June16Rainfall   6/16/2010  21:55      0         
+June16Rainfall   6/16/2010  22:00      0         
+June16Rainfall   6/16/2010  22:05      0         
+June16Rainfall   6/16/2010  22:10      0         
+June16Rainfall   6/16/2010  22:15      0         
+June16Rainfall   6/16/2010  22:20      0         
+June16Rainfall   6/16/2010  22:25      0         
+June16Rainfall   6/16/2010  22:30      0         
+June16Rainfall   6/16/2010  22:35      0         
+June16Rainfall   6/16/2010  22:40      0         
+June16Rainfall   6/16/2010  22:45      0         
+June16Rainfall   6/16/2010  22:50      0         
+June16Rainfall   6/16/2010  22:55      0         
+June16Rainfall   6/16/2010  23:00      0         
+June16Rainfall   6/16/2010  23:05      0         
+June16Rainfall   6/16/2010  23:10      0         
+June16Rainfall   6/16/2010  23:15      0         
+June16Rainfall   6/16/2010  23:20      0         
+June16Rainfall   6/16/2010  23:25      0         
+June16Rainfall   6/16/2010  23:30      0         
+June16Rainfall   6/16/2010  23:35      0         
+June16Rainfall   6/16/2010  23:40      0         
+June16Rainfall   6/16/2010  23:45      0         
+June16Rainfall   6/16/2010  23:50      0         
+June16Rainfall   6/16/2010  23:55      0         
+
+[PATTERNS]
+;;Name           Type       Multipliers
+;;-------------- ---------- -----------
+Base             HOURLY     .12   .12   .48   .71   1.19  2.14 
+Base                        2.14  1.19  .71   .71   .71   .71  
+Base                        .71   .71   1.19  2.62  2.62  1.43 
+Base                        1.19  .95   .71   .48   .12   .12  
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+Node       J04              25-4-55         
+Node       J05              25-4-28         
+Node       J06              25-4-27         
+Node       J07              25-4-26         
+Node       J08              25-4-25         
+Node       J09              25-4-21         
+Node       J010             25-4-20         
+Node       J011             25-4-19         
+Node       J012             25-4-7          
+Node       J013             25-4-6          
+Node       J014             25-4-5          
+Node       J015             25-3-67         
+Node       J016             25-3-47         
+Node       J03              25-4-29         
+Node       J02              24-3-17         
+Node       J017             25-3-24         
+Node       J018             25-3-25         
+Node       J019             25-3-6          
+Node       J020             25-3-27         
+Node       J021             25-3-28         
+Node       J022             25-3-30         
+Node       J023             25-3-16         
+Node       J024             25-3-9          
+Node       J025             25-3-10         
+Node       J026             25-3-11         
+Node       J027             25-3-12         
+Node       J028             25-3-13         
+
+[MAP]
+DIMENSIONS 11276395.043 3679615.010 11280708.178 3684937.316
+Units      Feet
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+J04              11278750.695       3680205.141       
+J05              11278687.262       3680420.811       
+J06              11278743.928       3680574.107       
+J07              11278675.421       3680731.631       
+J08              11278668.021       3680844.752       
+J09              11278578.158       3681177.244       
+J010             11278702.909       3681342.169       
+J011             11278691.279       3681439.432       
+J012             11278673.307       3681754.480       
+J013             11278666.964       3681920.462       
+J014             11278599.302       3682014.554       
+J015             11278396.318       3682250.311       
+J016             11278436.492       3682502.984       
+J03              11278808.606       3680190.807       
+J02              11278832.749       3679992.296       
+J017             11278543.320       3682753.010       
+J018             11278680.410       3682887.260       
+J019             11278719.310       3682970.090       
+J020             11278793.460       3683124.030       
+J021             11278854.020       3683191.020       
+J022             11278975.840       3683327.830       
+J023             11279020.485       3683475.325       
+J024             11279207.425       3683655.744       
+J025             11279232.570       3683728.980       
+J026             11279310.390       3683797.460       
+J027             11279303.068       3683923.112       
+J028             11279270.463       3684020.929       
+J01              11278803.589       3679856.933       
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+RDP6             11278016.062       3684676.143       
+RDP6             11278016.062       3684676.143       
+RDP6             11278012.853       3684672.935       
+RDP6             11278012.853       3684672.935       
+RDP6             11278022.478       3684028.064       
+RDP6             11279010.638       3684028.064       
+RDP6             11278994.596       3684682.559       
+RDP6             11278012.853       3684679.351       
+RDP5             11279507.925       3684121.105       
+RDP5             11280075.796       3684117.897       
+RDP5             11280075.796       3684695.393       
+RDP5             11279491.884       3684688.976       
+RDP4             11279525.775       3683161.164       
+RDP4             11280507.517       3683141.914       
+RDP4             11280497.892       3684011.366       
+RDP4             11279519.358       3684008.157       
+RDP3C            11278622.432       3683755.358       
+RDP3C            11278943.263       3683745.733       
+RDP3C            11278943.263       3683931.815       
+RDP3C            11278619.224       3683935.023       
+RDP3B            11278403.465       3683439.340       
+RDP3B            11278772.421       3683439.340       
+RDP3B            11278766.004       3683635.047       
+RDP3B            11278406.673       3683635.047       
+RDP3A            11278170.863       3683134.550       
+RDP3A            11278568.693       3683131.342       
+RDP3A            11278568.693       3683314.216       
+RDP3A            11278167.654       3683311.007       
+RDP2A            11278959.305       3682757.574       
+RDP2A            11279341.093       3682751.157       
+RDP2A            11279347.510       3683027.072       
+RDP2A            11278962.513       3683027.072       
+RDP2             11278947.384       3682209.401       
+RDP2             11280511.530       3682189.262       
+RDP2             11280498.104       3683021.683       
+RDP2             11279531.421       3683041.822       
+RDP2             11279544.847       3682873.996       
+RDP2             11279544.847       3682618.899       
+RDP2             11278974.236       3682625.612       
+RDP3             11276591.095       3682122.131       
+RDP3             11278182.093       3682095.279       
+RDP3             11278289.503       3683041.822       
+RDP3             11276933.462       3683055.249       
+RDP1             11278947.384       3681202.440       
+RDP1             11280296.712       3681155.449       
+RDP1             11280269.859       3681618.651       
+RDP1             11278954.097       3681638.790       
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+VBH              11278730.594       3682351.220       
+
+[LABELS]
+;;X-Coord          Y-Coord            Label           
+11274911.000       3683685.009        "Many Storn Events with CN Hydrology" "" "Arial" 20 1 1
+

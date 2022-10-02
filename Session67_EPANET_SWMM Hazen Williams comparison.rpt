@@ -1,0 +1,241 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.1 (Build 5.1.014)
+  --------------------------------------------------------------
+
+  SWMM-EPANET Comparison 
+  Source:  https://www.openswmm.org/Topic/9869/epanet2-vs-swmm5-for-pressure-network 
+  
+  WARNING 04: minimum elevation drop used for Conduit 1
+  WARNING 04: minimum elevation drop used for Conduit 2
+  WARNING 04: minimum elevation drop used for Conduit 3
+  WARNING 04: minimum elevation drop used for Conduit 4
+  WARNING 04: minimum elevation drop used for Conduit 5
+  WARNING 04: minimum elevation drop used for Conduit 6
+  WARNING 04: minimum elevation drop used for Conduit 7
+  WARNING 04: minimum elevation drop used for Conduit 8
+  WARNING 04: minimum elevation drop used for Conduit 9
+  WARNING 04: minimum elevation drop used for Conduit 10
+  WARNING 04: minimum elevation drop used for Conduit 11
+  
+  *********************************************************
+  NOTE: The summary statistics displayed in this report are
+  based on results found at every computational time step,  
+  not just on results from each reporting time step.
+  *********************************************************
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... GPM
+  Process Models:
+    Rainfall/Runoff ........ NO
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 07/29/2014 00:00:00
+  Ending Date .............. 07/29/2014 02:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:15:00
+  Routing Time Step ........ 1.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 12
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.000010 ft
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.000         0.000
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         0.000         0.000
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.008         0.003
+  Final Stored Volume ......         0.008         0.003
+  Continuity Error (%) .....         1.431
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  None
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     1.00 sec
+  Average Time Step           :     1.00 sec
+  Maximum Time Step           :     1.00 sec
+  Percent in Steady State     :     0.00
+  Average Iterations per Step :     2.04
+  Percent Not Converging      :     0.37
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  2                    JUNCTION   777.80   779.87   779.87     0  00:00      778.11
+  3                    JUNCTION   810.95   812.32   812.32     0  00:00      811.23
+  4                    JUNCTION   789.04   790.83   790.83     0  00:00      789.34
+  5                    JUNCTION   769.78   772.49   772.49     0  00:00      770.10
+  6                    JUNCTION   774.37   776.91   776.91     0  00:00      774.68
+  7                    JUNCTION   781.70   784.02   784.02     0  00:00      782.01
+  8                    JUNCTION   766.77   769.86   769.86     0  00:00      767.10
+  9                    JUNCTION   767.11   770.13   770.13     0  00:00      767.44
+  1                    OUTFALL    970.00   970.00   970.00     0  00:00      970.00
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           GPM      GPM  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  2                    JUNCTION   -150.00   469.58     0  00:00      -0.018      0.0336       0.007
+  3                    JUNCTION   -150.00  1679.24     0  00:00      -0.018       0.114       0.007
+  4                    JUNCTION   -100.00   372.75     0  00:00      -0.012      0.0269       0.010
+  5                    JUNCTION   -150.00   403.13     0  00:00      -0.018      0.0272       0.022
+  6                    JUNCTION   -200.00   693.20     0  00:00      -0.024      0.0504       0.013
+  7                    JUNCTION      0.00   216.24     0  00:00           0      0.0149       0.000
+  8                    JUNCTION   -100.00   183.49     0  00:00      -0.012       0.012       0.040
+  9                    JUNCTION   -100.00   220.18     0  00:00      -0.012      0.0148       0.000
+  1                    OUTFALL       0.00  1679.24     0  00:00           0       0.114       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  Surcharging occurs when water rises above the top of the highest conduit.
+  ---------------------------------------------------------------------
+                                               Max. Height   Min. Depth
+                                   Hours       Above Crown    Below Rim
+  Node                 Type      Surcharged           Feet         Feet
+  ---------------------------------------------------------------------
+  2                    JUNCTION        2.00        779.542      220.125
+  3                    JUNCTION        2.00        811.983      187.684
+  4                    JUNCTION        2.00        790.502      209.165
+  5                    JUNCTION        2.00        772.159      227.508
+  6                    JUNCTION        2.00        776.578      223.089
+  7                    JUNCTION        2.00        783.692      215.975
+  8                    JUNCTION        2.00        769.524      230.143
+  9                    JUNCTION        2.00        769.799      229.868
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       GPM       GPM    10^6 gal
+  -----------------------------------------------------------
+  1                    100.00    950.27   1679.24       0.114
+  -----------------------------------------------------------
+  System               100.00    950.27   1679.24       0.114
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          GPM  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  1                    CONDUIT   1679.24     0  00:00     42.96  1029.94    1.00
+  2                    CONDUIT    469.58     0  00:00     12.01  418.76    1.00
+  3                    CONDUIT    372.75     0  00:00      9.54  332.41    1.00
+  4                    CONDUIT    263.44     0  00:00      6.74  234.93    1.00
+  5                    CONDUIT    544.56     0  00:00     13.93  485.62    1.00
+  6                    CONDUIT    216.24     0  00:00      5.53  192.83    1.00
+  7                    CONDUIT    143.85     0  00:00      3.68  128.28    1.00
+  8                    CONDUIT    139.69     0  00:00      3.57  124.57    1.00
+  9                    CONDUIT    154.74     0  00:00      3.96  137.99    1.00
+  10                   CONDUIT    220.18     0  00:00      5.63  196.35    1.00
+  11                   CONDUIT     40.06     0  00:00      1.02   35.72    1.00
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  1                       1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  2                       1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  3                       1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  4                       1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  5                       1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  6                       1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  7                       1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  8                       1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  9                       1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  10                      1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  11                      1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  1                           2.00      2.00      2.00      2.00         2.00
+  2                           2.00      2.00      2.00      2.00         2.00
+  3                           2.00      2.00      2.00      2.00         2.00
+  4                           2.00      2.00      2.00      2.00         2.00
+  5                           2.00      2.00      2.00      2.00         2.00
+  6                           2.00      2.00      2.00      2.00         2.00
+  7                           2.00      2.00      2.00      2.00         2.00
+  8                           2.00      2.00      2.00      2.00         0.01
+  9                           2.00      2.00      2.00      2.00         0.01
+  10                          2.00      2.00      2.00      2.00         2.00
+  11                          2.00      2.00      2.00      2.00         0.01
+  
+
+  Analysis begun on:  Tue Jun  8 10:38:40 2021
+  Analysis ended on:  Tue Jun  8 10:38:40 2021
+  Total elapsed time: < 1 sec

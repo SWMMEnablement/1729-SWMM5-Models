@@ -1,0 +1,205 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/1996
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/1996
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/1996
+END_TIME             02:00:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:30
+WET_STEP             00:01:00
+DRY_STEP             24:00:00
+ROUTING_STEP         0:00:30 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  FROUDE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+238              9.99       10.01      2.51       0          0         
+240              9.98       10.02      2.52       0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Outfall          9.97       FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+Duckpond         10       10         2.5        TABULAR    Duckpond_ST                  13591.4  0       
+202              10       10         2.5        TABULAR    202_ST                       13591.4  0       
+203              10       10         2.5        TABULAR    203_ST                       13591.4  0       
+204              10       10         2.5        TABULAR    204_ST                       13591.4  0       
+205              10       10         2.5        TABULAR    205_ST                       13591.4  0       
+206              10       10         2.5        TABULAR    206_ST                       13591.4  0       
+207              10       10         2.5        TABULAR    207_ST                       13591.4  0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+239              206              238              100        0.014      0          0          0          0         
+241              238              240              100        0.014      0          0          0          0         
+243              240              Outfall          100        0.014      0          0          0          0         
+
+[WEIRS]
+;;Name           From Node        To Node          Type         CrestHt    Qcoeff     Gated    EndCon   EndCoeff   Surcharge  RoadWidth  RoadSurf   Coeff. Curve
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- -------- ---------- ---------- ---------- ---------- ----------------
+WEIR#2           202              205              TRANSVERSE   2          3.1        NO       0        0          YES       
+WEIR#3           205              Duckpond         SIDEFLOW     2          3.1        YES      0        0          YES       
+WEIR#4           202              207              TRANSVERSE   2          3.1        NO       0        0          YES       
+WEIR#5           207              203              TRANSVERSE   2          3.1        NO       0        0          YES       
+WEIR#6           203              204              TRANSVERSE   1          3.1        NO       0        0          YES       
+WEIR#7           204              206              TRANSVERSE   1          3.1        NO       0        0          YES       
+WEIR#8           206              203              TRANSVERSE   2          3.1        NO       0        0          YES       
+WEIR#9           203              202              TRANSVERSE   1          3.1        NO       0        0          YES       
+WEIR#11          207              206              TRANSVERSE   2          3.1        NO       0        0          YES       
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+239              TRAPEZOIDAL  4                4          1          1          1                    
+241              TRAPEZOIDAL  4                4          1          1          1                    
+243              TRAPEZOIDAL  4                4          1          1          1                    
+WEIR#2           RECT_OPEN    3                2          0          0         
+WEIR#3           RECT_OPEN    3                2          0          0         
+WEIR#4           RECT_OPEN    3                2          0          0         
+WEIR#5           RECT_OPEN    3                2          0          0         
+WEIR#6           RECT_OPEN    4                2          0          0         
+WEIR#7           RECT_OPEN    4                2          0          0         
+WEIR#8           RECT_OPEN    3                2          0          0         
+WEIR#9           RECT_OPEN    4                2          0          0         
+WEIR#11          RECT_OPEN    3                2          0          0         
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+Duckpond         FLOW             Duckpond         FLOW     1.0      1.0              
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+Duckpond_ST      Storage    0          435.6     
+Duckpond_ST                 1          4356      
+Duckpond_ST                 2          21780     
+Duckpond_ST                 3          43560     
+Duckpond_ST                 4          87120     
+Duckpond_ST                 5          91476     
+;
+202_ST           Storage    0          435.6     
+202_ST                      1          4356      
+202_ST                      2          21780     
+202_ST                      3          43560     
+202_ST                      4          87120     
+202_ST                      5          91476     
+;
+203_ST           Storage    0          435.6     
+203_ST                      1          4356      
+203_ST                      2          21780     
+203_ST                      3          43560     
+203_ST                      4          87120     
+203_ST                      5          91476     
+;
+204_ST           Storage    0          435.6     
+204_ST                      1          4356      
+204_ST                      2          21780     
+204_ST                      3          43560     
+204_ST                      4          87120     
+204_ST                      5          91476     
+;
+205_ST           Storage    0          435.6     
+205_ST                      1          4356      
+205_ST                      2          21780     
+205_ST                      3          43560     
+205_ST                      4          87120     
+205_ST                      5          91476     
+;
+206_ST           Storage    0          435.6     
+206_ST                      1          4356      
+206_ST                      2          21780     
+206_ST                      3          43560     
+206_ST                      4          87120     
+206_ST                      5          91476     
+;
+207_ST           Storage    0          435.6     
+207_ST                      1          4356      
+207_ST                      2          21780     
+207_ST                      3          43560     
+207_ST                      4          87120     
+207_ST                      5          91476     
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+Duckpond                    0          0         
+Duckpond                    0.25       10        
+Duckpond                    0.5        50        
+Duckpond                    2          50        
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 15.000 438.000 125.000 482.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+238              120.000            440.000           
+240              100.000            440.000           
+Outfall          80.000             440.000           
+Duckpond         20.000             480.000           
+202              60.000             480.000           
+203              100.000            480.000           
+204              120.000            480.000           
+205              40.000             460.000           
+206              120.000            460.000           
+207              80.000             460.000           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[LABELS]
+;;X-Coord          Y-Coord            Label           
+37.670             484.248            "Weirs" "" "Arial" 20 0 0
+

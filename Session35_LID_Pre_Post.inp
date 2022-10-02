@@ -1,0 +1,182 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           11/01/2010
+START_TIME           00:00:00
+REPORT_START_DATE    11/01/2010
+REPORT_START_TIME    00:00:00
+END_DATE             11/02/2010
+END_TIME             23:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:12:00
+WET_STEP             00:12:00
+DRY_STEP             00:12:00
+ROUTING_STEP         0:00:05 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+MONTHLY          0.02   0.03   0.07   0.122  0.149  0.161  0.170  0.155  0.107  0.069  0.041  0.021 
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+RG33             VOLUME    0:12     1.0      TIMESERIES RainSimulation  
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+Post             RG33             OF1              0.11     50       150      2.58     0                        
+;Subcatchment of pre-bioretention implementation with parameters from the calibrated surrogate site
+Pre              RG33             OF_PRERG         0.11     50       50       0.4      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+Post             0.014      0.3        0.05       0.05       100        OUTLET    
+Pre              .014       .4         0.05       0.05       100        OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+Post             3.0        0.5        4          7          0         
+Pre              3.0        0.5        4          7          0         
+
+[LID_CONTROLS]
+;;Name           Type/Layer Parameters
+;;-------------- ---------- ----------
+RG33             BC
+RG33             SURFACE    14         0.03       .02        1          5         
+RG33             SOIL       36         .506       .295       0.055      1          20         5         
+RG33             STORAGE    12         0.50       13         0         
+RG33             DRAIN      1.8        .8         3          6          0          0                    
+
+[LID_USAGE]
+;;Subcatchment   LID Process      Number  Area       Width      InitSat    FromImp    ToPerv     RptFile                  DrainTo          FromPerv  
+;;-------------- ---------------- ------- ---------- ---------- ---------- ---------- ---------- ------------------------ ---------------- ----------
+Post             RG33             1       170        100        30         50         1          *                        *                0               
+
+[AQUIFERS]
+;;Name           Por    WP     FC     Ksat   Kslope Tslope ETu    ETs    Seep   Ebot   Egw    Umc    ETupat 
+;;-------------- ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------
+RG33             0.4    0.055  0.1    1      5.0    15.0   1.0    3      0.002  0.0    0      0.32         
+
+[GROUNDWATER]
+;;Subcatchment   Aquifer          Node             Esurf  A1     B1     A2     B2     A3     Dsw    Egwt   Ebot   Wgr    Umc   
+;;-------------- ---------------- ---------------- ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+OF1              0          FREE                        NO                       
+OF_PRERG         0          FREE                        NO                       
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+RG33             Storage    0          68        
+RG33                        1.25       68        
+RG33                        1.26       68        
+RG33                        1.83       68        
+RG33                        1.84       170       
+RG33                        3          170       
+;
+RG               Storage    0          170       
+RG                          3          170       
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+RainSimulation   11/1/2010  9:40       0.185950413
+RainSimulation   11/1/2010  9:52       0.185950413
+RainSimulation   11/1/2010  10:04      0.151515152
+RainSimulation   11/1/2010  10:16      0.101928375
+RainSimulation   11/1/2010  10:28      0.099173554
+RainSimulation   11/1/2010  10:40      0.082644628
+RainSimulation   11/1/2010  10:52      0.068870523
+RainSimulation   11/1/2010  11:04      0.041322314
+RainSimulation   11/1/2010  11:16      0.041322314
+RainSimulation   11/1/2010  11:28      0.027548209
+RainSimulation   11/1/2010  11:40      0.008264463
+RainSimulation   11/1/2010  11:52      0.008264463
+RainSimulation   11/1/2010  12:04      0.016528926
+RainSimulation   11/1/2010  12:16      0.016528926
+RainSimulation   11/1/2010  12:28      0.027548209
+RainSimulation   11/1/2010  12:40      0.027548209
+RainSimulation   11/1/2010  12:52      0.03030303
+RainSimulation   11/1/2010  13:04      0.017679339
+RainSimulation   11/1/2010  13:16      0.017679339
+RainSimulation   11/1/2010  13:28      0.017679339
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 752.905 4185.461 10528.786 7039.656
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+OF1              4743.444           4640.821          
+OF_PRERG         10084.428          4315.197          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Post             1511.806           6175.714          
+Post             4601.886           6175.714          
+Post             4624.691           4693.388          
+Post             1523.209           4670.583          
+Post             1523.209           6209.922          
+Pre              9606.004           6238.274          
+Pre              9690.432           4502.814          
+Pre              6303.940           4587.242          
+Pre              6275.797           6191.370          
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+RG33             1197.263           6909.920          
+
+[LABELS]
+;;X-Coord          Y-Coord            Label           
+1445.459           6342.315           "Rain Garden #33 (RG33)" "" "Arial" 20 0 0
+6407.806           6399.551           "Pre-Condition" "" "Arial" 20 1 1
+
