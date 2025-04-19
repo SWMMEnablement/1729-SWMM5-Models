@@ -1,0 +1,1985 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.1 (Build 5.1.013)
+  --------------------------------------------------------------
+
+  WARNING 04: minimum elevation drop used for Conduit MH118A_MH118
+  WARNING 04: minimum elevation drop used for Conduit MH135A_MH135W
+  WARNING 04: minimum elevation drop used for Conduit MH13P_MH13P2
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 39
+  Number of subcatchments ... 39
+  Number of nodes ........... 227
+  Number of links ........... 232
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ****************
+  Raingage Summary
+  ****************
+                                                      Data       Recording
+  Name                 Data Source                    Type       Interval 
+  ------------------------------------------------------------------------
+  R_A_1                TS_A_1                         VOLUME      15 min.
+  R_A_2                TS_A_2                         VOLUME      15 min.
+  R_A_3                TS_A_3                         VOLUME      15 min.
+  R_A_4                TS_A_4                         VOLUME      15 min.
+  R_A_5                TS_A_5                         VOLUME      15 min.
+  R_A_6                TS_A_6                         VOLUME      15 min.
+  R_A_7                TS_A_7                         VOLUME      15 min.
+  R_B_1                TS_B_1                         VOLUME      15 min.
+  R_B_2                TS_B_2                         VOLUME      15 min.
+  R_B_3                TS_B_3                         VOLUME      15 min.
+  R_B_4                TS_B_4                         VOLUME      15 min.
+  R_B_5                TS_B_5                         VOLUME      15 min.
+  R_B_6                TS_B_6                         VOLUME      15 min.
+  R_B_7                TS_B_7                         VOLUME      15 min.
+  R_B_8                TS_B_8                         VOLUME      15 min.
+  R_DC_1               TS_DC_1                        VOLUME      15 min.
+  R_DC_2               TS_DC_2                        VOLUME      15 min.
+  R_DC_3               TS_DC_3                        VOLUME      15 min.
+  R_DC_4               TS_DC_4                        VOLUME      15 min.
+  R_DC_5               TS_DC_5                        VOLUME      15 min.
+  R_DC_6               TS_DC_6                        VOLUME      15 min.
+  R_DC_7               TS_DC_7                        VOLUME      15 min.
+  R_DC_8               TS_DC_8                        VOLUME      15 min.
+  R_DC_9               TS_DC_9                        VOLUME      15 min.
+  R_J_1                TS_J_1                         VOLUME      15 min.
+  R_J_2                TS_J_2                         VOLUME      15 min.
+  R_J_3                TS_J_3                         VOLUME      15 min.
+  R_J_4                TS_J_4                         VOLUME      15 min.
+  R_J_5                TS_J_5                         VOLUME      15 min.
+  R_J_6                TS_J_6                         VOLUME      15 min.
+  R_T-O_1              TS_T-O_1                       VOLUME      15 min.
+  R_T-O_2              TS_T-O_2                       VOLUME      15 min.
+  R_T-O_3              TS_T-O_3                       VOLUME      15 min.
+  R_T-O_4              TS_T-O_4                       VOLUME      15 min.
+  R_T-O_5              TS_T-O_5                       VOLUME      15 min.
+  R_T_1                TS_T_1                         VOLUME      15 min.
+  R_T_2                TS_T_2                         VOLUME      15 min.
+  R_T_3                TS_T_3                         VOLUME      15 min.
+  R_T_4                TS_T_4                         VOLUME      15 min.
+  
+  
+  ********************
+  Subcatchment Summary
+  ********************
+  Name                       Area     Width   %Imperv    %Slope Rain Gage            Outlet              
+  -----------------------------------------------------------------------------------------------------------
+  A_1                      395.81   4244.06      2.50    4.5000 R_A_1                MH36B               
+  A_2                      241.79   3651.16      0.59    2.0000 R_A_2                MH6B                
+  A_3                       39.87   1806.05     11.25    5.7000 R_A_3                MH3                 
+  A_4                      169.14   5108.25     10.00    5.0000 R_A_4                MH1A                
+  A_5                      207.70   4704.62      2.50    7.0000 R_A_5                MH10A               
+  A_6                       91.80   3326.86      5.00    9.0000 R_A_6                MH12                
+  A_7                        9.45    940.16      8.75    3.3000 R_A_7                MH12                
+  B_1                      145.57   4058.31      2.50    4.5000 R_B_1                MH81A               
+  B_2                        6.25    707.43      3.75    3.6000 R_B_2                MH79                
+  B_3                      331.24   6002.37      5.00    9.0000 R_B_3                MH71                
+  B_4                      321.58   6474.75      3.75    3.8000 R_B_4                MH62D               
+  B_5                        2.46    446.12      1.25    8.0000 R_B_5                MH41                
+  B_6                        3.60    652.45      1.25    3.8000 R_B_6                MH38                
+  B_7                      604.65   6020.25      1.25    3.7000 R_B_7                MH64E               
+  B_8                        2.19    381.34      1.25    1.0000 R_B_8                MH64E               
+  DC_1                     211.52   3831.63      2.50    2.5000 R_DC_1               MH154               
+  DC_2                      71.29   2083.54      1.25    0.3000 R_DC_2               MH145               
+  DC_3                      58.88    936.00      2.50    0.3500 R_DC_3               MH143               
+  DC_4                      18.22    971.06      2.50    0.7500 R_DC_4               MH118A              
+  DC_5                     492.92   7443.50      1.25    6.0000 R_DC_5               MH122B              
+  DC_6                      38.71   1753.72      2.50    7.6000 R_DC_6               MH116               
+  DC_7                     250.76   1666.58      2.50    0.5000 R_DC_7               MH154               
+  DC_8                     234.93   4257.15      3.75    8.8000 R_DC_8               MH87A               
+  DC_9                      97.64    804.96      1.25    1.7000 R_DC_9               MH154               
+  J_1                      446.48   8090.70      2.50    2.1500 R_J_1                MH52B               
+  J_2                      100.79   2853.64      1.25    7.9000 R_J_2                MH27                
+  J_3                       37.64   1705.16      1.25    2.2000 R_J_3                MH24                
+  J_4                       75.92   3439.40     11.25    6.7000 R_J_4                MH53                
+  J_5                      140.58   3184.31      1.25    4.0000 R_J_5                MH39                
+  J_6                       39.85   2256.52     17.50    1.8500 R_J_6                MH48A               
+  T-O_1                    584.30   7562.87      5.00    3.8000 R_T-O_1              MH103               
+  T-O_2                     91.66   2768.37      7.50    1.3000 R_T-O_2              MH75A               
+  T-O_3                     71.38   3821.58      8.75    0.7000 R_T-O_3              MH92A               
+  T-O_4                      5.39    610.64      5.00    0.7000 R_T-O_4              MH91A               
+  T-O_5                    128.75   5071.90      3.75    9.0000 R_T-O_5              MH95                
+  T_1                       51.76   2404.96     12.50    1.0000 R_T_1                MH202               
+  T_2                      645.04   7305.49      2.50    2.1500 R_T_2                MH135B              
+  T_3                       10.72    349.00      2.50    0.2500 R_T_3                MH135B              
+  T_4                        1.36   6012.40      5.00    3.8000 R_T_4                MH202               
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  MH-WWTP              JUNCTION            709.50     19.00     100.0
+  MH1                  JUNCTION            874.10      5.69     100.0
+  MH10                 JUNCTION            866.85      8.33     100.0
+  MH100                JUNCTION            741.36     11.15     100.0
+  MH100A               JUNCTION            741.30     11.43     100.0
+  MH101A               JUNCTION            741.07      8.93     100.0
+  MH103                JUNCTION            755.00      3.00     100.0    Yes
+  MH104                JUNCTION            748.10     11.90     100.0
+  MH105                JUNCTION            741.12      6.88     100.0
+  MH107A               JUNCTION            740.85      8.26     100.0
+  MH108A               JUNCTION            739.50     10.50     100.0
+  MH109                JUNCTION            739.23      8.05     100.0
+  MH10A                JUNCTION            867.90      5.10     100.0    Yes
+  MH10W                JUNCTION            867.65      7.52     100.0
+  MH11                 JUNCTION            864.75     11.65     100.0
+  MH110                JUNCTION            738.15     10.00     100.0
+  MH111                JUNCTION            737.70     15.31     100.0
+  MH112                JUNCTION            737.10      8.91     100.0
+  MH113                JUNCTION            736.50      8.72     100.0
+  MH115                JUNCTION            735.36      8.88     100.0
+  MH116                JUNCTION            734.43     11.16     100.0    Yes
+  MH117                JUNCTION            733.35     14.65     100.0
+  MH117D               JUNCTION            733.35     14.65     100.0
+  MH117W               JUNCTION            737.95     10.05     100.0
+  MH117W2              JUNCTION            737.95     10.05       0.0
+  MH118                JUNCTION            731.43     11.34     100.0
+  MH118A               JUNCTION            731.43     11.34     100.0    Yes
+  MH119                JUNCTION            730.23     11.37     100.0
+  MH12                 JUNCTION            864.39      9.53     100.0    Yes
+  MH120                JUNCTION            729.33     12.28     100.0
+  MH121                JUNCTION            727.98      9.72     100.0
+  MH122                JUNCTION            735.04     14.96     100.0
+  MH122A               JUNCTION            739.40     10.60     100.0
+  MH122B               JUNCTION            740.30      9.70     100.0    Yes
+  MH122W               JUNCTION            738.50     11.50     100.0
+  MH123                JUNCTION            734.74      9.26     100.0
+  MH124                JUNCTION            734.24      8.26     100.0
+  MH125                JUNCTION            733.74      8.26     100.0
+  MH126                JUNCTION            733.20      6.49     100.0
+  MH127                JUNCTION            730.95      7.41     100.0
+  MH128                JUNCTION            726.32     10.01     100.0
+  MH129                JUNCTION            725.57     10.28     100.0
+  MH13                 JUNCTION            886.00      6.00     100.0
+  MH130                JUNCTION            724.67     10.52     100.0
+  MH131                JUNCTION            723.80     11.29     100.0
+  MH132                JUNCTION            722.90     10.28     100.0
+  MH133                JUNCTION            721.67     10.67     100.0
+  MH134                JUNCTION            721.10     12.33     100.0
+  MH135                JUNCTION            723.00     13.00     100.0
+  MH135A               JUNCTION            732.00     13.00     100.0
+  MH135B               JUNCTION            736.60      8.40     100.0    Yes
+  MH135W               JUNCTION            732.00      4.00     100.0
+  MH135WR              JUNCTION            731.00      5.00     100.0
+  MH136                JUNCTION            719.97     11.24     100.0
+  MH137                JUNCTION            719.72     11.22     100.0
+  MH138                JUNCTION            719.20     13.40     100.0
+  MH139                JUNCTION            718.68     13.31     100.0
+  MH13P                JUNCTION            861.50     12.50     100.0
+  MH13P2               JUNCTION            861.50     12.50     100.0
+  MH14                 JUNCTION            884.50      6.36     100.0
+  MH140                JUNCTION            718.38     13.56     100.0
+  MH141                JUNCTION            717.87     13.64     100.0
+  MH142                JUNCTION            717.46     13.74     100.0
+  MH143                JUNCTION            717.25     12.10     100.0    Yes
+  MH144                JUNCTION            717.02     14.84     100.0
+  MH145                JUNCTION            716.78     12.86     100.0    Yes
+  MH146                JUNCTION            716.61     12.60     100.0
+  MH147                JUNCTION            716.01     14.06     100.0
+  MH148                JUNCTION            715.84     13.37     100.0
+  MH149                JUNCTION            715.73     11.70     100.0
+  MH15                 JUNCTION            882.00      4.37     100.0
+  MH150                JUNCTION            715.26     14.93     100.0
+  MH151                JUNCTION            717.04     13.54     100.0
+  MH152                JUNCTION            718.04     10.69     100.0
+  MH153                JUNCTION            719.04      9.42     100.0
+  MH154                JUNCTION            720.00     11.15     100.0    Yes
+  MH155                JUNCTION            714.80     13.22     100.0
+  MH155GC              JUNCTION            714.74     13.26     100.0
+  MH156                JUNCTION            742.00      6.50     100.0
+  MH16                 JUNCTION            879.50      6.50     100.0
+  MH17                 JUNCTION            878.13     11.21     100.0
+  MH18                 JUNCTION            876.68      7.34     100.0
+  MH19                 JUNCTION            874.88      7.52     100.0
+  MH1A                 JUNCTION            874.70      5.30     100.0    Yes
+  MH2                  JUNCTION            872.00      6.00     100.0
+  MH20                 JUNCTION            872.24      6.76     100.0
+  MH200                JUNCTION            715.54     12.43     100.0
+  MH200P               JUNCTION            722.00      8.00     100.0
+  MH201                JUNCTION            715.00     13.01     100.0
+  MH202                JUNCTION            716.22     13.27     100.0    Yes
+  MH21                 JUNCTION            870.26      6.84     100.0
+  MH22                 JUNCTION            867.95      6.05     100.0
+  MH23                 JUNCTION            865.64      6.46     100.0
+  MH24                 JUNCTION            863.00      6.54     100.0    Yes
+  MH25                 JUNCTION            860.36      6.63     100.0
+  MH26                 JUNCTION            859.38      6.35     100.0
+  MH26A                JUNCTION            858.49      8.38     100.0
+  MH27                 JUNCTION            855.74      9.75     100.0    Yes
+  MH28                 JUNCTION            853.30      7.68     100.0
+  MH29                 JUNCTION            850.86      8.35     100.0
+  MH3                  JUNCTION            875.00      4.21     100.0    Yes
+  MH30                 JUNCTION            848.22      9.10     100.0
+  MH31                 JUNCTION            845.58      6.41     100.0
+  MH32                 JUNCTION            841.58      6.32     100.0
+  MH34                 JUNCTION            835.58      8.22     100.0
+  MH35                 JUNCTION            833.43      6.42     100.0
+  MH36                 JUNCTION            820.00     16.67     100.0
+  MH36B                JUNCTION            823.82     12.85     100.0    Yes
+  MH36W                JUNCTION            822.86     13.81     100.0
+  MH37                 JUNCTION            818.95     15.66     100.0
+  MH38                 JUNCTION            817.63     12.26     100.0    Yes
+  MH39                 JUNCTION            813.42     10.54     100.0    Yes
+  MH4                  JUNCTION            869.00      9.84     100.0
+  MH40                 JUNCTION            808.00     14.81     100.0
+  MH41                 JUNCTION            807.00     19.09     100.0    Yes
+  MH42                 JUNCTION            805.01     15.84     100.0
+  MH43                 JUNCTION            803.50     12.78     100.0
+  MH44                 JUNCTION            802.30      9.52     100.0
+  MH45                 JUNCTION            800.80      9.20     100.0
+  MH46                 JUNCTION            800.20     10.20     100.0
+  MH47                 JUNCTION            792.76     15.52     100.0
+  MH48                 JUNCTION            802.51      8.51     100.0
+  MH48A                JUNCTION            804.77      6.11     100.0    Yes
+  MH48W                JUNCTION            803.26      7.76     100.0
+  MH49                 JUNCTION            799.50     10.50     100.0
+  MH5                  JUNCTION            869.62      8.92     100.0
+  MH50                 JUNCTION            791.00     12.75     100.0
+  MH51                 JUNCTION            787.00      7.67     100.0
+  MH52                 JUNCTION            789.02     10.80     100.0
+  MH52A                JUNCTION            793.40     11.60     100.0
+  MH52B                JUNCTION            796.00      9.00     100.0    Yes
+  MH52W                JUNCTION            792.47      7.35     100.0
+  MH53                 JUNCTION            794.39      9.36     100.0    Yes
+  MH54                 JUNCTION            787.20      6.87     100.0
+  MH55                 JUNCTION            783.02      7.80     100.0
+  MH56                 JUNCTION            785.20     13.30     100.0
+  MH57                 JUNCTION            783.05     15.52     100.0
+  MH58                 JUNCTION            781.00      9.33     100.0
+  MH59                 JUNCTION            778.65      9.62     100.0
+  MH6                  JUNCTION            871.18      5.83     100.0
+  MH60                 JUNCTION            776.30      6.70     100.0
+  MH61                 JUNCTION            772.77      5.73     100.0
+  MH62                 JUNCTION            769.60     12.52     100.0
+  MH62A                JUNCTION            769.50     12.08     100.0
+  MH62B                JUNCTION            769.44     10.56     100.0
+  MH62C                JUNCTION            768.00     10.99     100.0
+  MH62D                JUNCTION            772.00      9.31     100.0    Yes
+  MH63A                JUNCTION            767.50     11.07     100.0
+  MH63B                JUNCTION            767.00     11.86     100.0
+  MH64                 JUNCTION            766.00     13.68     100.0
+  MH64B                JUNCTION            770.00     11.42     100.0
+  MH64C                JUNCTION            765.00     14.25     100.0
+  MH64E                JUNCTION            772.00      8.00     100.0    Yes
+  MH65                 JUNCTION            764.69      7.81     100.0
+  MH66                 JUNCTION            763.69      8.31     100.0
+  MH67                 JUNCTION            762.19     11.81     100.0
+  MH68                 JUNCTION            760.19     10.99     100.0
+  MH69                 JUNCTION            758.19     12.73     100.0
+  MH6A                 JUNCTION            876.38     18.62     100.0
+  MH6B                 JUNCTION            877.10     22.90     100.0    Yes
+  MH6W                 JUNCTION            874.15      2.86     100.0
+  MH7                  JUNCTION            868.53      8.29     100.0
+  MH70                 JUNCTION            755.69     13.11     100.0
+  MH71                 JUNCTION            764.16      5.84     100.0    Yes
+  MH72                 JUNCTION            754.29     13.94     100.0
+  MH73                 JUNCTION            753.04     13.03     100.0
+  MH74                 JUNCTION            752.04     14.20     100.0
+  MH75                 JUNCTION            755.00     11.00     100.0
+  MH75A                JUNCTION            759.40      6.60     100.0    Yes
+  MH76                 JUNCTION            751.16     11.24     100.0
+  MH77                 JUNCTION            750.28     13.27     100.0
+  MH78                 JUNCTION            749.95     12.58     100.0
+  MH79                 JUNCTION            748.70     13.49     100.0    Yes
+  MH8                  JUNCTION            867.93      9.36     100.0
+  MH80                 JUNCTION            747.45     15.11     100.0
+  MH81                 JUNCTION            760.00      8.00     100.0
+  MH81A                JUNCTION            763.30      4.70     100.0    Yes
+  MH81W                JUNCTION            760.90      6.90     100.0
+  MH82                 JUNCTION            759.00     10.00     100.0
+  MH83                 JUNCTION            754.00     13.80     100.0
+  MH84                 JUNCTION            746.95     13.38     100.0
+  MH85                 JUNCTION            746.72     17.28     100.0
+  MH86                 JUNCTION            745.92     13.63     100.0
+  MH87                 JUNCTION            745.60      9.40     100.0
+  MH87A                JUNCTION            753.00      3.00     100.0    Yes
+  MH87W                JUNCTION            751.40      3.60     100.0
+  MH88                 JUNCTION            745.27      9.73     100.0
+  MH89                 JUNCTION            745.13     10.87     100.0
+  MH9                  JUNCTION            867.33      6.47     100.0
+  MH90                 JUNCTION            744.98     11.02     100.0
+  MH91                 JUNCTION            744.28      9.59     100.0
+  MH91A                JUNCTION            752.23      3.27     100.0    Yes
+  MH91W                JUNCTION            750.58      3.29     100.0
+  MH92                 JUNCTION            743.91     13.60     100.0
+  MH92A                JUNCTION            753.95      6.05     100.0    Yes
+  MH92B                JUNCTION            745.02     14.98     100.0
+  MH92W                JUNCTION            752.91      4.60     100.0
+  MH93                 JUNCTION            743.81      7.99     100.0
+  MH94                 JUNCTION            743.79      9.38     100.0
+  MH95                 JUNCTION            743.73     10.25     100.0    Yes
+  MH96                 JUNCTION            743.58     10.19     100.0
+  MH97                 JUNCTION            742.83     11.11     100.0
+  MH98                 JUNCTION            742.45     11.43     100.0
+  MH99                 JUNCTION            742.08     13.00     100.0
+  MH10R                OUTFALL             864.85      2.50       0.0
+  MH117R               OUTFALL             732.93      3.00       0.0
+  MH117R2              OUTFALL             732.93      3.00       0.0
+  MH122R               OUTFALL             735.80      1.00       0.0
+  MH135R               OUTFALL             729.50      1.00       0.0
+  MH1R                 OUTFALL             872.00      0.67       0.0
+  MH36R                OUTFALL             817.00      1.00       0.0
+  MH48R                OUTFALL             799.00      2.00       0.0
+  MH52R                OUTFALL             789.00      1.25       0.0
+  MH63BR               OUTFALL             764.00      2.00       0.0
+  MH64BR               OUTFALL             770.00      2.00       0.0
+  MH6R                 OUTFALL             869.00      1.00       0.0
+  MH75R                OUTFALL             758.05      2.50       0.0
+  MH81R                OUTFALL             755.00      1.00       0.0
+  MH87R                OUTFALL             748.10      0.83       0.0
+  MH91R                OUTFALL             750.10      0.67       0.0
+  MH92R                OUTFALL             743.97      1.50       0.0
+  MH92R2               OUTFALL             751.90      1.50       0.0
+  OFALL-10             OUTFALL             874.15      1.85       0.0
+  OUTFALL_WWTP         OUTFALL             729.64      3.00       0.0
+  PS-ARCH              STORAGE             858.27     15.73       0.0
+  THR_WET_WELL         STORAGE             711.00     18.00       0.0
+  WWTP_WET_WELL        STORAGE             700.00     28.00       0.0
+  
+  
+  ************
+  Link Summary
+  ************
+  Name             From Node        To Node          Type            Length    %Slope Roughness
+  ---------------------------------------------------------------------------------------------
+  CDT-13           MH52B            MH52A            CONDUIT           47.6    5.4744    0.0150
+  MH-WWTP_MH156    MH-WWTP          MH156            CONDUIT          294.4  -11.1090    0.0150
+  MH100A_MH100     MH100            MH100A           CONDUIT           14.2    0.4211    0.0150
+  MH100A_MH101A    MH100A           MH101A           CONDUIT          330.9    0.0695    0.0150
+  MH101A_MH107A    MH101A           MH107A           CONDUIT          245.7    0.0895    0.0150
+  MH103_MH104      MH103            MH104            CONDUIT          177.7    3.8867    0.0150
+  MH104_MH105      MH104            MH105            CONDUIT           88.0    7.9580    0.0150
+  MH107A_MH105     MH105            MH107A           CONDUIT          168.4   -0.1722    0.0150
+  MH107_MH108A     MH107A           MH108A           CONDUIT          145.1    0.9305    0.0150
+  MH108A_MH109     MH108A           MH109            CONDUIT          146.8    0.1839    0.0150
+  MH109_MH110      MH109            MH110            CONDUIT          307.7    0.3510    0.0150
+  MH10A_MH10W      MH10A            MH10W            CONDUIT           44.4    0.5625    0.0150
+  MH10W_MH10R      MH10W            MH10R            CONDUIT           33.3    8.7531    0.0150
+  MH10_MH11        MH10             MH11             CONDUIT          118.6    0.3543    0.0150
+  MH110_MH111      MH110            MH111            CONDUIT          303.9    0.1481    0.0150
+  MH111_MH112      MH111            MH112            CONDUIT          163.4    0.3671    0.0150
+  MH112_MH113      MH112            MH113            CONDUIT          228.6    0.2625    0.0150
+  MH113_MH115      MH113            MH115            CONDUIT          328.1    0.3475    0.0150
+  MH115_MH116      MH115            MH116            CONDUIT          355.2    0.2618    0.0150
+  MH116_MH117      MH116            MH117            CONDUIT          457.9    0.2359    0.0150
+  MH117D_MH118     MH117D           MH118A           CONDUIT          445.7    0.4308    0.0150
+  MH117W2_MH117R2  MH117W2          MH117R2          CONDUIT          113.9    4.4111    0.0100
+  MH117W_MH117R    MH117W           MH117R           CONDUIT          114.1    4.4058    0.0150
+  MH118A_MH118     MH118A           MH118            CONDUIT           10.9    0.0092    0.0100
+  MH118_MH119      MH118            MH119            CONDUIT          397.9    0.3016    0.0150
+  MH119_MH120      MH119            MH120            CONDUIT          300.6    0.2994    0.0150
+  MH11_MH12        MH11             MH12             CONDUIT          121.4    0.2966    0.0150
+  MH120_MH121      MH120            MH121            CONDUIT          451.7    0.2989    0.0150
+  MH121_MH128      MH121            MH128            CONDUIT           84.6    1.9616    0.0150
+  MH122A_MH122     MH122A           MH122W           CONDUIT          177.4    0.5074    0.0150
+  MH122B_MH122A    MH122B           MH122A           CONDUIT          194.5    0.4628    0.0150
+  MH122W_MH123     MH122            MH123            CONDUIT          140.2    0.2140    0.0150
+  MH122_MH122R     MH122W           MH122R           CONDUIT          108.4    2.6765    0.0150
+  MH123_MH124      MH123            MH124            CONDUIT          239.0    0.2092    0.0150
+  MH124_MH125      MH124            MH125            CONDUIT          265.8    0.1881    0.0150
+  MH125_MH126      MH125            MH126            CONDUIT          257.1    0.2100    0.0150
+  MH126_MH127      MH126            MH127            CONDUIT          196.3    1.1466    0.0150
+  MH127_MH121      MH127            MH121            CONDUIT          267.5    1.1102    0.0150
+  MH128_MH129      MH128            MH129            CONDUIT          219.7    0.3414    0.0150
+  MH129_MH130      MH129            MH130            CONDUIT          204.1    0.4410    0.0150
+  MH12_PS-ARCH     MH12             PS-ARCH          CONDUIT          309.9    0.3098    0.0150
+  MH130_MH131      MH130            MH131            CONDUIT          372.8    0.2334    0.0150
+  MH131_MH132      MH131            MH132            CONDUIT          300.3    0.2997    0.0150
+  MH132_MH133      MH132            MH133            CONDUIT          435.7    0.2823    0.0150
+  MH133_MH134      MH133            MH134            CONDUIT          175.3    0.3252    0.0150
+  MH134_MH136      MH134            MH136            CONDUIT          204.2    0.5535    0.0150
+  MH135A_MH135W    MH135A           MH135W           CONDUIT           42.1    0.0024    0.0150
+  MH135B_MH135A    MH135B           MH135A           CONDUIT          110.0    4.1856    0.0150
+  MH135WR_MH135R   MH135WR          MH135R           CONDUIT          106.8    1.5922    0.0150
+  MH135_MH136      MH135            MH136            CONDUIT          194.1    1.3033    0.0150
+  MH136_MH137      MH136            MH137            CONDUIT          180.5    0.1385    0.0150
+  MH137_MH138      MH137            MH138            CONDUIT          339.9    0.1530    0.0150
+  MH138_MH139      MH138            MH139            CONDUIT          357.1    0.1456    0.0150
+  MH139_MH140      MH139            MH140            CONDUIT          195.7    0.1533    0.0150
+  MH13P2_MH13      MH13P2           MH13             CONDUIT           54.9  -55.1147    0.0150
+  MH13P_MH13P2     MH13P            MH13P2           CONDUIT           99.5    0.0010    0.0150
+  MH13_MH14        MH13             MH14             CONDUIT          295.7    0.5072    0.0150
+  MH140_MH141      MH140            MH141            CONDUIT          344.9    0.1479    0.0150
+  MH141_MH142      MH141            MH142            CONDUIT          269.1    0.1524    0.0150
+  MH142_MH143      MH142            MH143            CONDUIT          149.8    0.1402    0.0150
+  MH143_MH144      MH143            MH144            CONDUIT          132.2    0.1739    0.0150
+  MH144_MH145      MH144            MH145            CONDUIT          156.8    0.1531    0.0150
+  MH145_MH146      MH145            MH146            CONDUIT           93.1    0.1826    0.0150
+  MH146_MH147      MH146            MH147            CONDUIT          430.0    0.1395    0.0150
+  MH147_MH148      MH147            MH148            CONDUIT          110.0    0.1545    0.0150
+  MH148_MH149      MH148            MH149            CONDUIT           82.3    0.1337    0.0150
+  MH149_MH150      MH149            MH150            CONDUIT          186.9    0.2515    0.0150
+  MH14_MH15        MH14             MH15             CONDUIT          355.5    0.7032    0.0150
+  MH150_MH155      MH150            MH155            CONDUIT          217.2    0.2118    0.0150
+  MH151_MH150      MH151            MH150            CONDUIT          144.3    1.2337    0.0150
+  MH152_MH151      MH152            MH151            CONDUIT          251.9    0.3970    0.0150
+  MH153_MH152      MH153            MH152            CONDUIT          185.3    0.5398    0.0150
+  MH154_MH153      MH154            MH153            CONDUIT          220.7    0.4349    0.0150
+  MH155GC_WWTP_WET_WELL MH155GC          WWTP_WET_WELL    CONDUIT          106.8    1.6288    0.0150
+  MH155_MH155GC    MH155            MH155GC          CONDUIT           87.4    0.0687    0.0150
+  MH156_OUTFALL_WWTP MH156            OUTFALL_WWTP     CONDUIT          296.2    4.1770    0.0100
+  MH15_MH16        MH15             MH16             CONDUIT          395.1    0.6327    0.0150
+  MH16_MH17        MH16             MH17             CONDUIT          194.2    0.7056    0.0150
+  MH17_MH18        MH17             MH18             CONDUIT          248.9    0.5825    0.0150
+  MH18_MH19        MH18             MH19             CONDUIT          290.4    0.6199    0.0150
+  MH19_MH20        MH19             MH20             CONDUIT          393.4    0.6712    0.0150
+  MH1A_MH1         MH1A             MH1              CONDUIT           59.2    0.3380    0.0100
+  MH1_MH1R         MH1              MH1R             CONDUIT           11.5   28.1100    0.0150
+  MH1_MH2          MH1              MH2              CONDUIT          280.5    0.7486    0.0150
+  MH200P_MH155GC   MH200P           MH155GC          CONDUIT          119.9   -1.1682    0.0150
+  MH200_MH155      MH200            MH155            CONDUIT           33.5    2.2117    0.0150
+  MH201_MH200      MH201            MH200            CONDUIT           85.1    0.0118    0.0150
+  MH201_THR_WET_WELL MH201            THR_WET_WELL     CONDUIT           71.0    6.6524    0.0150
+  MH201_THR_WET_WELL_2 MH201            THR_WET_WELL     CONDUIT           74.1    7.9919    0.0150
+  MH202_MH201      MH202            MH201            CONDUIT          149.1    0.2280    0.0150
+  MH20_MH21        MH20             MH21             CONDUIT          292.7    0.6765    0.0150
+  MH21_MH22        MH21             MH22             CONDUIT          336.0    0.6875    0.0150
+  MH22_MH23        MH22             MH23             CONDUIT          350.9    0.6583    0.0150
+  MH23_MH24        MH23             MH24             CONDUIT          416.2    0.6343    0.0150
+  MH24_MH25        MH24             MH25             CONDUIT          351.6    0.7509    0.0150
+  MH25_MH26        MH25             MH26             CONDUIT          299.4    0.3274    0.0150
+  MH26A_MH27       MH26A            MH27             CONDUIT          276.6    0.9944    0.0150
+  MH26_MH26A       MH26             MH26A            CONDUIT          175.9    0.5059    0.0150
+  MH27_MH28        MH27             MH28             CONDUIT          396.9    0.6147    0.0150
+  MH28_MH29        MH28             MH29             CONDUIT          400.9    0.6086    0.0150
+  MH29_MH30        MH29             MH30             CONDUIT          396.4    0.6659    0.0150
+  MH2_MH4          MH2              MH4              CONDUIT          403.2    0.7440    0.0150
+  MH30_MH31        MH30             MH31             CONDUIT          397.4    0.6644    0.0150
+  MH31_MH32        MH31             MH32             CONDUIT          405.7    0.9860    0.0150
+  MH32_MH34        MH32             MH34             CONDUIT          600.5    0.9992    0.0150
+  MH34_MH35        MH34             MH35             CONDUIT          205.2    1.0479    0.0150
+  MH35_MH36        MH35             MH36             CONDUIT          214.4    1.0167    0.0150
+  MH36B_MH36W      MH36B            MH36W            CONDUIT           50.3    1.0131    0.0150
+  MH36W_MH36R      MH36W            MH36R            CONDUIT          234.3    2.5870    0.0150
+  MH36_MH37        MH36             MH37             CONDUIT          357.3    0.2939    0.0150
+  MH37_MH38        MH37             MH38             CONDUIT          437.0    0.3021    0.0150
+  MH38_MH41        MH38             MH41             CONDUIT          441.0    0.1860    0.0150
+  MH39W_MH40       MH39             MH40             CONDUIT           58.6    9.2829    0.0150
+  MH3_MH4          MH3              MH4              CONDUIT          124.0    2.4201    0.0150
+  MH40_MH41        MH40             MH41             CONDUIT          144.7    0.3456    0.0150
+  MH41_MH42        MH41             MH42             CONDUIT          494.9    0.4021    0.0150
+  MH42_MH43        MH42             MH43             CONDUIT          499.8    0.3022    0.0150
+  MH43_MH44        MH43             MH44             CONDUIT          402.1    0.2984    0.0150
+  MH44_MH45        MH44             MH45             CONDUIT          452.7    0.3313    0.0150
+  MH45_MH46        MH45             MH46             CONDUIT          220.6    0.2720    0.0150
+  MH46_MH47        MH46             MH47             CONDUIT          408.5    0.2864    0.0150
+  MH47_MH50        MH47             MH50             CONDUIT          512.7    0.3433    0.0150
+  MH48A_MH48W      MH48A            MH48W            CONDUIT           58.0    2.6061    0.0150
+  MH48W_MH48R      MH48W            MH48R            CONDUIT           56.0    7.8109    0.0150
+  MH48_MH49        MH48             MH49             CONDUIT           45.2    3.3409    0.0150
+  MH49_MH47        MH49             MH47             CONDUIT          162.5    4.1512    0.0150
+  MH4_MH7          MH4              MH7              CONDUIT          116.6    0.4032    0.0150
+  MH50_MH51        MH50             MH51             CONDUIT          498.9    0.2405    0.0150
+  MH51_MH56        MH51             MH56             CONDUIT          258.9    0.6952    0.0150
+  MH52A_MH52W      MH52A            MH52W            CONDUIT           31.5    2.9540    0.0150
+  MH52W_MH52R      MH52W            MH52R            CONDUIT           44.2    8.2231    0.0150
+  MH52_MH51        MH52             MH51             CONDUIT          149.7    1.3496    0.0150
+  MH53_MH54        MH53             MH54             CONDUIT          311.0    2.3128    0.0150
+  MH54_MH55        MH54             MH55             CONDUIT          164.4    2.5437    0.0150
+  MH55_MH58        MH55             MH58             CONDUIT          171.6    1.1775    0.0150
+  MH56_MH57        MH56             MH57             CONDUIT          442.3    0.4861    0.0150
+  MH57_MH58        MH57             MH58             CONDUIT          418.6    0.4897    0.0150
+  MH58_MH59        MH58             MH59             CONDUIT          465.8    0.5045    0.0150
+  MH59_MH60        MH59             MH60             CONDUIT          464.1    0.5063    0.0150
+  MH5_MH4          MH5              MH4              CONDUIT           63.6    0.7700    0.0150
+  MH60_MH61        MH60             MH61             CONDUIT          478.1    0.7384    0.0150
+  MH61_MH62        MH61             MH62             CONDUIT          381.9    0.8302    0.0150
+  MH62A_MH62B      MH62A            MH62B            CONDUIT           22.7    0.2647    0.0150
+  MH62B_MH62C      MH62B            MH62C            CONDUIT          248.4    0.5797    0.0150
+  MH62C_MH63A      MH62C            MH63A            CONDUIT           59.3    0.8436    0.0150
+  MH62D_MH62C      MH62D            MH62C            CONDUIT           73.5    5.4495    0.0150
+  MH62_MH62A       MH62             MH62A            CONDUIT           14.7    0.6813    0.0150
+  MH63A_MH63B      MH63A            MH63B            CONDUIT           13.2    3.7917    0.0150
+  MH63B_MH63BR     MH63B            MH63BR           CONDUIT           57.3   16.5125    0.0150
+  MH63B_MH64       MH63B            MH64             CONDUIT          124.6    0.8029    0.0150
+  MH64B_MH64BR     MH64B            MH64BR           CONDUIT           80.4    3.3581    0.0150
+  MH64B_MH64C      MH64B            MH64C            CONDUIT           64.5    7.7797    0.0140
+  MH64C_MH65       MH64C            MH65             CONDUIT          350.4    0.0885    0.0150
+  MH64E_MH64B      MH64E            MH64B            CONDUIT          212.3    0.9422    0.0150
+  MH64_MH64C       MH64             MH64C            CONDUIT           21.9    4.5691    0.0150
+  MH65_MH66        MH65             MH66             CONDUIT          207.1    0.4828    0.0150
+  MH66_MH67        MH66             MH67             CONDUIT          335.6    0.4470    0.0150
+  MH67_MH68        MH67             MH68             CONDUIT          492.4    0.4062    0.0150
+  MH68_MH69        MH68             MH69             CONDUIT          269.6    0.7418    0.0150
+  MH69_MH70        MH69             MH70             CONDUIT          497.1    0.5030    0.0150
+  MH6A_MH6W        MH6A             MH6W             CONDUIT          133.9    1.2175    0.0150
+  MH6B_MH6A        MH6B             MH6A             CONDUIT           71.3    1.0096    0.0150
+  MH6W_MH6R        MH6W             MH6R             CONDUIT          181.7    2.9460    0.0150
+  MH6_MH5          MH6              MH5              CONDUIT          104.7    1.4907    0.0150
+  MH70_MH72        MH70             MH72             CONDUIT          297.6    0.4705    0.0150
+  MH71_MH72        MH71             MH72             CONDUIT          107.7    9.2011    0.0150
+  MH72_MH73        MH72             MH73             CONDUIT          291.7    0.4285    0.0150
+  MH73_MH74        MH73             MH74             CONDUIT          324.7    0.3080    0.0150
+  MH74_MH76        MH74             MH76             CONDUIT          406.1    0.2167    0.0150
+  MH75A_MH75       MH75A            MH75             CONDUIT           51.8    8.4025    0.0150
+  MH75_MH74        MH75             MH74             CONDUIT          141.6    2.0908    0.0150
+  MH75_MH75R       MH75             MH75R            CONDUIT           50.2    6.8908    0.0100
+  MH76_MH77        MH76             MH77             CONDUIT          349.9    0.2515    0.0150
+  MH77_MH78        MH77             MH78             CONDUIT          131.4    0.2511    0.0150
+  MH78_MH79        MH78             MH79             CONDUIT          503.0    0.2485    0.0150
+  MH79_MH80        MH79             MH80             CONDUIT          502.7    0.2487    0.0150
+  MH7_MH8          MH7              MH8              CONDUIT          306.4    0.1958    0.0150
+  MH80_MH84        MH80             MH84             CONDUIT          203.7    0.2455    0.0150
+  MH81A_MH81W      MH81A            MH81W            CONDUIT           37.1    5.6622    0.0150
+  MH81W_MH81R      MH81W            MH81R            CONDUIT          111.2    5.4962    0.0150
+  MH81_MH84        MH81             MH84             CONDUIT          132.7    9.8848    0.0150
+  MH82_MH83        MH82             MH83             CONDUIT           77.5    6.4652    0.0150
+  MH83_MH85        MH83             MH85             CONDUIT          112.0    6.5111    0.0150
+  MH84_MH85        MH84             MH85             CONDUIT           96.6    0.2382    0.0150
+  MH85_MH86        MH85             MH86             CONDUIT          206.2    0.3880    0.0150
+  MH86_MH87        MH86             MH87             CONDUIT          487.6    0.0656    0.0150
+  MH87A_MH87W      MH87A            MH87W            CONDUIT           46.0    2.9359    0.0150
+  MH87W_MH87R      MH87W            MH87R            CONDUIT           56.7    6.1843    0.0150
+  MH87_MH88        MH87             MH88             CONDUIT          159.7    0.2066    0.0150
+  MH88_MH89        MH88             MH89             CONDUIT          135.4    0.1034    0.0150
+  MH89_MH90        MH89             MH90             CONDUIT          168.9    0.0888    0.0150
+  MH8_MH9          MH8              MH9              CONDUIT          299.5    0.2003    0.0150
+  MH90_MH91        MH90             MH91             CONDUIT          242.8    0.2883    0.0150
+  MH91A_MH91W      MH91A            MH91W            CONDUIT           56.3    2.9311    0.0150
+  MH91W_MH91R      MH91W            MH91R            CONDUIT           49.8    1.3650    0.0150
+  MH91_MH92        MH91             MH92             CONDUIT          285.5    0.1296    0.0150
+  MH92A_MH92W      MH92A            MH92W            CONDUIT           68.1    1.5267    0.0150
+  MH92B_MH92       MH92B            MH92             CONDUIT           74.0   -6.2286    0.0150
+  MH92W_MH92R2     MH92W            MH92R2           CONDUIT           67.4    2.2395    0.0100
+  MH92_MH92R       MH92             MH92R            CONDUIT           58.9   14.6416    0.0150
+  MH92_MH93        MH92             MH93             CONDUIT           54.8    0.1825    0.0150
+  MH93_MH94        MH93             MH94             CONDUIT           89.1    0.0225    0.0150
+  MH94_MH95        MH94             MH95             CONDUIT           52.4    0.1145    0.0150
+  MH95_MH96        MH95             MH96             CONDUIT          100.5    0.1492    0.0150
+  MH96_MH97        MH96             MH97             CONDUIT          553.8    0.1354    0.0150
+  MH97_MH98        MH97             MH98             CONDUIT          164.7    0.2307    0.0150
+  MH98_MH99        MH98             MH99             CONDUIT          315.9    0.1171    0.0150
+  MH99_MH100       MH99             MH100            CONDUIT          392.3    0.1836    0.0150
+  MH9_MH10         MH9              MH10             CONDUIT          244.3    0.1965    0.0150
+  TEST_OUTFALL     MH6A             OFALL-10         CONDUIT          119.4    1.3655    0.0150
+  PS-ARCH          PS-ARCH          MH13P            TYPE3 PUMP  
+  PS-ARCH2         PS-ARCH          MH13P            TYPE3 PUMP  
+  THR_PUMP         THR_WET_WELL     MH200P           TYPE3 PUMP  
+  THR_PUMP2        THR_WET_WELL     MH200P           TYPE3 PUMP  
+  WWTP_PUMP        WWTP_WET_WELL    MH-WWTP          TYPE3 PUMP  
+  WWTP_PUMP2       WWTP_WET_WELL    MH-WWTP          TYPE3 PUMP  
+  WWTP_PUMP3       WWTP_WET_WELL    MH-WWTP          TYPE3 PUMP  
+  MH10W            MH10W            MH10             ORIFICE     
+  MH117_MH117D     MH117            MH117D           ORIFICE     
+  MH122W           MH122W           MH122            ORIFICE     
+  MH135W           MH135W           MH135            ORIFICE     
+  MH36W            MH36W            MH36             ORIFICE     
+  MH48W            MH48W            MH48             ORIFICE     
+  MH52W            MH52W            MH52             ORIFICE     
+  MH6W             MH6W             MH6              ORIFICE     
+  MH81W            MH81W            MH81             ORIFICE     
+  MH87W            MH87W            MH87             ORIFICE     
+  MH91W            MH91W            MH91             ORIFICE     
+  MH92W            MH92W            MH92             ORIFICE     
+  MH117_MH117W2    MH117            MH117W2          WEIR        
+  MH117_MH117W_2   MH117            MH117W           WEIR        
+  MH135WR          MH135W           MH135WR          WEIR        
+  
+  
+  *********************
+  Cross Section Summary
+  *********************
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  CDT-13           CIRCULAR             2.00     3.14     0.50     2.00        1    29.65
+  MH-WWTP_MH156    CIRCULAR             2.50     4.91     0.63     2.50        1    76.58
+  MH100A_MH100     CIRCULAR             3.00     7.07     0.75     3.00        1    24.24
+  MH100A_MH101A    CIRCULAR             3.00     7.07     0.75     3.00        1     9.85
+  MH101A_MH107A    CIRCULAR             3.00     7.07     0.75     3.00        1    11.18
+  MH103_MH104      CIRCULAR             1.00     0.79     0.25     1.00        1     3.93
+  MH104_MH105      CIRCULAR             1.25     1.23     0.31     1.25        1    10.21
+  MH107A_MH105     CIRCULAR             2.00     3.14     0.50     2.00        1     5.26
+  MH107_MH108A     CIRCULAR             3.00     7.07     0.75     3.00        1    36.04
+  MH108A_MH109     CIRCULAR             3.00     7.07     0.75     3.00        1    16.02
+  MH109_MH110      CIRCULAR             3.00     7.07     0.75     3.00        1    22.13
+  MH10A_MH10W      CIRCULAR             2.50     4.91     0.63     2.50        1    17.23
+  MH10W_MH10R      CIRCULAR             2.50     4.91     0.63     2.50        1    67.97
+  MH10_MH11        CIRCULAR             1.25     1.23     0.31     1.25        1     2.15
+  MH110_MH111      CIRCULAR             3.00     7.07     0.75     3.00        1    14.38
+  MH111_MH112      CIRCULAR             3.00     7.07     0.75     3.00        1    22.64
+  MH112_MH113      CIRCULAR             3.00     7.07     0.75     3.00        1    19.14
+  MH113_MH115      CIRCULAR             3.00     7.07     0.75     3.00        1    22.02
+  MH115_MH116      CIRCULAR             3.00     7.07     0.75     3.00        1    19.12
+  MH116_MH117      CIRCULAR             3.00     7.07     0.75     3.00        1    18.14
+  MH117D_MH118     CIRCULAR             3.00     7.07     0.75     3.00        1    24.52
+  MH117W2_MH117R2  CIRCULAR             3.00     7.07     0.75     3.00        1   117.70
+  MH117W_MH117R    CIRCULAR             3.00     7.07     0.75     3.00        1    78.42
+  MH118A_MH118     CIRCULAR             3.00     7.07     0.75     3.00        1     5.37
+  MH118_MH119      CIRCULAR             3.00     7.07     0.75     3.00        1    20.52
+  MH119_MH120      CIRCULAR             3.00     7.07     0.75     3.00        1    20.44
+  MH11_MH12        CIRCULAR             1.25     1.23     0.31     1.25        1     1.97
+  MH120_MH121      CIRCULAR             3.00     7.07     0.75     3.00        1    20.42
+  MH121_MH128      CIRCULAR             3.00     7.07     0.75     3.00        1    52.33
+  MH122A_MH122     CIRCULAR             1.00     0.79     0.25     1.00        1     1.42
+  MH122B_MH122A    CIRCULAR             1.00     0.79     0.25     1.00        1     1.36
+  MH122W_MH123     CIRCULAR             1.00     0.79     0.25     1.00        1     0.92
+  MH122_MH122R     CIRCULAR             1.00     0.79     0.25     1.00        1     3.26
+  MH123_MH124      CIRCULAR             1.00     0.79     0.25     1.00        1     0.91
+  MH124_MH125      CIRCULAR             1.00     0.79     0.25     1.00        1     0.87
+  MH125_MH126      CIRCULAR             1.00     0.79     0.25     1.00        1     0.91
+  MH126_MH127      CIRCULAR             1.25     1.23     0.31     1.25        1     3.87
+  MH127_MH121      CIRCULAR             1.25     1.23     0.31     1.25        1     3.81
+  MH128_MH129      CIRCULAR             3.00     7.07     0.75     3.00        1    21.83
+  MH129_MH130      CIRCULAR             3.00     7.07     0.75     3.00        1    24.81
+  MH12_PS-ARCH     CIRCULAR             1.25     1.23     0.31     1.25        1     2.01
+  MH130_MH131      CIRCULAR             3.00     7.07     0.75     3.00        1    18.05
+  MH131_MH132      CIRCULAR             3.00     7.07     0.75     3.00        1    20.45
+  MH132_MH133      CIRCULAR             3.00     7.07     0.75     3.00        1    19.85
+  MH133_MH134      CIRCULAR             3.00     7.07     0.75     3.00        1    21.31
+  MH134_MH136      CIRCULAR             3.00     7.07     0.75     3.00        1    27.80
+  MH135A_MH135W    CIRCULAR             1.25     1.23     0.31     1.25        1     0.18
+  MH135B_MH135A    CIRCULAR             1.25     1.23     0.31     1.25        1     7.40
+  MH135WR_MH135R   CIRCULAR             1.00     0.79     0.25     1.00        1     2.52
+  MH135_MH136      CIRCULAR             1.00     0.79     0.25     1.00        1     2.28
+  MH136_MH137      CIRCULAR             3.00     7.07     0.75     3.00        1    13.90
+  MH137_MH138      CIRCULAR             3.00     7.07     0.75     3.00        1    14.61
+  MH138_MH139      CIRCULAR             3.00     7.07     0.75     3.00        1    14.26
+  MH139_MH140      CIRCULAR             3.00     7.07     0.75     3.00        1    14.63
+  MH13P2_MH13      CIRCULAR             0.67     0.35     0.17     0.67        1     5.03
+  MH13P_MH13P2     CIRCULAR             0.67     0.35     0.17     0.67        1     0.02
+  MH13_MH14        CIRCULAR             1.25     1.23     0.31     1.25        1     2.58
+  MH140_MH141      CIRCULAR             3.00     7.07     0.75     3.00        1    14.37
+  MH141_MH142      CIRCULAR             3.00     7.07     0.75     3.00        1    14.58
+  MH142_MH143      CIRCULAR             3.00     7.07     0.75     3.00        1    13.99
+  MH143_MH144      CIRCULAR             3.00     7.07     0.75     3.00        1    15.58
+  MH144_MH145      CIRCULAR             3.00     7.07     0.75     3.00        1    14.62
+  MH145_MH146      CIRCULAR             3.00     7.07     0.75     3.00        1    15.97
+  MH146_MH147      CIRCULAR             3.00     7.07     0.75     3.00        1    13.96
+  MH147_MH148      CIRCULAR             3.00     7.07     0.75     3.00        1    14.69
+  MH148_MH149      CIRCULAR             3.00     7.07     0.75     3.00        1    13.66
+  MH149_MH150      CIRCULAR             3.00     7.07     0.75     3.00        1    18.74
+  MH14_MH15        CIRCULAR             1.25     1.23     0.31     1.25        1     3.03
+  MH150_MH155      CIRCULAR             3.00     7.07     0.75     3.00        1    17.19
+  MH151_MH150      CIRCULAR             1.00     0.79     0.25     1.00        1     2.22
+  MH152_MH151      CIRCULAR             1.00     0.79     0.25     1.00        1     1.26
+  MH153_MH152      CIRCULAR             1.00     0.79     0.25     1.00        1     1.47
+  MH154_MH153      CIRCULAR             1.00     0.79     0.25     1.00        1     1.32
+  MH155GC_WWTP_WET_WELL RECT_OPEN            5.33    18.66     1.32     3.50        1   183.20
+  MH155_MH155GC    CIRCULAR             3.00     7.07     0.75     3.00        1     9.79
+  MH156_OUTFALL_WWTP CIRCULAR             3.00     7.07     0.75     3.00        1   114.53
+  MH15_MH16        CIRCULAR             1.25     1.23     0.31     1.25        1     2.88
+  MH16_MH17        CIRCULAR             1.25     1.23     0.31     1.25        1     3.04
+  MH17_MH18        CIRCULAR             1.25     1.23     0.31     1.25        1     2.76
+  MH18_MH19        CIRCULAR             1.25     1.23     0.31     1.25        1     2.85
+  MH19_MH20        CIRCULAR             1.25     1.23     0.31     1.25        1     2.96
+  MH1A_MH1         CIRCULAR             1.25     1.23     0.31     1.25        1     3.16
+  MH1_MH1R         CIRCULAR             0.67     0.35     0.17     0.67        1     3.59
+  MH1_MH2          CIRCULAR             1.50     1.77     0.38     1.50        1     5.09
+  MH200P_MH155GC   CIRCULAR             0.50     0.20     0.13     0.50        1     0.34
+  MH200_MH155      CIRCULAR             1.25     1.23     0.31     1.25        1     5.38
+  MH201_MH200      CIRCULAR             1.25     1.23     0.31     1.25        1     0.39
+  MH201_THR_WET_WELL CIRCULAR             0.67     0.35     0.17     0.67        1     1.75
+  MH201_THR_WET_WELL_2 CIRCULAR             0.67     0.35     0.17     0.67        1     1.91
+  MH202_MH201      CIRCULAR             1.25     1.23     0.31     1.25        1     1.73
+  MH20_MH21        CIRCULAR             1.25     1.23     0.31     1.25        1     2.98
+  MH21_MH22        CIRCULAR             1.25     1.23     0.31     1.25        1     3.00
+  MH22_MH23        CIRCULAR             1.25     1.23     0.31     1.25        1     2.94
+  MH23_MH24        CIRCULAR             1.25     1.23     0.31     1.25        1     2.88
+  MH24_MH25        CIRCULAR             1.25     1.23     0.31     1.25        1     3.14
+  MH25_MH26        CIRCULAR             1.25     1.23     0.31     1.25        1     2.07
+  MH26A_MH27       CIRCULAR             1.25     1.23     0.31     1.25        1     3.61
+  MH26_MH26A       CIRCULAR             1.25     1.23     0.31     1.25        1     2.57
+  MH27_MH28        CIRCULAR             1.25     1.23     0.31     1.25        1     2.84
+  MH28_MH29        CIRCULAR             1.25     1.23     0.31     1.25        1     2.82
+  MH29_MH30        CIRCULAR             1.25     1.23     0.31     1.25        1     2.95
+  MH2_MH4          CIRCULAR             1.00     0.79     0.25     1.00        1     1.72
+  MH30_MH31        CIRCULAR             1.25     1.23     0.31     1.25        1     2.95
+  MH31_MH32        CIRCULAR             1.25     1.23     0.31     1.25        1     3.59
+  MH32_MH34        CIRCULAR             1.25     1.23     0.31     1.25        1     3.62
+  MH34_MH35        CIRCULAR             1.25     1.23     0.31     1.25        1     3.70
+  MH35_MH36        CIRCULAR             1.25     1.23     0.31     1.25        1     3.65
+  MH36B_MH36W      CIRCULAR             1.00     0.79     0.25     1.00        1     2.01
+  MH36W_MH36R      CIRCULAR             1.00     0.79     0.25     1.00        1     3.21
+  MH36_MH37        CIRCULAR             1.50     1.77     0.38     1.50        1     3.19
+  MH37_MH38        CIRCULAR             1.50     1.77     0.38     1.50        1     3.23
+  MH38_MH41        CIRCULAR             1.50     1.77     0.38     1.50        1     2.54
+  MH39W_MH40       CIRCULAR             1.00     0.79     0.25     1.00        1     6.08
+  MH3_MH4          CIRCULAR             1.25     1.23     0.31     1.25        1     5.63
+  MH40_MH41        CIRCULAR             1.00     0.79     0.25     1.00        1     1.17
+  MH41_MH42        CIRCULAR             1.50     1.77     0.38     1.50        1     3.73
+  MH42_MH43        CIRCULAR             1.50     1.77     0.38     1.50        1     3.23
+  MH43_MH44        CIRCULAR             1.50     1.77     0.38     1.50        1     3.21
+  MH44_MH45        CIRCULAR             1.50     1.77     0.38     1.50        1     3.39
+  MH45_MH46        CIRCULAR             1.50     1.77     0.38     1.50        1     3.07
+  MH46_MH47        CIRCULAR             1.50     1.77     0.38     1.50        1     3.15
+  MH47_MH50        CIRCULAR             1.50     1.77     0.38     1.50        1     3.45
+  MH48A_MH48W      CIRCULAR             1.50     1.77     0.38     1.50        1     9.50
+  MH48W_MH48R      CIRCULAR             2.00     3.14     0.50     2.00        1    35.42
+  MH48_MH49        CIRCULAR             1.00     0.79     0.25     1.00        1     3.65
+  MH49_MH47        CIRCULAR             1.00     0.79     0.25     1.00        1     4.07
+  MH4_MH7          CIRCULAR             1.25     1.23     0.31     1.25        1     2.30
+  MH50_MH51        CIRCULAR             1.50     1.77     0.38     1.50        1     2.89
+  MH51_MH56        CIRCULAR             1.50     1.77     0.38     1.50        1     4.91
+  MH52A_MH52W      CIRCULAR             2.00     3.14     0.50     2.00        1    21.78
+  MH52W_MH52R      CIRCULAR             1.25     1.23     0.31     1.25        1    10.38
+  MH52_MH51        CIRCULAR             1.50     1.77     0.38     1.50        1     6.84
+  MH53_MH54        CIRCULAR             1.00     0.79     0.25     1.00        1     3.04
+  MH54_MH55        CIRCULAR             1.00     0.79     0.25     1.00        1     3.18
+  MH55_MH58        CIRCULAR             1.00     0.79     0.25     1.00        1     2.17
+  MH56_MH57        CIRCULAR             1.50     1.77     0.38     1.50        1     4.10
+  MH57_MH58        CIRCULAR             1.50     1.77     0.38     1.50        1     4.12
+  MH58_MH59        CIRCULAR             1.50     1.77     0.38     1.50        1     4.18
+  MH59_MH60        CIRCULAR             1.50     1.77     0.38     1.50        1     4.19
+  MH5_MH4          CIRCULAR             1.00     0.79     0.25     1.00        1     1.75
+  MH60_MH61        CIRCULAR             1.50     1.77     0.38     1.50        1     5.06
+  MH61_MH62        CIRCULAR             1.50     1.77     0.38     1.50        1     5.36
+  MH62A_MH62B      CIRCULAR             2.00     3.14     0.50     2.00        1     6.52
+  MH62B_MH62C      CIRCULAR             2.00     3.14     0.50     2.00        1     9.65
+  MH62C_MH63A      CIRCULAR             2.00     3.14     0.50     2.00        1    11.64
+  MH62D_MH62C      CIRCULAR             1.50     1.77     0.38     1.50        1    13.74
+  MH62_MH62A       CIRCULAR             1.50     1.77     0.38     1.50        1     4.86
+  MH63A_MH63B      CIRCULAR             1.67     2.18     0.42     1.67        1    15.17
+  MH63B_MH63BR     CIRCULAR             2.00     3.14     0.50     2.00        1    51.49
+  MH63B_MH64       CIRCULAR             1.67     2.18     0.42     1.67        1     6.98
+  MH64B_MH64BR     CIRCULAR             2.00     3.14     0.50     2.00        1    23.22
+  MH64B_MH64C      CIRCULAR             1.67     2.18     0.42     1.67        1    23.29
+  MH64C_MH65       CIRCULAR             1.50     1.77     0.38     1.50        1     1.75
+  MH64E_MH64B      CIRCULAR             2.00     3.14     0.50     2.00        1    12.30
+  MH64_MH64C       CIRCULAR             1.67     2.18     0.42     1.67        1    16.66
+  MH65_MH66        CIRCULAR             1.50     1.77     0.38     1.50        1     4.09
+  MH66_MH67        CIRCULAR             1.50     1.77     0.38     1.50        1     3.93
+  MH67_MH68        CIRCULAR             1.50     1.77     0.38     1.50        1     3.75
+  MH68_MH69        CIRCULAR             1.50     1.77     0.38     1.50        1     5.07
+  MH69_MH70        CIRCULAR             1.50     1.77     0.38     1.50        1     4.17
+  MH6A_MH6W        CIRCULAR             1.25     1.23     0.31     1.25        1     3.99
+  MH6B_MH6A        CIRCULAR             1.25     1.23     0.31     1.25        1     3.64
+  MH6W_MH6R        CIRCULAR             1.00     0.79     0.25     1.00        1     3.43
+  MH6_MH5          CIRCULAR             1.00     0.79     0.25     1.00        1     2.44
+  MH70_MH72        CIRCULAR             1.50     1.77     0.38     1.50        1     4.04
+  MH71_MH72        CIRCULAR             2.00     3.14     0.50     2.00        1    38.44
+  MH72_MH73        CIRCULAR             2.00     3.14     0.50     2.00        1     8.30
+  MH73_MH74        CIRCULAR             2.00     3.14     0.50     2.00        1     7.03
+  MH74_MH76        CIRCULAR             2.00     3.14     0.50     2.00        1     5.90
+  MH75A_MH75       CIRCULAR             2.50     4.91     0.63     2.50        1    66.60
+  MH75_MH74        CIRCULAR             2.00     3.14     0.50     2.00        1    18.32
+  MH75_MH75R       CIRCULAR             2.50     4.91     0.63     2.50        1    90.47
+  MH76_MH77        CIRCULAR             2.00     3.14     0.50     2.00        1     6.36
+  MH77_MH78        CIRCULAR             2.00     3.14     0.50     2.00        1     6.35
+  MH78_MH79        CIRCULAR             2.00     3.14     0.50     2.00        1     6.32
+  MH79_MH80        CIRCULAR             2.00     3.14     0.50     2.00        1     6.32
+  MH7_MH8          CIRCULAR             1.25     1.23     0.31     1.25        1     1.60
+  MH80_MH84        CIRCULAR             2.00     3.14     0.50     2.00        1     6.28
+  MH81A_MH81W      CIRCULAR             1.00     0.79     0.25     1.00        1     4.75
+  MH81W_MH81R      CIRCULAR             1.00     0.79     0.25     1.00        1     4.68
+  MH81_MH84        CIRCULAR             1.00     0.79     0.25     1.00        1     6.27
+  MH82_MH83        CIRCULAR             1.00     0.79     0.25     1.00        1     5.07
+  MH83_MH85        CIRCULAR             1.00     0.79     0.25     1.00        1     5.09
+  MH84_MH85        CIRCULAR             2.00     3.14     0.50     2.00        1     6.18
+  MH85_MH86        CIRCULAR             2.50     4.91     0.63     2.50        1    14.31
+  MH86_MH87        CIRCULAR             2.50     4.91     0.63     2.50        1     5.89
+  MH87A_MH87W      CIRCULAR             1.00     0.79     0.25     1.00        1     3.42
+  MH87W_MH87R      CIRCULAR             0.83     0.55     0.21     0.83        1     3.05
+  MH87_MH88        CIRCULAR             2.50     4.91     0.63     2.50        1    10.44
+  MH88_MH89        CIRCULAR             2.50     4.91     0.63     2.50        1     7.39
+  MH89_MH90        CIRCULAR             2.50     4.91     0.63     2.50        1     6.85
+  MH8_MH9          CIRCULAR             1.25     1.23     0.31     1.25        1     1.62
+  MH90_MH91        CIRCULAR             2.50     4.91     0.63     2.50        1    12.34
+  MH91A_MH91W      CIRCULAR             0.67     0.35     0.17     0.67        1     1.16
+  MH91W_MH91R      CIRCULAR             0.67     0.35     0.17     0.67        1     0.79
+  MH91_MH92        CIRCULAR             3.00     7.07     0.75     3.00        1    13.45
+  MH92A_MH92W      CIRCULAR             2.00     3.14     0.50     2.00        1    15.66
+  MH92B_MH92       CIRCULAR             1.50     1.77     0.38     1.50        1    14.68
+  MH92W_MH92R2     CIRCULAR             1.50     1.77     0.38     1.50        1    13.21
+  MH92_MH92R       CIRCULAR             1.50     1.77     0.38     1.50        1    22.51
+  MH92_MH93        CIRCULAR             3.00     7.07     0.75     3.00        1    15.96
+  MH93_MH94        CIRCULAR             3.00     7.07     0.75     3.00        1     5.60
+  MH94_MH95        CIRCULAR             3.00     7.07     0.75     3.00        1    12.64
+  MH95_MH96        CIRCULAR             3.00     7.07     0.75     3.00        1    14.43
+  MH96_MH97        CIRCULAR             3.00     7.07     0.75     3.00        1    13.75
+  MH97_MH98        CIRCULAR             3.00     7.07     0.75     3.00        1    17.94
+  MH98_MH99        CIRCULAR             3.00     7.07     0.75     3.00        1    12.79
+  MH99_MH100       CIRCULAR             3.00     7.07     0.75     3.00        1    16.01
+  MH9_MH10         CIRCULAR             1.25     1.23     0.31     1.25        1     1.60
+  TEST_OUTFALL     CIRCULAR             1.25     1.23     0.31     1.25        1     4.23
+  
+  
+  
+  *********************************************************
+  NOTE: The summary statistics displayed in this report are
+  based on results found at every computational time step,  
+  not just on results from each reporting time step.
+  *********************************************************
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... MGD
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ YES
+    Flow Routing ........... YES
+    Ponding Allowed ........ YES
+    Water Quality .......... NO
+  Infiltration Method ...... HORTON
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 06/25/2006 00:00:00
+  Ending Date .............. 06/28/2006 14:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:15:00
+  Wet Time Step ............ 00:05:00
+  Dry Time Step ............ 00:15:00
+  Routing Time Step ........ 20.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Total Precipitation ......         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Infiltration Loss ........         0.000         0.000
+  Surface Runoff ...........         0.000         0.000
+  Final Storage ............         0.000         0.000
+  Continuity Error (%) .....         0.000
+  
+  
+  **************************        Volume         Depth
+  Groundwater Continuity         acre-feet        inches
+  **************************     ---------       -------
+  Initial Storage ..........       181.339         9.000
+  Infiltration .............         0.000         0.000
+  Upper Zone ET ............         0.000         0.000
+  Lower Zone ET ............         0.000         0.000
+  Deep Percolation .........         0.000         0.000
+  Groundwater Flow .........         0.000         0.000
+  Final Storage ............       181.339         9.000
+  Continuity Error (%) .....         0.000
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.000         0.000
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         0.000         0.000
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.000         0.000
+  Continuity Error (%) .....         0.000
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  None
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in         in         in    10^6 gal      MGD
+  ------------------------------------------------------------------------------------------------------------------------------
+  A_1                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  A_2                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  A_3                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  A_4                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  A_5                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  A_6                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  A_7                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  B_1                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  B_2                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  B_3                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  B_4                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  B_5                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  B_6                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  B_7                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  B_8                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  DC_1                       0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  DC_2                       0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  DC_3                       0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  DC_4                       0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  DC_5                       0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  DC_6                       0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  DC_7                       0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  DC_8                       0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  DC_9                       0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  J_1                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  J_2                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  J_3                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  J_4                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  J_5                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  J_6                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  T-O_1                      0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  T-O_2                      0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  T-O_3                      0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  T-O_4                      0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  T-O_5                      0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  T_1                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  T_2                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  T_3                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  T_4                        0.00       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  
+  
+  *******************
+  Groundwater Summary
+  *******************
+  
+  -----------------------------------------------------------------------------------------------------
+                                            Total    Total  Maximum  Average  Average    Final    Final
+                          Total    Total    Lower  Lateral  Lateral    Upper    Water    Upper    Water
+                          Infil     Evap  Seepage  Outflow  Outflow   Moist.    Table   Moist.    Table
+  Subcatchment               in       in       in       in      MGD                ft                ft
+  -----------------------------------------------------------------------------------------------------
+  A_2                      0.00     0.00     0.00     0.00     0.00 -nan(ind) -nan(ind)     0.00     0.00
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  MH-WWTP              JUNCTION  -nan(ind)     0.00   709.50     0  00:00        0.00
+  MH1                  JUNCTION  -nan(ind)     0.00   874.10     0  00:00        0.00
+  MH10                 JUNCTION  -nan(ind)     0.00   866.85     0  00:00        0.00
+  MH100                JUNCTION  -nan(ind)     0.00   741.36     0  00:00        0.00
+  MH100A               JUNCTION  -nan(ind)     0.00   741.30     0  00:00        0.00
+  MH101A               JUNCTION  -nan(ind)     0.00   741.07     0  00:00        0.00
+  MH103                JUNCTION  -nan(ind)     0.00   755.00     0  00:00        0.00
+  MH104                JUNCTION  -nan(ind)     0.00   748.10     0  00:00        0.00
+  MH105                JUNCTION  -nan(ind)     0.00   741.12     0  00:00        0.00
+  MH107A               JUNCTION  -nan(ind)     0.00   740.85     0  00:00        0.00
+  MH108A               JUNCTION  -nan(ind)     0.00   739.50     0  00:00        0.00
+  MH109                JUNCTION  -nan(ind)     0.00   739.23     0  00:00        0.00
+  MH10A                JUNCTION  -nan(ind)     0.00   867.90     0  00:00        0.00
+  MH10W                JUNCTION  -nan(ind)     0.00   867.65     0  00:00        0.00
+  MH11                 JUNCTION  -nan(ind)     0.00   864.75     0  00:00        0.00
+  MH110                JUNCTION  -nan(ind)     0.00   738.15     0  00:00        0.00
+  MH111                JUNCTION  -nan(ind)     0.00   737.70     0  00:00        0.00
+  MH112                JUNCTION  -nan(ind)     0.00   737.10     0  00:00        0.00
+  MH113                JUNCTION  -nan(ind)     0.00   736.50     0  00:00        0.00
+  MH115                JUNCTION  -nan(ind)     0.00   735.36     0  00:00        0.00
+  MH116                JUNCTION  -nan(ind)     0.00   734.43     0  00:00        0.00
+  MH117                JUNCTION  -nan(ind)     0.00   733.35     0  00:00        0.00
+  MH117D               JUNCTION  -nan(ind)     0.00   733.35     0  00:00        0.00
+  MH117W               JUNCTION  -nan(ind)     0.00   737.95     0  00:00        0.00
+  MH117W2              JUNCTION  -nan(ind)     0.00   737.95     0  00:00        0.00
+  MH118                JUNCTION  -nan(ind)     0.00   731.43     0  00:00        0.00
+  MH118A               JUNCTION  -nan(ind)     0.00   731.43     0  00:00        0.00
+  MH119                JUNCTION  -nan(ind)     0.00   730.23     0  00:00        0.00
+  MH12                 JUNCTION  -nan(ind)     0.00   864.39     0  00:00        0.00
+  MH120                JUNCTION  -nan(ind)     0.00   729.33     0  00:00        0.00
+  MH121                JUNCTION  -nan(ind)     0.00   727.98     0  00:00        0.00
+  MH122                JUNCTION  -nan(ind)     0.00   735.04     0  00:00        0.00
+  MH122A               JUNCTION  -nan(ind)     0.00   739.40     0  00:00        0.00
+  MH122B               JUNCTION  -nan(ind)     0.00   740.30     0  00:00        0.00
+  MH122W               JUNCTION  -nan(ind)     0.00   738.50     0  00:00        0.00
+  MH123                JUNCTION  -nan(ind)     0.00   734.74     0  00:00        0.00
+  MH124                JUNCTION  -nan(ind)     0.00   734.24     0  00:00        0.00
+  MH125                JUNCTION  -nan(ind)     0.00   733.74     0  00:00        0.00
+  MH126                JUNCTION  -nan(ind)     0.00   733.20     0  00:00        0.00
+  MH127                JUNCTION  -nan(ind)     0.00   730.95     0  00:00        0.00
+  MH128                JUNCTION  -nan(ind)     0.00   726.32     0  00:00        0.00
+  MH129                JUNCTION  -nan(ind)     0.00   725.57     0  00:00        0.00
+  MH13                 JUNCTION  -nan(ind)     0.00   886.00     0  00:00        0.00
+  MH130                JUNCTION  -nan(ind)     0.00   724.67     0  00:00        0.00
+  MH131                JUNCTION  -nan(ind)     0.00   723.80     0  00:00        0.00
+  MH132                JUNCTION  -nan(ind)     0.00   722.90     0  00:00        0.00
+  MH133                JUNCTION  -nan(ind)     0.00   721.67     0  00:00        0.00
+  MH134                JUNCTION  -nan(ind)     0.00   721.10     0  00:00        0.00
+  MH135                JUNCTION  -nan(ind)     0.00   723.00     0  00:00        0.00
+  MH135A               JUNCTION  -nan(ind)     0.00   732.00     0  00:00        0.00
+  MH135B               JUNCTION  -nan(ind)     0.00   736.60     0  00:00        0.00
+  MH135W               JUNCTION  -nan(ind)     0.00   732.00     0  00:00        0.00
+  MH135WR              JUNCTION  -nan(ind)     0.00   731.00     0  00:00        0.00
+  MH136                JUNCTION  -nan(ind)     0.00   719.97     0  00:00        0.00
+  MH137                JUNCTION  -nan(ind)     0.00   719.72     0  00:00        0.00
+  MH138                JUNCTION  -nan(ind)     0.00   719.20     0  00:00        0.00
+  MH139                JUNCTION  -nan(ind)     0.00   718.68     0  00:00        0.00
+  MH13P                JUNCTION  -nan(ind)     0.00   861.50     0  00:00        0.00
+  MH13P2               JUNCTION  -nan(ind)     0.00   861.50     0  00:00        0.00
+  MH14                 JUNCTION  -nan(ind)     0.00   884.50     0  00:00        0.00
+  MH140                JUNCTION  -nan(ind)     0.00   718.38     0  00:00        0.00
+  MH141                JUNCTION  -nan(ind)     0.00   717.87     0  00:00        0.00
+  MH142                JUNCTION  -nan(ind)     0.00   717.46     0  00:00        0.00
+  MH143                JUNCTION  -nan(ind)     0.00   717.25     0  00:00        0.00
+  MH144                JUNCTION  -nan(ind)     0.00   717.02     0  00:00        0.00
+  MH145                JUNCTION  -nan(ind)     0.00   716.78     0  00:00        0.00
+  MH146                JUNCTION  -nan(ind)     0.00   716.61     0  00:00        0.00
+  MH147                JUNCTION  -nan(ind)     0.00   716.01     0  00:00        0.00
+  MH148                JUNCTION  -nan(ind)     0.00   715.84     0  00:00        0.00
+  MH149                JUNCTION  -nan(ind)     0.00   715.73     0  00:00        0.00
+  MH15                 JUNCTION  -nan(ind)     0.00   882.00     0  00:00        0.00
+  MH150                JUNCTION  -nan(ind)     0.00   715.26     0  00:00        0.00
+  MH151                JUNCTION  -nan(ind)     0.00   717.04     0  00:00        0.00
+  MH152                JUNCTION  -nan(ind)     0.00   718.04     0  00:00        0.00
+  MH153                JUNCTION  -nan(ind)     0.00   719.04     0  00:00        0.00
+  MH154                JUNCTION  -nan(ind)     0.00   720.00     0  00:00        0.00
+  MH155                JUNCTION  -nan(ind)     0.00   714.80     0  00:00        0.00
+  MH155GC              JUNCTION  -nan(ind)     0.00   714.74     0  00:00        0.00
+  MH156                JUNCTION  -nan(ind)     0.00   742.00     0  00:00        0.00
+  MH16                 JUNCTION  -nan(ind)     0.00   879.50     0  00:00        0.00
+  MH17                 JUNCTION  -nan(ind)     0.00   878.13     0  00:00        0.00
+  MH18                 JUNCTION  -nan(ind)     0.00   876.68     0  00:00        0.00
+  MH19                 JUNCTION  -nan(ind)     0.00   874.88     0  00:00        0.00
+  MH1A                 JUNCTION  -nan(ind)     0.00   874.70     0  00:00        0.00
+  MH2                  JUNCTION  -nan(ind)     0.00   872.00     0  00:00        0.00
+  MH20                 JUNCTION  -nan(ind)     0.00   872.24     0  00:00        0.00
+  MH200                JUNCTION  -nan(ind)     0.00   715.54     0  00:00        0.00
+  MH200P               JUNCTION  -nan(ind)     0.00   722.00     0  00:00        0.00
+  MH201                JUNCTION  -nan(ind)     0.00   715.00     0  00:00        0.00
+  MH202                JUNCTION  -nan(ind)     0.00   716.22     0  00:00        0.00
+  MH21                 JUNCTION  -nan(ind)     0.00   870.26     0  00:00        0.00
+  MH22                 JUNCTION  -nan(ind)     0.00   867.95     0  00:00        0.00
+  MH23                 JUNCTION  -nan(ind)     0.00   865.64     0  00:00        0.00
+  MH24                 JUNCTION  -nan(ind)     0.00   863.00     0  00:00        0.00
+  MH25                 JUNCTION  -nan(ind)     0.00   860.36     0  00:00        0.00
+  MH26                 JUNCTION  -nan(ind)     0.00   859.38     0  00:00        0.00
+  MH26A                JUNCTION  -nan(ind)     0.00   858.49     0  00:00        0.00
+  MH27                 JUNCTION  -nan(ind)     0.00   855.74     0  00:00        0.00
+  MH28                 JUNCTION  -nan(ind)     0.00   853.30     0  00:00        0.00
+  MH29                 JUNCTION  -nan(ind)     0.00   850.86     0  00:00        0.00
+  MH3                  JUNCTION  -nan(ind)     0.00   875.00     0  00:00        0.00
+  MH30                 JUNCTION  -nan(ind)     0.00   848.22     0  00:00        0.00
+  MH31                 JUNCTION  -nan(ind)     0.00   845.58     0  00:00        0.00
+  MH32                 JUNCTION  -nan(ind)     0.00   841.58     0  00:00        0.00
+  MH34                 JUNCTION  -nan(ind)     0.00   835.58     0  00:00        0.00
+  MH35                 JUNCTION  -nan(ind)     0.00   833.43     0  00:00        0.00
+  MH36                 JUNCTION  -nan(ind)     0.00   820.00     0  00:00        0.00
+  MH36B                JUNCTION  -nan(ind)     0.00   823.82     0  00:00        0.00
+  MH36W                JUNCTION  -nan(ind)     0.00   822.86     0  00:00        0.00
+  MH37                 JUNCTION  -nan(ind)     0.00   818.95     0  00:00        0.00
+  MH38                 JUNCTION  -nan(ind)     0.00   817.63     0  00:00        0.00
+  MH39                 JUNCTION  -nan(ind)     0.00   813.42     0  00:00        0.00
+  MH4                  JUNCTION  -nan(ind)     0.00   869.00     0  00:00        0.00
+  MH40                 JUNCTION  -nan(ind)     0.00   808.00     0  00:00        0.00
+  MH41                 JUNCTION  -nan(ind)     0.00   807.00     0  00:00        0.00
+  MH42                 JUNCTION  -nan(ind)     0.00   805.01     0  00:00        0.00
+  MH43                 JUNCTION  -nan(ind)     0.00   803.50     0  00:00        0.00
+  MH44                 JUNCTION  -nan(ind)     0.00   802.30     0  00:00        0.00
+  MH45                 JUNCTION  -nan(ind)     0.00   800.80     0  00:00        0.00
+  MH46                 JUNCTION  -nan(ind)     0.00   800.20     0  00:00        0.00
+  MH47                 JUNCTION  -nan(ind)     0.00   792.76     0  00:00        0.00
+  MH48                 JUNCTION  -nan(ind)     0.00   802.51     0  00:00        0.00
+  MH48A                JUNCTION  -nan(ind)     0.00   804.77     0  00:00        0.00
+  MH48W                JUNCTION  -nan(ind)     0.00   803.26     0  00:00        0.00
+  MH49                 JUNCTION  -nan(ind)     0.00   799.50     0  00:00        0.00
+  MH5                  JUNCTION  -nan(ind)     0.00   869.62     0  00:00        0.00
+  MH50                 JUNCTION  -nan(ind)     0.00   791.00     0  00:00        0.00
+  MH51                 JUNCTION  -nan(ind)     0.00   787.00     0  00:00        0.00
+  MH52                 JUNCTION  -nan(ind)     0.00   789.02     0  00:00        0.00
+  MH52A                JUNCTION  -nan(ind)     0.00   793.40     0  00:00        0.00
+  MH52B                JUNCTION  -nan(ind)     0.00   796.00     0  00:00        0.00
+  MH52W                JUNCTION  -nan(ind)     0.00   792.47     0  00:00        0.00
+  MH53                 JUNCTION  -nan(ind)     0.00   794.39     0  00:00        0.00
+  MH54                 JUNCTION  -nan(ind)     0.00   787.20     0  00:00        0.00
+  MH55                 JUNCTION  -nan(ind)     0.00   783.02     0  00:00        0.00
+  MH56                 JUNCTION  -nan(ind)     0.00   785.20     0  00:00        0.00
+  MH57                 JUNCTION  -nan(ind)     0.00   783.05     0  00:00        0.00
+  MH58                 JUNCTION  -nan(ind)     0.00   781.00     0  00:00        0.00
+  MH59                 JUNCTION  -nan(ind)     0.00   778.65     0  00:00        0.00
+  MH6                  JUNCTION  -nan(ind)     0.00   871.18     0  00:00        0.00
+  MH60                 JUNCTION  -nan(ind)     0.00   776.30     0  00:00        0.00
+  MH61                 JUNCTION  -nan(ind)     0.00   772.77     0  00:00        0.00
+  MH62                 JUNCTION  -nan(ind)     0.00   769.60     0  00:00        0.00
+  MH62A                JUNCTION  -nan(ind)     0.00   769.50     0  00:00        0.00
+  MH62B                JUNCTION  -nan(ind)     0.00   769.44     0  00:00        0.00
+  MH62C                JUNCTION  -nan(ind)     0.00   768.00     0  00:00        0.00
+  MH62D                JUNCTION  -nan(ind)     0.00   772.00     0  00:00        0.00
+  MH63A                JUNCTION  -nan(ind)     0.00   767.50     0  00:00        0.00
+  MH63B                JUNCTION  -nan(ind)     0.00   767.00     0  00:00        0.00
+  MH64                 JUNCTION  -nan(ind)     0.00   766.00     0  00:00        0.00
+  MH64B                JUNCTION  -nan(ind)     0.00   770.00     0  00:00        0.00
+  MH64C                JUNCTION  -nan(ind)     0.00   765.00     0  00:00        0.00
+  MH64E                JUNCTION  -nan(ind)     0.00   772.00     0  00:00        0.00
+  MH65                 JUNCTION  -nan(ind)     0.00   764.69     0  00:00        0.00
+  MH66                 JUNCTION  -nan(ind)     0.00   763.69     0  00:00        0.00
+  MH67                 JUNCTION  -nan(ind)     0.00   762.19     0  00:00        0.00
+  MH68                 JUNCTION  -nan(ind)     0.00   760.19     0  00:00        0.00
+  MH69                 JUNCTION  -nan(ind)     0.00   758.19     0  00:00        0.00
+  MH6A                 JUNCTION  -nan(ind)     0.00   876.38     0  00:00        0.00
+  MH6B                 JUNCTION  -nan(ind)     0.00   877.10     0  00:00        0.00
+  MH6W                 JUNCTION  -nan(ind)     0.00   874.15     0  00:00        0.00
+  MH7                  JUNCTION  -nan(ind)     0.00   868.53     0  00:00        0.00
+  MH70                 JUNCTION  -nan(ind)     0.00   755.69     0  00:00        0.00
+  MH71                 JUNCTION  -nan(ind)     0.00   764.16     0  00:00        0.00
+  MH72                 JUNCTION  -nan(ind)     0.00   754.29     0  00:00        0.00
+  MH73                 JUNCTION  -nan(ind)     0.00   753.04     0  00:00        0.00
+  MH74                 JUNCTION  -nan(ind)     0.00   752.04     0  00:00        0.00
+  MH75                 JUNCTION  -nan(ind)     0.00   755.00     0  00:00        0.00
+  MH75A                JUNCTION  -nan(ind)     0.00   759.40     0  00:00        0.00
+  MH76                 JUNCTION  -nan(ind)     0.00   751.16     0  00:00        0.00
+  MH77                 JUNCTION  -nan(ind)     0.00   750.28     0  00:00        0.00
+  MH78                 JUNCTION  -nan(ind)     0.00   749.95     0  00:00        0.00
+  MH79                 JUNCTION  -nan(ind)     0.00   748.70     0  00:00        0.00
+  MH8                  JUNCTION  -nan(ind)     0.00   867.93     0  00:00        0.00
+  MH80                 JUNCTION  -nan(ind)     0.00   747.45     0  00:00        0.00
+  MH81                 JUNCTION  -nan(ind)     0.00   760.00     0  00:00        0.00
+  MH81A                JUNCTION  -nan(ind)     0.00   763.30     0  00:00        0.00
+  MH81W                JUNCTION  -nan(ind)     0.00   760.90     0  00:00        0.00
+  MH82                 JUNCTION  -nan(ind)     0.00   759.00     0  00:00        0.00
+  MH83                 JUNCTION  -nan(ind)     0.00   754.00     0  00:00        0.00
+  MH84                 JUNCTION  -nan(ind)     0.00   746.95     0  00:00        0.00
+  MH85                 JUNCTION  -nan(ind)     0.00   746.72     0  00:00        0.00
+  MH86                 JUNCTION  -nan(ind)     0.00   745.92     0  00:00        0.00
+  MH87                 JUNCTION  -nan(ind)     0.00   745.60     0  00:00        0.00
+  MH87A                JUNCTION  -nan(ind)     0.00   753.00     0  00:00        0.00
+  MH87W                JUNCTION  -nan(ind)     0.00   751.40     0  00:00        0.00
+  MH88                 JUNCTION  -nan(ind)     0.00   745.27     0  00:00        0.00
+  MH89                 JUNCTION  -nan(ind)     0.00   745.13     0  00:00        0.00
+  MH9                  JUNCTION  -nan(ind)     0.00   867.33     0  00:00        0.00
+  MH90                 JUNCTION  -nan(ind)     0.00   744.98     0  00:00        0.00
+  MH91                 JUNCTION  -nan(ind)     0.00   744.28     0  00:00        0.00
+  MH91A                JUNCTION  -nan(ind)     0.00   752.23     0  00:00        0.00
+  MH91W                JUNCTION  -nan(ind)     0.00   750.58     0  00:00        0.00
+  MH92                 JUNCTION  -nan(ind)     0.00   743.91     0  00:00        0.00
+  MH92A                JUNCTION  -nan(ind)     0.00   753.95     0  00:00        0.00
+  MH92B                JUNCTION  -nan(ind)     0.00   745.02     0  00:00        0.00
+  MH92W                JUNCTION  -nan(ind)     0.00   752.91     0  00:00        0.00
+  MH93                 JUNCTION  -nan(ind)     0.00   743.81     0  00:00        0.00
+  MH94                 JUNCTION  -nan(ind)     0.00   743.79     0  00:00        0.00
+  MH95                 JUNCTION  -nan(ind)     0.00   743.73     0  00:00        0.00
+  MH96                 JUNCTION  -nan(ind)     0.00   743.58     0  00:00        0.00
+  MH97                 JUNCTION  -nan(ind)     0.00   742.83     0  00:00        0.00
+  MH98                 JUNCTION  -nan(ind)     0.00   742.45     0  00:00        0.00
+  MH99                 JUNCTION  -nan(ind)     0.00   742.08     0  00:00        0.00
+  MH10R                OUTFALL   -nan(ind)     0.00   864.85     0  00:00        0.00
+  MH117R               OUTFALL   -nan(ind)     0.00   732.93     0  00:00        0.00
+  MH117R2              OUTFALL   -nan(ind)     0.00   732.93     0  00:00        0.00
+  MH122R               OUTFALL   -nan(ind)     0.00   735.80     0  00:00        0.00
+  MH135R               OUTFALL   -nan(ind)     0.00   729.50     0  00:00        0.00
+  MH1R                 OUTFALL   -nan(ind)     0.00   872.00     0  00:00        0.00
+  MH36R                OUTFALL   -nan(ind)     0.00   817.00     0  00:00        0.00
+  MH48R                OUTFALL   -nan(ind)     0.00   799.00     0  00:00        0.00
+  MH52R                OUTFALL   -nan(ind)     0.00   789.00     0  00:00        0.00
+  MH63BR               OUTFALL   -nan(ind)     0.00   764.00     0  00:00        0.00
+  MH64BR               OUTFALL   -nan(ind)     0.00   770.00     0  00:00        0.00
+  MH6R                 OUTFALL   -nan(ind)     0.00   869.00     0  00:00        0.00
+  MH75R                OUTFALL   -nan(ind)     0.00   758.05     0  00:00        0.00
+  MH81R                OUTFALL   -nan(ind)     0.00   755.00     0  00:00        0.00
+  MH87R                OUTFALL   -nan(ind)     0.00   748.10     0  00:00        0.00
+  MH91R                OUTFALL   -nan(ind)     0.00   750.10     0  00:00        0.00
+  MH92R                OUTFALL   -nan(ind)     0.00   743.97     0  00:00        0.00
+  MH92R2               OUTFALL   -nan(ind)     0.00   751.90     0  00:00        0.00
+  OFALL-10             OUTFALL   -nan(ind)     0.00   874.15     0  00:00        0.00
+  OUTFALL_WWTP         OUTFALL   -nan(ind)     0.00   729.64     0  00:00        0.00
+  PS-ARCH              STORAGE   -nan(ind)     0.00   858.27     0  00:00        0.00
+  THR_WET_WELL         STORAGE   -nan(ind)     0.00   711.00     0  00:00        0.00
+  WWTP_WET_WELL        STORAGE   -nan(ind)     0.00   700.00     0  00:00        0.00
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           MGD      MGD  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  MH-WWTP              JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH1                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH10                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH100                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH100A               JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH101A               JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH103                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH104                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH105                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH107A               JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH108A               JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH109                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH10A                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH10W                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH11                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH110                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH111                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH112                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH113                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH115                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH116                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH117                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH117D               JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH117W               JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH117W2              JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH118                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH118A               JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH119                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH12                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH120                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH121                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH122                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH122A               JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH122B               JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH122W               JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH123                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH124                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH125                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH126                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH127                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH128                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH129                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH13                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH130                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH131                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH132                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH133                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH134                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH135                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH135A               JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH135B               JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH135W               JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH135WR              JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH136                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH137                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH138                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH139                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH13P                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH13P2               JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH14                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH140                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH141                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH142                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH143                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH144                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH145                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH146                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH147                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH148                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH149                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH15                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH150                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH151                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH152                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH153                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH154                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH155                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH155GC              JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH156                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH16                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH17                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH18                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH19                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH1A                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH2                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH20                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH200                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH200P               JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH201                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH202                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH21                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH22                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH23                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH24                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH25                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH26                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH26A                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH27                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH28                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH29                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH3                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH30                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH31                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH32                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH34                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH35                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH36                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH36B                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH36W                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH37                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH38                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH39                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH4                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH40                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH41                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH42                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH43                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH44                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH45                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH46                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH47                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH48                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH48A                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH48W                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH49                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH5                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH50                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH51                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH52                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH52A                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH52B                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH52W                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH53                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH54                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH55                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH56                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH57                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH58                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH59                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH6                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH60                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH61                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH62                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH62A                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH62B                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH62C                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH62D                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH63A                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH63B                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH64                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH64B                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH64C                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH64E                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH65                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH66                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH67                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH68                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH69                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH6A                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH6B                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH6W                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH7                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH70                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH71                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH72                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH73                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH74                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH75                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH75A                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH76                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH77                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH78                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH79                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH8                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH80                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH81                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH81A                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH81W                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH82                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH83                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH84                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH85                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH86                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH87                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH87A                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH87W                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH88                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH89                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH9                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH90                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH91                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH91A                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH91W                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH92                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH92A                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH92B                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH92W                JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH93                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH94                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH95                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH96                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH97                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH98                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH99                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 gal
+  MH10R                OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  MH117R               OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  MH117R2              OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  MH122R               OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  MH135R               OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  MH1R                 OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  MH36R                OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  MH48R                OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  MH52R                OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  MH63BR               OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  MH64BR               OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  MH6R                 OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  MH75R                OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  MH81R                OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  MH87R                OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  MH91R                OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  MH92R                OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  MH92R2               OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  OFALL-10             OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  OUTFALL_WWTP         OUTFALL      0.000    0.000     0  00:00           0           0       0.000 gal
+  PS-ARCH              STORAGE      0.000    0.000     0  00:00           0           0       0.000 gal
+  THR_WET_WELL         STORAGE      0.000    0.000     0  00:00           0           0       0.000 gal
+  WWTP_WET_WELL        STORAGE      0.000    0.000     0  00:00           0           0       0.000 gal
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  No nodes were surcharged.
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  **********************
+  Storage Volume Summary
+  **********************
+  
+  --------------------------------------------------------------------------------------------------
+                         Average     Avg  Evap Exfil       Maximum     Max    Time of Max    Maximum
+                          Volume    Pcnt  Pcnt  Pcnt        Volume    Pcnt     Occurrence    Outflow
+  Storage Unit          1000 ft3    Full  Loss  Loss      1000 ft3    Full    days hr:min        MGD
+  --------------------------------------------------------------------------------------------------
+  PS-ARCH              -nan(ind)    -nan(ind)     0     0         0.000       0       0  00:00      0.000
+  THR_WET_WELL         -nan(ind)    -nan(ind)     0     0         0.000       0       0  00:00      0.000
+  WWTP_WET_WELL        -nan(ind)    -nan(ind)     0     0         0.000       0       0  00:00      0.000
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       MGD       MGD    10^6 gal
+  -----------------------------------------------------------
+  MH10R               -nan(ind)     0.000     0.000       0.000
+  MH117R              -nan(ind)     0.000     0.000       0.000
+  MH117R2             -nan(ind)     0.000     0.000       0.000
+  MH122R              -nan(ind)     0.000     0.000       0.000
+  MH135R              -nan(ind)     0.000     0.000       0.000
+  MH1R                -nan(ind)     0.000     0.000       0.000
+  MH36R               -nan(ind)     0.000     0.000       0.000
+  MH48R               -nan(ind)     0.000     0.000       0.000
+  MH52R               -nan(ind)     0.000     0.000       0.000
+  MH63BR              -nan(ind)     0.000     0.000       0.000
+  MH64BR              -nan(ind)     0.000     0.000       0.000
+  MH6R                -nan(ind)     0.000     0.000       0.000
+  MH75R               -nan(ind)     0.000     0.000       0.000
+  MH81R               -nan(ind)     0.000     0.000       0.000
+  MH87R               -nan(ind)     0.000     0.000       0.000
+  MH91R               -nan(ind)     0.000     0.000       0.000
+  MH92R               -nan(ind)     0.000     0.000       0.000
+  MH92R2              -nan(ind)     0.000     0.000       0.000
+  OFALL-10            -nan(ind)     0.000     0.000       0.000
+  OUTFALL_WWTP        -nan(ind)     0.000     0.000       0.000
+  -----------------------------------------------------------
+  System              -nan(ind)     0.000     0.000       0.000
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          MGD  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  CDT-13               CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH-WWTP_MH156        CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH100A_MH100         CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH100A_MH101A        CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH101A_MH107A        CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH103_MH104          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH104_MH105          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH107A_MH105         CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH107_MH108A         CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH108A_MH109         CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH109_MH110          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH10A_MH10W          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH10W_MH10R          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH10_MH11            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH110_MH111          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH111_MH112          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH112_MH113          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH113_MH115          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH115_MH116          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH116_MH117          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH117D_MH118         CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH117W2_MH117R2      CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH117W_MH117R        CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH118A_MH118         CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH118_MH119          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH119_MH120          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH11_MH12            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH120_MH121          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH121_MH128          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH122A_MH122         CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH122B_MH122A        CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH122W_MH123         CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH122_MH122R         CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH123_MH124          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH124_MH125          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH125_MH126          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH126_MH127          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH127_MH121          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH128_MH129          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH129_MH130          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH12_PS-ARCH         CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH130_MH131          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH131_MH132          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH132_MH133          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH133_MH134          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH134_MH136          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH135A_MH135W        CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH135B_MH135A        CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH135WR_MH135R       CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH135_MH136          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH136_MH137          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH137_MH138          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH138_MH139          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH139_MH140          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH13P2_MH13          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH13P_MH13P2         CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH13_MH14            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH140_MH141          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH141_MH142          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH142_MH143          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH143_MH144          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH144_MH145          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH145_MH146          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH146_MH147          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH147_MH148          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH148_MH149          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH149_MH150          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH14_MH15            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH150_MH155          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH151_MH150          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH152_MH151          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH153_MH152          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH154_MH153          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH155GC_WWTP_WET_WELL CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH155_MH155GC        CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH156_OUTFALL_WWTP   CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH15_MH16            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH16_MH17            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH17_MH18            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH18_MH19            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH19_MH20            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH1A_MH1             CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH1_MH1R             CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH1_MH2              CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH200P_MH155GC       CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH200_MH155          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH201_MH200          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH201_THR_WET_WELL   CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH201_THR_WET_WELL_2 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH202_MH201          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH20_MH21            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH21_MH22            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH22_MH23            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH23_MH24            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH24_MH25            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH25_MH26            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH26A_MH27           CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH26_MH26A           CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH27_MH28            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH28_MH29            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH29_MH30            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH2_MH4              CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH30_MH31            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH31_MH32            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH32_MH34            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH34_MH35            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH35_MH36            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH36B_MH36W          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH36W_MH36R          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH36_MH37            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH37_MH38            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH38_MH41            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH39W_MH40           CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH3_MH4              CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH40_MH41            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH41_MH42            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH42_MH43            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH43_MH44            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH44_MH45            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH45_MH46            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH46_MH47            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH47_MH50            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH48A_MH48W          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH48W_MH48R          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH48_MH49            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH49_MH47            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH4_MH7              CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH50_MH51            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH51_MH56            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH52A_MH52W          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH52W_MH52R          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH52_MH51            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH53_MH54            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH54_MH55            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH55_MH58            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH56_MH57            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH57_MH58            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH58_MH59            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH59_MH60            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH5_MH4              CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH60_MH61            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH61_MH62            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH62A_MH62B          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH62B_MH62C          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH62C_MH63A          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH62D_MH62C          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH62_MH62A           CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH63A_MH63B          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH63B_MH63BR         CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH63B_MH64           CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH64B_MH64BR         CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH64B_MH64C          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH64C_MH65           CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH64E_MH64B          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH64_MH64C           CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH65_MH66            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH66_MH67            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH67_MH68            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH68_MH69            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH69_MH70            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH6A_MH6W            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH6B_MH6A            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH6W_MH6R            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH6_MH5              CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH70_MH72            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH71_MH72            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH72_MH73            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH73_MH74            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH74_MH76            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH75A_MH75           CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH75_MH74            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH75_MH75R           CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH76_MH77            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH77_MH78            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH78_MH79            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH79_MH80            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH7_MH8              CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH80_MH84            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH81A_MH81W          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH81W_MH81R          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH81_MH84            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH82_MH83            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH83_MH85            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH84_MH85            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH85_MH86            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH86_MH87            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH87A_MH87W          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH87W_MH87R          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH87_MH88            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH88_MH89            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH89_MH90            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH8_MH9              CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH90_MH91            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH91A_MH91W          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH91W_MH91R          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH91_MH92            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH92A_MH92W          CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH92B_MH92           CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH92W_MH92R2         CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH92_MH92R           CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH92_MH93            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH93_MH94            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH94_MH95            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH95_MH96            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH96_MH97            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH97_MH98            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH98_MH99            CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH99_MH100           CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  MH9_MH10             CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  TEST_OUTFALL         CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  PS-ARCH              PUMP        0.000     0  00:00              0.00
+  PS-ARCH2             PUMP        0.000     0  00:00              0.00
+  THR_PUMP             PUMP        0.000     0  00:00              0.00
+  THR_PUMP2            PUMP        0.000     0  00:00              0.00
+  WWTP_PUMP            PUMP        0.000     0  00:00              0.00
+  WWTP_PUMP2           PUMP        0.000     0  00:00              0.00
+  WWTP_PUMP3           PUMP        0.000     0  00:00              0.00
+  MH10W                ORIFICE     0.000     0  00:00                          
+  MH117_MH117D         ORIFICE     0.000     0  00:00                      0.00
+  MH122W               ORIFICE     0.000     0  00:00                          
+  MH135W               ORIFICE     0.000     0  00:00                          
+  MH36W                ORIFICE     0.000     0  00:00                          
+  MH48W                ORIFICE     0.000     0  00:00                          
+  MH52W                ORIFICE     0.000     0  00:00                          
+  MH6W                 ORIFICE     0.000     0  00:00                          
+  MH81W                ORIFICE     0.000     0  00:00                          
+  MH87W                ORIFICE     0.000     0  00:00                          
+  MH91W                ORIFICE     0.000     0  00:00                          
+  MH92W                ORIFICE     0.000     0  00:00                      0.00
+  MH117_MH117W2        WEIR        0.000     0  00:00                      0.00
+  MH117_MH117W_2       WEIR        0.000     0  00:00                      0.00
+  MH135WR              WEIR        0.000     0  00:00                      0.00
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  CDT-13                  2.38   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH-WWTP_MH156           1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH100A_MH100            5.31   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH100A_MH101A           1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH101A_MH107A           1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH103_MH104             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH104_MH105             1.09   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH107A_MH105            1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH107_MH108A            1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH108A_MH109            1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH109_MH110             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH10A_MH10W             1.62   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH10W_MH10R             4.57   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH10_MH11               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH110_MH111             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH111_MH112             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH112_MH113             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH113_MH115             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH115_MH116             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH116_MH117             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH117D_MH118            1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH117W2_MH117R2         1.56   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH117W_MH117R           1.18   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH118A_MH118            5.05   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH118_MH119             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH119_MH120             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH11_MH12               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH120_MH121             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH121_MH128             1.26   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH122A_MH122            1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH122B_MH122A           1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH122W_MH123            1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH122_MH122R            1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH123_MH124             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH124_MH125             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH125_MH126             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH126_MH127             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH127_MH121             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH128_MH129             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH129_MH130             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH12_PS-ARCH            1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH130_MH131             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH131_MH132             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH132_MH133             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH133_MH134             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH134_MH136             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH135A_MH135W           1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH135B_MH135A           1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH135WR_MH135R          1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH135_MH136             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH136_MH137             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH137_MH138             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH138_MH139             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH139_MH140             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH13P2_MH13             2.45   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH13P_MH13P2            1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH13_MH14               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH140_MH141             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH141_MH142             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH142_MH143             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH143_MH144             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH144_MH145             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH145_MH146             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH146_MH147             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH147_MH148             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH148_MH149             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH149_MH150             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH14_MH15               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH150_MH155             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH151_MH150             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH152_MH151             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH153_MH152             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH154_MH153             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH155GC_WWTP_WET_WELL    1.32   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH155_MH155GC           1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH156_OUTFALL_WWTP      1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH15_MH16               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH16_MH17               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH17_MH18               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH18_MH19               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH19_MH20               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH1A_MH1                1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH1_MH1R                8.97   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH1_MH2                 1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH200P_MH155GC          1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH200_MH155             1.96   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH201_MH200             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH201_THR_WET_WELL      1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH201_THR_WET_WELL_2    1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH202_MH201             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH20_MH21               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH21_MH22               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH22_MH23               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH23_MH24               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH24_MH25               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH25_MH26               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH26A_MH27              1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH26_MH26A              1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH27_MH28               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH28_MH29               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH29_MH30               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH2_MH4                 1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH30_MH31               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH31_MH32               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH32_MH34               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH34_MH35               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH35_MH36               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH36B_MH36W             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH36W_MH36R             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH36_MH37               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH37_MH38               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH38_MH41               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH39W_MH40              1.51   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH3_MH4                 1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH40_MH41               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH41_MH42               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH42_MH43               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH43_MH44               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH44_MH45               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH45_MH46               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH46_MH47               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH47_MH50               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH48A_MH48W             1.32   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH48W_MH48R             2.27   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH48_MH49               1.42   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH49_MH47               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH4_MH7                 1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH50_MH51               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH51_MH56               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH52A_MH52W             2.98   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH52W_MH52R             2.20   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH52_MH51               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH53_MH54               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH54_MH55               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH55_MH58               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH56_MH57               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH57_MH58               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH58_MH59               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH59_MH60               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH5_MH4                 1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH60_MH61               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH61_MH62               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH62A_MH62B             2.48   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH62B_MH62C             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH62C_MH63A             1.16   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH62D_MH62C             1.29   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH62_MH62A              3.82   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH63A_MH63B             6.85   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH63B_MH63BR            2.91   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH63B_MH64              1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH64B_MH64BR            1.21   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH64B_MH64C             1.85   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH64C_MH65              1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH64E_MH64B             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH64_MH64C              4.37   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH65_MH66               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH66_MH67               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH67_MH68               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH68_MH69               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH69_MH70               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH6A_MH6W               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH6B_MH6A               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH6W_MH6R               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH6_MH5                 1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH70_MH72               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH71_MH72               1.25   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH72_MH73               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH73_MH74               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH74_MH76               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH75A_MH75              2.89   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH75_MH74               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH75_MH75R              3.73   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH76_MH77               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH77_MH78               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH78_MH79               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH79_MH80               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH7_MH8                 1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH80_MH84               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH81A_MH81W             2.02   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH81W_MH81R             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH81_MH84               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH82_MH83               1.01   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH83_MH85               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH84_MH85               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH85_MH86               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH86_MH87               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH87A_MH87W             1.35   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH87W_MH87R             1.22   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH87_MH88               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH88_MH89               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH89_MH90               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH8_MH9                 1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH90_MH91               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH91A_MH91W             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH91W_MH91R             1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH91_MH92               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH92A_MH92W             1.15   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH92B_MH92              1.34   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH92W_MH92R2            1.37   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH92_MH92R              2.26   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH92_MH93               1.22   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH93_MH94               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH94_MH95               1.20   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH95_MH96               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH96_MH97               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH97_MH98               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH98_MH99               1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH99_MH100              1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  MH9_MH10                1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  TEST_OUTFALL            1.00   -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)  -nan(ind)
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  No conduits were surcharged.
+  
+  
+  ***************
+  Pumping Summary
+  ***************
+  
+  ---------------------------------------------------------------------------------------------------------
+                                                  Min       Avg       Max     Total     Power    % Time Off
+                        Percent   Number of      Flow      Flow      Flow    Volume     Usage    Pump Curve
+  Pump                 Utilized   Start-Ups       MGD       MGD       MGD  10^6 gal     Kw-hr    Low   High
+  ---------------------------------------------------------------------------------------------------------
+  PS-ARCH              -nan(ind)           0      0.00      0.00      0.00     0.000      0.00    0.0    0.0
+  PS-ARCH2             -nan(ind)           0      0.00      0.00      0.00     0.000      0.00    0.0    0.0
+  THR_PUMP             -nan(ind)           0      0.00      0.00      0.00     0.000      0.00    0.0    0.0
+  THR_PUMP2            -nan(ind)           0      0.00      0.00      0.00     0.000      0.00    0.0    0.0
+  WWTP_PUMP            -nan(ind)           0      0.00      0.00      0.00     0.000      0.00    0.0    0.0
+  WWTP_PUMP2           -nan(ind)           0      0.00      0.00      0.00     0.000      0.00    0.0    0.0
+  WWTP_PUMP3           -nan(ind)           0      0.00      0.00      0.00     0.000      0.00    0.0    0.0
+  
+
+  Analysis begun on:  Sat Nov 30 08:11:04 2019
+  Analysis ended on:  Sat Nov 30 08:11:04 2019
+  Total elapsed time: < 1 sec

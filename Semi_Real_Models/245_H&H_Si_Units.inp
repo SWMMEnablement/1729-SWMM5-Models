@@ -1,0 +1,2445 @@
+[TITLE]
+;;Project Title/Notes
+projet annasr2
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           03/19/2014
+START_TIME           00:00:00
+REPORT_START_DATE    03/19/2014
+REPORT_START_TIME    00:00:00
+END_DATE             03/19/2014
+END_TIME             04:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:01:00
+WET_STEP             00:00:30
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:20 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     5
+MIN_SURFAREA         1.14
+MAX_TRIALS           12
+HEAD_TOLERANCE       0.00001
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+StationPluvio    VOLUME    0:01     1.0      TIMESERIES double-triangle 
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+S1               StationPluvio    S4               0.9067   64       26.52    0.18     0                        
+S2               StationPluvio    S4               1.8172   70       56.78    0.20     0                        
+S2bis            StationPluvio    S4               1.1804   70       43.72    0.04     0                        
+S3               StationPluvio    S4               1.6781   64       72.13    1.00     0                        
+S4               StationPluvio    S6               0.9326   58       80.81    2.23     0                        
+S5               StationPluvio    S6               3.3862   70       113.5    1.09     0                        
+S6               StationPluvio    S12bis           1.0562   70       32.62    0.48     0                        
+S7               StationPluvio    S12bis           4.6315   66       94.27    0.86     0                        
+S8               StationPluvio    S13              1.2139   70       50.2234  0.78     0                        
+S9               StationPluvio    S3               1.7557   70       72.7058  1.79     0                        
+S10              StationPluvio    S13              3.0788   70       68.2555  1.26     0                        
+S11              StationPluvio    S13              2.0541   71       52.2685  0.01     0                        
+S12              StationPluvio    S22              0.9556   72       85.3214  0.86     0                        
+S12bis           StationPluvio    S12              0.9652   70       63.9205  0.30     0                        
+S13              StationPluvio    S21              1.7323   60       68.9061  1.55     0                        
+S14              StationPluvio    S21              1.1524   71       48.6655  2.03     0                        
+S15              StationPluvio    S21              1.4720   71       48.2322  1.60     0                        
+S16              StationPluvio    S23              1.8054   71       65.1322  2.04     0                        
+S17              StationPluvio    S24              2.5896   71       79.7536  1.50     0                        
+S18              StationPluvio    S24              1.1274   71       38.0801  1.99     0                        
+S19              StationPluvio    S12              5.1065   62       87.9794  0.72     0                        
+S20              StationPluvio    S20              5.7362   62       121.429  0.30     0                        
+S21              StationPluvio    S22bis           4.2452   62       84.6011  0.06     0                        
+S22              StationPluvio    S22bis           0.4200   71       127.273  1.12     0                        
+S22bis           StationPluvio    R34-2            0.3592   70       54.4242  1.38     0                        
+S23              StationPluvio    S21              0.5009   71       39.9984  0.54     0                        
+S24              StationPluvio    S23              0.6065   71       49.0101  1.46     0                        
+S25              StationPluvio    S29              4.1966   62       76.4283  0.69     0                        
+S26              StationPluvio    S28              4.0293   71       96.4386  0.14     0                        
+S27              StationPluvio    S29              3.5522   62       74.7769  0.79     0                        
+S28              StationPluvio    S34              1.7952   71       55.9409  0.02     0                        
+S29              StationPluvio    S29bis           0.9251   62       60.7859  0.17     0                        
+S29bis           StationPluvio    R41-2            0.2644   70       33.8974  0.30     0                        
+S30              StationPluvio    S29bis           6.8678   62       144.985  0.01     0                        
+S31              StationPluvio    S34              1.4480   71       62.7764  0.14     0                        
+S32              StationPluvio    S38              2.3803   71       50.5511  0.51     0                        
+S33              StationPluvio    S38              0.7041   71       77.1616  0.22     0                        
+S34              StationPluvio    S35              1.0290   71       95.5787  0.30     0                        
+S35              StationPluvio    S36              2.6464   62       106.624  0.49     0                        
+S36              StationPluvio    S37              2.7352   62       141.75   0.010    0                        
+S37              StationPluvio    R44-2            1.7676   62       117.926  0.24     0                        
+S38              StationPluvio    S35              0.4498   71       41.232   0.24     0                        
+S39              StationPluvio    S38              1.8855   71       88.3718  0.37     0                        
+S40              StationPluvio    S43              1.4787   71       67.2993  0.003    0                        
+S41              StationPluvio    S43              2.0584   71       52.5894  0.65     0                        
+S42              StationPluvio    S36              3.2485   71       111.17   0.37     0                        
+S43              StationPluvio    S37              2.0332   71       46.5029  0.08     0                        
+S44              StationPluvio    R44-1            0.4487   71       31.7192  0.15     0                        
+S45              StationPluvio    R41-1            2.9847   71       96.683   0.37     0                        
+S46              StationPluvio    R34-1            3.6166   71       124.646  0.003    0                        
+S47              StationPluvio    R27              1.0045   71       70.7345  0.06     0                        
+S48              StationPluvio    R27              1.9460   71       63.797   1.37     0                        
+S49              StationPluvio    R20              2.5292   71       72.9549  0.55     0                        
+S50              StationPluvio    R12              3.4784   71       67.8011  2.42     0                        
+S51              StationPluvio    S53              1.6893   62       77.9449  0.003    0                        
+S52              StationPluvio    S54              1.3443   62       44.2379  0.37     0                        
+S52bis           StationPluvio    S54              1.5250   70       66.886   0.70     0                        
+S53              StationPluvio    S81bis           1.2263   70       64.6612  0.53     0                        
+S54              StationPluvio    S59              2.9034   70       177.047  0.37     0                        
+S55              StationPluvio    S61              0.5287   70       24.3697  0.37     0                        
+S56              StationPluvio    S61              1.6777   70       67.4235  0.37     0                        
+S57              StationPluvio    R53              1.5753   70       43.6661  0.29     0                        
+S58              StationPluvio    S61              3.2713   70       125.52   0.37     0                        
+S59              StationPluvio    S61              0.9150   62       42.8933  0.37     0                        
+S60              StationPluvio    S59              0.7531   62       47.2756  0.44     0                        
+S61              StationPluvio    S69              0.7787   62       52.6149  0.31     0                        
+S62              StationPluvio    R58              0.4990   62       59.2426  0.38     0                        
+S63              StationPluvio    R55              0.3378   62       46.6962  0.01     0                        
+S64              StationPluvio    R53              1.8196   70       46.2379  4.74     0                        
+S65              StationPluvio    S62              1.6548   70       88.492   5.21     0                        
+S65bis           StationPluvio    S65              1.0851   70       55.3622  3.96     0                        
+S66              StationPluvio    S135             1.8009   70       88.0162  2.59     0                        
+S67              StationPluvio    S62              0.8928   70       48.7044  0.37     0                        
+S68              StationPluvio    S69              0.7917   70       82.8051  2.74     0                        
+S69              StationPluvio    R65              1.2235   70       48.4113  1.11     0                        
+S70              StationPluvio    S135             0.7889   70       41.2324  0.37     0                        
+S71              StationPluvio    S135             1.3577   70       60.3422  3.66     0                        
+S72              StationPluvio    S142             0.2049   70       18.0592  3.77     0                        
+S73              StationPluvio    S135             0.6158   70       32.0997  2.50     0                        
+S74              StationPluvio    S71              1.2102   70       53.5795  1.76     0                        
+S75              StationPluvio    S71              0.4053   70       52.0015  4.55     0                        
+S76              StationPluvio    S142             1.1462   70       143.562  4.78     0                        
+S77              StationPluvio    S140             1.7807   70       44.9388  1.37     0                        
+S78              StationPluvio    R71              3.7952   70       121.171  3.97     0                        
+S79              StationPluvio    R71              0.8756   70       41.0252  0.64     0                        
+S80              StationPluvio    R65              3.5303   68       108.625  1.42     0                        
+S81              StationPluvio    R79              2.8748   70       71.87    1.63     0                        
+S81bis           StationPluvio    S81              1.9030   70       82.0259  0.30     0                        
+S82              StationPluvio    S83              3.9657   70       41.9882  1.14     0                        
+S83              StationPluvio    R79              1.0707   70       128.12   0.13     0                        
+S84              StationPluvio    S47              6.2369   70       61.3729  2.74     0                        
+S85              StationPluvio    S47              2.9343   70       61.3729  3.64     0                        
+S86              StationPluvio    S78              0.6936   71       41.2636  2.10     0                        
+S87              StationPluvio    S86              0.5779   71       50.9567  2.01     0                        
+S88              StationPluvio    S86              2.7436   70       79.2238  2.14     0                        
+S89              StationPluvio    S90              0.5601   70       21.3632  0.02     0                        
+S90              StationPluvio    S93              0.2349   70       15.7461  0.46     0                        
+S91              StationPluvio    R91              0.7969   70       21.6968  2.41     0                        
+S92              StationPluvio    S93              1.0204   70       39.7136  2.11     0                        
+S93              StationPluvio    R97              0.3626   70       16.4624  0.01     0                        
+S94              StationPluvio    R97              1.6104   62       73.1136  1.78     0                        
+S95              StationPluvio    R97              1.4147   62       49.6125  0.62     0                        
+S96              StationPluvio    R102             0.3709   62       29.5679  0.59     0                        
+S97              StationPluvio    R104             0.2622   62       29.9931  0.37     0                        
+S98              StationPluvio    R105             0.1520   70       26.2295  0.37     0                        
+S99              StationPluvio    R104             0.4730   70       34.0508  2.17     0                        
+S100             StationPluvio    R102             1.5187   70       67.6843  2.01     0                        
+S101             StationPluvio    S126             1.8389   70       32.6625  1.75     0                        
+S102             StationPluvio    R105             2.1665   70       61.9637  1.40     0                        
+S103             StationPluvio    S100             1.5557   70       90.9288  0.57     0                        
+S104             StationPluvio    S100             2.6736   70       97.8875  1.70     0                        
+S105             StationPluvio    S87              4.4738   70       123.678  0.41     0                        
+S106             StationPluvio    S110             0.5381   70       56.0521  0.49     0                        
+S107             StationPluvio    S108             7.5238   70       158.126  3.37     0                        
+S108             StationPluvio    S117             1.2348   70       62.939   1.36     0                        
+S109             StationPluvio    S108             3.5516   70       70.0527  2.45     0                        
+S110             StationPluvio    S116             0.8926   70       44.6367  2.52     0                        
+S111             StationPluvio    S116             0.4844   70       33.194   3.62     0                        
+S112             StationPluvio    S110             1.8733   70       58.0706  0.28     0                        
+S113             StationPluvio    S115             0.5137   70       26.6483  0.71     0                        
+S114             StationPluvio    S115             2.0318   70       109.549  0.37     0                        
+S115             StationPluvio    S116             3.1669   70       133.439  1.73     0                        
+S116             StationPluvio    S117             4.2043   70       79.529   2.54     0                        
+S117             StationPluvio    S118             0.5952   70       59.8251  1.20     0                        
+S118             StationPluvio    S132             0.6063   70       59.9881  0.38     0                        
+S119             StationPluvio    S118             4.4682   70       91.0113  1.64     0                        
+S120             StationPluvio    S131             1.4943   70       53.5726  4.87     0                        
+S121             StationPluvio    S127             2.7463   70       110.756  4.25     0                        
+S122             StationPluvio    S125             1.4273   70       70.1066  1.66     0                        
+S123             StationPluvio    S125             1.3053   70       58.3479  1.65     0                        
+S124             StationPluvio    R116             1.5585   70       32.5114  2.33     0                        
+S125             StationPluvio    R116             0.9109   70       43.8439  3.65     0                        
+S126             StationPluvio    R100             2.0257   70       161.565  2.98     0                        
+S127             StationPluvio    R118             0.8630   70       77.8108  4.02     0                        
+S128             StationPluvio    R118             0.2065   62       18.945   4.82     0                        
+S129             StationPluvio    R119             0.0662   62       17.8919  0.16     0                        
+S130             StationPluvio    S132             4.6945   70       88.472   0.79     0                        
+S131             StationPluvio    R130             3.8744   70       76.9096  0.37     0                        
+S132             StationPluvio    R130             0.5510   70       51.7128  0.37     0                        
+S133             StationPluvio    R41-1            0.2839   70       33.3294  0.67     0                        
+S134             StationPluvio    R100             0.5769   62       14.591   0.26     0                        
+S135             StationPluvio    S79              2.6196   70       102.729  0.40     0                        
+S136             StationPluvio    S148             0.9715   70       67       1.58     0                        
+S137             StationPluvio    S141             0.5310   70       37.9286  2.46     0                        
+S138             StationPluvio    S78              0.5816   70       41.5429  2.38     0                        
+S139             StationPluvio    S140             0.2156   70       37.1724  3.68     0                        
+S140             StationPluvio    S141             0.1657   70       27.6167  3.11     0                        
+S141             StationPluvio    S142             0.1486   70       24.7667  4.29     0                        
+S142             StationPluvio    S78              0.1862   70       31.0333  5.07     0                        
+S143             StationPluvio    S146             0.4403   70       48.9222  0.30     0                        
+S144             StationPluvio    S149             0.4277   70       61.1     1.47     0                        
+S145             StationPluvio    S146             0.4431   70       26.0647  0.23     0                        
+S146             StationPluvio    S150             0.2078   70       31.9692  0.85     0                        
+S147             StationPluvio    S150             0.5863   70       41.8786  0.37     0                        
+S148             StationPluvio    S150             0.2524   70       17.0541  0.02     0                        
+S149             StationPluvio    R86              0.4023   70       41.9063  2.25     0                        
+S150             StationPluvio    S153             0.2055   70       31.1364  3.26     0                        
+S151             StationPluvio    S153             0.4728   70       28.6545  1.22     0                        
+S152             StationPluvio    R88              0.4434   70       47.1702  3.76     0                        
+S153             StationPluvio    S90              0.4926   70       46.4717  3.46     0                        
+S154             StationPluvio    S90              1.3930   70       56.8571  2.07     0                        
+S155             StationPluvio    S90              0.5497   70       42.2846  1.04     0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+S1               0.01       0.1        0.05       0.05       25         OUTLET    
+S2               0.01       0.1        0.05       0.05       25         OUTLET    
+S2bis            0.01       0.1        0.05       0.05       25         OUTLET    
+S3               0.01       0.1        0.05       0.05       25         OUTLET    
+S4               0.01       0.1        0.05       0.05       25         OUTLET    
+S5               0.01       0.1        0.05       0.05       25         OUTLET    
+S6               0.01       0.1        0.05       0.05       25         OUTLET    
+S7               0.01       0.1        0.05       0.05       25         OUTLET    
+S8               0.01       0.1        0.05       0.05       25         OUTLET    
+S9               0.01       0.1        0.05       0.05       25         OUTLET    
+S10              0.01       0.1        0.05       0.05       25         OUTLET    
+S11              0.01       0.1        0.05       0.05       25         OUTLET    
+S12              0.01       0.1        0.05       0.05       25         OUTLET    
+S12bis           0.01       0.1        0.05       0.05       25         OUTLET    
+S13              0.01       0.1        0.05       0.05       25         OUTLET    
+S14              0.01       0.1        0.05       0.05       25         OUTLET    
+S15              0.01       0.1        0.05       0.05       25         OUTLET    
+S16              0.01       0.1        0.05       0.05       25         OUTLET    
+S17              0.01       0.1        0.05       0.05       25         OUTLET    
+S18              0.01       0.1        0.05       0.05       25         OUTLET    
+S19              0.01       0.1        0.05       0.05       25         OUTLET    
+S20              0.01       0.1        0.05       0.05       25         OUTLET    
+S21              0.01       0.1        0.05       0.05       25         OUTLET    
+S22              0.01       0.1        0.05       0.05       25         OUTLET    
+S22bis           0.01       0.1        0.05       0.05       25         OUTLET    
+S23              0.01       0.1        0.05       0.05       25         OUTLET    
+S24              0.01       0.1        0.05       0.05       25         OUTLET    
+S25              0.01       0.1        0.05       0.05       25         OUTLET    
+S26              0.01       0.1        0.05       0.05       25         OUTLET    
+S27              0.01       0.1        0.05       0.05       25         OUTLET    
+S28              0.01       0.1        0.05       0.05       25         OUTLET    
+S29              0.01       0.1        0.05       0.05       25         OUTLET    
+S29bis           0.01       0.1        0.05       0.05       25         OUTLET    
+S30              0.01       0.1        0.05       0.05       25         OUTLET    
+S31              0.01       0.1        0.05       0.05       25         OUTLET    
+S32              0.01       0.1        0.05       0.05       25         OUTLET    
+S33              0.01       0.1        0.05       0.05       25         OUTLET    
+S34              0.01       0.1        0.05       0.05       25         OUTLET    
+S35              0.01       0.1        0.05       0.05       25         OUTLET    
+S36              0.01       0.1        0.05       0.05       25         OUTLET    
+S37              0.01       0.1        0.05       0.05       25         OUTLET    
+S38              0.01       0.1        0.05       0.05       25         OUTLET    
+S39              0.01       0.1        0.05       0.05       25         OUTLET    
+S40              0.01       0.1        0.05       0.05       25         OUTLET    
+S41              0.01       0.1        0.05       0.05       25         OUTLET    
+S42              0.01       0.1        0.05       0.05       25         OUTLET    
+S43              0.01       0.1        0.05       0.05       25         OUTLET    
+S44              0.01       0.1        0.05       0.05       25         OUTLET    
+S45              0.01       0.1        0.05       0.05       25         OUTLET    
+S46              0.01       0.1        0.05       0.05       25         OUTLET    
+S47              0.01       0.1        0.05       0.05       25         OUTLET    
+S48              0.01       0.1        0.05       0.05       25         OUTLET    
+S49              0.01       0.1        0.05       0.05       25         OUTLET    
+S50              0.01       0.1        0.05       0.05       25         OUTLET    
+S51              0.01       0.1        0.05       0.05       25         OUTLET    
+S52              0.01       0.1        0.05       0.05       25         OUTLET    
+S52bis           0.01       0.1        0.05       0.05       25         OUTLET    
+S53              0.01       0.1        0.05       0.05       25         OUTLET    
+S54              0.01       0.1        0.05       0.05       25         OUTLET    
+S55              0.01       0.1        0.05       0.05       25         OUTLET    
+S56              0.01       0.1        0.05       0.05       25         OUTLET    
+S57              0.01       0.1        0.05       0.05       25         OUTLET    
+S58              0.01       0.1        0.05       0.05       25         OUTLET    
+S59              0.01       0.1        0.05       0.05       25         OUTLET    
+S60              0.01       0.1        0.05       0.05       25         OUTLET    
+S61              0.01       0.1        0.05       0.05       25         OUTLET    
+S62              0.01       0.1        0.05       0.05       25         OUTLET    
+S63              0.01       0.1        0.05       0.05       25         OUTLET    
+S64              0.01       0.1        0.05       0.05       25         OUTLET    
+S65              0.01       0.1        0.05       0.05       25         OUTLET    
+S65bis           0.01       0.1        0.05       0.05       25         OUTLET    
+S66              0.01       0.1        0.05       0.05       25         OUTLET    
+S67              0.01       0.1        0.05       0.05       25         OUTLET    
+S68              0.01       0.1        0.05       0.05       25         OUTLET    
+S69              0.01       0.1        0.05       0.05       25         OUTLET    
+S70              0.01       0.1        0.05       0.05       25         OUTLET    
+S71              0.01       0.1        0.05       0.05       25         OUTLET    
+S72              0.01       0.1        0.05       0.05       25         OUTLET    
+S73              0.01       0.1        0.05       0.05       25         OUTLET    
+S74              0.01       0.1        0.05       0.05       25         OUTLET    
+S75              0.01       0.1        0.05       0.05       25         OUTLET    
+S76              0.01       0.1        0.05       0.05       25         OUTLET    
+S77              0.01       0.1        0.05       0.05       25         OUTLET    
+S78              0.01       0.1        0.05       0.05       25         OUTLET    
+S79              0.01       0.1        0.05       0.05       25         OUTLET    
+S80              0.01       0.1        0.05       0.05       25         OUTLET    
+S81              0.01       0.1        0.05       0.05       25         OUTLET    
+S81bis           0.01       0.1        0.05       0.05       25         OUTLET    
+S82              0.01       0.1        0.05       0.05       25         OUTLET    
+S83              0.01       0.1        0.05       0.05       25         OUTLET    
+S84              0.01       0.1        0.05       0.05       25         OUTLET    
+S85              0.01       0.1        0.05       0.05       25         OUTLET    
+S86              0.01       0.1        0.05       0.05       25         OUTLET    
+S87              0.01       0.1        0.05       0.05       25         OUTLET    
+S88              0.01       0.1        0.05       0.05       25         OUTLET    
+S89              0.01       0.1        0.05       0.05       25         OUTLET    
+S90              0.01       0.1        0.05       0.05       25         OUTLET    
+S91              0.01       0.1        0.05       0.05       25         OUTLET    
+S92              0.01       0.1        0.05       0.05       25         OUTLET    
+S93              0.01       0.1        0.05       0.05       25         OUTLET    
+S94              0.01       0.1        0.05       0.05       25         OUTLET    
+S95              0.01       0.1        0.05       0.05       25         OUTLET    
+S96              0.01       0.1        0.05       0.05       25         OUTLET    
+S97              0.01       0.1        0.05       0.05       25         OUTLET    
+S98              0.01       0.1        0.05       0.05       25         OUTLET    
+S99              0.01       0.1        0.05       0.05       25         OUTLET    
+S100             0.01       0.1        0.05       0.05       25         OUTLET    
+S101             0.01       0.1        0.05       0.05       25         OUTLET    
+S102             0.01       0.1        0.05       0.05       25         OUTLET    
+S103             0.01       0.1        0.05       0.05       25         OUTLET    
+S104             0.01       0.1        0.05       0.05       25         OUTLET    
+S105             0.01       0.1        0.05       0.05       25         OUTLET    
+S106             0.01       0.1        0.05       0.05       25         OUTLET    
+S107             0.01       0.1        0.05       0.05       25         OUTLET    
+S108             0.01       0.1        0.05       0.05       25         OUTLET    
+S109             0.01       0.1        0.05       0.05       25         OUTLET    
+S110             0.01       0.1        0.05       0.05       25         OUTLET    
+S111             0.01       0.1        0.05       0.05       25         OUTLET    
+S112             0.01       0.1        0.05       0.05       25         OUTLET    
+S113             0.01       0.1        0.05       0.05       25         OUTLET    
+S114             0.01       0.1        0.05       0.05       25         OUTLET    
+S115             0.01       0.1        0.05       0.05       25         OUTLET    
+S116             0.01       0.1        0.05       0.05       25         OUTLET    
+S117             0.01       0.1        0.05       0.05       25         OUTLET    
+S118             0.01       0.1        0.05       0.05       25         OUTLET    
+S119             0.01       0.1        0.05       0.05       25         OUTLET    
+S120             0.01       0.1        0.05       0.05       25         OUTLET    
+S121             0.01       0.1        0.05       0.05       25         OUTLET    
+S122             0.01       0.1        0.05       0.05       25         OUTLET    
+S123             0.01       0.1        0.05       0.05       25         OUTLET    
+S124             0.01       0.1        0.05       0.05       25         OUTLET    
+S125             0.01       0.1        0.05       0.05       25         OUTLET    
+S126             0.01       0.1        0.05       0.05       25         OUTLET    
+S127             0.01       0.1        0.05       0.05       25         OUTLET    
+S128             0.01       0.1        0.05       0.05       25         OUTLET    
+S129             0.01       0.1        0.05       0.05       25         OUTLET    
+S130             0.01       0.1        0.05       0.05       25         OUTLET    
+S131             0.01       0.1        0.05       0.05       25         OUTLET    
+S132             0.01       0.1        0.05       0.05       25         OUTLET    
+S133             0.01       0.1        0.05       0.05       25         OUTLET    
+S134             0.01       0.1        0.05       0.05       25         OUTLET    
+S135             0.01       0.1        0.05       0.05       25         OUTLET    
+S136             0.01       0.1        0.05       0.05       25         OUTLET    
+S137             0.01       0.1        0.05       0.05       25         OUTLET    
+S138             0.01       0.1        0.05       0.05       25         OUTLET    
+S139             0.01       0.1        0.05       0.05       25         OUTLET    
+S140             0.01       0.1        0.05       0.05       25         OUTLET    
+S141             0.01       0.1        0.05       0.05       25         OUTLET    
+S142             0.01       0.1        0.05       0.05       25         OUTLET    
+S143             0.01       0.1        0.05       0.05       25         OUTLET    
+S144             0.01       0.1        0.05       0.05       25         OUTLET    
+S145             0.01       0.1        0.05       0.05       25         OUTLET    
+S146             0.01       0.1        0.05       0.05       25         OUTLET    
+S147             0.01       0.1        0.05       0.05       25         OUTLET    
+S148             0.01       0.1        0.05       0.05       25         OUTLET    
+S149             0.01       0.1        0.05       0.05       25         OUTLET    
+S150             0.01       0.1        0.05       0.05       25         OUTLET    
+S151             0.01       0.1        0.05       0.05       25         OUTLET    
+S152             0.01       0.1        0.05       0.05       25         OUTLET    
+S153             0.01       0.1        0.05       0.05       25         OUTLET    
+S154             0.01       0.1        0.05       0.05       25         OUTLET    
+S155             0.01       0.1        0.05       0.05       25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+S1               3.0        0.5        4          7          0         
+S2               3.0        0.5        4          7          0         
+S2bis            3.0        0.5        4          7          0         
+S3               3.0        0.5        4          7          0         
+S4               3.0        0.5        4          7          0         
+S5               3.0        0.5        4          7          0         
+S6               3.0        0.5        4          7          0         
+S7               3.0        0.5        4          7          0         
+S8               3.0        0.5        4          7          0         
+S9               3.0        0.5        4          7          0         
+S10              3.0        0.5        4          7          0         
+S11              3.0        0.5        4          7          0         
+S12              3.0        0.5        4          7          0         
+S12bis           3.0        0.5        4          7          0         
+S13              3.0        0.5        4          7          0         
+S14              3.0        0.5        4          7          0         
+S15              3.0        0.5        4          7          0         
+S16              3.0        0.5        4          7          0         
+S17              3.0        0.5        4          7          0         
+S18              3.0        0.5        4          7          0         
+S19              3.0        0.5        4          7          0         
+S20              3.0        0.5        4          7          0         
+S21              3.0        0.5        4          7          0         
+S22              3.0        0.5        4          7          0         
+S22bis           3.0        0.5        4          7          0         
+S23              3.0        0.5        4          7          0         
+S24              3.0        0.5        4          7          0         
+S25              3.0        0.5        4          7          0         
+S26              3.0        0.5        4          7          0         
+S27              3.0        0.5        4          7          0         
+S28              3.0        0.5        4          7          0         
+S29              3.0        0.5        4          7          0         
+S29bis           3.0        0.5        4          7          0         
+S30              3.0        0.5        4          7          0         
+S31              3.0        0.5        4          7          0         
+S32              3.0        0.5        4          7          0         
+S33              3.0        0.5        4          7          0         
+S34              3.0        0.5        4          7          0         
+S35              3.0        0.5        4          7          0         
+S36              3.0        0.5        4          7          0         
+S37              3.0        0.5        4          7          0         
+S38              3.0        0.5        4          7          0         
+S39              3.0        0.5        4          7          0         
+S40              3.0        0.5        4          7          0         
+S41              3.0        0.5        4          7          0         
+S42              3.0        0.5        4          7          0         
+S43              3.0        0.5        4          7          0         
+S44              3.0        0.5        4          7          0         
+S45              3.0        0.5        4          7          0         
+S46              3.0        0.5        4          7          0         
+S47              3.0        0.5        4          7          0         
+S48              3.0        0.5        4          7          0         
+S49              3.0        0.5        4          7          0         
+S50              3.0        0.5        4          7          0         
+S51              3.0        0.5        4          7          0         
+S52              3.0        0.5        4          7          0         
+S52bis           3.0        0.5        4          7          0         
+S53              3.0        0.5        4          7          0         
+S54              3.0        0.5        4          7          0         
+S55              3.0        0.5        4          7          0         
+S56              3.0        0.5        4          7          0         
+S57              3.0        0.5        4          7          0         
+S58              3.0        0.5        4          7          0         
+S59              3.0        0.5        4          7          0         
+S60              3.0        0.5        4          7          0         
+S61              3.0        0.5        4          7          0         
+S62              3.0        0.5        4          7          0         
+S63              3.0        0.5        4          7          0         
+S64              3.0        0.5        4          7          0         
+S65              3.0        0.5        4          7          0         
+S65bis           3.0        0.5        4          7          0         
+S66              3.0        0.5        4          7          0         
+S67              3.0        0.5        4          7          0         
+S68              3.0        0.5        4          7          0         
+S69              3.0        0.5        4          7          0         
+S70              3.0        0.5        4          7          0         
+S71              3.0        0.5        4          7          0         
+S72              3.0        0.5        4          7          0         
+S73              3.0        0.5        4          7          0         
+S74              3.0        0.5        4          7          0         
+S75              3.0        0.5        4          7          0         
+S76              3.0        0.5        4          7          0         
+S77              3.0        0.5        4          7          0         
+S78              3.0        0.5        4          7          0         
+S79              3.0        0.5        4          7          0         
+S80              3.0        0.5        4          7          0         
+S81              3.0        0.5        4          7          0         
+S81bis           3.0        0.5        4          7          0         
+S82              3.0        0.5        4          7          0         
+S83              3.0        0.5        4          7          0         
+S84              3.0        0.5        4          7          0         
+S85              3.0        0.5        4          7          0         
+S86              3.0        0.5        4          7          0         
+S87              3.0        0.5        4          7          0         
+S88              3.0        0.5        4          7          0         
+S89              3.0        0.5        4          7          0         
+S90              3.0        0.5        4          7          0         
+S91              3.0        0.5        4          7          0         
+S92              3.0        0.5        4          7          0         
+S93              3.0        0.5        4          7          0         
+S94              3.0        0.5        4          7          0         
+S95              3.0        0.5        4          7          0         
+S96              3.0        0.5        4          7          0         
+S97              3.0        0.5        4          7          0         
+S98              3.0        0.5        4          7          0         
+S99              3.0        0.5        4          7          0         
+S100             3.0        0.5        4          7          0         
+S101             3.0        0.5        4          7          0         
+S102             3.0        0.5        4          7          0         
+S103             3.0        0.5        4          7          0         
+S104             3.0        0.5        4          7          0         
+S105             3.0        0.5        4          7          0         
+S106             3.0        0.5        4          7          0         
+S107             3.0        0.5        4          7          0         
+S108             3.0        0.5        4          7          0         
+S109             3.0        0.5        4          7          0         
+S110             3.0        0.5        4          7          0         
+S111             3.0        0.5        4          7          0         
+S112             3.0        0.5        4          7          0         
+S113             3.0        0.5        4          7          0         
+S114             3.0        0.5        4          7          0         
+S115             3.0        0.5        4          7          0         
+S116             3.0        0.5        4          7          0         
+S117             3.0        0.5        4          7          0         
+S118             3.0        0.5        4          7          0         
+S119             3.0        0.5        4          7          0         
+S120             3.0        0.5        4          7          0         
+S121             3.0        0.5        4          7          0         
+S122             3.0        0.5        4          7          0         
+S123             3.0        0.5        4          7          0         
+S124             3.0        0.5        4          7          0         
+S125             3.0        0.5        4          7          0         
+S126             3.0        0.5        4          7          0         
+S127             3.0        0.5        4          7          0         
+S128             3.0        0.5        4          7          0         
+S129             3.0        0.5        4          7          0         
+S130             3.0        0.5        4          7          0         
+S131             3.0        0.5        4          7          0         
+S132             3.0        0.5        4          7          0         
+S133             3.0        0.5        4          7          0         
+S134             3.0        0.5        4          7          0         
+S135             3.0        0.5        4          7          0         
+S136             3.0        0.5        4          7          0         
+S137             3.0        0.5        4          7          0         
+S138             3.0        0.5        4          7          0         
+S139             3.0        0.5        4          7          0         
+S140             3.0        0.5        4          7          0         
+S141             3.0        0.5        4          7          0         
+S142             3.0        0.5        4          7          0         
+S143             3.0        0.5        4          7          0         
+S144             3.0        0.5        4          7          0         
+S145             3.0        0.5        4          7          0         
+S146             3.0        0.5        4          7          0         
+S147             3.0        0.5        4          7          0         
+S148             3.0        0.5        4          7          0         
+S149             3.0        0.5        4          7          0         
+S150             3.0        0.5        4          7          0         
+S151             3.0        0.5        4          7          0         
+S152             3.0        0.5        4          7          0         
+S153             3.0        0.5        4          7          0         
+S154             3.0        0.5        4          7          0         
+S155             3.0        0.5        4          7          0         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+R1               180        3.03       0          0          0         
+R4               178.42     2.12       0          0          0         
+R8               168.97     3.29       0          0          0         
+R12              168.01     2.74       0          0          0         
+R19              166.5      3.03       0          0          0         
+R20              165.45     3.02       0          0          0         
+R25              160.83     4.64       0          0          0         
+R27              158.88     6.89       0          0          0         
+R34-1            157.36     6.74       0          0          0         
+R34-2            157.36     0          0          0          0         
+R41-1            154.81     8.41       0          0          0         
+R41-2            154.81     0          0          0          0         
+R44-1            153.75     9.1        0          0          0         
+R44-2            153.75     0          0          0          0         
+R45              184.45     1.8        0          0          0         
+R55              164.04     4.6        0          0          0         
+R56              163.59     5.02       0          0          0         
+R58              163.27     5.35       0          0          0         
+R65              162.06     4.51       0          0          0         
+R71              161        4.475      0          0          0         
+R79              159.64     4.96       0          0          0         
+R82              189.6      1.86       0          0          0         
+R83              188.93     3.17       0          0          0         
+R86              181.11     4.2        0          0          0         
+R88              178.54     3.24       0          0          0         
+R91              175.98     2.36       0          0          0         
+R94              171.9      3.63       0          0          0         
+R95              171.68     3.35       0          0          0         
+R96              171.42     5.22       0          0          0         
+R97              171.28     6.16       0          0          0         
+R100             170.42     8.46       0          0          0         
+R102             169.8      9.84       0          0          0         
+R104             169.3      10.92      0          0          0         
+R105             169.08     11         0          0          0         
+R115             166.93     2.98       0          0          0         
+R116             165.15     2.93       0          0          0         
+R117             162.79     2.84       0          0          0         
+R118             160.42     3.17       0          0          0         
+R119             159.87     3.44       0          0          0         
+R130             157.33     6.29       0          0          0         
+R40              153.5906   0          0          0          0         
+R41              153.5906   0          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Out1             150        FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+1                153.4312 9          0          TABULAR    Bassin_rectangulaire         0        0       
+R53              165.08   3.42       0          FUNCTIONAL 100       0         0        0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+C1               R1               R4               131        0.011      0          0          0          0         
+C2               R4               R8               318        0.011      0          0          0          0         
+C3               R8               R12              510.2      0.011      0          0          0          0         
+C4               R12              R19              294.6      0.011      0          0          0          0         
+C5               R19              R20              53.4       0.011      0          0          0          0         
+C6               R20              R25              207.4      0.011      0          0          0          0         
+C7               R25              R27              71         0.011      0          0          0          0         
+C8               R27              R34-1            305        0.012      0          0          0          0         
+C9-1             R34-1            R41-1            304        0.012      0          0          0          0         
+C9-2             R34-2            R41-2            304        0.012      0          0          0          0         
+C10-1            R41-1            R44-1            133        0.012      0          0          0          0         
+C10-2            R41-2            R44-2            133        0.012      0          0          0          0         
+C11              R45              R53              412.4      0.011      0          0          0          0         
+C12              R53              R55              72         0.012      0          0          0          0         
+C13              R55              R56              32         0.012      0          0          0          0         
+C14              R56              R58              64         0.012      0          0          0          0         
+C15              R58              R65              242        0.012      0          0          0          0         
+C16              R65              R71              216        0.012      0          0          0          0         
+C17              R71              R79              267.5      0.012      0          0          0          0         
+C18              R79              R27              126        0.012      0          0          0          0         
+C19              R82              R83              46         0.011      0          0          0          0         
+C20              R83              R86              120        0.011      0          0          0          0         
+C21              R86              R88              94         0.011      0          0          0          0         
+C22              R88              R91              100        0.011      0          0          0          0         
+C23              R91              R94              138.5      0.011      0          0          0          0         
+C24              R94              R95              42.76      0.012      0          0          0          0         
+C25              R95              R96              51.65      0.012      0          0          0          0         
+C26              R96              R97              28         0.012      0          0          0          0         
+C27              R97              R100             172        0.012      0          0          0          0         
+C28              R100             R102             123.2      0.012      0          0          0          0         
+C29              R102             R104             87.9       0.012      0          0          0          0         
+C30              R104             R105             57         0.012      0          0          0          0         
+C31              R105             R115             426.4      0.012      0          0          0          0         
+C32              R115             R116             52.2       0.012      0          0          0          0         
+C33              R116             R117             46         0.012      0          0          0          0         
+C34              R117             R118             63         0.012      0          0          0          0         
+C35              R118             R119             31.5       0.012      0          0          0          0         
+C36              R119             R130             458.7      0.012      0          0          0          0         
+C37              R130             R41-1            83.5       0.012      0          0          0          0         
+C39-1            R44-1            R40              20         0.012      0          0          0          0         
+C40-1            R44-2            R41              20         0.012      0          0          0          0         
+C42              R40              1                20         0.012      0          0          0          0         
+C43              R41              1                20         0.012      0          0          0          0         
+
+[ORIFICES]
+;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime 
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- ----------
+1                1                Out1             BOTTOM       0          0.65       NO       0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+C1               CIRCULAR     0.4              0          0          0          1                    
+C2               CIRCULAR     0.5              0          0          0          1                    
+C3               CIRCULAR     0.8              0          0          0          1                    
+C4               CIRCULAR     0.8              0          0          0          1                    
+C5               CIRCULAR     0.8              0          0          0          1                    
+C6               CIRCULAR     0.8              0          0          0          1                    
+C7               CIRCULAR     0.8              0          0          0          1                    
+C8               CIRCULAR     2.5              0          0          0          1                    
+C9-1             CIRCULAR     2.5              0          0          0          1                    
+C9-2             CIRCULAR     2                0          0          0          1                    
+C10-1            CIRCULAR     2.5              0          0          0          1                    
+C10-2            CIRCULAR     2.2              0          0          0          1                    
+C11              CIRCULAR     0.4              0          0          0          1                    
+C12              CIRCULAR     1.5              0          0          0          1                    
+C13              CIRCULAR     1.5              0          0          0          1                    
+C14              CIRCULAR     2                0          0          0          1                    
+C15              CIRCULAR     2.2              0          0          0          1                    
+C16              CIRCULAR     2.2              0          0          0          1                    
+C17              CIRCULAR     2.5              0          0          0          1                    
+C18              CIRCULAR     2.5              0          0          0          1                    
+C19              CIRCULAR     0.4              0          0          0          1                    
+C20              CIRCULAR     0.4              0          0          0          1                    
+C21              CIRCULAR     0.4              0          0          0          1                    
+C22              CIRCULAR     0.4              0          0          0          1                    
+C23              CIRCULAR     0.8              0          0          0          1                    
+C24              CIRCULAR     1.2              0          0          0          1                    
+C25              CIRCULAR     1.2              0          0          0          1                    
+C26              CIRCULAR     1.2              0          0          0          1                    
+C27              CIRCULAR     1.3              0          0          0          1                    
+C28              CIRCULAR     1.4              0          0          0          1                    
+C29              CIRCULAR     1.6              0          0          0          1                    
+C30              CIRCULAR     1.6              0          0          0          1                    
+C31              CIRCULAR     1.6              0          0          0          1                    
+C32              CIRCULAR     1.6              0          0          0          1                    
+C33              CIRCULAR     1.6              0          0          0          1                    
+C34              CIRCULAR     1.6              0          0          0          1                    
+C35              CIRCULAR     1.6              0          0          0          1                    
+C36              CIRCULAR     1.8              0          0          0          1                    
+C37              CIRCULAR     2                0          0          0          1                    
+C39-1            CIRCULAR     2.5              0          0          0          1                    
+C40-1            CIRCULAR     2.2              0          0          0          1                    
+C42              CIRCULAR     2.5              0          0          0          1                    
+C43              CIRCULAR     2.2              0          0          0          1                    
+1                CIRCULAR     3                0          0          0
+
+[DWF]
+;;Node           Constituent      Baseline   Patterns  
+;;-------------- ---------------- ---------- ----------
+R95              FLOW             2.5       
+R53              FLOW             8         
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+Bassin_rectangulaire Storage    0          25582.0776
+Bassin_rectangulaire            1          25582.0776
+Bassin_rectangulaire            2          25582.0776
+Bassin_rectangulaire            3          25582.0776
+Bassin_rectangulaire            4          25582.0776
+Bassin_rectangulaire            5          25582.0776
+Bassin_rectangulaire            6          25582.0776
+Bassin_rectangulaire            7          25582.0776
+Bassin_rectangulaire            8          25582.0776
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+double-triangle             00:00:00   0         
+double-triangle             00:01:00   0.00081   
+double-triangle             00:02:00   0.00243   
+double-triangle             00:03:00   0.00405   
+double-triangle             00:04:00   0.005669  
+double-triangle             00:05:00   0.007289  
+double-triangle             00:06:00   0.008909  
+double-triangle             00:07:00   0.010529  
+double-triangle             00:08:00   0.012149  
+double-triangle             00:09:00   0.013769  
+double-triangle             00:10:00   0.015388  
+double-triangle             00:11:00   0.017008  
+double-triangle             00:12:00   0.018628  
+double-triangle             00:13:00   0.020248  
+double-triangle             00:14:00   0.021868  
+double-triangle             00:15:00   0.023488  
+double-triangle             00:16:00   0.025107  
+double-triangle             00:17:00   0.026727  
+double-triangle             00:18:00   0.028347  
+double-triangle             00:19:00   0.029967  
+double-triangle             00:20:00   0.031587  
+double-triangle             00:21:00   0.033207  
+double-triangle             00:22:00   0.034827  
+double-triangle             00:23:00   0.036446  
+double-triangle             00:24:00   0.038066  
+double-triangle             00:25:00   0.039686  
+double-triangle             00:26:00   0.041306  
+double-triangle             00:27:00   0.042926  
+double-triangle             00:28:00   0.044546  
+double-triangle             00:29:00   0.046165  
+double-triangle             00:30:00   0.047785  
+double-triangle             00:31:00   0.049405  
+double-triangle             00:32:00   0.051025  
+double-triangle             00:33:00   0.052645  
+double-triangle             00:34:00   0.054265  
+double-triangle             00:35:00   0.055884  
+double-triangle             00:36:00   0.057504  
+double-triangle             00:37:00   0.059124  
+double-triangle             00:38:00   0.060744  
+double-triangle             00:39:00   0.062364  
+double-triangle             00:40:00   0.063984  
+double-triangle             00:41:00   0.065603  
+double-triangle             00:42:00   0.067223  
+double-triangle             00:43:00   0.068843  
+double-triangle             00:44:00   0.070463  
+double-triangle             00:45:00   0.072083  
+double-triangle             00:46:00   0.073703  
+double-triangle             00:47:00   0.075322  
+double-triangle             00:48:00   0.076942  
+double-triangle             00:49:00   0.078562  
+double-triangle             00:50:00   0.080182  
+double-triangle             00:51:00   0.081802  
+double-triangle             00:52:00   0.083422  
+double-triangle             00:53:00   0.085041  
+double-triangle             00:54:00   0.086661  
+double-triangle             00:55:00   0.088281  
+double-triangle             00:56:00   0.089901  
+double-triangle             00:57:00   0.091521  
+double-triangle             00:58:00   0.093141  
+double-triangle             00:59:00   0.094761  
+double-triangle             01:00:00   0.09638   
+double-triangle             01:01:00   0.098     
+double-triangle             01:02:00   0.09962   
+double-triangle             01:03:00   0.10124   
+double-triangle             01:04:00   0.10286   
+double-triangle             01:05:00   0.10448   
+double-triangle             01:06:00   0.106099  
+double-triangle             01:07:00   0.107719  
+double-triangle             01:08:00   0.109339  
+double-triangle             01:09:00   0.110959  
+double-triangle             01:10:00   0.112579  
+double-triangle             01:11:00   0.114199  
+double-triangle             01:12:00   0.115818  
+double-triangle             01:13:00   0.117438  
+double-triangle             01:14:00   0.119058  
+double-triangle             01:15:00   0.120678  
+double-triangle             01:16:00   0.122298  
+double-triangle             01:17:00   0.123918  
+double-triangle             01:18:00   0.125537  
+double-triangle             01:19:00   0.127157  
+double-triangle             01:20:00   0.128777  
+double-triangle             01:21:00   0.130397  
+double-triangle             01:22:00   0.132017  
+double-triangle             01:23:00   0.133637  
+double-triangle             01:24:00   0.135256  
+double-triangle             01:25:00   0.136876  
+double-triangle             01:26:00   0.138496  
+double-triangle             01:27:00   0.140116  
+double-triangle             01:28:00   0.141736  
+double-triangle             01:29:00   0.143356  
+double-triangle             01:30:00   0.144976  
+double-triangle             01:31:00   0.146595  
+double-triangle             01:32:00   0.148215  
+double-triangle             01:33:00   0.149835  
+double-triangle             01:34:00   0.151455  
+double-triangle             01:35:00   0.153075  
+double-triangle             01:36:00   0.154695  
+double-triangle             01:37:00   0.156314  
+double-triangle             01:38:00   0.157934  
+double-triangle             01:39:00   0.159554  
+double-triangle             01:40:00   0.161174  
+double-triangle             01:41:00   0.162794  
+double-triangle             01:42:00   0.164414  
+double-triangle             01:43:00   0.166033  
+double-triangle             01:44:00   0.167653  
+double-triangle             01:45:00   0.169273  
+double-triangle             01:46:00   0.170893  
+double-triangle             01:47:00   0.172513  
+double-triangle             01:48:00   0.174133  
+double-triangle             01:49:00   0.175752  
+double-triangle             01:50:00   0.177372  
+double-triangle             01:51:00   0.178992  
+double-triangle             01:52:00   0.180612  
+double-triangle             01:53:00   0.182232  
+double-triangle             01:54:00   0.337394  
+double-triangle             01:55:00   0.492556  
+double-triangle             01:56:00   0.647718  
+double-triangle             01:57:00   0.80288   
+double-triangle             01:58:00   0.958043  
+double-triangle             01:59:00   1.113205  
+double-triangle             02:00:00   1.268367  
+double-triangle             02:01:00   1.268367  
+double-triangle             02:02:00   1.113205  
+double-triangle             02:03:00   0.958043  
+double-triangle             02:04:00   0.80288   
+double-triangle             02:05:00   0.647718  
+double-triangle             02:06:00   0.492556  
+double-triangle             02:07:00   0.337394  
+double-triangle             02:08:00   0.182232  
+double-triangle             02:09:00   0.180612  
+double-triangle             02:10:00   0.178992  
+double-triangle             02:11:00   0.177372  
+double-triangle             02:12:00   0.175752  
+double-triangle             02:13:00   0.174133  
+double-triangle             02:14:00   0.172513  
+double-triangle             02:15:00   0.170893  
+double-triangle             02:16:00   0.169273  
+double-triangle             02:17:00   0.167653  
+double-triangle             02:18:00   0.166033  
+double-triangle             02:19:00   0.164414  
+double-triangle             02:20:00   0.162794  
+double-triangle             02:21:00   0.161174  
+double-triangle             02:22:00   0.159554  
+double-triangle             02:23:00   0.157934  
+double-triangle             02:24:00   0.156314  
+double-triangle             02:25:00   0.154695  
+double-triangle             02:26:00   0.153075  
+double-triangle             02:27:00   0.151455  
+double-triangle             02:28:00   0.149835  
+double-triangle             02:29:00   0.148215  
+double-triangle             02:30:00   0.146595  
+double-triangle             02:31:00   0.144976  
+double-triangle             02:32:00   0.143356  
+double-triangle             02:33:00   0.141736  
+double-triangle             02:34:00   0.140116  
+double-triangle             02:35:00   0.138496  
+double-triangle             02:36:00   0.136876  
+double-triangle             02:37:00   0.135256  
+double-triangle             02:38:00   0.133637  
+double-triangle             02:39:00   0.132017  
+double-triangle             02:40:00   0.130397  
+double-triangle             02:41:00   0.128777  
+double-triangle             02:42:00   0.127157  
+double-triangle             02:43:00   0.125537  
+double-triangle             02:44:00   0.123918  
+double-triangle             02:45:00   0.122298  
+double-triangle             02:46:00   0.120678  
+double-triangle             02:47:00   0.119058  
+double-triangle             02:48:00   0.117438  
+double-triangle             02:49:00   0.115818  
+double-triangle             02:50:00   0.114199  
+double-triangle             02:51:00   0.112579  
+double-triangle             02:52:00   0.110959  
+double-triangle             02:53:00   0.109339  
+double-triangle             02:54:00   0.107719  
+double-triangle             02:55:00   0.106099  
+double-triangle             02:56:00   0.10448   
+double-triangle             02:57:00   0.10286   
+double-triangle             02:58:00   0.10124   
+double-triangle             02:59:00   0.09962   
+double-triangle             03:00:00   0.098     
+double-triangle             03:01:00   0.09638   
+double-triangle             03:02:00   0.094761  
+double-triangle             03:03:00   0.093141  
+double-triangle             03:04:00   0.091521  
+double-triangle             03:05:00   0.089901  
+double-triangle             03:06:00   0.088281  
+double-triangle             03:07:00   0.086661  
+double-triangle             03:08:00   0.085041  
+double-triangle             03:09:00   0.083422  
+double-triangle             03:10:00   0.081802  
+double-triangle             03:11:00   0.080182  
+double-triangle             03:12:00   0.078562  
+double-triangle             03:13:00   0.076942  
+double-triangle             03:14:00   0.075322  
+double-triangle             03:15:00   0.073703  
+double-triangle             03:16:00   0.072083  
+double-triangle             03:17:00   0.070463  
+double-triangle             03:18:00   0.068843  
+double-triangle             03:19:00   0.067223  
+double-triangle             03:20:00   0.065603  
+double-triangle             03:21:00   0.063984  
+double-triangle             03:22:00   0.062364  
+double-triangle             03:23:00   0.060744  
+double-triangle             03:24:00   0.059124  
+double-triangle             03:25:00   0.057504  
+double-triangle             03:26:00   0.055884  
+double-triangle             03:27:00   0.054265  
+double-triangle             03:28:00   0.052645  
+double-triangle             03:29:00   0.051025  
+double-triangle             03:30:00   0.049405  
+double-triangle             03:31:00   0.047785  
+double-triangle             03:32:00   0.046165  
+double-triangle             03:33:00   0.044546  
+double-triangle             03:34:00   0.042926  
+double-triangle             03:35:00   0.041306  
+double-triangle             03:36:00   0.039686  
+double-triangle             03:37:00   0.038066  
+double-triangle             03:38:00   0.036446  
+double-triangle             03:39:00   0.034827  
+double-triangle             03:40:00   0.033207  
+double-triangle             03:41:00   0.031587  
+double-triangle             03:42:00   0.029967  
+double-triangle             03:43:00   0.028347  
+double-triangle             03:44:00   0.026727  
+double-triangle             03:45:00   0.025107  
+double-triangle             03:46:00   0.023488  
+double-triangle             03:47:00   0.021868  
+double-triangle             03:48:00   0.020248  
+double-triangle             03:49:00   0.018628  
+double-triangle             03:50:00   0.017008  
+double-triangle             03:51:00   0.015388  
+double-triangle             03:52:00   0.013769  
+double-triangle             03:53:00   0.012149  
+double-triangle             03:54:00   0.010529  
+double-triangle             03:55:00   0.008909  
+double-triangle             03:56:00   0.007289  
+double-triangle             03:57:00   0.005669  
+double-triangle             03:58:00   0.00405   
+double-triangle             03:59:00   0.00243   
+double-triangle             04:00:00   0.00243   
+;
+DoubleTriangle(Pas1h)            0          0         
+DoubleTriangle(Pas1h)            1          2.92      
+DoubleTriangle(Pas1h)            2          15.96     
+DoubleTriangle(Pas1h)            3          29        
+DoubleTriangle(Pas1h)            4          31.92     
+DoubleTriangle(Pas1h)            5          0         
+;
+SériePas5min                00:00      0         
+SériePas5min                00:05      0.007289  
+SériePas5min                00:10      0.015388  
+SériePas5min                00:15      0.023488  
+SériePas5min                00:20      0.031587  
+SériePas5min                00:25      0.039686  
+SériePas5min                00:30      0.047785  
+SériePas5min                00:35      0.055884  
+SériePas5min                00:40      0.063984  
+SériePas5min                00:45      0.072083  
+SériePas5min                00:50      0.080182  
+SériePas5min                00:55      0.088281  
+SériePas5min                01:00      0.09638   
+SériePas5min                01:05      0.10448   
+SériePas5min                01:10      0.112579  
+SériePas5min                01:15      0.120678  
+SériePas5min                01:20      0.128777  
+SériePas5min                01:25      0.136876  
+SériePas5min                01:30      0.144976  
+SériePas5min                01:35      0.153075  
+SériePas5min                01:40      0.161174  
+SériePas5min                01:45      0.169273  
+SériePas5min                01:50      0.177372  
+SériePas5min                01:55      0.492556  
+SériePas5min                02:00      1.268367  
+SériePas5min                02:05      0.647718  
+SériePas5min                02:10      0.178992  
+SériePas5min                02:15      0.170893  
+SériePas5min                02:20      0.162794  
+SériePas5min                02:25      0.154695  
+SériePas5min                02:30      0.146595  
+SériePas5min                02:35      0.138496  
+SériePas5min                02:40      0.130397  
+SériePas5min                02:45      0.122298  
+SériePas5min                02:50      0.114199  
+SériePas5min                02:55      0.106099  
+SériePas5min                03:00      0.098     
+SériePas5min                03:05      0.089901  
+SériePas5min                03:10      0.081802  
+SériePas5min                03:15      0.073703  
+SériePas5min                03:20      0.065603  
+SériePas5min                03:25      0.057504  
+SériePas5min                03:30      0.049405  
+SériePas5min                03:35      0.041306  
+SériePas5min                03:40      0.033207  
+SériePas5min                03:45      0.025107  
+SériePas5min                03:50      0.017008  
+SériePas5min                03:55      0.008909  
+SériePas5min                04:00      0.00081   
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+Link       C1               PEHD-CR8        
+Link       C2               PEHD-CR8        
+Link       C3               PEHD-CR8        
+Link       C4               PEHD-CR8        
+Link       C5               PEHD-CR8        
+Link       C6               PEHD-CR8        
+Link       C7               PEHD-CR8        
+Link       C8               CAO-135A        
+Link       C9-1             CAO-135A        
+Link       C10-1            CAO-135A        
+Link       C11              PEHD-CR8        
+Link       C12              CAO-135A        
+Link       C13              CAO-135A        
+Link       C14              CAO-135A        
+Link       C15              CAO-135A        
+Link       C16              CAO-135A        
+Link       C17              CAO-135A        
+Link       C18              CAO-135A        
+Link       C19              PEHD-CR8        
+Link       C20              PEHD-CR8        
+Link       C21              PEHD-CR8        
+Link       C22              PEHD-CR8        
+Link       C23              PEHD-CR8        
+Link       C24              CAO-135A        
+Link       C25              CAO-135A        
+Link       C26              CAO-135A        
+Link       C27              CAO-135A        
+Link       C28              CAO-135A        
+Link       C29              CAO-135A        
+Link       C30              CAO-135A        
+Link       C31              CAO-135A        
+Link       C32              CAO-135A        
+Link       C33              CAO-135A        
+Link       C34              CAO-135A        
+Link       C35              CAO-135A        
+Link       C36              CAO-135A        
+Link       C37              CAO-135A        
+
+[MAP]
+DIMENSIONS 287107.860 314513.191 289718.578 316537.927
+Units      Meters
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+R1               288237.460         314586.260        
+R4               288279.360         314715.320        
+R8               288335.560         314887.950        
+R12              288395.160         315071.560        
+R19              288487.780         315357.420        
+R20              288503.700         315406.500        
+R25              288571.030         315614.200        
+R27              288592.740         315681.110        
+R34-1            288683.918         315972.381        
+R34-2            288689.696         315970.455        
+R41-1            288777.130         316275.658        
+R41-2            288783.888         316273.405        
+R44-1            288819.933         316402.942        
+R44-2            288824.439         316401.816        
+R45              287515.000         315509.750        
+R55              287771.560         315210.120        
+R56              287798.400         315225.340        
+R58              287854.950         315257.380        
+R65              288064.740         315378.110        
+R71              288251.780         315485.180        
+R79              288483.710         315618.280        
+R82              287487.140         315559.370        
+R83              287464.210         315598.810        
+R86              287403.600         315702.140        
+R88              287356.640         315782.700        
+R91              287306.090         315869.300        
+R94              287236.000         315988.870        
+R95              287214.450         316025.730        
+R96              287252.420         316061.350        
+R97              287274.600         316076.960        
+R100             287415.400         316175.560        
+R102             287518.370         316245.580        
+R104             287593.650         316288.990        
+R105             287646.240         316310.800        
+R115             288041.360         316473.890        
+R116             288085.580         316500.340        
+R117             288130.200         316486.100        
+R118             288189.630         316467.220        
+R119             288219.250         316457.180        
+R130             288703.130         316296.850        
+R40              288826.855         316430.163        
+R41              288831.145         316428.937        
+Out1             288846.985         316463.725        
+1                288840.473         316452.133        
+R53              287709.660         315174.570        
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+S1               288862.588         315276.968        
+S1               288788.619         315257.503        
+S1               288814.573         315143.305        
+S1               288895.031         315167.962        
+S1               288858.695         315244.526        
+S1               288869.077         315279.564        
+S2               288867.779         315280.861        
+S2               288858.695         315305.518        
+S2               288721.139         315350.937        
+S2               288721.139         315266.587        
+S2               288754.879         315099.184        
+S2               288787.321         315108.267        
+S2               288780.833         315130.328        
+S2               288814.573         315143.305        
+S2               288789.917         315258.801        
+S2               288869.077         315279.564        
+S2bis            288869.077         315279.564        
+S2bis            288915.794         315240.633        
+S2bis            289018.312         315182.236        
+S2bis            288788.619         315109.565        
+S2bis            288780.833         315130.328        
+S2bis            288895.031         315169.259        
+S2bis            288858.695         315244.526        
+S2bis            288869.077         315276.968        
+S3               288858.695         315306.815        
+S3               288876.863         315330.174        
+S3               289058.541         315278.266        
+S3               289066.327         315239.335        
+S3               289074.113         315200.404        
+S3               289018.312         315183.534        
+S3               288917.091         315240.633        
+S3               288870.374         315279.564        
+S3               288859.993         315305.518        
+S4               288878.160         315328.876        
+S4               288837.932         315372.998        
+S4               288789.917         315409.334        
+S4               288722.437         315385.975        
+S4               288722.437         315350.937        
+S4               288858.695         315308.113        
+S4               288879.458         315330.174        
+S5               288789.917         315410.631        
+S5               288817.169         315478.112        
+S5               289093.579         315391.166        
+S5               289059.838         315279.564        
+S5               288878.160         315330.174        
+S5               288836.634         315375.594        
+S5               288791.215         315409.334        
+S6               288817.169         315478.112        
+S6               288754.879         315510.554        
+S6               288767.856         315557.272        
+S6               288741.902         315596.203        
+S6               288727.627         315580.630        
+S6               288722.437         315385.975        
+S6               288789.917         315409.334        
+S6               288818.466         315478.112        
+S7               288743.200         315596.203        
+S7               288780.833         315626.050        
+S7               289129.914         315509.257        
+S7               289093.579         315391.166        
+S7               288818.466         315478.112        
+S7               288756.177         315510.554        
+S7               288767.856         315557.272        
+S7               288743.200         315594.905        
+S8               289129.914         315509.257        
+S8               289157.166         315501.470        
+S8               289144.189         315465.135        
+S8               289162.357         315435.288        
+S8               289105.258         315263.991        
+S8               289067.625         315238.037        
+S8               289059.838         315279.564        
+S8               289131.212         315510.554        
+S9               289135.105         315348.342        
+S9               289297.317         315292.541        
+S9               289302.508         315270.480        
+S9               289075.411         315201.702        
+S9               289067.625         315238.037        
+S9               289105.258         315263.991        
+S9               289136.403         315350.937        
+S10              289456.935         315443.074        
+S10              289248.005         315450.860        
+S10              289153.273         315485.898        
+S10              289144.189         315467.730        
+S10              289163.654         315433.990        
+S10              289136.403         315349.640        
+S10              289297.317         315292.541        
+S10              289315.485         315301.625        
+S10              289310.294         315330.174        
+S10              289454.339         315437.883        
+S11              289547.774         315524.829        
+S11              289443.958         315505.364        
+S11              289158.464         315501.470        
+S11              289154.571         315487.196        
+S11              289246.707         315450.860        
+S11              289456.935         315443.074        
+S11              289550.369         315511.852        
+S11              289550.369         315522.234        
+S12              288747.093         315853.147        
+S12              288712.055         315864.826        
+S12              288667.933         315742.843        
+S12              288678.315         315715.591        
+S12              288738.009         315740.247        
+S12              288771.749         315761.010        
+S12              288766.558         315819.407        
+S12              288744.497         315855.742        
+S12bis           288739.307         315740.247        
+S12bis           288678.315         315715.591        
+S12bis           288660.147         315654.599        
+S12bis           288699.078         315636.431        
+S12bis           288739.307         315592.309        
+S12bis           288780.833         315626.050        
+S12bis           288754.879         315680.553        
+S12bis           288739.307         315740.247        
+S13              289245.410         315789.560        
+S13              289206.479         315751.926        
+S13              289128.617         315510.554        
+S13              289158.464         315501.470        
+S13              289227.242         315501.470        
+S13              289229.837         315667.576        
+S13              289254.493         315733.759        
+S13              289257.089         315761.010        
+S13              289246.707         315793.453        
+S14              289254.493         315735.056        
+S14              289229.837         315668.874        
+S14              289228.539         315502.768        
+S14              289284.340         315502.768        
+S14              289283.043         315722.079        
+S14              289255.791         315735.056        
+S15              289337.546         315761.010        
+S15              289258.387         315761.010        
+S15              289255.791         315735.056        
+S15              289284.340         315722.079        
+S15              289285.638         315502.768        
+S15              289337.546         315502.768        
+S15              289338.844         315759.713        
+S16              289369.989         315763.606        
+S16              289338.844         315761.010        
+S16              289338.844         315504.066        
+S16              289406.324         315504.066        
+S16              289406.324         315759.713        
+S16              289367.393         315762.308        
+S17              289511.438         315759.713        
+S17              289406.324         315759.713        
+S17              289408.920         315505.364        
+S17              289446.553         315506.661        
+S17              289507.545         315517.043        
+S17              289510.140         315758.415        
+S18              289552.964         315797.346        
+S18              289524.415         315797.346        
+S18              289523.117         315776.583        
+S18              289511.438         315757.117        
+S18              289508.843         315517.043        
+S18              289550.369         315523.531        
+S18              289552.964         315794.751        
+S19              288770.451         315758.415        
+S19              288738.009         315740.247        
+S19              288753.581         315683.148        
+S19              288780.833         315627.347        
+S19              289128.617         315510.554        
+S19              289166.250         315627.347        
+S19              288773.047         315762.308        
+S20              288793.810         315884.292        
+S20              288745.795         315855.742        
+S20              288766.558         315816.811        
+S20              288773.047         315763.606        
+S20              289167.548         315627.347        
+S20              289207.776         315753.224        
+S20              288792.512         315885.590        
+S21              288776.174         315984.407        
+S21              288770.477         315940.250        
+S21              288793.268         315886.122        
+S21              289207.776         315755.074        
+S21              289246.236         315790.685        
+S21              289236.265         315837.691        
+S21              288780.448         315981.559        
+S22              288729.168         315920.308        
+S22              288712.075         315864.755        
+S22              288744.837         315857.633        
+S22              288793.268         315883.273        
+S22              288770.477         315940.250        
+S22              288726.319         315918.884        
+S22bis           288753.384         315997.227        
+S22bis           288710.651         315978.710        
+S22bis           288706.377         315951.646        
+S22bis           288727.744         315920.308        
+S22bis           288769.052         315938.826        
+S22bis           288776.174         315984.407        
+S22bis           288750.535         315997.227        
+S23              289257.631         315804.929        
+S23              289244.811         315790.685        
+S23              289261.904         315762.197        
+S23              289367.312         315765.045        
+S23              289370.161         315803.505        
+S23              289259.056         315804.929        
+S24              289369.965         315802.982        
+S24              289368.563         315763.729        
+S24              289402.909         315759.524        
+S24              289511.556         315758.823        
+S24              289522.771         315775.645        
+S24              289524.173         315797.375        
+S24              289370.666         315803.683        
+S25              288787.345         316100.827        
+S25              288752.076         315997.227        
+S25              288776.323         315984.002        
+S25              289236.278         315837.786        
+S25              289261.260         315911.261        
+S25              288863.759         316038.373        
+S25              288823.347         316087.602        
+S25              288786.610         316100.093        
+S26              289369.088         316014.744        
+S26              289286.052         315819.724        
+S26              289259.389         315806.011        
+S26              289369.850         315803.726        
+S26              289509.259         315798.393        
+S26              289510.021         316016.268        
+S26              289369.088         316013.982        
+S27              288866.103         316123.587        
+S27              288824.262         316093.816        
+S27              288825.067         316086.574        
+S27              288863.689         316039.101        
+S27              289261.172         315909.557        
+S27              289284.506         315984.387        
+S27              288940.933         316092.206        
+S27              288899.092         316108.299        
+S27              288862.884         316123.587        
+S28              289317.788         316097.566        
+S28              289284.420         315983.373        
+S28              289261.433         315911.446        
+S28              289235.480         315838.036        
+S28              289247.345         315792.062        
+S28              289256.984         315803.926        
+S28              289285.162         315819.498        
+S28              289368.953         316013.775        
+S28              289368.953         316079.028        
+S29              288868.138         316246.078        
+S29              288846.981         316246.078        
+S29              288819.780         316204.772        
+S29              288787.541         316099.996        
+S29              288823.809         316088.914        
+S29              288865.116         316121.152        
+S29              288890.302         316202.757        
+S29              288868.138         316246.078        
+S29bis           288794.588         316269.125        
+S29bis           288846.915         316246.208        
+S29bis           288869.068         316245.826        
+S29bis           288883.582         316270.271        
+S29bis           288808.338         316294.333        
+S30              288883.250         316270.258        
+S30              289328.551         316132.235        
+S30              289317.468         316096.973        
+S30              289284.222         315984.137        
+S30              288927.579         316096.973        
+S30              288865.116         316123.167        
+S30              288891.310         316203.765        
+S30              288869.145         316246.078        
+S30              288884.257         316271.265        
+S31              289421.371         316128.838        
+S31              289397.958         316091.210        
+S31              289368.692         316078.668        
+S31              289369.528         316015.118        
+S31              289510.005         316015.954        
+S31              289510.005         316128.838        
+S31              289420.534         316128.838        
+S32              289515.840         316245.028        
+S32              289496.872         316222.503        
+S32              289509.913         316203.535        
+S32              289509.913         316130.033        
+S32              289509.913         315799.272        
+S32              289552.592         315796.901        
+S32              289570.374         316243.843        
+S32              289512.284         316242.657        
+S33              289419.273         316209.913        
+S33              289420.594         316128.697        
+S33              289509.733         316128.697        
+S33              289509.733         316201.989        
+S33              289497.187         316223.119        
+S33              289490.584         316210.573        
+S33              289416.632         316211.233        
+S34              289388.900         316221.138        
+S34              289349.942         316197.367        
+S34              289328.813         316131.998        
+S34              289318.249         316097.663        
+S34              289369.091         316079.175        
+S34              289398.144         316091.060        
+S34              289421.254         316128.037        
+S34              289419.273         316210.573        
+S34              289390.220         316219.817        
+S35              289169.683         316284.526        
+S35              289133.367         316192.745        
+S35              289328.813         316131.998        
+S35              289349.942         316198.028        
+S35              289389.560         316220.477        
+S35              289392.201         316252.832        
+S35              289220.526         316293.770        
+S35              289170.344         316284.526        
+S36              289051.491         316362.440        
+S36              288970.936         316351.875        
+S36              288938.582         316252.832        
+S36              289132.707         316192.745        
+S36              289169.683         316283.865        
+S36              289099.692         316382.909        
+S37              288850.682         316416.870        
+S37              288830.170         316398.922        
+S37              288837.008         316386.957        
+S37              288808.804         316293.799        
+S37              288883.159         316269.869        
+S37              288939.566         316253.631        
+S37              288971.188         316351.916        
+S37              288970.334         316376.701        
+S37              288852.391         316416.015        
+S38              289392.317         316251.830        
+S38              289389.538         316220.568        
+S38              289419.411         316211.537        
+S38              289490.273         316210.842        
+S38              289497.220         316222.652        
+S38              289474.989         316254.609        
+S39              289413.159         316437.320        
+S39              289420.106         316253.220        
+S39              289475.684         316255.304        
+S39              289497.220         316224.736        
+S39              289515.283         316242.104        
+S39              289516.672         316435.236        
+S40              289340.908         316445.657        
+S40              289341.603         316265.725        
+S40              289393.012         316251.830        
+S40              289420.801         316253.220        
+S40              289413.159         316436.626        
+S40              289378.423         316467.193        
+S41              289378.902         316466.876        
+S41              289413.360         316438.301        
+S41              289516.733         316434.940        
+S41              289516.733         316243.322        
+S41              289570.520         316243.322        
+S41              289569.679         316497.131        
+S41              289378.062         316496.291        
+S42              289099.880         316382.833        
+S42              289170.476         316284.503        
+S42              289221.742         316294.588        
+S42              289342.764         316264.333        
+S42              289341.083         316446.706        
+S42              289224.264         316449.227        
+S43              288969.614         316376.950        
+S43              288971.295         316351.737        
+S43              289050.295         316362.663        
+S43              289098.200         316382.833        
+S43              289223.423         316450.067        
+S43              289341.083         316446.706        
+S43              289378.062         316467.716        
+S43              289377.222         316496.291        
+S43              289221.742         316497.972        
+S44              288764.550         316292.067        
+S44              288793.124         316266.014        
+S44              288808.252         316294.588        
+S44              288835.986         316387.035        
+S44              288829.263         316398.801        
+S44              288809.933         316408.046        
+S45              288642.730         315986.397        
+S45              288709.854         315962.981        
+S45              288711.415         315978.592        
+S45              288752.001         315997.324        
+S45              288822.247         316211.183        
+S45              288847.223         316247.087        
+S45              288794.149         316268.941        
+S45              288727.025         316248.648        
+S46              288472.579         315728.829        
+S46              288659.901         315652.339        
+S46              288680.194         315717.902        
+S46              288667.706         315742.878        
+S46              288727.025         315917.712        
+S46              288706.732         315953.615        
+S46              288711.415         315964.542        
+S46              288642.730         315987.958        
+S46              288597.460         315827.173        
+S47              288514.727         315591.459        
+S47              288547.508         315635.168        
+S47              288599.021         315677.315        
+S47              288471.018         315728.829        
+S47              288463.213         315619.557        
+S48              288533.330         315391.159        
+S48              288587.199         315561.596        
+S48              288611.042         315626.945        
+S48              288604.861         315651.671        
+S48              288598.679         315677.281        
+S48              288548.343         315636.659        
+S48              288513.902         315591.621        
+S48              288464.449         315421.185        
+S49              288421.556         315066.536        
+S49              288533.330         315391.214        
+S49              288463.249         315423.149        
+S49              288352.362         315084.278        
+S50              288228.623         314587.753        
+S50              288257.512         314574.621        
+S50              288422.971         315067.059        
+S50              288352.060         315086.757        
+S50              288208.925         314653.411        
+S51              288139.327         314850.386        
+S51              288208.925         314654.724        
+S51              288292.968         314910.792        
+S51              288261.452         314921.297        
+S51              288237.815         314909.479        
+S51              288212.865         314828.062        
+S52              287956.797         315013.219        
+S52              287910.836         314980.390        
+S52              287951.544         314914.732        
+S52              288111.751         314971.198        
+S52              288102.558         314993.522        
+S52              287972.555         315034.230        
+S52bis           288098.619         314965.945        
+S52bis           288139.327         314850.386        
+S52bis           288211.551         314826.749        
+S52bis           288239.128         314910.792        
+S52bis           288261.452         314919.984        
+S52bis           288245.694         314946.248        
+S52bis           288134.074         314980.390        
+S53              288223.370         315072.312        
+S53              288282.462         315051.301        
+S53              288247.007         314946.248        
+S53              288261.452         314921.297        
+S53              288292.968         314910.792        
+S53              288353.374         315086.757        
+S53              288323.171         315101.201        
+S53              288292.968         315084.130        
+S53              288231.249         315101.201        
+S54              288068.416         315118.273        
+S54              288034.274         315015.845        
+S54              288102.558         314992.208        
+S54              288111.751         314971.198        
+S54              288132.761         314981.703        
+S54              288245.694         314947.561        
+S54              288281.149         315049.988        
+S54              288222.057         315073.625        
+S54              288231.249         315099.888        
+S54              288191.854         315115.646        
+S54              288168.217         315140.596        
+S54              288147.206         315132.717        
+S54              288134.074         315101.201        
+S55              288015.889         315135.344        
+S55              288134.074         315101.201        
+S55              288148.519         315134.031        
+S55              288015.889         315176.052        
+S55              287992.252         315166.860        
+S56              287847.804         314986.956        
+S56              287864.875         314959.379        
+S56              287910.836         314980.390        
+S56              287958.110         315014.532        
+S56              287972.555         315034.230        
+S56              288034.274         315014.532        
+S56              288069.729         315119.586        
+S56              288015.889         315134.031        
+S56              287992.252         315165.547        
+S56              287967.302         315149.789        
+S56              287931.847         315040.796        
+S57              287870.128         314880.589        
+S57              287952.857         314913.418        
+S57              287910.836         314981.703        
+S57              287867.501         314959.379        
+S57              287849.117         314984.329        
+S57              287790.024         315092.009        
+S57              287762.448         315139.283        
+S57              287741.437         315160.294        
+S57              287717.800         315176.052        
+S57              287702.042         315169.486        
+S58              287741.437         315161.607        
+S58              287763.761         315140.596        
+S58              287847.804         314986.956        
+S58              287931.847         315039.483        
+S58              287967.302         315151.102        
+S58              288002.758         315170.799        
+S58              287990.939         315179.992        
+S58              287860.936         315224.639        
+S59              287992.252         315179.992        
+S59              288001.444         315169.486        
+S59              288015.889         315177.365        
+S59              288147.206         315134.031        
+S59              288168.217         315139.283        
+S59              288185.288         315176.052        
+S59              288014.576         315229.892        
+S60              288185.456         315176.294        
+S60              288168.180         315140.462        
+S60              288191.215         315116.787        
+S60              288231.526         315101.430        
+S60              288292.953         315084.794        
+S60              288323.667         315101.430        
+S60              288295.513         315137.902        
+S61              287862.793         315255.049        
+S61              287861.954         315225.709        
+S61              287991.889         315179.604        
+S61              288015.361         315229.901        
+S61              287933.209         315259.241        
+S61              287878.720         315267.624        
+S62              287763.036         315233.254        
+S62              287792.377         315189.663        
+S62              287860.278         315223.195        
+S62              287862.793         315255.049        
+S62              287830.099         315287.743        
+S62              287804.113         315252.535        
+S63              287717.769         315177.089        
+S63              287740.403         315161.161        
+S63              287792.377         315189.663        
+S63              287763.036         315233.254        
+S63              287715.254         315202.237        
+S64              287702.684         315169.037        
+S64              287717.462         315176.426        
+S64              287714.999         315202.286        
+S64              287745.785         315221.990        
+S64              287686.675         315322.969        
+S64              287659.583         315309.423        
+S64              287627.565         315363.607        
+S64              287652.194         315379.616        
+S64              287641.111         315400.551        
+S64              287615.251         315388.237        
+S64              287584.464         315441.189        
+S64              287606.630         315459.661        
+S64              287594.316         315483.059        
+S64              287567.224         315471.976        
+S64              287524.122         315543.401        
+S64              287500.725         315522.466        
+S65              287671.527         315413.323        
+S65              287645.352         315393.189        
+S65              287652.064         315379.095        
+S65              287627.232         315364.330        
+S65              287659.446         315309.968        
+S65              287686.963         315322.048        
+S65              287746.023         315222.049        
+S65              287762.130         315231.445        
+S65              287766.828         315264.331        
+S65              287739.311         315307.283        
+S65              287743.338         315320.035        
+S65              287781.593         315344.196        
+S65              287720.519         315452.920        
+S65              287676.896         315426.074        
+S65bis           287535.928         315524.677        
+S65bis           287567.321         315472.355        
+S65bis           287595.494         315482.820        
+S65bis           287605.958         315458.671        
+S65bis           287585.834         315441.768        
+S65bis           287615.617         315387.836        
+S65bis           287641.376         315400.715        
+S65bis           287645.400         315393.471        
+S65bis           287671.159         315411.985        
+S65bis           287675.988         315426.474        
+S65bis           287597.909         315562.509        
+S66              287642.181         315488.454        
+S66              287675.988         315426.474        
+S66              287721.065         315453.842        
+S66              287781.436         315343.564        
+S66              287869.980         315403.935        
+S66              287869.980         315408.765        
+S66              287813.634         315409.570        
+S66              287781.436         315467.526        
+S66              287805.584         315486.844        
+S66              287789.485         315515.822        
+S66              287777.411         315509.383        
+S66              287755.678         315551.240        
+S67              287743.604         315319.416        
+S67              287740.384         315307.342        
+S67              287766.947         315263.875        
+S67              287762.922         315233.287        
+S67              287803.974         315254.216        
+S67              287829.733         315287.218        
+S67              287862.735         315398.301        
+S68              287870.785         315403.935        
+S68              287863.540         315399.105        
+S68              287829.733         315288.023        
+S68              287863.540         315255.825        
+S68              287879.639         315266.290        
+S68              287879.639         315286.413        
+S68              287889.298         315304.927        
+S68              287932.765         315329.075        
+S68              287895.738         315393.471        
+S69              287932.765         315329.075        
+S69              287890.103         315304.927        
+S69              287879.639         315285.608        
+S69              287880.444         315267.900        
+S69              287935.180         315257.435        
+S69              287981.062         315242.141        
+S69              288007.625         315312.976        
+S69              288066.386         315346.784        
+S69              288068.801         315378.982        
+S69              288058.337         315395.886        
+S70              287870.785         315403.130        
+S70              287896.543         315392.666        
+S70              287915.862         315406.350        
+S70              287964.963         315549.630        
+S70              287950.474         315579.413        
+S70              287931.156         315588.267        
+S71              287792.094         315586.188        
+S71              287755.505         315550.883        
+S71              287777.972         315509.158        
+S71              287790.168         315515.577        
+S71              287805.574         315486.049        
+S71              287781.181         315468.076        
+S71              287813.919         315409.661        
+S71              287858.211         315408.378        
+S71              287856.927         315482.840        
+S71              287887.739         315581.053        
+S71              287858.211         315590.681        
+S71              287831.892         315529.057        
+S71              287811.993         315545.105        
+S71              287836.386         315606.729        
+S71              287804.932         315615.074        
+S72              287836.432         315606.543        
+S72              287812.373         315545.231        
+S72              287831.775         315529.709        
+S72              287858.551         315590.633        
+S72              287853.894         315616.633        
+S73              287887.779         315580.556        
+S73              287856.909         315482.640        
+S73              287858.838         315409.324        
+S73              287869.932         315408.360        
+S73              287870.415         315403.536        
+S73              287870.897         315403.536        
+S73              287931.190         315588.755        
+S73              287913.343         315591.650        
+S74              287598.160         315562.780        
+S74              287641.570         315488.524        
+S74              287755.809         315551.356        
+S74              287770.660         315565.065        
+S74              287746.670         315571.348        
+S74              287711.827         315626.182        
+S75              287712.399         315626.754        
+S75              287746.670         315571.919        
+S75              287770.660         315565.636        
+S75              287792.937         315586.770        
+S75              287804.932         315614.758        
+S75              287735.246         315641.033        
+S76              287818.332         315664.166        
+S76              287817.692         315648.803        
+S76              287844.577         315636.001        
+S76              287854.178         315616.158        
+S76              287873.381         315627.040        
+S76              287898.985         315616.158        
+S76              287913.067         315659.045        
+S76              287897.705         315667.366        
+S76              287911.147         315700.012        
+S76              287924.589         315699.371        
+S76              287940.592         315740.338        
+S76              287854.818         315767.862        
+S77              287572.168         315678.729        
+S77              287578.527         315666.012        
+S77              287555.212         315636.868        
+S77              287579.587         315593.946        
+S77              287518.119         315556.853        
+S77              287524.478         315543.606        
+S77              287535.606         315524.530        
+S77              287598.133         315563.212        
+S77              287712.061         315626.270        
+S77              287735.376         315640.577        
+S77              287735.906         315657.004        
+S77              287695.634         315658.593        
+S77              287650.063         315730.129        
+S78              287973.422         315592.539        
+S78              287951.282         315578.517        
+S78              287965.304         315549.734        
+S78              288099.624         315503.977        
+S78              288058.295         315395.488        
+S78              288206.637         315484.050        
+S78              288254.608         315481.836        
+S78              288258.298         315523.903        
+S78              288234.682         315515.047        
+S78              288182.282         315532.760        
+S78              288205.161         315604.348        
+S78              288002.205         315678.149        
+S79              288207.160         315484.318        
+S79              288058.789         315395.950        
+S79              288068.608         315379.040        
+S79              288094.791         315369.222        
+S79              288254.071         315454.317        
+S79              288255.162         315482.136        
+S80              288143.628         315314.213        
+S80              288129.478         315315.261        
+S80              288094.891         315368.714        
+S80              288069.213         315378.147        
+S80              288066.593         315347.228        
+S80              288007.899         315313.165        
+S80              287981.697         315242.418        
+S80              288014.712         315229.841        
+S80              288185.028         315176.912        
+S80              288194.460         315172.720        
+S80              288209.658         315197.874        
+S80              288252.106         315182.153        
+S80              288266.779         315209.927        
+S80              288252.630         315228.793        
+S80              288265.207         315269.669        
+S80              288202.845         315293.251        
+S80              288222.759         315352.469        
+S80              288166.686         315369.238        
+S81              288316.242         315488.127        
+S81              288313.868         315482.193        
+S81              288414.755         315443.025        
+S81              288343.541         315242.439        
+S81              288395.764         315217.514        
+S81              288515.641         315591.388        
+S81              288481.221         315609.191        
+S81              288444.427         315566.463        
+S81bis           288288.192         315297.145        
+S81bis           288271.448         315289.083        
+S81bis           288253.463         315228.928        
+S81bis           288266.486         315209.703        
+S81bis           288252.843         315182.417        
+S81bis           288209.432         315197.300        
+S81bis           288195.169         315173.114        
+S81bis           288296.254         315136.525        
+S81bis           288324.161         315101.176        
+S81bis           288353.308         315085.673        
+S81bis           288396.099         315218.386        
+S81bis           288311.758         315257.455        
+S81bis           288321.680         315279.161        
+S82              288255.284         315481.327        
+S82              288254.456         315453.996        
+S82              288094.611         315368.691        
+S82              288129.396         315315.685        
+S82              288144.304         315314.857        
+S82              288167.494         315369.519        
+S82              288222.984         315352.126        
+S82              288203.935         315294.152        
+S82              288264.394         315268.477        
+S82              288271.848         315289.182        
+S82              288287.584         315297.465        
+S82              288321.541         315277.588        
+S82              288313.259         315258.539        
+S82              288343.903         315243.631        
+S82              288415.129         315444.058        
+S82              288314.087         315482.984        
+S83              288258.338         315522.166        
+S83              288256.017         315480.381        
+S83              288314.052         315482.703        
+S83              288314.826         315488.119        
+S83              288444.051         315566.273        
+S83              288482.741         315608.059        
+S83              288462.622         315618.892        
+S83              288457.205         315627.404        
+S83              288293.159         315529.905        
+S84              288002.209         315679.135        
+S84              288204.593         315604.534        
+S84              288183.173         315532.887        
+S84              288235.616         315515.898        
+S84              288258.513         315524.023        
+S84              288259.252         315521.807        
+S84              288293.229         315530.671        
+S84              288457.943         315628.170        
+S84              288462.375         315617.829        
+S84              288463.852         315630.386        
+S84              288362.660         315698.340        
+S84              288045.050         315795.839        
+S85              288045.295         315795.643        
+S85              288363.424         315697.956        
+S85              288463.704         315630.527        
+S85              288471.485         315729.942        
+S85              288070.365         315857.885        
+S86              287931.183         315589.031        
+S86              287950.202         315579.522        
+S86              287973.543         315591.625        
+S86              288022.818         315734.264        
+S86              288000.342         315742.045        
+S86              287971.814         315729.078        
+S87              287981.323         315811.203        
+S87              287975.272         315776.624        
+S87              288000.342         315742.045        
+S87              288022.818         315735.129        
+S87              288060.856         315836.273        
+S87              288025.412         315849.241        
+S88              287657.346         315818.251        
+S88              287688.903         315757.943        
+S88              287694.513         315717.971        
+S88              287713.447         315710.257        
+S88              287746.406         315803.525        
+S88              287855.101         315767.761        
+S88              287940.654         315739.710        
+S88              287971.510         315728.490        
+S88              288000.261         315741.814        
+S88              287975.016         315776.877        
+S88              287981.327         315811.940        
+S88              287799.701         315868.742        
+S88              287759.028         315886.273        
+S89              287406.068         315903.715        
+S89              287398.946         315879.977        
+S89              287389.451         315868.108        
+S89              287409.628         315833.688        
+S89              287425.058         315874.043        
+S89              287534.253         315934.574        
+S89              287510.515         315965.434        
+S90              287389.608         315867.582        
+S90              287399.877         315881.519        
+S90              287405.745         315904.257        
+S90              287388.141         315929.930        
+S90              287363.202         315951.935        
+S90              287347.799         315933.597        
+S91              287355.986         315770.181        
+S91              287356.434         315770.181        
+S91              287372.091         315801.048        
+S91              287414.142         315826.995        
+S91              287414.142         315826.995        
+S91              287389.538         315868.599        
+S91              287359.565         315914.229        
+S91              287295.594         315876.204        
+S92              287363.409         315951.636        
+S92              287388.541         315929.646        
+S92              287406.043         315904.065        
+S92              287510.609         315965.099        
+S92              287514.199         315970.036        
+S92              287477.399         316032.865        
+S92              287402.004         315985.743        
+S92              287366.999         315970.933        
+S93              287296.541         316025.684        
+S93              287347.702         315933.685        
+S93              287363.409         315951.187        
+S93              287366.999         315970.484        
+S93              287324.814         316037.801        
+S93              287299.234         316040.045        
+S94              287299.910         316040.344        
+S94              287325.544         316037.386        
+S94              287366.951         315970.838        
+S94              287402.443         315986.120        
+S94              287476.877         316031.964        
+S94              287414.274         316136.961        
+S94              287297.446         316054.146        
+S95              287295.474         315876.686        
+S95              287360.050         315913.657        
+S95              287347.726         315933.375        
+S95              287296.460         316026.048        
+S95              287299.910         316039.358        
+S95              287297.446         316054.146        
+S95              287276.742         316084.216        
+S95              287205.265         316026.541        
+S96              287419.505         316185.661        
+S96              287426.614         316171.443        
+S96              287452.206         316165.756        
+S96              287515.474         316210.542        
+S96              287523.294         316224.048        
+S96              287528.270         316241.110        
+S96              287515.474         316251.062        
+S97              287515.474         316250.351        
+S97              287528.270         316241.110        
+S97              287552.440         316234.001        
+S97              287595.093         316259.593        
+S97              287603.624         316280.208        
+S97              287595.093         316298.691        
+S98              287594.924         316297.880        
+S98              287603.875         316279.977        
+S98              287629.450         316273.583        
+S98              287648.632         316286.371        
+S98              287655.665         316304.913        
+S98              287646.714         316318.340        
+S99              287630.090         316274.223        
+S99              287603.875         316279.338        
+S99              287594.284         316260.156        
+S99              287628.172         316199.415        
+S99              287653.108         316195.579        
+S99              287676.125         316267.829        
+S99              287648.632         316286.371        
+S100             287628.172         316198.775        
+S100             287594.924         316258.878        
+S100             287553.364         316233.942        
+S100             287528.428         316240.335        
+S100             287516.279         316210.924        
+S100             287600.039         316069.620        
+S100             287633.926         316047.241        
+S100             287650.550         316067.702        
+S100             287651.189         316092.638        
+S100             287629.450         316129.083        
+S100             287652.468         316195.579        
+S101             287482.930         316025.056        
+S101             287513.965         315970.377        
+S101             287511.009         315965.204        
+S101             287533.915         315935.648        
+S101             287650.663         315728.753        
+S101             287669.875         315697.718        
+S101             287693.520         315717.669        
+S101             287688.348         315758.309        
+S101             287657.313         315817.422        
+S101             287557.560         316004.367        
+S101             287566.427         316016.189        
+S101             287564.950         316028.012        
+S101             287505.837         316034.662        
+S102             287657.136         316303.903        
+S102             287649.914         316287.394        
+S102             287675.708         316267.791        
+S102             287651.977         316195.568        
+S102             287629.279         316131.599        
+S102             287650.946         316094.456        
+S102             287762.375         316058.344        
+S102             287786.106         316114.059        
+S102             287725.232         316129.536        
+S102             287763.407         316247.156        
+S102             287714.915         316262.632        
+S102             287728.327         316295.648        
+S102             287718.010         316305.966        
+S103             287811.741         316036.495        
+S103             287763.407         316058.590        
+S103             287651.088         316094.035        
+S103             287650.628         316068.257        
+S103             287634.517         316047.082        
+S103             287637.279         316016.241        
+S103             287657.073         315991.844        
+S103             287779.518         315946.272        
+S103             287811.741         316039.257        
+S104             287564.801         316027.674        
+S104             287566.347         316016.335        
+S104             287557.585         316004.995        
+S104             287657.062         315817.896        
+S104             287759.116         315886.448        
+S104             287779.733         315945.722        
+S104             287657.578         315990.564        
+S104             287636.961         316015.304        
+S104             287634.384         316047.260        
+S104             287599.850         316068.393        
+S104             287572.017         316043.652        
+S105             287811.174         316036.952        
+S105             287779.733         315946.752        
+S105             287759.632         315885.932        
+S105             287800.866         315867.892        
+S105             287980.749         315811.196        
+S105             288025.591         315848.822        
+S105             288060.640         315834.905        
+S105             288070.433         315857.584        
+S105             288087.442         315898.302        
+S105             288049.816         315910.157        
+S105             288029.714         315966.854        
+S106             288029.714         315966.854        
+S106             288050.331         315910.157        
+S106             288087.958         315897.787        
+S106             288114.244         315983.348        
+S106             288079.711         316000.872        
+S107             288135.732         316037.155        
+S107             288114.491         315983.730        
+S107             288087.457         315898.123        
+S107             288070.722         315858.216        
+S107             288471.725         315727.552        
+S107             288547.033         315787.413        
+S107             288532.229         315829.251        
+S107             288473.012         315827.320        
+S107             288400.922         315948.973        
+S108             288532.229         315827.964        
+S108             288547.033         315788.056        
+S108             288597.239         315827.320        
+S108             288644.227         315986.949        
+S108             288615.262         315999.178        
+S108             288572.780         315972.788        
+S109             288135.732         316037.155        
+S109             288401.565         315948.329        
+S109             288473.012         315826.676        
+S109             288532.873         315828.607        
+S109             288557.332         315916.146        
+S109             288503.264         315933.525        
+S109             288483.311         316005.615        
+S109             288427.312         316029.431        
+S109             288394.485         316017.201        
+S109             288159.547         316097.015        
+S110             288066.216         316021.707        
+S110             288080.377         316000.466        
+S110             288113.847         315983.087        
+S110             288135.732         316035.867        
+S110             288160.191         316095.728        
+S110             288141.525         316148.509        
+S110             288114.491         316153.014        
+S111             288033.389         316030.718        
+S111             288066.216         316021.707        
+S111             288115.134         316153.014        
+S111             288096.468         316163.957        
+S111             288072.653         316144.003        
+S112             287786.865         316113.107        
+S112             287762.406         316059.039        
+S112             287811.325         316037.155        
+S112             288030.171         315968.282        
+S112             288080.377         316000.466        
+S112             288066.216         316021.707        
+S112             288032.745         316031.362        
+S113             287863.462         316212.875        
+S113             287824.842         316100.877        
+S113             287864.105         316086.717        
+S113             287900.794         316202.576        
+S113             287887.921         316233.472        
+S114             287731.510         316302.344        
+S114             287732.154         316302.344        
+S114             287716.062         316263.081        
+S114             287764.337         316246.989        
+S114             287726.361         316129.842        
+S114             287786.222         316113.107        
+S114             287824.842         316099.590        
+S114             287863.462         316213.519        
+S114             287887.921         316231.541        
+S114             287895.645         316249.564        
+S115             287895.645         316248.920        
+S115             287888.565         316233.472        
+S115             287901.438         316203.220        
+S115             287864.749         316088.004        
+S115             288033.389         316031.362        
+S115             288073.296         316145.290        
+S115             288096.468         316163.957        
+S115             288115.134         316152.371        
+S115             288115.778         316181.335        
+S116             288116.422         316179.404        
+S116             288115.778         316153.014        
+S116             288141.525         316147.865        
+S116             288160.191         316096.372        
+S116             288393.841         316017.201        
+S116             288427.312         316029.431        
+S116             288483.311         316005.615        
+S116             288503.264         315933.525        
+S116             288557.332         315916.146        
+S116             288573.424         315973.432        
+S116             288616.549         315997.891        
+S116             288597.239         316027.500        
+S116             288532.229         316046.166        
+S116             288523.862         316086.717        
+S116             288418.944         316128.555        
+S116             288344.279         316113.107        
+S117             288594.021         316033.293        
+S117             288615.906         315997.891        
+S117             288642.296         315985.661        
+S117             288674.479         316086.073        
+S117             288642.296         316097.015        
+S117             288611.400         316082.211        
+S118             288621.055         316133.061        
+S118             288638.434         316098.946        
+S118             288673.835         316085.429        
+S118             288705.375         316181.335        
+S118             288668.042         316192.921        
+S118             288635.859         316171.681        
+S119             288169.202         316163.957        
+S119             288345.566         316113.107        
+S119             288418.944         316128.555        
+S119             288523.862         316085.429        
+S119             288532.873         316045.522        
+S119             288597.239         316027.500        
+S119             288594.021         316033.293        
+S119             288612.044         316082.855        
+S119             288643.583         316097.659        
+S119             288638.434         316098.303        
+S119             288621.055         316133.061        
+S119             288622.986         316138.210        
+S119             288206.535         316272.736        
+S120             288116.422         316181.335        
+S120             288116.422         316177.474        
+S120             288117.709         316178.761        
+S120             288168.559         316163.313        
+S120             288206.535         316272.092        
+S120             288247.086         316406.618        
+S120             288229.063         316449.100        
+S120             288206.535         316438.801        
+S121             287981.252         316223.174        
+S121             288115.778         316180.692        
+S121             288174.352         316346.114        
+S121             288144.099         316378.297        
+S121             288086.813         316404.043        
+S121             288041.757         316396.963        
+S122             287909.805         316348.688        
+S122             287874.404         316256.644        
+S122             287896.288         316248.277        
+S122             287981.252         316223.174        
+S122             288025.021         316351.263        
+S122             287937.483         316373.791        
+S123             287716.706         316310.068        
+S123             287728.936         316294.620        
+S123             287732.798         316301.701        
+S123             287873.760         316256.644        
+S123             287909.805         316349.332        
+S123             287937.483         316373.148        
+S123             287935.552         316390.527        
+S124             287645.903         316320.367        
+S124             287655.558         316304.275        
+S124             287719.281         316304.919        
+S124             287717.350         316310.712        
+S124             287935.552         316389.883        
+S124             288040.469         316440.732        
+S124             288086.813         316488.364        
+S124             288083.595         316502.524        
+S125             288041.113         316441.376        
+S125             287935.552         316389.239        
+S125             287938.127         316373.148        
+S125             288024.378         316349.976        
+S125             288042.400         316396.963        
+S125             288086.813         316404.043        
+S125             288107.411         316470.985        
+S125             288097.112         316492.869        
+S125             288086.170         316489.007        
+S126             287414.109         316137.436        
+S126             287483.056         316023.265        
+S126             287506.038         316034.386        
+S126             287564.606         316028.455        
+S126             287572.761         316044.024        
+S126             287601.674         316067.747        
+S126             287517.159         316210.831        
+S126             287453.401         316165.608        
+S126             287427.453         316171.539        
+S127             288176.259         316448.418        
+S127             288108.056         316470.728        
+S127             288087.659         316404.437        
+S127             288146.301         316376.390        
+S127             288174.347         316346.432        
+S127             288206.218         316438.857        
+S127             288193.469         316457.980        
+S128             288087.021         316489.213        
+S128             288097.220         316492.400        
+S128             288108.056         316470.728        
+S128             288175.622         316448.418        
+S128             288193.469         316457.342        
+S128             288199.206         316467.541        
+S128             288084.471         316501.961        
+S129             288199.206         316468.178        
+S129             288193.469         316457.342        
+S129             288206.855         316440.132        
+S129             288228.527         316447.781        
+S129             288231.714         316458.617        
+S130             288235.539         316366.192        
+S130             288206.218         316272.492        
+S130             288623.087         316137.997        
+S130             288636.473         316173.055        
+S130             288668.981         316192.815        
+S130             288651.771         316229.785        
+S130             288668.981         316270.580        
+S130             288627.549         316276.316        
+S130             288546.597         316264.205        
+S131             288231.714         316457.980        
+S131             288229.165         316449.056        
+S131             288247.650         316406.986        
+S131             288234.901         316366.829        
+S131             288234.901         316366.829        
+S131             288545.960         316263.568        
+S131             288628.186         316276.316        
+S131             288669.618         316269.942        
+S131             288703.401         316287.790        
+S131             288710.413         316310.099        
+S132             288704.039         316287.790        
+S132             288668.981         316269.305        
+S132             288651.771         316230.422        
+S132             288669.618         316192.815        
+S132             288705.951         316181.341        
+S132             288727.623         316248.270        
+S133             288710.413         316309.462        
+S133             288704.039         316287.790        
+S133             288726.986         316249.545        
+S133             288792.002         316266.755        
+S133             288764.593         316292.252        
+S134             287277.507         316084.524        
+S134             287296.555         316054.311        
+S134             287414.124         316136.412        
+S134             287427.260         316170.566        
+S134             287419.378         316185.673        
+S135             287916.377         315406.500        
+S135             287896.940         315393.172        
+S135             287933.037         315329.862        
+S135             288059.102         315396.504        
+S135             288100.198         315503.687        
+S135             287965.803         315550.336        
+S136             287735.892         315657.071        
+S136             287756.625         315669.125        
+S136             287781.698         315662.857        
+S136             287796.163         315698.538        
+S136             287779.769         315710.110        
+S136             287791.341         315738.076        
+S136             287807.253         315740.487        
+S136             287821.718         315778.578        
+S136             287746.982         315803.169        
+S136             287713.712         315710.110        
+S137             287806.771         315740.005        
+S137             287791.341         315738.076        
+S137             287780.734         315709.628        
+S137             287796.163         315697.574        
+S137             287781.698         315662.857        
+S137             287798.092         315634.891        
+S137             287818.343         315649.356        
+S137             287818.343         315664.786        
+S137             287854.988         315767.970        
+S137             287822.200         315778.096        
+S138             287924.903         315699.020        
+S138             287911.402         315699.502        
+S138             287897.901         315666.715        
+S138             287912.848         315658.036        
+S138             287898.865         315616.569        
+S138             287913.331         315591.496        
+S138             287930.689         315588.121        
+S138             287971.673         315727.950        
+S138             287941.296         315739.522        
+S139             287693.943         315717.343        
+S139             287670.317         315698.538        
+S139             287696.354         315658.518        
+S139             287735.410         315656.107        
+S139             287713.230         315710.110        
+S139             287693.943         315718.789        
+S140             287757.107         315669.125        
+S140             287735.892         315656.589        
+S140             287735.410         315641.642        
+S140             287792.788         315618.980        
+S140             287798.092         315634.409        
+S140             287781.698         315662.375        
+S141             287818.343         315648.392        
+S141             287798.574         315635.374        
+S141             287793.270         315619.462        
+S141             287804.360         315615.122        
+S141             287836.665         315605.961        
+S141             287854.506         315616.087        
+S141             287844.862         315634.891        
+S141             287818.343         315648.392        
+S142             287853.976         315616.018        
+S142             287858.522         315590.563        
+S142             287887.613         315580.867        
+S142             287887.613         315580.563        
+S142             287913.219         315591.473        
+S142             287899.279         315616.170        
+S142             287873.522         315627.079        
+S143             287493.233         315617.311        
+S143             287490.091         315604.119        
+S143             287518.362         315557.001        
+S143             287579.300         315594.067        
+S143             287556.056         315638.043        
+S143             287532.811         315636.158        
+S144             287468.732         315639.928        
+S144             287463.706         315623.594        
+S144             287449.257         315610.401        
+S144             287500.771         315522.449        
+S144             287525.272         315542.552        
+S144             287490.720         315604.119        
+S144             287494.489         315617.940        
+S144             287517.105         315627.991        
+S144             287497.002         315654.377        
+S145             287542.235         315661.916        
+S145             287532.183         315635.530        
+S145             287555.427         315636.786        
+S145             287579.300         315665.685        
+S145             287571.761         315678.878        
+S145             287649.662         315729.764        
+S145             287637.725         315751.124        
+S145             287530.926         315682.647        
+S146             287490.720         315688.301        
+S146             287497.630         315653.120        
+S146             287517.105         315628.619        
+S146             287532.811         315634.902        
+S146             287541.606         315662.544        
+S146             287531.555         315682.647        
+S146             287498.258         315693.955        
+S147             287502.028         315692.071        
+S147             287530.926         315683.275        
+S147             287638.354         315750.496        
+S147             287618.878         315784.420        
+S147             287508.938         315720.969        
+S148             287469.360         315640.556        
+S148             287497.002         315653.120        
+S148             287491.348         315688.929        
+S148             287462.449         315715.315        
+S148             287438.577         315695.840        
+S149             287449.257         315610.401        
+S149             287464.334         315623.594        
+S149             287469.360         315640.556        
+S149             287438.577         315697.096        
+S149             287461.821         315714.687        
+S149             287452.398         315738.560        
+S149             287422.871         315720.969        
+S149             287402.139         315694.584        
+S150             287453.026         315737.931        
+S150             287462.449         315715.315        
+S150             287491.348         315688.929        
+S150             287498.258         315693.327        
+S150             287502.028         315691.442        
+S150             287509.567         315721.597        
+S150             287497.630         315742.957        
+S150             287472.501         315751.124        
+S151             287477.527         315769.343        
+S151             287471.873         315750.496        
+S151             287497.630         315742.329        
+S151             287508.310         315721.597        
+S151             287618.878         315784.420        
+S151             287608.827         315802.011        
+S151             287586.211         315797.613        
+S151             287525.901         315761.176        
+S151             287510.823         315779.395        
+S152             287414.076         315827.140        
+S152             287370.728         315798.870        
+S152             287355.650         315770.599        
+S152             287402.139         315695.840        
+S152             287422.871         315721.597        
+S152             287392.716         315771.228        
+S152             287393.972         315778.766        
+S152             287414.076         315790.703        
+S152             287420.986         315814.575        
+S153             287422.871         315818.345        
+S153             287413.447         315790.703        
+S153             287394.601         315778.138        
+S153             287393.344         315771.856        
+S153             287423.499         315720.969        
+S153             287452.398         315737.931        
+S153             287472.501         315751.124        
+S153             287477.527         315768.715        
+S153             287454.282         315810.178        
+S153             287432.294         315817.717        
+S154             287431.962         315835.999        
+S154             287429.956         315817.944        
+S154             287432.965         315817.944        
+S154             287455.032         315810.922        
+S154             287477.601         315769.295        
+S154             287511.203         315779.326        
+S154             287525.747         315760.769        
+S154             287587.435         315797.882        
+S154             287609.001         315801.393        
+S154             287550.322         315905.711        
+S154             287439.986         315841.014        
+S155             287424.439         315874.115        
+S155             287409.895         315833.992        
+S155             287422.433         315813.931        
+S155             287422.433         315817.944        
+S155             287430.457         315818.445        
+S155             287431.460         315835.497        
+S155             287551.325         315905.209        
+S155             287534.775         315934.799        
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+StationPluvio    286868.026         316328.234        
+
