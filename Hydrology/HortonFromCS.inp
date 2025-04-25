@@ -1,0 +1,218 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           MGD
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        YES
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/1988
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/1988
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/1988
+END_TIME             23:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:06:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+1                INTENSITY 0:06     1.0      TIMESERIES 1RAIN           
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+; Name Raingage Outlet Area %Imperv Width Slope Clength
+CI-S000004       1                564              202.430313 50.000000 1675.40  0.048312 0.000000                 
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+CI-S000004       0.014000   0.014000   0.600000   0.120000   0.000000   OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+CI-S000004       5.000000   1.000000   3          10         0.000000  
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+; Name Elev ( Ymax Y0 Ysur Apond )
+564              15.190000  15.740000  0.000000   0.000000   8817864.412515
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+; Name InvertEl FREE FlapGate
+; Name InvertEl NORMAL FlapGate
+; Name InvertEl FIXED FixedStage FlapGate
+; Name InvertEl TIDAL TideTable FlapGate
+; Name InvertEl TIMESERIES StageSeries FlapGate
+outfall          4.740000   FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+; Name Node1 Node2 Length Nvalue Zup Zdown InitFlow
+564.1            564              outfall          1925.000000 0.014000   0.000000   0.000000   0.000000   0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+564.1            CIRCULAR     5.500000         0.000000   0.000000   0.000000   1          0         
+
+[LOSSES]
+;;Link           Kentry     Kexit      Kavg       Flap Gate  Seepage   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+564.1            0.150000   0.015000   0.000000   NO         0         
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+1RAIN            1/1/1988   0:00:00    0         
+1RAIN                       0:06:00    0.12      
+1RAIN                       0:12:00    0.17      
+1RAIN                       0:18:00    0.21      
+1RAIN                       0:24:00    0.24      
+1RAIN                       0:30:00    0.32      
+1RAIN                       0:36:00    0.48      
+1RAIN                       0:42:00    0.72      
+1RAIN                       0:48:00    1.27      
+1RAIN                       0:54:00    2.71      
+1RAIN                       1:00:00    5.95      
+1RAIN                       1:06:00    2.71      
+1RAIN                       1:12:00    1.27      
+1RAIN                       1:18:00    0.72      
+1RAIN                       1:24:00    0.48      
+1RAIN                       1:30:00    0.32      
+1RAIN                       1:36:00    0.24      
+1RAIN                       1:42:00    0.21      
+1RAIN                       1:48:00    0.17      
+1RAIN                       1:54:00    0.12      
+1RAIN                       2:00:00    0         
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 991730.987 165552.535 998065.529 169370.444
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+564              995945.430         166304.428        
+outfall          997777.596         166584.933        
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+CI-S000004       992568.321         167472.014        
+CI-S000004       992472.964         167500.206        
+CI-S000004       992408.658         167515.046        
+CI-S000004       992328.515         167569.569        
+CI-S000004       992325.654         167570.333        
+CI-S000004       992111.860         167792.058        
+CI-S000004       992182.002         167921.430        
+CI-S000004       992018.920         168014.003        
+CI-S000004       992080.860         168185.249        
+CI-S000004       992359.192         168247.148        
+CI-S000004       992354.245         168524.160        
+CI-S000004       992398.765         168598.360        
+CI-S000004       992364.138         168811.065        
+CI-S000004       992507.591         169013.877        
+CI-S000004       992700.510         168969.358        
+CI-S000004       992759.869         169196.903        
+CI-S000004       992873.642         169147.436        
+CI-S000004       992985.204         168757.523        
+CI-S000004       993475.155         168851.744        
+CI-S000004       993456.311         168983.654        
+CI-S000004       993757.819         169040.187        
+CI-S000004       993795.508         168776.367        
+CI-S000004       993946.262         168700.990        
+CI-S000004       994455.058         168776.367        
+CI-S000004       994624.656         168663.301        
+CI-S000004       994681.189         168173.350        
+CI-S000004       994939.831         168204.704        
+CI-S000004       994926.165         168324.104        
+CI-S000004       995210.935         168353.812        
+CI-S000004       995208.829         168342.949        
+CI-S000004       995246.517         167984.907        
+CI-S000004       995774.157         168060.284        
+CI-S000004       995906.067         167231.136        
+CI-S000004       996019.133         167174.603        
+CI-S000004       995943.756         167080.382        
+CI-S000004       996019.133         166420.832        
+CI-S000004       995906.067         166270.078        
+CI-S000004       996056.822         166157.012        
+CI-S000004       996075.666         165949.725        
+CI-S000004       995854.238         165924.786        
+CI-S000004       995399.621         165860.286        
+CI-S000004       994996.991         165815.549        
+CI-S000004       994985.807         165927.391        
+CI-S000004       994762.124         165905.022        
+CI-S000004       994773.308         165770.813        
+CI-S000004       994527.256         165726.076        
+CI-S000004       994493.704         165960.943        
+CI-S000004       994337.126         166050.417        
+CI-S000004       994212.700         166037.555        
+CI-S000004       993676.236         165967.582        
+CI-S000004       993699.561         165804.310        
+CI-S000004       993431.329         165769.323        
+CI-S000004       993442.991         165850.959        
+CI-S000004       993151.434         165815.972        
+CI-S000004       993268.057         165909.271        
+CI-S000004       993081.461         166014.231        
+CI-S000004       992999.825         166643.993        
+CI-S000004       992824.891         166760.616        
+CI-S000004       992953.176         166900.563        
+CI-S000004       992883.202         167495.338        
+CI-S000004       992568.321         167472.014        
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                993561.206         167975.941        
+

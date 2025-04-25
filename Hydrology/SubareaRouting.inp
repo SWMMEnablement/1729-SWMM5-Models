@@ -1,0 +1,102 @@
+; Downloaded from OpenSWMM topic https://www.openswmm.org/Thread/11838/subarea-routing on 05-Dec-2018 07:34
+;File: "Subarea Routing.inp"
+
+[TITLE]
+Illustration of the difference between OUTLET and PERVIOUS subarea routing options for a simple 1-acre subcatchment subject to 1-inch of rainfall.
+
+[OPTIONS]
+FLOW_UNITS           CFS
+INFILTRATION         MODIFIED_GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+START_DATE           06/02/2018
+START_TIME           00:00:00
+REPORT_START_DATE    06/02/2018
+REPORT_START_TIME    00:00:00
+END_DATE             06/02/2018
+END_TIME             03:00:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:01
+WET_STEP             00:00:01
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:01
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.00
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.6
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.0015
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+UniformRainfall  INTENSITY 1:00     1.0      TIMESERIES UniformRainfall
+
+[SUBCATCHMENTS]
+SubareaRouting  UniformRainfall   Outfall1         1        30       100      1        0                        
+DCIA            UniformRainfall   Outfall2         1        15       100      1        0                       
+IA              UniformRainfall   Outfall3         1        30       100      1        0                       
+
+[SUBAREAS]
+SubareaRouting   0.02       0.2        0.2        0.4        15         PERVIOUS   50       
+DCIA             0.02       0.2        0.2        0.4        15         OUTLET   
+IA               0.02       0.2        0.2        0.4        15         OUTLET   
+
+[INFILTRATION]
+SubareaRouting   4          0.5        0.35     
+DCIA             4          0.5        0.35     
+IA               4          0.5        0.35     
+
+[OUTFALLS]
+Outfall1         850          FREE                        NO                      
+Outfall2         850          FREE                        NO                      
+Outfall3         850          FREE                        NO                      
+
+[TIMESERIES]
+UniformRainfall             0:00       1        
+UniformRainfall             1:00       0        
+
+[REPORT]
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[MAP]
+DIMENSIONS -4080.963 0.000 14080.963 10000.000
+Units      None
+
+[COORDINATES]
+Outfall1                2900.807           7335.640         
+Outfall2                7352.941           4509.804         
+Outfall3                11782.007          1649.366         
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord          
+;;-------------- ------------------ ------------------
+SubareaRouting   -1239.908          5893.887         
+SubareaRouting   4619.377           8177.624         
+SubareaRouting   1839.677           9930.796         
+SubareaRouting   -3985.006          7647.059         
+DCIA             3200.692           3079.585         
+DCIA             9036.909           5363.322         
+DCIA             6314.879           7116.494         
+DCIA             455.594            4844.291          
+IA               7629.758           230.681          
+IA               13477.509          2468.281         
+IA               10720.877          4232.987         
+IA               4907.728           1960.784         

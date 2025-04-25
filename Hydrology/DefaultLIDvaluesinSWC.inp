@@ -1,0 +1,415 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           06/01/2006
+START_TIME           00:00:00
+REPORT_START_DATE    06/01/2006
+REPORT_START_TIME    00:00:00
+END_DATE             06/03/2006
+END_TIME             23:59:59
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          0:15:00
+WET_STEP             0:06:00
+DRY_STEP             0:06:00
+ROUTING_STEP         0:01:00 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+MONTHLY          0.104  0.139  0.25   0.329  0.35   0.418  0.441  0.4    0.329  0.244  0.15   0.105 
+DRY_ONLY         YES
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+RainGage2        INTENSITY 1:00     1.0      TIMESERIES TS1             
+RainGage1        CUMULATIVE 0:06     1.0      TIMESERIES TS24            
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+Subcatch1        RainGage1        Outfall1         9.7975   48.9785390012381 2814.5568 5        0                        
+Subcatch2        RainGage1        Outfall1         0.1      50       29.04    5        0                        
+Subcatch3        RainGage1        Outfall1         0.0525   95.2380952380952 15.246   5        0                        
+Subcatch4        RainGage1        Cisterns         0.05     100      14.52    5        0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+Subcatch1        0.01       0.35       0.05       0.34       0          OUTLET    
+Subcatch2        0.01       0.35       0.05       0.34       0          PERVIOUS   100       
+Subcatch3        0.01       0          0.05       6          0          PERVIOUS   100       
+Subcatch4        0.01       0.35       0.05       0.34       0          OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Suction    Ksat       IMD       
+;;-------------- ---------- ---------- ----------
+Subcatch1        5.1        0.2        0.26      
+Subcatch2        5.1        0.2        0.26      
+Subcatch3        5.1        0.2        0.26      
+Subcatch4        5.1        0.2        0.26      
+
+[LID_CONTROLS]
+;;Name           Type/Layer Parameters
+;;-------------- ---------- ----------
+RainGarden       BC
+RainGarden       SURFACE    6          0          0          0          0         
+RainGarden       SOIL       12         0.450      0.1        0.05       10         10         1.6       
+RainGarden       STORAGE    0          0          0.2000     0         
+RainGarden       DRAIN      0          0.5        6          6         
+
+GreenRoof        BC
+GreenRoof        SURFACE    0          0          0          0          0         
+GreenRoof        SOIL       4          0.450      0.1        0.05       10         10         1.6       
+GreenRoof        STORAGE    3          0.75       0          0         
+GreenRoof        DRAIN      10         0.5        0          0         
+
+StreetPlanter    BC
+StreetPlanter    SURFACE    6          0          0          0          0         
+StreetPlanter    SOIL       18         0.450      0.1        0.05       10         10         1.6       
+StreetPlanter    STORAGE    12         0.750      0.2000     0         
+StreetPlanter    DRAIN      0          0.5        6          6         
+
+PorousPavement   PP
+PorousPavement   SURFACE    0.05       0          0.01       3          0         
+PorousPavement   PAVEMENT   6          0.120      0          400        0         
+PorousPavement   STORAGE    18         0.750      0.2000     0         
+PorousPavement   DRAIN      0          0.5        6          6         
+
+[LID_USAGE]
+;;Subcatchment   LID Process      Number  Area       Width      InitSat    FromImp    ToPerv     RptFile                  DrainTo         
+;;-------------- ---------------- ------- ---------- ---------- ---------- ---------- ---------- ------------------------ ----------------
+Subcatch1        PorousPavement   1       2178.00    14.52      0          0.00       0         
+Subcatch1        RainGarden       1       108.90     0          0          1.00       0         
+Subcatch1        GreenRoof        1       2178.00    0          0          0          0         
+Subcatch1        StreetPlanter    1       130.68     0          0          0.99       0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Outfall1         0.0        FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+Cisterns         0        4.00       0          FUNCTIONAL 0         0         27.75    0        0        2.4      1        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+Dummy2           Cisterns         Outfall1         400        0.01       0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+Dummy2           DUMMY        0                0          0          0          1                    
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+TS1                         0          0         
+;
+TS24                        00:06      0.0048    
+TS24                        00:12      0.0096    
+TS24                        00:18      0.0144    
+TS24                        00:24      0.0193    
+TS24                        00:30      0.0243    
+TS24                        00:36      0.0293    
+TS24                        00:42      0.0343    
+TS24                        00:48      0.0394    
+TS24                        00:54      0.0446    
+TS24                        01:00      0.0497    
+TS24                        01:06      0.0550    
+TS24                        01:12      0.0602    
+TS24                        01:18      0.0656    
+TS24                        01:24      0.0709    
+TS24                        01:30      0.0764    
+TS24                        01:36      0.0818    
+TS24                        01:42      0.0874    
+TS24                        01:48      0.0929    
+TS24                        01:54      0.0986    
+TS24                        02:00      0.1042    
+TS24                        02:06      0.1099    
+TS24                        02:12      0.1157    
+TS24                        02:18      0.1215    
+TS24                        02:24      0.1273    
+TS24                        02:30      0.1332    
+TS24                        02:36      0.1392    
+TS24                        02:42      0.1452    
+TS24                        02:48      0.1512    
+TS24                        02:54      0.1573    
+TS24                        03:00      0.1634    
+TS24                        03:06      0.1696    
+TS24                        03:12      0.1758    
+TS24                        03:18      0.1821    
+TS24                        03:24      0.1884    
+TS24                        03:30      0.1948    
+TS24                        03:36      0.2012    
+TS24                        03:42      0.2077    
+TS24                        03:48      0.2142    
+TS24                        03:54      0.2208    
+TS24                        04:00      0.2273    
+TS24                        04:06      0.2340    
+TS24                        04:12      0.2408    
+TS24                        04:18      0.2477    
+TS24                        04:24      0.2546    
+TS24                        04:30      0.2617    
+TS24                        04:36      0.2688    
+TS24                        04:42      0.2761    
+TS24                        04:48      0.2834    
+TS24                        04:54      0.2909    
+TS24                        05:00      0.2984    
+TS24                        05:06      0.3060    
+TS24                        05:12      0.3137    
+TS24                        05:18      0.3215    
+TS24                        05:24      0.3295    
+TS24                        05:30      0.3375    
+TS24                        05:36      0.3456    
+TS24                        05:42      0.3537    
+TS24                        05:48      0.3620    
+TS24                        05:54      0.3704    
+TS24                        06:00      0.3789    
+TS24                        06:06      0.3875    
+TS24                        06:12      0.3961    
+TS24                        06:18      0.4049    
+TS24                        06:24      0.4138    
+TS24                        06:30      0.4227    
+TS24                        06:36      0.4318    
+TS24                        06:42      0.4409    
+TS24                        06:48      0.4501    
+TS24                        06:54      0.4595    
+TS24                        07:00      0.4689    
+TS24                        07:06      0.4784    
+TS24                        07:12      0.4880    
+TS24                        07:18      0.4977    
+TS24                        07:24      0.5075    
+TS24                        07:30      0.5174    
+TS24                        07:36      0.5274    
+TS24                        07:42      0.5375    
+TS24                        07:48      0.5477    
+TS24                        07:54      0.5580    
+TS24                        08:00      0.5683    
+TS24                        08:06      0.5790    
+TS24                        08:12      0.5901    
+TS24                        08:18      0.6017    
+TS24                        08:24      0.6138    
+TS24                        08:30      0.6264    
+TS24                        08:36      0.6394    
+TS24                        08:42      0.6529    
+TS24                        08:48      0.6669    
+TS24                        08:54      0.6813    
+TS24                        09:00      0.6962    
+TS24                        09:06      0.7114    
+TS24                        09:12      0.7265    
+TS24                        09:18      0.7417    
+TS24                        09:24      0.7568    
+TS24                        09:30      0.7720    
+TS24                        09:36      0.7875    
+TS24                        09:42      0.8038    
+TS24                        09:48      0.8209    
+TS24                        09:54      0.8387    
+TS24                        10:00      0.8573    
+TS24                        10:06      0.8768    
+TS24                        10:12      0.8974    
+TS24                        10:18      0.9192    
+TS24                        10:24      0.9421    
+TS24                        10:30      0.9662    
+TS24                        10:36      0.9918    
+TS24                        10:42      1.0192    
+TS24                        10:48      1.0486    
+TS24                        10:54      1.0799    
+TS24                        11:00      1.1130    
+TS24                        11:06      1.1494    
+TS24                        11:12      1.1903    
+TS24                        11:18      1.2358    
+TS24                        11:24      1.2858    
+TS24                        11:30      1.3404    
+TS24                        11:36      1.4533    
+TS24                        11:42      1.6783    
+TS24                        11:48      2.0403    
+TS24                        11:54      2.6895    
+TS24                        12:00      3.1401    
+TS24                        12:06      3.2299    
+TS24                        12:12      3.3089    
+TS24                        12:18      3.3771    
+TS24                        12:24      3.4345    
+TS24                        12:30      3.4811    
+TS24                        12:36      3.5211    
+TS24                        12:42      3.5586    
+TS24                        12:48      3.5937    
+TS24                        12:54      3.6262    
+TS24                        13:00      3.6564    
+TS24                        13:06      3.6846    
+TS24                        13:12      3.7115    
+TS24                        13:18      3.7371    
+TS24                        13:24      3.7613    
+TS24                        13:30      3.7842    
+TS24                        13:36      3.8060    
+TS24                        13:42      3.8269    
+TS24                        13:48      3.8468    
+TS24                        13:54      3.8657    
+TS24                        14:00      3.8837    
+TS24                        14:06      3.9011    
+TS24                        14:12      3.9181    
+TS24                        14:18      3.9348    
+TS24                        14:24      3.9511    
+TS24                        14:30      3.9672    
+TS24                        14:36      3.9829    
+TS24                        14:42      3.9983    
+TS24                        14:48      4.0133    
+TS24                        14:54      4.0280    
+TS24                        15:00      4.0424    
+TS24                        15:06      4.0564    
+TS24                        15:12      4.0701    
+TS24                        15:18      4.0835    
+TS24                        15:24      4.0965    
+TS24                        15:30      4.1093    
+TS24                        15:36      4.1216    
+TS24                        15:42      4.1337    
+TS24                        15:48      4.1454    
+TS24                        15:54      4.1568    
+TS24                        16:00      4.1679    
+TS24                        16:06      4.1787    
+TS24                        16:12      4.1894    
+TS24                        16:18      4.2000    
+TS24                        16:24      4.2105    
+TS24                        16:30      4.2209    
+TS24                        16:36      4.2311    
+TS24                        16:42      4.2412    
+TS24                        16:48      4.2512    
+TS24                        16:54      4.2611    
+TS24                        17:00      4.2709    
+TS24                        17:06      4.2805    
+TS24                        17:12      4.2901    
+TS24                        17:18      4.2995    
+TS24                        17:24      4.3088    
+TS24                        17:30      4.3180    
+TS24                        17:36      4.3270    
+TS24                        17:42      4.3360    
+TS24                        17:48      4.3448    
+TS24                        17:54      4.3535    
+TS24                        18:00      4.3621    
+TS24                        18:06      4.3705    
+TS24                        18:12      4.3789    
+TS24                        18:18      4.3871    
+TS24                        18:24      4.3952    
+TS24                        18:30      4.4032    
+TS24                        18:36      4.4111    
+TS24                        18:42      4.4188    
+TS24                        18:48      4.4265    
+TS24                        18:54      4.4340    
+TS24                        19:00      4.4414    
+TS24                        19:06      4.4487    
+TS24                        19:12      4.4558    
+TS24                        19:18      4.4629    
+TS24                        19:24      4.4698    
+TS24                        19:30      4.4766    
+TS24                        19:36      4.4833    
+TS24                        19:42      4.4899    
+TS24                        19:48      4.4963    
+TS24                        19:54      4.5027    
+TS24                        20:00      4.5089    
+TS24                        20:06      4.5150    
+TS24                        20:12      4.5211    
+TS24                        20:18      4.5273    
+TS24                        20:24      4.5333    
+TS24                        20:30      4.5394    
+TS24                        20:36      4.5454    
+TS24                        20:42      4.5514    
+TS24                        20:48      4.5574    
+TS24                        20:54      4.5633    
+TS24                        21:00      4.5693    
+TS24                        21:06      4.5752    
+TS24                        21:12      4.5811    
+TS24                        21:18      4.5869    
+TS24                        21:24      4.5928    
+TS24                        21:30      4.5986    
+TS24                        21:36      4.6044    
+TS24                        21:42      4.6101    
+TS24                        21:48      4.6159    
+TS24                        21:54      4.6216    
+TS24                        22:00      4.6273    
+TS24                        22:06      4.6330    
+TS24                        22:12      4.6386    
+TS24                        22:18      4.6442    
+TS24                        22:24      4.6498    
+TS24                        22:30      4.6554    
+TS24                        22:36      4.6610    
+TS24                        22:42      4.6665    
+TS24                        22:48      4.6720    
+TS24                        22:54      4.6775    
+TS24                        23:00      4.6829    
+TS24                        23:06      4.6884    
+TS24                        23:12      4.6938    
+TS24                        23:18      4.6992    
+TS24                        23:24      4.7045    
+TS24                        23:30      4.7099    
+TS24                        23:36      4.7152    
+TS24                        23:42      4.7205    
+TS24                        23:48      4.7258    
+TS24                        23:54      4.7310    
+TS24                        24:00      4.7362    
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS NONE
+NODES ALL
+LINKS NONE
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 38644470.868 -2780618311.534 3635552913.199 57669441.141
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Outfall1         2187871581.451     -1450653983.353   
+Cisterns         2009512485.137     -772889417.360    
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Subcatch1        3472057074.911     -2651605231.867   
+Subcatch2        1545778834.721     -1700356718.193   
+Subcatch3        202140309.156      -986920332.937    
+Subcatch4        2865636147.444     -71343638.526     
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+RainGage2        2865636147.444     -1771700356.718   
+RainGage1        2651605231.867     -1129607609.988   
+

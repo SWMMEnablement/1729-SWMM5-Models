@@ -1,0 +1,27 @@
+SW 1, 0, 0,
+MM 7, 1,2,3,10,11,12,13,
+$ANUM
+$TRANSPORT
+A1,'0'
+A1,'0'
+*   ISLOPE   ITRAP  IFLIP  INFLEW  SAVE REVIEW RESULTS  TIME WEIGHT  UNDERRELAXATION
+B0,0, 1, 2, 1, 1, 0.600000  0.500000
+*   NDT  NINPUT NNYN NNPE NOUTS NPRINT NPOLL NITER IDATEZ METRIC INTPRT
+B1  180    1     1     3      1     1      0     4   19891001  1    1
+B2,10., 0.0001, 0., 0, 0, 1,
+B3,1, 0, 0, 1,
+C1,0, 0,
+E1,'1',''  ''  ''  19, 3, /
+E1,'3', '1'  ''  ''  1, 600, 5, .05, .0138, 5, 1.0, 0, 0, ' ',  /
+E1,'2', '3'  ''  '' 19, 0.0,  /
+* Hydrograph & Pollutograph Input Node List
+H1,'3',
+I1,'1',
+J1  '1'  '2'  '3'
+J2  '1'  '2'  '3'
+R1,0, 0.,
+R1,.0167777, 0.,
+R1,.167777,  9.,
+R1,.367777, 0.,
+R1  1.0     0.
+$ENDPROGRAM

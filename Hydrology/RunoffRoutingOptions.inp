@@ -1,0 +1,257 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           MGD
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        YES
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/1988
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/1988
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/1988
+END_TIME             23:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:05:00
+WET_STEP             00:06:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         .01
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+1                INTENSITY 0:06     1.0      TIMESERIES 1Rain           
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+; Name Raingage Outlet Area %Imperv Width Slope Clength
+PerviousRouting  1                ImperviousRouting 204.39   50       1000     0.048312 0.000000                 
+ImperviousRouting 1                OutletRouting    38.04    50       100      0.048312 0.000000                 
+OutletRouting    1                564              104.33   50       100      0.048312 0.000000                 
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+PerviousRouting  0.014000   0.02       .05        .25        25         PERVIOUS   50        
+ImperviousRouting 0.014000   0.02       0.05       .25        25         IMPERVIOUS 100       
+OutletRouting    0.014000   0.02       0.05       .25        50         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+PerviousRouting  2          1          0.001      999.000000 0.000000  
+ImperviousRouting 2          1          0.0001     999.000000 0.000000  
+OutletRouting    2          1          0.0001     999.000000 0.000000  
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+; Name Elev ( Ymax Y0 Ysur Apond )
+564              15.190000  15.740000  0.000000   0.000000   8817864.412515
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+; Name InvertEl FREE FlapGate
+; Name InvertEl NORMAL FlapGate
+; Name InvertEl FIXED FixedStage FlapGate
+; Name InvertEl TIDAL TideTable FlapGate
+; Name InvertEl TIMESERIES StageSeries FlapGate
+outfall          4.740000   FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+; Name Node1 Node2 Length Nvalue Zup Zdown InitFlow
+564.1            564              outfall          418.25     0.014000   0.000000   0.000000   0.000000   0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+564.1            CIRCULAR     5.500000         0.000000   0.000000   0.000000   1          0         
+
+[LOSSES]
+;;Link           Kentry     Kexit      Kavg       Flap Gate  Seepage   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+564.1            0.150000   0.015000   0.000000   NO         0         
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+1Rain            1/1/1988   0:00:00    0         
+1Rain                       0:06:00    0.12      
+1Rain                       0:12:00    0.17      
+1Rain                       0:18:00    0.21      
+1Rain                       0:24:00    0.24      
+1Rain                       0:30:00    0.32      
+1Rain                       0:36:00    0.48      
+1Rain                       0:42:00    0.72      
+1Rain                       0:48:00    1.27      
+1Rain                       0:54:00    2.71      
+1Rain                       1:00:00    5.95      
+1Rain                       1:06:00    2.71      
+1Rain                       1:12:00    1.27      
+1Rain                       1:18:00    0.72      
+1Rain                       1:24:00    0.48      
+1Rain                       1:30:00    0.32      
+1Rain                       1:36:00    0.24      
+1Rain                       1:42:00    0.21      
+1Rain                       1:48:00    0.17      
+1Rain                       1:54:00    0.12      
+1Rain                       2:00:00    0         
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 991726.543 165543.828 998158.841 169553.282
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+564              997721.855         166999.457        
+outfall          997777.596         166584.933        
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+PerviousRouting  992568.321         167472.014        
+PerviousRouting  992472.964         167500.206        
+PerviousRouting  992408.658         167515.046        
+PerviousRouting  992328.515         167569.569        
+PerviousRouting  992325.654         167570.333        
+PerviousRouting  992111.860         167792.058        
+PerviousRouting  992182.002         167921.430        
+PerviousRouting  992018.920         168014.003        
+PerviousRouting  992080.860         168185.249        
+PerviousRouting  992359.192         168247.148        
+PerviousRouting  992354.245         168524.160        
+PerviousRouting  992398.765         168598.360        
+PerviousRouting  992364.138         168811.065        
+PerviousRouting  992507.591         169013.877        
+PerviousRouting  992700.510         168969.358        
+PerviousRouting  992759.869         169196.903        
+PerviousRouting  992873.642         169147.436        
+PerviousRouting  992985.204         168757.523        
+PerviousRouting  993475.155         168851.744        
+PerviousRouting  993456.311         168983.654        
+PerviousRouting  993757.819         169040.187        
+PerviousRouting  993795.508         168776.367        
+PerviousRouting  993946.262         168700.990        
+PerviousRouting  994455.058         168776.367        
+PerviousRouting  994624.656         168663.301        
+PerviousRouting  994795.734         168535.835        
+PerviousRouting  994875.753         168380.798        
+PerviousRouting  994926.165         168324.104        
+PerviousRouting  995210.935         168353.812        
+PerviousRouting  995208.829         168342.949        
+PerviousRouting  995246.517         167984.907        
+PerviousRouting  995774.157         168060.284        
+PerviousRouting  995906.067         167231.136        
+PerviousRouting  996019.133         167174.603        
+PerviousRouting  995943.756         167080.382        
+PerviousRouting  996019.133         166420.832        
+PerviousRouting  995906.067         166270.078        
+PerviousRouting  996056.822         166157.012        
+PerviousRouting  996075.666         165949.725        
+PerviousRouting  995854.238         165924.786        
+PerviousRouting  995399.621         165860.286        
+PerviousRouting  994996.991         165815.549        
+PerviousRouting  994985.807         165927.391        
+PerviousRouting  994762.124         165905.022        
+PerviousRouting  994773.308         165770.813        
+PerviousRouting  994527.256         165726.076        
+PerviousRouting  994493.704         165960.943        
+PerviousRouting  994337.126         166050.417        
+PerviousRouting  994212.700         166037.555        
+PerviousRouting  993676.236         165967.582        
+PerviousRouting  993699.561         165804.310        
+PerviousRouting  993431.329         165769.323        
+PerviousRouting  993442.991         165850.959        
+PerviousRouting  993151.434         165815.972        
+PerviousRouting  993268.057         165909.271        
+PerviousRouting  993081.461         166014.231        
+PerviousRouting  992999.825         166643.993        
+PerviousRouting  992824.891         166760.616        
+PerviousRouting  992953.176         166900.563        
+PerviousRouting  992883.202         167495.338        
+PerviousRouting  992568.321         167472.014        
+ImperviousRouting 994778.132         168550.455        
+ImperviousRouting 994919.149         168315.427        
+ImperviousRouting 995214.241         168365.044        
+ImperviousRouting 995258.635         167996.832        
+ImperviousRouting 996721.035         168205.747        
+ImperviousRouting 996444.224         169245.095        
+ImperviousRouting 994490.875         168764.593        
+OutletRouting    996736.195         168190.753        
+OutletRouting    996736.195         168190.753        
+OutletRouting    996736.195         168190.753        
+OutletRouting    996736.195         168210.758        
+OutletRouting    996511.142         169005.947        
+OutletRouting    996531.147         169020.951        
+OutletRouting    996591.161         169050.958        
+OutletRouting    996656.176         169085.966        
+OutletRouting    996796.210         169281.013        
+OutletRouting    996961.249         169371.034        
+OutletRouting    997186.302         169371.034        
+OutletRouting    997706.426         169261.008        
+OutletRouting    997781.444         169185.990        
+OutletRouting    997826.455         169060.960        
+OutletRouting    997846.459         168800.898        
+OutletRouting    997861.463         168305.781        
+OutletRouting    997866.464         167685.633        
+OutletRouting    997776.443         167250.530        
+OutletRouting    997661.415         166590.373        
+OutletRouting    996321.097         166355.317        
+OutletRouting    996016.024         166415.331        
+OutletRouting    995951.008         167070.487        
+OutletRouting    996026.026         167180.513        
+OutletRouting    995910.999         167240.527        
+OutletRouting    995780.968         168055.721        
+OutletRouting    996721.192         168190.753        
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                993958.143         168028.170        
+

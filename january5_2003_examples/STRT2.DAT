@@ -1,0 +1,50 @@
+SW  1  8  9
+MM  3  10 11 12
+@   8  'STRT2.INT'
+@   9  'GRAPH3.INT'
+$STORAGE                                                                         
+A1  'STEVENS AVENUE, LANCASTER PEN.'                                             
+A1  'STORM OF NOVEMBER 28'
+*  NOTAPE  JNS  NDT  DS    NU    NP   ICOST  METRIC  SAREA
+B1    0     51  61  60.0   1    3      0    0      165.                    
+*   IDATE     TIME         ISUM      IDET       NPR
+C1  731128     15.00         0         10         1                              
+*   ISTART(1) IEND(1)
+C2  731128    731128                                                            
+*  EVAPORATION DATA
+D1  .1   .1  .15  .25   .3  .6  .6  .7  .6   .4   .1  .1                                        
+*  IPOLL NDIM IPART PNAME PUNIT IPOLL NDIM IPART PNAME  PUNIT IPOLL NDIM IPART PNAME  PUNIT   
+E1   1    0      0   ' '    ' '    2     0    0   ' '    ' '    3    0      0    ' '   ' '  
+* 
+F1  ' STORAGE'
+*      IDENT   QMAX     RESIDUAL FLOW   IDIREC(1) IDIREC(2) IDIREC(3)
+F2       1      125.       0.0             100       100       200                    
+*      RMX
+G1     1.0                                                                       
+*    REMOVAL EQUATION VARIABLES
+G2     0  0  1  0 0 0 0 0 0 0 0                                                  
+*    EQUATION 7-1 COEFFICIENTS
+G3    0 0 -0.003028 0 0 0 0 0 0 0 0 0.45 -0.45 0.0 0.0 1.0
+G1     1.0                                                                       
+G2     0  0  1  0 0 0 0 0 0 0 0                                                  
+G3    0 0 -0.003028 0 0 0 0 0 0 0 0 0.65 -0.65 0.0 0.0 1.0
+G1     1.0                                                                       
+G2     0  0  1  0 0 0 0 0 0 0 0                                                  
+G3    0 0 -0.0020 0 0 0 0 0 0 0 0 0.80 -0.80 0.0 0.0 1.0
+*     PLUG FLOW ROUTING IS BEING USED
+*     IROUTE    IOUT     IDRAW      IRES
+H1       0         1         1         0                                        
+*     DEPTH     AREA  VOLUME  TREATED OUTFLOW RESIDUAL FLOW
+H3     0.0     1000.    0            0          5.                              
+H3     8.0     1000.    0            0          5.                              
+H3     8.5     1000.    0            0          5.                              
+H3     9.0     1000.    0            0          5.                              
+H3     9.5     1000.    0            0          5.                              
+H3    10.0     1000.    0            0          5.                              
+*    C1         C2         C3
+H4   66.66        8.       1.5                                                  
+*     NPSL   SLDEN  SLDMAX
+H7      2    20000.    1.                                                  
+*    WARN      PCO(1)  PCO(2)   PCO(3)
+H8   4000.       25.    100.   100000.                                        
+$ENDPROGRAM                                                                      

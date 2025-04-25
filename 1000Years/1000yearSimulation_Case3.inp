@@ -1,0 +1,183 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           05/01/1948
+START_TIME           00:00:00
+REPORT_START_DATE    05/01/1948
+REPORT_START_TIME    00:00:00
+END_DATE             12/30/1949
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            01/30
+DRY_DAYS             0
+REPORT_STEP          01:00:00
+WET_STEP             00:15:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:15:00 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.566
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[FILES]
+;;Interfacing Files
+USE RAINFALL "1001_Year_Rainfall.rff"
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+MONTHLY          .1     0.1    .1     0.15   0.2    0.3    0.191  0.3    0.2    0.1    0.05   0.05  
+RECOVERY         soil
+DRY_ONLY         YES
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+Rain             VOLUME    1:00     1.0      TIMESERIES InternalTS      
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+MySubCatchment   Rain             Outfall_From_Horton 10       10       660      0.5      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+MySubCatchment   0.02       0.05       0.05       0.1        25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+MySubCatchment   0.5        .05        2          7          0         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+Outfall_From_Horton 0          10         0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+1                0          FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1                Outfall_From_Horton 1                400        0.01       0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                DUMMY        0                0          0          0          1                    
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+Outfall_From_Horton FLOW             ""               FLOW     1.0      1.0      1       
+1                FLOW             ""               FLOW     1.0      1.0      1       
+
+[DWF]
+;;Node           Constituent      Baseline   Patterns  
+;;-------------- ---------------- ---------- ----------
+Outfall_From_Horton FLOW             .5         "Hourly"
+1                FLOW             .5         "Hourly"
+
+[HYDROGRAPHS]
+;;Hydrograph     Rain Gage/Month  Response R        T        K        Dmax     Drecov   Dinit   
+;;-------------- ---------------- -------- -------- -------- -------- -------- -------- --------
+USA_RDII         Rain            
+USA_RDII         All              Short    .05      1        1        0        0        0       
+USA_RDII         All              Medium   .01      3        3        0        0        0       
+USA_RDII         All              Long     .04      7        7        0        0        0       
+
+
+[RDII]
+;;Node           Unit Hydrograph  Sewer Area
+;;-------------- ---------------- ----------
+Outfall_From_Horton USA_RDII         5         
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+InternalTS                  0          1         
+InternalTS                  1          2         
+InternalTS                  20         3         
+InternalTS                  30         4         
+InternalTS                  40         5         
+InternalTS                  50         4         
+InternalTS                  60         3         
+InternalTS                  70         2         
+InternalTS                  80         1         
+InternalTS                  90         1         
+InternalTS                  100        1         
+InternalTS                  110        1         
+InternalTS                  120        1         
+
+[PATTERNS]
+;;Name           Type       Multipliers
+;;-------------- ---------- -----------
+soil             MONTHLY    .01   .10   1     2     1     .10  
+soil                        .01   .10   1     2     1     .1   
+;
+Hourly           HOURLY     0.191 0.236 0.251 0.302 0.400 0.463
+Hourly                      0.703 1.000 0.876 0.670 0.491 0.456
+Hourly                      0.400 0.358 0.274 0.290 0.373 0.385
+Hourly                      0.468 0.596 0.640 0.543 0.403 0.364
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 748874.127 245268.228 755379.636 252080.992
+Units      Feet
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Outfall_From_Horton 749349.585         246983.069        
+1                748248.082         246590.998        
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+MySubCatchment   750258.609         245577.899        
+MySubCatchment   749560.080         247178.986        
+MySubCatchment   749169.832         247829.737        
+MySubCatchment   750027.511         251771.320        
+MySubCatchment   753734.320         249931.782        
+MySubCatchment   755083.931         248101.487        
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Rain             750959.919         249996.489        
+

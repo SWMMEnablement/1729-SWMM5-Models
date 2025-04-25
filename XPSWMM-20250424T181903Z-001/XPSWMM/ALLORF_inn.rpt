@@ -1,0 +1,416 @@
+
+  ---------------------------------------------------------------------
+    Innovyze Storm Water Management Model
+  ---------------------------------------------------------------------
+
+  ---------------------------------------------------------------------
+
+  Version                        = 0.2.17.0
+  Platform                       = 64-bit (x64)
+  Build date                     = 28/11/2019
+  Copyright                      = Copyright (c) 2019 Innovyze
+  Computer name                  = REMOL9CTW0N2
+  Architecture                   = 64-bit
+  CPU Type                       = Intel(R) Xeon(R) CPU E3-1535M v6 @ 3.10GHz
+  Number of Cores                = 8
+  RAM (GB)                       = 32
+  ---------------------------------------------------------------------
+
+  
+
+  **************************
+    Innovyze License Check
+  **************************
+
+  License mode            : N
+  License dongle settings : DongleType=6,NetworkDongleAddress=,NetworkDongleKeyID=,DemoMode=0
+  License settings        : Soft local
+  License serial number   : WS98760081PM
+  License name            : Innovyze
+  
+
+
+  *****************
+    Element Count
+  *****************
+
+  Number of rain gages ...... 0
+  Number of subcatchments ... 0
+  Number of nodes ........... 10
+  Number of links ........... 14
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+
+
+  ****************
+    Node Summary
+  ****************
+
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  238                 JUNCTION              9.99     10.01       0.0
+  240                 JUNCTION              9.98     10.02       0.0
+  Outfall             OUTFALL               9.97      4.00       0.0
+  Duckpond            STORAGE              10.00     10.00       0.0     Yes
+  202                 STORAGE              10.00     10.00       0.0
+  203                 STORAGE              10.00     10.00       0.0
+  204                 STORAGE              10.00     10.00       0.0
+  205                 STORAGE              10.00     10.00       0.0
+  206                 STORAGE              10.00     10.00       0.0
+  207                 STORAGE              10.00     10.00       0.0
+
+
+  ****************
+    Link Summary
+  ****************
+
+  Name             From Node        To Node          Type            Length    %Slope Roughness  Culvert Type
+  ------------------------------------------------------------------------------------------------------------
+  239              206              238              CONDUIT          100.0    0.0100    0.0140
+  241              238              240              CONDUIT          100.0    0.0100    0.0140
+  243              240              Outfall          CONDUIT          100.0    0.0100    0.0140
+  ORIF#1           Duckpond         202              ORIFICE     
+  ORIF#2           202              205              ORIFICE     
+  ORIF#3           205              Duckpond         ORIFICE     
+  ORIF#4           202              207              ORIFICE     
+  ORIF#5           207              203              ORIFICE     
+  ORIF#6           203              204              ORIFICE     
+  ORIF#7           204              206              ORIFICE     
+  ORIF#8           206              203              ORIFICE     
+  ORIF#9           203              202              ORIFICE     
+  ORIF#10          205              207              ORIFICE     
+  ORIF#11          207              206              ORIFICE     
+
+
+  *************************
+    Cross Section Summary
+  *************************
+
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  239              TRAPEZOIDAL          4.00    32.00     2.09    12.00     1       55.52
+  241              TRAPEZOIDAL          4.00    32.00     2.09    12.00     1       55.52
+  243              TRAPEZOIDAL          4.00    32.00     2.09    12.00     1       55.52
+
+  
+  
+  
+  *************************************************************
+    NOTE: The summary statistics displayed in this report are
+    based on results found at every computational time step,  
+    not just on results from each reporting time step.
+  *************************************************************
+
+  ********************
+    Analysis Options
+  ********************
+
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ NO
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Flow Routing Method ...... DYNWAVE
+
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 01/01/1996 00:00:00
+  Ending Date .............. 01/01/1996 02:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:00:10
+  Routing Time Step ........ 10.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Head Tolerance ........... 0.005000 ft
+
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.000         0.000
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         6.910         2.252
+  External Outflow .........         0.759         0.247
+  Internal Outflow .........         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         4.763         1.552
+  Final Stored Volume ......        10.916         3.557
+  Continuity Error (%) .....        -0.015
+  
+
+  *****************************
+    Highest Continuity Errors
+  *****************************
+
+  Node 238                                   -5.46%    -0.0122
+  Node 240                                   -5.17%    -0.0122
+  Node 206                                   -2.53%    -0.0055
+  Node 207                                    0.02%     0.0000
+  Node 205                                    0.01%     0.0001
+  Node 202                                    0.01%     0.0001
+  Node Duckpond                              -0.01%    -0.0002
+  Node 203                                    0.01%     0.0000
+  Node 204                                    0.00%     0.0000
+                                                       -0.0298 Mgal
+
+
+  
+  *******************************
+    Time-Step Critical Elements
+  *******************************
+
+  Link 243 (15.40%)
+  Link 241 (0.26%)
+  Link ORIF#11 (0.00%)
+  Link ORIF#8 (0.00%)
+  Link ORIF#10 (0.00%)
+  Link ORIF#9 (0.00%)
+  Link ORIF#5 (0.00%)
+  Link ORIF#4 (0.00%)
+  Link ORIF#3 (0.00%)
+  Link ORIF#2 (0.00%)
+  Link ORIF#1 (0.00%)
+  Link ORIF#7 (0.00%)
+  Link ORIF#6 (0.00%)
+  Link 239 (0.00%)
+  Node 207 (0.00%)
+  Node 206 (0.00%)
+  Node 205 (0.00%)
+  Node 204 (0.00%)
+  Node 203 (0.00%)
+  Node 202 (0.00%)
+  Node Duckpond (0.00%)
+  Node Outfall (0.00%)
+  Node 240 (0.00%)
+  Node 238 (0.00%)
+
+
+  
+  ************************************
+    Highest Flow Instability Indexes
+  ************************************
+
+  Link 243 (3)
+  Link 241 (3)
+  Link 239 (1)
+  Link ORIF#11 (0)
+  Link ORIF#10 (0)
+  Link ORIF#9 (0)
+  Link ORIF#8 (0)
+  Link ORIF#4 (0)
+  Link ORIF#3 (0)
+  Link ORIF#2 (0)
+  Link ORIF#1 (0)
+  Link ORIF#7 (0)
+  Link ORIF#6 (0)
+  Link ORIF#5 (0)
+
+
+
+  *****************************
+    Routing Time Step Summary
+  *****************************
+
+  Minimum Time Step           :     3.20 sec
+  Average Time Step           :     9.40 sec
+  Maximum Time Step           :    10.00 sec
+  Percent in Steady State     :     0.00
+  Average Iterations per Step :     2.04
+  Percent Not Converging      :     0.13
+  Total Steps                 :      766
+  Total Iterations            :     1566
+
+
+  
+
+  **********************
+    Node Depth Summary
+  **********************
+
+  ----------------------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported  Time of Max
+                                   Depth    Depth  Run HGL   Occurrence   Max Depth   Occurrence
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet  days hr:min
+  ----------------------------------------------------------------------------------------------
+  238                  JUNCTION     0.34     2.51    12.50     0  00:00       12.50     0  00:00
+  240                  JUNCTION     0.30     2.52    12.50     0  00:00       12.50     0  00:00
+  Outfall              OUTFALL      0.20     1.36    11.33     0  00:01       11.33     0  00:00
+  Duckpond             STORAGE      3.98     5.53    15.53     0  02:00       15.53     0  00:00
+  202                  STORAGE      2.78     3.31    13.31     0  02:00       13.31     0  00:00
+  203                  STORAGE      2.50     2.54    12.54     0  02:00       12.54     0  00:00
+  204                  STORAGE      2.50     2.50    12.50     0  00:00       12.50     0  00:00
+  205                  STORAGE      2.81     3.36    13.36     0  02:00       13.36     0  00:00
+  206                  STORAGE      0.36     2.50    12.50     0  00:00       12.50     0  00:00
+  207                  STORAGE      2.51     2.64    12.64     0  02:00       12.64     0  00:00
+
+  
+
+  ***********************
+    Node Inflow Summary
+  ***********************
+
+  ------------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal    10^6 gal or %
+  ------------------------------------------------------------------------------------------------------
+  238                  JUNCTION      0.00    84.86     0  00:01           0       0.223      -5.178 %
+  240                  JUNCTION      0.00    85.79     0  00:01           0       0.235      -4.917 %
+  Outfall              OUTFALL       0.00    82.12     0  00:01           0       0.247       0.000 %
+  Duckpond             STORAGE      50.00    50.00     0  00:30        2.25        2.47      -0.007 %
+  202                  STORAGE       0.00    10.57     0  02:00           0       0.508       0.011 %
+  203                  STORAGE       0.00     1.57     0  02:00           0       0.228       0.006 %
+  204                  STORAGE       0.00     0.00     0  00:00           0       0.217       0.000 %
+  205                  STORAGE       0.00     9.47     0  02:00           0       0.522       0.012 %
+  206                  STORAGE       0.00     0.00     0  00:00           0       0.217      -2.471 %
+  207                  STORAGE       0.00     4.79     0  02:00           0       0.253       0.018 %
+
+  
+
+  **************************
+    Node Surcharge Summary
+  **************************
+
+  Surcharging occurs when water rises above the top of the highest conduit.
+  ---------------------------------------------------------------------
+                                               Max. Height   Min. Depth
+                                   Hours       Above Crown    Below Rim
+  Node                 Type      Surcharged           Feet         Feet
+  ---------------------------------------------------------------------
+  Duckpond             STORAGE         1.40          2.030        4.470
+
+  
+
+  *************************
+    Node Flooding Summary
+  *************************
+
+  No nodes were flooded.
+  
+
+  **************************
+    Storage Volume Summary
+  **************************
+
+  --------------------------------------------------------------------------------------------------
+                         Average     Avg  Evap Exfil       Maximum     Max    Time of Max    Maximum
+                          Volume    Pcnt  Pcnt  Pcnt        Volume    Pcnt     Occurrence    Outflow
+  Storage Unit          1000 ft3    Full  Loss  Loss      1000 ft3    Full    days hr:min        CFS
+  --------------------------------------------------------------------------------------------------
+  Duckpond               124.650   17.44   0.0   0.0       251.908      35       0  02:00      19.03
+  202                     39.984    5.60   0.0   0.0        63.738       9       0  02:00       4.43
+  203                     29.199    4.09   0.0   0.0        30.535       4       0  02:00       0.00
+  204                     29.076    4.07   0.0   0.0        29.076       4       0  00:00       0.00
+  205                     41.490    5.81   0.0   0.0        66.391       9       0  02:00       2.93
+  206                      2.145    0.30   0.0   0.0        29.076       4       0  00:00      84.86
+  207                     29.505    4.13   0.0   0.0        33.837       5       0  02:00       0.00
+
+  
+
+  ***************************
+    Outfall Loading Summary
+  ***************************
+
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  Outfall              100.00      7.24     82.12       0.247
+  -----------------------------------------------------------
+  System               100.00      7.24     82.12       0.247
+
+  
+
+  *********************
+    Link Flow Summary
+  *********************
+
+  --------------------------------------------------------------------------------------------------------------------------------------------------
+                                     Maximum  Time of Max        Maximum  Time of Max    Max/   Maximum  Time of Max    Max/  Time of Max    Maximum
+                                  |Run Flow|   Occurrence  |Output Flow|   Occurrence    Full   |Veloc|   Occurrence    Full   Occurrence  Top Width
+  Link                 Type              CFS  days hr:min            CFS  days hr:min    Flow    ft/sec  days hr:min   Depth  days hr:min         ft
+  --------------------------------------------------------------------------------------------------------------------------------------------------
+  239                  CONDUIT         84.86     0  00:01           0.00     0  00:00    1.53      5.90     0  00:01    0.63     0  00:00
+  241                  CONDUIT         85.79     0  00:01           0.00     0  00:00    1.55      7.08     0  00:02    0.63     0  00:00
+  243                  CONDUIT         82.12     0  00:01           0.00     0  00:00    1.48      9.15     0  00:02    0.43     0  00:02
+  ORIF#1               ORIFICE          9.57     0  02:00           0.00     0  00:00                                   1.00     0  00:35
+  ORIF#2               ORIFICE          1.01     0  02:00           0.00     0  00:00                                   0.71     0  02:00
+  ORIF#3               ORIFICE          9.47     0  02:00           0.00     0  00:00                                                    
+  ORIF#4               ORIFICE          2.87     0  02:00           0.00     0  00:00                                                    
+  ORIF#5               ORIFICE          0.00     0  00:00           0.00     0  00:00                                   0.00     0  00:00
+  ORIF#6               ORIFICE          0.00     0  00:00           0.00     0  00:00                                   0.00     0  00:00
+  ORIF#7               ORIFICE          0.00     0  00:00           0.00     0  00:00                                   0.00     0  00:00
+  ORIF#8               ORIFICE          0.00     0  00:00           0.00     0  00:00                                   0.00     0  00:00
+  ORIF#9               ORIFICE          1.57     0  02:00           0.00     0  00:00                                   0.62     0  02:00
+  ORIF#10              ORIFICE          1.93     0  02:00           0.00     0  00:00                                   0.71     0  02:00
+  ORIF#11              ORIFICE          0.00     0  00:00           0.00     0  00:00                                   0.00     0  00:00
+
+  
+
+  *******************************
+    Flow Classification Summary
+  *******************************
+
+  -----------------------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------------------------
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet New    New
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  Length Roughness
+  -----------------------------------------------------------------------------------------------------
+  239                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00  100.00    0.0140
+  241                     1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00  100.00    0.0140
+  243                     1.00   0.00  0.00  0.00  0.86  0.14  0.00  0.00  0.00  0.00  100.00    0.0140
+
+  
+
+  *****************************
+    Conduit Surcharge Summary
+  *****************************
+
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  239                         0.00      0.00      0.00      0.06         0.00
+  241                         0.00      0.00      0.00      0.06         0.00
+  243                         0.00      0.00      0.00      0.07         0.00
+
+  
+  
+
+  **************************
+    Innovyze License Check
+  **************************
+
+  Quick license check successful
+
+
+  *************************
+    System Resource Usage
+  *************************
+
+  Threads available      = 8
+  Threads requested      = 1
+  Threads used           = 1
+  Virtual memory         = 4.7 MB
+  Physical memory        = 9.6 MB
+  Peak physical memory*  = 9.6 MB   (*Note: not accurate for multi-inp processes)
+  Total CPU time         = 0.0 s
+  Elapsed clock time     = 0.0 s
+  Ratio CPU/clock        = 0.2
+
+
+  Analysis begun on:  Fri Nov 29 07:54:23 2019
+  Analysis ended on:  Fri Nov 29 07:54:23 2019
+  Total elapsed time: < 1 sec

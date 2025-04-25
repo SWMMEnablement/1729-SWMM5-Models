@@ -1,0 +1,305 @@
+[TITLE]
+;;Project Title/Notes
+ Example 5
+ A simple groundwater example.
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           09/13/2014
+START_TIME           00:00:00
+REPORT_START_DATE    09/13/2014
+REPORT_START_TIME    00:00:00
+END_DATE             09/15/2014
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             00:05:00
+ROUTING_STEP         0:00:30 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+1                INTENSITY 0:15     1.0      TIMESERIES Rainfall        
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+wRG_O_100        1                2                5        50       100      1        0                        
+woRG_O_100       1                2                5        50       100      1        0                        
+wRG_P_50_50      1                2                5        50       100      1        0                        
+wRG_P_25_50      1                2                5        50       100      1        0                        
+wRG_P_50_100     1                2                5        50       100      1        0                        
+wRG_P_100_50     1                2                5        50       100      1        0                        
+wRG_P_100_WQ     1                2                5        50       100      1        0                        
+wRG_O_100_WQ     1                2                5        50       100      1        0                        
+wRG_P_100_100    1                2                5        50       100      1        0                        
+wRG_P_25_100     1                2                5        50       100      1        0                        
+wRG_P_25_WQ      1                2                5        50       100      1        0                        
+wRG_P_50_WQ      1                2                5        50       100      1        0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+wRG_O_100        0.01       0.1        0.05       0.05       25         OUTLET    
+woRG_O_100       0.01       0.1        0.05       0.05       25         OUTLET    
+wRG_P_50_50      0.01       0.1        0.05       0.05       25         PERVIOUS   50        
+wRG_P_25_50      0.01       0.1        0.05       0.05       25         PERVIOUS   25        
+wRG_P_50_100     0.01       0.1        0.05       0.05       25         PERVIOUS   100       
+wRG_P_100_50     0.01       0.1        0.05       0.05       25         PERVIOUS   100       
+wRG_P_100_WQ     0.01       0.1        0.05       0.05       25         PERVIOUS   100       
+wRG_O_100_WQ     0.01       0.1        0.05       0.05       25         PERVIOUS   100       
+wRG_P_100_100    0.01       0.1        0.05       0.05       25         PERVIOUS   100       
+wRG_P_25_100     0.01       0.1        0.05       0.05       25         PERVIOUS   100       
+wRG_P_25_WQ      0.01       0.1        0.05       0.05       25         PERVIOUS   25        
+wRG_P_50_WQ      0.01       0.1        0.05       0.05       25         PERVIOUS   50        
+
+[INFILTRATION]
+;;Subcatchment   Param1     Param2     Param3     Param4     Param5    
+;;-------------- ---------- ---------- ---------- ---------- ----------
+wRG_O_100        1.2        0.1        2          7          0         
+woRG_O_100       1.2        0.1        2          7          0         
+wRG_P_50_50      1.2        0.1        2          7          0         
+wRG_P_25_50      1.2        0.1        2          7          0         
+wRG_P_50_100     1.2        0.1        2          7          0         
+wRG_P_100_50     1.2        0.1        2          7          0         
+wRG_P_100_WQ     1.2        0.1        2          7          0         
+wRG_O_100_WQ     1.2        0.1        2          7          0         
+wRG_P_100_100    1.2        0.1        2          7          0         
+wRG_P_25_100     1.2        0.1        2          7          0         
+wRG_P_25_WQ      1.2        0.1        2          7          0         
+wRG_P_50_WQ      1.2        0.1        2          7          0         
+
+[LID_CONTROLS]
+;;Name           Type/Layer Parameters
+;;-------------- ---------- ----------
+RG               BC
+RG               SURFACE    6          .25        0.1        1.0        5         
+RG               SOIL       12         0.5        0.2        0.1        0.5        10.0       3.5       
+RG               STORAGE    5          0.75       0.5        0         
+RG               DRAIN      0          0.5        6          6          0          0                    
+
+RG_WQ            BC
+RG_WQ            SURFACE    6          .25        0.1        1.0        5         
+RG_WQ            SOIL       12         0.5        0.2        0.1        0.5        10.0       3.5       
+RG_WQ            STORAGE    5          0.75       0.5        0         
+RG_WQ            DRAIN      0          0.5        6          6          0          0                    
+RG_WQ            REMOVALS   TSS        25        
+
+[LID_USAGE]
+;;Subcatchment   LID Process      Number  Area       Width      InitSat    FromImp    ToPerv     RptFile                  DrainTo          FromPerv  
+;;-------------- ---------------- ------- ---------- ---------- ---------- ---------- ---------- ------------------------ ---------------- ----------
+wRG_O_100        RG               100     50         10         0          50         1          *                        *                0               
+wRG_P_50_50      RG               100     50         10         0          50         1          *                        *                0               
+wRG_P_25_50      RG               100     50         10         0          50         1          *                        *                0               
+wRG_P_50_100     RG               100     50         10         0          100        1          *                        *                0               
+wRG_P_100_50     RG               100     50         10         0          50         1          *                        *                0               
+wRG_P_100_50     RG               100     50         10         0          50         1          *                        *                0               
+wRG_P_100_WQ     RG_WQ            100     50         10         0          50         1          *                        *                0               
+wRG_O_100_WQ     RG_WQ            100     50         10         0          50         1          *                        *                0               
+wRG_P_100_100    RG               100     50         10         0          100        1          *                        *                0               
+wRG_P_25_100     RG               100     50         10         0          100        1          *                        *                0               
+wRG_P_25_WQ      RG_WQ            100     50         10         0          50         1          *                        *                0               
+wRG_P_50_WQ      RG_WQ            100     50         10         0          50         1          *                        *                0               
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+2                0          0          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+3                0          FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1                2                3                400        0.01       0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                CIRCULAR     1                0          0          0          1                    
+
+[POLLUTANTS]
+;;Name           Units  Crain      Cgw        Crdii      Kdecay     SnowOnly   Co-Pollutant     Co-Frac    Cdwf       Cinit     
+;;-------------- ------ ---------- ---------- ---------- ---------- ---------- ---------------- ---------- ---------- ----------
+TSS              MG/L   0.0        0.0        0.0        0.0        NO         *                0.0        0.0        0.0       
+
+[LANDUSES]
+;;               Sweeping   Fraction   Last      
+;;Name           Interval   Available  Swept     
+;;-------------- ---------- ---------- ----------
+Urban            0          0          0         
+
+[COVERAGES]
+;;Subcatchment   Land Use         Percent   
+;;-------------- ---------------- ----------
+wRG_O_100        Urban            100       
+woRG_O_100       Urban            100       
+wRG_P_50_50      Urban            100       
+wRG_P_25_50      Urban            100       
+wRG_P_50_100     Urban            100       
+wRG_P_100_50     Urban            100       
+wRG_P_100_WQ     Urban            100       
+wRG_O_100_WQ     Urban            100       
+wRG_P_100_100    Urban            100       
+wRG_P_25_100     Urban            100       
+wRG_P_25_WQ      Urban            100       
+wRG_P_50_WQ      Urban            100       
+
+[LOADINGS]
+;;Subcatchment   Pollutant        Buildup   
+;;-------------- ---------------- ----------
+
+[BUILDUP]
+;;Land Use       Pollutant        Function   Coeff1     Coeff2     Coeff3     Per Unit  
+;;-------------- ---------------- ---------- ---------- ---------- ---------- ----------
+Urban            TSS              NONE       0.0        0.0        0.0        AREA      
+
+[WASHOFF]
+;;Land Use       Pollutant        Function   Coeff1     Coeff2     SweepRmvl  BmpRmvl   
+;;-------------- ---------------- ---------- ---------- ---------- ---------- ----------
+Urban            TSS              EMC        100        0.0        0.0        0.0       
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+Rainfall                    0:00       0.037     
+Rainfall                    0:15       0.111     
+Rainfall                    0:30       0.185     
+Rainfall                    0:45       0.259     
+Rainfall                    1:00       0.333     
+Rainfall                    1:15       0.407     
+Rainfall                    1:30       0.481     
+Rainfall                    1:45       0.556     
+Rainfall                    2:00       0.630     
+Rainfall                    2:15       0.644     
+Rainfall                    2:30       0.600     
+Rainfall                    2:45       0.556     
+Rainfall                    3:00       0.511     
+Rainfall                    3:15       0.467     
+Rainfall                    3:30       0.422     
+Rainfall                    3:45       0.378     
+Rainfall                    4:00       0.333     
+Rainfall                    4:15       0.289     
+Rainfall                    4:30       0.244     
+Rainfall                    4:45       0.200     
+Rainfall                    5:00       0.156     
+Rainfall                    5:15       0.111     
+Rainfall                    5:30       0.067     
+Rainfall                    5:45       0.022     
+Rainfall                    6:00       0         
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   YES
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -5103.973 136.182 10491.985 9405.388
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+2                4556.338           3352.113          
+3                5572.185           3441.525          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+wRG_O_100        2665.628           6496.492          
+wRG_O_100        5835.350           6511.074          
+wRG_O_100        5835.350           8970.313          
+wRG_O_100        2665.628           8975.365          
+woRG_O_100       -803.851           6461.710          
+woRG_O_100       2365.871           6476.292          
+woRG_O_100       2365.871           8935.531          
+woRG_O_100       -803.851           8940.583          
+wRG_P_50_50      -4411.647          3848.214          
+wRG_P_50_50      -1241.925          3862.796          
+wRG_P_50_50      -1241.925          6322.035          
+wRG_P_50_50      -4411.647          6327.087          
+wRG_P_25_50      -4433.664          479.595           
+wRG_P_25_50      -1263.942          494.177           
+wRG_P_25_50      -1263.942          2953.416          
+wRG_P_25_50      -4433.664          2958.468          
+wRG_P_50_100     -855.883           534.638           
+wRG_P_50_100     2313.839           549.220           
+wRG_P_50_100     2313.839           3008.459          
+wRG_P_50_100     -855.883           3013.511          
+wRG_P_100_50     -4395.066          6496.492          
+wRG_P_100_50     -1225.344          6511.074          
+wRG_P_100_50     -1225.344          8970.313          
+wRG_P_100_50     -4395.066          8975.365          
+wRG_P_100_WQ     6326.406           6505.187          
+wRG_P_100_WQ     9496.128           6519.769          
+wRG_P_100_WQ     9496.128           8979.008          
+wRG_P_100_WQ     6326.406           8984.060          
+wRG_O_100_WQ     2644.839           3859.223          
+wRG_O_100_WQ     5814.561           3873.805          
+wRG_O_100_WQ     5814.561           6333.044          
+wRG_O_100_WQ     2644.839           6338.096          
+wRG_P_100_100    -844.874           3848.214          
+wRG_P_100_100    2324.848           3862.796          
+wRG_P_100_100    2324.848           6322.035          
+wRG_P_100_100    -844.874           6327.087          
+wRG_P_25_100     2699.882           567.664           
+wRG_P_25_100     5869.604           582.246           
+wRG_P_25_100     5869.604           3041.485          
+wRG_P_25_100     2699.882           3046.537          
+wRG_P_25_WQ      6277.663           556.655           
+wRG_P_25_WQ      9447.385           571.237           
+wRG_P_25_WQ      9447.385           3030.476          
+wRG_P_25_WQ      6277.663           3035.528          
+wRG_P_50_WQ      6299.680           3892.248          
+wRG_P_50_WQ      9469.402           3906.830          
+wRG_P_50_WQ      9469.402           6366.069          
+wRG_P_50_WQ      6299.680           6371.121          
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                3157.830           7338.492          
+

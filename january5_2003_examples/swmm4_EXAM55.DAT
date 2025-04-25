@@ -1,0 +1,134 @@
+SW  1  0  20
+MM  3  10 11 12
+@   20  'C:\swmm_crada_files\OUTPUT.MST'
+*
+#   PLOT_ALL_NODES
+#   PLOT_ALL_CONDUITS
+$ANUM
+$EXTRAN
+*   PLETHORA OF BOUNDARY CONDITIONS
+*
+A1  'EXTRAN USER''S MANUAL EXAMPLE PROBLEM 55 - TRANSVERSE OUTLET WEIRS'
+A1  'SPIDER-LIKE NETWORK CONFIGURATION THAT USES SEVEN BC''S.'
+*
+*  ISOL  KSUPER
+B0  1      0
+*   NTCYC DELT  TZERO NSTART INTER JNTER REDO
+B1  1440   30.0  0.0    1     100   60    0
+*   METRIC NEQUAL  AMEN ITMAX SURTOL
+B2     0     0      0.0  30    0.05
+* NHPRT NQPRT NPLT LPLT NJSW
+B3   8    7    8    0   1
+*   PRINT HEADS
+B4  1 2 3 4 5 6 7 100
+*   PRINT FLOWS
+B5   1000 2000 3000 4000 5000 6000 7000
+*   PLOT HEADS
+B4  1 2 3 4 5 6 7 100
+*   CONDUIT DATA
+*   NCOND NJ1  NJ2   QO  NKLASS AFULL DEEP WIDE LEN   ZP1  ZP2  ROUGH STHETA SPHI
+C1   1000  100  1    0.0    1    0.0  6.0  0.0 1000.  0.0  0.0  0.030 0.0    0.0
+C1   2000  100  2    0.0    1    0.0  6.0  0.0 1000.  0.0  0.0  0.030 0.0    0.0
+C1   3000  100  3    0.0    1    0.0  6.0  0.0 1000.  0.0  0.0  0.030 0.0    0.0
+C1   4000  100  4    0.0    1    0.0  6.0  0.0 1000.  0.0  0.0  0.030 0.0    0.0
+C1   5000  100  5    0.0    1    0.0  6.0  0.0 1000.  0.0  0.0  0.030 0.0    0.0
+C1   6000  100  6    0.0    1    0.0  6.0  0.0 1000.  0.0  0.0  0.030 0.0    0.0
+C1   7000  100  7    0.0    1    0.0  6.0  0.0 1000.  0.0  0.0  0.030 0.0    0.0
+*    JUNCTION DATA
+*    JUN   GRELEV      Z  QINST  Y
+D1    1     200.0  184.0    0.0 3.0     0000.0  2000.0
+D1    2     200.0  184.0    0.0 3.0     1000.0  2000.0
+D1    3     200.0  184.0    0.0 3.0     2000.0  2000.0
+D1    4     200.0  184.0    0.0 3.0     2000.0  1000.0
+D1    5     200.0  184.0    0.0 3.0     0000.0  0000.0
+D1    6     200.0  184.0    0.0 3.0     1000.0  0000.0
+D1    7     200.0  184.0    0.0 3.0     2000.0  0000.0
+D1  100     200.0  190.0    0.0 1.0     1000.0  1000.0
+*   Weir input
+*   Njunc1  Njunc2 Kweir Ycrest Ytop Wlen  Coef
+G1    1        ''     1     2.0   6.0 10.0  0.80
+G1    2        ''     1     2.0   6.0 10.0  0.80
+G1    3        ''     1     2.0   6.0 10.0  0.80
+G1    4        ''     1     2.0   6.0 10.0  0.80
+G1    5        ''     1     2.0   6.0 10.0  0.80
+G1    6        ''     1     2.0   6.0 10.0  0.80
+G1    7        ''     1     2.0   6.0 10.0  0.80
+*     FREE OUTFALL NODES
+*    Free Outfall node   Boundary condtion #
+I1                 1                  1
+I1                 2                  2
+I1                 3                  3
+I1                 4                  4
+I1                 5                  5
+I1                 6                  6
+I1                 7                  7
+* ========================================================================
+*     First boundary condition (elevated discharge)
+*     Ntide(1)
+J1    1
+* ========================================================================
+*     Second boundary condition (constant water surface)
+*     Ntide(2)
+J1    2
+*     A1(2)
+J2    186.0
+* ========================================================================
+*     Third boundary condition (Tide Coefficients supplied by user)
+*     Ntide(3)
+J1    3
+*     A1(3)  W(3)  A2(3)  A3(3)  A4(3)  A5(3)  A6(3)  A7(3)
+J2   184.74  12.0 -0.42   -0.32  0.09    2.78   0.23   0.28
+* ========================================================================
+*     Fourth boundary condition (Generate Tide Coefficients from J4 data)
+*     Ntide(4)
+J1    4
+*    A1(4)  W(4)     Note: A1(5) is not used by the program.
+J2     0.0  12.0
+*     KO   NI   NCHTID   Delta
+J3     1    5        1   0.05
+*    TIME STAGE TIME  STAGE  TIME  STAGE  TIME  STAGE  TIME  STAGE
+J4   0.0  188.0  3.0  187.0   6.0  186.0   9.0  187.0  12.0  188.0
+* ========================================================================
+*     Fifth boundary condition (Generate Tide Coefficients from J4 data)
+*     This boundary condition has a three hour phase lag.
+*     Ntide(5)
+J1    4
+*    A1(5)  W(5)     Note: A1(5) is not used by the program.
+J2     0.0  12.0
+*      KO   NI   NCHTID     Delta
+J3      1    4        1     0.05
+*    TIME STAGE TIME  STAGE  TIME  STAGE  TIME  STAGE
+J4   0.0  188.0  3.0  187.0   6.0  186.0   9.0  187.0
+* ========================================================================
+*     Sixth boundary condition (Generate Tide Coefficients from J4 data)
+*     This boundary condition utilizes the KO = 0 option.
+*     Ntide(6)
+J1    4
+*    A1(6)  W(6)     Note: A1(6) is not used by the program.
+J2    0.0  12.0
+*     KO   NI   NCHTID      Delta
+J3     0   15        1      0.05
+*    TIME    STAGE    TIME    STAGE  TIME    STAGE   TIME     STAGE  TIME    STAGE
+J4   0.0     188.0    1.50    188.0  2.25 187.8535    3.0     187.0  3.75 187.1465
+J4  4.50     187.0    5.25 186.8535   6.0    186.0   6.75  186.1465   9.0    187.0
+J4  9.75  186.8535  10.875 187.1465 11.25    187.5 11.625  187.8535  12.0    188.0
+* ========================================================================
+*     Seventh boundary condition (Read time and stage history on J4 lines)
+*     This boundary condition does not generate tidal coefficients
+*     Ntide(7)
+J1    5
+*     No J2 data line is input into the program for NTIDE = 5.
+*
+*      KO   NI   NCHTID  - KO parameter is not used for NTIDE = 5.
+J3      0    5        1
+*    TIME STAGE TIME  STAGE  TIME  STAGE  TIME  STAGE TIME  STAGE
+J4   0.0  188.0  3.0  187.0   6.0  186.0   9.0  187.0 12.0  188.0
+* ========================================================================
+*    Input hydrograph into node 100.
+K1    1
+K2  100
+K3  0.0   0.0
+K3  1.0  25.0
+K3 11.0  25.0
+K3 12.0   0.0
+$ENDPROGRAM

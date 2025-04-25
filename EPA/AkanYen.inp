@@ -1,0 +1,160 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/2002
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/2002
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/2002
+END_TIME             08:00:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:01:00
+WET_STEP             00:15:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:01:00 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+;                 Invert     Ponded
+;Name             Elev.      Area
+;----------------------------------
+;Inlet Node
+1                1.5        0          0          0          0         
+;Inlet Node
+2                1.5        0          0          0          0         
+;Inlet Node
+3                1.5        0          0          0          0         
+4                1.2        0          0          0          0         
+5                0.6        0          0          0          0         
+6                0.9        0          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+7                0          FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+;                 Inlet            Outlet                      Manning    Inlet      Outlet     Init.
+;Name             Node             Node             Length     N          Height     Height     Flow
+;------------------------------------------------------------------------------------------------------------
+;Inlet Link
+1                1                4                600        0.0138     0          0          3          0         
+2                2                4                600        0.0207     0          0          2          0         
+3                3                4                600        0.0207     0          0          2          0         
+4                6                5                600        0.0138     0          0          3          0         
+5                4                5                600        0.0141     0          0          7          0         
+6                5                7                600        0.0125     0          0          10         0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                RECT_OPEN    5                5          0          0          1                    
+2                RECT_OPEN    5                5          0          0          1                    
+3                RECT_OPEN    5                5          0          0          1                    
+4                RECT_OPEN    5                5          0          0          1                    
+5                RECT_OPEN    5                8          0          0          1                    
+6                RECT_OPEN    5                10         0          0          1                    
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+1                FLOW             1                FLOW     1.0      1.0              
+2                FLOW             2                FLOW     1.0      1.0              
+3                FLOW             2                FLOW     1.0      1.0              
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+;Name             Date       Time       Value
+;-------------------------------------------------
+;Node1 Inflow
+1                           0          3         
+1                           0:01       3         
+1                           0:10       12        
+1                           0:19       3         
+1                           1:00       3         
+;
+;Inflow to Nodes 2 & 3
+2                           0          2         
+2                           1:00       2         
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 0.000 0.000 10000.000 10000.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                8673.680           8084.210          
+2                8694.740           5452.630          
+3                8673.680           2947.370          
+4                5621.050           5515.790          
+5                2315.790           5726.320          
+6                4210.530           7389.470          
+7                -736.840           5242.110          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[LABELS]
+;;X-Coord          Y-Coord            Label           
+9231.580           8210.530           "Inflow" "" "Arial" 10 0 0
+9126.320           5452.630           "Inflow" "" "Arial" 10 0 0
+8936.840           3052.630           "Inflow" "" "Arial" 10 0 0
+
+
+[PROFILES]
+;;Name           Links     
+;;-------------- ----------
+"Profile1        " 6 7 8
+"Profile2        " 1 6 7 8
+"Profile3        " 4 5 7 8
+"Profile4        " 12 13 15 16 10
+"Profile5        " 14 16 10
+"Profile6        " 1 6 7 8 15
+"Profile6        " 16 10

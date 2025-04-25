@@ -1,0 +1,200 @@
+[TITLE]
+;;Project Title/Notes
+Seasonal soil test
+M. Heineman 6/12
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         GREEN_AMPT
+FLOW_ROUTING         STEADY
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/1948
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/1948
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/1949
+END_TIME             06:00:00
+SWEEP_START          01/01
+SWEEP_END            01/30
+DRY_DAYS             0
+REPORT_STEP          01:00:00
+WET_STEP             00:15:00
+DRY_STEP             02:00:00
+ROUTING_STEP         0:00:30 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+MONTHLY          0.03   0.04   0.06   0.1    0.15   0.18   0.2    0.18   0.14   0.11   0.08   0.05  
+RECOVERY         soil1
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+RG2              VOLUME    1:00     1.0      FILE       "376698Providence.NCD" *          IN   
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+MyCatch          RG2              Outfall          400      30       2000     0.5      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+MyCatch          0.02       0.05       0.05       0.1        25         PERVIOUS   95        
+
+[INFILTRATION]
+;;Subcatchment   Suction    Ksat       IMD       
+;;-------------- ---------- ---------- ----------
+MyCatch          3          .01        0.1       
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+1                0          1          0          0          0         
+2                0          1          0          0          0         
+3                0          1          0          0          0         
+4                0          1          0          0          0         
+5                0          1          0          0          0         
+6                0          1          0          0          0         
+7                0          1          0          0          0         
+8                0          1          0          0          0         
+9                0          1          0          0          0         
+10               0          1          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Outfall          0          FREE                        NO                       
+
+[HYDROGRAPHS]
+;;Hydrograph     Rain Gage/Month  Response R        T        K        Dmax     Drecov   Dinit   
+;;-------------- ---------------- -------- -------- -------- -------- -------- -------- --------
+RDIIUH           RG2             
+RDIIUH           All              Short    .1       0.5      1        1        .05      .1      
+RDIIUH           All              Medium   .1       2        4        1        .05      .1      
+RDIIUH           All              Long     .1       4        6        1        .05      .1      
+RDIIUH           Jan              Short    .05      0.5      1        1        .05      .1      
+RDIIUH           Jan              Medium   .05      2        4        1        .05      .1      
+RDIIUH           Jan              Long     .05      4        6        1        .05      .1      
+RDIIUH           Feb              Short    .1       0.5      1        1        .05      .1      
+RDIIUH           Feb              Medium   .1       2        4        1        .05      .1      
+RDIIUH           Feb              Long     .1       4        6        1        .05      .1      
+RDIIUH           Mar              Short    .1       0.5      1        1        .05      .1      
+RDIIUH           Mar              Medium   .1       2        4        1        .05      .1      
+RDIIUH           Mar              Long     .1       4        6        1        .05      .1      
+RDIIUH           Apr              Short    .1       0.5      1        1        .05      .1      
+RDIIUH           Apr              Medium   .1       2        4        1        .05      .1      
+RDIIUH           Apr              Long     .1       4        6        1        .05      .1      
+RDIIUH           May              Short    .1       0.5      1        1        .05      .1      
+RDIIUH           May              Medium   .1       2        4        1        .05      .1      
+RDIIUH           May              Long     .1       4        6        1        .05      .1      
+RDIIUH           Jun              Short    .2       0.5      1        1        .05      .1      
+RDIIUH           Jun              Medium   .2       2        4        1        .05      .1      
+RDIIUH           Jun              Long     .2       4        6        1        .05      .1      
+RDIIUH           Jul              Short    .1       0.5      1        1        .05      .1      
+RDIIUH           Jul              Medium   .1       2        4        1        .05      .1      
+RDIIUH           Jul              Long     .1       4        6        1        .05      .1      
+RDIIUH           Aug              Short    .1       0.5      1        1        .05      .1      
+RDIIUH           Aug              Medium   .1       2        4        1        .05      .1      
+RDIIUH           Aug              Long     .1       4        6        1        .05      .1      
+RDIIUH           Sep              Short    .1       0.5      1        1        .05      .1      
+RDIIUH           Sep              Medium   .1       2        4        1        .05      .1      
+RDIIUH           Sep              Long     .1       4        6        1        .05      .1      
+RDIIUH           Oct              Short    .05      0.5      1        1        .05      .1      
+RDIIUH           Oct              Medium   .05      2        4        1        .05      .1      
+RDIIUH           Oct              Long     .05      4        6        1        .05      .1      
+RDIIUH           Nov              Short    .1       0.5      1        1        .05      .1      
+RDIIUH           Nov              Medium   .1       2        4        1        .05      .1      
+RDIIUH           Nov              Long     .1       4        6        1        .05      .1      
+RDIIUH           Dec              Short    .1       0.5      1        1        .05      .1      
+RDIIUH           Dec              Medium   .1       2        4        1        .05      .1      
+RDIIUH           Dec              Long     .1       4        6        1        .05      .1      
+
+
+[RDII]
+;;Node           Unit Hydrograph  Sewer Area
+;;-------------- ---------------- ----------
+1                RDIIUH           10        
+2                RDIIUH           11        
+3                RDIIUH           12        
+4                RDIIUH           13        
+5                RDIIUH           14        
+6                RDIIUH           15        
+7                RDIIUH           16        
+8                RDIIUH           17        
+9                RDIIUH           18        
+10               RDIIUH           19        
+Outfall          RDIIUH           20        
+
+[PATTERNS]
+;;Name           Type       Multipliers
+;;-------------- ---------- -----------
+soil1            MONTHLY    .01   .10   1     10    1     .10  
+soil1                       .01   .10   1     10    1     .1   
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 747892.557 245272.850 753158.354 252030.150
+Units      Feet
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                749896.869         250209.099        
+2                750932.188         250449.441        
+3                751375.895         250014.977        
+4                751921.286         249562.025        
+5                751939.774         248841.000        
+6                751523.798         248425.024        
+7                750941.432         248101.487        
+8                750285.114         248064.512        
+9                750959.919         247787.194        
+10               751875.067         247703.999        
+Outfall          748806.088         248378.805        
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+MyCatch          749696.000         250816.000        
+MyCatch          752818.000         251723.000        
+MyCatch          752919.000         247594.000        
+MyCatch          750300.000         245580.000        
+MyCatch          748689.000         250917.000        
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+RG2              749657.613         250561.494        
+

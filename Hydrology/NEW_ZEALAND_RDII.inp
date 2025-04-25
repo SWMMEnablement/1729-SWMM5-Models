@@ -1,0 +1,150 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           06/28/2008
+START_TIME           00:00:00
+REPORT_START_DATE    06/28/2008
+REPORT_START_TIME    00:00:00
+END_DATE             06/28/2008
+END_TIME             16:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             5.000000
+REPORT_STEP          00:05:00
+WET_STEP             00:10:00
+DRY_STEP             00:10:00
+ROUTING_STEP         0:00:10 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     60
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+GAGE_ONE_HOUR    VOLUME    1.000000 1.000000 TIMESERIES ONE_HOUR_STORM  
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+1                0.000000   0.000000   0.000000   0.000000   0.000000  
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+; New Outfall
+OFALL-10         0.000000   FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+; New Conduit
+CDT-11           1                OFALL-10         500.000000 0.010000   0.000000   0.000000   0.000000   0.000000  
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+CDT-11           CIRCULAR     0.066000         0.000000   0.000000   0.000000   1          0         
+
+[LOSSES]
+;;Link           Kentry     Kexit      Kavg       Flap Gate  Seepage   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+CDT-11           0.000000   0.000000   0.000000   NO         0         
+
+[CONTROLS]
+
+
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+1                FLOW             ""               FLOW     1.0      1.000000         
+
+[HYDROGRAPHS]
+;;Hydrograph     Rain Gage/Month  Response R        T        K        Dmax     Drecov   Dinit   
+;;-------------- ---------------- -------- -------- -------- -------- -------- -------- --------
+HYDRO1           GAGE_ONE_HOUR   
+HYDRO1           All              Short    .1       1.000000 1.000000 0.000000 0.000000 0.000000
+HYDRO1           All              Medium   .1       2        2        0.000000 0.000000 0.000000
+HYDRO1           All              Long     .1       3        3        0.000000 0.000000 0.000000
+
+
+[RDII]
+;;Node           Unit Hydrograph  Sewer Area
+;;-------------- ---------------- ----------
+1                HYDRO1           1.000000  
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+ONE_HOUR_STORM   06/28/2008 0:0        0.000000  
+ONE_HOUR_STORM   06/28/2008 1:0        25.000000 
+ONE_HOUR_STORM   06/28/2008 2:0        0.000000  
+
+[PATTERNS]
+;;Name           Type       Multipliers
+;;-------------- ---------- -----------
+DWF_WKDAY        HOURLY     0.785563 0.678755 0.516366 0.439782 0.358587 0.409814
+DWF_WKDAY                   0.597560 0.866501 1.199731 1.327542 1.588030 1.605191
+DWF_WKDAY                   1.575223 1.361608 1.161055 1.097021 0.973565 1.050149
+DWF_WKDAY                   1.062956 1.067310 1.126989 1.135698 1.080117 0.934889
+;
+DWF_WKEND        WEEKEND    0.731062 0.557322 0.561442 0.387460 0.343117 0.371468
+DWF_WKEND                   0.440042 0.613782 0.908436 1.308496 1.583280 1.712191
+DWF_WKEND                   1.789247 1.760897 1.498228 1.271907 1.179343 1.138876
+DWF_WKEND                   1.058186 1.053824 1.049947 1.041951 0.839861 0.799637
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -0.199 -0.123 0.500 0.742
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                0.426              0.702             
+OFALL-10         0.089              0.404             
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+GAGE_ONE_HOUR    0.292              0.639             
+

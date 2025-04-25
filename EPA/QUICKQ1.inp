@@ -1,0 +1,130 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/1995
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/1995
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/1995
+END_TIME             01:00:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:04
+WET_STEP             00:01:00
+DRY_STEP             24:00:00
+ROUTING_STEP         0:00:04 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  FROUDE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+1                90         10         0          0          0         
+2                89         11         0          0          0         
+4                88         12         0          0          0         
+6                87         13         0          0          0         
+8                86         14         0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+10               85         FIXED      87               NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+3                1                2                100        0.012      0          0          0          0         
+5                2                4                100        0.012      0          0          0          0         
+7                4                6                100        0.012      0          0          0          0         
+9                6                8                100        0.012      0          0          0          0         
+11               8                10               100        0.012      0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+3                CIRCULAR     2                0.0001     0          0          1                    
+5                CIRCULAR     2                0.0001     0          0          1                    
+7                CIRCULAR     2                0.0001     0          0          1                    
+9                CIRCULAR     2                0.0001     0          0          1                    
+11               CIRCULAR     2                0.0001     0          0          1                    
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+1                FLOW             1                FLOW     1.0      1.0              
+6                FLOW             6                FLOW     1.0      1.0              
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+1                           0          0         
+1                           0.1        0         
+1                           0.15       1         
+1                           0.2        1         
+1                           0.25       1         
+1                           1          1         
+;
+6                           0          0         
+6                           0.1        0         
+6                           0.25       0         
+6                           0.4        0         
+6                           0.5        30        
+6                           0.75       30        
+6                           1          0         
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 13.162 377.629 301.601 474.883
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                26.272             470.462           
+2                76.114             455.127           
+4                132.700            435.416           
+6                185.250            418.999           
+8                247.011            398.657           
+10               288.490            382.050           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

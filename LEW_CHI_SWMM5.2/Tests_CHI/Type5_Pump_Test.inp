@@ -1,0 +1,153 @@
+[TITLE]
+;;Project Title/Notes
+Test of Type5 variable speed
+pump. Pump curves for Pumps
+1 & 2 have same data, but
+Curve 1 is Type3 and Curve 2
+is Type5. Curve 1.2 for Pump
+3 is Type3 but adjusted
+manually for a speed setting
+of 1.2. A control rule sets
+the speed of Pumps 1 & 2 to
+1.2. Flow in Pumps 2 and 3
+should be the same and differ
+from Pump 1.
+
+[OPTIONS]
+;;Option            	Value
+FLOW_UNITS          	CFS
+INFILTRATION        	HORTON
+FLOW_ROUTING        	DYNWAVE
+LINK_OFFSETS        	DEPTH
+MIN_SLOPE           	0
+ALLOW_PONDING       	NO
+SKIP_STEADY_STATE   	NO
+
+START_DATE          	01/28/2021
+START_TIME          	00:00:00
+REPORT_START_DATE   	01/28/2021
+REPORT_START_TIME   	00:00:00
+END_DATE            	01/28/2021
+END_TIME            	06:00:00
+SWEEP_START         	01/01
+SWEEP_END           	12/31
+DRY_DAYS            	0
+REPORT_STEP         	00:05:00
+WET_STEP            	00:05:00
+DRY_STEP            	01:00:00
+ROUTING_STEP        	0:00:05 
+RULE_STEP           	00:00:00
+
+INERTIAL_DAMPING    	PARTIAL
+NORMAL_FLOW_LIMITED 	BOTH
+FORCE_MAIN_EQUATION 	H-W
+VARIABLE_STEP       	0.00
+LENGTHENING_STEP    	0
+MIN_SURFAREA        	12.566
+MAX_TRIALS          	8
+HEAD_TOLERANCE      	0.005
+SYS_FLOW_TOL        	5
+LAT_FLOW_TOL        	5
+MINIMUM_STEP        	0.5
+THREADS             	1
+
+[EVAPORATION]
+;;Data Source   	Parameters
+;;--------------	----------------
+CONSTANT        	0.0
+DRY_ONLY        	NO
+
+[OUTFALLS]
+;;Name          	Elevation 	Type      	Stage Data      	Gated   	Route To        
+;;--------------	----------	----------	----------------	--------	----------------
+2               	18        	FIXED     	18              	NO      	                
+4               	18        	FIXED     	18              	NO      	                
+6               	18        	FIXED     	18              	NO      	                
+
+[STORAGE]
+;;Name          	Elev.   	MaxDepth  	InitDepth 	Shape     	Curve Type/Params           	SurDepth 	Fevap   	Psi     	Ksat    	IMD     
+;;--------------	--------	----------	-----------	----------	----------------------------	---------	--------	        	--------	--------
+A               	0       	6         	6         	FUNCTIONAL	0         	0         	10000   	0        	0       
+B               	0       	6         	6         	FUNCTIONAL	0         	0         	10000   	0        	0       
+C               	0       	6         	6         	FUNCTIONAL	0         	0         	10000   	0        	0       
+
+[PUMPS]
+;;Name          	From Node       	To Node         	Pump Curve      	Status  	Sartup	Shutoff 
+;;--------------	----------------	----------------	----------------	------	--------	--------
+1               	A               	2               	1               	ON      	0       	0       
+2               	B               	4               	2               	ON      	0       	0       
+3               	C               	6               	1.2             	ON      	0       	0       
+
+[CONTROLS]
+Rule 1
+If Simulation Time > 0
+Then Pump 1 Setting = 1.2
+And Pump 2 Setting = 1.2
+
+
+[CURVES]
+;;Name          	Type      	X-Value   	Y-Value   
+;;--------------	----------	----------	----------
+1               	Pump3     	0         	4         
+1               	          	2         	3.74      
+1               	          	4         	3.46      
+1               	          	6         	3.16      
+1               	          	8         	2.83      
+1               	          	10        	2.45      
+1               	          	12        	2.0       
+1               	          	14        	1.41      
+1               	          	16        	0         
+;
+1.2             	Pump3     	0         	4.8       
+1.2             	          	7.04      	4         
+1.2             	          	9.0524    	3.74      
+1.2             	          	11.0684   	3.46      
+1.2             	          	13.0544   	3.16      
+1.2             	          	15.0311   	2.83      
+1.2             	          	17.0375   	2.45      
+1.2             	          	19.04     	2         
+1.2             	          	21.0519   	1.41      
+1.2             	          	23.04     	0         
+;
+2               	Pump5     	0         	4         
+2               	          	2         	3.74      
+2               	          	4         	3.46      
+2               	          	6         	3.16      
+2               	          	8         	2.83      
+2               	          	10        	2.45      
+2               	          	12        	2.0       
+2               	          	14        	1.41      
+2               	          	16        	0         
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS	ALL
+NODES	ALL
+LINKS	ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS	0.000	0.000	10000.000	10000.000
+Units     	None
+
+[COORDINATES]
+;;Node          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+2               	5039.909          	8038.769          
+4               	4971.494          	6978.335          
+6               	4982.896          	6202.965          
+A               	2029.647          	8118.586          
+B               	2029.647          	7046.750          
+C               	2052.452          	6202.965          
+
+[VERTICES]
+;;Link          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+
+[LABELS]
+;;X-Coord         	Y-Coord           	Label           
+3214.838          	8469.861          	"Pump 1"	""	"Arial"	10	0	0
+3183.926          	7403.400          	"Pump 2"	""	"Arial"	10	0	0
+3276.662          	6553.323          	"Pump 3"	""	"Arial"	10	0	0
+

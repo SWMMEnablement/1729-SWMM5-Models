@@ -1,0 +1,151 @@
+[TITLE]
+;;Project Title/Notes
+SWMMQA Test File--single_pipe
+Kinmatic wave routing with single pipe.
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           cfs
+INFILTRATION         horton
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/1999
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/1999
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/1999
+END_TIME             12:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:01:00
+WET_STEP             00:01:00
+DRY_STEP             00:01:00
+ROUTING_STEP         0:01:00 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+;Name              Data Source       Source Name        Rain Units
+;-----------------------------------------------------------------
+Gage1            intensity 0.1      1.0      TIMESERIES gageSeries1     
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+;Name              Raingage       Outlet    Area      PctImp    Width     Slope     Cbasins   CurbLength
+;-------------------------------------------------------------------------------------------------------
+subc1            Gage1            j1               100      100      1000     1.0      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+subc1            0.01       0.1        0          0          100        OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+subc1            1.0        0.1        0.002      0.01       0         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+;Name              Invert Elev.
+;------------------------------
+j1               101.5      0          0          0          0         
+j2               100.0      0          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+j3               98.5       FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+;Name              Up Node        Down Node      Length    Rcoeff    Z-up      Z-down    InitFlow
+;-------------------------------------------------------------------------------------------------
+c1               j1               j2               50000      0.014      0          0          0          0         
+c2               j2               j3               150        0.014      0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+c1               Circular     2                0          0          0          1                    
+c2               Circular     2                0          0          0          1                    
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+;Rainfall timeseries for gage1.
+;Name              Hrs:Min        Value  ....
+;------------------------------------------------------------------------------
+gageSeries1                 0:00       1         
+gageSeries1                 0:06       2         
+gageSeries1                 0:12       2         
+gageSeries1                 0:18       1         
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 2111250000.000 -573125000.000 8188750000.000 623125000.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+j1               7912500000.000     -518750000.000    
+j2               5287500000.000     206250000.000     
+j3               2387500000.000     568750000.000     
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+subc1            7596193750.000     1067671093.750    
+subc1            7843092187.500     1147438281.250    
+subc1            7698751562.500     695424218.750     
+subc1            8002626562.500     349766406.250     
+subc1            7573403125.000     26899218.750      
+subc1            7531620312.500     235813281.250     
+subc1            7501232812.500     566277343.750     
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Gage1            7732937500.000     364960156.250     
+

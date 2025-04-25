@@ -1,0 +1,183 @@
+[TITLE]
+;;Project Title/Notes
+Lid Example with Bio Cell
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         MODIFIED_GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           09/13/2014
+START_TIME           00:00:00
+REPORT_START_DATE    09/13/2014
+REPORT_START_TIME    00:00:00
+END_DATE             09/15/2014
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          01:00:00
+WET_STEP             00:30:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         .50
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+1                INTENSITY 0:15     1.0      TIMESERIES Rainfall        
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+wBC              1                2                5        50       100      1        0                        
+woBC             1                2                5        50       100      1        0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+wBC              0.01       0.1        0.05       0.05       25         OUTLET    
+woBC             0.01       0.1        0.05       0.05       25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Param1     Param2     Param3     Param4     Param5    
+;;-------------- ---------- ---------- ---------- ---------- ----------
+wBC              5          1          .25                             
+woBC             5          1          .25                             
+
+[LID_CONTROLS]
+;;Name           Type/Layer Parameters
+;;-------------- ---------- ----------
+BC               BC
+BC               SURFACE    12         .25        0.1        1.0        5         
+BC               SOIL       12         0.5        0.2        0.1        1          10.0       5         
+BC               STORAGE    12         0.50       1          0         
+BC               DRAIN      0          0.5        6          6          0          0                    
+
+[LID_USAGE]
+;;Subcatchment   LID Process      Number  Area       Width      InitSat    FromImp    ToPerv     RptFile                  DrainTo          FromPerv  
+;;-------------- ---------------- ------- ---------- ---------- ---------- ---------- ---------- ------------------------ ---------------- ----------
+wBC              BC               100     50         10         0          25         1          *                        *                0               
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+2                0          FREE                        NO                       
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+Rainfall                    0:00       0.037     
+Rainfall                    0:15       0.111     
+Rainfall                    0:30       0.185     
+Rainfall                    0:45       0.259     
+Rainfall                    1:00       0.333     
+Rainfall                    1:15       0.407     
+Rainfall                    1:30       0.481     
+Rainfall                    1:45       0.556     
+Rainfall                    2:00       0.630     
+Rainfall                    2:15       0.644     
+Rainfall                    2:30       0.600     
+Rainfall                    2:45       0.556     
+Rainfall                    3:00       0.511     
+Rainfall                    3:15       0.467     
+Rainfall                    3:30       0.422     
+Rainfall                    3:45       0.378     
+Rainfall                    4:00       0.333     
+Rainfall                    4:15       0.289     
+Rainfall                    4:30       0.244     
+Rainfall                    4:45       0.200     
+Rainfall                    5:00       0.156     
+Rainfall                    5:15       0.111     
+Rainfall                    5:30       0.067     
+Rainfall                    5:45       0.022     
+Rainfall                    6:00       0         
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   YES
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 716.234 3147.900 5739.066 7640.576
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+2                3160.286           4438.184          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+wBC              2321.109           7200.582          
+wBC              2122.956           6709.524          
+wBC              2461.771           6088.821          
+wBC              2120.000           6253.377          
+wBC              1704.038           6253.377          
+wBC              1288.076           6149.387          
+wBC              1004.765           6082.725          
+wBC              962.351            6670.022          
+wBC              944.545            7065.034          
+wBC              1037.053           7240.448          
+wBC              1291.007           7259.941          
+wBC              1473.574           7265.474          
+wBC              1772.320           7276.538          
+wBC              2015.743           7254.409          
+wBC              2120.857           7193.553          
+wBC              2321.109           7200.582          
+woBC             5370.094           7360.408          
+woBC             5171.941           6869.350          
+woBC             5510.756           6248.647          
+woBC             5168.985           6413.203          
+woBC             4753.023           6413.203          
+woBC             4337.061           6309.213          
+woBC             4053.750           6242.551          
+woBC             4011.336           6829.848          
+woBC             3993.530           7224.860          
+woBC             4086.038           7400.274          
+woBC             4339.992           7419.767          
+woBC             4522.559           7425.300          
+woBC             4821.305           7436.364          
+woBC             5064.728           7414.235          
+woBC             5169.842           7353.379          
+woBC             5370.094           7360.408          
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                3086.629           6638.323          
+

@@ -1,0 +1,291 @@
+[TITLE]
+;;Project Title/Notes
+ SW 1 0 1
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           12/30/1988
+START_TIME           14:10:00
+REPORT_START_DATE    12/30/1988
+REPORT_START_TIME    14:10:00
+END_DATE             12/30/1988
+END_TIME             15:50:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:01:00
+DRY_STEP             00:01:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.566
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.1
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+GAGE1            VOLUME    0.08333  1.0      TIMESERIES RainSeries1     
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+200              GAGE1            2020             2.5      25.0     150.0    10.0     0                        
+210              GAGE1            1030             2.4      20.0     230.0    10.0     0                        
+220              GAGE1            1070             1.0      25.0     60.0     10.0     0                        
+221              GAGE1            3010             0.9      20.0     90.0     10.0     0                        
+222              GAGE1            1080             2.15     20.0     170.0    10.0     0                        
+223              GAGE1            1060             0.83     25.0     80.0     10.0     0                        
+230              GAGE1            5010             1.0      20.0     90.0     10.0     0                        
+235              GAGE1            4030             0.23     50.0     60.0     10.0     0                        
+236              GAGE1            4020             0.33     90.0     100.0    10.0     0                        
+240              GAGE1            1050             1.68     30.0     100.0    10.0     0                        
+250              GAGE1            1030             2.08     20.0     200.0    10.0     0                        
+255              GAGE1            1010             0.7      90.0     220.0    10.0     0                        
+260              GAGE1            1010             0.68     90.0     180.0    10.0     0                        
+265              GAGE1            6030             0.4      90.0     50.0     10.0     0                        
+266              GAGE1            6040             0.25     90.0     70.0     10.0     0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+200              0.1        0.2        0.5        0.5        25         OUTLET    
+210              0.1        0.2        0.5        0.5        25         OUTLET    
+220              0.1        0.2        0.5        0.5        25         OUTLET    
+221              0.1        0.2        0.5        0.5        25         OUTLET    
+222              0.1        0.2        0.5        0.5        25         OUTLET    
+223              0.1        0.2        0.5        0.5        25         OUTLET    
+230              0.1        0.2        0.5        0.5        25         OUTLET    
+235              0.1        0.2        0.5        0.5        25         OUTLET    
+236              0.1        0.2        0.5        0.5        25         OUTLET    
+240              0.1        0.2        0.5        0.5        25         OUTLET    
+250              0.1        0.2        0.5        0.5        25         OUTLET    
+255              0.1        0.2        0.5        0.5        25         OUTLET    
+260              0.1        0.2        0.5        0.5        25         OUTLET    
+265              0.1        0.2        0.5        0.5        25         OUTLET    
+266              0.1        0.2        0.5        0.5        25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Suction    Ksat       IMD       
+;;-------------- ---------- ---------- ----------
+200              175.0      1.5        0.2       
+210              175.0      1.5        0.2       
+220              175.0      1.5        0.2       
+221              175.0      1.5        0.2       
+222              175.0      1.5        0.2       
+223              175.0      1.5        0.2       
+230              175.0      1.5        0.2       
+235              175.0      1.5        0.2       
+236              175.0      1.5        0.2       
+240              175.0      1.5        0.2       
+250              175.0      1.5        0.2       
+255              175.0      1.5        0.2       
+260              175.0      1.5        0.2       
+265              175.0      1.5        0.2       
+266              175.0      1.5        0.2       
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+; Runoff Node
+1050             100.00     20.00      0.00       0          0         
+; Runoff Node
+1010             100.00     20.00      0.00       0          0         
+; Runoff Node
+1030             100.00     20.00      0.00       0          0         
+; Runoff Node
+1060             102.45     20.00      0.00       0          0         
+; Runoff Node
+1070             106.72     20.00      0.00       0          0         
+; Runoff Node
+1080             111.37     20.00      0.00       0          0         
+; Runoff Node
+2010             102.85     20.00      0.00       0          0         
+; Runoff Node
+2020             105.00     20.00      0.00       0          0         
+; Runoff Node
+3010             110.72     20.00      0.00       0          0         
+; Runoff Node
+4010             102.20     20.00      0.00       0          0         
+; Runoff Node
+4020             108.12     20.00      0.00       0          0         
+; Runoff Node
+4030             112.02     20.00      0.00       0          0         
+; Runoff Node
+5010             106.20     20.00      0.00       0          0         
+; Runoff Node
+6020             108.27     20.00      0.00       0          0         
+; Runoff Node
+6030             116.37     20.00      0.00       0          0         
+; Runoff Node
+6040             117.87     20.00      0.00       0          0         
+1046             0.00       0          0          0          0         
+1009             0.00       0          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+1029             0.00       FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1050             1050             1046             100.0      0.012      0.0        0.0        0          0         
+1010             1010             1009             100.0      0.012      0.0        0.0        0          0         
+1030             1030             1029             100.0      0.012      0.0        0.0        0          0         
+1060             1060             1050             72.0       0.02       0.0        0.0        0          0         
+1070             1070             1060             75.0       0.02       0.0        0.0        0          0         
+1080             1080             1070             62.0       0.02       0.0        0.0        0          0         
+2010             2010             1050             57.0       0.02       0.0        0.0        0          0         
+2020             2020             2010             39.0       0.02       0.0        0.0        0          0         
+3010             3010             1070             50.0       0.02       0.0        0.0        0          0         
+4010             4010             1050             38.0       0.02       0.0        0.0        0          0         
+4020             4020             4010             51.0       0.02       0.0        0.0        0          0         
+4030             4030             4020             52.0       0.02       0.0        0.0        0          0         
+5010             5010             4010             74.0       0.02       0.0        0.0        0          0         
+6020             6020             1010             95.0       0.02       0.0        0.0        0          0         
+6030             6030             6020             90.0       0.02       0.0        0.0        0          0         
+6040             6040             6030             50.0       0.02       0.0        0.0        0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1050             CIRCULAR     4.0              0          0          0          1                    
+1010             CIRCULAR     4.0              0          0          0          1                    
+1030             CIRCULAR     4.0              0          0          0          1                    
+1060             CIRCULAR     0.38             0          0          0          1                    
+1070             CIRCULAR     0.31             0          0          0          1                    
+1080             CIRCULAR     0.31             0          0          0          1                    
+2010             CIRCULAR     0.38             0          0          0          1                    
+2020             CIRCULAR     0.31             0          0          0          1                    
+3010             CIRCULAR     0.23             0          0          0          1                    
+4010             CIRCULAR     0.23             0          0          0          1                    
+4020             CIRCULAR     0.23             0          0          0          1                    
+4030             CIRCULAR     0.23             0          0          0          1                    
+5010             CIRCULAR     0.23             0          0          0          1                    
+6020             CIRCULAR     0.23             0          0          0          1                    
+6030             CIRCULAR     0.23             0          0          0          1                    
+6040             CIRCULAR     0.23             0          0          0          1                    
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+RainSeries1      12/30/1988 14:10      1.00000   
+RainSeries1                 14:15      2.50000   
+RainSeries1                 14:20      5.50000   
+RainSeries1                 14:25      8.00000   
+RainSeries1                 14:30      9.10000   
+RainSeries1      12/30/1988 14:35      4.80000   
+RainSeries1                 14:40      7.40000   
+RainSeries1                 14:45      2.70000   
+RainSeries1                 14:50      1.00000   
+RainSeries1                 14:55      5.40000   
+RainSeries1      12/30/1988 15:00      3.90000   
+RainSeries1                 15:05      3.10000   
+RainSeries1                 15:10      1.00000   
+RainSeries1                 15:15      6.00000   
+RainSeries1                 15:20      2.20000   
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+Subcatch  200              200             
+Subcatch  210              210             
+Subcatch  220              220             
+Subcatch  221              221             
+Subcatch  222              222             
+Subcatch  223              223             
+Subcatch  230              230             
+Subcatch  235              235             
+Subcatch  236              236             
+Subcatch  240              240             
+Subcatch  250              250             
+Subcatch  255              255             
+Subcatch  260              260             
+Subcatch  265              265             
+Subcatch  266              266             
+
+[MAP]
+DIMENSIONS -95.000 -95.000 1995.000 1995.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1050             100.000            100.000           
+1010             200.000            200.000           
+1030             300.000            300.000           
+1060             400.000            400.000           
+1070             500.000            500.000           
+1080             600.000            600.000           
+2010             700.000            700.000           
+2020             800.000            800.000           
+3010             900.000            900.000           
+4010             1000.000           1000.000          
+4020             1100.000           1100.000          
+4030             1200.000           1200.000          
+5010             1300.000           1300.000          
+6020             1400.000           1400.000          
+6030             1500.000           1500.000          
+6040             1600.000           1600.000          
+1046             1700.000           1700.000          
+1009             1800.000           1800.000          
+1029             1900.000           1900.000          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+200              504.037            915.046           
+210              776.436            187.042           
+220              265.386            623.362           
+221              655.905            1052.451          
+222              414.844            729.429           
+223              115.928            604.077           
+230              1077.762           1483.950          
+235              957.232            1363.420          
+236              848.754            1223.604          
+240              376.275            1.424             
+250              29.146             473.904           
+255              -163.702           148.472           
+260              -79.331            309.983           
+265              1174.187           1676.799          
+266              1364.625           1761.171          
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+GAGE1            0.000              0.000             
+

@@ -1,0 +1,1817 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         CURVE_NUMBER
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           08/05/2011
+START_TIME           00:00:00
+REPORT_START_DATE    08/05/2011
+REPORT_START_TIME    00:00:00
+END_DATE             08/07/2011
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0.000000
+REPORT_STEP          00:05:00
+WET_STEP             00:05:00
+DRY_STEP             00:05:00
+ROUTING_STEP         0:00:05 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.000000
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+RAINGAGE         CUMULATIVE 0.166667 1.000000 TIMESERIES TIMESERI-5      
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+1                RAINGAGE         AS-DKN9          15.216000 0.000000 835.000000 2.000000 0.000000                 
+10               RAINGAGE         AS-DKN1          15.644000 0.000000 730.000000 2.000000 0.000000                 
+11               RAINGAGE         AS-AG14          0.930000 0.000000 326.000000 2.000000 0.000000                 
+12               RAINGAGE         AS-AG12          2.241200 0.000000 411.000000 2.000000 0.000000                 
+13               RAINGAGE         AS-AG11          4.516500 0.000000 872.000000 2.000000 0.000000                 
+14               RAINGAGE         AS-AG10          3.040200 0.000000 785.000000 2.000000 0.000000                 
+15               RAINGAGE         AS-AG9           0.749600 0.000000 430.000000 2.000000 0.000000                 
+16               RAINGAGE         AS-AG8           3.236200 0.000000 654.000000 2.000000 0.000000                 
+17               RAINGAGE         AS-AG7           1.568300 0.000000 335.000000 2.000000 0.000000                 
+18               RAINGAGE         AS-AG6           1.497900 0.000000 294.000000 2.000000 0.000000                 
+2                RAINGAGE         AS-DKN9          4.212000 0.000000 520.000000 2.000000 0.000000                 
+3                RAINGAGE         AS-DKN8          15.428000 0.000000 903.000000 2.000000 0.000000                 
+4                RAINGAGE         AS-DKN7          3.667000 0.000000 356.000000 2.000000 0.000000                 
+5                RAINGAGE         AS-DKN6          5.580000 0.000000 721.000000 2.000000 0.000000                 
+6                RAINGAGE         AS-DKN5          3.917400 0.000000 432.000000 2.000000 0.000000                 
+7                RAINGAGE         AS-DKN4          4.214500 0.000000 540.000000 2.000000 0.000000                 
+8                RAINGAGE         AS-DKN3          2.665400 0.000000 966.000000 2.000000 0.000000                 
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+1                0.000000   0.000000   0.000000   0.000000   0.000000   OUTLET    
+10               0.000000   0.000000   0.000000   0.000000   0.000000   OUTLET    
+11               0.000000   0.000000   0.000000   0.000000   0.000000   OUTLET    
+12               0.000000   0.000000   0.000000   0.000000   0.000000   OUTLET    
+13               0.000000   0.000000   0.000000   0.000000   0.000000   OUTLET    
+14               0.000000   0.000000   0.000000   0.000000   0.000000   OUTLET    
+15               0.000000   0.000000   0.000000   0.000000   0.000000   OUTLET    
+16               0.000000   0.000000   0.000000   0.000000   0.000000   OUTLET    
+17               0.000000   0.000000   0.000000   0.000000   0.000000   OUTLET    
+18               0.000000   0.000000   0.000000   0.000000   0.000000   OUTLET    
+2                0.000000   0.000000   0.000000   0.000000   0.000000   OUTLET    
+3                0.000000   0.000000   0.000000   0.000000   0.000000   OUTLET    
+4                0.000000   0.000000   0.000000   0.000000   0.000000   OUTLET    
+5                0.000000   0.000000   0.000000   0.000000   0.000000   OUTLET    
+6                0.000000   0.000000   0.000000   0.000000   0.000000   OUTLET    
+7                0.000000   0.000000   0.000000   0.000000   0.000000   OUTLET    
+8                0.000000   0.000000   0.000000   0.000000   0.000000   OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   CurveNum              DryTime   
+;;-------------- ---------- ---------- ----------
+1                3.0        0.5        4         
+10               3.0        0.5        4         
+11               3.0        0.5        4         
+12               3.0        0.5        4         
+13               3.0        0.5        4         
+14               3.0        0.5        4         
+15               3.0        0.5        4         
+16               3.0        0.5        4         
+17               3.0        0.5        4         
+18               3.0        0.5        4         
+2                3.0        0.5        4         
+3                3.0        0.5        4         
+4                3.0        0.5        4         
+5                3.0        0.5        4         
+6                3.0        0.5        4         
+7                3.0        0.5        4         
+8                3.0        0.5        4         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+OUTFALL          -5.830000  FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+AS-2             -5.840000 19.030000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-AG10          -3.884000 16.400000  0.000000   TABULAR    A_SHAFT_TEMPORARY            0.000000 0.000000
+AS-AG11          -3.790000 12.870000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-AG12          -3.560000 11.870000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-AG13          -3.523000 11.070000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-AG14          -1.120000 11.170000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-AG1A          -5.590000 16.530000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-AG1B          -5.620000 16.540000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-AG1C          -5.660000 16.680000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-AG2           -5.410000 16.420000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-AG3           -5.240000 14.150000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-AG4           -4.978000 11.798000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-AG5           -4.822000 12.140000  0.000000   TABULAR    A_SHAFT_TEMPORARY            0.000000 0.000000
+AS-AG6           -4.695000 12.005000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-AG7           -4.544000 12.724000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-AG8           -4.286000 13.366000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-AG9           -4.020000 17.020000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-DKN1          -2.230000 11.360000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-DKN1A         -1.890000 11.190000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-DKN2          -1.840000 11.170000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-DKN3          -1.470000 12.890000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-DKN4          -1.150000 14.750000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-DKN5          -0.720000 16.830000  0.000000   TABULAR    A_SHAFT_TEMPORARY            0.000000 0.000000
+AS-DKN6          -0.380000 19.760000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-DKN7          0.015000 23.767000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-DKN8          0.450000 24.950000  0.000000   TABULAR    A_SHAFT                      0.000000 0.000000
+AS-DKN9          0.780000 25.180000  0.000000   TABULAR    A_SHAFT_TEMPORARY            0.000000 0.000000
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1                AS-DKN9          AS-DKN8          412.980000 0.015000   0.000000   0.000000   0.000000   0.000000  
+10               AS-AG13          AS-AG12          90.750000  0.015000   0.003000   0.000000   0.000000   0.000000  
+11               AS-AG12          AS-AG11          409.000000 0.015000   0.000000   0.000000   0.000000   0.000000  
+12               AS-AG11          AS-AG10          170.000000 0.015000   0.000000   0.000000   0.000000   0.000000  
+13               AS-AG10          AS-AG9           284.000000 0.015000   0.000000   0.000000   0.000000   0.000000  
+14               AS-AG9           AS-AG8           516.000000 0.015000   0.000000   0.000000   0.000000   0.000000  
+15               AS-AG8           AS-AG7           535.000000 0.015000   0.000000   0.000000   0.000000   0.000000  
+16               AS-AG7           AS-AG6           303.000000 0.015000   0.000000   0.000000   0.000000   0.000000  
+17               AS-AG6           AS-AG5           254.000000 0.015000   0.000000   0.000000   0.000000   0.000000  
+18               AS-AG5           AS-AG4           312.000000 0.015000   0.000000   0.000000   0.000000   0.000000  
+19               AS-AG4           AS-AG3           525.000000 0.015000   0.000000   0.000000   0.000000   0.000000  
+2                AS-DKN8          AS-DKN7          545.000000 0.015000   0.000000   0.000000   0.000000   0.000000  
+20               AS-AG3           AS-AG2           357.000000 0.015000   0.000000   0.000000   0.000000   0.000000  
+21               AS-AG2           AS-AG1A          347.430000 0.015000   0.000000   0.000000   0.000000   0.000000  
+22               AS-AG1A          AS-AG1B          58.820000  0.015000   0.000000   0.000000   0.000000   0.000000  
+29               AS-DKN2          AS-DKN1A         66.010000  0.015000   0.000000   0.000000   0.000000   0.000000  
+3                AS-DKN7          AS-DKN6          500.000000 0.015000   0.000000   0.000000   0.000000   0.000000  
+30               AS-AG1C          AS-2             348.760000 0.015000   0.000000   0.000000   0.000000   0.000000  
+31               AS-AG1B          AS-AG1C          77.970000  0.015000   0.000000   0.000000   0.000000   0.000000  
+32               AS-AG14          AS-AG13          313.580000 0.015000   0.000000   2.243000   0.000000   0.000000  
+4                AS-DKN6          AS-DKN5          423.000000 0.015000   0.000000   0.000000   0.000000   0.000000  
+5                AS-DKN5          AS-DKN4          530.000000 0.015000   0.000000   0.000000   0.000000   0.000000  
+6                AS-DKN4          AS-DKN3          405.290000 0.015000   0.000000   0.000000   0.000000   0.000000  
+7                AS-DKN3          AS-DKN2          454.660000 0.015000   0.000000   0.000000   0.000000   0.000000  
+8                AS-DKN1A         AS-DKN1          427.330000 0.015000   0.000000   0.000000   0.000000   0.000000  
+9                AS-DKN1          AS-AG10          565.930000 0.015000   0.000000   1.204000   0.000000   0.000000  
+
+[ORIFICES]
+;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime 
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- ----------
+ORIFICE          AS-2             OUTFALL          SIDE         0.040000   0.650000   NO       0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+10               CIRCULAR     1.600000         0.000000   0.000000   0.000000   1          0         
+11               CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+12               CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+13               CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+14               CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+15               CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+16               CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+17               CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+18               CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+19               CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+2                CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+20               CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+21               CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+22               CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+29               CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+3                CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+30               CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+31               CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+32               CIRCULAR     1.600000         0.000000   0.000000   0.000000   1          0         
+4                CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+5                CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+6                CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+7                CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+8                CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+9                CIRCULAR     2.400000         0.000000   0.000000   0.000000   1          0         
+ORIFICE          CIRCULAR     0.740000         0          0          0
+
+[LOSSES]
+;;Link           Kentry     Kexit      Kavg       Flap Gate  Seepage   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+1                0.000000   0.000000   0.000000   NO         0         
+10               0.000000   0.000000   0.000000   NO         0         
+11               0.000000   0.000000   0.000000   NO         0         
+12               0.000000   0.000000   0.000000   NO         0         
+13               0.000000   0.000000   0.000000   NO         0         
+14               0.000000   0.000000   0.000000   NO         0         
+15               0.000000   0.000000   0.000000   NO         0         
+16               0.000000   0.000000   0.000000   NO         0         
+17               0.000000   0.000000   0.000000   NO         0         
+18               0.000000   0.000000   0.000000   NO         0         
+19               0.000000   0.000000   0.000000   NO         0         
+2                0.000000   0.000000   0.000000   NO         0         
+20               0.000000   0.000000   0.000000   NO         0         
+21               0.000000   0.000000   0.000000   NO         0         
+22               0.000000   0.000000   0.000000   NO         0         
+29               0.000000   0.000000   0.000000   NO         0         
+3                0.000000   0.000000   0.000000   NO         0         
+30               0.000000   0.000000   0.000000   NO         0         
+31               0.000000   0.000000   0.000000   NO         0         
+32               0.000000   0.000000   0.000000   NO         0         
+4                0.000000   0.000000   0.000000   NO         0         
+5                0.000000   0.000000   0.000000   NO         0         
+6                0.000000   0.000000   0.000000   NO         0         
+7                0.000000   0.000000   0.000000   NO         0         
+8                0.000000   0.000000   0.000000   NO         0         
+9                0.000000   0.000000   0.000000   NO         0         
+
+[CONTROLS]
+
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+AS-AG14          FLOW             NORTH_EAST       FLOW     1.0      1.000000 0.100000
+AS-AG1A          FLOW             ""               FLOW     1.0      1.000000         
+AS-AG5           FLOW             PROPOSED_FLOW_25Y FLOW     1.0      1.000000         
+AS-AG6           FLOW             SOUTH_EAST       FLOW     1.0      1.000000 0.390000
+AS-DKN4          FLOW             NORTH_WEST       FLOW     1.0      1.000000         
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+A_SHAFT          STORAGE    1.000000   28.000000 
+A_SHAFT                     5.000000   28.000000 
+A_SHAFT                     10.000000  28.000000 
+A_SHAFT                     15.000000  28.000000 
+A_SHAFT                     20.000000  28.000000 
+A_SHAFT                     25.000000  28.000000 
+A_SHAFT                     30.000000  28.000000 
+A_SHAFT                     35.000000  28.000000 
+;
+A_SHAFT_TEMPORARY STORAGE    1.000000   67.920000 
+A_SHAFT_TEMPORARY            5.000000   67.920000 
+A_SHAFT_TEMPORARY            10.000000  67.920000 
+A_SHAFT_TEMPORARY            15.000000  67.920000 
+A_SHAFT_TEMPORARY            20.000000  67.920000 
+A_SHAFT_TEMPORARY            25.000000  67.920000 
+A_SHAFT_TEMPORARY            30.000000  67.920000 
+A_SHAFT_TEMPORARY            35.000000  67.920000 
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+NORTH_WEST                  0          0.000000  
+NORTH_WEST                  00:25      0.000000  
+NORTH_WEST                  00:45      0.750000  
+NORTH_WEST                  01:00      0.750000  
+NORTH_WEST                  01:10      0.820000  
+NORTH_WEST                  2:00       0.800000  
+NORTH_WEST                  4:00       0.800000  
+NORTH_WEST                  5:00       0.800000  
+NORTH_WEST                  7:00       0.800000  
+NORTH_WEST                  7:30       0.800000  
+NORTH_WEST                  8:00       0.750000  
+NORTH_WEST                  9:30       0.750000  
+NORTH_WEST                  10:00      0.530000  
+NORTH_WEST                  11:00      0.000000  
+NORTH_WEST                  12:00      0.000000  
+NORTH_WEST                  18:00      0.000000  
+NORTH_WEST                  24:00      0.000000  
+;
+NORTH_EAST                  0:00       0.000000  
+NORTH_EAST                  0:40       0.000000  
+NORTH_EAST                  0:50       0.540000  
+NORTH_EAST                  1:00       0.540000  
+NORTH_EAST                  1:15       0.850000  
+NORTH_EAST                  2:00       0.880000  
+NORTH_EAST                  3:00       0.880000  
+NORTH_EAST                  6:00       0.880000  
+NORTH_EAST                  7:40       0.730000  
+NORTH_EAST                  8:30       0.540000  
+NORTH_EAST                  9:45       0.540000  
+NORTH_EAST                  10:20      0.450000  
+NORTH_EAST                  11:45      0.070000  
+NORTH_EAST                  14:35      0.000000  
+NORTH_EAST                  18:00      0.000000  
+NORTH_EAST                  24:00      0.000000  
+;
+SOUTH_EAST                  0:00       0.000000  
+SOUTH_EAST                  00:20      0.000000  
+SOUTH_EAST                  00:45      0.750000  
+SOUTH_EAST                  1:00       0.750000  
+SOUTH_EAST                  1:15       1.100000  
+SOUTH_EAST                  2:00       1.020000  
+SOUTH_EAST                  3:00       0.880000  
+SOUTH_EAST                  3:10       0.750000  
+SOUTH_EAST                  5:00       0.750000  
+SOUTH_EAST                  6:00       0.020000  
+SOUTH_EAST                  7:00       0.000000  
+SOUTH_EAST                  12:00      0.000000  
+SOUTH_EAST                  24:00      0.000000  
+;
+6_HOURS_STORM_25YEAR            1:00       0.000000  
+6_HOURS_STORM_25YEAR            1:10       0.560000  
+6_HOURS_STORM_25YEAR            1:20       1.170000  
+6_HOURS_STORM_25YEAR            1:30       1.850000  
+6_HOURS_STORM_25YEAR            1:40       2.750000  
+6_HOURS_STORM_25YEAR            1:50       3.770000  
+6_HOURS_STORM_25YEAR            2:00       4.970000  
+6_HOURS_STORM_25YEAR            2:10       6.780000  
+6_HOURS_STORM_25YEAR            2:20       9.190000  
+6_HOURS_STORM_25YEAR            2:30       14.690000 
+6_HOURS_STORM_25YEAR            2:40       27.220000 
+6_HOURS_STORM_25YEAR            2:50       30.980000 
+6_HOURS_STORM_25YEAR            3:00       33.030000 
+6_HOURS_STORM_25YEAR            3:10       34.360000 
+6_HOURS_STORM_25YEAR            3:20       35.470000 
+6_HOURS_STORM_25YEAR            3:30       36.420000 
+6_HOURS_STORM_25YEAR            3:40       37.140000 
+6_HOURS_STORM_25YEAR            3:50       37.780000 
+6_HOURS_STORM_25YEAR            4:00       38.370000 
+6_HOURS_STORM_25YEAR            4:10       38.880000 
+6_HOURS_STORM_25YEAR            4:20       39.380000 
+6_HOURS_STORM_25YEAR            4:30       39.860000 
+6_HOURS_STORM_25YEAR            4:40       40.330000 
+6_HOURS_STORM_25YEAR            4:50       40.770000 
+6_HOURS_STORM_25YEAR            5:00       41.210000 
+6_HOURS_STORM_25YEAR            5:10       41.630000 
+6_HOURS_STORM_25YEAR            5:20       42.030000 
+6_HOURS_STORM_25YEAR            5:30       42.430000 
+6_HOURS_STORM_25YEAR            5:40       42.810000 
+6_HOURS_STORM_25YEAR            5:50       43.190000 
+6_HOURS_STORM_25YEAR            6:00       43.550000 
+6_HOURS_STORM_25YEAR            6:10       43.910000 
+6_HOURS_STORM_25YEAR            6:20       44.260000 
+6_HOURS_STORM_25YEAR            6:30       44.600000 
+6_HOURS_STORM_25YEAR            6:40       44.930000 
+6_HOURS_STORM_25YEAR            6:50       45.250000 
+6_HOURS_STORM_25YEAR            7:00       45.570000 
+6_HOURS_STORM_25YEAR            7:10       45.570000 
+6_HOURS_STORM_25YEAR            7:20       45.570000 
+6_HOURS_STORM_25YEAR            7:30       45.570000 
+6_HOURS_STORM_25YEAR            7:40       45.570000 
+6_HOURS_STORM_25YEAR            7:50       45.570000 
+6_HOURS_STORM_25YEAR            8:00       45.570000 
+6_HOURS_STORM_25YEAR            8:10       45.570000 
+6_HOURS_STORM_25YEAR            8:20       45.570000 
+6_HOURS_STORM_25YEAR            8:30       45.570000 
+6_HOURS_STORM_25YEAR            8:40       45.570000 
+6_HOURS_STORM_25YEAR            8:50       45.570000 
+6_HOURS_STORM_25YEAR            9:00       45.570000 
+6_HOURS_STORM_25YEAR            9:10       45.570000 
+6_HOURS_STORM_25YEAR            9:20       45.570000 
+6_HOURS_STORM_25YEAR            9:30       45.570000 
+6_HOURS_STORM_25YEAR            9:40       45.570000 
+6_HOURS_STORM_25YEAR            9:50       45.570000 
+6_HOURS_STORM_25YEAR            10:00      45.570000 
+6_HOURS_STORM_25YEAR            10:10      45.570000 
+6_HOURS_STORM_25YEAR            10:20      45.570000 
+6_HOURS_STORM_25YEAR            10:30      45.570000 
+6_HOURS_STORM_25YEAR            10:40      45.570000 
+6_HOURS_STORM_25YEAR            10:50      45.570000 
+6_HOURS_STORM_25YEAR            11:00      45.570000 
+6_HOURS_STORM_25YEAR            11:10      45.570000 
+6_HOURS_STORM_25YEAR            11:20      45.570000 
+6_HOURS_STORM_25YEAR            11:30      45.570000 
+6_HOURS_STORM_25YEAR            11:40      45.570000 
+6_HOURS_STORM_25YEAR            11:50      45.570000 
+6_HOURS_STORM_25YEAR            12:00      45.570000 
+6_HOURS_STORM_25YEAR            12:10      45.570000 
+6_HOURS_STORM_25YEAR            12:20      45.570000 
+6_HOURS_STORM_25YEAR            12:30      45.570000 
+6_HOURS_STORM_25YEAR            12:40      45.570000 
+6_HOURS_STORM_25YEAR            12:50      45.570000 
+6_HOURS_STORM_25YEAR            13:00      45.570000 
+6_HOURS_STORM_25YEAR            13:10      45.570000 
+6_HOURS_STORM_25YEAR            13:20      45.570000 
+6_HOURS_STORM_25YEAR            13:30      45.570000 
+6_HOURS_STORM_25YEAR            13:40      45.570000 
+6_HOURS_STORM_25YEAR            13:50      45.570000 
+6_HOURS_STORM_25YEAR            14:00      45.570000 
+6_HOURS_STORM_25YEAR            14:10      45.570000 
+6_HOURS_STORM_25YEAR            14:20      45.570000 
+6_HOURS_STORM_25YEAR            14:30      45.570000 
+6_HOURS_STORM_25YEAR            14:40      45.570000 
+6_HOURS_STORM_25YEAR            14:50      45.570000 
+6_HOURS_STORM_25YEAR            15:00      45.570000 
+6_HOURS_STORM_25YEAR            15:10      45.570000 
+6_HOURS_STORM_25YEAR            15:20      45.570000 
+6_HOURS_STORM_25YEAR            15:30      45.570000 
+6_HOURS_STORM_25YEAR            15:40      45.570000 
+6_HOURS_STORM_25YEAR            15:50      45.570000 
+6_HOURS_STORM_25YEAR            16:00      45.570000 
+6_HOURS_STORM_25YEAR            16:10      45.570000 
+6_HOURS_STORM_25YEAR            16:20      45.570000 
+6_HOURS_STORM_25YEAR            16:30      45.570000 
+6_HOURS_STORM_25YEAR            16:40      45.570000 
+6_HOURS_STORM_25YEAR            16:50      45.570000 
+6_HOURS_STORM_25YEAR            17:00      45.570000 
+6_HOURS_STORM_25YEAR            17:10      45.570000 
+6_HOURS_STORM_25YEAR            17:20      45.570000 
+6_HOURS_STORM_25YEAR            17:30      45.570000 
+6_HOURS_STORM_25YEAR            17:40      45.570000 
+6_HOURS_STORM_25YEAR            17:50      45.570000 
+6_HOURS_STORM_25YEAR            18:00      45.570000 
+6_HOURS_STORM_25YEAR            18:10      45.570000 
+6_HOURS_STORM_25YEAR            18:20      45.570000 
+6_HOURS_STORM_25YEAR            18:30      45.570000 
+6_HOURS_STORM_25YEAR            18:40      45.570000 
+6_HOURS_STORM_25YEAR            18:50      45.570000 
+6_HOURS_STORM_25YEAR            19:00      45.570000 
+6_HOURS_STORM_25YEAR            19:10      45.570000 
+6_HOURS_STORM_25YEAR            19:20      45.570000 
+6_HOURS_STORM_25YEAR            19:30      45.570000 
+6_HOURS_STORM_25YEAR            19:40      45.570000 
+6_HOURS_STORM_25YEAR            19:50      45.570000 
+6_HOURS_STORM_25YEAR            20:00      45.570000 
+6_HOURS_STORM_25YEAR            20:10      45.570000 
+6_HOURS_STORM_25YEAR            20:20      45.570000 
+6_HOURS_STORM_25YEAR            20:30      45.570000 
+6_HOURS_STORM_25YEAR            20:40      45.570000 
+6_HOURS_STORM_25YEAR            20:50      45.570000 
+6_HOURS_STORM_25YEAR            21:00      45.570000 
+6_HOURS_STORM_25YEAR            21:10      45.570000 
+6_HOURS_STORM_25YEAR            21:20      45.570000 
+6_HOURS_STORM_25YEAR            21:30      45.570000 
+6_HOURS_STORM_25YEAR            21:40      45.570000 
+6_HOURS_STORM_25YEAR            21:50      45.570000 
+6_HOURS_STORM_25YEAR            22:00      45.570000 
+6_HOURS_STORM_25YEAR            22:10      45.570000 
+6_HOURS_STORM_25YEAR            22:20      45.570000 
+6_HOURS_STORM_25YEAR            22:30      45.570000 
+6_HOURS_STORM_25YEAR            22:40      45.570000 
+6_HOURS_STORM_25YEAR            22:50      45.570000 
+6_HOURS_STORM_25YEAR            23:00      45.570000 
+6_HOURS_STORM_25YEAR            23:10      45.570000 
+6_HOURS_STORM_25YEAR            23:20      45.570000 
+6_HOURS_STORM_25YEAR            23:30      45.570000 
+6_HOURS_STORM_25YEAR            23:40      45.570000 
+6_HOURS_STORM_25YEAR            23:50      45.570000 
+6_HOURS_STORM_25YEAR            24:00      45.570000 
+;
+6_HOURS_STORM_50YEAR            1:00       0.000000  
+6_HOURS_STORM_50YEAR            1:10       0.680000  
+6_HOURS_STORM_50YEAR            1:20       1.420000  
+6_HOURS_STORM_50YEAR            1:30       2.240000  
+6_HOURS_STORM_50YEAR            1:40       3.260000  
+6_HOURS_STORM_50YEAR            1:50       4.420000  
+6_HOURS_STORM_50YEAR            2:00       5.790000  
+6_HOURS_STORM_50YEAR            2:10       7.880000  
+6_HOURS_STORM_50YEAR            2:20       10.670000 
+6_HOURS_STORM_50YEAR            2:30       17.000000 
+6_HOURS_STORM_50YEAR            2:40       31.440000 
+6_HOURS_STORM_50YEAR            2:50       35.770000 
+6_HOURS_STORM_50YEAR            3:00       38.150000 
+6_HOURS_STORM_50YEAR            3:10       39.660000 
+6_HOURS_STORM_50YEAR            3:20       40.920000 
+6_HOURS_STORM_50YEAR            3:30       42.000000 
+6_HOURS_STORM_50YEAR            3:40       42.870000 
+6_HOURS_STORM_50YEAR            3:50       43.650000 
+6_HOURS_STORM_50YEAR            4:00       44.360000 
+6_HOURS_STORM_50YEAR            4:10       44.930000 
+6_HOURS_STORM_50YEAR            4:20       45.470000 
+6_HOURS_STORM_50YEAR            4:30       45.990000 
+6_HOURS_STORM_50YEAR            4:40       46.490000 
+6_HOURS_STORM_50YEAR            4:50       46.980000 
+6_HOURS_STORM_50YEAR            5:00       47.450000 
+6_HOURS_STORM_50YEAR            5:10       47.900000 
+6_HOURS_STORM_50YEAR            5:20       48.340000 
+6_HOURS_STORM_50YEAR            5:30       48.770000 
+6_HOURS_STORM_50YEAR            5:40       49.190000 
+6_HOURS_STORM_50YEAR            5:50       49.590000 
+6_HOURS_STORM_50YEAR            6:00       49.990000 
+6_HOURS_STORM_50YEAR            6:10       50.370000 
+6_HOURS_STORM_50YEAR            6:20       50.750000 
+6_HOURS_STORM_50YEAR            6:30       51.110000 
+6_HOURS_STORM_50YEAR            6:40       51.470000 
+6_HOURS_STORM_50YEAR            6:50       51.820000 
+6_HOURS_STORM_50YEAR            7:00       52.160000 
+6_HOURS_STORM_50YEAR            7:10       52.160000 
+6_HOURS_STORM_50YEAR            7:20       52.160000 
+6_HOURS_STORM_50YEAR            7:30       52.160000 
+6_HOURS_STORM_50YEAR            7:40       52.160000 
+6_HOURS_STORM_50YEAR            7:50       52.160000 
+6_HOURS_STORM_50YEAR            8:00       52.160000 
+6_HOURS_STORM_50YEAR            8:10       52.160000 
+6_HOURS_STORM_50YEAR            8:20       52.160000 
+6_HOURS_STORM_50YEAR            8:30       52.160000 
+6_HOURS_STORM_50YEAR            8:40       52.160000 
+6_HOURS_STORM_50YEAR            8:50       52.160000 
+6_HOURS_STORM_50YEAR            9:00       52.160000 
+6_HOURS_STORM_50YEAR            9:10       52.160000 
+6_HOURS_STORM_50YEAR            9:20       52.160000 
+6_HOURS_STORM_50YEAR            9:30       52.160000 
+6_HOURS_STORM_50YEAR            9:40       52.160000 
+6_HOURS_STORM_50YEAR            9:50       52.160000 
+6_HOURS_STORM_50YEAR            10:00      52.160000 
+6_HOURS_STORM_50YEAR            10:10      52.160000 
+6_HOURS_STORM_50YEAR            10:20      52.160000 
+6_HOURS_STORM_50YEAR            10:30      52.160000 
+6_HOURS_STORM_50YEAR            10:40      52.160000 
+6_HOURS_STORM_50YEAR            10:50      52.160000 
+6_HOURS_STORM_50YEAR            11:00      52.160000 
+6_HOURS_STORM_50YEAR            11:10      52.160000 
+6_HOURS_STORM_50YEAR            11:20      52.160000 
+6_HOURS_STORM_50YEAR            11:30      52.160000 
+6_HOURS_STORM_50YEAR            11:40      52.160000 
+6_HOURS_STORM_50YEAR            11:50      52.160000 
+6_HOURS_STORM_50YEAR            12:00      52.160000 
+6_HOURS_STORM_50YEAR            12:10      52.160000 
+6_HOURS_STORM_50YEAR            12:20      52.160000 
+6_HOURS_STORM_50YEAR            12:30      52.160000 
+6_HOURS_STORM_50YEAR            12:40      52.160000 
+6_HOURS_STORM_50YEAR            12:50      52.160000 
+6_HOURS_STORM_50YEAR            13:00      52.160000 
+6_HOURS_STORM_50YEAR            13:10      52.160000 
+6_HOURS_STORM_50YEAR            13:20      52.160000 
+6_HOURS_STORM_50YEAR            13:30      52.160000 
+6_HOURS_STORM_50YEAR            13:40      52.160000 
+6_HOURS_STORM_50YEAR            13:50      52.160000 
+6_HOURS_STORM_50YEAR            14:00      52.160000 
+6_HOURS_STORM_50YEAR            14:10      52.160000 
+6_HOURS_STORM_50YEAR            14:20      52.160000 
+6_HOURS_STORM_50YEAR            14:30      52.160000 
+6_HOURS_STORM_50YEAR            14:40      52.160000 
+6_HOURS_STORM_50YEAR            14:50      52.160000 
+6_HOURS_STORM_50YEAR            15:00      52.160000 
+6_HOURS_STORM_50YEAR            15:10      52.160000 
+6_HOURS_STORM_50YEAR            15:20      52.160000 
+6_HOURS_STORM_50YEAR            15:30      52.160000 
+6_HOURS_STORM_50YEAR            15:40      52.160000 
+6_HOURS_STORM_50YEAR            15:50      52.160000 
+6_HOURS_STORM_50YEAR            16:00      52.160000 
+6_HOURS_STORM_50YEAR            16:10      52.160000 
+6_HOURS_STORM_50YEAR            16:20      52.160000 
+6_HOURS_STORM_50YEAR            16:30      52.160000 
+6_HOURS_STORM_50YEAR            16:40      52.160000 
+6_HOURS_STORM_50YEAR            16:50      52.160000 
+6_HOURS_STORM_50YEAR            17:00      52.160000 
+6_HOURS_STORM_50YEAR            17:10      52.160000 
+6_HOURS_STORM_50YEAR            17:20      52.160000 
+6_HOURS_STORM_50YEAR            17:30      52.160000 
+6_HOURS_STORM_50YEAR            17:40      52.160000 
+6_HOURS_STORM_50YEAR            17:50      52.160000 
+6_HOURS_STORM_50YEAR            18:00      52.160000 
+6_HOURS_STORM_50YEAR            18:10      52.160000 
+6_HOURS_STORM_50YEAR            18:20      52.160000 
+6_HOURS_STORM_50YEAR            18:30      52.160000 
+6_HOURS_STORM_50YEAR            18:40      52.160000 
+6_HOURS_STORM_50YEAR            18:50      52.160000 
+6_HOURS_STORM_50YEAR            19:00      52.160000 
+6_HOURS_STORM_50YEAR            19:10      52.160000 
+6_HOURS_STORM_50YEAR            19:20      52.160000 
+6_HOURS_STORM_50YEAR            19:30      52.160000 
+6_HOURS_STORM_50YEAR            19:40      52.160000 
+6_HOURS_STORM_50YEAR            19:50      52.160000 
+6_HOURS_STORM_50YEAR            20:00      52.160000 
+6_HOURS_STORM_50YEAR            20:10      52.160000 
+6_HOURS_STORM_50YEAR            20:20      52.160000 
+6_HOURS_STORM_50YEAR            20:30      52.160000 
+6_HOURS_STORM_50YEAR            20:40      52.160000 
+6_HOURS_STORM_50YEAR            20:50      52.160000 
+6_HOURS_STORM_50YEAR            21:00      52.160000 
+6_HOURS_STORM_50YEAR            21:10      52.160000 
+6_HOURS_STORM_50YEAR            21:20      52.160000 
+6_HOURS_STORM_50YEAR            21:30      52.160000 
+6_HOURS_STORM_50YEAR            21:40      52.160000 
+6_HOURS_STORM_50YEAR            21:50      52.160000 
+6_HOURS_STORM_50YEAR            22:00      52.160000 
+6_HOURS_STORM_50YEAR            22:10      52.160000 
+6_HOURS_STORM_50YEAR            22:20      52.160000 
+6_HOURS_STORM_50YEAR            22:30      52.160000 
+6_HOURS_STORM_50YEAR            22:40      52.160000 
+6_HOURS_STORM_50YEAR            22:50      52.160000 
+6_HOURS_STORM_50YEAR            23:00      52.160000 
+6_HOURS_STORM_50YEAR            23:10      52.160000 
+6_HOURS_STORM_50YEAR            23:20      52.160000 
+6_HOURS_STORM_50YEAR            23:30      52.160000 
+6_HOURS_STORM_50YEAR            23:40      52.160000 
+6_HOURS_STORM_50YEAR            23:50      52.160000 
+6_HOURS_STORM_50YEAR            24:00      52.160000 
+;
+6_HOURS_STORM_100YEAR            1:00       0.000000  
+6_HOURS_STORM_100YEAR            1:10       0.740000  
+6_HOURS_STORM_100YEAR            1:20       1.540000  
+6_HOURS_STORM_100YEAR            1:30       2.440000  
+6_HOURS_STORM_100YEAR            1:40       3.620000  
+6_HOURS_STORM_100YEAR            1:50       4.970000  
+6_HOURS_STORM_100YEAR            2:00       6.560000  
+6_HOURS_STORM_100YEAR            2:10       8.970000  
+6_HOURS_STORM_100YEAR            2:20       12.190000 
+6_HOURS_STORM_100YEAR            2:30       19.500000 
+6_HOURS_STORM_100YEAR            2:40       36.170000 
+6_HOURS_STORM_100YEAR            2:50       41.170000 
+6_HOURS_STORM_100YEAR            3:00       43.910000 
+6_HOURS_STORM_100YEAR            3:10       45.670000 
+6_HOURS_STORM_100YEAR            3:20       47.130000 
+6_HOURS_STORM_100YEAR            3:30       48.390000 
+6_HOURS_STORM_100YEAR            3:40       49.340000 
+6_HOURS_STORM_100YEAR            3:50       50.190000 
+6_HOURS_STORM_100YEAR            4:00       50.960000 
+6_HOURS_STORM_100YEAR            4:10       51.650000 
+6_HOURS_STORM_100YEAR            4:20       52.310000 
+6_HOURS_STORM_100YEAR            4:30       52.950000 
+6_HOURS_STORM_100YEAR            4:40       53.570000 
+6_HOURS_STORM_100YEAR            4:50       54.160000 
+6_HOURS_STORM_100YEAR            5:00       54.740000 
+6_HOURS_STORM_100YEAR            5:10       55.300000 
+6_HOURS_STORM_100YEAR            5:20       55.840000 
+6_HOURS_STORM_100YEAR            5:30       56.370000 
+6_HOURS_STORM_100YEAR            5:40       56.880000 
+6_HOURS_STORM_100YEAR            5:50       57.380000 
+6_HOURS_STORM_100YEAR            6:00       57.870000 
+6_HOURS_STORM_100YEAR            6:10       58.340000 
+6_HOURS_STORM_100YEAR            6:20       58.810000 
+6_HOURS_STORM_100YEAR            6:30       59.260000 
+6_HOURS_STORM_100YEAR            6:40       59.700000 
+6_HOURS_STORM_100YEAR            6:50       60.140000 
+6_HOURS_STORM_100YEAR            7:00       60.560000 
+6_HOURS_STORM_100YEAR            7:10       60.560000 
+6_HOURS_STORM_100YEAR            7:20       60.560000 
+6_HOURS_STORM_100YEAR            7:30       60.560000 
+6_HOURS_STORM_100YEAR            7:40       60.560000 
+6_HOURS_STORM_100YEAR            7:50       60.560000 
+6_HOURS_STORM_100YEAR            8:00       60.560000 
+6_HOURS_STORM_100YEAR            8:10       60.560000 
+6_HOURS_STORM_100YEAR            8:20       60.560000 
+6_HOURS_STORM_100YEAR            8:30       60.560000 
+6_HOURS_STORM_100YEAR            8:40       60.560000 
+6_HOURS_STORM_100YEAR            8:50       60.560000 
+6_HOURS_STORM_100YEAR            9:00       60.560000 
+6_HOURS_STORM_100YEAR            9:10       60.560000 
+6_HOURS_STORM_100YEAR            9:20       60.560000 
+6_HOURS_STORM_100YEAR            9:30       60.560000 
+6_HOURS_STORM_100YEAR            9:40       60.560000 
+6_HOURS_STORM_100YEAR            9:50       60.560000 
+6_HOURS_STORM_100YEAR            10:00      60.560000 
+6_HOURS_STORM_100YEAR            10:10      60.560000 
+6_HOURS_STORM_100YEAR            10:20      60.560000 
+6_HOURS_STORM_100YEAR            10:30      60.560000 
+6_HOURS_STORM_100YEAR            10:40      60.560000 
+6_HOURS_STORM_100YEAR            10:50      60.560000 
+6_HOURS_STORM_100YEAR            11:00      60.560000 
+6_HOURS_STORM_100YEAR            11:10      60.560000 
+6_HOURS_STORM_100YEAR            11:20      60.560000 
+6_HOURS_STORM_100YEAR            11:30      60.560000 
+6_HOURS_STORM_100YEAR            11:40      60.560000 
+6_HOURS_STORM_100YEAR            11:50      60.560000 
+6_HOURS_STORM_100YEAR            12:00      60.560000 
+6_HOURS_STORM_100YEAR            12:10      60.560000 
+6_HOURS_STORM_100YEAR            12:20      60.560000 
+6_HOURS_STORM_100YEAR            12:30      60.560000 
+6_HOURS_STORM_100YEAR            12:40      60.560000 
+6_HOURS_STORM_100YEAR            12:50      60.560000 
+6_HOURS_STORM_100YEAR            13:00      60.560000 
+6_HOURS_STORM_100YEAR            13:10      60.560000 
+6_HOURS_STORM_100YEAR            13:20      60.560000 
+6_HOURS_STORM_100YEAR            13:30      60.560000 
+6_HOURS_STORM_100YEAR            13:40      60.560000 
+6_HOURS_STORM_100YEAR            13:50      60.560000 
+6_HOURS_STORM_100YEAR            14:00      60.560000 
+6_HOURS_STORM_100YEAR            14:10      60.560000 
+6_HOURS_STORM_100YEAR            14:20      60.560000 
+6_HOURS_STORM_100YEAR            14:30      60.560000 
+6_HOURS_STORM_100YEAR            14:40      60.560000 
+6_HOURS_STORM_100YEAR            14:50      60.560000 
+6_HOURS_STORM_100YEAR            15:00      60.560000 
+6_HOURS_STORM_100YEAR            15:10      60.560000 
+6_HOURS_STORM_100YEAR            15:20      60.560000 
+6_HOURS_STORM_100YEAR            15:30      60.560000 
+6_HOURS_STORM_100YEAR            15:40      60.560000 
+6_HOURS_STORM_100YEAR            15:50      60.560000 
+6_HOURS_STORM_100YEAR            16:00      60.560000 
+6_HOURS_STORM_100YEAR            16:10      60.560000 
+6_HOURS_STORM_100YEAR            16:20      60.560000 
+6_HOURS_STORM_100YEAR            16:30      60.560000 
+6_HOURS_STORM_100YEAR            16:40      60.560000 
+6_HOURS_STORM_100YEAR            16:50      60.560000 
+6_HOURS_STORM_100YEAR            17:00      60.560000 
+6_HOURS_STORM_100YEAR            17:10      60.560000 
+6_HOURS_STORM_100YEAR            17:20      60.560000 
+6_HOURS_STORM_100YEAR            17:30      60.560000 
+6_HOURS_STORM_100YEAR            17:40      60.560000 
+6_HOURS_STORM_100YEAR            17:50      60.560000 
+6_HOURS_STORM_100YEAR            18:00      60.560000 
+6_HOURS_STORM_100YEAR            18:10      60.560000 
+6_HOURS_STORM_100YEAR            18:20      60.560000 
+6_HOURS_STORM_100YEAR            18:30      60.560000 
+6_HOURS_STORM_100YEAR            18:40      60.560000 
+6_HOURS_STORM_100YEAR            18:50      60.560000 
+6_HOURS_STORM_100YEAR            19:00      60.560000 
+6_HOURS_STORM_100YEAR            19:10      60.560000 
+6_HOURS_STORM_100YEAR            19:20      60.560000 
+6_HOURS_STORM_100YEAR            19:30      60.560000 
+6_HOURS_STORM_100YEAR            19:40      60.560000 
+6_HOURS_STORM_100YEAR            19:50      60.560000 
+6_HOURS_STORM_100YEAR            20:00      60.560000 
+6_HOURS_STORM_100YEAR            20:10      60.560000 
+6_HOURS_STORM_100YEAR            20:20      60.560000 
+6_HOURS_STORM_100YEAR            20:30      60.560000 
+6_HOURS_STORM_100YEAR            20:40      60.560000 
+6_HOURS_STORM_100YEAR            20:50      60.560000 
+6_HOURS_STORM_100YEAR            21:00      60.560000 
+6_HOURS_STORM_100YEAR            21:10      60.560000 
+6_HOURS_STORM_100YEAR            21:20      60.560000 
+6_HOURS_STORM_100YEAR            21:30      60.560000 
+6_HOURS_STORM_100YEAR            21:40      60.560000 
+6_HOURS_STORM_100YEAR            21:50      60.560000 
+6_HOURS_STORM_100YEAR            22:00      60.560000 
+6_HOURS_STORM_100YEAR            22:10      60.560000 
+6_HOURS_STORM_100YEAR            22:20      60.560000 
+6_HOURS_STORM_100YEAR            22:30      60.560000 
+6_HOURS_STORM_100YEAR            22:40      60.560000 
+6_HOURS_STORM_100YEAR            22:50      60.560000 
+6_HOURS_STORM_100YEAR            23:00      60.560000 
+6_HOURS_STORM_100YEAR            23:10      60.560000 
+6_HOURS_STORM_100YEAR            23:20      60.560000 
+6_HOURS_STORM_100YEAR            23:30      60.560000 
+6_HOURS_STORM_100YEAR            23:40      60.560000 
+6_HOURS_STORM_100YEAR            23:50      60.560000 
+6_HOURS_STORM_100YEAR            24:00      60.560000 
+;
+6_HOURS_STORM_10YEARS            1:00       0.000000  
+6_HOURS_STORM_10YEARS            1:10       0.467500  
+6_HOURS_STORM_10YEARS            1:20       0.978800  
+6_HOURS_STORM_10YEARS            1:30       1.545100  
+6_HOURS_STORM_10YEARS            1:40       2.264700  
+6_HOURS_STORM_10YEARS            1:50       3.088100  
+6_HOURS_STORM_10YEARS            2:00       4.060800  
+6_HOURS_STORM_10YEARS            2:10       5.544800  
+6_HOURS_STORM_10YEARS            2:20       7.526100  
+6_HOURS_STORM_10YEARS            2:30       12.058000 
+6_HOURS_STORM_10YEARS            2:40       22.328400 
+6_HOURS_STORM_10YEARS            2:50       25.408800 
+6_HOURS_STORM_10YEARS            3:00       27.095600 
+6_HOURS_STORM_10YEARS            3:10       28.171700 
+6_HOURS_STORM_10YEARS            3:20       29.062200 
+6_HOURS_STORM_10YEARS            3:30       29.829500 
+6_HOURS_STORM_10YEARS            3:40       30.428900 
+6_HOURS_STORM_10YEARS            3:50       30.966000 
+6_HOURS_STORM_10YEARS            4:00       31.454300 
+6_HOURS_STORM_10YEARS            4:10       31.881700 
+6_HOURS_STORM_10YEARS            4:20       32.292600 
+6_HOURS_STORM_10YEARS            4:30       32.688400 
+6_HOURS_STORM_10YEARS            4:40       33.070200 
+6_HOURS_STORM_10YEARS            4:50       33.439200 
+6_HOURS_STORM_10YEARS            5:00       33.796400 
+6_HOURS_STORM_10YEARS            5:10       34.142600 
+6_HOURS_STORM_10YEARS            5:20       34.478600 
+6_HOURS_STORM_10YEARS            5:30       34.804900 
+6_HOURS_STORM_10YEARS            5:40       35.122400 
+6_HOURS_STORM_10YEARS            5:50       35.431400 
+6_HOURS_STORM_10YEARS            6:00       35.732600 
+6_HOURS_STORM_10YEARS            6:10       36.026300 
+6_HOURS_STORM_10YEARS            6:20       36.312900 
+6_HOURS_STORM_10YEARS            6:30       36.593000 
+6_HOURS_STORM_10YEARS            6:40       36.866700 
+6_HOURS_STORM_10YEARS            6:50       37.134500 
+6_HOURS_STORM_10YEARS            7:00       37.396600 
+6_HOURS_STORM_10YEARS            7:10       37.396600 
+6_HOURS_STORM_10YEARS            7:20       37.396600 
+6_HOURS_STORM_10YEARS            7:30       37.396600 
+6_HOURS_STORM_10YEARS            7:40       37.396600 
+6_HOURS_STORM_10YEARS            7:50       37.396600 
+6_HOURS_STORM_10YEARS            8:00       37.396600 
+6_HOURS_STORM_10YEARS            8:10       37.396600 
+6_HOURS_STORM_10YEARS            8:20       37.396600 
+6_HOURS_STORM_10YEARS            8:30       37.396600 
+6_HOURS_STORM_10YEARS            8:40       37.396600 
+6_HOURS_STORM_10YEARS            8:50       37.396600 
+6_HOURS_STORM_10YEARS            9:00       37.396600 
+6_HOURS_STORM_10YEARS            9:10       37.396600 
+6_HOURS_STORM_10YEARS            9:20       37.396600 
+6_HOURS_STORM_10YEARS            9:30       37.396600 
+6_HOURS_STORM_10YEARS            9:40       37.396600 
+6_HOURS_STORM_10YEARS            9:50       37.396600 
+6_HOURS_STORM_10YEARS            10:00      37.396600 
+6_HOURS_STORM_10YEARS            10:10      37.396600 
+6_HOURS_STORM_10YEARS            10:20      37.396600 
+6_HOURS_STORM_10YEARS            10:30      37.396600 
+6_HOURS_STORM_10YEARS            10:40      37.396600 
+6_HOURS_STORM_10YEARS            10:50      37.396600 
+6_HOURS_STORM_10YEARS            11:00      37.396600 
+6_HOURS_STORM_10YEARS            11:10      37.396600 
+6_HOURS_STORM_10YEARS            11:20      37.396600 
+6_HOURS_STORM_10YEARS            11:30      37.396600 
+6_HOURS_STORM_10YEARS            11:40      37.396600 
+6_HOURS_STORM_10YEARS            11:50      37.396600 
+6_HOURS_STORM_10YEARS            12:00      37.396600 
+6_HOURS_STORM_10YEARS            12:10      37.396600 
+6_HOURS_STORM_10YEARS            12:20      37.396600 
+6_HOURS_STORM_10YEARS            12:30      37.396600 
+6_HOURS_STORM_10YEARS            12:40      37.396600 
+6_HOURS_STORM_10YEARS            12:50      37.396600 
+6_HOURS_STORM_10YEARS            13:00      37.396600 
+6_HOURS_STORM_10YEARS            13:10      37.396600 
+6_HOURS_STORM_10YEARS            13:20      37.396600 
+6_HOURS_STORM_10YEARS            13:30      37.396600 
+6_HOURS_STORM_10YEARS            13:40      37.396600 
+6_HOURS_STORM_10YEARS            13:50      37.396600 
+6_HOURS_STORM_10YEARS            14:00      37.396600 
+6_HOURS_STORM_10YEARS            14:10      37.396600 
+6_HOURS_STORM_10YEARS            14:20      37.396600 
+6_HOURS_STORM_10YEARS            14:30      37.396600 
+6_HOURS_STORM_10YEARS            14:40      37.396600 
+6_HOURS_STORM_10YEARS            14:50      37.396600 
+6_HOURS_STORM_10YEARS            15:00      37.396600 
+6_HOURS_STORM_10YEARS            15:10      37.396600 
+6_HOURS_STORM_10YEARS            15:20      37.396600 
+6_HOURS_STORM_10YEARS            15:30      37.396600 
+6_HOURS_STORM_10YEARS            15:40      37.396600 
+6_HOURS_STORM_10YEARS            15:50      37.396600 
+6_HOURS_STORM_10YEARS            16:00      37.396600 
+6_HOURS_STORM_10YEARS            16:10      37.396600 
+6_HOURS_STORM_10YEARS            16:20      37.396600 
+6_HOURS_STORM_10YEARS            16:30      37.396600 
+6_HOURS_STORM_10YEARS            16:40      37.396600 
+6_HOURS_STORM_10YEARS            16:50      37.396600 
+6_HOURS_STORM_10YEARS            17:00      37.396600 
+6_HOURS_STORM_10YEARS            17:10      37.396600 
+6_HOURS_STORM_10YEARS            17:20      37.396600 
+6_HOURS_STORM_10YEARS            17:30      37.396600 
+6_HOURS_STORM_10YEARS            17:40      37.396600 
+6_HOURS_STORM_10YEARS            17:50      37.396600 
+6_HOURS_STORM_10YEARS            18:00      37.396600 
+6_HOURS_STORM_10YEARS            18:10      37.396600 
+6_HOURS_STORM_10YEARS            18:20      37.396600 
+6_HOURS_STORM_10YEARS            18:30      37.396600 
+6_HOURS_STORM_10YEARS            18:40      37.396600 
+6_HOURS_STORM_10YEARS            18:50      37.396600 
+6_HOURS_STORM_10YEARS            19:00      37.396600 
+6_HOURS_STORM_10YEARS            19:10      37.396600 
+6_HOURS_STORM_10YEARS            19:20      37.396600 
+6_HOURS_STORM_10YEARS            19:30      37.396600 
+6_HOURS_STORM_10YEARS            19:40      37.396600 
+6_HOURS_STORM_10YEARS            19:50      37.396600 
+6_HOURS_STORM_10YEARS            20:00      37.396600 
+6_HOURS_STORM_10YEARS            20:10      37.396600 
+6_HOURS_STORM_10YEARS            20:20      37.396600 
+6_HOURS_STORM_10YEARS            20:30      37.396600 
+6_HOURS_STORM_10YEARS            20:40      37.396600 
+6_HOURS_STORM_10YEARS            20:50      37.396600 
+6_HOURS_STORM_10YEARS            21:00      37.396600 
+6_HOURS_STORM_10YEARS            21:10      37.396600 
+6_HOURS_STORM_10YEARS            21:20      37.396600 
+6_HOURS_STORM_10YEARS            21:30      37.396600 
+6_HOURS_STORM_10YEARS            21:40      37.396600 
+6_HOURS_STORM_10YEARS            21:50      37.396600 
+6_HOURS_STORM_10YEARS            22:00      37.396600 
+6_HOURS_STORM_10YEARS            22:10      37.396600 
+6_HOURS_STORM_10YEARS            22:20      37.396600 
+6_HOURS_STORM_10YEARS            22:30      37.396600 
+6_HOURS_STORM_10YEARS            22:40      37.396600 
+6_HOURS_STORM_10YEARS            22:50      37.396600 
+6_HOURS_STORM_10YEARS            23:00      37.396600 
+6_HOURS_STORM_10YEARS            23:10      37.396600 
+6_HOURS_STORM_10YEARS            23:20      37.396600 
+6_HOURS_STORM_10YEARS            23:30      37.396600 
+6_HOURS_STORM_10YEARS            23:40      37.396600 
+6_HOURS_STORM_10YEARS            23:50      37.396600 
+6_HOURS_STORM_10YEARS            24:00      37.396600 
+;
+PROPOSED_FLOW_25Y            0:00       0.000000  
+PROPOSED_FLOW_25Y            0:10       0.000000  
+PROPOSED_FLOW_25Y            0:20       0.000000  
+PROPOSED_FLOW_25Y            0:30       0.000000  
+PROPOSED_FLOW_25Y            0:40       0.000000  
+PROPOSED_FLOW_25Y            0:50       0.000000  
+PROPOSED_FLOW_25Y            1:00       0.000000  
+PROPOSED_FLOW_25Y            1:10       0.000000  
+PROPOSED_FLOW_25Y            1:20       0.001000  
+PROPOSED_FLOW_25Y            1:30       0.003000  
+PROPOSED_FLOW_25Y            1:40       0.009000  
+PROPOSED_FLOW_25Y            1:50       0.019000  
+PROPOSED_FLOW_25Y            2:00       0.032000  
+PROPOSED_FLOW_25Y            2:10       0.049000  
+PROPOSED_FLOW_25Y            2:20       0.071000  
+PROPOSED_FLOW_25Y            2:30       0.097000  
+PROPOSED_FLOW_25Y            2:40       0.127000  
+PROPOSED_FLOW_25Y            2:50       0.156000  
+PROPOSED_FLOW_25Y            3:00       0.183000  
+PROPOSED_FLOW_25Y            3:10       0.205000  
+PROPOSED_FLOW_25Y            3:20       0.221000  
+PROPOSED_FLOW_25Y            3:30       0.231000  
+PROPOSED_FLOW_25Y            3:40       0.238000  
+PROPOSED_FLOW_25Y            3:50       0.240000  
+PROPOSED_FLOW_25Y            4:00       0.237000  
+PROPOSED_FLOW_25Y            4:10       0.230000  
+PROPOSED_FLOW_25Y            4:20       0.222000  
+PROPOSED_FLOW_25Y            4:30       0.211000  
+PROPOSED_FLOW_25Y            4:40       0.197000  
+PROPOSED_FLOW_25Y            4:50       0.181000  
+PROPOSED_FLOW_25Y            5:00       0.167000  
+PROPOSED_FLOW_25Y            5:10       0.155000  
+PROPOSED_FLOW_25Y            5:20       0.144000  
+PROPOSED_FLOW_25Y            5:30       0.134000  
+PROPOSED_FLOW_25Y            5:40       0.125000  
+PROPOSED_FLOW_25Y            5:50       0.118000  
+PROPOSED_FLOW_25Y            6:00       0.111000  
+PROPOSED_FLOW_25Y            6:10       0.105000  
+PROPOSED_FLOW_25Y            6:20       0.099000  
+PROPOSED_FLOW_25Y            6:30       0.093000  
+PROPOSED_FLOW_25Y            6:40       0.087000  
+PROPOSED_FLOW_25Y            6:50       0.082000  
+PROPOSED_FLOW_25Y            7:00       0.077000  
+PROPOSED_FLOW_25Y            7:10       0.072000  
+PROPOSED_FLOW_25Y            7:20       0.066000  
+PROPOSED_FLOW_25Y            7:30       0.061000  
+PROPOSED_FLOW_25Y            7:40       0.056000  
+PROPOSED_FLOW_25Y            7:50       0.050000  
+PROPOSED_FLOW_25Y            8:00       0.046000  
+PROPOSED_FLOW_25Y            8:10       0.041000  
+PROPOSED_FLOW_25Y            8:20       0.036000  
+PROPOSED_FLOW_25Y            8:30       0.032000  
+PROPOSED_FLOW_25Y            8:40       0.028000  
+PROPOSED_FLOW_25Y            8:50       0.025000  
+PROPOSED_FLOW_25Y            9:00       0.022000  
+PROPOSED_FLOW_25Y            9:10       0.019000  
+PROPOSED_FLOW_25Y            9:20       0.017000  
+PROPOSED_FLOW_25Y            9:30       0.015000  
+PROPOSED_FLOW_25Y            9:40       0.013000  
+PROPOSED_FLOW_25Y            9:50       0.011000  
+PROPOSED_FLOW_25Y            10:00      0.010000  
+PROPOSED_FLOW_25Y            10:10      0.009000  
+PROPOSED_FLOW_25Y            10:20      0.008000  
+PROPOSED_FLOW_25Y            10:30      0.007000  
+PROPOSED_FLOW_25Y            10:40      0.006000  
+PROPOSED_FLOW_25Y            10:50      0.005000  
+PROPOSED_FLOW_25Y            11:00      0.005000  
+PROPOSED_FLOW_25Y            11:10      0.004000  
+PROPOSED_FLOW_25Y            11:20      0.003000  
+PROPOSED_FLOW_25Y            11:30      0.003000  
+PROPOSED_FLOW_25Y            11:40      0.002000  
+PROPOSED_FLOW_25Y            11:50      0.002000  
+PROPOSED_FLOW_25Y            12:00      0.002000  
+PROPOSED_FLOW_25Y            12:10      0.001000  
+PROPOSED_FLOW_25Y            12:20      0.001000  
+PROPOSED_FLOW_25Y            12:30      0.001000  
+PROPOSED_FLOW_25Y            12:40      0.001000  
+PROPOSED_FLOW_25Y            12:50      0.001000  
+PROPOSED_FLOW_25Y            13:00      0.001000  
+PROPOSED_FLOW_25Y            13:10      0.001000  
+PROPOSED_FLOW_25Y            13:20      0.001000  
+PROPOSED_FLOW_25Y            13:30      0.000000  
+PROPOSED_FLOW_25Y            13:40      0.000000  
+PROPOSED_FLOW_25Y            13:50      0.000000  
+PROPOSED_FLOW_25Y            14:00      0.000000  
+PROPOSED_FLOW_25Y            14:10      0.000000  
+PROPOSED_FLOW_25Y            14:20      0.000000  
+PROPOSED_FLOW_25Y            14:30      0.000000  
+PROPOSED_FLOW_25Y            14:40      0.000000  
+PROPOSED_FLOW_25Y            14:50      0.000000  
+PROPOSED_FLOW_25Y            15:00      0.000000  
+PROPOSED_FLOW_25Y            15:10      0.000000  
+PROPOSED_FLOW_25Y            15:20      0.000000  
+PROPOSED_FLOW_25Y            15:30      0.000000  
+PROPOSED_FLOW_25Y            15:40      0.000000  
+PROPOSED_FLOW_25Y            15:50      0.000000  
+PROPOSED_FLOW_25Y            16:00      0.000000  
+PROPOSED_FLOW_25Y            16:10      0.000000  
+PROPOSED_FLOW_25Y            16:20      0.000000  
+PROPOSED_FLOW_25Y            16:30      0.000000  
+PROPOSED_FLOW_25Y            16:40      0.000000  
+PROPOSED_FLOW_25Y            16:50      0.000000  
+PROPOSED_FLOW_25Y            17:00      0.000000  
+PROPOSED_FLOW_25Y            17:10      0.000000  
+PROPOSED_FLOW_25Y            17:20      0.000000  
+PROPOSED_FLOW_25Y            17:30      0.000000  
+PROPOSED_FLOW_25Y            17:40      0.000000  
+PROPOSED_FLOW_25Y            17:50      0.000000  
+PROPOSED_FLOW_25Y            18:00      0.000000  
+PROPOSED_FLOW_25Y            18:10      0.000000  
+PROPOSED_FLOW_25Y            18:20      0.000000  
+PROPOSED_FLOW_25Y            18:30      0.000000  
+PROPOSED_FLOW_25Y            18:40      0.000000  
+PROPOSED_FLOW_25Y            18:50      0.000000  
+PROPOSED_FLOW_25Y            19:00      0.000000  
+PROPOSED_FLOW_25Y            19:10      0.000000  
+PROPOSED_FLOW_25Y            19:20      0.000000  
+PROPOSED_FLOW_25Y            19:30      0.000000  
+PROPOSED_FLOW_25Y            19:40      0.000000  
+PROPOSED_FLOW_25Y            19:50      0.000000  
+PROPOSED_FLOW_25Y            20:00      0.000000  
+PROPOSED_FLOW_25Y            20:10      0.000000  
+PROPOSED_FLOW_25Y            20:20      0.000000  
+PROPOSED_FLOW_25Y            20:30      0.000000  
+PROPOSED_FLOW_25Y            20:40      0.000000  
+PROPOSED_FLOW_25Y            20:50      0.000000  
+PROPOSED_FLOW_25Y            21:00      0.000000  
+PROPOSED_FLOW_25Y            21:10      0.000000  
+PROPOSED_FLOW_25Y            21:20      0.000000  
+PROPOSED_FLOW_25Y            21:30      0.000000  
+PROPOSED_FLOW_25Y            21:40      0.000000  
+PROPOSED_FLOW_25Y            21:50      0.000000  
+PROPOSED_FLOW_25Y            22:00      0.000000  
+PROPOSED_FLOW_25Y            22:10      0.000000  
+PROPOSED_FLOW_25Y            22:20      0.000000  
+PROPOSED_FLOW_25Y            22:30      0.000000  
+PROPOSED_FLOW_25Y            22:40      0.000000  
+PROPOSED_FLOW_25Y            22:50      0.000000  
+PROPOSED_FLOW_25Y            23:00      0.000000  
+PROPOSED_FLOW_25Y            23:10      0.000000  
+PROPOSED_FLOW_25Y            23:20      0.000000  
+PROPOSED_FLOW_25Y            23:30      0.000000  
+PROPOSED_FLOW_25Y            23:40      0.000000  
+PROPOSED_FLOW_25Y            23:50      0.000000  
+;
+PROPOSED_FLOW_50Y            0:00       0.000000  
+PROPOSED_FLOW_50Y            0:10       0.000000  
+PROPOSED_FLOW_50Y            0:20       0.000000  
+PROPOSED_FLOW_50Y            0:30       0.000000  
+PROPOSED_FLOW_50Y            0:40       0.000000  
+PROPOSED_FLOW_50Y            0:50       0.000000  
+PROPOSED_FLOW_50Y            1:00       0.000000  
+PROPOSED_FLOW_50Y            1:10       0.001000  
+PROPOSED_FLOW_50Y            1:20       0.002000  
+PROPOSED_FLOW_50Y            1:30       0.005000  
+PROPOSED_FLOW_50Y            1:40       0.012000  
+PROPOSED_FLOW_50Y            1:50       0.024000  
+PROPOSED_FLOW_50Y            2:00       0.041000  
+PROPOSED_FLOW_50Y            2:10       0.062000  
+PROPOSED_FLOW_50Y            2:20       0.088000  
+PROPOSED_FLOW_50Y            2:30       0.121000  
+PROPOSED_FLOW_50Y            2:40       0.156000  
+PROPOSED_FLOW_50Y            2:50       0.192000  
+PROPOSED_FLOW_50Y            3:00       0.224000  
+PROPOSED_FLOW_50Y            3:10       0.250000  
+PROPOSED_FLOW_50Y            3:20       0.269000  
+PROPOSED_FLOW_50Y            3:30       0.281000  
+PROPOSED_FLOW_50Y            3:40       0.288000  
+PROPOSED_FLOW_50Y            3:50       0.290000  
+PROPOSED_FLOW_50Y            4:00       0.286000  
+PROPOSED_FLOW_50Y            4:10       0.278000  
+PROPOSED_FLOW_50Y            4:20       0.267000  
+PROPOSED_FLOW_50Y            4:30       0.253000  
+PROPOSED_FLOW_50Y            4:40       0.236000  
+PROPOSED_FLOW_50Y            4:50       0.217000  
+PROPOSED_FLOW_50Y            5:00       0.199000  
+PROPOSED_FLOW_50Y            5:10       0.184000  
+PROPOSED_FLOW_50Y            5:20       0.170000  
+PROPOSED_FLOW_50Y            5:30       0.158000  
+PROPOSED_FLOW_50Y            5:40       0.147000  
+PROPOSED_FLOW_50Y            5:50       0.138000  
+PROPOSED_FLOW_50Y            6:00       0.129000  
+PROPOSED_FLOW_50Y            6:10       0.121000  
+PROPOSED_FLOW_50Y            6:20       0.114000  
+PROPOSED_FLOW_50Y            6:30       0.107000  
+PROPOSED_FLOW_50Y            6:40       0.100000  
+PROPOSED_FLOW_50Y            6:50       0.094000  
+PROPOSED_FLOW_50Y            7:00       0.088000  
+PROPOSED_FLOW_50Y            7:10       0.082000  
+PROPOSED_FLOW_50Y            7:20       0.075000  
+PROPOSED_FLOW_50Y            7:30       0.069000  
+PROPOSED_FLOW_50Y            7:40       0.063000  
+PROPOSED_FLOW_50Y            7:50       0.057000  
+PROPOSED_FLOW_50Y            8:00       0.051000  
+PROPOSED_FLOW_50Y            8:10       0.046000  
+PROPOSED_FLOW_50Y            8:20       0.041000  
+PROPOSED_FLOW_50Y            8:30       0.036000  
+PROPOSED_FLOW_50Y            8:40       0.032000  
+PROPOSED_FLOW_50Y            8:50       0.028000  
+PROPOSED_FLOW_50Y            9:00       0.025000  
+PROPOSED_FLOW_50Y            9:10       0.022000  
+PROPOSED_FLOW_50Y            9:20       0.019000  
+PROPOSED_FLOW_50Y            9:30       0.017000  
+PROPOSED_FLOW_50Y            9:40       0.015000  
+PROPOSED_FLOW_50Y            9:50       0.013000  
+PROPOSED_FLOW_50Y            10:00      0.011000  
+PROPOSED_FLOW_50Y            10:10      0.010000  
+PROPOSED_FLOW_50Y            10:20      0.009000  
+PROPOSED_FLOW_50Y            10:30      0.008000  
+PROPOSED_FLOW_50Y            10:40      0.007000  
+PROPOSED_FLOW_50Y            10:50      0.006000  
+PROPOSED_FLOW_50Y            11:00      0.005000  
+PROPOSED_FLOW_50Y            11:10      0.004000  
+PROPOSED_FLOW_50Y            11:20      0.004000  
+PROPOSED_FLOW_50Y            11:30      0.003000  
+PROPOSED_FLOW_50Y            11:40      0.003000  
+PROPOSED_FLOW_50Y            11:50      0.002000  
+PROPOSED_FLOW_50Y            12:00      0.002000  
+PROPOSED_FLOW_50Y            12:10      0.002000  
+PROPOSED_FLOW_50Y            12:20      0.001000  
+PROPOSED_FLOW_50Y            12:30      0.001000  
+PROPOSED_FLOW_50Y            12:40      0.001000  
+PROPOSED_FLOW_50Y            12:50      0.001000  
+PROPOSED_FLOW_50Y            13:00      0.001000  
+PROPOSED_FLOW_50Y            13:10      0.001000  
+PROPOSED_FLOW_50Y            13:20      0.001000  
+PROPOSED_FLOW_50Y            13:30      0.000000  
+PROPOSED_FLOW_50Y            13:40      0.000000  
+PROPOSED_FLOW_50Y            13:50      0.000000  
+PROPOSED_FLOW_50Y            14:00      0.000000  
+PROPOSED_FLOW_50Y            14:10      0.000000  
+PROPOSED_FLOW_50Y            14:20      0.000000  
+PROPOSED_FLOW_50Y            14:30      0.000000  
+PROPOSED_FLOW_50Y            14:40      0.000000  
+PROPOSED_FLOW_50Y            14:50      0.000000  
+PROPOSED_FLOW_50Y            15:00      0.000000  
+PROPOSED_FLOW_50Y            15:10      0.000000  
+PROPOSED_FLOW_50Y            15:20      0.000000  
+PROPOSED_FLOW_50Y            15:30      0.000000  
+PROPOSED_FLOW_50Y            15:40      0.000000  
+PROPOSED_FLOW_50Y            15:50      0.000000  
+PROPOSED_FLOW_50Y            16:00      0.000000  
+PROPOSED_FLOW_50Y            16:10      0.000000  
+PROPOSED_FLOW_50Y            16:20      0.000000  
+PROPOSED_FLOW_50Y            16:30      0.000000  
+PROPOSED_FLOW_50Y            16:40      0.000000  
+PROPOSED_FLOW_50Y            16:50      0.000000  
+PROPOSED_FLOW_50Y            17:00      0.000000  
+PROPOSED_FLOW_50Y            17:10      0.000000  
+PROPOSED_FLOW_50Y            17:20      0.000000  
+PROPOSED_FLOW_50Y            17:30      0.000000  
+PROPOSED_FLOW_50Y            17:40      0.000000  
+PROPOSED_FLOW_50Y            17:50      0.000000  
+PROPOSED_FLOW_50Y            18:00      0.000000  
+PROPOSED_FLOW_50Y            18:10      0.000000  
+PROPOSED_FLOW_50Y            18:20      0.000000  
+PROPOSED_FLOW_50Y            18:30      0.000000  
+PROPOSED_FLOW_50Y            18:40      0.000000  
+PROPOSED_FLOW_50Y            18:50      0.000000  
+PROPOSED_FLOW_50Y            19:00      0.000000  
+PROPOSED_FLOW_50Y            19:10      0.000000  
+PROPOSED_FLOW_50Y            19:20      0.000000  
+PROPOSED_FLOW_50Y            19:30      0.000000  
+PROPOSED_FLOW_50Y            19:40      0.000000  
+PROPOSED_FLOW_50Y            19:50      0.000000  
+PROPOSED_FLOW_50Y            20:00      0.000000  
+PROPOSED_FLOW_50Y            20:10      0.000000  
+PROPOSED_FLOW_50Y            20:20      0.000000  
+PROPOSED_FLOW_50Y            20:30      0.000000  
+PROPOSED_FLOW_50Y            20:40      0.000000  
+PROPOSED_FLOW_50Y            20:50      0.000000  
+PROPOSED_FLOW_50Y            21:00      0.000000  
+PROPOSED_FLOW_50Y            21:10      0.000000  
+PROPOSED_FLOW_50Y            21:20      0.000000  
+PROPOSED_FLOW_50Y            21:30      0.000000  
+PROPOSED_FLOW_50Y            21:40      0.000000  
+PROPOSED_FLOW_50Y            21:50      0.000000  
+PROPOSED_FLOW_50Y            22:00      0.000000  
+PROPOSED_FLOW_50Y            22:10      0.000000  
+PROPOSED_FLOW_50Y            22:20      0.000000  
+PROPOSED_FLOW_50Y            22:30      0.000000  
+PROPOSED_FLOW_50Y            22:40      0.000000  
+PROPOSED_FLOW_50Y            22:50      0.000000  
+PROPOSED_FLOW_50Y            23:00      0.000000  
+PROPOSED_FLOW_50Y            23:10      0.000000  
+PROPOSED_FLOW_50Y            23:20      0.000000  
+PROPOSED_FLOW_50Y            23:30      0.000000  
+PROPOSED_FLOW_50Y            23:40      0.000000  
+PROPOSED_FLOW_50Y            23:50      0.000000  
+;
+PROPOSED_FLOW_100Y            0:00       0.000000  
+PROPOSED_FLOW_100Y            0:10       0.000000  
+PROPOSED_FLOW_100Y            0:20       0.000000  
+PROPOSED_FLOW_100Y            0:30       0.000000  
+PROPOSED_FLOW_100Y            0:40       0.000000  
+PROPOSED_FLOW_100Y            0:50       0.000000  
+PROPOSED_FLOW_100Y            1:00       0.000000  
+PROPOSED_FLOW_100Y            1:10       0.001000  
+PROPOSED_FLOW_100Y            1:20       0.003000  
+PROPOSED_FLOW_100Y            1:30       0.006000  
+PROPOSED_FLOW_100Y            1:40       0.015000  
+PROPOSED_FLOW_100Y            1:50       0.030000  
+PROPOSED_FLOW_100Y            2:00       0.051000  
+PROPOSED_FLOW_100Y            2:10       0.077000  
+PROPOSED_FLOW_100Y            2:20       0.109000  
+PROPOSED_FLOW_100Y            2:30       0.148000  
+PROPOSED_FLOW_100Y            2:40       0.190000  
+PROPOSED_FLOW_100Y            2:50       0.233000  
+PROPOSED_FLOW_100Y            3:00       0.271000  
+PROPOSED_FLOW_100Y            3:10       0.302000  
+PROPOSED_FLOW_100Y            3:20       0.324000  
+PROPOSED_FLOW_100Y            3:30       0.338000  
+PROPOSED_FLOW_100Y            3:40       0.346000  
+PROPOSED_FLOW_100Y            3:50       0.348000  
+PROPOSED_FLOW_100Y            4:00       0.342000  
+PROPOSED_FLOW_100Y            4:10       0.332000  
+PROPOSED_FLOW_100Y            4:20       0.319000  
+PROPOSED_FLOW_100Y            4:30       0.301000  
+PROPOSED_FLOW_100Y            4:40       0.281000  
+PROPOSED_FLOW_100Y            4:50       0.258000  
+PROPOSED_FLOW_100Y            5:00       0.238000  
+PROPOSED_FLOW_100Y            5:10       0.220000  
+PROPOSED_FLOW_100Y            5:20       0.204000  
+PROPOSED_FLOW_100Y            5:30       0.189000  
+PROPOSED_FLOW_100Y            5:40       0.177000  
+PROPOSED_FLOW_100Y            5:50       0.166000  
+PROPOSED_FLOW_100Y            6:00       0.156000  
+PROPOSED_FLOW_100Y            6:10       0.147000  
+PROPOSED_FLOW_100Y            6:20       0.138000  
+PROPOSED_FLOW_100Y            6:30       0.129000  
+PROPOSED_FLOW_100Y            6:40       0.122000  
+PROPOSED_FLOW_100Y            6:50       0.114000  
+PROPOSED_FLOW_100Y            7:00       0.107000  
+PROPOSED_FLOW_100Y            7:10       0.100000  
+PROPOSED_FLOW_100Y            7:20       0.092000  
+PROPOSED_FLOW_100Y            7:30       0.085000  
+PROPOSED_FLOW_100Y            7:40       0.077000  
+PROPOSED_FLOW_100Y            7:50       0.070000  
+PROPOSED_FLOW_100Y            8:00       0.063000  
+PROPOSED_FLOW_100Y            8:10       0.056000  
+PROPOSED_FLOW_100Y            8:20       0.050000  
+PROPOSED_FLOW_100Y            8:30       0.045000  
+PROPOSED_FLOW_100Y            8:40       0.039000  
+PROPOSED_FLOW_100Y            8:50       0.035000  
+PROPOSED_FLOW_100Y            9:00       0.030000  
+PROPOSED_FLOW_100Y            9:10       0.026000  
+PROPOSED_FLOW_100Y            9:20       0.023000  
+PROPOSED_FLOW_100Y            9:30       0.020000  
+PROPOSED_FLOW_100Y            9:40       0.018000  
+PROPOSED_FLOW_100Y            9:50       0.016000  
+PROPOSED_FLOW_100Y            10:00      0.014000  
+PROPOSED_FLOW_100Y            10:10      0.012000  
+PROPOSED_FLOW_100Y            10:20      0.011000  
+PROPOSED_FLOW_100Y            10:30      0.010000  
+PROPOSED_FLOW_100Y            10:40      0.008000  
+PROPOSED_FLOW_100Y            10:50      0.007000  
+PROPOSED_FLOW_100Y            11:00      0.006000  
+PROPOSED_FLOW_100Y            11:10      0.005000  
+PROPOSED_FLOW_100Y            11:20      0.005000  
+PROPOSED_FLOW_100Y            11:30      0.004000  
+PROPOSED_FLOW_100Y            11:40      0.003000  
+PROPOSED_FLOW_100Y            11:50      0.003000  
+PROPOSED_FLOW_100Y            12:00      0.002000  
+PROPOSED_FLOW_100Y            12:10      0.002000  
+PROPOSED_FLOW_100Y            12:20      0.002000  
+PROPOSED_FLOW_100Y            12:30      0.001000  
+PROPOSED_FLOW_100Y            12:40      0.001000  
+PROPOSED_FLOW_100Y            12:50      0.001000  
+PROPOSED_FLOW_100Y            13:00      0.001000  
+PROPOSED_FLOW_100Y            13:10      0.001000  
+PROPOSED_FLOW_100Y            13:20      0.001000  
+PROPOSED_FLOW_100Y            13:30      0.001000  
+PROPOSED_FLOW_100Y            13:40      0.001000  
+PROPOSED_FLOW_100Y            13:50      0.000000  
+PROPOSED_FLOW_100Y            14:00      0.000000  
+PROPOSED_FLOW_100Y            14:10      0.000000  
+PROPOSED_FLOW_100Y            14:20      0.000000  
+PROPOSED_FLOW_100Y            14:30      0.000000  
+PROPOSED_FLOW_100Y            14:40      0.000000  
+PROPOSED_FLOW_100Y            14:50      0.000000  
+PROPOSED_FLOW_100Y            15:00      0.000000  
+PROPOSED_FLOW_100Y            15:10      0.000000  
+PROPOSED_FLOW_100Y            15:20      0.000000  
+PROPOSED_FLOW_100Y            15:30      0.000000  
+PROPOSED_FLOW_100Y            15:40      0.000000  
+PROPOSED_FLOW_100Y            15:50      0.000000  
+PROPOSED_FLOW_100Y            16:00      0.000000  
+PROPOSED_FLOW_100Y            16:10      0.000000  
+PROPOSED_FLOW_100Y            16:20      0.000000  
+PROPOSED_FLOW_100Y            16:30      0.000000  
+PROPOSED_FLOW_100Y            16:40      0.000000  
+PROPOSED_FLOW_100Y            16:50      0.000000  
+PROPOSED_FLOW_100Y            17:00      0.000000  
+PROPOSED_FLOW_100Y            17:10      0.000000  
+PROPOSED_FLOW_100Y            17:20      0.000000  
+PROPOSED_FLOW_100Y            17:30      0.000000  
+PROPOSED_FLOW_100Y            17:40      0.000000  
+PROPOSED_FLOW_100Y            17:50      0.000000  
+PROPOSED_FLOW_100Y            18:00      0.000000  
+PROPOSED_FLOW_100Y            18:10      0.000000  
+PROPOSED_FLOW_100Y            18:20      0.000000  
+PROPOSED_FLOW_100Y            18:30      0.000000  
+PROPOSED_FLOW_100Y            18:40      0.000000  
+PROPOSED_FLOW_100Y            18:50      0.000000  
+PROPOSED_FLOW_100Y            19:00      0.000000  
+PROPOSED_FLOW_100Y            19:10      0.000000  
+PROPOSED_FLOW_100Y            19:20      0.000000  
+PROPOSED_FLOW_100Y            19:30      0.000000  
+PROPOSED_FLOW_100Y            19:40      0.000000  
+PROPOSED_FLOW_100Y            19:50      0.000000  
+PROPOSED_FLOW_100Y            20:00      0.000000  
+PROPOSED_FLOW_100Y            20:10      0.000000  
+PROPOSED_FLOW_100Y            20:20      0.000000  
+PROPOSED_FLOW_100Y            20:30      0.000000  
+PROPOSED_FLOW_100Y            20:40      0.000000  
+PROPOSED_FLOW_100Y            20:50      0.000000  
+PROPOSED_FLOW_100Y            21:00      0.000000  
+PROPOSED_FLOW_100Y            21:10      0.000000  
+PROPOSED_FLOW_100Y            21:20      0.000000  
+PROPOSED_FLOW_100Y            21:30      0.000000  
+PROPOSED_FLOW_100Y            21:40      0.000000  
+PROPOSED_FLOW_100Y            21:50      0.000000  
+PROPOSED_FLOW_100Y            22:00      0.000000  
+PROPOSED_FLOW_100Y            22:10      0.000000  
+PROPOSED_FLOW_100Y            22:20      0.000000  
+PROPOSED_FLOW_100Y            22:30      0.000000  
+PROPOSED_FLOW_100Y            22:40      0.000000  
+PROPOSED_FLOW_100Y            22:50      0.000000  
+PROPOSED_FLOW_100Y            23:00      0.000000  
+PROPOSED_FLOW_100Y            23:10      0.000000  
+PROPOSED_FLOW_100Y            23:20      0.000000  
+PROPOSED_FLOW_100Y            23:30      0.000000  
+PROPOSED_FLOW_100Y            23:40      0.000000  
+PROPOSED_FLOW_100Y            23:50      0.000000  
+;
+; 2 hrs storm
+; New Time Series
+TIMESERI-3                  0:00       0.000000  
+TIMESERI-3                  0:10       2.090000  
+TIMESERI-3                  0:20       4.870000  
+TIMESERI-3                  0:30       11.210000 
+TIMESERI-3                  0:40       25.650000 
+TIMESERI-3                  0:50       29.980000 
+TIMESERI-3                  1:00       32.350000 
+TIMESERI-3                  1:10       33.870000 
+TIMESERI-3                  1:20       35.240000 
+TIMESERI-3                  1:30       36.500000 
+TIMESERI-3                  1:40       37.660000 
+TIMESERI-3                  1:50       38.740000 
+TIMESERI-3                  2:00       39.760000 
+TIMESERI-3                  2:10       39.760000 
+TIMESERI-3                  2:20       39.760000 
+TIMESERI-3                  2:30       39.760000 
+TIMESERI-3                  2:40       39.760000 
+TIMESERI-3                  2:50       39.760000 
+TIMESERI-3                  3:00       39.760000 
+TIMESERI-3                  3:10       39.760000 
+TIMESERI-3                  3:20       39.760000 
+TIMESERI-3                  3:30       39.760000 
+TIMESERI-3                  3:40       39.760000 
+TIMESERI-3                  3:50       39.760000 
+TIMESERI-3                  4:00       39.760000 
+TIMESERI-3                  4:10       39.760000 
+TIMESERI-3                  4:20       39.760000 
+TIMESERI-3                  4:30       39.760000 
+TIMESERI-3                  4:40       39.760000 
+TIMESERI-3                  4:50       39.760000 
+TIMESERI-3                  5:00       39.760000 
+TIMESERI-3                  5:10       39.760000 
+TIMESERI-3                  5:20       39.760000 
+TIMESERI-3                  5:30       39.760000 
+TIMESERI-3                  5:40       39.760000 
+TIMESERI-3                  5:50       39.760000 
+TIMESERI-3                  6:00       39.760000 
+TIMESERI-3                  6:10       39.760000 
+TIMESERI-3                  6:20       39.760000 
+TIMESERI-3                  6:30       39.760000 
+TIMESERI-3                  6:40       39.760000 
+TIMESERI-3                  6:50       39.760000 
+TIMESERI-3                  7:00       39.760000 
+TIMESERI-3                  7:10       39.760000 
+TIMESERI-3                  7:20       39.760000 
+TIMESERI-3                  7:30       39.760000 
+TIMESERI-3                  7:40       39.760000 
+TIMESERI-3                  7:50       39.760000 
+TIMESERI-3                  8:00       39.760000 
+TIMESERI-3                  8:10       39.760000 
+TIMESERI-3                  8:20       39.760000 
+TIMESERI-3                  8:30       39.760000 
+TIMESERI-3                  8:40       39.760000 
+TIMESERI-3                  8:50       39.760000 
+TIMESERI-3                  9:00       39.760000 
+TIMESERI-3                  9:10       39.760000 
+TIMESERI-3                  9:20       39.760000 
+TIMESERI-3                  9:30       39.760000 
+TIMESERI-3                  9:40       39.760000 
+TIMESERI-3                  9:50       39.760000 
+TIMESERI-3                  10:00      39.760000 
+TIMESERI-3                  10:10      39.760000 
+TIMESERI-3                  10:20      39.760000 
+TIMESERI-3                  10:30      39.760000 
+TIMESERI-3                  10:40      39.760000 
+TIMESERI-3                  10:50      39.760000 
+TIMESERI-3                  11:00      39.760000 
+TIMESERI-3                  11:10      39.760000 
+TIMESERI-3                  11:20      39.760000 
+TIMESERI-3                  11:30      39.760000 
+TIMESERI-3                  11:40      39.760000 
+TIMESERI-3                  11:50      39.760000 
+TIMESERI-3                  12:00      39.760000 
+TIMESERI-3                  12:10      39.760000 
+TIMESERI-3                  12:20      39.760000 
+TIMESERI-3                  12:30      39.760000 
+TIMESERI-3                  12:40      39.760000 
+TIMESERI-3                  12:50      39.760000 
+TIMESERI-3                  13:00      39.760000 
+TIMESERI-3                  13:10      39.760000 
+TIMESERI-3                  13:20      39.760000 
+TIMESERI-3                  13:30      39.760000 
+TIMESERI-3                  13:40      39.760000 
+TIMESERI-3                  13:50      39.760000 
+TIMESERI-3                  14:00      39.760000 
+TIMESERI-3                  14:10      39.760000 
+TIMESERI-3                  14:20      39.760000 
+TIMESERI-3                  14:30      39.760000 
+TIMESERI-3                  14:40      39.760000 
+TIMESERI-3                  14:50      39.760000 
+TIMESERI-3                  15:00      39.760000 
+TIMESERI-3                  15:10      39.760000 
+TIMESERI-3                  15:20      39.760000 
+TIMESERI-3                  15:30      39.760000 
+TIMESERI-3                  15:40      39.760000 
+TIMESERI-3                  15:50      39.760000 
+TIMESERI-3                  16:00      39.760000 
+TIMESERI-3                  16:10      39.760000 
+TIMESERI-3                  16:20      39.760000 
+TIMESERI-3                  16:30      39.760000 
+TIMESERI-3                  16:40      39.760000 
+TIMESERI-3                  16:50      39.760000 
+TIMESERI-3                  17:00      39.760000 
+TIMESERI-3                  17:10      39.760000 
+TIMESERI-3                  17:20      39.760000 
+TIMESERI-3                  17:30      39.760000 
+TIMESERI-3                  17:40      39.760000 
+TIMESERI-3                  17:50      39.760000 
+TIMESERI-3                  18:00      39.760000 
+TIMESERI-3                  18:10      39.760000 
+TIMESERI-3                  18:20      39.760000 
+TIMESERI-3                  18:30      39.760000 
+TIMESERI-3                  18:40      39.760000 
+TIMESERI-3                  18:50      39.760000 
+TIMESERI-3                  19:00      39.760000 
+TIMESERI-3                  19:10      39.760000 
+TIMESERI-3                  19:20      39.760000 
+TIMESERI-3                  19:30      39.760000 
+TIMESERI-3                  19:40      39.760000 
+TIMESERI-3                  19:50      39.760000 
+TIMESERI-3                  20:00      39.760000 
+TIMESERI-3                  20:10      39.760000 
+TIMESERI-3                  20:20      39.760000 
+TIMESERI-3                  20:30      39.760000 
+TIMESERI-3                  20:40      39.760000 
+TIMESERI-3                  20:50      39.760000 
+TIMESERI-3                  21:00      39.760000 
+TIMESERI-3                  21:10      39.760000 
+TIMESERI-3                  21:20      39.760000 
+TIMESERI-3                  21:30      39.760000 
+TIMESERI-3                  21:40      39.760000 
+TIMESERI-3                  21:50      39.760000 
+TIMESERI-3                  22:00      39.760000 
+TIMESERI-3                  22:10      39.760000 
+TIMESERI-3                  22:20      39.760000 
+TIMESERI-3                  22:30      39.760000 
+TIMESERI-3                  22:40      39.760000 
+TIMESERI-3                  22:50      39.760000 
+TIMESERI-3                  23:00      39.760000 
+TIMESERI-3                  23:10      39.760000 
+TIMESERI-3                  23:20      39.760000 
+TIMESERI-3                  23:30      39.760000 
+TIMESERI-3                  23:40      39.760000 
+TIMESERI-3                  23:50      39.760000 
+TIMESERI-3                  24:00      39.760000 
+;
+; 2hrs 25y
+TIMESERI-5                  0:00       0.000000  
+TIMESERI-5                  0:10       1.810000  
+TIMESERI-5                  0:20       4.220000  
+TIMESERI-5                  0:30       9.720000  
+TIMESERI-5                  0:40       22.250000 
+TIMESERI-5                  0:50       26.010000 
+TIMESERI-5                  1:00       28.060000 
+TIMESERI-5                  1:10       29.390000 
+TIMESERI-5                  1:20       30.600000 
+TIMESERI-5                  1:30       31.700000 
+TIMESERI-5                  1:40       32.720000 
+TIMESERI-5                  1:50       33.670000 
+TIMESERI-5                  2:00       34.560000 
+TIMESERI-5                  2:10       34.560000 
+TIMESERI-5                  2:20       34.560000 
+TIMESERI-5                  2:30       34.560000 
+TIMESERI-5                  2:40       34.560000 
+TIMESERI-5                  2:50       34.560000 
+TIMESERI-5                  3:00       34.560000 
+TIMESERI-5                  3:10       34.560000 
+TIMESERI-5                  3:20       34.560000 
+TIMESERI-5                  3:30       34.560000 
+TIMESERI-5                  3:40       34.560000 
+TIMESERI-5                  3:50       34.560000 
+TIMESERI-5                  4:00       34.560000 
+TIMESERI-5                  4:10       34.560000 
+TIMESERI-5                  4:20       34.560000 
+TIMESERI-5                  4:30       34.560000 
+TIMESERI-5                  4:40       34.560000 
+TIMESERI-5                  4:50       34.560000 
+TIMESERI-5                  5:00       34.560000 
+TIMESERI-5                  5:10       34.560000 
+TIMESERI-5                  5:20       34.560000 
+TIMESERI-5                  5:30       34.560000 
+TIMESERI-5                  5:40       34.560000 
+TIMESERI-5                  5:50       34.560000 
+TIMESERI-5                  6:00       34.560000 
+TIMESERI-5                  6:10       34.560000 
+TIMESERI-5                  6:20       34.560000 
+TIMESERI-5                  6:30       34.560000 
+TIMESERI-5                  6:40       34.560000 
+TIMESERI-5                  6:50       34.560000 
+TIMESERI-5                  7:00       34.560000 
+TIMESERI-5                  7:10       34.560000 
+TIMESERI-5                  7:20       34.560000 
+TIMESERI-5                  7:30       34.560000 
+TIMESERI-5                  7:40       34.560000 
+TIMESERI-5                  7:50       34.560000 
+TIMESERI-5                  8:00       34.560000 
+TIMESERI-5                  8:10       34.560000 
+TIMESERI-5                  8:20       34.560000 
+TIMESERI-5                  8:30       34.560000 
+TIMESERI-5                  8:40       34.560000 
+TIMESERI-5                  8:50       34.560000 
+TIMESERI-5                  9:00       34.560000 
+TIMESERI-5                  9:10       34.560000 
+TIMESERI-5                  9:20       34.560000 
+TIMESERI-5                  9:30       34.560000 
+TIMESERI-5                  9:40       34.560000 
+TIMESERI-5                  9:50       34.560000 
+TIMESERI-5                  10:00      34.560000 
+TIMESERI-5                  10:10      34.560000 
+TIMESERI-5                  10:20      34.560000 
+TIMESERI-5                  10:30      34.560000 
+TIMESERI-5                  10:40      34.560000 
+TIMESERI-5                  10:50      34.560000 
+TIMESERI-5                  11:00      34.560000 
+TIMESERI-5                  11:10      34.560000 
+TIMESERI-5                  11:20      34.560000 
+TIMESERI-5                  11:30      34.560000 
+TIMESERI-5                  11:40      34.560000 
+TIMESERI-5                  11:50      34.560000 
+TIMESERI-5                  12:00      34.560000 
+TIMESERI-5                  12:10      34.560000 
+TIMESERI-5                  12:20      34.560000 
+TIMESERI-5                  12:30      34.560000 
+TIMESERI-5                  12:40      34.560000 
+TIMESERI-5                  12:50      34.560000 
+TIMESERI-5                  13:00      34.560000 
+TIMESERI-5                  13:10      34.560000 
+TIMESERI-5                  13:20      34.560000 
+TIMESERI-5                  13:30      34.560000 
+TIMESERI-5                  13:40      34.560000 
+TIMESERI-5                  13:50      34.560000 
+TIMESERI-5                  14:00      34.560000 
+TIMESERI-5                  14:10      34.560000 
+TIMESERI-5                  14:20      34.560000 
+TIMESERI-5                  14:30      34.560000 
+TIMESERI-5                  14:40      34.560000 
+TIMESERI-5                  14:50      34.560000 
+TIMESERI-5                  15:00      34.560000 
+TIMESERI-5                  15:10      34.560000 
+TIMESERI-5                  15:20      34.560000 
+TIMESERI-5                  15:30      34.560000 
+TIMESERI-5                  15:40      34.560000 
+TIMESERI-5                  15:50      34.560000 
+TIMESERI-5                  16:00      34.560000 
+TIMESERI-5                  16:10      34.560000 
+TIMESERI-5                  16:20      34.560000 
+TIMESERI-5                  16:30      34.560000 
+TIMESERI-5                  16:40      34.560000 
+TIMESERI-5                  16:50      34.560000 
+TIMESERI-5                  17:00      34.560000 
+TIMESERI-5                  17:10      34.560000 
+TIMESERI-5                  17:20      34.560000 
+TIMESERI-5                  17:30      34.560000 
+TIMESERI-5                  17:40      34.560000 
+TIMESERI-5                  17:50      34.560000 
+TIMESERI-5                  18:00      34.560000 
+TIMESERI-5                  18:10      34.560000 
+TIMESERI-5                  18:20      34.560000 
+TIMESERI-5                  18:30      34.560000 
+TIMESERI-5                  18:40      34.560000 
+TIMESERI-5                  18:50      34.560000 
+TIMESERI-5                  19:00      34.560000 
+TIMESERI-5                  19:10      34.560000 
+TIMESERI-5                  19:20      34.560000 
+TIMESERI-5                  19:30      34.560000 
+TIMESERI-5                  19:40      34.560000 
+TIMESERI-5                  19:50      34.560000 
+TIMESERI-5                  20:00      34.560000 
+TIMESERI-5                  20:10      34.560000 
+TIMESERI-5                  20:20      34.560000 
+TIMESERI-5                  20:30      34.560000 
+TIMESERI-5                  20:40      34.560000 
+TIMESERI-5                  20:50      34.560000 
+TIMESERI-5                  21:00      34.560000 
+TIMESERI-5                  21:10      34.560000 
+TIMESERI-5                  21:20      34.560000 
+TIMESERI-5                  21:30      34.560000 
+TIMESERI-5                  21:40      34.560000 
+TIMESERI-5                  21:50      34.560000 
+TIMESERI-5                  22:00      34.560000 
+TIMESERI-5                  22:10      34.560000 
+TIMESERI-5                  22:20      34.560000 
+TIMESERI-5                  22:30      34.560000 
+TIMESERI-5                  22:40      34.560000 
+TIMESERI-5                  22:50      34.560000 
+TIMESERI-5                  23:00      34.560000 
+TIMESERI-5                  23:10      34.560000 
+TIMESERI-5                  23:20      34.560000 
+TIMESERI-5                  23:30      34.560000 
+TIMESERI-5                  23:40      34.560000 
+TIMESERI-5                  23:50      34.560000 
+TIMESERI-5                  24:00      34.560000 
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   YES
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 218731.074 393330.250 226005.180 397384.749
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+OUTFALL          225674.539         393514.545        
+AS-2             225423.987         393528.363        
+AS-AG10          223462.403         396250.666        
+AS-AG11          223405.233         396419.949        
+AS-AG12          223320.607         396873.511        
+AS-AG13          223240.479         396876.129        
+AS-AG14          223223.160         397189.230        
+AS-AG1A          225006.869         393673.288        
+AS-AG1B          225065.441         393667.894        
+AS-AG1C          225080.989         393591.484        
+AS-AG2           224983.218         394019.911        
+AS-AG3           224682.777         394151.479        
+AS-AG4           224215.635         394391.068        
+AS-AG5           223938.355         394534.106        
+AS-AG6           224046.012         394764.162        
+AS-AG7           224043.753         395065.937        
+AS-AG8           223808.082         395525.555        
+AS-AG9           223560.957         395996.818        
+AS-DKN1          222896.743         396268.161        
+AS-DKN1A         222469.417         396269.823        
+AS-DKN2          222403.549         396265.466        
+AS-DKN3          221958.760         396171.218        
+AS-DKN4          221584.240         396016.305        
+AS-DKN5          221096.834         395808.132        
+AS-DKN6          220714.928         395626.263        
+AS-DKN7          220243.844         395458.691        
+AS-DKN8          219736.571         395259.446        
+AS-DKN9          219350.108         395113.848        
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                219061.715         395552.272        
+1                219114.614         395397.985        
+1                219166.667         395318.752        
+1                219471.679         395433.250        
+1                219348.249         395684.519        
+1                219189.553         395622.804        
+10               222978.657         396086.156        
+10               223076.617         396078.809        
+10               223086.667         395992.085        
+10               223088.862         395841.255        
+10               222980.000         395832.085        
+10               222775.389         395833.908        
+10               222770.491         395946.562        
+10               222772.940         396073.911        
+10               222912.534         396083.707        
+11               222949.269         397075.555        
+11               223120.699         397060.860        
+11               223108.454         396862.491        
+11               222986.667         396858.752        
+11               222913.333         396858.752        
+11               222758.246         396857.593        
+11               222755.797         396953.104        
+11               222765.593         397060.860        
+12               223392.539         397178.413        
+12               223789.278         397200.454        
+12               223787.270         397138.936        
+12               223794.176         396977.594        
+12               223634.991         396977.594        
+12               223495.397         396967.798        
+12               223409.682         396972.696        
+12               223397.437         397087.800        
+13               223882.340         396703.305        
+13               224039.077         396708.203        
+13               224043.975         396495.140        
+13               223900.000         396498.752        
+13               223732.951         396482.895        
+13               223730.502         396566.161        
+13               223723.155         396686.162        
+14               223791.727         396382.486        
+14               224039.077         396387.384        
+14               224051.322         396291.872        
+14               224046.667         396218.752        
+14               223946.014         396218.402        
+14               223803.972         396215.953        
+14               223796.625         396328.607        
+15               223840.707         395826.561        
+15               223953.333         395838.752        
+15               224080.000         395838.752        
+15               224146.833         395841.255        
+15               224230.099         395843.704        
+15               224220.303         396095.952        
+15               223828.462         396076.360        
+15               223833.333         396025.418        
+16               223534.581         395532.680        
+16               223661.930         395532.680        
+16               223680.000         395445.418        
+16               223657.032         395319.617        
+16               223480.000         395312.085        
+16               223399.886         395312.270        
+16               223382.743         395410.230        
+16               223382.743         395517.986        
+17               224466.667         395252.085        
+17               224597.450         395243.697        
+17               224595.001         395025.736        
+17               224533.333         395025.418        
+17               224313.366         395018.389        
+17               224306.667         395138.752        
+17               224293.773         395233.901        
+18               224420.000         394885.418        
+18               224558.266         394881.244        
+18               224553.368         394702.467        
+18               224466.667         394698.752        
+18               224313.366         394700.018        
+18               224306.667         394792.085        
+18               224308.468         394876.346        
+2                219332.196         394832.528        
+2                219424.644         394881.184        
+2                219467.894         394784.952        
+2                219497.629         394721.698        
+2                219407.884         394668.717        
+2                219340.000         394632.085        
+2                219295.433         394699.533        
+2                219244.074         394787.655        
+2                219281.918         394806.577        
+3                220005.562         394993.899        
+3                220037.399         394942.469        
+3                220098.625         394842.060        
+3                220046.667         394818.752        
+3                219802.295         394702.467        
+3                219740.000         394778.752        
+3                219711.681         394837.162        
+3                219684.742         394908.183        
+3                219968.827         395055.124        
+4                220480.670         395300.024        
+4                220588.426         395128.594        
+4                220527.201         395064.920        
+4                220458.629         395015.940        
+4                220392.505         394957.163        
+4                220333.729         394920.428        
+4                220272.504         394996.348        
+4                220157.401         395145.737        
+4                220230.871         395206.962        
+4                220436.587         395353.903        
+5                220730.468         396024.931        
+5                220764.754         395944.113        
+5                220784.346         395870.643        
+5                220701.080         395831.459        
+5                220598.222         395780.030        
+5                220519.854         395755.540        
+5                220458.629         395946.562        
+5                220708.427         396076.360        
+6                221186.667         395605.418        
+6                221257.005         395650.232        
+6                221318.230         395684.519        
+6                221433.333         395505.741        
+6                221328.026         395432.271        
+6                221279.046         395385.740        
+6                221198.229         395361.250        
+6                221166.392         395407.781        
+6                221105.166         395547.374        
+7                221773.745         395936.766        
+7                221832.521         395895.133        
+7                221918.237         395777.581        
+7                221795.786         395667.376        
+7                221668.438         395591.456        
+7                221643.948         395620.844        
+7                221600.000         395665.418        
+7                221560.000         395752.085        
+7                221658.642         395836.357        
+8                221844.767         396573.508        
+8                221986.667         396645.418        
+8                222089.667         396426.568        
+8                221993.333         396378.752        
+8                221805.582         396294.321        
+8                221766.667         396345.418        
+8                221719.867         396421.670        
+8                221680.683         396502.487        
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+RAINGAGE         219692.389         396664.680        
+

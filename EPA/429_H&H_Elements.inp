@@ -1,0 +1,2150 @@
+[TITLE]
+;;Project Title/Notes
+Templet file for all other runs.
+Includes blocked culvert on
+Trib01 at Westwood Ave.
+Culverts sized using field survey data.
+Nat. Chann. Transects from GIS.
+Loss Coeffiecnts estimated from
+SWMM User Manual Appendix.
+Pipe Network Data from GIS and Sewer Mapping
+provided by City of Richmond and Henrico Co.
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/2000
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/2000
+REPORT_START_TIME    00:00:00
+END_DATE             01/02/2000
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:05:00
+WET_STEP             00:05:00
+DRY_STEP             00:05:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+RG_JB01          INTENSITY 0:05     1.0      TIMESERIES 10yr6hrCyclonic 
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+HCN01            RG_JB01          5475             243      33       2630     1.39     0                        
+HCN02            RG_JB01          JB_NC02          106      50       1457     1.58     0                        
+HCN03            RG_JB01          JB_CUL01         114      28       1360     1.48     0                        
+HCN04            RG_JB01          JB_CUL02         93       44       1306     1.81     0                        
+HCN05            RG_JB01          JB_NC06          151      27       1448     1.76     0                        
+HCS01            RG_JB01          5492             93       63       2349     1.85     0                        
+;Includes area HCS03 (8 acres).
+;% impervious adjusted for additional area.
+HCS02            RG_JB01          JB_NC02          85       56       1329     1.83     0                        
+HCS04            RG_JB01          5593             109      63       1268     1.17     0                        
+HCS05            RG_JB01          JB_NC05          84       49       1651     1.26     0                        
+;Includes area for HCS0602 (26 acres)
+;% Impervious addjusted for addtional area.
+HCS0601          RG_JB01          JBT_NC03         168      65       1854     1.08     0                        
+;Includes area HCS0604 (43 acres)
+;% Impervious adjusted for additional area.
+HCS0603          RG_JB01          JBT_CUL03        104      22       740      0.17     0                        
+JB0101           RG_JB01          JX8025           195      24       1739     1.31     0                        
+;CHANGED WIDTH FROM 2151 TO 5800
+JB0102           RG_JB01          JX8343           227      29       2151     1.05     0                        
+JB0103           RG_JB01          JX8464           242      27       2080     0.63     0                        
+JB0104           RG_JB01          JX9038           130      29       1559     0.77     0                        
+JB0201           RG_JB01          JX8762           231      28       1967     .62      0                        
+JB0202           RG_JB01          JX8503           215      27       2129     .86      0                        
+JB03             RG_JB01          JX10021          94       43       1219     0.36     0                        
+JB0401           RG_JB01          JX9591           286      24       2117     0.61     0                        
+JB0402           RG_JB01          JX9468           204      40       1314     .41      0                        
+JB040302         RG_JB01          JX9044           102      49       1340     0.96     0                        
+;INCLUDES AREA WS040301, 53 ACRES
+;% Impervious similar, no adjustment.
+JB0404           RG_JB01          JX9146           165      32       1358     0.45     0                        
+JB0405           RG_JB01          RP03             54       26       1464     1.12     0                        
+JB0501           RG_JB01          MH1002           59       55       1149     1.62     0                        
+JB0504           RG_JB01          JX10353          93       66       1568     1.09     0                        
+JB0505           RG_JB01          JX10225          117      43       2852     1.45     0                        
+JB0506           RG_JB01          JX10216          37       55       790      2.18     0                        
+JB0507           RG_JB01          JB_NC07a         148      13       2452     2.50     0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+HCN01            0.015      0.15       0.05       0.15       25         OUTLET    
+HCN02            0.015      0.15       0.05       0.15       25         OUTLET    
+HCN03            0.015      0.24       0.05       0.15       25         OUTLET    
+HCN04            0.015      0.15       0.05       0.15       25         OUTLET    
+HCN05            0.015      0.4        0.05       0.15       25         OUTLET    
+HCS01            0.015      0.15       0.05       0.15       25         OUTLET    
+HCS02            0.015      0.15       0.05       0.15       25         OUTLET    
+HCS04            0.015      0.15       0.05       0.15       25         OUTLET    
+HCS05            0.015      0.15       0.05       0.15       25         OUTLET    
+HCS0601          0.015      0.15       0.05       0.15       25         OUTLET    
+HCS0603          0.015      0.15       0.05       0.15       25         OUTLET    
+JB0101           0.015      0.15       0.05       0.15       25         OUTLET    
+JB0102           0.015      0.15       0.05       0.15       25         OUTLET    
+JB0103           0.015      0.15       0.05       0.15       25         OUTLET    
+JB0104           0.015      0.15       0.05       0.15       25         OUTLET    
+JB0201           0.015      0.15       0.05       0.15       25         OUTLET    
+JB0202           0.015      0.15       0.05       0.15       25         OUTLET    
+JB03             0.015      0.15       0.05       0.15       25         OUTLET    
+JB0401           0.015      0.24       0.05       0.15       25         OUTLET    
+JB0402           0.015      0.15       0.05       0.15       25         OUTLET    
+JB040302         0.015      0.15       0.05       0.15       25         OUTLET    
+JB0404           0.015      0.15       0.05       0.15       25         OUTLET    
+JB0405           0.015      0.15       0.05       0.15       25         OUTLET    
+JB0501           0.015      0.15       0.05       0.15       25         OUTLET    
+JB0504           0.015      0.15       0.05       0.15       25         OUTLET    
+JB0505           0.015      0.15       0.05       0.15       25         OUTLET    
+JB0506           0.015      0.15       0.05       0.15       25         OUTLET    
+JB0507           0.015      0.4        0.05       0.15       25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+HCN01            3.0        0.5        4          7          0         
+HCN02            3.0        0.5        4          7          0         
+HCN03            3.0        0.5        4          7          0         
+HCN04            3.0        0.5        4          7          0         
+HCN05            3.0        0.5        4          7          0         
+HCS01            3.0        0.5        4          7          0         
+HCS02            3.0        0.5        4          7          0         
+HCS04            3.0        0.5        4          7          0         
+HCS05            3.0        0.5        4          7          0         
+HCS0601          3.0        0.5        4          7          0         
+HCS0603          3.0        0.5        4          7          0         
+JB0101           3.0        0.5        4          7          0         
+JB0102           3.0        0.5        4          7          0         
+JB0103           3.0        0.5        4          7          0         
+JB0104           3.0        0.5        4          7          0         
+JB0201           3.0        0.5        4          7          0         
+JB0202           3.0        0.5        4          7          0         
+JB03             3.0        0.5        4          7          0         
+JB0401           3.0        0.5        4          7          0         
+JB0402           3.0        0.5        4          7          0         
+JB040302         3.0        0.5        4          7          0         
+JB0404           3.0        0.5        4          7          0         
+JB0405           3.0        0.5        4          7          0         
+JB0501           3.0        0.5        4          7          0         
+JB0504           3.0        0.5        4          7          0         
+JB0505           3.0        0.5        4          7          0         
+JB0506           3.0        0.5        4          7          0         
+JB0507           3.0        0.5        4          7          0         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+6                193        7          0          14         0         
+7                0          0          0          0          0         
+8                0          0          0          0          0         
+27               0          0          0          0          0         
+28               0          0          0          0          0         
+5363             191.57     14.43      0          0          0         
+5364             191.42     15.58      0          0          0         
+5366             191.27     13.23      0          0          0         
+5369             191.07     12.93      0          0          0         
+5413             189.17     14.83      0          0          0         
+5416             189.33     14.67      0          0          0         
+5417             189.42     14.58      0          0          0         
+5419             190.03     13.97      0          0          0         
+5423             190.20     14.80      0          0          0         
+5427             190.38     13.62      0          0          0         
+5432             190.78     13.22      0          0          0         
+5452             188.57     14.43      0          0          0         
+5454             188.33     15.67      0          0          0         
+5455             188.22     15.78      0          0          0         
+5459             189.25     14.75      0          0          0         
+5461             188.68     14.32      0          0          0         
+5475             188.96     14.04      0          0          0         
+5476             188.09     15.91      0          0          0         
+5478             187.77     16.23      0          0          0         
+5480             187.45     15.05      0          0          0         
+5482             187.64     15.36      0          0          0         
+5492             187.29     14.96      0          0          0         
+5495             187.18     14.82      0          0          0         
+5496             187.13     14.87      0          0          0         
+5498             187.06     14.94      0          0          0         
+5501             186.70     13.30      0          0          0         
+5502             186.80     13.20      0          0          0         
+5507             186.25     16.32      0          0          0         
+5540             185.59     14.41      0          0          0         
+;Begin box culvert at Merkel Rd. to W. Broad St.
+;See Pics Jordan Branch 8-06-2009.ppt
+5542             185.69     16.32      0          0          0         
+5577             201.22     8.78       0          0          0         
+5578             205.70     10.30      0          0          0         
+5591             197.40     8.60       0          0          0         
+5592             198.28     7.72       0          0          0         
+5593             195.67     8.33       0          0          0         
+5602             193.54     10.46      0          0          0         
+6292             190.92     11.08      0          0          0         
+6302             190.31     11.69      0          0          0         
+6306             189.48     12.52      0          0          0         
+6307             189.30     12.70      0          0          0         
+6308             189.35     12.65      0          0          0         
+6309             186.10     13.90      0          0          0         
+6310             182.82     19.18      0          0          0         
+6311             180.74     14.76      0          0          0         
+6312             178.59     13.41      0          0          0         
+6313             178.14     12.36      0          0          0         
+6322             184.33     13.67      0          0          0         
+;Upstream at Bridge at Staples Mill Rd
+JB_CUL01         174.3      12         0          0          0         
+;Upstream at Bridge at Dabney Rd.
+JB_CUL02         166.3      26.1       0          0          0         
+;Upstream Culvert at RR
+JB_CUL03         162        16.1       0          0          0         
+;Upstream at Culvert under I64
+JB_CUL04         156        20.1       0          0          0         
+;Open to Nat. Channel at W. Broad St.
+;See Pics Jordan Branch 8-06-2009.ppt
+;Elevations estimated from field survey and
+;GIS
+JB_NC01          184        16.1       0          0          0         
+;Inv. est. from GIS
+JB_NC02          179.42     16.1       0          0          0         
+;Downstream at Bridge at Staples Mill Rd
+JB_NC03          174        12         0          0          0         
+JB_NC04          171.26     25         0          0          0         
+;Upstream at Bridge at Dabney Rd.
+JB_NC05          166        26.1       0          0          0         
+;Downstream Culvert at RR
+JB_NC06          156.3      22         0          0          0         
+;Upstream of Young's Pond, Bryant Park
+JB_NC07          150        18         0          0          0         
+;Downstream at Culvert under I64
+JB_NC07a         155.7      16         0          0          0         
+JB_NC08          146        20         0          0          0         
+;Enterence to Culvert at Westwood
+;Inv. 184.4 from County Map 038SW.
+JBT_CUL01        184        14.56      0          12         0         
+;Upstream at Culvert under CSX Road
+JBT_CUL02        182.3      12.1       0          0          0         
+;Under RR on JB Tributary
+;Size & Invert est. until
+;field survey is completed.
+JBT_CUL03        180        16         0          0          0         
+JBT_CUL04        168        14         0          0          0         
+;Outfall at Broad St. near Westwood Ave.
+;Empty into natural channel parallel to Westwood Ave.
+;Serves Water Shed 04.
+JBT_NC01         186.54     10         0          0          0         
+;Joins NatChann 01 & 02 together
+;Inv. 185.45, average of US and DS inverts
+JBT_NC02         185.45     14.56      0          0          0         
+;Culvert at Westwood Ave.
+;Inv. 183.8 from County Map 038SW
+JBT_NC03         183.8      12.1       0          12         0         
+;Downstream at Culvert under CSX Road
+JBT_NC04         182        10.1       0          0          0         
+;Under RR on JB Tributary
+;Size & Invert est. until
+;field survey is completed.
+JBT_NC05         179.42     16         0          0          0         
+JBT_NC06         167.8      14         0          0          0         
+JX10021          206.39     9.13       0          0          0         
+JX10216          184.6      10.09      0          0          0         
+JX10217          173.91     14.48      0          0          0         
+JX10218          173.96     14.54      0          0          0         
+JX10222          176.4      17.00      0          0          0         
+JX10223          177.98     8.86       0          0          0         
+JX10224          180.51     19.91      0          0          0         
+JX10225          184.35     12         0          0          0         
+JX10306          181.43     16.38      0          0          0         
+JX10310          182.05     18.02      0          0          0         
+JX10311          184.06     13.54      0          0          0         
+JX10335          184.86     11.43      0          0          0         
+JX10339          185.4      12.09      0          0          0         
+JX10351          185.63     7.67       0          0          0         
+JX10352          185.95     6.92       0          0          0         
+JX10353          186.92     8.97       0          0          0         
+JX7805           188.87     14.52      0          0          0         
+JX7806           188.81     14.60      0          0          0         
+JX7867           234        7.10       0          0          0         
+JX7891           247.76     12.33      0          0          0         
+JX7894           249.45     10.86      0          0          0         
+JX7895           246.44     14.06      0          0          0         
+JX7899           240.49     13.71      0          0          0         
+JX7906           236.33     13.80      0          0          0         
+JX7907           235.84     14.26      0          0          0         
+JX7908           238.52     11.34      0          0          0         
+JX8008           244.55     7.08       0          0          0         
+JX8013           232.8      15.80      0          0          0         
+JX8014           231.87     17.33      0          0          0         
+JX8015           229.34     16.96      0          0          0         
+JX8024           225.4      19.20      0          0          0         
+JX8025           224.7      20.90      0          0          0         
+JX8060           217.59     18.81      0          0          0         
+JX8066           215.13     18.97      0          0          0         
+JX8070           227.9      8.20       0          0          0         
+JX8093           232.48     7.49       0          0          0         
+JX8119           220.16     20.70      0          0          0         
+JX8163           210.92     16.78      0          0          0         
+JX8206           200.5      20.20      0          0          0         
+JX8342           211.33     17.07      0          0          0         
+JX8343           205.88     22.32      0          0          0         
+JX8344           213.68     19.52      0          0          0         
+JX8354           202.25     20.55      0          0          0         
+JX8355           196.32     16.18      0          0          0         
+JX8379           192.25     17.03      0          0          0         
+JX8405           204.34     20.65      0          0          0         
+JX8433           200.87     16.00      0          0          0         
+JX8436           206.4      14.60      0          0          0         
+JX8440           211.86     18.60      0          0          0         
+JX8462           217.85     19.13      0          0          0         
+JX8463           218.67     17.79      0          0          0         
+JX8464           218.67     17.95      0          0          0         
+JX8465           212.47     20.63      0          0          0         
+JX8496           198.63     18.87      0          0          0         
+JX8500           196.38     18.72      0          0          0         
+JX8501           195        17         0          0          0         
+JX8502           194.92     17         0          0          0         
+JX8503           194.82     17         0          0          0         
+JX8510           192.46     15         0          0          0         
+JX8512           202.05     19.78      0          0          0         
+JX8531           197.5      16.09      0          0          0         
+JX8549           188.15     10.50      0          0          0         
+JX8552           197.55     16.35      0          0          0         
+JX8553           203.11     9          0          0          0         
+JX8554           205.21     15.19      0          0          0         
+JX8762           208.58     18.92      0          0          0         
+JX8763           205.56     16.44      0          0          0         
+JX8764           207.18     19.32      0          0          0         
+JX8952           193.75     18.77      0          0          0         
+JX8955           196.97     14.36      0          0          0         
+JX8956           196.91     14.29      0          0          0         
+JX8959           206.03     16.47      0          0          0         
+JX9038           195.75     18.25      0          0          0         
+JX9044           192.89     11.80      0          0          0         
+JX9045           192.1      11.80      0          0          0         
+JX9047           191.36     9.22       0          0          0         
+JX9129           194.4      13.25      0          0          0         
+JX9130           196.88     12.60      0          0          0         
+JX9145           201.82     12         0          0          0         
+JX9146           198.51     12.33      0          0          0         
+JX9155           202.48     9.15       0          0          0         
+JX9157           204.88     8.72       0          0          0         
+JX9162           209.1      8.62       0          0          0         
+JX9163           211.96     8.82       0          0          0         
+JX9164           213.44     9.30       0          0          0         
+JX9181           214.3      9.10       0          0          0         
+JX9184           203.52     11.5       0          0          0         
+;WS0404 Inlet
+JX9189           207.40     11.9       0          0          0         
+JX9386           197.54     16.96      0          0          0         
+JX9401           187.5      8.7        0          0          0         
+JX9402           190.9      7.30       0          0          0         
+JX9408           191.01     7.60       0          0          0         
+JX9411           191.84     6.80       0          0          0         
+JX9421           189.97     10.30      0          0          0         
+JX9422           189.7      10.40      0          0          0         
+JX9426           189.04     14.15      0          0          0         
+JX9435           190.77     9.22       0          0          0         
+JX9440           191.4      10.80      0          0          0         
+JX9450           192.57     10.10      0          0          0         
+JX9460           193.7      10.71      0          0          0         
+JX9466           196.36     12.60      0          30         0         
+JX9468           198.83     12.65      0          0          0         
+JX9487           200.03     12.10      0          0          0         
+JX9494           202.80     11.50      0          0          0         
+JX9509           206.05     13.10      0          0          0         
+JX9527           207.58     12.75      0          0          0         
+JX9550           209.40     10.81      0          0          0         
+JX9570           211.60     9.51       0          0          0         
+JX9582           212.54     9.5        0          0          0         
+JX9591           213.48     10.33      0          0          0         
+JX9823           208.13     7.67       0          0          0         
+JX9824           205.7      10.30      0          0          0         
+JX9825           208.79     7.19       0          0          0         
+JX9865           211.7      8.10       0          0          0         
+JX9866           208.06     12.30      0          0          0         
+JX9867           209.25     11.30      0          0          0         
+JX9870           208.28     10.90      0          0          0         
+JX9877           211.05     10.30      0          0          0         
+JX9884           214.55     8.45       0          0          0         
+MH1001           184.46     9.75       0          0          0         
+MH1002           186.9      7.50       0          0          0         
+ParkBridge       144        11         0          0          0         
+RP01             186.31     10         0          0          0         
+RP02             186.09     10         0          0          0         
+RP03             185.69     10         0          0          0         
+RP04             184.75     11         0          0          0         
+RP05             184.5      11         0          0          0         
+RP06             184.24     12         0          0          0         
+WS0102OF         191.7      15.3       0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+JB_OF1           142        FREE                        NO                       
+JB_OF2           142        FREE                        NO                       
+JB_OF3           142        FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+YoungsPond       142      12         5          TABULAR    YoungsPOND                   506959   0       
+TJHS_Storage     194.4    2.5        0          TABULAR    TJHS_Storage                 180000   0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+54650            5363             5364             64.45      0.013      0          0          0          0         
+54652            5364             5366             69.57      0.013      0          0          0          0         
+54654            WS0102OF         5363             60.95      0.013      0          0          0          0         
+54655            5366             5369             90.66      0.013      0          0          0          0         
+54697            5417             5416             43.30      0.013      0          0          0          0         
+54698            5419             5417             274.01     0.013      0          0          0          0         
+54703            5423             5419             79.99      0.013      0          0          0          0         
+54707            5427             5423             80.64      0.013      0          0          0          0         
+54713            5432             5427             179.99     0.013      0          0          0          0         
+54714            5369             5432             134.35     0.013      0          0          0          0         
+54732            5452             5454             108.55     0.013      0          0          0          0         
+54733            5454             5455             50.94      0.013      0          0          0          0         
+54737            5459             5413             36.70      0.013      0          0          0          0         
+54738            5416             5459             36.72      0.013      0          0          0          0         
+54748            5461             5452             48.67      0.013      0          0          0          0         
+54754            5475             5461             129.11     0.013      0          0          0          0         
+54755            5413             5475             94.02      0.013      0          0          0          0         
+54758            5455             5476             59.85      0.013      0          0          0          0         
+54760            5476             5478             143.40     0.013      0          0          0          0         
+54762            5478             5482             57.53      0.013      0          0          0          0         
+54763            5482             5480             86.65      0.013      0          0          0          0         
+54775            5480             5492             73.16      0.013      0          0          0          0         
+54776            5492             5495             51.44      0.013      0          0          0          0         
+54777            5495             5496             21.13      0.013      0          0          0          0         
+54779            5496             5498             35.07      0.013      0          0          0          0         
+54782            5502             5501             45.10      0.013      0          0          0          0         
+54783            5498             5502             114.64     0.013      0          0          0          0         
+54787            5501             5507             207.10     0.013      0          0          0          0         
+;Bridge at Merkel Rd. part of Box Culvert
+;under W. Broad St.
+;See Pics Jordan Branch 8-06-2009.ppt
+54816            5542             5540             43.05      0.013      0          0          0          0         
+54848            JX9824           5577             668.58     0.013      0          0          0          0         
+54854            5577             5592             438.70     0.013      0          0          0          0         
+54858            5592             5591             102.66     0.013      0          0          0          0         
+54860            5591             5593             173.16     0.013      0          0          0          0         
+54869            5593             5602             226.65     0.013      0          0          0          0         
+55398            5602             6292             291.21     0.013      0          0          0          0         
+55407            6292             6302             50.20      0.013      0          0          0          0         
+55412            6302             6306             69.63      0.013      0          0          0          0         
+55413            6308             6307             19.50      0.013      0          0          0          0         
+55414            6306             6308             50.50      0.013      0          0          0          0         
+55415            6307             6309             269.01     0.013      0          0          0          0         
+55416            6309             6310             275.59     0.013      0          0          0          0         
+55417            6310             6311             174.76     0.013      0          0          0          0         
+55418            6311             6312             180.52     0.013      0          0          0          0         
+55419            6312             JB_NC04          38.39      0.013      0          6.88       0          0         
+;Box Culvert near W. Broad St.
+;See Pics Jordan Branch 8-06-2009.ppt
+55428            5540             6322             576.20     0.013      0          0          0          0         
+;Bridge at West Broad St.
+;Box Culvert
+;See Pics Jordan Branch 8-06-2009.ppt
+55429            6322             JB_NC01          111.00     0.013      0          0          0          0         
+;Bridge at Staples Mill Rd
+CUL_JB01.1       JB_CUL01         JB_NC03          127        0.02       0          0          0          0         
+;Bridge at Dabney Rd.
+;GIS 10X10
+;FIELD MEASURE 10X11
+CUL_JB02.1       JB_CUL02         JB_NC05          43         0.015      0          0          0          0         
+;Culvert under RR
+;9.5x8 concrete oval
+;the shape appears to change from
+;oval (upstream) to rectangluar (downstream).
+CUL_JB03.1       JB_CUL03         JB_NC06          345        0.013      0          0          0          0         
+;Culvert under RR
+;9' corrugated pipe
+CUL_JB03.2       JB_CUL03         JB_NC06          345        0.024      3          3          0          0         
+;Culvert under I64
+CUL_JB04.1       JB_CUL04         JB_NC07a         200        0.015      0          0          0          0         
+;Culvert under Westwood Ave.
+CUL_JBT01.1      JBT_CUL01        JBT_NC03         66         0.013      0          0          0          0         
+;Culvert under Westwood Ave.
+CUL_JBT01.2      JBT_CUL01        JBT_NC03         66         0.013      2.5        2.5        0          0         
+;5.5' concrete Culvert under CSX Road
+CUL_JBT02.1      JBT_CUL02        JBT_NC04         71         0.013      0          0          0          0         
+;5.5' concrete Culvert under CSX Road
+CUL_JBT02.2      JBT_CUL02        JBT_NC04         71         0.013      0          0          0          0         
+;5.5' concrete Culvert under CSX Road
+CUL_JBT02.3      JBT_CUL02        JBT_NC04         71         0.013      0          0          0          0         
+;Under RR on JB Tributary
+;8'x 8' Box Culvert
+CUL_JBT03        JBT_CUL03        JBT_NC05         223        0.013      0          0          0          0         
+;Under RR on JB Tributary
+;10' coorugated
+CUL_JBT04.1      JBT_CUL04        JBT_NC06         89         0.024      0          0          0          0         
+;Under RR on JB Tributary
+;10' coorugated
+CUL_JBT04.2      JBT_CUL04        JBT_NC06         89         0.024      1          1          0          0         
+;Upstream end of Jordan's Branch
+;At Broad St.
+NC_JB01          JB_NC01          JB_NC02          1359       0.045      0          0          0          0         
+;Nat. Channel accross from
+;Willow Lawn Shopping Center
+;Upstream of Broad St.
+NC_JB01a         5507             5542             254        0.045      0          0          0          0         
+;Downstream of Broad St.
+;Upstream of Staples Mill Rd.
+NC_JB02          JB_NC02          JB_CUL01         1034       0.045      0          0          0          0         
+;Downstream of Staples Mill Rd.
+NC_JB03          JB_NC03          JB_NC04          853        0.045      0          0          0          0         
+;Upstream of Dabney Rd. and
+;Downstream of NC_JB03
+NC_JB04          JB_NC04          JB_CUL02         1481       0.045      0          0          0          0         
+;Downstream of Dabney Rd. and Upstream of RR
+NC_JB05          JB_NC05          JB_CUL03         1019       0.045      0          0          0          0         
+;Nat. Channel between CSX RR and I64
+NC_JB06          JB_NC06          JB_CUL04         103        0.045      0          0          0          0         
+NC_JB07          JB_NC07          JB_NC08          1398       0.045      0          0          0          0         
+;Downstream of I64 and
+;Upstream of Young's Pond in Bryant Park
+NC_JB07a         JB_NC07a         JB_NC07          2338       0.045      0          0          0          0         
+NC_JB08a         JB_NC08          ParkBridge       660        0.045      0          0          0          0         
+NC_JB08b         ParkBridge       YoungsPond       280        0.045      0          0          0          0         
+;Tributary to Jordan's Branch
+;downstream of Westwood Ave. culvert
+NC_JBT03         JBT_NC03         JBT_CUL02        1044       0.045      0          0          0          0         
+NC_JBT04         JBT_NC04         JBT_CUL03        886        0.045      0          0          0          0         
+NC_JBT05         JBT_NC05         JBT_CUL04        2706       0.045      0          0          0          0         
+NC_JBT06         JBT_NC06         JB_CUL03         519        0.045      0          0          0          0         
+PI1001           MH1001           JBT_NC03         77.82      0.013      0          0          0          0         
+PI1002           MH1002           MH1001           191.07     0.013      0          0          0          0         
+PI10033          JX9823           JX9824           40.00      0.013      0          0          0          0         
+PI10034          JX9825           JX9824           26.67      0.013      0          0          0          0         
+PI10080          JX9494           JX9487           338.13755996900 0.013      0          0          0          0         
+PI10097          JX9509           JX9494           428.76663405900 0.013      0          0          0          0         
+PI10114          JX9527           JX9509           432.49395592300 0.013      0          0          0          0         
+PI10406          JX9870           JX10021          456.03     0.013      0          0          0          0         
+PI10407          JX10021          JX9824           95.68      0.013      0          0          0          0         
+PI10417          JX8549           JBT_NC01         405        0.013      0          0          0          0         
+PI10598          JX10216          JX10217          390.80     0.013      0          0          0          0         
+PI10599          JX10217          JX10218          37.70      0.013      0          0          0          0         
+PI10600          JX10218          JB_NC06          526.31     0.013      0          0          0          0         
+PI10603          JX10222          JX10217          774.75     0.013      0          0          0          0         
+PI10605          JX10223          JX10222          533.02     0.013      0          0          0          0         
+PI10607          JX10224          JX10223          504.35     0.013      0          0          0          0         
+PI10612          JX10225          JX10224          45.70      0.013      0          2.8        0          0         
+PI10688          JX10306          JX10224          96.63      0.013      0          0          0          0         
+PI10689          JX10310          JX10306          120.97     0.013      0          0          0          0         
+PI10695          JX10311          JX10310          268.83     0.013      0          0          0          0         
+PI10729          JX10335          JX10311          171.33     0.013      0          0          0          0         
+PI10734          JX10339          JX10335          131.86     0.013      0          0          0          0         
+PI10747          JX10351          JX10339          128.85     0.013      0          0          0          0         
+PI10748          JX10352          JX10351          66.35      0.013      0          0          0          0         
+PI10749          JX10353          JX10352          347.58     0.013      0          0          0          0         
+PI6251           JX9884           JX9877           247.70     0.013      0          0          0          0         
+PI6846           JX9386           JX8355           284.98     0.013      0          0          0          0         
+PI7219           JX8762           JX8764           202.20     0.013      0          0          0          0         
+PI7221           JX8764           JX8763           173.87     0.013      0          0          0          0         
+PI7222           JX8763           JX8512           681.65     0.013      0          0          0          0         
+PI7344           JX7806           JX8549           419.36     0.013      0          0          0          0         
+PI7398           JX8405           JX8354           660.57     0.013      0          0          0          0         
+PI7873           JX9421           JX9422           314.63     0.013      0          0          0          0         
+PI7877           JX9422           JX9426           314.70     0.013      0          0          0          0         
+PI7882           JX9426           JX7805           41.95      0.013      0          0          0          0         
+PI7891           JX9435           JX9421           370.39     0.013      0          0          0          0         
+PI7898           JX9440           JX9435           394.29     0.013      0          0          0          0         
+PI7905           JX9450           JX9440           391.53     0.013      0          0          0          0         
+PI7917           JX9460           JX9450           362.13     0.013      0          0          0          0         
+PI7931           JX7891           JX7895           35.02      0.013      0          0          0          0         
+PI7934           JX7894           JX7895           21.85      0.013      0          0          0          0         
+PI7937           JX7895           JX7899           648.67     0.013      0          0          0          0         
+PI7944           JX7908           JX7907           37.48      0.013      0          4.4        0          0         
+PI7945           JX7906           JX7907           45.83      0.013      0          4.4        0          0         
+PI7956           JX7899           JX7907           340.10     0.013      0          0          0          0         
+PI8012           JX9865           JX9866           22.27      0.013      0          0          0          0         
+PI8017           JX9867           JX9866           61.27      0.013      0          0          0          0         
+PI8022           JX9866           JX9870           264.56     0.013      0          0          0          0         
+PI8023           JX9877           JX9867           322.19     0.013      0          0          0          0         
+PI8128           JX8119           JX8060           532.05     0.013      0          0          0          0         
+PI8150           JX8060           JX8066           374.61     0.013      0          0          0          0         
+PI8165           JX9550           JX9527           451.33996112400 0.013      0          0          0          0         
+PI8187           JX9570           JX9550           601.53843353500 0.013      0          0          0          0         
+PI8201           JX9582           JX9570           349.09260788600 0.013      0          0          0          0         
+PI8214           JX9591           JX9582           323.84923746800 0.013      0          0          0          0         
+PI8529           JX8163           JX8343           78.03      0.013      0          0          0          0         
+PI8640           JX8344           JX8465           255.18     0.013      0          0          0          0         
+PI8641           JX8066           JX8344           323.28     0.013      0          0          0          0         
+PI8643           JX8465           JX8343           776.08     0.013      0          0          0          0         
+PI8713           JX8008           JX7908           109.91     0.013      0          4.23       0          0         
+PI8779           JX7907           JX8013           282.76     0.013      0          0          0          0         
+PI8780           JX8013           JX8014           149.85     0.013      0          0          0          0         
+PI8781           JX8014           JX8015           373.68     0.013      0          0          0          0         
+PI8782           JX8015           JX8024           403.39     0.013      0          0          0          0         
+PI8783           JX8024           JX8025           127.08     0.013      0          0          0          0         
+PI8798           JX8025           JX8119           671.61     0.013      0          0          0          0         
+PI8816           JX7867           JX8119           28.04      0.013      0          0          0          0         
+PI8820           JX8093           JX8119           292.47     0.013      0          0          0          0         
+PI8853           JX8342           JX8343           59.56      0.013      0          0          0          0         
+PI8895           JX8433           JX9386           32.32      0.013      0          0          0          0         
+PI8896           JX8436           JX8433           460.86     0.013      0          0          0          0         
+PI8900           JX8440           JX8436           476.01     0.013      0          0          0          0         
+PI8926           JX8464           JX8462           69.18      0.013      0          0          0          0         
+PI8927           JX8463           JX8462           41.84      0.013      0          0          0          0         
+PI8928           JX8462           JX8440           626.84     0.013      0          0          0          0         
+PI9053           JX8496           JX8500           460.28     0.013      0          0          0          0         
+PI9054           JX8500           JX8501           323.25     0.013      0          0          0          0         
+PI9055           JX8501           JX8502           18.83      0.013      0          0          0          0         
+PI9056           JX8502           JX8503           23.00      0.013      0          0          0          0         
+PI9063           JX8512           JX8496           699.53     0.013      0          0          0          0         
+PI9086           JX8552           JX8531           27.21      0.013      0          0          0          0         
+PI9087           JX8553           JX8552           121.83     0.013      0          0          0          0         
+PI9088           JX8554           JX8553           828.29     0.013      0          0          0          0         
+PI9433           JX8355           JX9038           175.45     0.013      0          0          0          0         
+PI9434           JX9038           JX8952           617.36     0.013      0          0          0          0         
+PI9435           JX8952           JX8379           587.10     0.013      0          0          0          0         
+;11'6" (OR 138") ARCH COULD HAVE A DIMENSION OF 138" SPAN BY 87.125 RISE, WHICH IS EQUIVALENT TO A 108" CIRCULAR PIPE. THIS MAKES SENSE BASED ON THE OTHER BRACH'S SIZE. SEE CONCRETE PIPE DESIGN MANUAL PAGE 88.
+PI9436           JX8379           WS0102OF         194.34     0.013      0          0          0          0         
+PI9437           JX8503           JX8510           568.42     0.013      0          0          0          0         
+PI9438           JX8510           WS0102OF         26.14      0.013      0          0.58       0          0         
+PI9439           JX8956           JX8503           65.26      0.013      0          0          0          0         
+PI9440           JX8955           JX8956           58.16      0.013      0          0          0          0         
+PI9461           JX8206           JX9386           697.78     0.013      0          0          0          0         
+PI9462           JX8343           JX8405           464.42     0.013      0          0          0          0         
+PI9484           JX8354           JX8206           430.07     0.013      0          0          0          0         
+PI9490           JX8531           JX8955           247.71     0.013      0          0          0          0         
+PI9527           JX9044           JX9045           301.20     0.013      0          0          0          0         
+PI9530           JX9047           JBT_NC01         268.90     0.013      0          0          0          0         
+PI9533           JX9045           JX9047           319.40     0.013      0          0          0          0         
+PI9641           JX9129           6                519.75     0.013      0          0          0          0         
+PI9642           JX9130           JX9129           342.30     0.013      0          0          0          0         
+PI9649           JX9402           JX8549           48.33      0.013      0          0          0          0         
+PI9658           JX9145           28               383.15     0.013      0          1.5        0          0         
+PI9662           JX9146           JX9130           333.23     0.013      0          0          0          0         
+PI9667           JX9155           27               366.21     0.013      0          0          0          0         
+PI9669           JX9157           JX9155           306.27     0.013      0          0          0          0         
+PI9675           JX9162           JX9157           355.35     0.013      0          0          0          0         
+PI9676           JX9163           JX9162           332.66     0.013      0          0          0          0         
+PI9677           JX9164           JX9163           340.21     0.013      0          0          0          0         
+PI9691           JX9181           JX9164           314.48     0.013      0          0          0          0         
+PI9697           JX9184           JX9145           419.54     0.013      0          0          0          0         
+PI9702           JX9189           JX9184           242.01     0.013      0          0.3        0          0         
+PI9768           JX9408           JX9402           79.56      0.013      0          0          0          0         
+PI9773           JX9411           JX9408           153.03     0.013      0          0          0          0         
+PI9783           JX7805           JX7806           20.59      0.013      0          0          0          0         
+PI9799           JX9466           JX9460           355.82     0.013      0          0          0          0         
+PI9802           JX9468           JX9466           319.91     0.013      0          0          0          0         
+PI9820           JX9487           JX9468           167.81295213600 0.013      0          0          0          0         
+WNC01            JBT_NC01         RP01             169        0.013      0          0          0          0         
+WNC02            RP01             RP02             162        0.013      0          0          0          0         
+WNC03            RP02             RP03             291        0.013      0          0          0          0         
+WNC04            RP03             RP04             687        0.013      0          0          0          0         
+WNC05            RP04             RP05             188        0.013      0          0          0          0         
+WNC06            RP05             RP06             186        0.013      0          0          0          0         
+WNC07            RP06             JBT_CUL01        184        0.013      0          0          0          0         
+TJHS_OF          TJHS_Storage     JX9044           50         0.013      5          6          0          0         
+
+[ORIFICES]
+;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime 
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- ----------
+;Youngs Pond Wier acting as an orifice.
+YOUNGSPONDORIF   YoungsPond       JB_OF2           SIDE         5.75       0.9        NO       0         
+TJHS_Gate        7                8                SIDE         0          0.8        YES      0         
+
+[WEIRS]
+;;Name           From Node        To Node          Type         CrestHt    Qcoeff     Gated    EndCon   EndCoeff   Surcharge  RoadWidth  RoadSurf  
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- -------- ---------- ---------- ---------- ----------
+;Spillway at Young's Pond in Bryant Park
+YoungsPondW      YoungsPond       JB_OF1           TRANSVERSE   5.75       3.33       NO       0        0          YES       
+;Road acting as weir when Head is > 150.
+;as a Broad Crest Wier
+YOUNGSPOONDW2    YoungsPond       JB_OF3           TRANSVERSE   8          2.6        NO       0        0          YES       
+TJHS_InletWeir   6                TJHS_Storage     SIDEFLOW     6.4        3.33       NO       0        0          YES       
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+54650            CIRCULAR     10.5             0          0          0          2                    
+54652            CIRCULAR     10.5             0          0          0          2                    
+54654            CIRCULAR     10.5             0          0          0          2                    
+54655            CIRCULAR     10.5             0          0          0          2                    
+54697            RECT_CLOSED  10.00            10.00      0          0          2                    
+54698            RECT_CLOSED  10.00            10.00      0          0          2                    
+54703            CIRCULAR     10.5             0          0          0          2                    
+54707            CIRCULAR     10.5             0          0          0          2                    
+54713            CIRCULAR     10.5             0          0          0          2                    
+54714            CIRCULAR     10.5             0          0          0          2                    
+54732            RECT_CLOSED  10.00            10.00      0          0          2                    
+54733            RECT_CLOSED  10.00            10.00      0          0          2                    
+54737            RECT_CLOSED  10.00            10.00      0          0          2                    
+54738            RECT_CLOSED  10.00            10.00      0          0          2                    
+54748            RECT_CLOSED  10.00            10.00      0          0          2                    
+54754            RECT_CLOSED  10.00            10.00      0          0          2                    
+54755            RECT_CLOSED  10.00            10.00      0          0          2                    
+54758            RECT_CLOSED  10.00            10.00      0          0          2                    
+54760            RECT_CLOSED  10.00            10.00      0          0          2                    
+54762            RECT_CLOSED  10.00            10.00      0          0          2                    
+54763            RECT_CLOSED  10.00            10.00      0          0          2                    
+54775            RECT_CLOSED  10.00            10.00      0          0          2                    
+54776            RECT_CLOSED  10.00            10.00      0          0          2                    
+54777            RECT_CLOSED  12.00            12.00      0          0          2                    
+54779            RECT_CLOSED  12.00            12.00      0          0          2                    
+54782            RECT_CLOSED  12.00            12.00      0          0          2                    
+54783            RECT_CLOSED  12.00            12.00      0          0          2                    
+54787            RECT_CLOSED  12.00            12.00      0          0          2                    
+54816            RECT_OPEN    11.33            22.5       0          0          1                    
+54848            CIRCULAR     5                0          0          0          1                    
+54854            CIRCULAR     5                0          0          0          1                    
+54858            CIRCULAR     4.5              0          0          0          1                    
+54860            CIRCULAR     5.5              0          0          0          1                    
+54869            CIRCULAR     5.5              0          0          0          1                    
+55398            CIRCULAR     5.5              0          0          0          1                    
+55407            CIRCULAR     5.5              0          0          0          1                    
+55412            CIRCULAR     5.5              0          0          0          1                    
+55413            CIRCULAR     5.5              0          0          0          1                    
+55414            CIRCULAR     5.5              0          0          0          1                    
+55415            CIRCULAR     6                0          0          0          1                    
+55416            CIRCULAR     6                0          0          0          1                    
+55417            CIRCULAR     6                0          0          0          1                    
+55418            CIRCULAR     6                0          0          0          1                    
+55419            CIRCULAR     6                0          0          0          1                    
+55428            RECT_CLOSED  11.33            22.5       0          0          2                    
+55429            RECT_CLOSED  11.33            22.5       0          0          2                    
+CUL_JB01.1       RECT_CLOSED  8.33             38         0          0          1                    
+CUL_JB02.1       RECT_CLOSED  10               10         0          0          3                    
+CUL_JB03.1       MODBASKETHANDLE 8                9.5        4.75       0          1                    
+CUL_JB03.2       CIRCULAR     9                0          0          0          1                    
+CUL_JB04.1       RECT_CLOSED  12               10         0          0          3                    
+CUL_JBT01.1      RECT_CLOSED  6                10         0          0          1                    
+CUL_JBT01.2      RECT_CLOSED  3.5              10         0          0          1                    
+CUL_JBT02.1      CIRCULAR     5.5              0          0          0          1                    
+CUL_JBT02.2      CIRCULAR     5.5              0          0          0          1                    
+CUL_JBT02.3      CIRCULAR     5.5              0          0          0          1                    
+CUL_JBT03        RECT_CLOSED  8                8          0          0          1                    
+CUL_JBT04.1      CIRCULAR     10               0          0          0          1                    
+CUL_JBT04.2      CIRCULAR     10               0          0          0          1                    
+NC_JB01          IRREGULAR    JB_NC01          0          0          0          1                    
+NC_JB01a         IRREGULAR    JB_NC01a         0          0          0          1                    
+NC_JB02          IRREGULAR    JB_NC02          0          0          0          1                    
+NC_JB03          IRREGULAR    JB_NC03          0          0          0          1                    
+NC_JB04          IRREGULAR    JB_NC04          0          0          0          1                    
+NC_JB05          IRREGULAR    JB_NC05          0          0          0          1                    
+NC_JB06          IRREGULAR    JB_NC06          0          0          0          1                    
+NC_JB07          IRREGULAR    JB_NC07          0          0          0          1                    
+NC_JB07a         IRREGULAR    JB_NC07a         0          0          0          1                    
+NC_JB08a         IRREGULAR    NC_JB08          0          0          0          1                    
+NC_JB08b         IRREGULAR    NC_JB08          0          0          0          1                    
+NC_JBT03         IRREGULAR    JBT_NC03         0          0          0          1                    
+NC_JBT04         IRREGULAR    JBT_NC04         0          0          0          1                    
+NC_JBT05         IRREGULAR    JBT_NC05         0          0          0          1                    
+NC_JBT06         IRREGULAR    JBT_NC06         0          0          0          1                    
+PI1001           CIRCULAR     2.00             0.00       0          0          1                    
+PI1002           CIRCULAR     2.00             0.00       0          0          1                    
+PI10033          CIRCULAR     2.00             0.00       0          0          1                    
+PI10034          CIRCULAR     2.00             0.00       0          0          1                    
+PI10080          CIRCULAR     5.75             0          0          0          1                    
+PI10097          CIRCULAR     5.75             0          0          0          1                    
+PI10114          CIRCULAR     5.75             0          0          0          1                    
+PI10406          CIRCULAR     4.50             0.00       0          0          1                    
+PI10407          CIRCULAR     5.00             0.00       0          0          1                    
+PI10417          RECT_CLOSED  5.5              9.75       0          0          1                    
+PI10598          CIRCULAR     2.50             0.00       0          0          1                    
+PI10599          CIRCULAR     5.50             0.00       0          0          1                    
+PI10600          CIRCULAR     5.50             0.00       0          0          1                    
+PI10603          CIRCULAR     5.50             0.00       0          0          1                    
+PI10605          CIRCULAR     5.50             0.00       0          0          1                    
+PI10607          CIRCULAR     5.00             0.00       0          0          1                    
+PI10612          CIRCULAR     2.25             0.00       0          0          1                    
+PI10688          CIRCULAR     4.50             0.00       0          0          1                    
+PI10689          CIRCULAR     4.50             0.00       0          0          1                    
+PI10695          CIRCULAR     4.50             0.00       0          0          1                    
+PI10729          CIRCULAR     3.50             0.00       0          0          1                    
+PI10734          CIRCULAR     3.50             0.00       0          0          1                    
+PI10747          CIRCULAR     3.50             0.00       0          0          1                    
+PI10748          CIRCULAR     3.50             0.00       0          0          1                    
+PI10749          CIRCULAR     3.50             0.00       0          0          1                    
+PI6251           CIRCULAR     3.50             0.00       0          0          1                    
+PI6846           HORSESHOE    10.00            0          0          0          1                    
+PI7219           CIRCULAR     6.00             0.00       0          0          1                    
+PI7221           CIRCULAR     6.00             0.00       0          0          1                    
+PI7222           CIRCULAR     6.50             0.00       0          0          1                    
+PI7344           RECT_CLOSED  5.5              9.75       0          0          1                    
+PI7398           CIRCULAR     9.00             0.00       0          0          1                    
+PI7873           RECT_CLOSED  5.5              9.75       0          0          1                    
+PI7877           RECT_CLOSED  5.5              9.75       0          0          1                    
+PI7882           RECT_CLOSED  5.5              9.75       0          0          1                    
+PI7891           RECT_CLOSED  5.5              9.75       0          0          1                    
+PI7898           RECT_CLOSED  5.5              9.75       0          0          1                    
+PI7905           RECT_CLOSED  5.5              9.75       0          0          1                    
+PI7917           RECT_CLOSED  5.5              9.75       0          0          1                    
+PI7931           CIRCULAR     3.00             0.00       0          0          1                    
+PI7934           CIRCULAR     2.00             0.00       0          0          1                    
+PI7937           CIRCULAR     4.00             0.00       0          0          1                    
+PI7944           CIRCULAR     2.00             0.00       0          0          1                    
+PI7945           CIRCULAR     1.00             0.00       0          0          1                    
+PI7956           CIRCULAR     4.00             0.00       0          0          1                    
+PI8012           CIRCULAR     2.00             0.00       0          0          1                    
+PI8017           CIRCULAR     4.50             0.00       0          0          1                    
+PI8022           CIRCULAR     4.50             0.00       0          0          1                    
+PI8023           CIRCULAR     4.00             0.00       0          0          1                    
+PI8128           CIRCULAR     6.50             0.00       0          0          1                    
+PI8150           CIRCULAR     6.50             0.00       0          0          1                    
+PI8165           CIRCULAR     5.75             0          0          0          1                    
+PI8187           CIRCULAR     5.75             0          0          0          1                    
+PI8201           CIRCULAR     5.75             0          0          0          1                    
+PI8214           CIRCULAR     5.75             0          0          0          1                    
+PI8529           CIRCULAR     2.00             0.00       0          0          1                    
+PI8640           CIRCULAR     7.00             0.00       0          0          1                    
+PI8641           CIRCULAR     7.00             0.00       0          0          1                    
+PI8643           CIRCULAR     7.00             0.00       0          0          1                    
+PI8713           CIRCULAR     1.75             0.00       0          0          1                    
+PI8779           CIRCULAR     5.50             0.00       0          0          1                    
+PI8780           CIRCULAR     5.50             0.00       0          0          1                    
+PI8781           CIRCULAR     5.50             0.00       0          0          1                    
+PI8782           CIRCULAR     5.50             0.00       0          0          1                    
+PI8783           CIRCULAR     6.00             0.00       0          0          1                    
+PI8798           CIRCULAR     6.00             0.00       0          0          1                    
+PI8816           CIRCULAR     1.25             0.00       0          0          1                    
+PI8820           CIRCULAR     2.50             0.00       0          0          1                    
+PI8853           CIRCULAR     4.50             0.00       0          0          1                    
+PI8895           CIRCULAR     4.50             0.00       0          0          1                    
+PI8896           CIRCULAR     4.50             0.00       0          0          1                    
+PI8900           CIRCULAR     4.50             0.00       0          0          1                    
+PI8926           CIRCULAR     4.50             0.00       0          0          1                    
+PI8927           CIRCULAR     3.50             0.00       0          0          1                    
+PI8928           CIRCULAR     4.50             0.00       0          0          1                    
+PI9053           CIRCULAR     8.00             0.00       0          0          1                    
+PI9054           CIRCULAR     8.00             0.00       0          0          1                    
+PI9055           CIRCULAR     8.00             0.00       0          0          1                    
+PI9056           CIRCULAR     8.00             0.00       0          0          1                    
+PI9063           CIRCULAR     6.50             0.00       0          0          1                    
+PI9086           CIRCULAR     4.50             0.00       0          0          1                    
+PI9087           CIRCULAR     4.50             0.00       0          0          1                    
+PI9088           CIRCULAR     4.50             0.00       0          0          1                    
+PI9433           ARCH         7.26             11.5       0          0          1                    
+PI9434           ARCH         7.26             11.5       0          0          1                    
+PI9435           ARCH         7.26             11.5       0          0          1                    
+PI9436           ARCH         7.26             11.5       0          0          1                    
+PI9437           CIRCULAR     9.00             0.00       0          0          1                    
+PI9438           CIRCULAR     9.00             0.00       0          0          1                    
+PI9439           CIRCULAR     5.50             0.00       0          0          1                    
+PI9440           CIRCULAR     5.50             0.00       0          0          1                    
+PI9461           HORSESHOE    9.00             0          0          0          1                    
+PI9462           CIRCULAR     9.00             0.00       0          0          1                    
+PI9484           HORSESHOE    9.00             0          0          0          1                    
+PI9490           CIRCULAR     5.50             0.00       0          0          1                    
+PI9527           RECT_CLOSED  5.5              9.75       0          0          1                    
+PI9530           RECT_CLOSED  5.5              9.75       0          0          1                    
+PI9533           RECT_CLOSED  5.5              9.75       0          0          1                    
+PI9641           CIRCULAR     7.00             0.00       0          0          1                    
+PI9642           CIRCULAR     7.00             0.00       0          0          1                    
+PI9649           CIRCULAR     2.00             0.00       0          0          1                    
+PI9658           CIRCULAR     5.5              0          0          0          1                    
+PI9662           CIRCULAR     7.00             0.00       0          0          1                    
+PI9667           CIRCULAR     4.50             0.00       0          0          1                    
+PI9669           CIRCULAR     4.00             0.00       0          0          1                    
+PI9675           CIRCULAR     4.00             0.00       0          0          1                    
+PI9676           CIRCULAR     4.00             0.00       0          0          1                    
+PI9677           CIRCULAR     4.00             0.00       0          0          1                    
+PI9691           CIRCULAR     4.00             0.00       0          0          1                    
+PI9697           CIRCULAR     5.5              0          0          0          1                    
+PI9702           CIRCULAR     5                0          0          0          1                    
+PI9768           CIRCULAR     2.00             0.00       0          0          1                    
+PI9773           CIRCULAR     1.75             0.00       0          0          1                    
+PI9783           RECT_CLOSED  5.5              9.75       0          0          1                    
+PI9799           CIRCULAR     5.75             0.00       0          0          1                    
+PI9802           CIRCULAR     5.75             0.00       0          0          1                    
+PI9820           CIRCULAR     5.75             0          0          0          1                    
+WNC01            IRREGULAR    WNC01            0          0          0          1                    
+WNC02            IRREGULAR    WNC02            0          0          0          1                    
+WNC03            IRREGULAR    WNC03            0          0          0          1                    
+WNC04            IRREGULAR    WNC04            0          0          0          1                    
+WNC05            IRREGULAR    WNC05            0          0          0          1                    
+WNC06            IRREGULAR    WNC06            0          0          0          1                    
+WNC07            IRREGULAR    WNC07            0          0          0          1                    
+TJHS_OF          CIRCULAR     2                0          0          0          1                    
+YOUNGSPONDORIF   RECT_CLOSED  1.5              60         0          0
+TJHS_Gate        RECT_CLOSED  2                7          0          0
+YoungsPondW      RECT_OPEN    1.5              60         0          0         
+YOUNGSPOONDW2    RECT_OPEN    100              120        0          0         
+TJHS_InletWeir   RECT_OPEN    6.5              32         0          0         
+
+[TRANSECTS]
+;;Transect Data in HEC-2 format
+;
+NC 0.06     0.06     0.045   
+X1 JB_NC01           24       579      756      0.0      0.0      0.0      0.0      0.0     
+GR 200      387      198      441      198      468      198      503      196      579     
+GR 194      586      192      593      190      599      188      606      186      615     
+GR 184      626      182      631      182      660      184      668      186      698     
+GR 188      711      190      720      192      730      194      741      196      756     
+GR 198      768      200      996      200      1009     200      1047    
+;
+;Nat. Channel at Markel Rd.
+NC 0.06     0.06     0.045   
+X1 JB_NC01a          15       20       61       0.0      0.0      0.0      0.0      0.0     
+GR 202      0        200      8        198      13       196      17       194      20      
+GR 192      23       190      25       188      27       185.69   29       185.69   54      
+GR 188      55       190      57       192      58       194      61       196      65      
+;
+NC 0.06     0.06     0.045   
+X1 JB_NC02           22       301      373      0.0      0.0      0.0      0.0      0.0     
+GR 194      261      192      272      190      283      188      291      186      296     
+GR 184      301      182      306      180      312      178      317      178      346     
+GR 180      351      182      358      184      373      186      458      188      473     
+GR 190      488      190      506      188      522      188      586      190      614     
+GR 192      686      194      708     
+;
+NC 0.06     0.06     0.045   
+X1 JB_NC03           24       344      442      0.0      0.0      0.0      0.0      0.0     
+GR 196      129      194      193      192      222      190      237      188      344     
+GR 186      353      184      358      182      363      180      367      178      371     
+GR 176      374      174      377      174      412      176      416      178      420     
+GR 180      424      182      429      184      434      186      438      188      442     
+GR 190      446      192      450      194      456      196      464     
+;
+NC 0.06     0.06     0.045   
+X1 JB_NC04           34       290      586      0.0      0.0      0.0      0.0      0.0     
+GR 194      0        192      22       192      146      194      162      194      190     
+GR 192      200      190      207      188      214      186      224      184      247     
+GR 182      274      180      290      178      304      176      316      174      329     
+GR 172      524      170      530      170      546      172      559      174      567     
+GR 176      573      178      579      180      586      182      597      184      619     
+GR 186      630      188      639      190      647      192      655      194      666     
+GR 194      685      194      714      196      753      196      831     
+;
+NC 0.06     0.06     0.045   
+X1 JB_NC05           23       548      663      0.0      0.0      0.0      0.0      0.0     
+GR 182      0        182      531      180      548      178      558      176      564     
+GR 174      570      172      575      170      580      168      584      166      588     
+GR 164      591      162      594      162      621      164      623      166      626     
+GR 168      628      170      632      172      636      174      641      176      648     
+GR 178      655      180      663      182      671     
+;
+;Nat. Channel between RR and I64
+NC 0.06     0.06     0.045   
+X1 JB_NC06           21       17       136      0.0      0.0      0.0      0.0      0.0     
+GR 174      0        172      8        170      13       168      17       166      21      
+GR 164      24       162      28       160      30       158      32       156      34      
+GR 156      78       158      100      160      110      162      117      164      124     
+GR 166      130      168      136      170      143      172      151      174      161     
+GR 176      177     
+;
+NC 0.06     0.06     0.045   
+X1 JB_NC07a          19       128      466      0.0      0.0      0.0      0.0      0.0     
+GR 170      0        168      38       166      74       164      107      162      128     
+GR 158      151      158      287      158      361      156      370      154      375     
+GR 154      427      156      431      158      440      160      453      162      466     
+GR 164      477      166      489      168      501      170      514     
+;
+;Natural Channel near Broad St. and Westwood Ave.
+NC 0.015    0.015    0.045   
+X1 tempJBT_NC01      19       372      405      0.0      0.0      0.0      0.0      0.0     
+GR 202      0        200      70       198      198      196      278      194      335     
+GR 192      372      190      377      188      379      185.45   382      185.45   396     
+GR 188      398      190      400      192      405      192      460      192      499     
+GR 194      595      196      614      198      629      200      643     
+;
+;Natural Channel near Broad St. and Westwood Ave.
+NC 0.015    0.015    0.045   
+X1 tempJBT_NC02      20       288      375      0.0      0.0      0.0      0.0      0.0     
+GR 196      0        194      98       192      126      192      130      194      139     
+GR 194      259      192      288      190      304      188      319      186      334     
+GR 184      349      184      364      186      367      188      369      190      371     
+GR 192      375      194      379      196      382      198      440      200      461     
+;
+;DS of Weswood Ave culvert
+NC 0.06     0.06     0.045   
+X1 JBT_NC03          14       363      400      0.0      0.0      0.0      0.0      0.0     
+GR 196      0        194      15       192      149      190      253      188      363     
+GR 186      369      184      371      184      390      186      394      188      400     
+GR 190      408      192      429      194      453      194      536     
+;
+NC 0.06     0.06     0.045   
+X1 JBT_NC04          11       145      180      0.0      0.0      0.0      0.0      0.0     
+GR 190      0        188      48       186      94       184      145      182      149     
+GR 180      153      180      170      182      174      184      180      186      189     
+GR 188      201     
+;
+NC 0.06     0.06     0.045   
+X1 JBT_NC05          14       187      224      0.0      0.0      0.0      0.0      0.0     
+GR 188      0        186      171      184      178      182      182      180      185     
+GR 178      187      176      189      176      215      178      224      178      256     
+GR 178      329      178      357      180      837      190      1037    
+;
+;Bryant Park Upstream of Young's Pond
+NC 0.06     0.06     0.045   
+X1 JB_NC07           24       197      773      0.0      0.0      0.0      0.0      0.0     
+GR 168      135      166      148      164      163      162      181      160      197     
+GR 158      215      156      242      154      279      152      445      150      451     
+GR 150      480      152      486      152      507      152      513      152      517     
+GR 152      594      154      606      156      683      158      727      160      773     
+GR 162      832      164      887      166      915      168      943     
+;
+NC 0.013    0.013    0.013   
+X1 JBT_NC06          11       182      667      0.0      0.0      0.0      0.0      0.0     
+GR 182      175      180      179      178      182      176      184      174      186     
+GR 172      187      170      188      168      190      166      223      170      486     
+GR 178      667     
+;
+NC 0.015    0.015    0.045   
+X1 tempNC_JBT01a     14       95       127      0.0      0.0      0.0      0.0      0.0     
+GR 198      0        196      40       194      86       192      95       190      99      
+GR 188      101      186      103      186      118      188      120      190      122     
+GR 192      127      194      196      196      224      198      306     
+;
+NC 0.013    0.013    0.013   
+X1 tempNC_JBT02a     14       317      339      0.0      0.0      0.0      0.0      0.0     
+GR 196      0        196      223.9    190      224      188      317      186      320     
+GR 184      322      184      334      186      337      188      339      190      342     
+GR 192      346      194      349      194      397      196      526     
+;
+NC 0.06     0.06     0.045   
+X1 NC_JB08           26       171      466      0.0      0.0      0.0      0.0      0.0     
+GR 168      36       166      65       164      87       162      104      160      118     
+GR 158      133      156      148      154      171      152      198      150      238     
+GR 148      251      148      283      148      293      148      362      148      408     
+GR 148      431      150      440      152      453      154      466      156      475     
+GR 158      483      160      490      162      497      164      505      166      514     
+GR 168      527     
+;
+;Nat. Chann. along Westwood Ave. at Broad St.
+NC 0.015    0.015    0.045   
+X1 WNC01             13       18       51       0.0      0.0      0.0      0.0      0.0     
+GR 198      0        196      0.1      194      13       192      18       190      19      
+GR 188      24       186      27       186      41       188      44       190      46      
+GR 192      51       194      85       196      118     
+;
+NC 0.015    0.015    0.045   
+X1 WNC02             13       60       98       0.0      0.0      0.0      0.0      0.0     
+GR 198      0        196      0.1      194      28       192      60       190      68      
+GR 188      71       186      73       186      85       188      88       190      91      
+GR 192      98       194      176      196      200     
+;
+NC 0.015    0.015    0.045   
+X1 WNC03             15       146      181      0.0      0.0      0.0      0.0      0.0     
+GR 198      0        197      0.1      196      54       194      132      192      146     
+GR 190      152      188      154      186      157      186      171      188      174     
+GR 190      176      192      181      192      273      194      373      196      393     
+;
+NC 0.015    0.015    0.045   
+X1 WNC04             12       35       71       0.0      0.0      0.0      0.0      0.0     
+GR 198      0        194      0.1      192      35       190      41       188      44      
+GR 186      46       186      61       188      63       190      66       192      71      
+GR 194      80       196      137     
+;
+NC 0.015    0.015    0.045   
+X1 WNC05             11       28       59       0.0      0.0      0.0      0.0      0.0     
+GR 196      0        190      0.1      188      28       186      33       184      37      
+GR 184      54       186      57       188      59       190      63       192      66      
+GR 194      69      
+;
+NC 0.015    0.015    0.045   
+X1 WNC06             11       68       94       0.0      0.0      0.0      0.0      0.0     
+GR 196      0        190      0.1      188      68       186      72       184      75      
+GR 184      89       186      91       188      94       190      97       192      101     
+GR 194      104     
+;
+NC 0.015    0.015    0.045   
+X1 WNC07             11       0.1      34       0.0      0.0      0.0      0.0      0.0     
+GR 196      0        188      0.1      186      8        184      13       184      29      
+GR 186      31       188      34       190      37       192      41       194      46      
+GR 196      52      
+
+[LOSSES]
+;;Link           Kentry     Kexit      Kavg       Flap Gate  Seepage   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+CUL_JB01.1       0.25       1          0          NO         0         
+CUL_JB02.1       0.25       1          0          NO         0         
+CUL_JB03.1       0.25       1          0          NO         0         
+CUL_JB03.2       0.9        1          0          NO         0         
+CUL_JB04.1       0.2        1          0          NO         0         
+CUL_JBT01.1      0.25       1          0          NO         0         
+CUL_JBT01.2      0.25       1          0          NO         0         
+CUL_JBT02.1      0.25       1          0          NO         0         
+CUL_JBT02.2      0.25       1          0          NO         0         
+CUL_JBT02.3      0.25       1          0          NO         0         
+CUL_JBT03        0.25       1          0          NO         0         
+CUL_JBT04.1      0.9        1          0          NO         0         
+CUL_JBT04.2      0.9        1          0          NO         0         
+PI9530           0          1          0          NO         0         
+TJHS_OF          0          0          0          YES        0         
+
+[CONTROLS]
+RULE SPILLWAY1
+
+IF NODE YOUNGSPOND HEAD < 149.25
+THEN WEIR YOUNGSPONDW SETTING = 1
+AND ORIFICE YOUNGSPONDORIF SETTING = 0
+AND WEIR YOUNGSPOONDW2 SETTING = 0
+
+RULE SPILLWAY2
+
+IF NODE YOUNGSPOND HEAD >= 149.25
+AND NODE YOUNGSPOND HEAD <= 150.00
+THEN WEIR YOUNGSPONDW SETTING = 0
+AND ORIFICE YOUNGSPONDORIF SETTING = 1
+AND WEIR YOUNGSPOONDW2 SETTING = 0
+
+RULE SPILLWAY3
+
+IF NODE YOUNGSPOND HEAD > 150.00
+THEN ORIFICE YOUNGSPONDORIF SETTING = 1
+AND WEIR YOUNGSPOONDW2 SETTING = 1
+AND WEIR YOUNGSPONDW SETTING = 0
+
+
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+;Outfall at Broad St. near Westwood Ave.
+WS04_OF          Storage    0          107.25    
+WS04_OF                     10         107.25    
+;
+;Joins NatChann 01 & 02 together
+NatChannNode     Storage    0          202       
+NatChannNode                70         200       
+NatChannNode                198        198       
+NatChannNode                278        196       
+NatChannNode                335        194       
+NatChannNode                372        192       
+NatChannNode                377        190       
+NatChannNode                379        188       
+NatChannNode                382        186       
+NatChannNode                396        186       
+NatChannNode                398        188       
+NatChannNode                400        190       
+NatChannNode                405        192       
+NatChannNode                460        192       
+NatChannNode                499        192       
+NatChannNode                595        194       
+NatChannNode                614        196       
+NatChannNode                629        198       
+NatChannNode                643        200       
+NatChannNode                660        202       
+NatChannNode                677        204       
+NatChannNode                690        206       
+NatChannNode                709        208       
+NatChannNode                787        210       
+NatChannNode                832        210       
+;
+;Pond at Bryant Park
+YoungsPOND       Storage    0          223807    
+YoungsPOND                  5          223807    
+YoungsPOND                  6          358557    
+YoungsPOND                  8          506959    
+YoungsPOND                  10         506959    
+YoungsPOND                  12         900000    
+;
+TJHS_Storage     Storage    0          189336    
+TJHS_Storage                4          189336    
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+;1yr 6hr Cyclonic Design Storm for Richmond, Va
+01yr6hrCyclonic  1/1/2000   0:00       0.00      
+01yr6hrCyclonic  1/1/2000   0:05       0.10      
+01yr6hrCyclonic  1/1/2000   0:10       0.10      
+01yr6hrCyclonic  1/1/2000   0:15       0.10      
+01yr6hrCyclonic  1/1/2000   0:20       0.10      
+01yr6hrCyclonic  1/1/2000   0:25       0.10      
+01yr6hrCyclonic  1/1/2000   0:30       0.10      
+01yr6hrCyclonic  1/1/2000   0:35       0.10      
+01yr6hrCyclonic  1/1/2000   0:40       0.10      
+01yr6hrCyclonic  1/1/2000   0:45       0.10      
+01yr6hrCyclonic  1/1/2000   0:50       0.10      
+01yr6hrCyclonic  1/1/2000   0:55       0.10      
+01yr6hrCyclonic  1/1/2000   1:00       0.10      
+01yr6hrCyclonic  1/1/2000   1:05       0.10      
+01yr6hrCyclonic  1/1/2000   1:10       0.10      
+01yr6hrCyclonic  1/1/2000   1:15       0.10      
+01yr6hrCyclonic  1/1/2000   1:20       0.10      
+01yr6hrCyclonic  1/1/2000   1:25       0.10      
+01yr6hrCyclonic  1/1/2000   1:30       0.10      
+01yr6hrCyclonic  1/1/2000   1:35       0.10      
+01yr6hrCyclonic  1/1/2000   1:40       0.16      
+01yr6hrCyclonic  1/1/2000   1:45       0.16      
+01yr6hrCyclonic  1/1/2000   1:50       0.16      
+01yr6hrCyclonic  1/1/2000   1:55       0.16      
+01yr6hrCyclonic  1/1/2000   2:00       0.16      
+01yr6hrCyclonic  1/1/2000   2:05       0.16      
+01yr6hrCyclonic  1/1/2000   2:10       0.24      
+01yr6hrCyclonic  1/1/2000   2:15       0.24      
+01yr6hrCyclonic  1/1/2000   2:20       0.24      
+01yr6hrCyclonic  1/1/2000   2:25       0.24      
+01yr6hrCyclonic  1/1/2000   2:30       0.24      
+01yr6hrCyclonic  1/1/2000   2:35       0.24      
+01yr6hrCyclonic  1/1/2000   2:40       0.51      
+01yr6hrCyclonic  1/1/2000   2:45       0.51      
+01yr6hrCyclonic  1/1/2000   2:50       0.51      
+01yr6hrCyclonic  1/1/2000   2:55       1.11      
+01yr6hrCyclonic  1/1/2000   3:00       1.11      
+01yr6hrCyclonic  1/1/2000   3:05       4.49      
+01yr6hrCyclonic  1/1/2000   3:10       2.69      
+01yr6hrCyclonic  1/1/2000   3:15       1.79      
+01yr6hrCyclonic  1/1/2000   3:20       1.11      
+01yr6hrCyclonic  1/1/2000   3:25       0.51      
+01yr6hrCyclonic  1/1/2000   3:30       0.51      
+01yr6hrCyclonic  1/1/2000   3:35       0.51      
+01yr6hrCyclonic  1/1/2000   3:40       0.24      
+01yr6hrCyclonic  1/1/2000   3:45       0.24      
+01yr6hrCyclonic  1/1/2000   3:50       0.24      
+01yr6hrCyclonic  1/1/2000   3:55       0.24      
+01yr6hrCyclonic  1/1/2000   4:00       0.24      
+01yr6hrCyclonic  1/1/2000   4:05       0.24      
+01yr6hrCyclonic  1/1/2000   4:10       0.16      
+01yr6hrCyclonic  1/1/2000   4:15       0.16      
+01yr6hrCyclonic  1/1/2000   4:20       0.16      
+01yr6hrCyclonic  1/1/2000   4:25       0.16      
+01yr6hrCyclonic  1/1/2000   4:30       0.16      
+01yr6hrCyclonic  1/1/2000   4:35       0.16      
+01yr6hrCyclonic  1/1/2000   4:40       0.10      
+01yr6hrCyclonic  1/1/2000   4:45       0.10      
+01yr6hrCyclonic  1/1/2000   4:50       0.10      
+01yr6hrCyclonic  1/1/2000   4:55       0.10      
+01yr6hrCyclonic  1/1/2000   5:00       0.10      
+01yr6hrCyclonic  1/1/2000   5:05       0.10      
+01yr6hrCyclonic  1/1/2000   5:10       0.10      
+01yr6hrCyclonic  1/1/2000   5:15       0.10      
+01yr6hrCyclonic  1/1/2000   5:20       0.10      
+01yr6hrCyclonic  1/1/2000   5:25       0.10      
+01yr6hrCyclonic  1/1/2000   5:30       0.10      
+01yr6hrCyclonic  1/1/2000   5:35       0.10      
+01yr6hrCyclonic  1/1/2000   5:40       0.10      
+01yr6hrCyclonic  1/1/2000   5:45       0.10      
+01yr6hrCyclonic  1/1/2000   5:50       0.10      
+01yr6hrCyclonic  1/1/2000   5:55       0.10      
+01yr6hrCyclonic  1/1/2000   6:00       0.10      
+;
+;2yr 6hr Cyclonic Design Storm for Richmond, Va
+02yr6hrCyclonic  1/1/2000   0:00       0.00      
+02yr6hrCyclonic  1/1/2000   0:05       0.13      
+02yr6hrCyclonic  1/1/2000   0:10       0.13      
+02yr6hrCyclonic  1/1/2000   0:15       0.13      
+02yr6hrCyclonic  1/1/2000   0:20       0.13      
+02yr6hrCyclonic  1/1/2000   0:25       0.13      
+02yr6hrCyclonic  1/1/2000   0:30       0.13      
+02yr6hrCyclonic  1/1/2000   0:35       0.13      
+02yr6hrCyclonic  1/1/2000   0:40       0.13      
+02yr6hrCyclonic  1/1/2000   0:45       0.13      
+02yr6hrCyclonic  1/1/2000   0:50       0.13      
+02yr6hrCyclonic  1/1/2000   0:55       0.13      
+02yr6hrCyclonic  1/1/2000   1:00       0.13      
+02yr6hrCyclonic  1/1/2000   1:05       0.13      
+02yr6hrCyclonic  1/1/2000   1:10       0.13      
+02yr6hrCyclonic  1/1/2000   1:15       0.13      
+02yr6hrCyclonic  1/1/2000   1:20       0.13      
+02yr6hrCyclonic  1/1/2000   1:25       0.13      
+02yr6hrCyclonic  1/1/2000   1:30       0.13      
+02yr6hrCyclonic  1/1/2000   1:35       0.13      
+02yr6hrCyclonic  1/1/2000   1:40       0.18      
+02yr6hrCyclonic  1/1/2000   1:45       0.18      
+02yr6hrCyclonic  1/1/2000   1:50       0.18      
+02yr6hrCyclonic  1/1/2000   1:55       0.18      
+02yr6hrCyclonic  1/1/2000   2:00       0.18      
+02yr6hrCyclonic  1/1/2000   2:05       0.18      
+02yr6hrCyclonic  1/1/2000   2:10       0.29      
+02yr6hrCyclonic  1/1/2000   2:15       0.29      
+02yr6hrCyclonic  1/1/2000   2:20       0.29      
+02yr6hrCyclonic  1/1/2000   2:25       0.29      
+02yr6hrCyclonic  1/1/2000   2:30       0.29      
+02yr6hrCyclonic  1/1/2000   2:35       0.29      
+02yr6hrCyclonic  1/1/2000   2:40       0.64      
+02yr6hrCyclonic  1/1/2000   2:45       0.64      
+02yr6hrCyclonic  1/1/2000   2:50       0.64      
+02yr6hrCyclonic  1/1/2000   2:55       1.35      
+02yr6hrCyclonic  1/1/2000   3:00       1.35      
+02yr6hrCyclonic  1/1/2000   3:05       5.33      
+02yr6hrCyclonic  1/1/2000   3:10       3.19      
+02yr6hrCyclonic  1/1/2000   3:15       2.19      
+02yr6hrCyclonic  1/1/2000   3:20       1.35      
+02yr6hrCyclonic  1/1/2000   3:25       0.64      
+02yr6hrCyclonic  1/1/2000   3:30       0.64      
+02yr6hrCyclonic  1/1/2000   3:35       0.64      
+02yr6hrCyclonic  1/1/2000   3:40       0.29      
+02yr6hrCyclonic  1/1/2000   3:45       0.29      
+02yr6hrCyclonic  1/1/2000   3:50       0.29      
+02yr6hrCyclonic  1/1/2000   3:55       0.29      
+02yr6hrCyclonic  1/1/2000   4:00       0.29      
+02yr6hrCyclonic  1/1/2000   4:05       0.29      
+02yr6hrCyclonic  1/1/2000   4:10       0.18      
+02yr6hrCyclonic  1/1/2000   4:15       0.18      
+02yr6hrCyclonic  1/1/2000   4:20       0.18      
+02yr6hrCyclonic  1/1/2000   4:25       0.18      
+02yr6hrCyclonic  1/1/2000   4:30       0.18      
+02yr6hrCyclonic  1/1/2000   4:35       0.18      
+02yr6hrCyclonic  1/1/2000   4:40       0.13      
+02yr6hrCyclonic  1/1/2000   4:45       0.13      
+02yr6hrCyclonic  1/1/2000   4:50       0.13      
+02yr6hrCyclonic  1/1/2000   4:55       0.13      
+02yr6hrCyclonic  1/1/2000   5:00       0.13      
+02yr6hrCyclonic  1/1/2000   5:05       0.13      
+02yr6hrCyclonic  1/1/2000   5:10       0.13      
+02yr6hrCyclonic  1/1/2000   5:15       0.13      
+02yr6hrCyclonic  1/1/2000   5:20       0.13      
+02yr6hrCyclonic  1/1/2000   5:25       0.13      
+02yr6hrCyclonic  1/1/2000   5:30       0.13      
+02yr6hrCyclonic  1/1/2000   5:35       0.13      
+02yr6hrCyclonic  1/1/2000   5:40       0.13      
+02yr6hrCyclonic  1/1/2000   5:45       0.13      
+02yr6hrCyclonic  1/1/2000   5:50       0.13      
+02yr6hrCyclonic  1/1/2000   5:55       0.13      
+02yr6hrCyclonic  1/1/2000   6:00       0.13      
+;
+;5yr 6hr Cyclonic Design Storm for Richmond, Va
+05yr6hrCyclonic  1/1/2000   0:00       0.00      
+05yr6hrCyclonic  1/1/2000   0:05       0.15      
+05yr6hrCyclonic  1/1/2000   0:10       0.15      
+05yr6hrCyclonic  1/1/2000   0:15       0.15      
+05yr6hrCyclonic  1/1/2000   0:20       0.15      
+05yr6hrCyclonic  1/1/2000   0:25       0.15      
+05yr6hrCyclonic  1/1/2000   0:30       0.15      
+05yr6hrCyclonic  1/1/2000   0:35       0.15      
+05yr6hrCyclonic  1/1/2000   0:40       0.15      
+05yr6hrCyclonic  1/1/2000   0:45       0.15      
+05yr6hrCyclonic  1/1/2000   0:50       0.15      
+05yr6hrCyclonic  1/1/2000   0:55       0.15      
+05yr6hrCyclonic  1/1/2000   1:00       0.15      
+05yr6hrCyclonic  1/1/2000   1:05       0.15      
+05yr6hrCyclonic  1/1/2000   1:10       0.15      
+05yr6hrCyclonic  1/1/2000   1:15       0.15      
+05yr6hrCyclonic  1/1/2000   1:20       0.15      
+05yr6hrCyclonic  1/1/2000   1:25       0.15      
+05yr6hrCyclonic  1/1/2000   1:30       0.15      
+05yr6hrCyclonic  1/1/2000   1:35       0.15      
+05yr6hrCyclonic  1/1/2000   1:40       0.22      
+05yr6hrCyclonic  1/1/2000   1:45       0.22      
+05yr6hrCyclonic  1/1/2000   1:50       0.22      
+05yr6hrCyclonic  1/1/2000   1:55       0.22      
+05yr6hrCyclonic  1/1/2000   2:00       0.22      
+05yr6hrCyclonic  1/1/2000   2:05       0.22      
+05yr6hrCyclonic  1/1/2000   2:10       0.40      
+05yr6hrCyclonic  1/1/2000   2:15       0.40      
+05yr6hrCyclonic  1/1/2000   2:20       0.40      
+05yr6hrCyclonic  1/1/2000   2:25       0.40      
+05yr6hrCyclonic  1/1/2000   2:30       0.40      
+05yr6hrCyclonic  1/1/2000   2:35       0.40      
+05yr6hrCyclonic  1/1/2000   2:40       0.85      
+05yr6hrCyclonic  1/1/2000   2:45       0.85      
+05yr6hrCyclonic  1/1/2000   2:50       0.85      
+05yr6hrCyclonic  1/1/2000   2:55       1.77      
+05yr6hrCyclonic  1/1/2000   3:00       1.77      
+05yr6hrCyclonic  1/1/2000   3:05       6.24      
+05yr6hrCyclonic  1/1/2000   3:10       3.74      
+05yr6hrCyclonic  1/1/2000   3:15       2.65      
+05yr6hrCyclonic  1/1/2000   3:20       1.77      
+05yr6hrCyclonic  1/1/2000   3:25       0.85      
+05yr6hrCyclonic  1/1/2000   3:30       0.85      
+05yr6hrCyclonic  1/1/2000   3:35       0.85      
+05yr6hrCyclonic  1/1/2000   3:40       0.40      
+05yr6hrCyclonic  1/1/2000   3:45       0.40      
+05yr6hrCyclonic  1/1/2000   3:50       0.40      
+05yr6hrCyclonic  1/1/2000   3:55       0.40      
+05yr6hrCyclonic  1/1/2000   4:00       0.40      
+05yr6hrCyclonic  1/1/2000   4:05       0.40      
+05yr6hrCyclonic  1/1/2000   4:10       0.22      
+05yr6hrCyclonic  1/1/2000   4:15       0.22      
+05yr6hrCyclonic  1/1/2000   4:20       0.22      
+05yr6hrCyclonic  1/1/2000   4:25       0.22      
+05yr6hrCyclonic  1/1/2000   4:30       0.22      
+05yr6hrCyclonic  1/1/2000   4:35       0.22      
+05yr6hrCyclonic  1/1/2000   4:40       0.15      
+05yr6hrCyclonic  1/1/2000   4:45       0.15      
+05yr6hrCyclonic  1/1/2000   4:50       0.15      
+05yr6hrCyclonic  1/1/2000   4:55       0.15      
+05yr6hrCyclonic  1/1/2000   5:00       0.15      
+05yr6hrCyclonic  1/1/2000   5:05       0.15      
+05yr6hrCyclonic  1/1/2000   5:10       0.15      
+05yr6hrCyclonic  1/1/2000   5:15       0.15      
+05yr6hrCyclonic  1/1/2000   5:20       0.15      
+05yr6hrCyclonic  1/1/2000   5:25       0.15      
+05yr6hrCyclonic  1/1/2000   5:30       0.15      
+05yr6hrCyclonic  1/1/2000   5:35       0.15      
+05yr6hrCyclonic  1/1/2000   5:40       0.15      
+05yr6hrCyclonic  1/1/2000   5:45       0.15      
+05yr6hrCyclonic  1/1/2000   5:50       0.15      
+05yr6hrCyclonic  1/1/2000   5:55       0.15      
+05yr6hrCyclonic  1/1/2000   6:00       0.15      
+;
+;10yr 6hr Cyclonic Design Storm for Richmond, Va
+10yr6hrCyclonic  1/1/2000   0:00       0.00      
+10yr6hrCyclonic  1/1/2000   0:05       0.19      
+10yr6hrCyclonic  1/1/2000   0:10       0.19      
+10yr6hrCyclonic  1/1/2000   0:15       0.19      
+10yr6hrCyclonic  1/1/2000   0:20       0.19      
+10yr6hrCyclonic  1/1/2000   0:25       0.19      
+10yr6hrCyclonic  1/1/2000   0:30       0.19      
+10yr6hrCyclonic  1/1/2000   0:35       0.19      
+10yr6hrCyclonic  1/1/2000   0:40       0.19      
+10yr6hrCyclonic  1/1/2000   0:45       0.19      
+10yr6hrCyclonic  1/1/2000   0:50       0.19      
+10yr6hrCyclonic  1/1/2000   0:55       0.19      
+10yr6hrCyclonic  1/1/2000   1:00       0.19      
+10yr6hrCyclonic  1/1/2000   1:05       0.19      
+10yr6hrCyclonic  1/1/2000   1:10       0.19      
+10yr6hrCyclonic  1/1/2000   1:15       0.19      
+10yr6hrCyclonic  1/1/2000   1:20       0.19      
+10yr6hrCyclonic  1/1/2000   1:25       0.19      
+10yr6hrCyclonic  1/1/2000   1:30       0.19      
+10yr6hrCyclonic  1/1/2000   1:35       0.19      
+10yr6hrCyclonic  1/1/2000   1:40       0.27      
+10yr6hrCyclonic  1/1/2000   1:45       0.27      
+10yr6hrCyclonic  1/1/2000   1:50       0.27      
+10yr6hrCyclonic  1/1/2000   1:55       0.27      
+10yr6hrCyclonic  1/1/2000   2:00       0.27      
+10yr6hrCyclonic  1/1/2000   2:05       0.27      
+10yr6hrCyclonic  1/1/2000   2:10       0.48      
+10yr6hrCyclonic  1/1/2000   2:15       0.48      
+10yr6hrCyclonic  1/1/2000   2:20       0.48      
+10yr6hrCyclonic  1/1/2000   2:25       0.48      
+10yr6hrCyclonic  1/1/2000   2:30       0.48      
+10yr6hrCyclonic  1/1/2000   2:35       0.48      
+10yr6hrCyclonic  1/1/2000   2:40       1.03      
+10yr6hrCyclonic  1/1/2000   2:45       1.03      
+10yr6hrCyclonic  1/1/2000   2:50       1.03      
+10yr6hrCyclonic  1/1/2000   2:55       2.11      
+10yr6hrCyclonic  1/1/2000   3:00       2.11      
+10yr6hrCyclonic  1/1/2000   3:05       6.98      
+10yr6hrCyclonic  1/1/2000   3:10       4.20      
+10yr6hrCyclonic  1/1/2000   3:15       2.95      
+10yr6hrCyclonic  1/1/2000   3:20       2.11      
+10yr6hrCyclonic  1/1/2000   3:25       1.03      
+10yr6hrCyclonic  1/1/2000   3:30       1.03      
+10yr6hrCyclonic  1/1/2000   3:35       1.03      
+10yr6hrCyclonic  1/1/2000   3:40       0.48      
+10yr6hrCyclonic  1/1/2000   3:45       0.48      
+10yr6hrCyclonic  1/1/2000   3:50       0.48      
+10yr6hrCyclonic  1/1/2000   3:55       0.48      
+10yr6hrCyclonic  1/1/2000   4:00       0.48      
+10yr6hrCyclonic  1/1/2000   4:05       0.48      
+10yr6hrCyclonic  1/1/2000   4:10       0.27      
+10yr6hrCyclonic  1/1/2000   4:15       0.27      
+10yr6hrCyclonic  1/1/2000   4:20       0.27      
+10yr6hrCyclonic  1/1/2000   4:25       0.27      
+10yr6hrCyclonic  1/1/2000   4:30       0.27      
+10yr6hrCyclonic  1/1/2000   4:35       0.27      
+10yr6hrCyclonic  1/1/2000   4:40       0.19      
+10yr6hrCyclonic  1/1/2000   4:45       0.19      
+10yr6hrCyclonic  1/1/2000   4:50       0.19      
+10yr6hrCyclonic  1/1/2000   4:55       0.19      
+10yr6hrCyclonic  1/1/2000   5:00       0.19      
+10yr6hrCyclonic  1/1/2000   5:05       0.19      
+10yr6hrCyclonic  1/1/2000   5:10       0.19      
+10yr6hrCyclonic  1/1/2000   5:15       0.19      
+10yr6hrCyclonic  1/1/2000   5:20       0.19      
+10yr6hrCyclonic  1/1/2000   5:25       0.19      
+10yr6hrCyclonic  1/1/2000   5:30       0.19      
+10yr6hrCyclonic  1/1/2000   5:35       0.19      
+10yr6hrCyclonic  1/1/2000   5:40       0.19      
+10yr6hrCyclonic  1/1/2000   5:45       0.19      
+10yr6hrCyclonic  1/1/2000   5:50       0.19      
+10yr6hrCyclonic  1/1/2000   5:55       0.19      
+10yr6hrCyclonic  1/1/2000   6:00       0.19      
+;
+;25yr 6hr Cyclonic Design Storm for Richmond, Va
+25yr6hrCyclonic  1/1/2000   0:00       0.00      
+25yr6hrCyclonic  1/1/2000   0:05       0.24      
+25yr6hrCyclonic  1/1/2000   0:10       0.24      
+25yr6hrCyclonic  1/1/2000   0:15       0.24      
+25yr6hrCyclonic  1/1/2000   0:20       0.24      
+25yr6hrCyclonic  1/1/2000   0:25       0.24      
+25yr6hrCyclonic  1/1/2000   0:30       0.24      
+25yr6hrCyclonic  1/1/2000   0:35       0.24      
+25yr6hrCyclonic  1/1/2000   0:40       0.24      
+25yr6hrCyclonic  1/1/2000   0:45       0.24      
+25yr6hrCyclonic  1/1/2000   0:50       0.24      
+25yr6hrCyclonic  1/1/2000   0:55       0.24      
+25yr6hrCyclonic  1/1/2000   1:00       0.24      
+25yr6hrCyclonic  1/1/2000   1:05       0.24      
+25yr6hrCyclonic  1/1/2000   1:10       0.24      
+25yr6hrCyclonic  1/1/2000   1:15       0.24      
+25yr6hrCyclonic  1/1/2000   1:20       0.24      
+25yr6hrCyclonic  1/1/2000   1:25       0.24      
+25yr6hrCyclonic  1/1/2000   1:30       0.24      
+25yr6hrCyclonic  1/1/2000   1:35       0.24      
+25yr6hrCyclonic  1/1/2000   1:40       0.33      
+25yr6hrCyclonic  1/1/2000   1:45       0.33      
+25yr6hrCyclonic  1/1/2000   1:50       0.33      
+25yr6hrCyclonic  1/1/2000   1:55       0.33      
+25yr6hrCyclonic  1/1/2000   2:00       0.33      
+25yr6hrCyclonic  1/1/2000   2:05       0.33      
+25yr6hrCyclonic  1/1/2000   2:10       0.62      
+25yr6hrCyclonic  1/1/2000   2:15       0.62      
+25yr6hrCyclonic  1/1/2000   2:20       0.62      
+25yr6hrCyclonic  1/1/2000   2:25       0.62      
+25yr6hrCyclonic  1/1/2000   2:30       0.62      
+25yr6hrCyclonic  1/1/2000   2:35       0.62      
+25yr6hrCyclonic  1/1/2000   2:40       1.29      
+25yr6hrCyclonic  1/1/2000   2:45       1.29      
+25yr6hrCyclonic  1/1/2000   2:50       1.29      
+25yr6hrCyclonic  1/1/2000   2:55       2.54      
+25yr6hrCyclonic  1/1/2000   3:00       2.54      
+25yr6hrCyclonic  1/1/2000   3:05       7.85      
+25yr6hrCyclonic  1/1/2000   3:10       4.65      
+25yr6hrCyclonic  1/1/2000   3:15       3.34      
+25yr6hrCyclonic  1/1/2000   3:20       2.54      
+25yr6hrCyclonic  1/1/2000   3:25       1.29      
+25yr6hrCyclonic  1/1/2000   3:30       1.29      
+25yr6hrCyclonic  1/1/2000   3:35       1.29      
+25yr6hrCyclonic  1/1/2000   3:40       0.62      
+25yr6hrCyclonic  1/1/2000   3:45       0.62      
+25yr6hrCyclonic  1/1/2000   3:50       0.62      
+25yr6hrCyclonic  1/1/2000   3:55       0.62      
+25yr6hrCyclonic  1/1/2000   4:00       0.62      
+25yr6hrCyclonic  1/1/2000   4:05       0.62      
+25yr6hrCyclonic  1/1/2000   4:10       0.33      
+25yr6hrCyclonic  1/1/2000   4:15       0.33      
+25yr6hrCyclonic  1/1/2000   4:20       0.33      
+25yr6hrCyclonic  1/1/2000   4:25       0.33      
+25yr6hrCyclonic  1/1/2000   4:30       0.33      
+25yr6hrCyclonic  1/1/2000   4:35       0.33      
+25yr6hrCyclonic  1/1/2000   4:40       0.24      
+25yr6hrCyclonic  1/1/2000   4:45       0.24      
+25yr6hrCyclonic  1/1/2000   4:50       0.24      
+25yr6hrCyclonic  1/1/2000   4:55       0.24      
+25yr6hrCyclonic  1/1/2000   5:00       0.24      
+25yr6hrCyclonic  1/1/2000   5:05       0.24      
+25yr6hrCyclonic  1/1/2000   5:10       0.24      
+25yr6hrCyclonic  1/1/2000   5:15       0.24      
+25yr6hrCyclonic  1/1/2000   5:20       0.24      
+25yr6hrCyclonic  1/1/2000   5:25       0.24      
+25yr6hrCyclonic  1/1/2000   5:30       0.24      
+25yr6hrCyclonic  1/1/2000   5:35       0.24      
+25yr6hrCyclonic  1/1/2000   5:40       0.24      
+25yr6hrCyclonic  1/1/2000   5:45       0.24      
+25yr6hrCyclonic  1/1/2000   5:50       0.24      
+25yr6hrCyclonic  1/1/2000   5:55       0.24      
+25yr6hrCyclonic  1/1/2000   6:00       0.24      
+;
+;50yr 6hr Cyclonic Design Storm for Richmond, Va
+50yr6hrCyclonic  1/1/2000   0:00       0.00      
+50yr6hrCyclonic  1/1/2000   0:05       0.29      
+50yr6hrCyclonic  1/1/2000   0:10       0.29      
+50yr6hrCyclonic  1/1/2000   0:15       0.29      
+50yr6hrCyclonic  1/1/2000   0:20       0.29      
+50yr6hrCyclonic  1/1/2000   0:25       0.29      
+50yr6hrCyclonic  1/1/2000   0:30       0.29      
+50yr6hrCyclonic  1/1/2000   0:35       0.29      
+50yr6hrCyclonic  1/1/2000   0:40       0.29      
+50yr6hrCyclonic  1/1/2000   0:45       0.29      
+50yr6hrCyclonic  1/1/2000   0:50       0.29      
+50yr6hrCyclonic  1/1/2000   0:55       0.29      
+50yr6hrCyclonic  1/1/2000   1:00       0.29      
+50yr6hrCyclonic  1/1/2000   1:05       0.29      
+50yr6hrCyclonic  1/1/2000   1:10       0.29      
+50yr6hrCyclonic  1/1/2000   1:15       0.29      
+50yr6hrCyclonic  1/1/2000   1:20       0.29      
+50yr6hrCyclonic  1/1/2000   1:25       0.29      
+50yr6hrCyclonic  1/1/2000   1:30       0.29      
+50yr6hrCyclonic  1/1/2000   1:35       0.29      
+50yr6hrCyclonic  1/1/2000   1:40       0.40      
+50yr6hrCyclonic  1/1/2000   1:45       0.40      
+50yr6hrCyclonic  1/1/2000   1:50       0.40      
+50yr6hrCyclonic  1/1/2000   1:55       0.40      
+50yr6hrCyclonic  1/1/2000   2:00       0.40      
+50yr6hrCyclonic  1/1/2000   2:05       0.40      
+50yr6hrCyclonic  1/1/2000   2:10       0.73      
+50yr6hrCyclonic  1/1/2000   2:15       0.73      
+50yr6hrCyclonic  1/1/2000   2:20       0.73      
+50yr6hrCyclonic  1/1/2000   2:25       0.73      
+50yr6hrCyclonic  1/1/2000   2:30       0.73      
+50yr6hrCyclonic  1/1/2000   2:35       0.73      
+50yr6hrCyclonic  1/1/2000   2:40       1.53      
+50yr6hrCyclonic  1/1/2000   2:45       1.53      
+50yr6hrCyclonic  1/1/2000   2:50       1.53      
+50yr6hrCyclonic  1/1/2000   2:55       2.88      
+50yr6hrCyclonic  1/1/2000   3:00       2.88      
+50yr6hrCyclonic  1/1/2000   3:05       8.48      
+50yr6hrCyclonic  1/1/2000   3:10       5.04      
+50yr6hrCyclonic  1/1/2000   3:15       3.58      
+50yr6hrCyclonic  1/1/2000   3:20       2.88      
+50yr6hrCyclonic  1/1/2000   3:25       1.53      
+50yr6hrCyclonic  1/1/2000   3:30       1.53      
+50yr6hrCyclonic  1/1/2000   3:35       1.53      
+50yr6hrCyclonic  1/1/2000   3:40       0.73      
+50yr6hrCyclonic  1/1/2000   3:45       0.73      
+50yr6hrCyclonic  1/1/2000   3:50       0.73      
+50yr6hrCyclonic  1/1/2000   3:55       0.73      
+50yr6hrCyclonic  1/1/2000   4:00       0.73      
+50yr6hrCyclonic  1/1/2000   4:05       0.73      
+50yr6hrCyclonic  1/1/2000   4:10       0.40      
+50yr6hrCyclonic  1/1/2000   4:15       0.40      
+50yr6hrCyclonic  1/1/2000   4:20       0.40      
+50yr6hrCyclonic  1/1/2000   4:25       0.40      
+50yr6hrCyclonic  1/1/2000   4:30       0.40      
+50yr6hrCyclonic  1/1/2000   4:35       0.40      
+50yr6hrCyclonic  1/1/2000   4:40       0.29      
+50yr6hrCyclonic  1/1/2000   4:45       0.29      
+50yr6hrCyclonic  1/1/2000   4:50       0.29      
+50yr6hrCyclonic  1/1/2000   4:55       0.29      
+50yr6hrCyclonic  1/1/2000   5:00       0.29      
+50yr6hrCyclonic  1/1/2000   5:05       0.29      
+50yr6hrCyclonic  1/1/2000   5:10       0.29      
+50yr6hrCyclonic  1/1/2000   5:15       0.29      
+50yr6hrCyclonic  1/1/2000   5:20       0.29      
+50yr6hrCyclonic  1/1/2000   5:25       0.29      
+50yr6hrCyclonic  1/1/2000   5:30       0.29      
+50yr6hrCyclonic  1/1/2000   5:35       0.29      
+50yr6hrCyclonic  1/1/2000   5:40       0.29      
+50yr6hrCyclonic  1/1/2000   5:45       0.29      
+50yr6hrCyclonic  1/1/2000   5:50       0.29      
+50yr6hrCyclonic  1/1/2000   5:55       0.29      
+50yr6hrCyclonic  1/1/2000   6:00       0.29      
+50yr6hrCyclonic  1/1/2000   6:05       0.29      
+;
+;100yr 6hr Cyclonic Design Storm for Richmond, Va
+100yr6hrCyclonic 1/1/2000   0:00       0.00      
+100yr6hrCyclonic 1/1/2000   0:05       0.35      
+100yr6hrCyclonic 1/1/2000   0:10       0.35      
+100yr6hrCyclonic 1/1/2000   0:15       0.35      
+100yr6hrCyclonic 1/1/2000   0:20       0.35      
+100yr6hrCyclonic 1/1/2000   0:25       0.35      
+100yr6hrCyclonic 1/1/2000   0:30       0.35      
+100yr6hrCyclonic 1/1/2000   0:35       0.35      
+100yr6hrCyclonic 1/1/2000   0:40       0.35      
+100yr6hrCyclonic 1/1/2000   0:45       0.35      
+100yr6hrCyclonic 1/1/2000   0:50       0.35      
+100yr6hrCyclonic 1/1/2000   0:55       0.35      
+100yr6hrCyclonic 1/1/2000   1:00       0.35      
+100yr6hrCyclonic 1/1/2000   1:05       0.35      
+100yr6hrCyclonic 1/1/2000   1:10       0.35      
+100yr6hrCyclonic 1/1/2000   1:15       0.35      
+100yr6hrCyclonic 1/1/2000   1:20       0.35      
+100yr6hrCyclonic 1/1/2000   1:25       0.35      
+100yr6hrCyclonic 1/1/2000   1:30       0.35      
+100yr6hrCyclonic 1/1/2000   1:35       0.35      
+100yr6hrCyclonic 1/1/2000   1:40       0.45      
+100yr6hrCyclonic 1/1/2000   1:45       0.45      
+100yr6hrCyclonic 1/1/2000   1:50       0.45      
+100yr6hrCyclonic 1/1/2000   1:55       0.45      
+100yr6hrCyclonic 1/1/2000   2:00       0.45      
+100yr6hrCyclonic 1/1/2000   2:05       0.45      
+100yr6hrCyclonic 1/1/2000   2:10       0.87      
+100yr6hrCyclonic 1/1/2000   2:15       0.87      
+100yr6hrCyclonic 1/1/2000   2:20       0.87      
+100yr6hrCyclonic 1/1/2000   2:25       0.87      
+100yr6hrCyclonic 1/1/2000   2:30       0.87      
+100yr6hrCyclonic 1/1/2000   2:35       0.87      
+100yr6hrCyclonic 1/1/2000   2:40       1.76      
+100yr6hrCyclonic 1/1/2000   2:45       1.76      
+100yr6hrCyclonic 1/1/2000   2:50       1.76      
+100yr6hrCyclonic 1/1/2000   2:55       3.23      
+100yr6hrCyclonic 1/1/2000   3:00       3.23      
+100yr6hrCyclonic 1/1/2000   3:05       9.10      
+100yr6hrCyclonic 1/1/2000   3:10       5.34      
+100yr6hrCyclonic 1/1/2000   3:15       3.83      
+100yr6hrCyclonic 1/1/2000   3:20       3.23      
+100yr6hrCyclonic 1/1/2000   3:25       1.76      
+100yr6hrCyclonic 1/1/2000   3:30       1.76      
+100yr6hrCyclonic 1/1/2000   3:35       1.76      
+100yr6hrCyclonic 1/1/2000   3:40       0.87      
+100yr6hrCyclonic 1/1/2000   3:45       0.87      
+100yr6hrCyclonic 1/1/2000   3:50       0.87      
+100yr6hrCyclonic 1/1/2000   3:55       0.87      
+100yr6hrCyclonic 1/1/2000   4:00       0.87      
+100yr6hrCyclonic 1/1/2000   4:05       0.87      
+100yr6hrCyclonic 1/1/2000   4:10       0.45      
+100yr6hrCyclonic 1/1/2000   4:15       0.45      
+100yr6hrCyclonic 1/1/2000   4:20       0.45      
+100yr6hrCyclonic 1/1/2000   4:25       0.45      
+100yr6hrCyclonic 1/1/2000   4:30       0.45      
+100yr6hrCyclonic 1/1/2000   4:35       0.45      
+100yr6hrCyclonic 1/1/2000   4:40       0.35      
+100yr6hrCyclonic 1/1/2000   4:45       0.35      
+100yr6hrCyclonic 1/1/2000   4:50       0.35      
+100yr6hrCyclonic 1/1/2000   4:55       0.35      
+100yr6hrCyclonic 1/1/2000   5:00       0.35      
+100yr6hrCyclonic 1/1/2000   5:05       0.35      
+100yr6hrCyclonic 1/1/2000   5:10       0.35      
+100yr6hrCyclonic 1/1/2000   5:15       0.35      
+100yr6hrCyclonic 1/1/2000   5:20       0.35      
+100yr6hrCyclonic 1/1/2000   5:25       0.35      
+100yr6hrCyclonic 1/1/2000   5:30       0.35      
+100yr6hrCyclonic 1/1/2000   5:35       0.35      
+100yr6hrCyclonic 1/1/2000   5:40       0.35      
+100yr6hrCyclonic 1/1/2000   5:45       0.35      
+100yr6hrCyclonic 1/1/2000   5:50       0.35      
+100yr6hrCyclonic 1/1/2000   5:55       0.35      
+100yr6hrCyclonic 1/1/2000   6:00       0.35      
+;
+M03_082409                  2:35       0.12      
+M03_082409                  2:40       0.12      
+M03_082409                  2:45       0.36      
+M03_082409                  2:50       0.36      
+M03_082409                  2:55       1.8       
+M03_082409                  3:00       3.72      
+M03_082409                  3:05       4.32      
+M03_082409                  3:10       5.04      
+M03_082409                  3:15       3.72      
+M03_082409                  3:20       2.64      
+M03_082409                  3:25       6.72      
+M03_082409                  3:30       3.36      
+M03_082409                  3:35       1.56      
+M03_082409                  3:40       0.6       
+M03_082409                  3:45       0.6       
+M03_082409                  3:50       0.36      
+M03_082409                  3:55       0.96      
+M03_082409                  4:00       1.08      
+M03_082409                  4:05       0.6       
+M03_082409                  4:10       0.72      
+M03_082409                  4:15       0.6       
+M03_082409                  4:20       0.12      
+M03_082409                  4:25       0.12      
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+Node       JBT_NC01         Outfall         
+Link       CUL_JB01.1       Culvert         
+Link       CUL_JB02.1       Culvert         
+Link       CUL_JB03.1       Culvert         
+Link       CUL_JB03.2       Culvert         
+Link       CUL_JB04.1       Culvert         
+Link       CUL_JBT01.1      Culvert         
+Link       CUL_JBT01.2      Culvert         
+Link       CUL_JBT02.1      Culvert         
+Link       CUL_JBT02.3      Culvert         
+Link       CUL_JBT03        Culvert         
+Link       CUL_JBT04.1      Culvert         
+Link       CUL_JBT04.2      Culvert         
+Link       NC_JB01          NatChann        
+Link       NC_JB01a         NatChann        
+Link       NC_JB02          NatChann        
+Link       NC_JB03          NatChann        
+Link       NC_JB04          NatChann        
+Link       NC_JB05          NatChann        
+Link       NC_JB06          NatChann        
+Link       NC_JB07a         NatChann        
+Link       NC_JBT03         NatChann        
+Link       NC_JBT04         NatChann        
+Link       NC_JBT05         NatChann        
+Link       NC_JBT06         NatChann        
+
+[MAP]
+DIMENSIONS 11762875.246 3725009.335 11783412.628 3744360.009
+Units      Feet
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+6                11777141.529       3733533.989       
+7                11777120.582       3733634.825       
+8                11777187.886       3733626.011       
+27               11776431.241       3733144.636       
+28               11776313.343       3733292.009       
+5363             11771780.890       3735348.990       
+5364             11771838.540       3735377.810       
+5366             11771890.780       3735423.750       
+5369             11771950.220       3735492.200       
+5413             11772457.960       3736193.060       
+5416             11772419.440       3736130.560       
+5417             11772393.560       3736095.840       
+5419             11772230.670       3735875.500       
+5423             11772183.150       3735811.150       
+5427             11772134.410       3735746.910       
+5432             11772029.390       3735600.740       
+5452             11772610.190       3736417.340       
+5454             11772635.410       3736522.920       
+5455             11772647.110       3736572.500       
+5459             11772438.970       3736161.650       
+5461             11772589.430       3736373.320       
+5475             11772514.480       3736268.190       
+5476             11772661.500       3736630.590       
+5478             11772693.800       3736770.310       
+5480             11772722.610       3736911.580       
+5482             11772705.300       3736826.680       
+5492             11772736.300       3736983.450       
+5495             11772746.530       3737033.860       
+5496             11772750.790       3737054.560       
+5498             11772757.270       3737089.030       
+5501             11772787.120       3737245.940       
+5502             11772777.930       3737201.790       
+5507             11772839.372       3737442.746       
+5540             11772940.783       3737730.480       
+5542             11772927.680       3737685.310       
+5577             11775430.580       3736874.280       
+5591             11775712.160       3737334.730       
+5592             11775645.220       3737256.890       
+5593             11775769.980       3737497.950       
+5602             11775793.200       3737723.410       
+6292             11775891.360       3737997.580       
+6302             11775913.840       3738042.470       
+6306             11775946.270       3738104.090       
+6307             11775977.900       3738166.360       
+6308             11775967.280       3738150.010       
+6309             11775979.860       3738435.360       
+6310             11775778.720       3738623.750       
+6311             11775697.170       3738778.320       
+6312             11775702.270       3738958.770       
+6313             11775722.760       3738991.230       
+6322             11773142.520       3738266.100       
+JB_CUL01         11773931.033       3739083.070       
+JB_CUL02         11775913.198       3740297.281       
+JB_CUL03         11777656.865       3740715.167       
+JB_CUL04         11778648.066       3741194.467       
+JB_NC01          11773218.953       3738434.669       
+JB_NC02          11773357.639       3738517.758       
+JB_NC03          11774130.772       3739236.185       
+JB_NC04          11774923.200       3739752.783       
+JB_NC05          11776253.509       3740489.093       
+JB_NC06          11777874.630       3740854.155       
+JB_NC07          11779855.415       3741931.038       
+JB_NC07a         11779056.440       3741411.029       
+JB_NC08          11780325.639       3742339.392       
+JBT_CUL01        11779097.735       3734990.611       
+JBT_CUL02        11778910.690       3736519.037       
+JBT_CUL03        11777942.794       3738333.075       
+JBT_CUL04        11777722.492       3740236.657       
+JBT_NC01         11777801.117       3733780.388       
+JBT_NC02         11778727.436       3734298.034       
+JBT_NC03         11779089.198       3735022.312       
+JBT_NC04         11778887.951       3736703.803       
+JBT_NC05         11778085.749       3738650.917       
+JBT_NC06         11777702.442       3740443.857       
+JX10021          11775004.789       3736382.298       
+JX10216          11780174.545       3737753.453       
+JX10217          11779783.901       3737742.458       
+JX10218          11779765.279       3737775.233       
+JX10222          11780212.184       3737099.156       
+JX10223          11780375.898       3736591.897       
+JX10224          11780870.038       3736555.706       
+JX10225          11780907.320       3736582.134       
+JX10306          11780907.465       3736474.965       
+JX10310          11780905.462       3736354.012       
+JX10311          11780907.962       3736085.198       
+JX10335          11780925.617       3735914.854       
+JX10339          11780933.695       3735783.241       
+JX10351          11781060.938       3735762.969       
+JX10352          11781085.410       3735701.294       
+JX10353          11781432.934       3735707.324       
+JX7805           11778250.031       3733119.113       
+JX7806           11778250.038       3733139.705       
+JX7867           11765937.561       3735614.181       
+JX7891           11764337.514       3738034.893       
+JX7894           11764311.916       3737993.834       
+JX7895           11764332.827       3738000.186       
+JX7899           11764830.944       3737584.696       
+JX7906           11765094.430       3737412.000       
+JX7907           11765091.622       3737366.257       
+JX7908           11765054.167       3737367.505       
+JX8008           11764979.497       3737286.857       
+JX8013           11765300.836       3737179.882       
+JX8014           11765339.940       3737035.223       
+JX8015           11765461.037       3736681.932       
+JX8024           11765581.210       3736296.932       
+JX8025           11765616.974       3736175.235       
+JX8060           11766296.313       3735214.106       
+JX8066           11766665.493       3735151.552       
+JX8070           11766646.219       3735030.024       
+JX8093           11765775.271       3735337.820       
+JX8119           11765922.804       3735590.342       
+JX8163           11767937.432       3735176.239       
+JX8206           11769358.123       3734654.466       
+JX8342           11768002.829       3735262.148       
+JX8343           11768007.754       3735210.065       
+JX8344           11766987.135       3735157.681       
+JX8354           11768933.707       3734585.858       
+JX8355           11770252.106       3734667.857       
+JX8379           11771438.794       3735278.959       
+JX8405           11768364.595       3734913.396       
+JX8433           11770003.127       3734500.973       
+JX8436           11769794.927       3734090.027       
+JX8440           11769577.098       3733667.344       
+JX8462           11769241.564       3733145.925       
+JX8463           11769255.751       3733106.566       
+JX8464           11769220.512       3733080.022       
+JX8465           11767240.378       3735188.430       
+JX8496           11771747.854       3733777.010       
+JX8500           11771785.236       3734157.044       
+JX8501           11771959.527       3734429.282       
+JX8502           11771969.916       3734444.983       
+JX8503           11771982.272       3734464.379       
+JX8510           11771680.020       3735274.029       
+JX8512           11771815.713       3733253.499       
+JX8531           11772274.743       3734251.728       
+JX8549           11777973.659       3733450.793       
+JX8552           11772298.440       3734238.351       
+JX8553           11772401.016       3734172.774       
+JX8554           11773101.752       3733730.984       
+JX8762           11771315.144       3732331.112       
+JX8763           11771493.145       3732653.001       
+JX8764           11771407.613       3732500.266       
+JX8952           11770950.338       3734975.380       
+JX8955           11772066.221       3734385.434       
+JX8956           11772016.868       3734416.214       
+JX8959           11771821.639       3733222.942       
+JX9038           11770380.064       3734784.631       
+JX9044           11777196.423       3733484.301       
+JX9045           11777358.329       3733738.291       
+JX9047           11777582.415       3733871.920       
+JX9129           11776781.732       3733762.120       
+JX9130           11776577.463       3733519.804       
+JX9145           11775833.533       3733606.455       
+JX9146           11776401.274       3733236.963       
+JX9155           11776211.128       3732923.990       
+JX9157           11776046.413       3732665.940       
+JX9162           11775864.410       3732360.743       
+JX9163           11775692.034       3732076.239       
+JX9164           11775517.306       3731784.331       
+JX9181           11775353.595       3731515.956       
+JX9184           11775634.793       3733299.490       
+JX9189           11775479.343       3733059.428       
+JX9386           11770018.247       3734529.533       
+JX9401           11777797.540       3733642.301       
+JX9402           11777949.612       3733408.865       
+JX9408           11777905.329       3733342.774       
+JX9411           11777814.624       3733219.528       
+JX9421           11777909.301       3732545.389       
+JX9422           11778076.876       3732811.684       
+JX9426           11778244.803       3733077.841       
+JX9435           11777728.930       3732221.881       
+JX9440           11777536.665       3731877.647       
+JX9450           11777328.664       3731545.941       
+JX9460           11777138.135       3731237.982       
+JX9466           11776951.996       3730934.731       
+JX9468           11776785.182       3730661.762       
+JX9487           11776832.576       3730522.234       
+JX9494           11776612.073       3730265.944       
+JX9509           11776337.494       3729936.718       
+JX9527           11776059.500       3729605.415       
+JX9550           11775767.339       3729261.502       
+JX9570           11775385.322       3728797.198       
+JX9582           11775210.531       3728496.189       
+JX9591           11775050.078       3728213.706       
+JX9823           11775071.794       3736420.717       
+JX9824           11775061.486       3736459.368       
+JX9825           11775035.718       3736452.497       
+JX9865           11774554.359       3735800.739       
+JX9866           11774576.538       3735802.776       
+JX9867           11774540.732       3735753.059       
+JX9870           11774734.556       3736014.961       
+JX9877           11774350.797       3735492.809       
+JX9884           11774201.539       3735295.128       
+MH1001           11779173.936       3735034.677       
+MH1002           11779347.355       3735114.890       
+ParkBridge       11780470.813       3742517.015       
+RP01             11777997.194       3733972.399       
+RP02             11778162.097       3734134.331       
+RP03             11778361.170       3734327.461       
+RP04             11778545.386       3734501.278       
+RP05             11778802.397       3734730.063       
+RP06             11778973.243       3734878.624       
+WS0102OF         11771684.934       3735324.609       
+JB_OF1           11780882.707       3742360.853       
+JB_OF2           11780738.386       3742132.188       
+JB_OF3           11781094.259       3742474.716       
+YoungsPond       11780646.417       3742619.646       
+TJHS_Storage     11777083.726       3733449.739       
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+54848            11775245.511       3736663.849       
+CUL_JB03.1       11777687.585       3740800.269       
+CUL_JB03.1       11777797.099       3740863.774       
+CUL_JB03.2       11777753.682       3740695.940       
+CUL_JB03.2       11777865.139       3740774.349       
+CUL_JBT01.1      11779084.935       3735000.332       
+CUL_JBT01.1      11779082.547       3735011.249       
+CUL_JBT01.2      11779099.946       3735003.573       
+CUL_JBT01.2      11779097.558       3735014.831       
+CUL_JBT02.1      11778952.377       3736571.758       
+CUL_JBT02.1      11778945.144       3736676.839       
+CUL_JBT02.3      11778866.015       3736578.139       
+CUL_JBT02.3      11778858.783       3736670.032       
+CUL_JBT04.1      11777759.147       3740297.535       
+CUL_JBT04.1      11777750.233       3740412.856       
+CUL_JBT04.2      11777680.595       3740299.763       
+CUL_JBT04.2      11777671.681       3740408.399       
+NC_JBT04         11778982.222       3737364.647       
+NC_JBT04         11778721.178       3737940.744       
+NC_JBT04         11778316.111       3738228.792       
+PI10417          11777803.947       3733637.107       
+PI10417          11777778.461       3733695.283       
+YOUNGSPONDORIF   11780627.175       3742496.958       
+YOUNGSPONDORIF   11780782.870       3742359.057       
+YOUNGSPOONDW2    11780791.767       3742625.962       
+YOUNGSPOONDW2    11780929.668       3742470.267       
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+HCN01            11771057.969       3736402.165       
+HCN01            11771693.124       3737696.000       
+HCN01            11770469.862       3737672.476       
+HCN02            11772136.392       3738543.585       
+HCN02            11772206.494       3739144.985       
+HCN02            11771800.641       3738816.613       
+HCN03            11772681.162       3740616.543       
+HCN03            11772798.783       3741957.426       
+HCN03            11771599.045       3741557.513       
+HCN04            11774653.083       3741469.042       
+HCN04            11774700.132       3742809.925       
+HCN04            11773547.442       3742339.440       
+HCN05            11777742.115       3742186.598       
+HCN05            11777765.640       3743480.433       
+HCN05            11777012.863       3742962.899       
+HCS01            11773481.571       3735408.232       
+HCS01            11773834.435       3736796.164       
+HCS01            11772611.173       3736302.154       
+HCS02            11773937.412       3736848.315       
+HCS02            11774196.179       3738001.004       
+HCS02            11773325.781       3737554.043       
+HCS04            11777108.494       3736560.128       
+HCS04            11777253.575       3737134.407       
+HCS04            11776564.440       3736868.425       
+HCS05            11776727.656       3739292.489       
+HCS05            11776812.287       3739890.949       
+HCS05            11776340.773       3739534.291       
+HCS0601          11777628.368       3734921.920       
+HCS0601          11777652.548       3735568.740       
+HCS0601          11776879.012       3735456.307       
+HCS0603          11777935.391       3736973.207       
+HCS0603          11778170.633       3738125.896       
+HCS0603          11777253.187       3737702.459       
+JB0101           11764035.839       3737514.798       
+JB0101           11764035.839       3737514.798       
+JB0101           11764234.531       3737372.876       
+JB0101           11764390.645       3737145.800       
+JB0101           11764262.915       3736819.378       
+JB0101           11763808.763       3736876.147       
+JB0101           11763879.724       3737358.683       
+JB0102           11768085.699       3736094.764       
+JB0102           11768241.814       3735938.649       
+JB0102           11768185.045       3735683.188       
+JB0102           11767943.776       3735456.112       
+JB0102           11767518.009       3735626.419       
+JB0102           11767844.431       3736179.917       
+JB0103           11769017.364       3732959.084       
+JB0103           11769102.518       3732490.740       
+JB0103           11768705.135       3732263.664       
+JB0103           11768279.367       3732661.047       
+JB0103           11768506.443       3733072.622       
+JB0104           11770203.865       3735505.490       
+JB0104           11770307.324       3735368.846       
+JB0104           11770391.263       3734837.886       
+JB0104           11770336.605       3734787.133       
+JB0104           11770032.084       3735275.147       
+JB0104           11770035.988       3735501.586       
+JB0201           11770977.632       3732109.680       
+JB0201           11771204.708       3731910.988       
+JB0201           11771275.669       3731612.951       
+JB0201           11770892.478       3731442.644       
+JB0201           11770424.134       3731840.027       
+JB0201           11770551.864       3732237.410       
+JB0202           11772746.098       3732910.757       
+JB0202           11772944.790       3732555.951       
+JB0202           11772646.753       3732286.298       
+JB0202           11772220.985       3732328.874       
+JB0202           11771979.717       3732641.104       
+JB0202           11772178.408       3733066.872       
+JB03             11774014.523       3735110.743       
+JB03             11774426.098       3735082.359       
+JB03             11774695.751       3734585.630       
+JB03             11774213.215       3734443.707       
+JB03             11773929.370       3734514.669       
+JB03             11773744.870       3734912.052       
+JB0401           11775153.542       3727558.020       
+JB0401           11775223.088       3725888.911       
+JB0401           11773387.068       3725958.457       
+JB0401           11772983.699       3727293.745       
+JB0401           11774416.352       3727989.207       
+JB0402           11779048.131       3731202.243       
+JB0402           11779187.223       3729616.589       
+JB0402           11778380.487       3729254.949       
+JB0402           11777156.473       3729755.681       
+JB0402           11778060.574       3731285.698       
+JB040302         11776711.377       3735166.378       
+JB040302         11776780.924       3734714.328       
+JB040302         11776655.115       3734589.443       
+JB040302         11776219.872       3734456.452       
+JB040302         11776008.295       3734807.065       
+JB040302         11776177.557       3735187.903       
+JB040302         11776389.133       3735272.533       
+JB0404           11774930.994       3732968.717       
+JB0404           11774930.994       3732968.717       
+JB0404           11774930.994       3732968.717       
+JB0404           11774958.812       3732481.894       
+JB0404           11774513.717       3732092.435       
+JB0404           11773762.617       3732342.801       
+JB0404           11773873.891       3733038.263       
+JB0404           11774750.174       3733121.719       
+JB0405           11778438.413       3734273.886       
+JB0405           11779244.407       3733494.908       
+JB0405           11779861.286       3733431.870       
+JB0405           11780036.893       3733742.560       
+JB0405           11779883.799       3734152.312       
+JB0405           11778641.037       3734440.488       
+JB0501           11779973.862       3735308.599       
+JB0501           11780399.630       3735266.022       
+JB0501           11780513.168       3734826.062       
+JB0501           11780087.400       3734485.448       
+JB0501           11779448.749       3734882.831       
+JB0501           11779548.095       3735336.983       
+JB0504           11781911.421       3736510.938       
+JB0504           11782479.111       3736085.170       
+JB0504           11782322.997       3735744.556       
+JB0504           11781698.538       3735858.094       
+JB0504           11781655.961       3736198.708       
+JB0505           11781582.211       3737919.629       
+JB0505           11782178.285       3737323.554       
+JB0505           11782036.363       3736883.594       
+JB0505           11781170.636       3737508.054       
+JB0505           11781071.290       3738018.975       
+JB0506           11780068.150       3738394.381       
+JB0506           11780522.302       3738323.420       
+JB0506           11780962.262       3737954.421       
+JB0506           11780579.071       3737855.076       
+JB0506           11780011.381       3738181.497       
+JB0507           11779650.910       3741220.423       
+JB0507           11779310.296       3740936.578       
+JB0507           11779622.525       3740368.887       
+JB0507           11780147.638       3740368.887       
+JB0507           11780275.369       3741092.692       
+JB0507           11779863.793       3740964.962       
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+RG_JB01          11773931.184       3741676.905       
+
+
+[PROFILES]
+;;Name           Links     
+;;-------------- ----------
+"Fig4-4          " PI8214 PI8201 PI8187 PI8165 PI10114
+"Fig4-4          " PI10097 PI10080 PI9820 PI9802 PI9799
+"Fig4-4          " PI7917 PI7905 PI7898 PI7891 PI7873
+"Fig4-4          " PI7877 PI7882 PI9783 PI7344 PI10417

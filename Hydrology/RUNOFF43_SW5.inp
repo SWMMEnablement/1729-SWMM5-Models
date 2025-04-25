@@ -1,0 +1,361 @@
+[TITLE]
+;;Project Title/Notes
+ SW 1 0 9 A1 'BROWARD COUNTY Multi FAMILY SITE - Runoff example # 43'A2 'RUN
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           05/04/1977
+START_TIME           07:35:00
+REPORT_START_DATE    05/04/1977
+REPORT_START_TIME    07:35:00
+END_DATE             05/04/1977
+END_TIME             20:40:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             7
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             23:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.566
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[FILES]
+;;Interfacing Files
+SAVE RUNOFF "D:\SWMMandSoftware\swmm_crada_files\Other SWMM5 Files\RUNOFF43.INT"
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+MONTHLY          0.09   0.11   0.14   0.17   0.18   0.17   0.17   0.16   0.14   0.13   0.11   0.09  
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+GAGE1            INTENSITY 0.08333  1.0      TIMESERIES RainSeries1     
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+CA-1             GAGE1            P001             4.999    39.0     600.0    2.7      0                        
+CA-7             GAGE1            P005             1.599    48.6     200.0    2.7      0                        
+CA-8             GAGE1            P009             4.565    46.7     500.0    2.7      0                        
+CA-11            GAGE1            P011             3.58     47.0     600.0    2.7      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+CA-1             0.015      0.41       0.06       0.2        25         OUTLET    
+CA-7             0.015      0.41       0.06       0.2        25         OUTLET    
+CA-8             0.015      0.41       0.06       0.2        25         OUTLET    
+CA-11            0.015      0.41       0.06       0.2        25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Suction    Ksat       IMD       
+;;-------------- ---------- ---------- ----------
+CA-1             5.0        0.3        0.06      
+CA-7             5.0        0.3        0.06      
+CA-8             5.0        0.3        0.06      
+CA-11            5.0        0.3        0.06      
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+; Runoff Node
+P001             1.10       20.00      0.00       0          0         
+; Runoff Node
+P005             1.58       20.00      0.00       0          0         
+; Runoff Node
+P009             3.60       20.00      0.00       0          0         
+; Runoff Node
+P011             2.89       20.00      0.00       0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Outlet           0.00       FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+P001             P001             Outlet           220.0      0.015      0.0        0.0        0          0         
+P005             P005             P001             240.0      0.015      0.0        0.0        0          0         
+P009             P009             P005             505.0      0.024      0.0        0.0        0          0         
+P011             P011             P005             655.0      0.024      0.0        0.0        0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+P001             CIRCULAR     4.0              0          0          0          1                    
+P005             CIRCULAR     3.0              0          0          0          1                    
+P009             CIRCULAR     2.25             0          0          0          1                    
+P011             CIRCULAR     2.5              0          0          0          1                    
+
+[POLLUTANTS]
+;;Name           Units  Crain      Cgw        Crdii      Kdecay     SnowOnly   Co-Pollutant     Co-Frac    Cdwf       Cinit     
+;;-------------- ------ ---------- ---------- ---------- ---------- ---------- ---------------- ---------- ---------- ----------
+COD              MG/L   5          0          0          0          NO         *                0.0        0          0         
+TOT.SOL          MG/L   5          0          0          0          NO         *                0.0        0          0         
+TOT.NIT          MG/L   0.3        0          0          0          NO         *                0.0        0          0         
+TSS              MG/L   5          0          0          0          NO         *                0.0        0          0         
+O-PO4-P          MG/L   0.002      0          0          0          NO         *                0.0        0          0         
+
+[LANDUSES]
+;;               Sweeping   Fraction   Last      
+;;Name           Interval   Available  Swept     
+;;-------------- ---------- ---------- ----------
+HOUSING          0          0          0         
+
+[COVERAGES]
+;;Subcatchment   Land Use         Percent   
+;;-------------- ---------------- ----------
+CA-1             HOUSING          100       
+CA-7             HOUSING          100       
+CA-8             HOUSING          100       
+CA-11            HOUSING          100       
+
+[LOADINGS]
+;;Subcatchment   Pollutant        Buildup   
+;;-------------- ---------------- ----------
+
+[BUILDUP]
+;;Land Use       Pollutant        Function   Coeff1     Coeff2     Coeff3     Per Unit  
+;;-------------- ---------------- ---------- ---------- ---------- ---------- ----------
+HOUSING          COD              POWER      100000     1          3          AREA      
+HOUSING          TOT.SOL          POWER      100000     1          3.5        AREA      
+HOUSING          TOT.NIT          POWER      100000     1          1.1        AREA      
+HOUSING          TSS              POWER      100000     1          3.5        AREA      
+HOUSING          O-PO4-P          POWER      100        1          1.002      AREA      
+
+[WASHOFF]
+;;Land Use       Pollutant        Function   Coeff1     Coeff2     SweepRmvl  BmpRmvl   
+;;-------------- ---------------- ---------- ---------- ---------- ---------- ----------
+HOUSING          COD              EXP        2          1.4        35         0         
+HOUSING          TOT.SOL          EXP        20         1.5        40         0         
+HOUSING          TOT.NIT          EXP        0.5        1.5        45         0         
+HOUSING          TSS              EXP        100        1.5        40         0         
+HOUSING          O-PO4-P          EXP        1          1.6        25         0         
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+RainSeries1      05/04/1977 07:35      0.00000   
+RainSeries1                 07:40      0.09000   
+RainSeries1                 07:45      0.00000   
+RainSeries1                 07:50      0.00000   
+RainSeries1                 07:55      0.00000   
+RainSeries1      05/04/1977 08:00      0.00000   
+RainSeries1                 08:05      0.13000   
+RainSeries1                 08:10      0.00000   
+RainSeries1                 08:15      0.00000   
+RainSeries1                 08:20      0.06000   
+RainSeries1      05/04/1977 08:25      0.06000   
+RainSeries1                 08:30      0.00000   
+RainSeries1                 08:35      0.00000   
+RainSeries1                 08:40      0.09000   
+RainSeries1                 08:45      0.04000   
+RainSeries1      05/04/1977 08:50      0.20000   
+RainSeries1                 08:55      0.29000   
+RainSeries1                 09:00      0.33000   
+RainSeries1                 09:05      0.77000   
+RainSeries1                 09:10      1.14000   
+RainSeries1      05/04/1977 09:15      1.07000   
+RainSeries1                 09:20      0.57000   
+RainSeries1                 09:25      0.44000   
+RainSeries1                 09:30      0.55000   
+RainSeries1                 09:35      0.61000   
+RainSeries1      05/04/1977 09:40      0.81000   
+RainSeries1                 09:45      0.61000   
+RainSeries1                 09:50      0.44000   
+RainSeries1                 09:55      0.29000   
+RainSeries1                 10:00      0.39000   
+RainSeries1      05/04/1977 10:05      0.57000   
+RainSeries1                 10:10      0.40000   
+RainSeries1                 10:15      0.29000   
+RainSeries1                 10:20      0.22000   
+RainSeries1                 10:25      0.59000   
+RainSeries1      05/04/1977 10:30      2.00000   
+RainSeries1                 10:35      1.10000   
+RainSeries1                 10:40      1.21000   
+RainSeries1                 10:45      1.77000   
+RainSeries1                 10:50      2.11000   
+RainSeries1      05/04/1977 10:55      2.52000   
+RainSeries1                 11:00      1.05000   
+RainSeries1                 11:05      0.20000   
+RainSeries1                 11:10      0.07000   
+RainSeries1                 11:15      0.02000   
+RainSeries1      05/04/1977 11:20      0.02000   
+RainSeries1                 11:25      0.11000   
+RainSeries1                 11:30      0.61000   
+RainSeries1                 11:35      0.37000   
+RainSeries1                 11:40      0.61000   
+RainSeries1      05/04/1977 11:45      0.33000   
+RainSeries1                 11:50      0.31000   
+RainSeries1                 11:55      0.40000   
+RainSeries1                 12:00      0.59000   
+RainSeries1                 12:05      0.74000   
+RainSeries1      05/04/1977 12:10      1.27000   
+RainSeries1                 12:15      0.50000   
+RainSeries1                 12:20      0.55000   
+RainSeries1                 12:25      0.81000   
+RainSeries1                 12:30      0.20000   
+RainSeries1      05/04/1977 12:35      0.61000   
+RainSeries1                 12:40      0.26000   
+RainSeries1                 12:45      0.50000   
+RainSeries1                 12:50      0.70000   
+RainSeries1                 12:55      0.48000   
+RainSeries1      05/04/1977 13:00      0.15000   
+RainSeries1                 13:05      0.68000   
+RainSeries1                 13:10      0.02000   
+RainSeries1                 13:15      0.07000   
+RainSeries1                 13:20      0.16000   
+RainSeries1      05/04/1977 13:25      0.02000   
+RainSeries1                 13:30      0.11000   
+RainSeries1                 13:35      0.07000   
+RainSeries1                 13:40      0.06000   
+RainSeries1                 13:45      0.13000   
+RainSeries1      05/04/1977 13:50      0.06000   
+RainSeries1                 13:55      0.31000   
+RainSeries1                 14:00      0.48000   
+RainSeries1                 14:05      0.57000   
+RainSeries1                 14:10      0.02000   
+RainSeries1      05/04/1977 14:15      0.22000   
+RainSeries1                 14:20      0.42000   
+RainSeries1                 14:25      0.55000   
+RainSeries1                 14:30      0.50000   
+RainSeries1                 14:35      0.83000   
+RainSeries1      05/04/1977 14:40      0.48000   
+RainSeries1                 14:45      0.33000   
+RainSeries1                 14:50      0.22000   
+RainSeries1                 14:55      0.20000   
+RainSeries1                 15:00      0.28000   
+RainSeries1      05/04/1977 15:05      0.37000   
+RainSeries1                 15:10      1.05000   
+RainSeries1                 15:15      1.69000   
+RainSeries1                 15:20      1.21000   
+RainSeries1                 15:25      0.77000   
+RainSeries1      05/04/1977 15:30      0.24000   
+RainSeries1                 15:35      0.22000   
+RainSeries1                 15:40      0.86000   
+RainSeries1                 15:45      1.29000   
+RainSeries1                 15:50      1.25000   
+RainSeries1      05/04/1977 15:55      2.37000   
+RainSeries1                 16:00      2.11000   
+RainSeries1                 16:05      1.07000   
+RainSeries1                 16:10      0.79000   
+RainSeries1                 16:15      0.88000   
+RainSeries1      05/04/1977 16:20      1.43000   
+RainSeries1                 16:25      1.97000   
+RainSeries1                 16:30      0.72000   
+RainSeries1                 16:35      1.25000   
+RainSeries1                 16:40      1.18000   
+RainSeries1      05/04/1977 16:45      1.21000   
+RainSeries1                 16:50      1.95000   
+RainSeries1                 16:55      2.33000   
+RainSeries1                 17:00      1.65000   
+RainSeries1                 17:05      0.90000   
+RainSeries1      05/04/1977 17:10      0.88000   
+RainSeries1                 17:15      0.24000   
+RainSeries1                 17:20      0.39000   
+RainSeries1                 17:25      0.61000   
+RainSeries1                 17:30      0.35000   
+RainSeries1      05/04/1977 17:35      0.16000   
+RainSeries1                 17:40      0.15000   
+RainSeries1                 17:45      0.22000   
+RainSeries1                 17:50      0.27000   
+RainSeries1                 17:55      0.42000   
+RainSeries1      05/04/1977 18:00      0.24000   
+RainSeries1                 18:05      0.22000   
+RainSeries1                 18:10      0.33000   
+RainSeries1                 18:15      0.22000   
+RainSeries1                 18:20      0.22000   
+RainSeries1      05/04/1977 18:25      0.22000   
+RainSeries1                 18:30      0.44000   
+RainSeries1                 18:35      0.40000   
+RainSeries1                 18:40      0.39000   
+RainSeries1                 18:45      0.35000   
+RainSeries1      05/04/1977 18:50      0.22000   
+RainSeries1                 18:55      0.24000   
+RainSeries1                 19:00      0.06000   
+RainSeries1                 19:05      0.06000   
+RainSeries1                 19:10      0.04000   
+RainSeries1      05/04/1977 19:15      0.04000   
+RainSeries1                 19:20      0.13000   
+RainSeries1                 19:25      0.18000   
+RainSeries1                 19:30      0.28000   
+RainSeries1                 19:35      0.18000   
+RainSeries1      05/04/1977 19:40      0.09000   
+RainSeries1                 19:45      0.07000   
+RainSeries1                 19:50      0.15000   
+RainSeries1                 19:55      0.11000   
+RainSeries1                 20:00      0.06000   
+RainSeries1      05/04/1977 20:05      0.09000   
+RainSeries1                 20:10      0.09000   
+RainSeries1                 20:15      0.17000   
+RainSeries1                 20:20      0.09000   
+RainSeries1                 20:25      0.02000   
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+Subcatch  CA-1             CA              
+Subcatch  CA-7             CA              
+Subcatch  CA-8             CA              
+Subcatch  CA-11            CA              
+
+[MAP]
+DIMENSIONS -25.000 -25.000 525.000 525.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+P001             100.000            100.000           
+P005             200.000            200.000           
+P009             300.000            300.000           
+P011             400.000            400.000           
+Outlet           500.000            500.000           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+CA-1             2.595              168.483           
+CA-7             128.201            248.414           
+CA-8             394.637            212.889           
+CA-11            535.467            348.010           
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+GAGE1            38.120             89.187            
+

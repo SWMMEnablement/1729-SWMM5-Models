@@ -1,0 +1,159 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           06/12/2011
+START_TIME           00:00:00
+REPORT_START_DATE    06/12/2011
+REPORT_START_TIME    00:00:00
+END_DATE             06/13/2011
+END_TIME             12:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:01:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         .25
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+Inlet            105        5          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+StreamOutfall    99         FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+Pond             100      10         4          TABULAR    PondArea                     0        1.5      4        1        .25     
+Box              100      10         0          FUNCTIONAL 5         0         0        0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+LinkOut          Box              StreamOutfall    400        0.013      0          0          0          0         
+LinkIn           Inlet            Pond             400        0.013      0          0          0          0         
+
+[ORIFICES]
+;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime 
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- ----------
+Orifice1         Pond             Box              SIDE         4          0.65       NO       0         
+Orifice2         Pond             Box              SIDE         4          0.65       NO       0         
+LargeOrifice     Pond             Box              SIDE         4.5        0.65       NO       0         
+
+[WEIRS]
+;;Name           From Node        To Node          Type         CrestHt    Qcoeff     Gated    EndCon   EndCoeff   Surcharge  RoadWidth  RoadSurf  
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- -------- ---------- ---------- ---------- ----------
+Weir             Pond             Box              TRANSVERSE   6          3.33       NO       0        0          YES       
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+LinkOut          CIRCULAR     3                0          0          0          1          0         
+LinkIn           CIRCULAR     3                0          0          0          3          0         
+Orifice1         RECT_CLOSED  .25              1          0          0
+Orifice2         RECT_CLOSED  .25              1          0          0
+LargeOrifice     RECT_CLOSED  1                2          0          0
+Weir             RECT_OPEN    1                1          0          0         
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+Inlet            FLOW             InflowTriangle   FLOW     1.0      1.0              
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+PondArea         Storage    0          100       
+PondArea                    1          10000     
+PondArea                    2          20000     
+PondArea                    3          30000     
+PondArea                    4          40000     
+PondArea                    5          50000     
+PondArea                    6          50000     
+PondArea                    10         50000     
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+InflowTriangle   6/12/2011  0:00       0         
+InflowTriangle              12:00      20        
+InflowTriangle              23:59      0         
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   YES
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -1587.662 4062.987 9626.623 8391.558
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Inlet            9116.883           8194.805          
+StreamOutfall    -1077.922          4259.740          
+Pond             4623.377           5701.299          
+Box              1194.805           5025.974          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+LinkIn           4760.602           5759.234          
+LinkIn           4760.602           5759.234          
+LinkIn           4760.602           5759.234          
+LinkIn           4760.602           5759.234          
+Orifice1         3116.883           6064.935          
+Orifice2         3870.130           4740.260          
+LargeOrifice     3935.065           6766.234          
+LargeOrifice     3363.636           6935.065          
+LargeOrifice     3012.987           6857.143          
+LargeOrifice     2922.078           6818.182          
+LargeOrifice     2805.195           6688.312          
+LargeOrifice     2610.390           6532.468          
+LargeOrifice     2441.558           6389.610          
+LargeOrifice     2116.883           6285.714          
+LargeOrifice     1792.208           5909.091          
+LargeOrifice     1701.299           5714.286          
+LargeOrifice     1441.558           5402.597          
+LargeOrifice     1376.623           5285.714          
+Weir             3446.911           5444.301          
+

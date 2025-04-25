@@ -1,0 +1,500 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           LPS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/12/2011
+START_TIME           00:00:00
+REPORT_START_DATE    01/12/2011
+REPORT_START_TIME    00:00:00
+END_DATE             01/13/2011
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:01 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     1
+MIN_SURFAREA         0.001
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.0015
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+1                INTENSITY 1:00     1.0      TIMESERIES 25yr            
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+5                1                U/S_CB           0.0385   100      500      0.5      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+5                0.01       0.1        0.05       0.05       100        OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+5                3.0        0.5        4          7          0         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+1                100        0.15       0          0          0         
+2                100        .15        0          0          0         
+6                100        .15        0          0          0         
+7                100        .15        0          0          0         
+8                100        .15        0          0          0         
+9                100        .15        0          0          0         
+10               100        .15        0          0          0         
+11               100        .15        0          0          0         
+12               100        .15        0          0          0         
+13               100        .15        0          0          0         
+14               100        .15        0          0          0         
+15               100        .15        0          0          0         
+16               100        .15        0          0          0         
+17               100        .15        0          0          0         
+18               100        .15        0          0          0         
+19               100        .15        0          0          0         
+20               100        .15        0          0          0         
+21               100        .15        0          0          0         
+22               100        .15        0          0          0         
+23               100        .15        0          0          0         
+24               100        .15        0          0          0         
+25               100        .15        0          0          0         
+26               100        .15        0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+79               90         FREE                        NO                       
+82               90         FREE                        NO                       
+81               90         FREE                        NO                       
+80               90         FREE                        NO                       
+78               90         FREE                        NO                       
+77               90         FREE                        NO                       
+76               90         FREE                        NO                       
+75               90         FREE                        NO                       
+74               90         FREE                        NO                       
+73               90         FREE                        NO                       
+72               90         FREE                        NO                       
+2_Out            90         FREE                        NO                       
+83               90         FREE                        NO                       
+84               90         FREE                        NO                       
+85               90         FREE                        NO                       
+86               90         FREE                        NO                       
+87               90         FREE                        NO                       
+88               90         FREE                        NO                       
+89               90         FREE                        NO                       
+90               90         FREE                        NO                       
+91               90         FREE                        NO                       
+27               90         FREE                        NO                       
+28               90         FREE                        NO                       
+29               90         FREE                        NO                       
+30               90         FREE                        NO                       
+31               90         FREE                        NO                       
+32               90         FREE                        NO                       
+33               90         FREE                        NO                       
+35               90         FREE                        NO                       
+36               90         FREE                        NO                       
+34               90         FREE                        NO                       
+37               90         FREE                        NO                       
+38               90         FREE                        NO                       
+39               90         FREE                        NO                       
+40               90         FREE                        NO                       
+41               90         FREE                        NO                       
+42               90         FREE                        NO                       
+43               90         FREE                        NO                       
+44               90         FREE                        NO                       
+45               90         FREE                        NO                       
+48               90         FREE                        NO                       
+49               90         FREE                        NO                       
+50               90         FREE                        NO                       
+51               90         FREE                        NO                       
+52               90         FREE                        NO                       
+53               90         FREE                        NO                       
+54               90         FREE                        NO                       
+55               90         FREE                        NO                       
+56               90         FREE                        NO                       
+57               90         FREE                        NO                       
+58               90         FREE                        NO                       
+59               90         FREE                        NO                       
+60               90         FREE                        NO                       
+61               90         FREE                        NO                       
+62               90         FREE                        NO                       
+63               90         FREE                        NO                       
+65               90         FREE                        NO                       
+66               90         FREE                        NO                       
+64               90         FREE                        NO                       
+67               90         FREE                        NO                       
+68               90         FREE                        NO                       
+69               90         FREE                        NO                       
+70               90         FREE                        NO                       
+71               90         FREE                        NO                       
+47               90         FREE                        NO                       
+4                0          FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+U/S_CB           100      1          0          FUNCTIONAL 100       0         0        0.36     0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1                U/S_CB           6                1          0.01       0          0          0          0         
+2                1                2                1          0.01       0          0          0          0         
+5                6                1                1          0.01       0          0          0          0         
+7                2                7                1          0.01       0          0          0          0         
+8                7                8                1          0.01       0          0          0          0         
+9                8                9                1          0.01       0          0          0          0         
+10               9                10               1          0.01       0          0          0          0         
+11               10               11               1          0.01       0          0          0          0         
+12               11               12               1          0.01       0          0          0          0         
+13               12               13               1          0.01       0          0          0          0         
+14               13               14               1          0.01       0          0          0          0         
+15               14               15               1          0.01       0          0          0          0         
+16               15               16               1          0.01       0          0          0          0         
+17               16               17               1          0.01       0          0          0          0         
+18               17               18               1          0.01       0          0          0          0         
+19               18               19               1          0.01       0          0          0          0         
+20               19               20               1          0.01       0          0          0          0         
+21               20               21               1          0.01       0          0          0          0         
+22               21               22               1          0.01       0          0          0          0         
+23               22               23               1          0.01       0          0          0          0         
+24               23               24               1          0.01       0          0          0          0         
+25               24               25               1          0.01       0          0          0          0         
+26               25               26               1          0.01       0          0          0          0         
+27               26               6                1          0.01       0          0          0          0         
+
+[ORIFICES]
+;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime 
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- ----------
+6                2                2_Out            BOTTOM       0          0.60       NO       0         
+28               1                27               SIDE         .03        0.65       NO       0         
+29               1                28               SIDE         .08        0.65       NO       0         
+30               2                29               SIDE         .03        0.65       NO       0         
+31               2                30               SIDE         .08        0.65       NO       0         
+32               7                31               SIDE         .03        0.65       NO       0         
+33               7                32               SIDE         .08        0.65       NO       0         
+34               8                33               SIDE         .03        0.65       NO       0         
+35               8                35               SIDE         .08        0.65       NO       0         
+36               9                36               SIDE         .03        0.65       NO       0         
+37               9                34               SIDE         .08        0.65       NO       0         
+38               10               37               SIDE         .03        0.65       NO       0         
+39               10               38               SIDE         .08        0.65       NO       0         
+40               11               39               SIDE         .03        0.65       NO       0         
+41               11               40               SIDE         .08        0.65       NO       0         
+42               12               41               SIDE         .03        0.65       NO       0         
+43               12               42               SIDE         .08        0.65       NO       0         
+44               13               43               SIDE         .03        0.65       NO       0         
+45               13               44               SIDE         .08        0.65       NO       0         
+46               14               45               SIDE         .03        0.65       NO       0         
+48               48               15               SIDE         .03        0.65       NO       0         
+49               49               15               SIDE         .08        0.65       NO       0         
+50               26               50               SIDE         .03        0.65       NO       0         
+51               26               51               SIDE         .08        0.65       NO       0         
+52               25               52               SIDE         .03        0.65       NO       0         
+53               25               53               SIDE         .08        0.65       NO       0         
+54               24               54               SIDE         .03        0.65       NO       0         
+55               24               55               SIDE         .08        0.65       NO       0         
+56               56               23               SIDE         .03        0.65       NO       0         
+57               23               57               SIDE         .08        0.65       NO       0         
+58               22               58               SIDE         .03        0.65       NO       0         
+59               22               59               SIDE         .08        0.65       NO       0         
+60               21               60               SIDE         .03        0.65       NO       0         
+61               21               61               SIDE         .08        0.65       NO       0         
+62               20               62               SIDE         .03        0.65       NO       0         
+63               20               63               SIDE         .08        0.65       NO       0         
+64               19               65               SIDE         .03        0.65       NO       0         
+65               19               66               SIDE         .08        0.65       NO       0         
+66               18               64               SIDE         .03        0.65       NO       0         
+67               18               67               SIDE         .08        0.65       NO       0         
+68               17               68               SIDE         .03        0.65       NO       0         
+69               17               69               SIDE         .08        0.65       NO       0         
+70               16               70               SIDE         .03        0.65       NO       0         
+71               16               71               SIDE         .08        0.65       NO       0         
+72               16               72               BOTTOM       0          0          NO       0         
+73               17               73               BOTTOM       0          0.60       NO       0         
+74               18               74               BOTTOM       0          0.60       NO       0         
+75               19               75               BOTTOM       0          0.60       NO       0         
+76               20               76               BOTTOM       0          0.65       NO       0         
+77               21               77               BOTTOM       0          0.60       NO       0         
+78               22               78               BOTTOM       0          0.60       NO       0         
+79               23               79               BOTTOM       0          0.60       NO       0         
+80               24               80               BOTTOM       0          0.60       NO       0         
+81               25               81               BOTTOM       0          0.60       NO       0         
+82               26               82               BOTTOM       0          0.60       NO       0         
+83               7                83               BOTTOM       0          .60        NO       0         
+84               8                84               BOTTOM       0          .60        NO       0         
+85               9                85               BOTTOM       0          .60        NO       0         
+86               10               86               BOTTOM       0          0.60       NO       0         
+87               11               87               BOTTOM       0          0.60       NO       0         
+88               12               88               BOTTOM       0          0.60       NO       0         
+89               13               89               BOTTOM       0          0.60       NO       0         
+90               14               90               BOTTOM       0          0.60       NO       0         
+91               15               91               BOTTOM       0          0.60       NO       0         
+92               14               47               SIDE         0          0.65       NO       0         
+93               1                4                BOTTOM       0          0.65       NO       0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                CIRCULAR     0.15             0          0          0          1                    
+2                CIRCULAR     0.15             0          0          0          1                    
+5                CIRCULAR     0.15             0          0          0          1                    
+7                CIRCULAR     .15              0          0          0          1                    
+8                CIRCULAR     .15              0          0          0          1                    
+9                CIRCULAR     .15              0          0          0          1                    
+10               CIRCULAR     .15              0          0          0          1                    
+11               CIRCULAR     .15              0          0          0          1                    
+12               CIRCULAR     .15              0          0          0          1                    
+13               CIRCULAR     .15              0          0          0          1                    
+14               CIRCULAR     .15              0          0          0          1                    
+15               CIRCULAR     .15              0          0          0          1                    
+16               CIRCULAR     .15              0          0          0          1                    
+17               CIRCULAR     .15              0          0          0          1                    
+18               CIRCULAR     .15              0          0          0          1                    
+19               CIRCULAR     .15              0          0          0          1                    
+20               CIRCULAR     .15              0          0          0          1                    
+21               CIRCULAR     .15              0          0          0          1                    
+22               CIRCULAR     .15              0          0          0          1                    
+23               CIRCULAR     .15              0          0          0          1                    
+24               CIRCULAR     .15              0          0          0          1                    
+25               CIRCULAR     .15              0          0          0          1                    
+26               CIRCULAR     .15              0          0          0          1                    
+27               CIRCULAR     0.15             0          0          0          1                    
+6                CIRCULAR     .00812           0          0          0
+28               CIRCULAR     .00812           0          0          0
+29               CIRCULAR     .00812           0          0          0
+30               CIRCULAR     .00812           0          0          0
+31               CIRCULAR     .00812           0          0          0
+32               CIRCULAR     .00812           0          0          0
+33               CIRCULAR     .00812           0          0          0
+34               CIRCULAR     .00812           0          0          0
+35               CIRCULAR     .00812           0          0          0
+36               CIRCULAR     .00812           0          0          0
+37               CIRCULAR     .00812           0          0          0
+38               CIRCULAR     .00812           0          0          0
+39               CIRCULAR     .00812           0          0          0
+40               CIRCULAR     .00812           0          0          0
+41               CIRCULAR     .00812           0          0          0
+42               CIRCULAR     .00812           0          0          0
+43               CIRCULAR     .00812           0          0          0
+44               CIRCULAR     .00812           0          0          0
+45               CIRCULAR     .00812           0          0          0
+46               CIRCULAR     .00812           0          0          0
+48               CIRCULAR     .00812           0          0          0
+49               CIRCULAR     .00812           0          0          0
+50               CIRCULAR     .00812           0          0          0
+51               CIRCULAR     .00812           0          0          0
+52               CIRCULAR     .00812           0          0          0
+53               CIRCULAR     .00812           0          0          0
+54               CIRCULAR     .00812           0          0          0
+55               CIRCULAR     .00812           0          0          0
+56               CIRCULAR     .00812           0          0          0
+57               CIRCULAR     .00812           0          0          0
+58               CIRCULAR     .00812           0          0          0
+59               CIRCULAR     .00812           0          0          0
+60               CIRCULAR     .00812           0          0          0
+61               CIRCULAR     .00812           0          0          0
+62               CIRCULAR     .00812           0          0          0
+63               CIRCULAR     .00812           0          0          0
+64               CIRCULAR     .00812           0          0          0
+65               CIRCULAR     .00812           0          0          0
+66               CIRCULAR     .00812           0          0          0
+67               CIRCULAR     .00812           0          0          0
+68               CIRCULAR     .00812           0          0          0
+69               CIRCULAR     .00812           0          0          0
+70               CIRCULAR     .00812           0          0          0
+71               CIRCULAR     .00812           0          0          0
+72               CIRCULAR     .00812           0          0          0
+73               CIRCULAR     .00812           0          0          0
+74               CIRCULAR     .00812           0          0          0
+75               CIRCULAR     0.00812          0          0          0
+76               CIRCULAR     .00812           0          0          0
+77               CIRCULAR     .00812           0          0          0
+78               CIRCULAR     .00812           0          0          0
+79               CIRCULAR     .00812           0          0          0
+80               CIRCULAR     .00812           0          0          0
+81               CIRCULAR     .00812           0          0          0
+82               CIRCULAR     .00812           0          0          0
+83               CIRCULAR     .00812           0          0          0
+84               CIRCULAR     .00812           0          0          0
+85               CIRCULAR     .00812           0          0          0
+86               CIRCULAR     .00812           0          0          0
+87               CIRCULAR     .00812           0          0          0
+88               CIRCULAR     .00812           0          0          0
+89               CIRCULAR     .00812           0          0          0
+90               CIRCULAR     .00812           0          0          0
+91               CIRCULAR     .00812           0          0          0
+92               CIRCULAR     .15              0          0          0
+93               CIRCULAR     .00812           0          0          0
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+25yr                        0          1         
+25yr                        1          2         
+25yr                        2          3         
+25yr                        3          4         
+25yr                        4          5         
+25yr                        5          4         
+25yr                        6          3         
+25yr                        7          2         
+25yr                        8          1         
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -3800.245 5295.467 11284.076 9362.125
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                -755.906           8330.709          
+2                393.701            8330.709          
+6                -1622.047          7417.323          
+7                1433.071           8330.709          
+8                2598.425           8330.709          
+9                3653.543           8330.709          
+10               4740.157           8330.709          
+11               5889.764           8330.709          
+12               7149.606           8330.709          
+13               8204.724           8330.709          
+14               9228.346           8330.709          
+15               10204.724          8314.961          
+16               10204.724          6299.213          
+17               9385.827           6299.213          
+18               8362.205           6299.213          
+19               7181.102           6299.213          
+20               5968.504           6299.213          
+21               4866.142           6299.213          
+22               3716.535           6299.213          
+23               2614.173           6299.213          
+24               1417.323           6299.213          
+25               330.709            6299.213          
+26               -787.402           6299.213          
+79               2661.417           5590.551          
+82               -724.409           5543.307          
+81               456.693            5511.811          
+80               1496.063           5480.315          
+78               3811.024           5606.299          
+77               4929.134           5527.559          
+76               6094.488           5527.559          
+75               7228.346           5622.047          
+74               8377.953           5685.039          
+73               9464.567           5669.291          
+72               10236.220          5685.039          
+2_Out            393.701            7795.276          
+83               1401.575           7779.528          
+84               2582.677           7795.276          
+85               3685.039           7779.528          
+86               4787.402           7826.772          
+87               5889.764           7826.772          
+88               7196.850           7858.268          
+89               8283.465           7826.772          
+90               9259.843           7842.520          
+91               10598.425          7889.764          
+27               -1086.614          8850.394          
+28               -566.929           8850.394          
+29               78.740             8834.646          
+30               582.677            8818.898          
+31               1039.370           8818.898          
+32               1685.039           8834.646          
+33               2220.472           8834.646          
+35               2803.150           8803.150          
+36               3212.598           8803.150          
+34               3622.047           8818.898          
+37               4283.465           8787.402          
+38               4976.378           8803.150          
+39               5464.567           8771.654          
+40               6141.732           8803.150          
+41               6708.661           8803.150          
+42               7291.339           8787.402          
+43               7858.268           8787.402          
+44               8393.701           8771.654          
+45               8834.646           8755.906          
+48               9952.756           8803.150          
+49               10503.937          8771.654          
+50               -944.882           6866.142          
+51               -692.913           6866.142          
+52               204.724            6803.150          
+53               551.181            6803.150          
+54               1118.110           6803.150          
+55               1480.315           6803.150          
+56               2519.685           6850.394          
+57               2834.646           6834.646          
+58               3464.567           6850.394          
+59               3905.512           6850.394          
+60               4566.929           6850.394          
+61               5007.874           6850.394          
+62               5700.787           6866.142          
+63               6173.228           6881.890          
+65               6913.386           6866.142          
+66               7401.575           6881.890          
+64               7795.276           6913.386          
+67               8519.685           6913.386          
+68               9086.614           6897.638          
+69               9480.315           6897.638          
+70               9952.756           6929.134          
+71               10425.197          6960.630          
+47               9275.591           8787.402          
+4                -740.157           7858.268          
+U/S_CB           -2701.299          7493.506          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+15               10125.984          8330.709          
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+5                -3104.799          9089.128          
+5                -2584.072          9506.595          
+5                -1949.070          9079.334          
+5                -1949.070          8452.498          
+5                -3114.594          8442.703          
+5                -3114.594          9108.717          
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                -1351.616          9177.277          
+

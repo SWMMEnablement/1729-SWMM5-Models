@@ -1,0 +1,194 @@
+[TITLE]
+;;Project Title/Notes
+ SW 1 9 8A1 'PCSWMM 3.2 EXERCISE 5 - Runoff example 31'A1 'SUSPENDED SOLIDS
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           05/23/1985
+START_TIME           12:00:00
+REPORT_START_DATE    05/23/1985
+REPORT_START_TIME    12:00:00
+END_DATE             05/23/1985
+END_TIME             16:10:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             5
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             23:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.566
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[FILES]
+;;Interfacing Files
+SAVE RUNOFF "D:\SWMMandSoftware\swmm_crada_files\Other SWMM5 Files\RUNOFF3.INT"
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.1
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+GAGE1            INTENSITY 0.08333  1.0      TIMESERIES RainSeries1     
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+;  * *  JK    NAMEW       NGTO  WIDTH  AREA    %IMP  SLP   IMPN   PERVN   IDS    PDS   MAX   MIN  DECAY
+Wat101           GAGE1            Node301          10.0     40.0     997.0    2.0      0                        
+Wat102           GAGE1            Node201          10.0     40.0     997.0    2.0      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+Wat101           0.017      0.025      0.05       0.2        25         OUTLET    
+Wat102           0.017      0.025      0.05       0.2        25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+Wat101           3.0        0.3        4.014      4.06081    0         
+Wat102           3.0        0.3        4.014      4.06081    0         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+; Runoff Node
+Node301          100.00     20.00      0.00       0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Node201          0.00       FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+Node301          Node301          Node201          100.0      0.012      0.0        0.0        0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+Node301          CIRCULAR     4.0              0          0          0          1                    
+
+[POLLUTANTS]
+;;Name           Units  Crain      Cgw        Crdii      Kdecay     SnowOnly   Co-Pollutant     Co-Frac    Cdwf       Cinit     
+;;-------------- ------ ---------- ---------- ---------- ---------- ---------- ---------------- ---------- ---------- ----------
+TOT.SOL          MG/L   0          0          0          0          NO         *                0.0        0          0         
+pb               UG/L   0.0        0.0        0.0        0.0        NO         tot.sol          0.10       0          0         
+
+[LANDUSES]
+;;               Sweeping   Fraction   Last      
+;;Name           Interval   Available  Swept     
+;;-------------- ---------- ---------- ----------
+SINGLE           30         0.8        15        
+MULTI            30         0.8        15        
+
+[COVERAGES]
+;;Subcatchment   Land Use         Percent   
+;;-------------- ---------------- ----------
+Wat101           SINGLE           100       
+Wat101           MULTI            0         
+Wat102           SINGLE           0         
+Wat102           MULTI            100       
+
+[LOADINGS]
+;;Subcatchment   Pollutant        Buildup   
+;;-------------- ---------------- ----------
+
+[BUILDUP]
+;;Land Use       Pollutant        Function   Coeff1     Coeff2     Coeff3     Per Unit  
+;;-------------- ---------------- ---------- ---------- ---------- ---------- ----------
+SINGLE           TOT.SOL                                                                
+SINGLE           pb                                                                     
+MULTI            TOT.SOL                                                                
+MULTI            pb                                                                     
+
+[WASHOFF]
+;;Land Use       Pollutant        Function   Coeff1     Coeff2     SweepRmvl  BmpRmvl   
+;;-------------- ---------------- ---------- ---------- ---------- ---------- ----------
+SINGLE           TOT.SOL          EXPONENTIAL 1          2          50         0         
+SINGLE           pb                                                                     
+MULTI            TOT.SOL                                                                
+MULTI            pb                                                                     
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+RainSeries1      05/23/1985 12:00      1.00000   
+RainSeries1                 12:05      1.00000   
+RainSeries1                 12:10      1.00000   
+RainSeries1                 12:15      1.00000   
+RainSeries1                 12:20      1.00000   
+RainSeries1      05/23/1985 12:25      1.00000   
+RainSeries1                 12:30      1.00000   
+RainSeries1                 12:35      1.00000   
+RainSeries1                 12:40      1.00000   
+RainSeries1                 12:45      1.00000   
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+Subcatch  Wat101           Wat101          
+Subcatch  Wat102           Wat102          
+
+[MAP]
+DIMENSIONS -20.887 -20.887 438.618 438.618
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Node301          126.186            85.112            
+Node201          270.875            56.492            
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Wat101           317.731            200.000           
+Wat101           200.000            317.731           
+Wat101           82.269             200.000           
+Wat101           200.000            82.269            
+Wat102           535.944            277.500           
+Wat102           418.213            395.231           
+Wat102           300.482            277.500           
+Wat102           418.213            159.769           
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+GAGE1            0.000              0.000             
+

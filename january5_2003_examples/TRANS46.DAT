@@ -1,0 +1,60 @@
+SW  2  8  0 0  0
+MM  7  10 11 12 13 14 15 16
+@   8   'RUNOFF40.INT'
+$TRANSPORT
+A1  'TRANSPORT USERS MANUAL EXAMPLE PROBLEM 46 - USER SUPPLIED DATA'
+A1  'CIRCULAR PIPE COMPARISON WITH RUNOFF AND EXTRAN'
+*   NDT  NINPUT NNYN NNPE NOUTS NPRINT NPOLL NITER IDATEZ METRIC INTPRT
+B1  180   0     2     2    0      1     0      9    850523  0      2
+*    DT    EPSIL  DWDAYS  TZERO  GNU  TRIBA 
+B2   60.0  0.0001  0.0    12.0   0.0   25.0 
+*  NCNTRL  NINFIL  NFILTH  NDESN
+B3   0      0       0       0
+*   FLOW ROUTING FOR NEW SHAPES
+*   NKLASS KPRINT
+C1    1      1
+*     Name of user supplied conduit
+D1   'CIRCULAR PIPE'
+*   Number of Dnorm values for shape 1
+D2    51
+*   Number of Qnorm values for shape 1
+D3    51
+*   Alfmax
+D4  0.96
+*   Psimax
+D5  1.08
+*   Afact
+D6  0.7853982  
+*   Rfact
+D7  0.25
+*   Dnorm data at 8 values per line
+D8     0.0  0.05236 0.08369 0.11025 0.13423 0.15643 0.17755 0.19772
+D8 0.21704  0.23581 0.25412 0.27194 0.28948 0.30653 0.32349 0.34017
+D8 0.35666  0.37298 0.38915 0.40521 0.42117 0.43704 0.45284 0.46858
+D8 0.48430  0.50000 0.51572 0.53146 0.54723 0.56305 0.57892 0.59487
+D8 0.61093  0.62710 0.64342 0.65991 0.67659 0.69350 0.71068 0.72816
+D8 0.74602  0.76424 0.78297 0.80235 0.82240 0.84353 0.86563 0.88970
+D8 0.91444  0.94749 1.00000
+*   Qnorm data at 8 values per line
+D9      0.0  0.00529 0.01432 0.02559 0.03859 0.05304 0.06877 0.08551
+D9  0.10326  0.12195 0.14144 0.16162 0.18251 0.20410 0.22636 0.24918
+D9  0.27246  0.29614 0.32027 0.34485 0.36989 0.39531 0.42105 0.44704
+D9  0.47329  0.49980 0.52658 0.55354 0.58064 0.60777 0.63499 0.66232
+D9  0.68995  0.71770 0.74538 0.77275 0.79979 0.82658 0.85320 0.87954
+D9  0.90546  0.93095 0.95577 0.97976 1.00291 1.02443 1.04465 1.06135
+D9  1.08208  1.07662 1.00000
+*
+*   Sewer element data
+*   NOE  NUE(1) NUE(2) NUE(3) NTYPE DIST GEOM1 SLOPE ROUGH GEOM2 BARREL GEOM3
+E1  401   0      0      0      19   0.0   0     0     0     0     0      0
+E1  10   401     0      0      17   560.  6.  0.07  0.01   0.0    1      0 
+E1  301   10     0      0      19   0.0   0     0     0     0     0      0
+E1  20   301     0      0      17   560.  6.  0.07  0.01   0.0    1      0
+E1  201   20     0      0      19   0.0   0     0     0     0     0      0
+E1  30   201     0      0      17   560.  6.  0.07  0.01   0.0    1      0
+E1  101   30     0      0      19   0.0   0     0     0     0     0      0
+*   Select three conduits for depth printout
+I2  3  10 20 30
+J1  401  301  
+J2  401  301  
+$ENDPROGRAM

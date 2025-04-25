@@ -1,0 +1,186 @@
+[TITLE]
+;;Project Title/Notes
+ Example 10 of Extran Manual -
+ Type 3 Pumps
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           04/11/2005
+START_TIME           00:00:00
+REPORT_START_DATE    04/11/2005
+REPORT_START_TIME    00:00:00
+END_DATE             04/11/2005
+END_TIME             05:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:10:00
+WET_STEP             00:15:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:01:00 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+SURCHARGE_METHOD     SLOT
+VARIABLE_STEP        0.00
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+201              119.9      FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Type/Params            SurDepth  Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- --------- --------          -------- --------
+401              50       50         1          FUNCTIONAL 0          0          2000     0         0       
+301              100      50         1          FUNCTIONAL 0          0          2000     0         0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+100              301              201              1000       0.015      20         0          0          0         
+
+[PUMPS]
+;;Name           From Node        To Node          Pump Curve       Status   Sartup Shutoff 
+;;-------------- ---------------- ---------------- ---------------- ------ -------- --------
+90002            401              301              PumpCurve        OFF      0        0       
+90003            401              301              PumpCurve        OFF      0        0       
+90004            401              301              PumpCurve        OFF      0        0       
+90005            401              301              PumpCurve        OFF      0        0       
+90006            401              301              PumpCurve        OFF      0        0       
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+100              CIRCULAR     4                0          0          0          1                    
+
+[CONTROLS]
+RULE 90002A
+IF NODE 401 DEPTH >= 6
+AND PUMP 90002 STATUS = OFF
+THEN PUMP 90002 STATUS = ON
+
+RULE 90002B
+IF NODE 401 DEPTH <= 2
+AND PUMP 90002 STATUS = ON
+THEN PUMP 90002 STATUS = OFF
+
+RULE 90003A
+IF NODE 401 DEPTH >= 7
+AND PUMP 90003 STATUS = OFF
+THEN PUMP 90003 STATUS = ON
+
+RULE 90003B
+IF NODE 401 DEPTH <= 3
+AND PUMP 90003 STATUS = ON
+THEN PUMP 90003 STATUS = OFF
+
+RULE 90004A
+IF NODE 401 DEPTH >= 8
+AND PUMP 90004 STATUS = OFF
+THEN PUMP 90004 STATUS = ON
+
+RULE 90004B
+IF NODE 401 DEPTH <= 4
+AND PUMP 90004 STATUS = ON
+THEN PUMP 90004 STATUS = OFF
+
+RULE 90005A
+IF NODE 401 DEPTH >= 9
+AND PUMP 90005 STATUS = OFF
+THEN PUMP 90005 STATUS = ON
+
+RULE 90005B
+IF NODE 401 DEPTH <= 5
+AND PUMP 90005 STATUS = ON
+THEN PUMP 90005 STATUS = OFF
+
+RULE 90006A
+IF NODE 401 DEPTH >= 10
+AND PUMP 90006 STATUS = OFF
+THEN PUMP 90006 STATUS = ON
+
+RULE 90006B
+IF NODE 401 DEPTH <= 6
+AND PUMP 90006 STATUS = ON
+THEN PUMP 90006 STATUS = OFF
+
+
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+401              FLOW             INFLOW           FLOW     1.0      1.0              
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+PumpCurve        Pump3      50         100       
+PumpCurve                   60         50        
+PumpCurve                   70         10        
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+INFLOW                      0          0         
+INFLOW                      0.5        50        
+INFLOW                      1          100       
+INFLOW                      5          100       
+
+[REPORT]
+;;Reporting Options
+CONTROLS   YES
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 1305.843 3326.719 9779.748 6381.001
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+201              9394.570           6242.170          
+401              1691.020           3465.550          
+301              5887.270           6242.170          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+90002            1649.270           6075.160          
+90002            4279.750           6096.030          
+90003            1670.150           5365.340          
+90003            4488.520           5427.970          
+90004            1691.020           4697.290          
+90004            4572.030           4739.040          
+90005            1691.020           4133.610          
+90005            4655.530           4217.120          
+90006            4739.040           3569.940          
+

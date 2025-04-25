@@ -1,0 +1,64 @@
+SW  1  0  19
+MM  3  10 11 12
+@    19 'TRANS7.INT'
+$TRANSPORT
+A1  'TRANSPORT USERS MANUAL EXAMPLE PROBLEM 8'
+A1  'SAME SYSTEM AS EXTRAN EXAMPLE # 3 '
+*
+*   A SIMPLE FLOW DIVIDER (TYPE 24) IS MODELED AT MANHOLE 82309
+*
+*   NDT  NINPUT NNYN NNPE NOUTS NPRINT NPOLL NITER IDATEZ METRIC INTPRT
+B1   96   3     2     2    5      1     0      10    880310  0      20
+*    DT     EPSIL    DWDAYS  TZERO   GNU  TRIBA 
+B2   300.0  0.0001    0.0     0.0    0.0  1000.0 
+*  NCNTRL  NINFIL  NFILTH  NDESN
+B3   1      0       0       0
+*   FLOW ROUTING FOR NEW SHAPES
+*   NKLASS KPRINT
+C1    0      0
+*   SEWER ELEMENT DATA
+*   NOE  NUE(1) NUE(2) NUE(3) NTYPE DIST GEOM1 SLOPE ROUGH GEOM2 BARREL GEOM3
+E1  8040 80408   0      0       1  1800.  4.0  0.35  0.015   0     1      0
+E1  8060 80608   0      0       1  2075.  4.0  0.183 0.015   0     1      0
+E1  8100 81009   0      0       1  5100.  4.5  0.21  0.015   0     1      0
+E1  8130 81309   0      0       1  3500.  4.5  0.171 0.015   0     1      0
+E1  1030 10309   0      0      13  4500.  9.0  0.26  0.016   0.0   1      0.33
+E1  1570 15009   0      0       1  5000.  5.5  0.19  0.0154  0     1      0
+E1  1600 16109   0      0       1   500.  6.0  0.16  0.015   0     1      0
+E1  1630 16009   0      0      13   300.  9.0  0.133 0.015   0     1      0.33
+*   CONDUIT 1602 IN EXTRAN IS CHANGED TO TWO CONDUIT'S 1602 AND 1603
+E1  1602 82309   0      0       1  2500.  5.0  0.19  0.034   0     1      0
+E1  1603 82308   0      0       1  2500.  5.0  0.19  0.034   0     1      0
+E1  80408 0      0      0      19   0.0   0     0     0     0     0      0
+E1  80608 8040   0      0      19   0.0   0     0     0     0     0      0
+E1  82309 8060   0      0      24   0.0   0     0     0     0     0     1602
+E1  82308 1602   0      0      19   0.0   0     0     0     0     0      0
+E1  16109 1603   0      0      19   0.0   0     0     0     0     0      0
+E1  16009 1600   1570   0      19   0.0   0     0     0     0     0      0
+E1  10309 1630   0      0      19   0.0   0     0     0     0     0      0
+E1  10208 1030   0      0      19   0.0   0     0     0     0     0      0
+E1  81009 0      0      0      19   0.0   0     0     0     0     0      0
+E1  81309 8100   0      0      19   0.0   0     0     0     0     0      0
+E1  15009 8130  82309   0      19   0.0   0     0     0     0     0      0
+H1  10208 16109 16009 81309 82309
+I1  82309 80408 81009
+J1   10208 82309
+J2   10208 82309
+*  LINE HYDROGRAPH INPUT
+*  TIME IN HOURS   FLOW
+R1  0.0            0.0  
+R1  0.0            0.0  
+R1  0.0            0.0  
+R1  0.25           40.0 
+R1  0.25           45.0 
+R1  0.25           50.0 
+R1  3.0            40.0 
+R1  3.0            45.0 
+R1  3.0            50.0 
+R1 3.25            0.0  
+R1 3.25            0.0  
+R1 3.25            0.0  
+R1 12.0            0.0  
+R1 12.0            0.0  
+R1 12.0            0.0  
+$ENDPROGRAM

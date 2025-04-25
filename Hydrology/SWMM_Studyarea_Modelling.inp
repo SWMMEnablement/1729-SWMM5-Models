@@ -1,0 +1,3220 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         MODIFIED_GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           07/06/1992
+START_TIME           00:00:00
+REPORT_START_DATE    07/06/1992
+REPORT_START_TIME    00:00:00
+END_DATE             07/07/1992
+END_TIME             06:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     5
+MIN_SURFAREA         1.14
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.0015
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+Gage1            INTENSITY 1:00     1.0      TIMESERIES MyStorm         
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+S3               Gage1            j10              25.626   67.97    209      1.058    0                        
+S4               Gage1            j1               45.280   63.55    383      1.403    0                        
+S5               Gage1            j11              15.025   50.86    173      1.610    0                        
+S6               Gage1            j9               7.190    71.16    152      4.240    0                        
+S7               Gage1            j7               19.152   65.90    378      1.403    0                        
+S9               Gage1            j14              17.145   52.86    221      3.645    0                        
+S10              Gage1            j16              15.762   44.65    205      1.152    0                        
+S11              Gage1            S13              11.338   59.52    130      2.791    0                        
+S20              Gage1            j22              11.337   74.41    126      2.291    0                        
+S22              Gage1            j27              22.583   333.67   203      4.432    0                        
+S23              Gage1            j27              32.445   31.67    263      2.15     0                        
+S24              Gage1            j27              3.779    49.94    59       6.891    0                        
+S25              Gage1            j28              16.960   65.08    187      1.485    0                        
+S26              Gage1            j31              28.850   70.43    221      1.933    0                        
+S27              Gage1            j32              14.563   77.50    163      3.429    0                        
+S28              Gage1            j24              3.687    83.49    140      4.679    0                        
+S29              Gage1            j25              1.659    81.49    64       7.838    0                        
+S30              Gage1            j20              26.859   69.31    199      3.74     0                        
+S31              Gage1            j18              29.035   63.79    215      4.69     0                        
+S38              Gage1            O-fall4          43.137   60.31    290      3.558    0                        
+S40              Gage1            j46              39.910   64.48    197      4.643    0                        
+S41              Gage1            j43              21.476   68.21    259      3.822    0                        
+S42              Gage1            o-fall5          9.678    59.70    173      4.063    0                        
+S44              Gage1            s43              10.231   60.60    175      3.596    0                        
+S46              Gage1            j37              32.352   82.43    277      1.362    0                        
+S47              Gage1            j37              17.604   67.87    171      0.997    0                        
+S48              Gage1            j40              29.402   64.37    227      2.949    0                        
+S49              Gage1            j42              19.448   63.51    188      3.584    0                        
+S50              Gage1            j41              28.388   74.90    236      2.342    0                        
+S79              Gage1            j53              25.807   66.77    215      5.591    0                        
+S84              Gage1            j58              38.985   52.77    309      1.941    0                        
+S85              Gage1            j57              33.548   52.17    260      6.096    0                        
+S86              Gage1            j55              18.986   71.93    189      4.631    0                        
+S87              Gage1            J54              19.170   69.91    227      4.104    0                        
+S51              Gage1            j50              45.071   58.30    375      5.589    0                        
+S13              Gage1            J15              22.399   71.34    280      3.196    0                        
+S12              Gage1            J23              0.369    79.62    34       8.012    0                        
+S39              Gage1            S42              37.202   67.19    244      3.74     0                        
+S18              Gage1            J9               16.684   57.98    167      2.863    0                        
+S16              Gage1            S19              2.765    75       102      7.704    0                        
+S19              Gage1            j26              36.778   55.34    258      3.602    0                        
+S78              Gage1            S83              31.798   57.97    267      6.096    0                        
+S14              Gage1            J17              34.843   31.73    309      1.158    0                        
+S15              Gage1            O-fall3          26.454   46.47    178      3.696    0                        
+S81              Gage1            J58              39.816   48.36    323      2.898    0                        
+S83              Gage1            j60              13.733   59.82    242      6.609    0                        
+S82              Gage1            j59              4.885    68.70    92       5.632    0                        
+S80              Gage1            S82              7.558    55.50    123      7.252    0                        
+S45              Gage1            j39              33.919   57.12    232      3.678    0                        
+S43              Gage1            S45              1.567    50.43    62       8.005    0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+S3               0.011      0.05       0          0          25         OUTLET    
+S4               0.011      0.05       0          0          25         OUTLET    
+S5               0.011      0.05       0          0          25         OUTLET    
+S6               0.011      0.05       0          0          25         OUTLET    
+S7               0.011      0.05       0          0          25         OUTLET    
+S9               0.011      0.05       0          0          25         OUTLET    
+S10              0.011      0.05       0          0          25         OUTLET    
+S11              0.011      0.05       0          0          25         OUTLET    
+S20              0.011      0.05       0          0          25         OUTLET    
+S22              0.011      0.05       0          0          25         OUTLET    
+S23              0.011      0.05       0          0          25         OUTLET    
+S24              0.011      0.05       0          0          25         OUTLET    
+S25              0.011      0.05       0          0          25         OUTLET    
+S26              0.011      0.05       0          0          25         OUTLET    
+S27              0.011      0.05       0          0          25         OUTLET    
+S28              0.011      0.05       0          0          25         OUTLET    
+S29              0.011      0.05       0          0          25         OUTLET    
+S30              0.011      0.05       0          0          25         OUTLET    
+S31              0.011      0.05       0          0          25         OUTLET    
+S38              0.011      0.05       0          0          25         OUTLET    
+S40              0.011      0.05       0          0          25         OUTLET    
+S41              0.011      0.05       0          0          25         OUTLET    
+S42              0.011      0.05       0          0          25         OUTLET    
+S44              0.011      0.05       0          0          25         OUTLET    
+S46              0.011      0.05       0          0          25         OUTLET    
+S47              0.011      0.05       0          0          25         OUTLET    
+S48              0.011      0.05       0          0          25         OUTLET    
+S49              0.011      0.05       0          0          25         OUTLET    
+S50              0.011      0.05       0          0          25         OUTLET    
+S79              0.011      0.05       0          0          25         OUTLET    
+S84              0.011      0.05       0          0          25         OUTLET    
+S85              0.011      0.05       0          0          25         OUTLET    
+S86              0.011      0.05       0          0          25         OUTLET    
+S87              0.011      0.05       0          0          25         OUTLET    
+S51              0.011      0.05       0          0          25         OUTLET    
+S13              0.011      0.05       0          0          25         OUTLET    
+S12              0.011      0.05       0          0          25         OUTLET    
+S39              0.011      0.05       0          0          25         OUTLET    
+S18              0.011      0.05       0          0          25         OUTLET    
+S16              0.011      0.05       0          0          25         OUTLET    
+S19              0.011      0.05       0          0          25         OUTLET    
+S78              0.011      0.05       0          0          25         OUTLET    
+S14              0.011      0.05       0          0          25         OUTLET    
+S15              0.011      0.05       0          0          25         OUTLET    
+S81              0.011      0.05       0          0          25         OUTLET    
+S83              0.011      0.05       0          0          25         OUTLET    
+S82              0.011      0.05       0          0          25         OUTLET    
+S80              0.011      0.05       0          0          25         OUTLET    
+S45              0.011      0.05       0          0          25         OUTLET    
+S43              0.011      0.05       0          0          25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Suction    Ksat       IMD       
+;;-------------- ---------- ---------- ----------
+S3               9.41       0.02       0.321     
+S4               9.41       0.02       0.321     
+S5               9.41       0.02       0.321     
+S6               9.41       0.02       0.321     
+S7               9.41       0.02       0.321     
+S9               9.41       0.02       0.321     
+S10              9.41       0.02       0.321     
+S11              9.41       0.02       0.321     
+S20              9.41       0.02       0.321     
+S22              9.41       0.02       0.321     
+S23              9.41       0.02       0.321     
+S24              9.41       0.02       0.321     
+S25              9.41       0.02       0.321     
+S26              9.41       0.02       0.321     
+S27              9.41       0.02       0.321     
+S28              9.41       0.02       0.321     
+S29              9.41       0.02       0.321     
+S30              9.41       0.02       0.321     
+S31              9.41       0.02       0.321     
+S38              9.41       0.02       0.321     
+S40              9.41       0.02       0.321     
+S41              9.41       0.02       0.321     
+S42              9.41       0.02       0.321     
+S44              9.41       0.02       0.321     
+S46              9.41       0.02       0.321     
+S47              8.22       0.04       0.309     
+S48              9.41       0.02       0.321     
+S49              9.41       0.02       0.321     
+S50              9.41       0.02       0.321     
+S79              9.41       0.02       0.321     
+S84              9.41       0.02       0.321     
+S85              9.41       0.02       0.321     
+S86              9.41       0.02       0.321     
+S87              9.41       0.02       0.321     
+S51              9.41       0.02       0.321     
+S13              9.41       0.02       0.321     
+S12              9.41       0.02       0.321     
+S39              9.41       0.02       0.321     
+S18              9.41       0.02       0.321     
+S16              9.41       0.02       0.321     
+S19              9.41       0.02       0.321     
+S78              8.22       0.04       0.309     
+S14              9.41       0.02       0.321     
+S15              9.41       0.02       0.321     
+S81              9.41       0.02       0.321     
+S83              9.41       0.02       0.321     
+S82              9.41       0.02       0.321     
+S80              8.22       0.04       0.309     
+S45              9.41       0.02       0.321     
+S43              9.41       0.02       0.321     
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+J5               2142.83    1.18       0          0.375      0         
+J10              2121.90    1.10       0          0.300      0         
+J11              2116.90    1.10       0          0.300      0         
+J6               2134.83    1.18       0          0.375      0         
+J7               2126.83    1.18       0          0.450      0         
+J8               2120.83    1.18       0          0.450      0         
+J9               2113.83    1.18       0          0.450      0         
+J12              2110.90    1.10       0          0.300      0         
+J13              2104.90    1.10       0          0.300      0         
+J14              2101.90    1.10       0          0.375      0         
+J15              2097.90    1.10       0          0.375      0         
+J16              2124.05    0          0          0.150      0         
+J17              2114.05    0          0          0.225      0         
+J18              2134.90    1.10       0          0.300      0         
+J19              2130.90    1.10       0          0.300      0         
+J20              2127.90    1.10       0          0.450      0         
+J21              2123.90    1.10       0          0.450      0         
+J1               2161.83    1.18       0          0.375      0         
+J2               2158.83    1.18       0          0.375      0         
+J3               2156.83    1.18       0          0.375      0         
+J4               2148.83    1.18       0          0.375      0         
+J43              2087.10    0          0          0.100      0         
+J44              2082.10    0          0          0.100      0         
+J45              2079.10    0          0          0.100      0         
+J46              2079.10    0          0          0.100      0         
+J47              2079.10    0          0          0.100      0         
+J48              2071.10    0          0          0.100      0         
+J49              2062.10    0          0          0.100      0         
+J50              2058.10    0          0          0.100      0         
+J51              2051.10    0          0          0.100      0         
+J52              2045.10    0          0          0.100      0         
+J23              2080.90    1.10       0          0.300      0         
+J24              2079.90    0          0          0.300      0         
+J25              2077.90    1.10       0          0.300      0         
+J26              2073.90    1.10       0          0.375      0         
+J22              2081.90    1.10       0          0.300      0         
+J32              2073.90    1.10       0          0.300      0         
+J33              2069.90    1.10       0          0.300      0         
+J34              2065.90    1.10       0          0.300      0         
+J27              2093.90    1.10       0          0.300      0         
+J28              2088.90    1.10       0          0.375      0         
+J29              2085.90    1.10       0          0.375      0         
+J30              2080.90    1.10       0          0.375      0         
+J31              2077.90    1.10       0          0.375      0         
+J35              2063.90    1.10       0          0.300      0         
+J36              2062.90    1.10       0          0.300      0         
+J37              2059.90    1.10       0          0.550      0         
+J38              2057.90    1.10       0          0.550      0         
+J39              2052.90    1.10       0          0.550      0         
+J40              2045.90    1.10       0          0.550      0         
+J41              2047.83    1.17       0          0.375      0         
+J42              2044.83    1.17       0          0.375      0         
+J54              2038.98    1.03       0          0.225      0         
+J55              2033.98    1.03       0          0.300      0         
+J56              2027.98    1.03       0          0.300      0         
+J57              2021.98    1.03       0          0.400      0         
+J58              2038.83    1.17       0          0.375      0         
+J59              2033.83    1.17       0          0.375      0         
+J60              2026.80    1.20       0          0.400      0         
+J53              2038.10    0          0          0.100      0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+O-fall2          2080.90    FREE                        NO                       
+O-fall1          2099.83    FREE                        NO                       
+O-fall3          2105.05    FREE                        NO                       
+O-fall4          2108.90    FREE                        NO                       
+O-fall7          2033.10    FREE                        NO                       
+O-fall5          2067.90    FREE                        NO                       
+O-fall6          2041.90    FREE                        NO                       
+O-fall8          2019.98    FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+C1               J1               J2               146.45     0.013      0          0          0          0         
+C2               J2               J3               153.97     0.013      0          0          0          0         
+C3               J3               J4               194.39     0.013      0          0          0          0         
+C4               J4               J5               194.4      0.013      0          0          0          0         
+C5               J5               J6               143.18     0.013      0          0          0          0         
+C6               J6               J7               143.17     0.013      0          0          0          0         
+C7               J7               J8               197.89     0.013      0          0          0          0         
+C8               J8               J9               191.88     0.013      0          0          0          0         
+C9               J9               O-fall1          177.9      0.013      0          0          0          0         
+C10              J10              J11              175.03     0.013      0          0          0          0         
+C11              J11              J12              166.62     0.013      0          0          0          0         
+C12              J12              J13              162.66     0.013      0          0          0          0         
+C13              J13              J14              165.33     0.013      0          0          0          0         
+C14              J14              J15              197.46     0.013      0          0          0          0         
+C15              J15              O-fall2          193.29     0.013      0          0          0          0         
+C16              J16              J17              140.42     0.013      0          0          0          0         
+C17              J17              O-fall3          127.62     0.013      0          0          0          0         
+C22              J22              J23              113.59     0.013      0          0          0          0         
+C23              J23              J24              125.39     0.013      0          0          0          0         
+C24              J24              J25              145.4      0.013      0          0          0          0         
+C25              J25              J26              131.46     0.013      0          0          0          0         
+C26              J26              O-fall5          110.33     0.013      0          0          0          0         
+C18              J18              J19              182.63     0.013      0          0          0          0         
+C19              J19              J20              177.73     0.013      0          0          0          0         
+C20              J20              J21              172.35     0.013      0          0          0          0         
+C21              J21              O-fall4          187.17     0.013      0          0          0          0         
+C27              J27              J28              1844.28    0.013      0          0          0          0         
+C28              J28              J29              165.63     0.013      0          0          0          0         
+C29              J29              J30              172.49     0.013      0          0          0          0         
+C30              J30              J31              153.48     0.013      0          0          0          0         
+C31              J31              J34              147.54     0.013      0          0          0          0         
+C32              J32              J33              125.16     0.013      0          0          0          0         
+C33              J33              J34              120.3      0.013      0          0          0          0         
+C34              J34              J35              121.46     0.013      0          0          0          0         
+C35              J35              J36              135.13     0.013      0          0          0          0         
+C36              J36              J37              107.09     0.013      0          0          0          0         
+C37              J37              J38              107.11     0.013      0          0          0          0         
+C38              J38              J39              152.14     0.013      0          0          0          0         
+C39              J39              J40              134.26     0.013      0          0          0          0         
+C40              J40              O-fall6          163.78     0.013      0          0          0          0         
+C41              J41              J42              165.44     0.013      0          0          0          0         
+C42              J42              O-fall6          160.56     0.013      0          0          0          0         
+C43              J43              J44              131.49     0.013      0          0          0          0         
+C44              J44              J45              120.92     0.013      0          0          0          0         
+C45              J45              J46              103.46     0.013      0          0          0          0         
+C46              J46              J47              108.86     0.013      0          0          0          0         
+C47              J47              J48              122.81     0.013      0          0          0          0         
+C48              J48              J49              129.78     0.013      0          0          0          0         
+C49              J49              J50              156.36     0.013      0          0          0          0         
+C50              J50              J51              173.88     0.013      0          0          0          0         
+C51              J51              J52              171.76     0.013      0          0          0          0         
+C52              J52              J53              181.25     0.013      0          0          0          0         
+C53              J53              O-fall7          152.35     0.013      0          0          0          0         
+C54              J54              J55              161.97     0.013      0          0          0          0         
+C55              J55              J56              173.43     0.013      0          0          0          0         
+C56              J56              J57              166.74     0.013      0          0          0          0         
+C57              J57              O-fall8          121.71     0.013      0          0          0          0         
+C58              J58              J59              135.39     0.013      0          0          0          0         
+C59              J59              J60              126.99     0.013      0          0          0          0         
+C60              J60              O-fall8          103.21     0.013      0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+C1               CIRCULAR     1                0          0          0          1                    
+C2               CIRCULAR     1                0          0          0          1                    
+C3               CIRCULAR     1                0          0          0          1                    
+C4               CIRCULAR     1                0          0          0          1                    
+C5               CIRCULAR     1                0          0          0          1                    
+C6               CIRCULAR     1                0          0          0          1                    
+C7               CIRCULAR     1                0          0          0          1                    
+C8               CIRCULAR     1                0          0          0          1                    
+C9               CIRCULAR     1                0          0          0          1                    
+C10              CIRCULAR     1                0          0          0          1                    
+C11              CIRCULAR     1                0          0          0          1                    
+C12              CIRCULAR     1                0          0          0          1                    
+C13              CIRCULAR     1                0          0          0          1                    
+C14              CIRCULAR     1                0          0          0          1                    
+C15              CIRCULAR     1                0          0          0          1                    
+C16              CIRCULAR     1                0          0          0          1                    
+C17              CIRCULAR     1                0          0          0          1                    
+C22              CIRCULAR     1                0          0          0          1                    
+C23              CIRCULAR     1                0          0          0          1                    
+C24              CIRCULAR     1                0          0          0          1                    
+C25              CIRCULAR     1                0          0          0          1                    
+C26              CIRCULAR     1                0          0          0          1                    
+C18              CIRCULAR     1                0          0          0          1                    
+C19              CIRCULAR     1                0          0          0          1                    
+C20              CIRCULAR     1                0          0          0          1                    
+C21              CIRCULAR     1                0          0          0          1                    
+C27              CIRCULAR     1                0          0          0          1                    
+C28              CIRCULAR     1                0          0          0          1                    
+C29              CIRCULAR     1                0          0          0          1                    
+C30              CIRCULAR     1                0          0          0          1                    
+C31              CIRCULAR     1                0          0          0          1                    
+C32              CIRCULAR     1                0          0          0          1                    
+C33              CIRCULAR     1                0          0          0          1                    
+C34              CIRCULAR     1                0          0          0          1                    
+C35              CIRCULAR     1                0          0          0          1                    
+C36              CIRCULAR     1                0          0          0          1                    
+C37              CIRCULAR     1                0          0          0          1                    
+C38              CIRCULAR     1                0          0          0          1                    
+C39              CIRCULAR     1                0          0          0          1                    
+C40              CIRCULAR     1                0          0          0          1                    
+C41              CIRCULAR     1                0          0          0          1                    
+C42              CIRCULAR     1                0          0          0          1                    
+C43              CIRCULAR     1                0          0          0          1                    
+C44              CIRCULAR     1                0          0          0          1                    
+C45              CIRCULAR     1                0          0          0          1                    
+C46              CIRCULAR     1                0          0          0          1                    
+C47              CIRCULAR     1                0          0          0          1                    
+C48              CIRCULAR     1                0          0          0          1                    
+C49              CIRCULAR     1                0          0          0          1                    
+C50              CIRCULAR     1                0          0          0          1                    
+C51              CIRCULAR     1                0          0          0          1                    
+C52              CIRCULAR     1                0          0          0          1                    
+C53              CIRCULAR     1                0          0          0          1                    
+C54              CIRCULAR     1                0          0          0          1                    
+C55              CIRCULAR     1                0          0          0          1                    
+C56              CIRCULAR     1                0          0          0          1                    
+C57              CIRCULAR     1                0          0          0          1                    
+C58              CIRCULAR     1                0          0          0          1                    
+C59              CIRCULAR     1                0          0          0          1                    
+C60              CIRCULAR     1                0          0          0          1                    
+
+[LANDUSES]
+;;               Sweeping   Fraction   Last      
+;;Name           Interval   Available  Swept     
+;;-------------- ---------- ---------- ----------
+;Shops & Suppermarket
+;Business
+;Banks & Insurance
+;Market
+;Hotels, Bars & Restaurants
+Commerce&Business 1          0          1         
+;River Bank Green
+;Worship & Cemetry
+;Stadium/Sport fields
+;Conservation areas
+;reserved areas
+;road side green
+;Parks
+;Botanica garden
+GreenArea        1          0          1         
+;Health Center and Hospitals
+;Slaughter House
+;Health Center
+;Primary and secondary School
+;University/collage
+;fire birgade
+;children and youth centers
+;technical and vocational school
+;Social Welfare
+;Historical, Archeaological Buildings & Sites
+;Library
+;Cinema Hall & Theatere
+;Musem
+Social&Municipal 1          0          1         
+;Fuel station
+;micro and small enterprise
+;Manufacturing and industry
+Manufacturing&storage 1          0          1         
+;Bus terminal
+;Common Ground Parking Service
+;Parking Service
+Road,Transportation,Utilities 1          0          1         
+;Pure residence(single/multi-family)
+Pureresidence    1          0          1         
+;Existed mixed use area
+;proposed mixed use area
+Mixeduse         1          0          1         
+;Governmental institutions
+;NGO
+;Police
+Adminstration    1          0          1         
+
+[COVERAGES]
+;;Subcatchment   Land Use         Percent   
+;;-------------- ---------------- ----------
+S3               Commerce&Business 9.881     
+S3               Social&Municipal 4.73      
+S3               Road,Transportation,Utilities 11.16     
+S3               Mixeduse         72.77     
+S4               Commerce&Business 10.02     
+S4               GreenArea        4.71      
+S4               Social&Municipal 6.78      
+S4               Manufacturing&storage 0.523     
+S4               Road,Transportation,Utilities 12.62     
+S4               Mixeduse         64.62     
+S4               Adminstration    0.73      
+S5               Commerce&Business 1.99      
+S5               GreenArea        32.44     
+S5               Social&Municipal 0.88      
+S5               Road,Transportation,Utilities 14.445    
+S5               Mixeduse         40.66     
+S5               Adminstration    9.59      
+S6               Commerce&Business 18.12     
+S6               GreenArea        6.18      
+S6               Social&Municipal 34.80     
+S6               Road,Transportation,Utilities 13.805    
+S6               Mixeduse         27.10     
+S7               Commerce&Business 11        
+S7               GreenArea        2.06      
+S7               Social&Municipal 10.68     
+S7               Road,Transportation,Utilities 7.262     
+S7               Mixeduse         68.64     
+S7               Adminstration    0.36      
+S9               Commerce&Business 2.563     
+S9               GreenArea        20.41     
+S9               Road,Transportation,Utilities 9.122     
+S9               Mixeduse         44.22     
+S9               Adminstration    1.61      
+S10              GreenArea        48.39     
+S10              Social&Municipal 2.64      
+S10              Road,Transportation,Utilities 8.977     
+S10              Mixeduse         39.99     
+S11              Commerce&Business 15.09     
+S11              GreenArea        21.60     
+S11              Manufacturing&storage 1.63      
+S11              Road,Transportation,Utilities 16.661    
+S11              Mixeduse         45.02     
+S20              Commerce&Business 29.14     
+S20              GreenArea        1.33      
+S20              Social&Municipal 0.03      
+S20              Road,Transportation,Utilities 26.132    
+S20              Mixeduse         43.37     
+S22              Commerce&Business 0.387     
+S22              GreenArea        73.24     
+S22              Social&Municipal 2.58      
+S22              Pureresidence    21.45     
+S22              Adminstration    0.13      
+S23              GreenArea        77.70     
+S23              Social&Municipal 10.31     
+S23              Road,Transportation,Utilities 3.082     
+S23              Mixeduse         5.22      
+S23              Adminstration    3.68      
+S24              Commerce&Business 0.657     
+S24              GreenArea        52.49     
+S24              Social&Municipal 18.35     
+S24              Road,Transportation,Utilities 8.826     
+S24              Mixeduse         19.68     
+S25              Commerce&Business 28.36     
+S25              GreenArea        12.29     
+S25              Social&Municipal 14.76     
+S25              Road,Transportation,Utilities 16.530    
+S25              Mixeduse         17.13     
+S25              Adminstration    10.93     
+S26              Commerce&Business 38.76     
+S26              GreenArea        11.42     
+S26              Social&Municipal 19.58     
+S26              Road,Transportation,Utilities 12.868    
+S26              Mixeduse         3.99      
+S26              Adminstration    1.45      
+S27              Commerce&Business 50.39     
+S27              GreenArea        .30       
+S27              Social&Municipal 16.11     
+S27              Road,Transportation,Utilities 28.78     
+S27              Mixeduse         2.20      
+S27              Adminstration    2.21      
+S28              Commerce&Business 51.15     
+S28              GreenArea        0.19      
+S28              Social&Municipal 7.10      
+S28              Road,Transportation,Utilities 41.55     
+S28              Mixeduse         0.01      
+S29              Social&Municipal 81.63     
+S29              Road,Transportation,Utilities 18.365    
+S30              Commerce&Business 3.289     
+S30              GreenArea        4.54      
+S30              Social&Municipal 13.07     
+S30              Road,Transportation,Utilities 19.530    
+S30              Mixeduse         59.57     
+S30              Adminstration    0.06      
+S31              Commerce&Business 15        
+S31              GreenArea        7.03      
+S31              Social&Municipal 10        
+S31              Manufacturing&storage 1.404     
+S31              Road,Transportation,Utilities 7.939     
+S31              Mixeduse         59        
+S38              Commerce&Business 5.425     
+S38              GreenArea        12.95     
+S38              Social&Municipal 52.84     
+S38              Road,Transportation,Utilities 9.349     
+S38              Mixeduse         19.44     
+S40              Commerce&Business 7.942     
+S40              GreenArea        5.51      
+S40              Social&Municipal 76.80     
+S40              Road,Transportation,Utilities 7.472     
+S40              Mixeduse         2.27      
+S41              Commerce&Business 11.48     
+S41              GreenArea        0.046     
+S41              Social&Municipal 27.39     
+S41              Road,Transportation,Utilities 7.297     
+S41              Mixeduse         53.79     
+S42              Commerce&Business 21.41     
+S42              GreenArea        19.58     
+S42              Social&Municipal 4.67      
+S42              Road,Transportation,Utilities 16.423    
+S42              Mixeduse         37.92     
+S44              Commerce&Business 29.18     
+S44              GreenArea        25.74     
+S44              Social&Municipal 13.77     
+S44              Road,Transportation,Utilities 21.150    
+S44              Mixeduse         10.15     
+S46              Commerce&Business 73.95     
+S46              GreenArea        0.48      
+S46              Road,Transportation,Utilities 22.47     
+S46              Mixeduse         0.22      
+S46              Adminstration    0.08      
+S47              Commerce&Business 42.69     
+S47              GreenArea        10.94     
+S47              Social&Municipal 4.41      
+S47              Road,Transportation,Utilities 10.022    
+S47              Mixeduse         27.60     
+S47              Adminstration    4.34      
+S48              Commerce&Business 31.7      
+S48              GreenArea        16.16     
+S48              Social&Municipal 0.93      
+S48              Road,Transportation,Utilities 20.8      
+S48              Mixeduse         27.97     
+S48              Adminstration    2.44      
+S49              Commerce&Business 39.93     
+S49              GreenArea        15.56     
+S49              Social&Municipal 17.05     
+S49              Road,Transportation,Utilities 13.354    
+S49              Mixeduse         14.11     
+S50              Commerce&Business 52.52     
+S50              GreenArea        4.77      
+S50              Social&Municipal 2.84      
+S50              Road,Transportation,Utilities 11.060    
+S50              Mixeduse         25.05     
+S50              Adminstration    3.76      
+S79              Commerce&Business 26.49     
+S79              GreenArea        10.99     
+S79              Social&Municipal 2.47      
+S79              Road,Transportation,Utilities 17.642    
+S79              Mixeduse         27.65     
+S79              Adminstration    14.78     
+S84              Commerce&Business 8.833     
+S84              GreenArea        27.03     
+S84              Social&Municipal 37.55     
+S84              Road,Transportation,Utilities 12.538    
+S84              Mixeduse         14.05     
+S85              Commerce&Business 15.08     
+S85              GreenArea        39.90     
+S85              Social&Municipal 9.50      
+S85              Road,Transportation,Utilities 17.62     
+S85              Mixeduse         17.89     
+S85              Adminstration    0.01      
+S86              Commerce&Business 0.566     
+S86              GreenArea        1.20      
+S86              Social&Municipal 0.01      
+S86              Road,Transportation,Utilities 5.340     
+S86              Mixeduse         92.88     
+S87              Commerce&Business 29.94     
+S87              GreenArea        1.94      
+S87              Road,Transportation,Utilities 9.914     
+S87              Mixeduse         58.21     
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+MyStorm                     0          0         
+MyStorm                     1          1         
+MyStorm                     2          1         
+MyStorm                     3          1         
+MyStorm                     4          0         
+MyStorm                     5          0         
+MyStorm                     6          0         
+MyStorm                     7          0         
+MyStorm                     8          0         
+MyStorm                     9          0         
+MyStorm                     10         0         
+MyStorm                     12         0         
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 3561.637 312.894 8705.954 7114.505
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+J5               4764.940           1500.251          
+J10              5552.090           1393.260          
+J11              5629.013           1568.653          
+J6               4912.331           1638.010          
+J7               5091.189           1778.921          
+J8               5272.916           1929.248          
+J9               5470.468           2089.526          
+J12              5730.735           1748.980          
+J13              5823.210           1933.930          
+J14              5925.209           2100.708          
+J15              6025.849           2272.168          
+J16              6930.385           1791.448          
+J17              6968.290           2080.474          
+J18              4223.852           2240.037          
+J19              4162.714           2438.735          
+J20              4132.145           2637.433          
+J21              4132.145           2828.489          
+J1               4728.239           994.355           
+J2               4605.963           1116.630          
+J3               4498.972           1215.979          
+J4               4613.605           1345.897          
+J43              5370.185           3401.655          
+J44              5393.112           3546.858          
+J45              5347.259           3699.702          
+J46              5240.268           3806.693          
+J47              5056.854           3844.904          
+J48              5117.992           4028.318          
+J49              5148.561           4188.804          
+J50              5171.488           4372.218          
+J51              5240.268           4586.200          
+J52              5293.763           4830.751          
+J23              6485.453           2909.605          
+J24              6381.239           3006.375          
+J25              6165.698           3137.876          
+J26              5994.158           3240.857          
+J22              6356.837           2785.502          
+J32              6398.039           3424.551          
+J33              6466.844           3624.215          
+J34              6526.395           3773.093          
+J27              7222.396           3199.915          
+J28              7036.299           3255.744          
+J29              6891.144           3356.236          
+J30              6760.876           3467.894          
+J31              6619.443           3601.884          
+J35              6593.389           3962.911          
+J36              6657.226           4132.474          
+J37              6728.981           4316.597          
+J38              6497.138           4389.359          
+J39              6214.193           4471.264          
+J40              6013.153           4534.554          
+J41              5428.425           4554.698          
+J42              5629.412           4527.732          
+J54              4539.672           6154.556          
+J55              4762.982           6146.581          
+J56              4970.341           6142.593          
+J57              5197.638           6134.618          
+J58              5983.208           5927.259          
+J59              5782.233           5982.547          
+J60              5628.306           6046.889          
+J53              5360.287           5067.428          
+O-fall2          6146.971           2465.700          
+O-fall1          5730.166           2160.560          
+O-fall3          6887.742           2336.333          
+O-fall4          4132.145           3034.829          
+O-fall7          5583.066           5176.100          
+O-fall5          5814.241           3369.169          
+O-fall6          5819.228           4591.918          
+O-fall8          5459.984           6130.242          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+S3               5017.641           1353.679          
+S3               4969.402           1361.718          
+S3               4981.462           1180.823          
+S3               4941.263           1188.863          
+S3               4941.263           1056.206          
+S3               4909.103           1064.246          
+S3               4913.123           959.729           
+S3               4864.885           947.669           
+S3               4872.924           887.371           
+S3               4820.666           887.371           
+S3               4820.666           847.172           
+S3               4776.447           855.212           
+S3               4788.507           815.013           
+S3               4748.308           823.052           
+S3               4748.308           730.595           
+S3               4836.745           734.615           
+S3               4828.706           690.396           
+S3               4872.924           694.416           
+S3               4868.905           622.058           
+S3               4985.481           622.058           
+S3               4965.382           658.237           
+S3               5005.581           654.217           
+S3               5009.601           694.416           
+S3               5045.780           694.416           
+S3               5041.760           654.217           
+S3               5098.039           654.217           
+S3               5094.019           786.873           
+S3               5134.218           794.913           
+S3               5134.218           899.430           
+S3               5178.436           899.430           
+S3               5178.436           935.609           
+S3               5234.715           935.609           
+S3               5234.715           1007.968          
+S3               5266.874           1003.948          
+S3               5274.914           1011.987          
+S3               5234.715           1016.007          
+S3               5234.715           1104.445          
+S3               5278.934           1104.445          
+S3               5274.914           1132.584          
+S3               5363.352           1128.564          
+S3               5359.332           1172.783          
+S3               5395.511           1172.783          
+S3               5391.491           1301.420          
+S3               5524.147           1305.440          
+S3               5600.525           1510.455          
+S3               5552.287           1498.395          
+S3               5564.346           1558.693          
+S3               5411.590           1546.634          
+S3               5411.590           1590.852          
+S3               5375.411           1590.852          
+S3               5387.471           1554.673          
+S3               5178.436           1550.653          
+S3               5182.456           1518.494          
+S3               5110.098           1514.474          
+S3               5118.138           1482.315          
+S3               5005.581           1474.275          
+S4               4229.741           1791.847          
+S4               4225.721           1751.648          
+S4               4434.756           1751.648          
+S4               4434.756           1715.469          
+S4               4495.054           1715.469          
+S4               4563.392           1715.469          
+S4               4563.392           1546.634          
+S4               4760.367           1550.653          
+S4               4760.367           1478.295          
+S4               4993.521           1486.335          
+S4               4993.521           1369.758          
+S4               4957.342           1377.798          
+S4               4961.362           1200.923          
+S4               4925.183           1204.942          
+S4               4925.183           1084.346          
+S4               4884.984           1080.326          
+S4               4884.984           975.808           
+S4               4856.845           971.789           
+S4               4852.825           907.470           
+S4               4796.546           907.470           
+S4               4796.546           867.271           
+S4               4764.387           875.311           
+S4               4760.367           831.092           
+S4               4732.228           831.092           
+S4               4736.248           734.615           
+S4               4708.109           730.595           
+S4               4708.109           686.376           
+S4               4635.751           690.396           
+S4               4643.790           762.754           
+S4               4607.611           762.754           
+S4               4607.611           815.013           
+S4               4571.432           815.013           
+S4               4567.412           915.510           
+S4               4495.054           915.510           
+S4               4511.134           959.729           
+S4               4458.875           959.729           
+S4               4462.895           919.530           
+S4               4398.577           927.570           
+S4               4402.597           883.351           
+S4               4265.920           879.331           
+S4               4269.940           927.570           
+S4               4233.761           911.490           
+S4               4233.761           955.709           
+S4               4165.423           943.649           
+S4               4161.403           1024.047          
+S4               4193.562           1024.047          
+S4               4205.622           1148.664          
+S4               4165.423           1140.624          
+S4               4161.403           1180.823          
+S4               4133.264           1180.823          
+S4               4133.264           1221.022          
+S4               4024.726           1217.002          
+S4               4028.746           1245.141          
+S4               3988.547           1245.141          
+S4               3988.547           1321.519          
+S4               4024.726           1317.500          
+S4               4032.766           1413.977          
+S4               4097.085           1409.957          
+S4               4101.104           1442.116          
+S4               4060.906           1450.156          
+S4               4064.925           1478.295          
+S4               4024.726           1486.335          
+S4               4020.707           1522.514          
+S4               4000.607           1522.514          
+S4               3992.567           1651.151          
+S4               4097.085           1651.151          
+S4               4101.104           1695.370          
+S4               4137.284           1691.350          
+S4               4133.264           1775.768          
+S5               6131.152           1208.962          
+S5               6139.191           1249.161          
+S5               6062.813           1245.141          
+S5               6062.813           1289.360          
+S5               6034.674           1293.380          
+S5               6038.694           1253.181          
+S5               5990.455           1245.141          
+S5               5998.495           1293.380          
+S5               5926.137           1293.380          
+S5               5922.117           1482.315          
+S5               5885.938           1474.275          
+S5               5889.958           1554.673          
+S5               5849.759           1554.673          
+S5               5853.779           1627.031          
+S5               5729.162           1627.031          
+S5               5725.142           1586.833          
+S5               5656.804           1590.852          
+S5               5660.824           1554.673          
+S5               5632.685           1558.693          
+S5               5536.207           1321.519          
+S5               5540.227           1273.281          
+S5               5572.386           1281.320          
+S5               5572.386           1233.082          
+S5               5588.466           1253.181          
+S5               5596.506           1204.942          
+S5               5632.685           1196.903          
+S5               5644.744           1144.644          
+S5               5701.023           1156.704          
+S5               5701.023           1120.525          
+S5               5769.361           1128.564          
+S5               5765.341           1044.147          
+S5               5805.540           1036.107          
+S5               5801.520           1096.405          
+S5               5833.679           1096.405          
+S5               5829.660           1132.584          
+S5               5930.157           1132.584          
+S5               5934.177           1092.385          
+S5               6199.490           1092.385          
+S5               6207.530           1160.724          
+S5               6167.331           1152.684          
+S5               6167.331           1217.002          
+S6               5520.128           2004.902          
+S6               5524.147           1924.504          
+S6               5584.446           1924.504          
+S6               5588.466           1876.265          
+S6               5620.625           1880.285          
+S6               5620.625           1815.967          
+S6               5656.804           1815.967          
+S6               5660.824           1751.648          
+S6               5672.884           1755.668          
+S6               5668.864           1614.972          
+S6               5648.764           1570.753          
+S6               5624.645           1578.793          
+S6               5604.545           1518.494          
+S6               5568.366           1514.474          
+S6               5584.446           1558.693          
+S6               5423.650           1562.713          
+S6               5419.630           1623.012          
+S6               5383.451           1623.012          
+S6               5383.451           1783.807          
+S6               5411.590           1775.768          
+S6               5407.570           1811.947          
+S6               5439.730           1815.967          
+S6               5443.750           1996.862          
+S7               4639.770           1715.469          
+S7               4635.751           1655.171          
+S7               4820.666           1659.191          
+S7               4800.566           1707.429          
+S7               4856.845           1711.449          
+S7               4844.785           1783.807          
+S7               4909.103           1779.788          
+S7               4901.064           1819.986          
+S7               4941.263           1819.986          
+S7               4937.243           1856.166          
+S7               4977.442           1836.066          
+S7               4969.402           1888.325          
+S7               5005.581           1880.285          
+S7               5005.581           1920.484          
+S7               5118.138           1916.464          
+S7               5114.118           1924.504          
+S7               5118.138           1960.683          
+S7               5194.516           1964.703          
+S7               5186.476           2012.941          
+S7               5230.695           2008.922          
+S7               5214.616           2077.260          
+S7               5254.814           2073.240          
+S7               5307.073           2081.280          
+S7               5311.093           2041.081          
+S7               5435.710           2037.061          
+S7               5435.710           2025.001          
+S7               5431.690           1840.086          
+S7               5399.531           1832.046          
+S7               5395.511           1795.867          
+S7               5363.352           1795.867          
+S7               5363.352           1566.733          
+S7               5170.397           1566.733          
+S7               5162.357           1530.554          
+S7               5098.039           1542.614          
+S7               5102.058           1510.455          
+S7               4776.447           1490.355          
+S7               4784.487           1558.693          
+S7               4579.472           1558.693          
+S7               4587.512           1711.449          
+S9               5881.918           2113.439          
+S9               5922.117           2077.260          
+S9               6030.654           2073.240          
+S9               6046.734           2020.981          
+S9               6042.714           1614.972          
+S9               6115.072           1610.952          
+S9               6115.072           1574.773          
+S9               6151.251           1566.733          
+S9               6147.231           1502.415          
+S9               6275.868           1502.415          
+S9               6283.908           1426.037          
+S9               6219.589           1430.057          
+S9               6219.589           1381.818          
+S9               6191.450           1385.838          
+S9               6187.430           1229.062          
+S9               6147.231           1233.082          
+S9               6151.251           1265.241          
+S9               6078.893           1261.221          
+S9               6078.893           1301.420          
+S9               5934.177           1305.440          
+S9               5942.217           1502.415          
+S9               5906.038           1502.415          
+S9               5910.057           1570.753          
+S9               5865.839           1570.753          
+S9               5869.858           1639.091          
+S9               5717.102           1639.091          
+S9               5717.102           1606.932          
+S9               5680.923           1602.912          
+S9               5697.003           1819.986          
+S9               5725.142           1811.947          
+S9               5725.142           1856.166          
+S9               5765.341           1852.146          
+S9               5761.321           1972.742          
+S9               5801.520           1968.723          
+S9               5793.480           2008.922          
+S9               5849.759           2004.902          
+S9               5849.759           2073.240          
+S10              6959.250           2101.379          
+S10              7011.509           2105.399          
+S10              7007.489           2073.240          
+S10              7039.648           2077.260          
+S10              7043.668           2041.081          
+S10              7079.847           2045.101          
+S10              7075.827           2012.941          
+S10              7120.046           2012.941          
+S10              7116.026           1976.762          
+S10              7152.205           1976.762          
+S10              7156.225           1940.583          
+S10              7188.384           1940.583          
+S10              7184.364           1884.305          
+S10              7212.504           1884.305          
+S10              7220.543           1815.967          
+S10              7268.782           1815.967          
+S10              7264.762           1779.788          
+S10              7304.961           1779.788          
+S10              7300.941           1743.608          
+S10              7333.100           1751.648          
+S10              7337.120           1482.315          
+S10              7377.319           1486.335          
+S10              7381.339           1409.957          
+S10              7345.160           1417.997          
+S10              7345.160           1337.599          
+S10              7317.021           1345.639          
+S10              7313.001           1289.360          
+S10              7268.782           1293.380          
+S10              7268.782           1253.181          
+S10              7244.663           1253.181          
+S10              7248.683           1273.281          
+S10              7204.464           1277.301          
+S10              7208.484           1309.460          
+S10              7168.285           1309.460          
+S10              7168.285           1357.698          
+S10              7095.927           1353.679          
+S10              7091.907           1393.878          
+S10              7059.747           1393.878          
+S10              7059.747           1462.216          
+S10              6991.409           1462.216          
+S10              6995.429           1502.415          
+S10              6979.350           1498.395          
+S10              6971.310           1586.833          
+S10              6935.131           1582.813          
+S10              6935.131           1647.131          
+S10              6975.330           1639.091          
+S10              6971.310           1679.290          
+S10              6931.111           1679.290          
+S10              6939.151           1844.106          
+S10              6898.952           1840.086          
+S10              6898.952           1936.563          
+S10              6939.151           1936.563          
+S10              6939.151           1972.742          
+S10              7007.489           1968.723          
+S10              7011.509           2033.041          
+S10              6963.270           2020.981          
+S10              6959.250           2093.339          
+S11              6738.945           2400.085          
+S11              6736.743           2215.074          
+S11              6789.603           2210.669          
+S11              6787.401           2237.100          
+S11              6831.451           2234.897          
+S11              6829.248           2184.239          
+S11              6901.931           2182.037          
+S11              6899.728           2148.999          
+S11              6950.386           2153.404          
+S11              6948.184           2016.849          
+S11              6994.436           2016.849          
+S11              6996.639           1992.621          
+S11              6926.158           1994.824          
+S11              6926.158           1955.179          
+S11              6884.311           1955.179          
+S11              6884.311           1829.636          
+S11              6919.551           1829.636          
+S11              6919.551           1578.550          
+S11              6961.399           1571.943          
+S11              6968.006           1492.653          
+S11              6943.779           1492.653          
+S11              6948.184           1525.690          
+S11              6915.146           1525.690          
+S11              6919.551           1567.538          
+S11              6888.716           1567.538          
+S11              6888.716           1655.638          
+S11              6727.933           1655.638          
+S11              6732.338           1693.081          
+S11              6681.680           1693.081          
+S11              6679.478           1710.701          
+S11              6714.718           1708.498          
+S11              6719.123           1785.586          
+S11              6677.275           1785.586          
+S11              6679.478           1823.028          
+S11              6639.833           1823.028          
+S11              6642.035           2005.836          
+S11              6675.073           2005.836          
+S11              6677.275           2078.519          
+S11              6710.313           2078.519          
+S11              6705.908           2411.098          
+S20              6289.963           2868.059          
+S20              6287.367           2823.937          
+S20              6232.863           2823.937          
+S20              6235.459           2785.006          
+S20              6204.314           2787.601          
+S20              6204.314           2740.884          
+S20              6178.360           2746.075          
+S20              6178.360           2668.212          
+S20              6105.688           2668.212          
+S20              6108.283           2631.876          
+S20              6035.611           2631.876          
+S20              6035.611           2561.800          
+S20              5926.604           2556.609          
+S20              5929.199           2455.387          
+S20              5968.130           2460.578          
+S20              5965.535           2354.166          
+S20              6001.871           2354.166          
+S20              5999.275           2286.685          
+S20              6071.947           2289.280          
+S20              6071.947           2232.181          
+S20              6116.069           2229.586          
+S20              6116.069           2286.685          
+S20              6149.810           2286.685          
+S20              6147.214           2299.662          
+S20              6178.360           2304.853          
+S20              6173.169           2320.425          
+S20              6209.505           2325.616          
+S20              6204.314           2356.761          
+S20              6339.276           2356.761          
+S20              6339.276           2478.746          
+S20              6271.795           2478.746          
+S20              6271.795           2515.082          
+S20              6305.535           2517.678          
+S20              6300.344           2605.922          
+S20              6360.039           2603.326          
+S20              6354.848           2639.662          
+S20              6396.375           2639.662          
+S20              6398.970           2849.892          
+S20              6336.680           2847.296          
+S20              6339.276           2868.059          
+S20              6300.344           2865.464          
+S22              7401.309           3191.460          
+S22              7403.352           3121.980          
+S22              7474.876           3121.980          
+S22              7474.876           3072.935          
+S22              7472.832           3072.935          
+S22              7478.963           3068.848          
+S22              7542.313           3070.892          
+S22              7542.313           3038.195          
+S22              7579.096           3036.151          
+S22              7572.966           2899.235          
+S22              7646.533           2897.191          
+S22              7640.402           2862.451          
+S22              7683.316           2860.408          
+S22              7683.316           2821.580          
+S22              7718.056           2821.580          
+S22              7718.056           2772.536          
+S22              7771.188           2770.492          
+S22              7771.188           2703.055          
+S22              7842.712           2701.012          
+S22              7844.756           2672.402          
+S22              8024.587           2670.359          
+S22              8026.630           2609.053          
+S22              8063.414           2607.009          
+S22              8065.457           2576.356          
+S22              8139.025           2576.356          
+S22              8141.068           2527.311          
+S22              8102.241           2527.311          
+S22              8102.241           2498.702          
+S22              8067.501           2502.789          
+S22              8061.370           2488.484          
+S22              8063.414           2412.873          
+S22              7998.021           2412.873          
+S22              8000.064           2386.307          
+S22              7983.716           2388.351          
+S22              7930.584           2386.307          
+S22              7934.671           2421.048          
+S22              7865.191           2421.048          
+S22              7869.278           2463.962          
+S22              7797.754           2461.918          
+S22              7799.798           2427.178          
+S22              7707.839           2425.135          
+S22              7711.926           2494.615          
+S22              7634.272           2492.571          
+S22              7638.359           2549.790          
+S22              7593.401           2547.747          
+S22              7597.488           2580.443          
+S22              7419.700           2576.356          
+S22              7423.787           2617.227          
+S22              7264.392           2617.227          
+S22              7266.435           2656.054          
+S22              7223.521           2656.054          
+S22              7223.521           2707.142          
+S22              7258.261           2707.142          
+S22              7260.305           2833.842          
+S22              7346.133           2829.754          
+S22              7346.133           2905.365          
+S22              7311.393           2905.365          
+S22              7313.437           2978.933          
+S22              7258.261           2980.976          
+S22              7260.305           3083.153          
+S22              7225.565           3083.153          
+S22              7221.478           3158.764          
+S22              7258.261           3158.764          
+S22              7260.305           3205.765          
+S23              7266.435           3248.679          
+S23              7548.443           3238.461          
+S23              7548.443           3201.678          
+S23              7581.140           3199.634          
+S23              7583.183           3162.851          
+S23              7654.707           3160.807          
+S23              7654.707           3199.634          
+S23              7695.578           3199.634          
+S23              7693.534           3236.418          
+S23              7728.274           3236.418          
+S23              7726.231           3273.202          
+S23              7881.539           3275.245          
+S23              7883.583           3234.374          
+S23              7920.366           3236.418          
+S23              7920.366           3275.245          
+S23              8290.246           3273.202          
+S23              8292.290           3207.808          
+S23              8327.030           3205.765          
+S23              8327.030           3171.025          
+S23              8359.726           3171.025          
+S23              8361.770           3132.198          
+S23              8425.120           3134.241          
+S23              8427.163           3101.545          
+S23              8468.034           3101.545          
+S23              8472.121           2970.758          
+S23              8433.294           2970.758          
+S23              8433.294           2933.975          
+S23              8396.510           2936.018          
+S23              8396.510           2907.409          
+S23              8361.770           2905.365          
+S23              8363.813           2602.922          
+S23              8202.374           2604.966          
+S23              8204.418           2584.530          
+S23              8075.675           2582.487          
+S23              8075.675           2623.357          
+S23              8040.935           2621.314          
+S23              8040.935           2684.664          
+S23              7857.017           2682.620          
+S23              7852.930           2719.404          
+S23              7785.493           2719.404          
+S23              7785.493           2786.840          
+S23              7730.318           2784.797          
+S23              7736.448           2835.885          
+S23              7697.621           2833.842          
+S23              7695.578           2874.712          
+S23              7660.838           2876.756          
+S23              7669.012           2911.496          
+S23              7589.314           2909.452          
+S23              7599.531           3052.500          
+S23              7554.574           3050.456          
+S23              7558.661           3087.240          
+S23              7487.137           3085.196          
+S23              7485.094           3140.372          
+S23              7419.700           3138.328          
+S23              7417.657           3207.808          
+S23              7270.522           3213.939          
+S23              7266.435           3244.592          
+S24              7550.487           3273.202          
+S24              7548.443           3305.898          
+S24              7215.347           3312.029          
+S24              7215.347           3277.289          
+S24              7051.864           3281.376          
+S24              7039.603           3232.331          
+S24              7166.302           3228.244          
+S24              7166.302           3201.678          
+S24              7188.781           3201.678          
+S24              7188.781           3166.938          
+S24              7239.869           3168.981          
+S24              7239.869           3213.939          
+S24              7258.261           3209.852          
+S24              7254.174           3254.810          
+S24              7560.704           3248.679          
+S24              7562.748           3211.895          
+S24              7597.488           3209.852          
+S24              7597.488           3175.112          
+S24              7644.489           3173.068          
+S24              7644.489           3207.808          
+S24              7683.316           3209.852          
+S24              7681.273           3242.549          
+S24              7713.969           3242.549          
+S24              7713.969           3275.245          
+S25              7041.867           3290.043          
+S25              7201.783           3283.090          
+S25              7201.783           3324.807          
+S25              7565.652           3322.490          
+S25              7565.652           3285.407          
+S25              7992.097           3287.725          
+S25              7994.415           3308.584          
+S25              7959.651           3306.266          
+S25              7961.968           3431.419          
+S25              7820.592           3431.419          
+S25              7820.592           3468.501          
+S25              7725.569           3468.501          
+S25              7727.887           3500.948          
+S25              7556.382           3496.312          
+S25              7558.699           3540.347          
+S25              7521.617           3533.395          
+S25              7521.617           3572.794          
+S25              7449.771           3575.112          
+S25              7449.771           3644.641          
+S25              7412.688           3642.323          
+S25              7415.006           3679.406          
+S25              7336.206           3681.723          
+S25              7340.842           3644.641          
+S25              7078.949           3642.323          
+S25              7081.266           3572.794          
+S25              7044.184           3572.794          
+S25              7041.867           3350.301          
+S26              7021.008           3468.501          
+S26              6967.702           3468.501          
+S26              6970.020           3410.560          
+S26              6861.091           3412.877          
+S26              6863.409           3491.677          
+S26              6810.103           3491.677          
+S26              6807.785           3531.077          
+S26              6777.656           3528.759          
+S26              6779.974           3570.477          
+S26              6742.891           3570.477          
+S26              6745.209           3602.924          
+S26              6701.174           3605.241          
+S26              6708.127           3640.006          
+S26              6576.022           3640.006          
+S26              6573.704           3565.841          
+S26              6430.010           3565.841          
+S26              6425.375           3503.265          
+S26              6464.775           3503.265          
+S26              6462.457           3412.877          
+S26              6499.540           3412.877          
+S26              6499.540           3313.219          
+S26              6538.939           3310.901          
+S26              6534.304           3276.137          
+S26              6571.386           3276.137          
+S26              6569.069           3241.372          
+S26              6636.280           3239.055          
+S26              6636.280           3204.290          
+S26              6673.362           3204.290          
+S26              6675.680           3116.220          
+S26              6712.762           3113.902          
+S26              6708.127           3014.244          
+S26              6740.574           3011.926          
+S26              6740.574           2858.962          
+S26              6805.468           2852.009          
+S26              6810.103           2796.386          
+S26              6881.950           2801.021          
+S26              6881.950           2756.986          
+S26              6928.302           2754.669          
+S26              6925.985           2791.751          
+S26              6963.067           2789.433          
+S26              6960.749           2826.515          
+S26              7055.772           2828.833          
+S26              7055.772           2759.304          
+S26              7125.301           2759.304          
+S26              7125.301           2722.222          
+S26              7243.501           2717.586          
+S26              7243.501           2842.739          
+S26              7331.571           2838.104          
+S26              7333.889           2889.092          
+S26              7299.124           2891.409          
+S26              7296.807           2960.938          
+S26              7245.819           2960.938          
+S26              7248.136           3065.232          
+S26              7213.372           3062.914          
+S26              7213.372           3150.984          
+S26              7173.972           3150.984          
+S26              7176.289           3190.384          
+S26              7148.478           3190.384          
+S26              7153.113           3204.290          
+S26              7007.102           3211.243          
+S26              7004.784           3359.572          
+S26              7021.008           3357.254          
+S26              7021.008           3463.865          
+S27              6341.940           3440.689          
+S27              6339.623           3493.995          
+S27              6450.869           3491.677          
+S27              6448.552           3401.289          
+S27              6483.316           3398.972          
+S27              6483.316           3294.678          
+S27              6520.398           3294.678          
+S27              6518.081           3264.549          
+S27              6557.480           3264.549          
+S27              6559.798           3225.149          
+S27              6624.692           3227.466          
+S27              6622.374           3192.702          
+S27              6661.774           3192.702          
+S27              6659.456           3099.996          
+S27              6696.539           3097.679          
+S27              6694.221           2995.703          
+S27              6731.303           2995.703          
+S27              6728.986           2849.692          
+S27              6691.903           2847.374          
+S27              6696.539           2826.515          
+S27              6627.010           2828.833          
+S27              6629.327           2794.068          
+S27              6613.104           2791.751          
+S27              6615.421           2882.139          
+S27              6464.775           2872.868          
+S27              6462.457           2970.209          
+S27              6399.881           2970.209          
+S27              6395.246           3076.820          
+S27              6235.329           3072.185          
+S27              6235.329           3116.220          
+S27              6200.564           3116.220          
+S27              6200.564           3137.079          
+S27              6089.318           3137.079          
+S27              6084.683           3181.114          
+S27              6165.800           3181.114          
+S27              6163.482           3201.972          
+S27              6200.564           3204.290          
+S27              6209.835           3276.137          
+S27              6170.435           3276.137          
+S27              6168.118           3336.395          
+S27              6233.011           3336.395          
+S27              6228.376           3378.113          
+S27              6265.458           3375.795          
+S27              6267.776           3408.242          
+S27              6304.858           3405.925          
+S27              6307.176           3445.324          
+S28              6311.811           3007.291          
+S28              6274.729           3007.291          
+S28              6277.046           2974.844          
+S28              6216.788           2967.891          
+S28              6219.106           3042.056          
+S28              6202.882           3049.008          
+S28              6170.435           3046.691          
+S28              6168.118           2951.668          
+S28              6207.517           2951.668          
+S28              6212.153           2893.727          
+S28              6175.070           2891.409          
+S28              6172.753           2754.669          
+S28              6195.929           2754.669          
+S28              6193.612           2791.751          
+S28              6223.741           2791.751          
+S28              6219.106           2826.515          
+S28              6274.729           2826.515          
+S28              6277.046           2835.786          
+S28              6279.364           2872.868          
+S28              6355.846           2877.503          
+S28              6353.528           2858.962          
+S28              6446.234           2868.233          
+S28              6448.552           2956.303          
+S28              6388.293           2951.668          
+S28              6383.658           3065.232          
+S28              6302.540           3062.914          
+S29              6080.394           3128.919          
+S29              6080.394           3066.343          
+S29              6231.040           3050.120          
+S29              6228.722           2982.908          
+S29              6261.169           2980.591          
+S29              6263.487           3019.991          
+S29              6300.569           3019.991          
+S29              6295.934           3066.343          
+S29              6226.405           3070.979          
+S29              6226.405           3105.743          
+S29              6187.005           3110.378          
+S29              6187.005           3131.237          
+S29              6091.982           3128.919          
+S30              4204.819           2674.585          
+S30              4167.886           2677.663          
+S30              4164.808           2637.651          
+S30              4130.952           2637.651          
+S30              4130.952           2514.539          
+S30              4063.240           2517.616          
+S30              4066.318           2486.838          
+S30              4029.384           2483.760          
+S30              4032.462           2449.904          
+S30              3940.127           2452.982          
+S30              3937.049           2409.893          
+S30              3900.115           2406.815          
+S30              3900.115           2372.959          
+S30              3832.403           2379.115          
+S30              3835.481           2292.936          
+S30              3798.547           2296.014          
+S30              3795.470           2262.158          
+S30              3832.403           2259.080          
+S30              3829.326           2185.212          
+S30              3872.415           2185.212          
+S30              3875.493           1994.387          
+S30              3835.481           1994.387          
+S30              3829.326           1849.730          
+S30              3866.259           1846.652          
+S30              3866.259           1892.819          
+S30              4029.384           1892.819          
+S30              4029.384           1782.018          
+S30              3992.450           1782.018          
+S30              3983.216           1668.139          
+S30              4084.784           1668.139          
+S30              4087.862           1705.073          
+S30              4121.718           1701.995          
+S30              4121.718           1788.174          
+S30              4167.886           1794.329          
+S30              4164.808           1818.952          
+S30              4195.586           1815.874          
+S30              4201.742           1852.808          
+S30              4235.598           1849.730          
+S30              4235.598           1886.664          
+S30              4303.310           1886.664          
+S30              4300.232           2080.566          
+S30              4340.243           2074.411          
+S30              4334.088           2114.422          
+S30              4374.099           2111.345          
+S30              4377.177           2151.356          
+S30              4340.243           2148.278          
+S30              4340.243           2185.212          
+S30              4303.310           2185.212          
+S30              4306.387           2259.080          
+S30              4269.454           2252.924          
+S30              4266.376           2289.858          
+S30              4306.387           2289.858          
+S30              4303.310           2345.259          
+S30              4337.166           2342.181          
+S30              4340.243           2382.192          
+S30              4411.033           2379.115          
+S30              4407.955           2345.259          
+S30              4463.356           2342.181          
+S30              4460.278           2382.192          
+S30              4534.146           2379.115          
+S30              4534.146           2416.048          
+S30              4568.002           2409.893          
+S30              4580.313           2585.328          
+S30              4426.422           2582.251          
+S30              4429.500           2640.729          
+S30              4201.742           2640.729          
+S31              5192.799           2603.795          
+S31              5158.943           2603.795          
+S31              5162.021           2554.550          
+S31              5112.776           2554.550          
+S31              5112.776           2514.539          
+S31              5078.920           2520.694          
+S31              5088.153           2480.683          
+S31              5041.986           2486.838          
+S31              5045.064           2443.749          
+S31              4851.161           2449.904          
+S31              4857.317           2412.971          
+S31              4672.648           2409.893          
+S31              4672.648           2480.683          
+S31              4583.391           2486.838          
+S31              4583.391           2397.582          
+S31              4552.613           2400.659          
+S31              4549.535           2394.504          
+S31              4549.535           2363.726          
+S31              4481.823           2366.803          
+S31              4481.823           2323.714          
+S31              4398.722           2323.714          
+S31              4398.722           2357.570          
+S31              4355.632           2360.648          
+S31              4355.632           2320.636          
+S31              4321.776           2323.714          
+S31              4318.699           2206.757          
+S31              4349.477           2206.757          
+S31              4352.555           2160.590          
+S31              4389.488           2166.745          
+S31              4392.566           2095.955          
+S31              4361.788           2099.033          
+S31              4361.788           2062.099          
+S31              4321.776           2062.099          
+S31              4324.854           1871.275          
+S31              4250.987           1871.275          
+S31              4250.987           1837.419          
+S31              4214.053           1837.419          
+S31              4214.053           1809.718          
+S31              4177.119           1803.563          
+S31              4174.041           1791.251          
+S31              4244.831           1800.485          
+S31              4241.753           1760.473          
+S31              4438.734           1763.551          
+S31              4441.811           1723.539          
+S31              4484.901           1723.539          
+S31              4481.823           1855.886          
+S31              4558.768           1858.963          
+S31              4558.768           1892.819          
+S31              4623.403           1892.819          
+S31              4626.480           1960.531          
+S31              4663.414           1966.687          
+S31              4654.181           2022.088          
+S31              4734.204           2025.166          
+S31              4734.204           2059.022          
+S31              4804.994           2059.022          
+S31              4798.838           2129.811          
+S31              4995.819           2129.811          
+S31              4992.741           2265.235          
+S31              5029.675           2265.235          
+S31              5026.597           2320.636          
+S31              5066.608           2320.636          
+S31              5063.531           2391.426          
+S31              5205.110           2388.348          
+S31              5205.110           2428.360          
+S31              5269.744           2431.438          
+S31              5269.744           2388.348          
+S31              5340.534           2382.192          
+S31              5343.612           2459.138          
+S31              5399.013           2462.216          
+S31              5405.168           2554.550          
+S31              5359.001           2554.550          
+S31              5359.001           2603.795          
+S31              5251.277           2603.795          
+S31              5254.355           2643.807          
+S31              5174.332           2643.807          
+S38              4220.208           3779.522          
+S38              4217.131           3736.432          
+S38              4331.010           3742.588          
+S38              4334.088           3705.654          
+S38              4423.344           3702.576          
+S38              4435.656           3739.510          
+S38              4487.979           3733.355          
+S38              4494.134           3779.522          
+S38              4571.080           3770.288          
+S38              4574.158           3828.767          
+S38              4629.558           3831.845          
+S38              4629.558           3705.654          
+S38              4660.336           3702.576          
+S38              4657.259           3530.219          
+S38              4697.270           3524.063          
+S38              4697.270           3462.507          
+S38              4561.846           3462.507          
+S38              4558.768           3339.394          
+S38              4592.624           3345.549          
+S38              4604.936           3317.849          
+S38              4564.924           3317.849          
+S38              4568.002           3283.993          
+S38              4524.912           3283.993          
+S38              4531.068           3250.137          
+S38              4491.056           3247.059          
+S38              4491.056           3179.347          
+S38              4521.835           3179.347          
+S38              4524.912           3142.414          
+S38              4558.768           3142.414          
+S38              4564.924           3108.558          
+S38              4595.702           3117.791          
+S38              4595.702           3080.857          
+S38              4644.947           3087.013          
+S38              4641.870           2936.200          
+S38              4604.936           2933.122          
+S38              4601.858           2976.211          
+S38              4494.134           2979.289          
+S38              4503.368           2846.943          
+S38              4457.200           2853.099          
+S38              4463.356           2745.375          
+S38              4407.955           2745.375          
+S38              4411.033           2714.597          
+S38              4374.099           2717.675          
+S38              4377.177           2680.741          
+S38              4337.166           2677.663          
+S38              4337.166           2656.118          
+S38              4214.053           2653.040          
+S38              4217.131           2689.974          
+S38              4152.496           2689.974          
+S38              4152.496           2653.040          
+S38              4112.485           2659.196          
+S38              4109.407           2533.006          
+S38              4041.695           2533.006          
+S38              4044.773           2499.150          
+S38              4013.995           2499.150          
+S38              4010.917           2468.371          
+S38              3915.504           2468.371          
+S38              3918.582           2539.161          
+S38              3952.438           2539.161          
+S38              3958.594           2606.873          
+S38              3918.582           2606.873          
+S38              3924.738           2729.986          
+S38              3881.648           2733.064          
+S38              3881.648           2766.920          
+S38              3952.438           2763.842          
+S38              3958.594           2871.566          
+S38              3918.582           2874.643          
+S38              3924.738           2911.577          
+S38              3884.726           2914.655          
+S38              3884.726           3099.324          
+S38              3912.427           3099.324          
+S38              3912.427           3139.336          
+S38              3983.216           3139.336          
+S38              3986.294           3170.114          
+S38              4035.539           3170.114          
+S38              4038.617           3185.503          
+S38              4060.162           3185.503          
+S38              4054.006           3240.904          
+S38              4161.730           3240.904          
+S38              4167.886           3308.616          
+S38              4204.819           3311.693          
+S38              4198.664           3416.339          
+S38              4161.730           3419.417          
+S38              4167.886           3459.429          
+S38              4130.952           3459.429          
+S38              4130.952           3533.296          
+S38              4164.808           3533.296          
+S38              4158.652           3773.366          
+S40              4748.213           3696.335          
+S40              4748.213           3735.044          
+S40              4856.046           3732.280          
+S40              4861.576           3770.989          
+S40              4894.756           3768.224          
+S40              4891.991           3817.993          
+S40              4925.170           3817.993          
+S40              4925.170           3864.997          
+S40              4958.349           3864.997          
+S40              4958.349           4003.245          
+S40              5138.071           4008.775          
+S40              5135.306           3964.536          
+S40              5204.430           3964.536          
+S40              5204.430           3928.591          
+S40              5259.729           3923.061          
+S40              5254.199           3967.300          
+S40              5290.144           3961.771          
+S40              5295.674           4000.480          
+S40              5436.686           3994.950          
+S40              5433.921           4033.659          
+S40              5472.631           4033.659          
+S40              5472.631           3994.950          
+S40              5538.989           3994.950          
+S40              5541.754           3961.771          
+S40              5749.126           3961.771          
+S40              5754.656           3898.177          
+S40              5787.835           3898.177          
+S40              5796.130           3784.814          
+S40              5873.549           3784.814          
+S40              5873.549           3737.809          
+S40              5823.780           3737.809          
+S40              5823.780           3729.515          
+S40              5829.309           3715.690          
+S40              5718.711           3718.455          
+S40              5718.711           3685.275          
+S40              5680.002           3688.040          
+S40              5680.002           3652.096          
+S40              5616.408           3652.096          
+S40              5613.643           3610.622          
+S40              5439.451           3610.622          
+S40              5433.921           3574.677          
+S40              5386.917           3574.677          
+S40              5386.917           3547.028          
+S40              5218.255           3541.498          
+S40              5223.785           3574.677          
+S40              5193.370           3571.912          
+S40              5190.605           3616.152          
+S40              5104.892           3610.622          
+S40              5104.892           3582.972          
+S40              5068.948           3577.442          
+S40              5074.477           3486.199          
+S40              5044.063           3480.669          
+S40              5044.063           3450.254          
+S40              4974.939           3455.784          
+S40              4972.174           3414.310          
+S40              4925.170           3411.545          
+S40              4927.935           3278.827          
+S40              4847.751           3278.827          
+S40              4842.221           3118.460          
+S40              4880.931           3121.225          
+S40              4883.696           3079.751          
+S40              4919.640           3079.751          
+S40              4919.640           3054.866          
+S40              4803.512           3054.866          
+S40              4806.277           3018.922          
+S40              4767.568           3018.922          
+S40              4767.568           2982.977          
+S40              4656.970           2982.977          
+S40              4659.735           3096.340          
+S40              4615.495           3096.340          
+S40              4618.260           3129.520          
+S40              4576.786           3129.520          
+S40              4579.551           3162.699          
+S40              4543.607           3162.699          
+S40              4543.607           3195.879          
+S40              4510.427           3195.879          
+S40              4513.192           3229.058          
+S40              4546.371           3226.293          
+S40              4546.371           3259.473          
+S40              4579.551           3259.473          
+S40              4582.316           3298.182          
+S40              4618.260           3298.182          
+S40              4626.555           3359.011          
+S40              4574.021           3359.011          
+S40              4579.551           3436.430          
+S40              4720.563           3436.430          
+S40              4720.563           3544.263          
+S40              4684.619           3544.263          
+S40              4687.384           3707.395          
+S41              5386.917           3298.182          
+S41              5386.917           3367.306          
+S41              5350.973           3367.306          
+S41              5350.973           3403.250          
+S41              5315.028           3403.250          
+S41              5320.558           3522.143          
+S41              5207.195           3522.143          
+S41              5207.195           3560.852          
+S41              5168.486           3560.852          
+S41              5168.486           3594.032          
+S41              5124.247           3594.032          
+S41              5124.247           3552.558          
+S41              5099.362           3552.558          
+S41              5099.362           3472.374          
+S41              5057.888           3469.609          
+S41              5057.888           3433.665          
+S41              4988.764           3433.665          
+S41              4988.764           3400.485          
+S41              4933.465           3400.485          
+S41              4936.230           3265.003          
+S41              4864.341           3262.238          
+S41              4861.576           3132.285          
+S41              4900.285           3135.050          
+S41              4897.520           3090.811          
+S41              4927.935           3090.811          
+S41              4927.935           3029.982          
+S41              4941.760           3035.511          
+S41              4941.760           3016.157          
+S41              4980.469           3018.922          
+S41              4977.704           2947.033          
+S41              5016.413           2949.798          
+S41              5016.413           2855.790          
+S41              5063.418           2855.790          
+S41              5068.948           2911.089          
+S41              5102.127           2911.089          
+S41              5102.127           2947.033          
+S41              5138.071           2947.033          
+S41              5138.071           2974.683          
+S41              5171.251           2977.447          
+S41              5171.251           3013.392          
+S41              5240.375           3016.157          
+S41              5240.375           3054.866          
+S41              5414.567           3052.101          
+S41              5414.567           3016.157          
+S41              5472.631           3018.922          
+S41              5475.396           3060.396          
+S41              5608.113           3060.396          
+S41              5616.408           3176.524          
+S41              5583.229           3179.289          
+S41              5588.759           3195.879          
+S41              5544.519           3195.879          
+S41              5544.519           3306.477          
+S42              5577.699           3336.891          
+S42              5577.699           3381.131          
+S42              5724.241           3381.131          
+S42              5721.476           3450.254          
+S42              5757.421           3450.254          
+S42              5757.421           3500.024          
+S42              5823.780           3502.788          
+S42              5821.015           3538.733          
+S42              5862.489           3533.203          
+S42              5859.724           3577.442          
+S42              5959.262           3585.737          
+S42              5956.497           3287.122          
+S42              5928.848           3284.357          
+S42              5926.083           3204.174          
+S42              5981.382           3209.703          
+S42              5978.617           3129.520          
+S42              5909.493           3129.520          
+S42              5917.788           3082.516          
+S42              5892.903           3085.281          
+S42              5898.433           3060.396          
+S42              5873.549           3060.396          
+S42              5729.771           3060.396          
+S42              5729.771           3121.225          
+S42              5688.297           3118.460          
+S42              5691.062           3168.229          
+S42              5627.468           3157.169          
+S42              5632.998           3190.349          
+S42              5610.878           3187.584          
+S42              5613.643           3215.233          
+S42              5561.109           3215.233          
+S42              5563.874           3336.891          
+S44              6105.357           3594.682          
+S44              6103.765           3639.260          
+S44              6159.488           3640.852          
+S44              6157.896           3597.866          
+S44              6192.922           3601.050          
+S44              6194.514           3535.775          
+S44              6231.132           3534.183          
+S44              6231.132           3497.565          
+S44              6297.999           3497.565          
+S44              6297.999           3421.145          
+S44              6264.566           3422.737          
+S44              6262.974           3387.711          
+S44              6219.987           3386.119          
+S44              6221.579           3354.277          
+S44              6154.712           3355.869          
+S44              6153.120           3263.528          
+S44              6191.330           3265.120          
+S44              6189.738           3214.174          
+S44              6151.528           3210.989          
+S44              6151.528           3190.292          
+S44              6070.331           3191.884          
+S44              6070.331           3019.939          
+S44              5898.386           3021.531          
+S44              5907.939           3069.294          
+S44              5928.636           3069.294          
+S44              5923.860           3118.648          
+S44              5993.911           3120.241          
+S44              5997.095           3218.950          
+S44              5938.188           3217.358          
+S44              5939.780           3276.265          
+S44              5963.662           3279.449          
+S44              5968.438           3567.616          
+S44              5989.135           3567.616          
+S44              5989.135           3599.458          
+S46              6455.769           4458.754          
+S46              6455.769           4423.939          
+S46              6542.807           4423.939          
+S46              6542.807           4464.556          
+S46              6592.128           4464.556          
+S46              6586.325           4551.593          
+S46              6667.560           4551.593          
+S46              6667.560           4493.568          
+S46              6699.474           4493.568          
+S46              6702.375           4455.852          
+S46              6734.289           4455.852          
+S46              6737.190           4421.037          
+S46              6763.301           4421.037          
+S46              6763.301           4386.222          
+S46              6830.030           4386.222          
+S46              6832.931           4223.753          
+S46              6890.956           4223.753          
+S46              6890.956           4191.839          
+S46              6963.487           4191.839          
+S46              6966.389           4133.814          
+S46              7007.006           4136.715          
+S46              7012.809           4101.900          
+S46              6966.389           4098.999          
+S46              6969.290           4067.085          
+S46              6911.265           4067.085          
+S46              6911.265           4107.703          
+S46              6734.289           4110.604          
+S46              6734.289           3965.542          
+S46              6806.820           3965.542          
+S46              6809.721           3916.220          
+S46              6774.906           3916.220          
+S46              6774.906           3849.492          
+S46              6705.276           3849.492          
+S46              6705.276           3817.578          
+S46              6667.560           3817.578          
+S46              6664.659           3779.862          
+S46              6629.844           3779.862          
+S46              6632.745           3716.034          
+S46              6603.733           3716.034          
+S46              6603.733           3652.207          
+S46              6566.017           3655.108          
+S46              6560.214           3585.478          
+S46              6418.053           3585.478          
+S46              6415.152           3512.947          
+S46              6249.781           3512.947          
+S46              6252.682           3556.466          
+S46              6214.966           3556.466          
+S46              6217.867           3623.194          
+S46              6180.151           3623.194          
+S46              6183.052           3660.911          
+S46              6217.867           3660.911          
+S46              6217.867           3811.775          
+S46              6180.151           3811.775          
+S46              6180.151           3893.010          
+S46              6214.966           3890.109          
+S46              6217.867           4000.357          
+S46              6249.781           4000.357          
+S46              6249.781           4119.308          
+S46              6278.793           4119.308          
+S46              6281.694           4151.221          
+S46              6383.238           4151.221          
+S46              6386.139           4188.938          
+S46              6435.460           4186.036          
+S46              6441.263           4223.753          
+S46              6476.078           4220.851          
+S46              6478.979           4287.580          
+S46              6386.139           4287.580          
+S46              6389.040           4441.346          
+S46              6360.028           4444.247          
+S46              6362.929           4464.556          
+S47              6943.179           5137.645          
+S47              6890.956           5134.744          
+S47              6893.857           5062.213          
+S47              6844.536           5062.213          
+S47              6841.635           4986.780          
+S47              6879.351           4989.682          
+S47              6882.252           4943.262          
+S47              6940.277           4943.262          
+S47              6943.179           4835.916          
+S47              6882.252           4835.916          
+S47              6885.154           4731.471          
+S47              6943.179           4734.372          
+S47              6946.080           4537.087          
+S47              6890.956           4534.186          
+S47              6888.055           4577.705          
+S47              6679.165           4577.705          
+S47              6682.066           4516.778          
+S47              6716.881           4513.877          
+S47              6719.783           4476.161          
+S47              6751.696           4479.062          
+S47              6751.696           4444.247          
+S47              6786.511           4444.247          
+S47              6789.413           4409.432          
+S47              6853.240           4406.531          
+S47              6856.141           4252.765          
+S47              6914.166           4252.765          
+S47              6914.166           4212.148          
+S47              6977.994           4212.148          
+S47              6983.796           4148.320          
+S47              7018.611           4148.320          
+S47              7018.611           4122.209          
+S47              7050.525           4128.011          
+S47              7050.525           4197.641          
+S47              7088.241           4197.641          
+S47              7088.241           4278.876          
+S47              7050.525           4275.975          
+S47              7044.722           4458.754          
+S47              7123.056           4458.754          
+S47              7120.155           4496.470          
+S47              7154.970           4496.470          
+S47              7154.970           4569.001          
+S47              7227.501           4569.001          
+S47              7227.501           4809.804          
+S47              7192.686           4809.804          
+S47              7189.785           4911.348          
+S47              7157.871           4911.348          
+S47              7157.871           4946.163          
+S47              7088.241           4946.163          
+S47              7085.340           5140.547          
+S47              7053.426           5140.547          
+S47              7050.525           5172.460          
+S47              6980.895           5172.460          
+S47              6980.895           5207.275          
+S47              6934.475           5207.275          
+S48              6502.189           5097.028          
+S48              6502.189           5062.213          
+S48              6467.374           5062.213          
+S48              6467.374           5027.398          
+S48              6380.337           5030.299          
+S48              6383.238           4995.484          
+S48              6345.522           4995.484          
+S48              6351.324           4934.558          
+S48              6278.793           4934.558          
+S48              6278.793           4905.546          
+S48              6171.447           4905.546          
+S48              6171.447           4801.101          
+S48              6061.200           4801.101          
+S48              6061.200           4766.286          
+S48              6026.385           4766.286          
+S48              6026.385           4731.471          
+S48              5988.668           4731.471          
+S48              5988.668           4525.482          
+S48              6017.681           4528.383          
+S48              6017.681           4484.865          
+S48              6183.052           4484.865          
+S48              6183.052           4522.581          
+S48              6290.398           4522.581          
+S48              6290.398           4481.963          
+S48              6566.017           4479.062          
+S48              6566.017           4589.310          
+S48              6899.660           4592.211          
+S48              6899.660           4554.495          
+S48              6928.672           4554.495          
+S48              6925.771           4708.261          
+S48              6856.141           4708.261          
+S48              6856.141           4856.224          
+S48              6919.969           4856.224          
+S48              6922.870           4922.953          
+S48              6861.944           4922.953          
+S48              6864.845           4969.373          
+S48              6827.129           4969.373          
+S48              6827.129           5033.200          
+S48              6574.720           5033.200          
+S48              6568.918           5102.830          
+S49              5863.915           5039.003          
+S49              5863.915           4934.558          
+S49              5895.828           4934.558          
+S49              5898.730           4902.644          
+S49              5930.643           4902.644          
+S49              5933.545           4867.829          
+S49              5985.767           4867.829          
+S49              5985.767           4804.002          
+S49              6052.496           4806.903          
+S49              6052.496           4777.891          
+S49              6014.780           4774.989          
+S49              6014.780           4743.076          
+S49              5968.360           4743.076          
+S49              5968.360           4484.865          
+S49              5933.545           4484.865          
+S49              5936.446           4328.197          
+S49              5782.680           4325.296          
+S49              5782.680           4287.580          
+S49              5753.667           4290.481          
+S49              5750.766           4246.962          
+S49              5718.852           4246.962          
+S49              5718.852           4220.851          
+S49              5672.432           4217.950          
+S49              5669.531           4032.270          
+S49              5713.050           4032.270          
+S49              5713.050           3988.752          
+S49              5559.284           3988.752          
+S49              5565.086           4017.764          
+S49              5492.555           4017.764          
+S49              5492.555           4046.776          
+S49              5431.629           4046.776          
+S49              5428.728           4075.789          
+S49              5483.851           4075.789          
+S49              5489.654           4197.641          
+S49              5518.666           4194.740          
+S49              5524.469           4235.358          
+S49              5562.185           4235.358          
+S49              5570.889           4313.691          
+S49              5521.568           4310.790          
+S49              5524.469           4339.802          
+S49              5553.481           4339.802          
+S49              5556.383           4496.470          
+S49              5623.111           4496.470          
+S49              5623.111           4569.001          
+S49              5660.827           4569.001          
+S49              5666.630           4635.730          
+S49              5698.544           4632.828          
+S49              5701.445           4673.446          
+S49              5730.457           4667.643          
+S49              5733.359           4725.668          
+S49              5771.075           4719.866          
+S49              5771.075           4795.298          
+S49              5724.655           4795.298          
+S49              5724.655           4902.644          
+S49              5797.186           4902.644          
+S49              5800.087           5041.904          
+S50              4987.738           4934.558          
+S50              5147.307           4940.361          
+S50              5147.307           4905.546          
+S50              5179.220           4905.546          
+S50              5182.122           4873.632          
+S50              5248.850           4873.632          
+S50              5248.850           4835.916          
+S50              5356.197           4835.916          
+S50              5350.394           4908.447          
+S50              5388.110           4908.447          
+S50              5385.209           4946.163          
+S50              5466.444           4946.163          
+S50              5466.444           4905.546          
+S50              5515.765           4905.546          
+S50              5507.061           4980.978          
+S50              5576.691           4980.978          
+S50              5576.691           5033.200          
+S50              5626.013           5036.102          
+S50              5628.914           4946.163          
+S50              5684.037           4946.163          
+S50              5684.037           5039.003          
+S50              5791.384           5041.904          
+S50              5788.482           4920.052          
+S50              5704.346           4920.052          
+S50              5701.445           4783.693          
+S50              5753.667           4783.693          
+S50              5753.667           4743.076          
+S50              5718.852           4743.076          
+S50              5718.852           4687.952          
+S50              5684.037           4687.952          
+S50              5686.939           4658.940          
+S50              5649.222           4658.940          
+S50              5649.222           4583.507          
+S50              5608.605           4583.507          
+S50              5608.605           4513.877          
+S50              5541.876           4513.877          
+S50              5538.975           4354.309          
+S50              5498.358           4351.407          
+S50              5498.358           4299.185          
+S50              5547.679           4299.185          
+S50              5547.679           4246.962          
+S50              5509.963           4249.864          
+S50              5509.963           4217.950          
+S50              5472.246           4217.950          
+S50              5472.246           4093.196          
+S50              5414.221           4093.196          
+S50              5414.221           4020.665          
+S50              5295.270           4017.764          
+S50              5295.270           4084.493          
+S50              5260.455           4087.394          
+S50              5263.357           4136.715          
+S50              5182.122           4136.715          
+S50              5182.122           4386.222          
+S50              5202.430           4380.420          
+S50              5211.134           4452.951          
+S50              5240.147           4455.852          
+S50              5245.949           4574.803          
+S50              5211.134           4577.705          
+S50              5156.010           4577.705          
+S50              5158.912           4609.618          
+S50              5118.294           4609.618          
+S50              5121.196           4650.236          
+S50              5083.479           4650.236          
+S50              5083.479           4682.150          
+S50              5054.467           4685.051          
+S50              5054.467           4740.174          
+S50              4996.442           4740.174          
+S50              4990.639           4934.558          
+S79              5400.749           5268.529          
+S79              5356.991           5268.529          
+S79              5359.179           5325.414          
+S79              5291.355           5318.850          
+S79              5289.167           5358.232          
+S79              5262.912           5360.420          
+S79              5262.912           5345.105          
+S79              5234.470           5349.481          
+S79              5238.846           5312.287          
+S79              5184.149           5316.662          
+S79              5186.337           5292.596          
+S79              5166.646           5290.408          
+S79              5171.022           5218.208          
+S79              5133.828           5218.208          
+S79              5133.828           5181.014          
+S79              5061.628           5185.390          
+S79              5061.628           5148.196          
+S79              4932.543           5148.196          
+S79              4932.543           5178.826          
+S79              4838.464           5183.202          
+S79              4836.277           5143.820          
+S79              4801.271           5143.820          
+S79              4801.271           5038.802          
+S79              4696.252           5038.802          
+S79              4694.065           4918.469          
+S79              4661.246           4918.469          
+S79              4659.059           4861.584          
+S79              4978.488           4857.208          
+S79              4976.301           4949.099          
+S79              5153.519           4953.475          
+S79              5153.519           4922.845          
+S79              5192.900           4922.845          
+S79              5192.900           4887.839          
+S79              5260.725           4887.839          
+S79              5260.725           4848.457          
+S79              5339.488           4850.645          
+S79              5341.676           4925.033          
+S79              5376.682           4925.033          
+S79              5376.682           4962.226          
+S79              5477.324           4962.226          
+S79              5477.324           4922.845          
+S79              5501.391           4920.657          
+S79              5499.203           4992.857          
+S79              5564.839           4990.669          
+S79              5567.027           5045.366          
+S79              5634.851           5045.366          
+S79              5637.039           4960.039          
+S79              5674.233           4960.039          
+S79              5672.045           5051.929          
+S79              5724.554           5051.929          
+S79              5728.930           5067.245          
+S79              5682.985           5067.245          
+S79              5693.924           5102.251          
+S79              5726.742           5102.251          
+S79              5724.554           5334.165          
+S79              5711.427           5331.978          
+S79              5711.427           5397.614          
+S79              5654.542           5397.614          
+S79              5654.542           5331.978          
+S79              5389.809           5329.790          
+S84              5547.270           6711.020          
+S84              5550.044           6663.860          
+S84              5622.172           6666.634          
+S84              5624.946           6616.699          
+S84              5658.236           6616.699          
+S84              5655.462           6658.311          
+S84              5691.526           6661.086          
+S84              5688.751           6547.346          
+S84              5791.395           6555.668          
+S84              5791.395           6461.348          
+S84              5827.458           6464.122          
+S84              5833.007           6430.832          
+S84              5905.134           6436.380          
+S84              5902.360           6389.220          
+S84              6002.229           6389.220          
+S84              6002.229           6164.515          
+S84              6054.938           6167.289          
+S84              6054.938           6131.225          
+S84              6132.614           6136.773          
+S84              6132.614           6170.063          
+S84              6265.772           6172.837          
+S84              6268.546           6131.225          
+S84              6304.610           6136.773          
+S84              6301.836           5964.777          
+S84              6232.483           5962.003          
+S84              6235.257           5931.487          
+S84              6165.903           5928.713          
+S84              6171.452           5839.940          
+S84              6135.388           5839.940          
+S84              6135.388           5817.747          
+S84              5993.907           5817.747          
+S84              5991.133           5859.359          
+S84              5849.651           5856.585          
+S84              5849.651           5887.101          
+S84              5774.750           5887.101          
+S84              5777.524           5856.585          
+S84              5674.881           5856.585          
+S84              5677.655           5831.618          
+S84              5599.979           5837.166          
+S84              5599.979           5814.973          
+S84              5508.432           5814.973          
+S84              5508.432           5742.846          
+S84              5480.691           5745.620          
+S84              5480.691           5784.458          
+S84              5372.500           5778.909          
+S84              5372.500           5814.973          
+S84              5339.210           5812.199          
+S84              5339.210           5851.037          
+S84              5303.146           5848.263          
+S84              5300.372           5887.101          
+S84              5206.051           5884.327          
+S84              5200.503           5903.746          
+S84              5258.760           5903.746          
+S84              5247.663           5992.518          
+S84              5292.050           5992.518          
+S84              5292.050           6028.582          
+S84              5255.986           6028.582          
+S84              5247.663           6100.709          
+S84              5292.050           6103.484          
+S84              5280.953           6167.289          
+S84              5322.565           6170.063          
+S84              5319.791           6206.127          
+S84              5389.144           6208.901          
+S84              5391.919           6167.289          
+S84              5436.305           6170.063          
+S84              5430.757           6200.578          
+S84              5469.594           6203.353          
+S84              5469.594           6325.415          
+S84              5430.757           6325.415          
+S84              5430.757           6400.316          
+S84              5466.820           6397.542          
+S84              5464.046           6588.958          
+S84              5500.110           6588.958          
+S84              5494.562           6713.794          
+S85              5325.339           6730.439          
+S85              5289.275           6733.213          
+S85              5289.275           6699.923          
+S85              5255.986           6699.923          
+S85              5255.986           6658.311          
+S85              5034.055           6658.311          
+S85              4989.668           6661.086          
+S85              4997.991           6594.506          
+S85              4884.251           6586.184          
+S85              4887.025           6555.668          
+S85              4812.124           6555.668          
+S85              4812.124           6508.508          
+S85              4850.961           6505.734          
+S85              4845.413           6391.994          
+S85              4884.251           6397.542          
+S85              4881.477           6322.641          
+S85              4917.541           6325.415          
+S85              4917.541           6289.351          
+S85              4989.668           6292.125          
+S85              4989.668           6206.127          
+S85              5031.281           6208.901          
+S85              5028.506           6028.582          
+S85              4984.120           6031.356          
+S85              4992.443           5962.003          
+S85              4923.089           5967.551          
+S85              4923.089           5909.294          
+S85              4850.961           5906.520          
+S85              4853.736           5870.456          
+S85              4812.124           5870.456          
+S85              4812.124           5837.166          
+S85              4853.736           5837.166          
+S85              4853.736           5734.523          
+S85              4806.575           5734.523          
+S85              4803.801           5690.137          
+S85              4848.187           5695.685          
+S85              4848.187           5662.396          
+S85              4889.799           5667.944          
+S85              4889.799           5573.623          
+S85              5128.375           5576.397          
+S85              5131.150           5676.266          
+S85              5050.699           5676.266          
+S85              5047.925           5889.875          
+S85              5181.084           5889.875          
+S85              5178.310           5923.165          
+S85              5236.567           5923.165          
+S85              5233.793           6114.580          
+S85              5264.308           6114.580          
+S85              5264.308           6183.934          
+S85              5305.920           6186.708          
+S85              5303.146           6222.772          
+S85              5447.401           6222.772          
+S85              5450.175           6308.770          
+S85              5408.563           6308.770          
+S85              5408.563           6416.961          
+S85              5444.627           6416.961          
+S85              5444.627           6608.377          
+S85              5480.691           6608.377          
+S85              5477.917           6733.213          
+S85              5433.531           6724.891          
+S85              5427.982           6769.277          
+S85              5397.467           6766.503          
+S85              5394.693           6805.341          
+S85              5322.565           6805.341          
+S86              4656.772           6039.678          
+S86              4590.192           6039.678          
+S86              4592.967           5995.292          
+S86              4554.129           6000.840          
+S86              4562.451           5837.166          
+S86              4554.129           5837.166          
+S86              4487.549           5828.844          
+S86              4479.227           5876.004          
+S86              4409.873           5876.004          
+S86              4409.873           5834.392          
+S86              4362.713           5831.618          
+S86              4368.261           5598.590          
+S86              4298.908           5593.042          
+S86              4301.682           5493.173          
+S86              4215.684           5487.625          
+S86              4212.910           5371.111          
+S86              4254.522           5368.337          
+S86              4251.748           5407.175          
+S86              4293.360           5404.401          
+S86              4287.811           5443.239          
+S86              4323.875           5443.239          
+S86              4321.101           5479.302          
+S86              4617.934           5479.302          
+S86              4615.160           5518.140          
+S86              4762.189           5515.366          
+S86              4756.641           5548.656          
+S86              4873.155           5551.430          
+S86              4873.155           5642.977          
+S86              4831.543           5642.977          
+S86              4831.543           5651.299          
+S86              4831.543           5681.814          
+S86              4795.479           5684.589          
+S86              4792.705           5748.394          
+S86              4828.768           5748.394          
+S86              4831.543           5820.521          
+S86              4792.705           5820.521          
+S86              4789.930           5889.875          
+S86              4837.091           5889.875          
+S86              4831.543           5931.487          
+S86              4884.251           5931.487          
+S86              4887.025           6023.034          
+S86              4748.318           6023.034          
+S86              4753.867           6064.646          
+S86              4723.351           6061.872          
+S86              4728.899           6109.032          
+S86              4631.805           6109.032          
+S87              4487.549           6286.577          
+S87              4382.132           6283.803          
+S87              4382.132           6328.189          
+S87              4337.746           6328.189          
+S87              4340.520           6283.803          
+S87              4246.199           6283.803          
+S87              4243.425           6333.737          
+S87              4199.039           6328.189          
+S87              4201.813           6289.351          
+S87              4168.523           6297.673          
+S87              4171.297           6236.642          
+S87              4115.815           6228.320          
+S87              4115.815           6294.899          
+S87              4054.784           6297.673          
+S87              4054.784           6250.513          
+S87              4010.397           6250.513          
+S87              3932.722           6250.513          
+S87              3929.947           6161.741          
+S87              3968.785           6164.515          
+S87              3968.785           6133.999          
+S87              4021.494           6131.225          
+S87              4029.816           6092.387          
+S87              3979.882           6092.387          
+S87              3982.656           6075.742          
+S87              3979.882           6014.711          
+S87              4013.172           6017.485          
+S87              4010.397           5923.165          
+S87              4101.944           5928.713          
+S87              4099.170           5895.423          
+S87              4218.458           5898.197          
+S87              4218.458           5817.747          
+S87              4321.101           5817.747          
+S87              4323.875           5853.811          
+S87              4393.229           5853.811          
+S87              4393.229           5895.423          
+S87              4498.646           5895.423          
+S87              4501.420           5848.263          
+S87              4534.710           5848.263          
+S87              4526.387           6011.937          
+S87              4562.451           6014.711          
+S87              4559.677           6056.323          
+S87              4615.160           6056.323          
+S87              4604.063           6120.128          
+S87              4728.899           6122.903          
+S87              4728.899           6175.611          
+S87              4642.901           6175.611          
+S87              4645.675           6256.061          
+S87              4590.192           6256.061          
+S87              4590.192           6330.963          
+S87              4479.227           6328.189          
+S51              4613.943           4676.711          
+S51              4572.409           4678.897          
+S51              4570.224           4600.202          
+S51              4517.760           4600.202          
+S51              4517.760           4534.623          
+S51              4449.995           4530.251          
+S51              4449.995           4462.486          
+S51              4480.599           4462.486          
+S51              4482.785           4412.209          
+S51              4533.062           4412.209          
+S51              4530.876           4381.605          
+S51              4637.989           4383.791          
+S51              4640.175           4309.468          
+S51              4603.013           4309.468          
+S51              4607.385           4276.679          
+S51              4576.781           4276.679          
+S51              4576.781           4239.517          
+S51              4537.434           4239.517          
+S51              4537.434           4204.542          
+S51              4487.157           4204.542          
+S51              4487.157           4169.566          
+S51              4447.809           4169.566          
+S51              4447.809           4086.499          
+S51              4415.020           4084.314          
+S51              4412.834           4047.152          
+S51              4369.114           4047.152          
+S51              4364.742           3979.387          
+S51              4355.999           3758.604          
+S51              4355.999           3721.443          
+S51              4410.648           3717.071          
+S51              4423.764           3756.418          
+S51              4471.855           3754.232          
+S51              4474.041           3797.952          
+S51              4552.736           3791.394          
+S51              4559.294           3854.787          
+S51              4648.918           3852.601          
+S51              4648.918           3721.443          
+S51              4699.196           3721.443          
+S51              4729.799           3712.699          
+S51              4734.171           3752.046          
+S51              4845.656           3743.302          
+S51              4850.028           3787.022          
+S51              4880.631           3778.278          
+S51              4878.445           3830.741          
+S51              4906.863           3828.555          
+S51              4902.491           3881.018          
+S51              4939.652           3881.018          
+S51              4935.280           4023.106          
+S51              5153.877           4025.292          
+S51              5156.063           3985.945          
+S51              5278.477           3985.945          
+S51              5282.849           4071.198          
+S51              5243.502           4071.198          
+S51              5243.502           4121.475          
+S51              5160.435           4121.475          
+S51              5160.435           4394.721          
+S51              5184.481           4392.535          
+S51              5195.411           4466.858          
+S51              5217.270           4471.230          
+S51              5219.456           4554.297          
+S51              5140.761           4552.111          
+S51              5140.761           4589.272          
+S51              5103.600           4587.086          
+S51              5103.600           4624.248          
+S51              5068.624           4624.248          
+S51              5068.624           4667.967          
+S51              5031.463           4665.781          
+S51              5035.835           4713.873          
+S51              4985.558           4713.873          
+S51              4985.558           4788.196          
+S51              4965.884           4792.568          
+S51              4970.256           4836.287          
+S51              4607.385           4838.473          
+S13              6369.248           2330.102          
+S13              6242.338           2330.102          
+S13              6225.963           2305.539          
+S13              6148.180           2256.413          
+S13              6144.086           2207.286          
+S13              6070.396           2207.286          
+S13              6070.396           2084.470          
+S13              6066.302           1973.936          
+S13              6127.710           1973.936          
+S13              6131.804           1924.810          
+S13              6311.934           1928.904          
+S13              6316.028           1900.247          
+S13              6389.717           1900.247          
+S13              6389.717           1855.214          
+S13              6430.656           1859.308          
+S13              6430.656           1826.557          
+S13              6492.064           1826.557          
+S13              6496.158           1781.525          
+S13              6537.096           1789.713          
+S13              6533.002           1752.868          
+S13              6569.847           1748.774          
+S13              6569.847           1716.023          
+S13              6610.786           1724.211          
+S13              6606.692           1675.085          
+S13              6664.006           1670.991          
+S13              6659.912           1736.492          
+S13              6700.851           1728.305          
+S13              6704.945           1773.337          
+S13              6672.194           1765.149          
+S13              6668.100           1797.900          
+S13              6614.880           1797.900          
+S13              6614.880           2027.156          
+S13              6651.724           2027.156          
+S13              6651.724           2113.127          
+S13              6680.381           2104.940          
+S13              6680.381           2375.134          
+S13              6565.753           2379.228          
+S13              6565.753           2444.730          
+S13              6426.562           2440.636          
+S13              6434.750           2481.575          
+S13              6361.060           2477.481          
+S12              7028.359           2731.300          
+S12              7028.359           2796.802          
+S12              7024.266           2792.708          
+S12              6987.421           2796.802          
+S12              6987.421           2768.145          
+S12              6962.858           2768.145          
+S12              6962.858           2735.394          
+S12              6860.511           2735.394          
+S12              6864.605           2776.333          
+S12              6795.009           2780.427          
+S12              6795.009           2821.365          
+S12              6754.071           2833.647          
+S12              6721.320           2804.990          
+S12              6651.724           2809.084          
+S12              6655.818           2772.239          
+S12              6578.035           2772.239          
+S12              6582.129           2841.834          
+S12              6451.125           2841.834          
+S12              6414.281           2800.896          
+S12              6418.374           2616.672          
+S12              6377.436           2612.578          
+S12              6381.530           2575.734          
+S12              6324.216           2575.734          
+S12              6328.309           2506.138          
+S12              6447.031           2510.232          
+S12              6447.031           2469.293          
+S12              6586.223           2473.387          
+S12              6586.223           2399.698          
+S12              6688.569           2395.604          
+S12              6696.757           2448.824          
+S12              6975.139           2444.730          
+S12              6983.327           2477.481          
+S12              7073.392           2473.387          
+S12              7069.298           2567.546          
+S12              7114.330           2563.452          
+S12              7110.237           2604.391          
+S12              7142.987           2600.297          
+S12              7142.987           2641.235          
+S12              7171.644           2641.235          
+S12              7171.644           2710.831          
+S12              7110.237           2710.831          
+S12              7114.330           2743.582          
+S39              5431.754           2575.734          
+S39              5378.534           2575.734          
+S39              5386.722           2624.860          
+S39              5276.188           2624.860          
+S39              5276.188           2669.892          
+S39              5161.560           2669.892          
+S39              5161.560           2633.048          
+S39              5128.809           2633.048          
+S39              5128.809           2579.827          
+S39              5100.152           2588.015          
+S39              5100.152           2542.983          
+S39              5051.025           2542.983          
+S39              5059.213           2506.138          
+S39              5001.899           2506.138          
+S39              5010.087           2473.387          
+S39              4825.863           2473.387          
+S39              4825.863           2432.448          
+S39              4711.235           2432.448          
+S39              4711.235           2506.138          
+S39              4604.795           2506.138          
+S39              4600.701           2604.391          
+S39              4453.322           2604.391          
+S39              4453.322           2665.798          
+S39              4396.008           2665.798          
+S39              4387.820           2690.362          
+S39              4420.571           2682.174          
+S39              4428.759           2714.925          
+S39              4473.791           2714.925          
+S39              4481.979           2825.459          
+S39              4518.824           2825.459          
+S39              4518.824           2956.462          
+S39              4576.138           2956.462          
+S39              4576.138           2911.430          
+S39              4666.203           2907.336          
+S39              4666.203           2952.369          
+S39              4809.488           2952.369          
+S39              4801.300           2981.026          
+S39              4928.210           2985.119          
+S39              4928.210           2915.524          
+S39              4969.148           2915.524          
+S39              4965.054           2833.647          
+S39              5100.152           2833.647          
+S39              5104.246           2882.773          
+S39              5124.715           2878.679          
+S39              5128.809           2923.712          
+S39              5165.654           2919.618          
+S39              5165.654           2960.556          
+S39              5198.404           2960.556          
+S39              5198.404           2989.213          
+S39              5276.188           2989.213          
+S39              5280.282           3021.964          
+S39              5374.440           3026.058          
+S39              5374.440           2997.401          
+S39              5399.003           2997.401          
+S39              5517.725           2997.401          
+S39              5509.538           3030.152          
+S39              5742.888           3038.340          
+S39              5742.888           2976.932          
+S39              5693.761           2972.838          
+S39              5697.855           2940.087          
+S39              5583.227           2940.087          
+S39              5587.321           2899.148          
+S39              5513.632           2907.336          
+S39              5513.632           2813.177          
+S39              5550.476           2817.271          
+S39              5554.570           2567.546          
+S39              5525.913           2567.546          
+S39              5530.007           2514.326          
+S39              5427.660           2514.326          
+S18              4580.232           1830.651          
+S18              4584.326           1875.684          
+S18              4645.733           1875.684          
+S18              4649.827           1945.279          
+S18              4682.578           1945.279          
+S18              4686.672           1990.312          
+S18              4768.549           1986.218          
+S18              4768.549           2027.156          
+S18              4838.145           2027.156          
+S18              4842.239           2100.846          
+S18              5030.556           2100.846          
+S18              5014.181           2248.225          
+S18              5051.025           2235.943          
+S18              5046.932           2289.163          
+S18              5096.058           2293.257          
+S18              5091.964           2362.853          
+S18              5341.689           2371.041          
+S18              5341.689           2309.633          
+S18              5292.563           2317.820          
+S18              5292.563           2223.662          
+S18              5251.625           2223.662          
+S18              5251.625           2104.940          
+S18              5210.686           2100.846          
+S18              5206.592           2027.156          
+S18              5161.560           2027.156          
+S18              5161.560           1982.124          
+S18              5087.870           1982.124          
+S18              5087.870           1949.373          
+S18              4981.430           1949.373          
+S18              4981.430           1916.622          
+S18              4948.679           1916.622          
+S18              4948.679           1875.684          
+S18              4915.928           1879.778          
+S18              4915.928           1842.933          
+S18              4887.271           1847.027          
+S18              4887.271           1806.088          
+S18              4829.957           1806.088          
+S18              4829.957           1732.399          
+S18              4780.831           1736.492          
+S18              4780.831           1679.178          
+S18              4662.109           1675.085          
+S18              4666.203           1732.399          
+S18              4506.542           1732.399          
+S18              4510.636           1834.745          
+S16              5362.159           2285.070          
+S16              5313.032           2285.070          
+S16              5313.032           2190.911          
+S16              5272.094           2195.005          
+S16              5272.094           2100.846          
+S16              5333.502           2104.940          
+S16              5337.596           2088.564          
+S16              5456.317           2088.564          
+S16              5456.317           2018.969          
+S16              5538.195           2027.156          
+S16              5542.289           2088.564          
+S16              5591.415           2088.564          
+S16              5615.978           2309.633          
+S16              5550.476           2309.633          
+S16              5550.476           2379.228          
+S16              5509.538           2379.228          
+S16              5509.538           2436.542          
+S16              5374.440           2436.542          
+S19              5759.263           3001.495          
+S19              5771.545           2940.087          
+S19              5718.324           2944.181          
+S19              5718.324           2878.679          
+S19              5693.761           2878.679          
+S19              5579.133           2874.585          
+S19              5575.039           2821.365          
+S19              5575.039           2530.701          
+S19              5554.570           2530.701          
+S19              5538.195           2403.791          
+S19              5583.227           2411.979          
+S19              5575.039           2334.196          
+S19              5661.010           2342.384          
+S19              5661.010           2317.820          
+S19              5615.978           2072.189          
+S19              5538.195           2010.781          
+S19              5542.289           1941.185          
+S19              5607.790           1941.185          
+S19              5603.696           1908.435          
+S19              5644.635           1916.622          
+S19              5640.541           1875.684          
+S19              5730.606           1879.778          
+S19              5726.512           1994.406          
+S19              5763.357           1998.499          
+S19              5759.263           2039.438          
+S19              5804.296           2039.438          
+S19              5804.296           2109.034          
+S19              6041.739           2096.752          
+S19              6045.833           2248.225          
+S19              5963.956           2244.131          
+S19              5972.144           2321.914          
+S19              5923.017           2321.914          
+S19              5931.205           2416.073          
+S19              5890.267           2416.073          
+S19              5890.267           2583.921          
+S19              6013.082           2588.015          
+S19              6013.082           2657.611          
+S19              6070.396           2653.517          
+S19              6066.302           2706.737          
+S19              6123.617           2706.737          
+S19              6115.429           2993.307          
+S19              5771.545           3005.589          
+S78              4349.995           5417.438          
+S78              4357.869           5452.870          
+S78              4649.200           5444.996          
+S78              4649.200           5468.618          
+S78              4806.676           5460.744          
+S78              4802.739           5496.176          
+S78              4909.036           5496.176          
+S78              4901.162           5507.987          
+S78              4901.162           5559.166          
+S78              5212.177           5563.103          
+S78              5200.367           5547.356          
+S78              5212.177           5535.545          
+S78              5212.177           5433.185          
+S78              5259.420           5437.122          
+S78              5259.420           5378.069          
+S78              5223.988           5382.006          
+S78              5216.114           5378.069          
+S78              5216.114           5342.637          
+S78              5149.187           5342.637          
+S78              5141.313           5319.015          
+S78              5141.313           5256.025          
+S78              5086.196           5252.088          
+S78              5094.070           5216.656          
+S78              5023.206           5208.782          
+S78              5027.143           5177.287          
+S78              4960.215           5169.413          
+S78              4960.215           5208.782          
+S78              4818.487           5208.782          
+S78              4814.550           5157.602          
+S78              4771.244           5161.539          
+S78              4779.118           5074.927          
+S78              4664.948           5074.927          
+S78              4664.948           4952.883          
+S78              4629.515           4956.820          
+S78              4629.515           4862.334          
+S78              4613.768           4862.334          
+S78              4574.399           4866.271          
+S78              4578.336           4724.543          
+S78              4590.146           4700.921          
+S78              4546.840           4700.921          
+S78              4550.777           4630.057          
+S78              4487.787           4630.057          
+S78              4487.787           4571.003          
+S78              4416.923           4571.003          
+S78              4373.617           4571.003          
+S78              4377.554           4610.372          
+S78              4338.185           4606.435          
+S78              4346.058           4677.300          
+S78              4310.626           4673.363          
+S78              4310.626           4763.912          
+S78              4235.825           4763.912          
+S78              4243.699           4803.281          
+S78              4200.393           4799.344          
+S78              4200.393           4964.694          
+S78              4239.762           4964.694          
+S78              4231.888           5008.000          
+S78              4259.446           5004.063          
+S78              4263.383           5059.179          
+S78              4314.563           5059.179          
+S78              4302.752           5362.321          
+S14              7137.512           2230.364          
+S14              7137.512           2182.496          
+S14              7181.029           2186.848          
+S14              7172.325           2143.331          
+S14              7228.897           2134.628          
+S14              7224.545           2226.012          
+S14              7311.578           2226.012          
+S14              7302.874           2273.880          
+S14              7346.391           2269.529          
+S14              7342.039           2313.045          
+S14              7590.082           2317.397          
+S14              7590.082           2282.584          
+S14              7698.873           2278.232          
+S14              7694.521           2247.771          
+S14              7790.257           2247.771          
+S14              7785.906           2186.848          
+S14              7816.367           2191.199          
+S14              7816.367           2147.683          
+S14              7872.938           2143.331          
+S14              7877.290           2112.870          
+S14              7986.081           2117.222          
+S14              7990.432           2008.431          
+S14              8029.597           2021.486          
+S14              8038.300           1943.156          
+S14              7994.784           1938.805          
+S14              7994.784           1908.343          
+S14              7955.619           1917.046          
+S14              7964.323           1790.849          
+S14              7855.532           1777.794          
+S14              7855.532           1747.333          
+S14              7812.015           1756.036          
+S14              7820.719           1703.816          
+S14              7781.554           1716.871          
+S14              7790.257           1603.729          
+S14              7733.686           1599.377          
+S14              7742.389           1560.213          
+S14              7646.653           1560.213          
+S14              7646.653           1516.696          
+S14              7481.291           1529.751          
+S14              7485.643           1486.235          
+S14              7429.072           1486.235          
+S14              7424.720           1451.422          
+S14              7398.610           1447.070          
+S14              7398.610           1516.696          
+S14              7376.852           1512.345          
+S14              7381.204           1760.388          
+S14              7328.984           1764.739          
+S14              7328.984           1803.904          
+S14              7281.116           1803.904          
+S14              7281.116           1838.717          
+S14              7241.952           1838.717          
+S14              7246.303           1890.937          
+S14              7202.787           1895.288          
+S14              7207.138           1960.563          
+S14              7167.974           1960.563          
+S14              7167.974           1999.728          
+S14              7141.864           1999.728          
+S14              7146.216           2034.541          
+S14              7098.348           2025.837          
+S14              7098.348           2069.354          
+S14              7054.831           2069.354          
+S14              7054.831           2108.518          
+S14              7024.370           2104.167          
+S14              7024.370           2121.573          
+S14              6972.150           2121.573          
+S14              6967.799           2152.035          
+S14              7033.073           2147.683          
+S14              7046.128           2226.012          
+S15              7991.497           2335.336          
+S15              7996.752           2369.489          
+S15              7902.173           2369.489          
+S15              7904.800           2401.015          
+S15              7684.117           2401.015          
+S15              7686.744           2469.322          
+S15              7615.810           2469.322          
+S15              7615.810           2519.238          
+S15              7573.775           2519.238          
+S15              7571.148           2548.137          
+S15              7392.500           2548.137          
+S15              7395.127           2584.918          
+S15              7221.733           2582.291          
+S15              7226.987           2616.444          
+S15              7166.562           2619.071          
+S15              7163.935           2579.664          
+S15              7145.544           2582.291          
+S15              7148.172           2540.256          
+S15              7103.509           2540.256          
+S15              7106.137           2453.559          
+S15              6993.168           2458.813          
+S15              6995.795           2419.405          
+S15              6761.976           2424.660          
+S15              6761.976           2251.266          
+S15              6848.673           2251.266          
+S15              6846.046           2201.349          
+S15              6919.607           2201.349          
+S15              6916.979           2164.569          
+S15              7022.067           2161.942          
+S15              7027.321           2246.011          
+S15              7153.426           2248.639          
+S15              7158.680           2201.349          
+S15              7198.088           2198.722          
+S15              7195.461           2156.687          
+S15              7211.224           2151.433          
+S15              7203.342           2240.757          
+S15              7287.412           2243.384          
+S15              7284.785           2290.674          
+S15              7324.193           2293.301          
+S15              7318.938           2332.708          
+S15              7610.556           2332.708          
+S15              7607.928           2298.555          
+S15              7715.643           2293.301          
+S15              7713.016           2261.775          
+S15              7804.967           2256.520          
+S15              7804.967           2201.349          
+S15              7839.121           2201.349          
+S15              7836.493           2169.823          
+S15              7904.800           2167.196          
+S15              7899.546           2140.924          
+S15              8015.142           2138.297          
+S15              8009.887           2075.245          
+S15              8033.532           2072.617          
+S15              8033.532           2109.398          
+S15              8099.212           2104.144          
+S15              8093.957           2151.433          
+S15              8135.992           2151.433          
+S15              8135.992           2238.130          
+S15              8096.584           2235.503          
+S15              8096.584           2348.472          
+S81              5975.826           5783.096          
+S81              5970.928           5836.975          
+S81              5902.356           5836.975          
+S81              5907.254           5795.341          
+S81              5868.069           5795.341          
+S81              5868.069           5829.628          
+S81              5831.334           5827.179          
+S81              5828.885           5856.567          
+S81              5804.394           5856.567          
+S81              5794.598           5824.730          
+S81              5708.882           5824.730          
+S81              5708.882           5636.155          
+S81              5748.067           5636.155          
+S81              5745.618           5562.684          
+S81              5846.028           5555.337          
+S81              5846.028           5462.273          
+S81              5775.006           5464.723          
+S81              5772.557           5386.354          
+S81              5814.191           5386.354          
+S81              5811.742           5342.271          
+S81              5846.028           5342.271          
+S81              5846.028           5290.841          
+S81              5917.050           5290.841          
+S81              5917.050           5222.269          
+S81              5953.785           5222.269          
+S81              5951.336           5114.511          
+S81              6005.215           5109.613          
+S81              6005.215           5077.776          
+S81              6041.950           5075.327          
+S81              6039.501           5048.388          
+S81              6068.890           5048.388          
+S81              6071.339           4989.611          
+S81              6108.074           4989.611          
+S81              6108.074           4952.875          
+S81              6147.259           4952.875          
+S81              6144.809           4925.936          
+S81              6250.118           4925.936          
+S81              6247.669           4955.324          
+S81              6323.589           4955.324          
+S81              6321.140           5011.652          
+S81              6357.875           5011.652          
+S81              6350.528           5045.939          
+S81              6455.836           5045.939          
+S81              6458.285           5077.776          
+S81              6490.123           5080.225          
+S81              6485.225           5114.511          
+S81              6531.756           5114.511          
+S81              6536.654           5141.451          
+S81              6568.491           5141.451          
+S81              6568.491           5168.390          
+S81              6607.676           5168.390          
+S81              6602.778           5239.412          
+S81              6641.962           5239.412          
+S81              6641.962           5325.128          
+S81              6605.227           5325.128          
+S81              6610.125           5361.863          
+S81              6583.186           5361.863          
+S81              6575.839           5501.458          
+S81              6536.654           5501.458          
+S81              6541.552           5587.174          
+S81              6499.919           5587.174          
+S81              6499.919           5658.196          
+S81              6441.142           5655.747          
+S81              6448.489           5687.584          
+S81              6370.120           5687.584          
+S81              6370.120           5719.422          
+S81              6301.547           5719.422          
+S81              6303.996           5758.606          
+S81              6269.710           5758.606          
+S81              6274.608           5800.239          
+S83              5287.113           5872.097          
+S83              5289.039           5835.506          
+S83              5321.777           5835.506          
+S83              5321.777           5804.693          
+S83              5356.442           5802.768          
+S83              5352.590           5770.029          
+S83              5466.213           5768.103          
+S83              5466.213           5723.810          
+S83              5523.987           5721.884          
+S83              5529.765           5789.287          
+S83              5614.500           5789.287          
+S83              5610.649           5475.380          
+S83              5493.174           5471.529          
+S83              5495.100           5436.864          
+S83              5425.771           5434.938          
+S83              5427.697           5344.426          
+S83              5302.519           5332.871          
+S83              5306.371           5379.090          
+S83              5273.632           5377.164          
+S83              5279.410           5446.493          
+S83              5242.819           5446.493          
+S83              5244.745           5579.374          
+S83              5154.232           5583.226          
+S83              5160.010           5702.626          
+S83              5077.200           5706.477          
+S83              5075.274           5870.171          
+S82              5697.310           5785.435          
+S82              5693.458           5619.816          
+S82              5733.900           5617.890          
+S82              5735.826           5546.635          
+S82              5832.116           5542.784          
+S82              5832.116           5475.380          
+S82              5758.936           5475.380          
+S82              5757.010           5404.126          
+S82              5645.313           5407.977          
+S82              5645.313           5342.500          
+S82              5439.252           5342.500          
+S82              5437.326           5417.606          
+S82              5504.729           5417.606          
+S82              5510.507           5456.122          
+S82              5627.981           5456.122          
+S82              5635.684           5791.213          
+S80              5797.452           5375.238          
+S80              5795.526           5321.316          
+S80              5830.191           5319.390          
+S80              5828.265           5271.245          
+S80              5899.520           5269.319          
+S80              5897.594           5205.767          
+S80              5939.962           5203.842          
+S80              5936.110           5094.071          
+S80              5986.181           5094.071          
+S80              5988.107           5059.406          
+S80              6036.252           5051.703          
+S80              6016.994           5022.816          
+S80              6055.510           5024.741          
+S80              6057.436           4968.893          
+S80              6088.249           4970.819          
+S80              6088.249           4936.154          
+S80              6130.617           4932.303          
+S80              6130.617           4905.341          
+S80              6157.578           4911.119          
+S80              6159.504           4810.977          
+S80              5999.662           4814.828          
+S80              6001.587           4882.232          
+S80              5980.404           4882.232          
+S80              6018.920           4899.564          
+S80              5953.442           4882.232          
+S80              5953.442           4916.896          
+S80              5913.000           4916.896          
+S80              5914.926           4947.709          
+S80              5880.262           4947.709          
+S80              5880.262           5049.777          
+S80              5739.678           5053.629          
+S80              5737.752           5375.238          
+S45              5955.087           4449.452          
+S45              5967.572           4299.637          
+S45              5811.514           4299.637          
+S45              5808.393           4252.819          
+S45              5777.182           4259.062          
+S45              5770.939           4224.729          
+S45              5739.728           4224.729          
+S45              5742.849           4187.275          
+S45              5708.516           4190.396          
+S45              5705.395           4056.187          
+S45              5742.849           4062.429          
+S45              5736.607           3990.642          
+S45              5774.060           3990.642          
+S45              5777.182           3918.856          
+S45              5820.878           3921.977          
+S45              5814.635           3815.858          
+S45              5917.634           3815.858          
+S45              5911.391           3781.525          
+S45              5992.541           3781.525          
+S45              5986.299           3700.375          
+S45              5914.512           3694.133          
+S45              6173.568           3697.254          
+S45              6192.295           3675.406          
+S45              6195.416           3784.646          
+S45              6151.720           3784.646          
+S45              6148.599           3918.856          
+S45              6182.932           3915.735          
+S45              6179.810           4031.217          
+S45              6220.385           4031.217          
+S45              6217.264           4137.337          
+S45              6257.839           4137.337          
+S45              6251.597           4171.669          
+S45              6363.959           4168.548          
+S45              6360.837           4212.244          
+S45              6407.655           4206.002          
+S45              6410.776           4259.062          
+S45              6332.747           4259.062          
+S45              6332.747           4455.694          
+S45              5970.693           4455.694          
+S43              5805.659           3708.747          
+S43              5845.015           3710.059          
+S43              5835.832           3728.425          
+S43              5888.306           3729.737          
+S43              5886.995           3770.405          
+S43              5972.266           3770.405          
+S43              5972.266           3708.747          
+S43              5900.113           3707.435          
+S43              5900.113           3687.757          
+S43              6166.422           3686.445          
+S43              6166.422           3645.777          
+S43              6096.893           3645.777          
+S43              6096.893           3605.109          
+S43              5976.202           3607.733          
+S43              5976.202           3591.991          
+S43              5805.659           3581.496          
+S43              5806.971           3703.499          
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Gage1            7418.869           4156.942          
+

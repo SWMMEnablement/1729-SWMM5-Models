@@ -1,0 +1,202 @@
+[TITLE]
+;;Project Title/Notes
+ SW 2 9 8 9 8
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           07/01/1987
+START_TIME           00:00:00
+REPORT_START_DATE    07/01/1987
+REPORT_START_TIME    00:00:00
+END_DATE             07/02/1987
+END_TIME             12:00:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:15:00
+DRY_STEP             23:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.566
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+MONTHLY          0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1   
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+GAGE1            VOLUME    0.25000  1.0      TIMESERIES RainSeries1     
+GAGE2            VOLUME    0.25000  1.0      TIMESERIES RainSeries2     
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+S1               GAGE1            S4               300.0    10.0     10.0     0.1      0                        
+S2               GAGE2            3                500.0    10.0     10.0     0.1      0                        
+S3               GAGE2            6                500.0    10.0     10.0     0.1      0                        
+S4               GAGE1            1                500.0    10.0     10.0     0.1      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+S1               0.04       0.6        0          0          25         OUTLET    
+S2               0.04       0.6        0          0          25         OUTLET    
+S3               0.04       0.6        0          0          25         OUTLET    
+S4               0.04       0.3        0          0          25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Suction    Ksat       IMD       
+;;-------------- ---------- ---------- ----------
+S1               1.0        1.0        1.0       
+S2               1.0        1.0        1.0       
+S3               1.0        1.0        1.0       
+S4               1.0        1.0        1.0       
+
+[AQUIFERS]
+;;Name           Por    WP     FC     Ksat   Kslope Tslope ETu    ETs    Seep   Ebot   Egw    Umc    ETupat 
+;;-------------- ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------
+AQUIFER1         0.46   0.15   0.3    5      10     15     0.35   14     0.002  0      8.55   0.301        
+AQUIFER2         0.46   0.15   0.3    5      10     15     0.35   14     0.002  0      8.55   0.301        
+
+[GROUNDWATER]
+;;Subcatchment   Aquifer          Node             Esurf  A1     B1     A2     B2     A3     Dsw    Egwt   Ebot   Wgr    Umc   
+;;-------------- ---------------- ---------------- ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------
+S1               AQUIFER1         1                20     0.000045 2.6    0      1      0      8.55   *     
+S2               AQUIFER2         3                20     0.000045 2.6    0      1      0      8.55   *     
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+; Runoff Node
+1                20.00      20.00      0.00       0          0         
+; Runoff Node
+2                10.00      20.00      0.00       0          0         
+; Runoff Node
+3                20.00      20.00      0.00       0          0         
+; Runoff Node
+4                10.00      20.00      0.00       0          0         
+; Runoff Node
+5                10.00      20.00      0.00       0          0         
+; Runoff Node
+6                20.00      20.00      0.00       0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+7                0.00       FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1                1                2                2000.0     0.02       0.0        0.0        0          0         
+2                2                7                2000.0     0.02       0.0        0.0        0          0         
+3                3                4                2000.0     0.02       0.0        0.0        0          0         
+4                4                7                2000.0     0.02       0.0        0.0        0          0         
+5                5                7                2000.0     0.02       0.0        0.0        0          0         
+6                6                5                2000.0     0.02       0.0        0.0        0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                PARABOLIC    10.0             20         0          0          1                    
+2                PARABOLIC    10.0             20         0          0          1                    
+3                PARABOLIC    10.0             20         0          0          1                    
+4                PARABOLIC    10.0             20         0          0          1                    
+5                PARABOLIC    10.0             20         0          0          1                    
+6                PARABOLIC    10.0             20         0          0          1                    
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+RainSeries1      07/01/1987 00:00      2.00000   
+RainSeries1                 00:30      2.00000   
+RainSeries1                 01:00      2.00000   
+RainSeries1                 01:30      2.00000   
+RainSeries1                 02:00      2.00000   
+;
+RainSeries2      07/01/1987 00:00      1.00000   
+RainSeries2                 00:30      1.00000   
+RainSeries2                 01:00      1.00000   
+RainSeries2                 01:30      1.00000   
+RainSeries2                 02:00      1.00000   
+RainSeries2      07/01/1987 02:30      1.00000   
+RainSeries2                 3          3.00000   
+RainSeries2                 3:30       3.00000   
+RainSeries2                 4          3.00000   
+RainSeries2                 5          3.00000   
+RainSeries2      07/01/1987 6          3.00000   
+RainSeries2                 7          3.00000   
+RainSeries2                 8          0.50000   
+RainSeries2                 9          0.50000   
+RainSeries2                 10         0.50000   
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+Subcatch  S1               1               
+Subcatch  S2               S3              
+Subcatch  S3               3               
+Subcatch  S4               4               
+
+[MAP]
+DIMENSIONS 42.633 60.000 940.827 940.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                99.942             133.080           
+2                200.000            200.000           
+3                300.000            300.000           
+4                400.000            400.000           
+5                500.000            500.000           
+6                344.556            502.537           
+7                900.000            900.000           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+S1               -47.232            350.288           
+S2               39.043             478.178           
+S3               221.742            503.552           
+S4               21.788             264.014           
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+GAGE1            121.142            281.574           
+GAGE2            83.460             353.512           
+

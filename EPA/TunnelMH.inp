@@ -1,0 +1,133 @@
+[TITLE]
+;;Project Title/Notes
+Test
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           05/23/1989
+START_TIME           11:00:00
+REPORT_START_DATE    05/23/1989
+REPORT_START_TIME    13:59:00
+END_DATE             05/23/1989
+END_TIME             16:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:06
+WET_STEP             00:01:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:05 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+LoadNode         -32        50         0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Overflow         -50        FREE                        NO                       
+ToTunnel         -50        FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+Regulator        -34      50         0          FUNCTIONAL 10        0         0        0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+StoragePipe      LoadNode         Regulator        3000       0.013      0          0          0          0         
+
+[ORIFICES]
+;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime 
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- ----------
+Gate             Regulator        ToTunnel         SIDE         0          0.9        NO       0.17      
+OverflowGate     Regulator        Overflow         SIDE         13         0.9        NO       0.17      
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+StoragePipe      RECT_CLOSED  10               10         0          0          1          0         
+Gate             RECT_CLOSED  10               10         0          0
+OverflowGate     CIRCULAR     10               0          0          0
+
+[CONTROLS]
+Rule GateSetting
+If  Simulation Time > 1.25
+And Simulation Time < 3.25
+Then ORIFICE Gate SETTING = 0
+Else ORIFICE Gate SETTING = 1
+
+
+
+
+
+
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+LoadNode         FLOW             FlowFor2Hours    FLOW     1.0      500      0       
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+FlowFor2Hours               0          1         
+FlowFor2Hours               2          1         
+FlowFor2Hours               2.1        0         
+FlowFor2Hours               24         0         
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 1017567.187 838687.061 1020038.975 840975.729
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+LoadNode         1019926.621        838791.091        
+Overflow         1019333.073        840871.699        
+ToTunnel         1017679.541        840530.307        
+Regulator        1018115.593        840098.092        
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

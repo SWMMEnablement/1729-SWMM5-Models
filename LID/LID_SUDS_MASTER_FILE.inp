@@ -1,0 +1,399 @@
+[TITLE]
+;;Project Title/Notes
+Scenario Run :  BASE
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+IGNORE_SNOWMELT      YES
+IGNORE_GROUNDWATER   YES
+START_DATE           04/07/2016
+START_TIME           00:00:00
+REPORT_START_DATE    04/07/2016
+REPORT_START_TIME    00:00:00
+END_DATE             04/07/2016
+END_TIME             23:50:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0.000000
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.557000
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.500000
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.100000
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+1                INTENSITY 0.500000 1.000000 TIMESERIES SCS2            
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+BIOCELL          1                BIOCELLOUT       1.000000 50.000000 162.000000 2.000000 0.000000                 
+CISTERN          1                CISTERNOUT       1.000000 50.000000 162.000000 2.000000 0.000000                 
+GREENROOFS       1                GREENROOFSOUT    1.000000 50.000000 162.000000 2.000000 0.000000                 
+PAVEMENT         1                PAVEMENTOUT      1.000000 50.000000 162.000000 2.000000 0.000000                 
+RAINGARDENS      1                RGARDENOUT       1.000000 50.000000 162.000000 2.000000 0.000000                 
+SWALE            1                SWALEOUT         1.000000 50.000000 162.000000 2.000000 0.000000                 
+TRENCH           1                TRENCHOUT        1.000000 50.000000 162.000000 2.000000 0.000000                 
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+BIOCELL          0.015000   0.015000   0.075000   0.075000   0.010000   OUTLET    
+CISTERN          0.015000   0.015000   0.075000   0.075000   0.010000   OUTLET    
+GREENROOFS       0.015000   0.015000   0.075000   0.075000   0.010000   OUTLET    
+PAVEMENT         0.015000   0.015000   0.075000   0.075000   0.010000   OUTLET    
+RAINGARDENS      0.015000   0.015000   0.075000   0.075000   0.010000   OUTLET    
+SWALE            0.015000   0.015000   0.075000   0.075000   0.010000   OUTLET    
+TRENCH           0.015000   0.015000   0.075000   0.075000   0.010000   OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Param1     Param2     Param3     Param4     Param5    
+;;-------------- ---------- ---------- ---------- ---------- ----------
+BIOCELL          3.0        0.5        4          7          0         
+CISTERN          12.450000  1.968500   0.250000   7          0         
+GREENROOFS       12.450000  1.969000   0.250000   7          0         
+PAVEMENT         12.450000  1.969000   0.250000   7          0         
+RAINGARDENS      12.450000  1.968500   0.250000   7          0         
+SWALE            12.450000  1.968500   0.250000   7          0         
+TRENCH           12.450000  1.968500   0.250000   7          0         
+
+[LID_CONTROLS]
+;;Name           Type/Layer Parameters
+;;-------------- ---------- ----------
+CISTERN          IT
+CISTERN          SURFACE    12.000000  0.100000   0.100000   1.000000   5.000000  
+CISTERN          STORAGE    12.000000  0.750000   10.000000  0.000000  
+CISTERN          DRAIN      1.000000   1.000000   1.000000   0.000000   0          0                    
+
+RAINGARDEN       BC
+RAINGARDEN       SURFACE    1.000000   0.000000   0.000000   0.000000   5.000000  
+RAINGARDEN       SOIL       4.000000   0.300000   0.200000   0.150000   10.000000  10.000000  5.000000  
+RAINGARDEN       STORAGE    0.000000   0.750000   10.000000  0.000000  
+RAINGARDEN       DRAIN      0.000000   1.000000   1.000000   0.000000   0          0                    
+
+GREENROOFS       GR
+GREENROOFS       SURFACE    12.000000  0.100000   0.100000   1.000000   5.000000  
+GREENROOFS       SOIL       12.000000  0.500000   0.200000   0.100000   10.000000  10.000000  5.000000  
+GREENROOFS       DRAINMAT   3.000000   0.500000   0.100000  
+
+PAVEMENT         PP
+PAVEMENT         SURFACE    12.000000  0.100000   0.100000   1.000000   5.000000  
+PAVEMENT         PAVEMENT   6.000000   0.150000   0.750000   10.000000  0.000000   0          0         
+PAVEMENT         STORAGE    12.000000  0.750000   10.000000  0.000000  
+PAVEMENT         DRAIN      1.000000   1.000000   1.000000   0.000000   0          0                    
+
+TRENCH           IT
+TRENCH           SURFACE    12.000000  0.100000   0.100000   1.000000   5.000000  
+TRENCH           STORAGE    12.000000  0.750000   10.000000  0.000000  
+TRENCH           DRAIN      1.000000   1.000000   1.000000   0.000000   0          0                    
+
+BIO-RETENTIONCELL BC
+BIO-RETENTIONCELL SURFACE    12.000000  0.100000   0.100000   1.000000   5.000000  
+BIO-RETENTIONCELL SOIL       12.000000  0.500000   0.200000   0.100000   10.000000  10.000000  5.000000  
+BIO-RETENTIONCELL STORAGE    12.000000  0.750000   10.000000  0.000000  
+BIO-RETENTIONCELL DRAIN      1.000000   1.000000   1.000000   0.000000   0          0                    
+
+SWALE            VS
+SWALE            SURFACE    12.000000  0.100000   0.100000   1.000000   5.000000  
+
+[LID_USAGE]
+;;Subcatchment   LID Process      Number  Area       Width      InitSat    FromImp    ToPerv     RptFile                  DrainTo          FromPerv  
+;;-------------- ---------------- ------- ---------- ---------- ---------- ---------- ---------- ------------------------ ---------------- ----------
+BIOCELL          BIO-RETENTIONCELL 10      1089.000000 100.000000 0.000000   50.000000  1          *                        *                0               
+CISTERN          CISTERN          10      1089.000000 100.000000 0.000000   50.000000  1          *                        *                0               
+GREENROOFS       GREENROOFS       10      1089.000000 100.000000 0.000000   0.000000   1          *                        *                0               
+PAVEMENT         PAVEMENT         10      1089.000000 100.000000 0.000000   50.000000  1          *                        *                0               
+RAINGARDENS      RAINGARDEN       10      1089.000000 100.000000 0.000000   50.000000  1          *                        *                0               
+SWALE            SWALE            10      1089.000000 100.000000 0.000000   50.000000  0          *                        *                0               
+TRENCH           TRENCH           10      1089.000000 100.000000 0.000000   50.000000  1          *                        *                0               
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+BIOCELLOUT       802.851050 10.048950  0.000000   0.000000   6458.346250
+CISTERNOUT       802.851050 10.048950  0.000000   0.000000   6458.346250
+GREENROOFSOUT    802.851050 10.048950  0.000000   0.000000   6458.346250
+GWOUT            802.851050 10.048950  0.000000   0.000000   6458.346250
+IMP&PERV         802.850000 10.050000  0.000000   0.000000   0.000000  
+PAVEMENTOUT      802.851050 10.048950  0.000000   0.000000   6458.346250
+RGARDENOUT       802.851050 10.048950  0.000000   0.000000   6458.346250
+SWALEOUT         802.851050 10.048950  0.000000   0.000000   6458.346250
+TRENCHOUT        802.851050 10.048950  0.000000   0.000000   6458.346250
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+OUTFALL          802.360000 FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+CDT-11           SWALEOUT         IMP&PERV         16.099439  0.013000   0.000000   -0.000000  0.000000   0.000000  
+CDT-13           BIOCELLOUT       IMP&PERV         16.099439  0.013000   0.000000   -0.000000  0.000000   0.000000  
+DUOGWOUT.1       RGARDENOUT       IMP&PERV         37.158979  0.013000   0.000000   0.001050   0.000000   0.000000  
+GAIMPTOPERV.1    CISTERNOUT       IMP&PERV         35.568406  0.013000   0.000000   -0.000000  0.000000   0.000000  
+GAPERVTOIMP.1    TRENCHOUT        IMP&PERV         16.099439  0.013000   0.000000   -0.000000  0.000000   0.000000  
+GWOUT.1          GWOUT            IMP&PERV         44.418233  0.013000   0.000000   -0.000000  0.000000   0.000000  
+HORTONIMPTOPERV.1 PAVEMENTOUT      IMP&PERV         34.722954  0.013000   0.000000   -0.000000  0.000000   0.000000  
+HORTONPERVTOIMP.1 GREENROOFSOUT    IMP&PERV         26.201484  0.013000   0.000000   -0.000000  0.000000   0.000000  
+IMP&PERV.1       IMP&PERV         OUTFALL          247.000000 0.013000   0.000000   0.050000   0.000000   0.000000  
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+CDT-11           CIRCULAR     1.500000         0.000000   0.000000   0.000000   1          0         
+CDT-13           CIRCULAR     1.500000         0.000000   0.000000   0.000000   1          0         
+DUOGWOUT.1       CIRCULAR     1.500000         0.000000   0.000000   0.000000   1          0         
+GAIMPTOPERV.1    CIRCULAR     1.500000         0.000000   0.000000   0.000000   1          0         
+GAPERVTOIMP.1    CIRCULAR     1.500000         0.000000   0.000000   0.000000   1          0         
+GWOUT.1          CIRCULAR     1.500000         0.000000   0.000000   0.000000   1          0         
+HORTONIMPTOPERV.1 CIRCULAR     1.500000         0.000000   0.000000   0.000000   1          0         
+HORTONPERVTOIMP.1 CIRCULAR     1.500000         0.000000   0.000000   0.000000   1          0         
+IMP&PERV.1       CIRCULAR     1.500000         0.000000   0.000000   0.000000   1          0         
+
+[LOSSES]
+;;Link           Kentry     Kexit      Kavg       Flap Gate  Seepage   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+CDT-11           0.150000   0.010000   0.000000   NO         0.000000  
+CDT-13           0.150000   0.010000   0.000000   NO         0.000000  
+DUOGWOUT.1       0.150000   0.015000   0.000000   NO         0.000000  
+GAIMPTOPERV.1    0.150000   0.010000   0.000000   NO         0.000000  
+GAPERVTOIMP.1    0.150000   0.010000   0.000000   NO         0.000000  
+GWOUT.1          0.150000   0.015000   0.000000   NO         0.000000  
+HORTONIMPTOPERV.1 0.150000   0.010000   0.000000   NO         0.000000  
+HORTONPERVTOIMP.1 0.150000   0.010000   0.000000   NO         0.000000  
+IMP&PERV.1       0.150000   0.015000   0.000000   NO         0.000000  
+
+[CONTROLS]
+
+
+
+
+
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+SCS2                        0:00:00    0.080000  
+SCS2                        0:30:00    0.090000  
+SCS2                        1:00:00    0.090000  
+SCS2                        1:30:00    0.090000  
+SCS2                        2:00:00    0.100000  
+SCS2                        2:30:00    0.100000  
+SCS2                        3:00:00    0.100000  
+SCS2                        3:30:00    0.110000  
+SCS2                        4:00:00    0.110000  
+SCS2                        4:30:00    0.120000  
+SCS2                        5:00:00    0.130000  
+SCS2                        5:30:00    0.140000  
+SCS2                        6:00:00    0.140000  
+SCS2                        6:30:00    0.160000  
+SCS2                        7:00:00    0.180000  
+SCS2                        7:30:00    0.200000  
+SCS2                        8:00:00    0.250000  
+SCS2                        8:30:00    0.350000  
+SCS2                        9:00:00    0.490000  
+SCS2                        9:30:00    2.120000  
+SCS2                        10:00:00   0.680000  
+SCS2                        10:30:00   0.410000  
+SCS2                        11:00:00   0.310000  
+SCS2                        11:30:00   0.270000  
+SCS2                        12:00:00   0.240000  
+SCS2                        12:30:00   0.220000  
+SCS2                        13:00:00   0.200000  
+SCS2                        13:30:00   0.180000  
+SCS2                        14:00:00   0.170000  
+SCS2                        14:30:00   0.160000  
+SCS2                        15:00:00   0.160000  
+SCS2                        15:30:00   0.150000  
+SCS2                        16:00:00   0.140000  
+SCS2                        16:30:00   0.130000  
+SCS2                        17:00:00   0.130000  
+SCS2                        17:30:00   0.120000  
+SCS2                        18:00:00   0.110000  
+SCS2                        18:30:00   0.120000  
+SCS2                        19:00:00   0.110000  
+SCS2                        19:30:00   0.100000  
+SCS2                        20:00:00   0.100000  
+SCS2                        20:30:00   0.100000  
+SCS2                        21:00:00   0.100000  
+SCS2                        21:30:00   0.090000  
+SCS2                        22:00:00   0.090000  
+SCS2                        22:30:00   0.090000  
+SCS2                        23:00:00   0.090000  
+SCS2                        23:30:00   0.080000  
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 214911.203 1675968.273 219138.484 1678398.310
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+BIOCELLOUT       216860.897         1677149.264       
+CISTERNOUT       216807.914         1676893.698       
+GREENROOFSOUT    216677.014         1676797.082       
+GWOUT            216112.900         1677171.080       
+IMP&PERV         216437.032         1676856.298       
+PAVEMENTOUT      216449.498         1677482.746       
+RGARDENOUT       216608.448         1677258.347       
+SWALEOUT         216835.963         1676619.432       
+TRENCHOUT        216642.731         1677080.697       
+OUTFALL          216175.233         1676659.949       
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+BIOCELL          218505.076         1677767.252       
+BIOCELL          218515.981         1677525.151       
+BIOCELL          218249.160         1677426.128       
+BIOCELL          218003.709         1677207.270       
+BIOCELL          217584.555         1676995.959       
+BIOCELL          217323.999         1676935.584       
+BIOCELL          217040.096         1676872.510       
+BIOCELL          216889.500         1677403.169       
+BIOCELL          217183.209         1677951.115       
+BIOCELL          217357.748         1677984.177       
+BIOCELL          217437.470         1678025.692       
+BIOCELL          217547.982         1677960.883       
+BIOCELL          217708.420         1677894.495       
+BIOCELL          218062.489         1677828.107       
+BIOCELL          218505.076         1677767.252       
+CISTERN          218844.232         1676515.521       
+CISTERN          218855.137         1676273.420       
+CISTERN          218588.316         1676174.397       
+CISTERN          218342.865         1675955.539       
+CISTERN          217923.711         1675744.228       
+CISTERN          217663.155         1675683.853       
+CISTERN          217379.252         1675620.779       
+CISTERN          217228.656         1676151.438       
+CISTERN          217522.365         1676699.384       
+CISTERN          217696.904         1676732.446       
+CISTERN          217776.626         1676773.961       
+CISTERN          217887.138         1676709.152       
+CISTERN          218047.576         1676642.764       
+CISTERN          218401.645         1676576.376       
+CISTERN          218844.232         1676515.521       
+GREENROOFS       218914.655         1677420.088       
+GREENROOFS       218925.560         1677177.987       
+GREENROOFS       218658.739         1677078.964       
+GREENROOFS       218413.288         1676860.106       
+GREENROOFS       217994.134         1676648.795       
+GREENROOFS       217733.578         1676588.420       
+GREENROOFS       217449.675         1676525.346       
+GREENROOFS       217299.079         1677056.005       
+GREENROOFS       217592.788         1677603.951       
+GREENROOFS       217767.327         1677637.013       
+GREENROOFS       217847.049         1677678.528       
+GREENROOFS       217957.561         1677613.719       
+GREENROOFS       218117.999         1677547.331       
+GREENROOFS       218472.068         1677480.943       
+GREENROOFS       218914.655         1677420.088       
+PAVEMENT         216255.290         1677031.442       
+PAVEMENT         216266.195         1676789.341       
+PAVEMENT         215999.374         1676690.318       
+PAVEMENT         215753.923         1676471.460       
+PAVEMENT         215334.769         1676260.149       
+PAVEMENT         215074.213         1676199.774       
+PAVEMENT         214790.310         1676136.700       
+PAVEMENT         214639.714         1676667.359       
+PAVEMENT         214933.423         1677215.305       
+PAVEMENT         215107.962         1677248.367       
+PAVEMENT         215187.684         1677289.882       
+PAVEMENT         215298.196         1677225.073       
+PAVEMENT         215458.634         1677158.685       
+PAVEMENT         215812.703         1677092.297       
+PAVEMENT         216255.290         1677031.442       
+RAINGARDENS      216448.833         1678122.808       
+RAINGARDENS      216459.738         1677880.707       
+RAINGARDENS      216192.917         1677781.684       
+RAINGARDENS      215947.466         1677562.826       
+RAINGARDENS      215528.312         1677351.515       
+RAINGARDENS      215267.756         1677291.140       
+RAINGARDENS      214983.853         1677228.066       
+RAINGARDENS      214833.257         1677758.725       
+RAINGARDENS      215126.966         1678306.671       
+RAINGARDENS      215301.505         1678339.733       
+RAINGARDENS      215381.227         1678381.248       
+RAINGARDENS      215491.739         1678316.439       
+RAINGARDENS      215652.177         1678250.051       
+RAINGARDENS      216006.246         1678183.663       
+RAINGARDENS      216448.833         1678122.808       
+SWALE            218935.430         1676973.471       
+SWALE            218946.335         1676731.370       
+SWALE            218679.514         1676632.347       
+SWALE            218434.063         1676413.489       
+SWALE            218014.909         1676202.178       
+SWALE            217754.353         1676141.803       
+SWALE            217470.450         1676078.729       
+SWALE            217319.854         1676609.388       
+SWALE            217613.563         1677157.334       
+SWALE            217788.102         1677190.396       
+SWALE            217867.824         1677231.911       
+SWALE            217978.336         1677167.102       
+SWALE            218138.774         1677100.714       
+SWALE            218492.843         1677034.326       
+SWALE            218935.430         1676973.471       
+TRENCH           218200.884         1678382.629       
+TRENCH           218211.789         1678140.528       
+TRENCH           217944.968         1678041.505       
+TRENCH           217699.517         1677822.647       
+TRENCH           217280.363         1677611.336       
+TRENCH           217019.807         1677550.961       
+TRENCH           216735.904         1677487.887       
+TRENCH           216585.308         1678018.546       
+TRENCH           216879.017         1678566.492       
+TRENCH           217053.556         1678599.554       
+TRENCH           217133.278         1678641.069       
+TRENCH           217243.790         1678576.260       
+TRENCH           217404.228         1678509.872       
+TRENCH           217758.297         1678443.484       
+TRENCH           218200.884         1678382.629       
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                217783.426         1676984.081       
+

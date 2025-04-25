@@ -1,0 +1,136 @@
+[TITLE]
+;;Project Title/Notes
+ Example 9 of Extran Users Manual -
+ Detention Pond Routing
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           04/11/2005
+START_TIME           00:00:00
+REPORT_START_DATE    04/11/2005
+REPORT_START_TIME    00:00:00
+END_DATE             04/11/2005
+END_TIME             10:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:15:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:05:00 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.00
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+30002            -1         FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+30001/4          0        10         0.5        TABULAR    Curve1/4                     0        0       
+
+[ORIFICES]
+;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime 
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- ----------
+90001            30001/4          30002            SIDE         0          0.9        NO       0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+90001            CIRCULAR     0.225            0          0          0
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+30001/4          FLOW             INFLOW           FLOW     1.0      1.0              
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+Curve1/4         Storage    0.0        130       
+Curve1/4                    .2         246       
+Curve1/4                    .5         340       
+Curve1/4                    .8         400       
+Curve1/4                    1          530       
+Curve1/4                    1.5        650       
+Curve1/4                    2          760       
+Curve1/4                    2.5        860       
+Curve1/4                    3          960       
+Curve1/4                    3.5        1060      
+Curve1/4                    4          1146.33   
+Curve1/4                    4.5        1234.07   
+Curve1/4                    5          1319.21   
+Curve1/4                    5.5        1400      
+Curve1/4                    6          1480      
+Curve1/4                    6.5        1560      
+Curve1/4                    7          1640      
+Curve1/4                    7.5        1710      
+Curve1/4                    8          1790      
+Curve1/4                    8.5        1860      
+Curve1/4                    9          1930      
+Curve1/4                    9.5        2000      
+Curve1/4                    10         2000      
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+INFLOW                      0          0         
+INFLOW                      2          1.2       
+INFLOW                      5          0         
+INFLOW                      10         0         
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 2117.949 5864.306 6963.471 6369.525
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+30002            6743.220           5887.270          
+30001/4          2338.200           6346.560          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[LABELS]
+;;X-Coord          Y-Coord            Label           
+137.930            6586.210           "Inflow" "" "Arial" 10 0 0
+1862.070           3827.590           "EXTRAN EXAMPLE 9" "" "Arial" 12 1 0
+

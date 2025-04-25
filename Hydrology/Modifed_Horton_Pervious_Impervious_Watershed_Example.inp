@@ -1,0 +1,489 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         MODIFIED_HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           06/16/2010
+START_TIME           00:00:00
+REPORT_START_DATE    06/16/2010
+REPORT_START_TIME    00:00:00
+END_DATE             06/18/2010
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:10
+WET_STEP             00:00:10
+DRY_STEP             00:00:10
+ROUTING_STEP         0:00:10 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+Psuedo_RG        VOLUME    0:06     1.0      TIMESERIES Real_Gage       
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+Pervious_Watershed Psuedo_RG        Outfall          10       0        660      3        0                        
+Impervious_Watershed Psuedo_RG        Storage_Node     10       100      660      3        0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+Pervious_Watershed 0.013      0.1        0          3          0          OUTLET    
+Impervious_Watershed 0          0.1        0          1          0          OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+Pervious_Watershed 8          0.15       0.01       7          0         
+Impervious_Watershed 8          0.15       0          7          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Outfall          -19.55     NORMAL                      NO                       
+Outfall_Storage  -19.55     NORMAL                      NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+Storage_Node     0        100        0          FUNCTIONAL 435600    0         0        0        0        8        0.15     0.01    
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+DummyOverflow    Storage_Node     Outfall_Storage  320        0.1        0.25       0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+DummyOverflow    RECT_OPEN    1                660        0          0          1                    
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+Real_Gage        6/16/2010  0:00       0         
+Real_Gage        6/16/2010  0:06       0.01      
+Real_Gage        6/16/2010  0:12       0.01      
+Real_Gage        6/16/2010  0:18       0.01      
+Real_Gage        6/16/2010  0:24       0.01      
+Real_Gage        6/16/2010  0:30       0.01      
+Real_Gage        6/16/2010  0:36       0.012     
+Real_Gage        6/16/2010  0:42       0.012     
+Real_Gage        6/16/2010  0:48       0.012     
+Real_Gage        6/16/2010  0:54       0.012     
+Real_Gage        6/16/2010  1:00       0.012     
+Real_Gage        6/16/2010  1:06       0.012     
+Real_Gage        6/16/2010  1:12       0.012     
+Real_Gage        6/16/2010  1:18       0.012     
+Real_Gage        6/16/2010  1:24       0.012     
+Real_Gage        6/16/2010  1:30       0.012     
+Real_Gage        6/16/2010  1:36       0.012     
+Real_Gage        6/16/2010  1:42       0.012     
+Real_Gage        6/16/2010  1:48       0.012     
+Real_Gage        6/16/2010  1:54       0.012     
+Real_Gage        6/16/2010  2:00       0.012     
+Real_Gage        6/16/2010  2:06       0.012     
+Real_Gage        6/16/2010  2:12       0.012     
+Real_Gage        6/16/2010  2:18       0.012     
+Real_Gage        6/16/2010  2:24       0.012     
+Real_Gage        6/16/2010  2:30       0.012     
+Real_Gage        6/16/2010  2:36       0.012     
+Real_Gage        6/16/2010  2:42       0.012     
+Real_Gage        6/16/2010  2:48       0.012     
+Real_Gage        6/16/2010  2:54       0.012     
+Real_Gage        6/16/2010  3:00       0.012     
+Real_Gage        6/16/2010  3:06       0.012     
+Real_Gage        6/16/2010  3:12       0.012     
+Real_Gage        6/16/2010  3:18       0.012     
+Real_Gage        6/16/2010  3:24       0.012     
+Real_Gage        6/16/2010  3:30       0.012     
+Real_Gage        6/16/2010  3:36       0.014     
+Real_Gage        6/16/2010  3:42       0.014     
+Real_Gage        6/16/2010  3:48       0.014     
+Real_Gage        6/16/2010  3:54       0.014     
+Real_Gage        6/16/2010  4:00       0.014     
+Real_Gage        6/16/2010  4:06       0.016     
+Real_Gage        6/16/2010  4:12       0.016     
+Real_Gage        6/16/2010  4:18       0.016     
+Real_Gage        6/16/2010  4:24       0.016     
+Real_Gage        6/16/2010  4:30       0.016     
+Real_Gage        6/16/2010  4:36       0.016     
+Real_Gage        6/16/2010  4:42       0.016     
+Real_Gage        6/16/2010  4:48       0.016     
+Real_Gage        6/16/2010  4:54       0.016     
+Real_Gage        6/16/2010  5:00       0.016     
+Real_Gage        6/16/2010  5:06       0.016     
+Real_Gage        6/16/2010  5:12       0.016     
+Real_Gage        6/16/2010  5:18       0.016     
+Real_Gage        6/16/2010  5:24       0.016     
+Real_Gage        6/16/2010  5:30       0.016     
+Real_Gage        6/16/2010  5:36       0.016     
+Real_Gage        6/16/2010  5:42       0.016     
+Real_Gage        6/16/2010  5:48       0.016     
+Real_Gage        6/16/2010  5:54       0.016     
+Real_Gage        6/16/2010  6:00       0.016     
+Real_Gage        6/16/2010  6:06       0.02      
+Real_Gage        6/16/2010  6:12       0.02      
+Real_Gage        6/16/2010  6:18       0.02      
+Real_Gage        6/16/2010  6:24       0.02      
+Real_Gage        6/16/2010  6:30       0.02      
+Real_Gage        6/16/2010  6:36       0.02      
+Real_Gage        6/16/2010  6:42       0.02      
+Real_Gage        6/16/2010  6:48       0.02      
+Real_Gage        6/16/2010  6:54       0.02      
+Real_Gage        6/16/2010  7:00       0.02      
+Real_Gage        6/16/2010  7:06       0.02      
+Real_Gage        6/16/2010  7:12       0.02      
+Real_Gage        6/16/2010  7:18       0.02      
+Real_Gage        6/16/2010  7:24       0.02      
+Real_Gage        6/16/2010  7:30       0.02      
+Real_Gage        6/16/2010  7:36       0.02      
+Real_Gage        6/16/2010  7:42       0.02      
+Real_Gage        6/16/2010  7:48       0.02      
+Real_Gage        6/16/2010  7:54       0.02      
+Real_Gage        6/16/2010  8:00       0.02      
+Real_Gage        6/16/2010  8:06       0.026     
+Real_Gage        6/16/2010  8:12       0.026     
+Real_Gage        6/16/2010  8:18       0.026     
+Real_Gage        6/16/2010  8:24       0.026     
+Real_Gage        6/16/2010  8:30       0.026     
+Real_Gage        6/16/2010  8:36       0.028     
+Real_Gage        6/16/2010  8:42       0.028     
+Real_Gage        6/16/2010  8:48       0.028     
+Real_Gage        6/16/2010  8:54       0.028     
+Real_Gage        6/16/2010  9:00       0.028     
+Real_Gage        6/16/2010  9:06       0.032     
+Real_Gage        6/16/2010  9:12       0.032     
+Real_Gage        6/16/2010  9:18       0.032     
+Real_Gage        6/16/2010  9:24       0.032     
+Real_Gage        6/16/2010  9:30       0.032     
+Real_Gage        6/16/2010  9:36       0.036     
+Real_Gage        6/16/2010  9:42       0.036     
+Real_Gage        6/16/2010  9:48       0.036     
+Real_Gage        6/16/2010  9:54       0.036     
+Real_Gage        6/16/2010  10:00      0.036     
+Real_Gage        6/16/2010  10:06      0.044     
+Real_Gage        6/16/2010  10:12      0.044     
+Real_Gage        6/16/2010  10:18      0.044     
+Real_Gage        6/16/2010  10:24      0.044     
+Real_Gage        6/16/2010  10:30      0.044     
+Real_Gage        6/16/2010  10:36      0.066     
+Real_Gage        6/16/2010  10:42      0.066     
+Real_Gage        6/16/2010  10:48      0.066     
+Real_Gage        6/16/2010  10:54      0.066     
+Real_Gage        6/16/2010  11:00      0.066     
+Real_Gage        6/16/2010  11:06      0.094     
+Real_Gage        6/16/2010  11:12      0.094     
+Real_Gage        6/16/2010  11:18      0.094     
+Real_Gage        6/16/2010  11:24      0.094     
+Real_Gage        6/16/2010  11:30      0.094     
+Real_Gage        6/16/2010  11:36      0.76      
+Real_Gage        6/16/2010  11:42      0.76      
+Real_Gage        6/16/2010  11:48      0.76      
+Real_Gage        6/16/2010  11:54      0.76      
+Real_Gage        6/16/2010  12:00      0.76      
+Real_Gage        6/16/2010  12:06      0.144     
+Real_Gage        6/16/2010  12:12      0.144     
+Real_Gage        6/16/2010  12:18      0.144     
+Real_Gage        6/16/2010  12:24      0.144     
+Real_Gage        6/16/2010  12:30      0.144     
+Real_Gage        6/16/2010  12:36      0.082     
+Real_Gage        6/16/2010  12:42      0.082     
+Real_Gage        6/16/2010  12:48      0.082     
+Real_Gage        6/16/2010  12:54      0.082     
+Real_Gage        6/16/2010  13:00      0.082     
+Real_Gage        6/16/2010  13:06      0.056     
+Real_Gage        6/16/2010  13:12      0.056     
+Real_Gage        6/16/2010  13:18      0.056     
+Real_Gage        6/16/2010  13:24      0.056     
+Real_Gage        6/16/2010  13:30      0.056     
+Real_Gage        6/16/2010  13:36      0.042     
+Real_Gage        6/16/2010  13:42      0.042     
+Real_Gage        6/16/2010  13:48      0.042     
+Real_Gage        6/16/2010  13:54      0.042     
+Real_Gage        6/16/2010  14:00      0.042     
+Real_Gage        6/16/2010  14:06      0.034     
+Real_Gage        6/16/2010  14:12      0.034     
+Real_Gage        6/16/2010  14:18      0.034     
+Real_Gage        6/16/2010  14:24      0.034     
+Real_Gage        6/16/2010  14:30      0.034     
+Real_Gage        6/16/2010  14:36      0.028     
+Real_Gage        6/16/2010  14:42      0.028     
+Real_Gage        6/16/2010  14:48      0.028     
+Real_Gage        6/16/2010  14:54      0.028     
+Real_Gage        6/16/2010  15:00      0.028     
+Real_Gage        6/16/2010  15:06      0.026     
+Real_Gage        6/16/2010  15:12      0.026     
+Real_Gage        6/16/2010  15:18      0.026     
+Real_Gage        6/16/2010  15:24      0.026     
+Real_Gage        6/16/2010  15:30      0.026     
+Real_Gage        6/16/2010  15:36      0.024     
+Real_Gage        6/16/2010  15:42      0.024     
+Real_Gage        6/16/2010  15:48      0.024     
+Real_Gage        6/16/2010  15:54      0.024     
+Real_Gage        6/16/2010  16:00      0.024     
+Real_Gage        6/16/2010  16:06      0.024     
+Real_Gage        6/16/2010  16:12      0.024     
+Real_Gage        6/16/2010  16:18      0.024     
+Real_Gage        6/16/2010  16:24      0.024     
+Real_Gage        6/16/2010  16:30      0.024     
+Real_Gage        6/16/2010  16:36      0.02      
+Real_Gage        6/16/2010  16:42      0.02      
+Real_Gage        6/16/2010  16:48      0.02      
+Real_Gage        6/16/2010  16:54      0.02      
+Real_Gage        6/16/2010  17:00      0.02      
+Real_Gage        6/16/2010  17:06      0.02      
+Real_Gage        6/16/2010  17:12      0.02      
+Real_Gage        6/16/2010  17:18      0.02      
+Real_Gage        6/16/2010  17:24      0.02      
+Real_Gage        6/16/2010  17:30      0.02      
+Real_Gage        6/16/2010  17:36      0.018     
+Real_Gage        6/16/2010  17:42      0.018     
+Real_Gage        6/16/2010  17:48      0.018     
+Real_Gage        6/16/2010  17:54      0.018     
+Real_Gage        6/16/2010  18:00      0.018     
+Real_Gage        6/16/2010  18:06      0.016     
+Real_Gage        6/16/2010  18:12      0.016     
+Real_Gage        6/16/2010  18:18      0.016     
+Real_Gage        6/16/2010  18:24      0.016     
+Real_Gage        6/16/2010  18:30      0.016     
+Real_Gage        6/16/2010  18:36      0.016     
+Real_Gage        6/16/2010  18:42      0.016     
+Real_Gage        6/16/2010  18:48      0.016     
+Real_Gage        6/16/2010  18:54      0.016     
+Real_Gage        6/16/2010  19:00      0.016     
+Real_Gage        6/16/2010  19:06      0.016     
+Real_Gage        6/16/2010  19:12      0.016     
+Real_Gage        6/16/2010  19:18      0.016     
+Real_Gage        6/16/2010  19:24      0.016     
+Real_Gage        6/16/2010  19:30      0.016     
+Real_Gage        6/16/2010  19:36      0.014     
+Real_Gage        6/16/2010  19:42      0.014     
+Real_Gage        6/16/2010  19:48      0.014     
+Real_Gage        6/16/2010  19:54      0.014     
+Real_Gage        6/16/2010  20:00      0.014     
+Real_Gage        6/16/2010  20:06      0.012     
+Real_Gage        6/16/2010  20:12      0.012     
+Real_Gage        6/16/2010  20:18      0.012     
+Real_Gage        6/16/2010  20:24      0.012     
+Real_Gage        6/16/2010  20:30      0.012     
+Real_Gage        6/16/2010  20:36      0.012     
+Real_Gage        6/16/2010  20:42      0.012     
+Real_Gage        6/16/2010  20:48      0.012     
+Real_Gage        6/16/2010  20:54      0.012     
+Real_Gage        6/16/2010  21:00      0.012     
+Real_Gage        6/16/2010  21:06      0.012     
+Real_Gage        6/16/2010  21:12      0.012     
+Real_Gage        6/16/2010  21:18      0.012     
+Real_Gage        6/16/2010  21:24      0.012     
+Real_Gage        6/16/2010  21:30      0.012     
+Real_Gage        6/16/2010  21:36      0.012     
+Real_Gage        6/16/2010  21:42      0.012     
+Real_Gage        6/16/2010  21:48      0.012     
+Real_Gage        6/16/2010  21:54      0.012     
+Real_Gage        6/16/2010  22:00      0.012     
+Real_Gage        6/16/2010  22:06      0.012     
+Real_Gage        6/16/2010  22:12      0.012     
+Real_Gage        6/16/2010  22:18      0.012     
+Real_Gage        6/16/2010  22:24      0.012     
+Real_Gage        6/16/2010  22:30      0.012     
+Real_Gage        6/16/2010  22:36      0.012     
+Real_Gage        6/16/2010  22:42      0.012     
+Real_Gage        6/16/2010  22:48      0.012     
+Real_Gage        6/16/2010  22:54      0.012     
+Real_Gage        6/16/2010  23:00      0.012     
+Real_Gage        6/16/2010  23:06      0.012     
+Real_Gage        6/16/2010  23:12      0.012     
+Real_Gage        6/16/2010  23:18      0.012     
+Real_Gage        6/16/2010  23:24      0.012     
+Real_Gage        6/16/2010  23:30      0.012     
+Real_Gage        6/16/2010  23:36      0.01      
+Real_Gage        6/16/2010  23:42      0.01      
+Real_Gage        6/16/2010  23:48      0.01      
+Real_Gage        6/16/2010  23:54      0.01      
+Real_Gage        6/17/2010  0:00       0.01      
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+Subcatch  Pervious_Watershed Pervious_Shed   
+Node       Storage_Node     No_Infil_Storage
+
+[MAP]
+DIMENSIONS 2702104.113 264621.401 2707043.556 267391.503
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Outfall          2705561.103        265193.314        
+Outfall_Storage  2705982.848        265161.363        
+Storage_Node     2706417.195        265469.927        
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Pervious_Watershed 2703695.251        266557.126        
+Pervious_Watershed 2704002.751        266527.716        
+Pervious_Watershed 2704125.001        266519.906        
+Pervious_Watershed 2704248.251        266500.376        
+Pervious_Watershed 2704351.501        266468.746        
+Pervious_Watershed 2704471.501        266411.656        
+Pervious_Watershed 2704566.751        266361.746        
+Pervious_Watershed 2704657.251        266319.186        
+Pervious_Watershed 2704726.001        266296.996        
+Pervious_Watershed 2704782.751        266287.026        
+Pervious_Watershed 2704842.251        266286.126        
+Pervious_Watershed 2704926.501        266276.216        
+Pervious_Watershed 2704986.501        266262.776        
+Pervious_Watershed 2705069.251        266225.246        
+Pervious_Watershed 2705072.001        266213.716        
+Pervious_Watershed 2705020.251        266127.526        
+Pervious_Watershed 2705000.251        266103.716        
+Pervious_Watershed 2704961.001        266084.906        
+Pervious_Watershed 2704899.751        266053.026        
+Pervious_Watershed 2704818.501        266017.276        
+Pervious_Watershed 2704776.501        265952.776        
+Pervious_Watershed 2704705.001        265792.906        
+Pervious_Watershed 2705057.001        265234.616        
+Pervious_Watershed 2704913.501        265123.746        
+Pervious_Watershed 2704863.251        265143.496        
+Pervious_Watershed 2704669.001        265272.686        
+Pervious_Watershed 2704491.751        265194.336        
+Pervious_Watershed 2704439.001        265207.966        
+Pervious_Watershed 2704394.251        265299.806        
+Pervious_Watershed 2704377.251        265291.056        
+Pervious_Watershed 2704242.751        265221.246        
+Pervious_Watershed 2704207.751        265165.186        
+Pervious_Watershed 2704280.001        265024.686        
+Pervious_Watershed 2704090.001        264748.556        
+Pervious_Watershed 2703914.501        264702.056        
+Pervious_Watershed 2703879.251        264715.116        
+Pervious_Watershed 2703841.251        264744.056        
+Pervious_Watershed 2703821.001        264781.436        
+Pervious_Watershed 2703802.501        264825.436        
+Pervious_Watershed 2703797.001        264866.776        
+Pervious_Watershed 2703793.751        264908.556        
+Pervious_Watershed 2703803.501        264945.026        
+Pervious_Watershed 2703818.001        264982.496        
+Pervious_Watershed 2703831.751        265015.586        
+Pervious_Watershed 2703860.251        265063.966        
+Pervious_Watershed 2703852.001        265104.156        
+Pervious_Watershed 2703820.001        265124.276        
+Pervious_Watershed 2703785.251        265135.186        
+Pervious_Watershed 2703719.751        265147.366        
+Pervious_Watershed 2703404.751        265170.126        
+Pervious_Watershed 2703314.751        265307.496        
+Pervious_Watershed 2703361.501        265643.376        
+Pervious_Watershed 2702889.431        265734.146        
+Pervious_Watershed 2702886.001        265734.806        
+Pervious_Watershed 2702343.011        265864.426        
+Pervious_Watershed 2702381.071        266105.406        
+Pervious_Watershed 2702951.261        266037.326        
+Pervious_Watershed 2703299.151        266252.716        
+Pervious_Watershed 2703695.251        266557.126        
+Impervious_Watershed 2705442.286        267265.589        
+Impervious_Watershed 2705749.786        267236.179        
+Impervious_Watershed 2705872.036        267228.369        
+Impervious_Watershed 2705995.286        267208.839        
+Impervious_Watershed 2706098.536        267177.209        
+Impervious_Watershed 2706218.536        267120.119        
+Impervious_Watershed 2706313.786        267070.209        
+Impervious_Watershed 2706404.286        267027.649        
+Impervious_Watershed 2706473.036        267005.459        
+Impervious_Watershed 2706529.786        266995.489        
+Impervious_Watershed 2706589.286        266994.589        
+Impervious_Watershed 2706673.536        266984.679        
+Impervious_Watershed 2706733.536        266971.239        
+Impervious_Watershed 2706816.286        266933.709        
+Impervious_Watershed 2706819.036        266922.179        
+Impervious_Watershed 2706767.286        266835.989        
+Impervious_Watershed 2706747.286        266812.179        
+Impervious_Watershed 2706708.036        266793.369        
+Impervious_Watershed 2706646.786        266761.489        
+Impervious_Watershed 2706565.536        266725.739        
+Impervious_Watershed 2706523.536        266661.239        
+Impervious_Watershed 2706452.036        266501.369        
+Impervious_Watershed 2706804.036        265943.079        
+Impervious_Watershed 2706660.536        265832.209        
+Impervious_Watershed 2706610.286        265851.959        
+Impervious_Watershed 2706416.036        265981.149        
+Impervious_Watershed 2706238.786        265902.799        
+Impervious_Watershed 2706186.036        265916.429        
+Impervious_Watershed 2706141.286        266008.269        
+Impervious_Watershed 2706124.286        265999.519        
+Impervious_Watershed 2705989.786        265929.709        
+Impervious_Watershed 2705954.786        265873.649        
+Impervious_Watershed 2706027.036        265733.149        
+Impervious_Watershed 2705837.036        265457.019        
+Impervious_Watershed 2705661.536        265410.519        
+Impervious_Watershed 2705626.286        265423.579        
+Impervious_Watershed 2705588.286        265452.519        
+Impervious_Watershed 2705568.036        265489.899        
+Impervious_Watershed 2705549.536        265533.899        
+Impervious_Watershed 2705544.036        265575.239        
+Impervious_Watershed 2705540.786        265617.019        
+Impervious_Watershed 2705550.536        265653.489        
+Impervious_Watershed 2705565.036        265690.959        
+Impervious_Watershed 2705578.786        265724.049        
+Impervious_Watershed 2705607.286        265772.429        
+Impervious_Watershed 2705599.036        265812.619        
+Impervious_Watershed 2705567.036        265832.739        
+Impervious_Watershed 2705532.286        265843.649        
+Impervious_Watershed 2705466.786        265855.829        
+Impervious_Watershed 2705151.786        265878.589        
+Impervious_Watershed 2705061.786        266015.959        
+Impervious_Watershed 2705108.536        266351.839        
+Impervious_Watershed 2704636.466        266442.609        
+Impervious_Watershed 2704633.036        266443.269        
+Impervious_Watershed 2704090.046        266572.889        
+Impervious_Watershed 2704128.106        266813.869        
+Impervious_Watershed 2704698.296        266745.789        
+Impervious_Watershed 2705046.186        266961.179        
+Impervious_Watershed 2705442.286        267265.589        
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Psuedo_RG        2705011.555        265797.177        
+

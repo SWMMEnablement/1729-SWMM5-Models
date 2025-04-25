@@ -1,0 +1,125 @@
+[TITLE]
+;;Project Title/Notes
+Illustration of how custom conduit shapes are used in SWMM5.
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         MODIFIED_GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           07/30/2018
+START_TIME           00:00:00
+REPORT_START_DATE    07/30/2018
+REPORT_START_TIME    00:00:00
+END_DATE             07/30/2018
+END_TIME             02:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:01
+WET_STEP             00:01:00
+DRY_STEP             00:01:00
+ROUTING_STEP         0:00:01 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.00
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.6
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.0015
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+U/S_Culvert1     0          6          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+D/S_Culvert1     -0.16      NORMAL                      NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+Culvert1         U/S_Culvert1     D/S_Culvert1     100        0.015      0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+Culvert1         CUSTOM       3                Figure5-7_ShapeCurve 0          0          1                    
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+U/S_Culvert1     FLOW             INFLOW           FLOW     1.0      1.0              
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+Figure5-7_ShapeCurve Shape      0          0         
+Figure5-7_ShapeCurve            .08        .667      
+Figure5-7_ShapeCurve            .16        .93       
+Figure5-7_ShapeCurve            .24        1         
+Figure5-7_ShapeCurve            .32        .997      
+Figure5-7_ShapeCurve            .4         .988      
+Figure5-7_ShapeCurve            .48        .967      
+Figure5-7_ShapeCurve            .56        .928      
+Figure5-7_ShapeCurve            .64        .874      
+Figure5-7_ShapeCurve            .72        .798      
+Figure5-7_ShapeCurve            .8         .697      
+Figure5-7_ShapeCurve            .88        .567      
+Figure5-7_ShapeCurve            .96        .342      
+Figure5-7_ShapeCurve            1          0         
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+INFLOW           07/30/2018 00:00      0.0       
+INFLOW           07/30/2018 00:06      0.5       
+INFLOW           07/30/2018 00:12      1.0       
+INFLOW           07/30/2018 00:18      10.0      
+INFLOW           07/30/2018 00:24      10        
+INFLOW           07/30/2018 00:30      10        
+INFLOW           07/30/2018 01:00      10        
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -8239549.690 4970615.225 -8239519.454 4970629.710
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+U/S_Culvert1     -8239520.828       4970615.883       
+D/S_Culvert1     -8239548.316       4970629.052       
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

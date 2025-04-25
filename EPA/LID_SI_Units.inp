@@ -1,0 +1,350 @@
+[TITLE]
+;;Project Title/Notes
+÷≤ŒÔ‘∞
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         GREEN_AMPT
+FLOW_ROUTING         KINWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           08/26/2013
+START_TIME           00:00:00
+REPORT_START_DATE    08/26/2013
+REPORT_START_TIME    01:00:00
+END_DATE             08/26/2013
+END_TIME             05:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             35
+REPORT_STEP          00:05:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:01:00 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+RG1              INTENSITY 0:05     1.0      TIMESERIES TS1             
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+S1               RG1              Out1             0.7554   100      500      0.5      0                        
+S2               RG1              Swale1           0.91     100      20       2        0                        
+S3               RG1              Swale2           0.91     100      20       2        0                        
+S4               RG1              Swale3           0.091    75       20       2        0                        
+S5               RG1              Swale5           0.51     0        63       0.02     0                        
+Swale1           RG1              Bio1             0.0105   0        11       0.4      0                        
+Swale2           RG1              Bio1             0.0105   0        11       0.4      0                        
+Swale3           RG1              Swale4           0.01     0        11       0.4      0                        
+Swale4           RG1              Out1             0.039    0        130      0.4      0                        
+Swale5           RG1              Swale3           0.0237   0        79       0.4      0                        
+Bio1             RG1              Swale5           0.024    25       500      0.5      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+S1               0.012      0.1        2.5        2          25         OUTLET    
+S2               0.015      0.24       15         20         75         OUTLET    
+S3               0.015      0.24       15         20         70         OUTLET    
+S4               0.01       0.24       12         6.7        25         OUTLET    
+S5               0.012      0.1        0.05       0.05       25         OUTLET    
+Swale1           0.012      0.3        1          1          25         OUTLET    
+Swale2           0.012      0.3        1          1          25         OUTLET    
+Swale3           0.012      0.3        20         1          1          OUTLET    
+Swale4           0.012      0.3        1          1          25         OUTLET    
+Swale5           0.012      0.3        1          1          25         OUTLET    
+Bio1             0.01       0.1        0.05       0.05       25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Suction    Ksat       IMD       
+;;-------------- ---------- ---------- ----------
+S1               3.5        0.2        0.25      
+S2               90         5          0.2       
+S3               3.5        0.2        0.26      
+S4               3.5        0.2        0.25      
+S5               3.5        0.2        0.25      
+Swale1           3.5        0.2        0.2       
+Swale2           3.5        0.2        0.25      
+Swale3           3.5        0.2        0.25      
+Swale4           3.5        0.2        0.25      
+Swale5           3.5        0.2        0.25      
+Bio1             3.5        0.2        0.25      
+
+[LID_CONTROLS]
+;;Name           Type/Layer Parameters
+;;-------------- ---------- ----------
+Swale            VS
+Swale            SURFACE    200        0.0        0.24       0.4        5         
+
+Barrel           RB
+Barrel           STORAGE    600        0.75       10         0         
+Barrel           DRAIN      0          0.5        0          6         
+
+bio              BC
+bio              SURFACE    400        0.15       0.1        1.0        5         
+bio              SOIL       24         0.5        0.2        0.1        0.5        10.0       3.5       
+bio              STORAGE    200        0.75       10         0         
+bio              DRAIN      0          0.5        0          6         
+
+[LID_USAGE]
+;;Subcatchment   LID Process      Number  Area       Width      InitSat    FromImp    ToPerv     RptFile                  DrainTo         
+;;-------------- ---------------- ------- ---------- ---------- ---------- ---------- ---------- ------------------------ ----------------
+S1               Barrel           10      755.40     80         0          10         0         
+Swale1           Swale            1       105.00     60         0          10         0         
+Swale2           Swale            1       105.00     60         0          10         0         
+Swale3           Swale            1       100.00     60         0          10         0         
+Swale4           Swale            1       390.00     60         0          10         0         
+Swale5           Swale            1       237.00     60         0          10         0         
+Bio1             bio              1       240.00     00         0          10         0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Out1             0          FREE                        NO                       
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+TS1              08/26/2013 0          0         
+TS1                         0:05       2.4       
+TS1                         0:10       84.03     
+TS1                         0:15       100.84    
+TS1                         0:20       7.2       
+TS1                         0:25       0         
+TS1                         0:30       4.8       
+TS1                         0:35       12        
+TS1                         0:40       0         
+TS1                         0:45       9.6       
+TS1                         0:50       9.6       
+TS1                         0:55       50.42     
+TS1                         1:00       50.42     
+TS1                         1:05       26.41     
+TS1                         1:10       60.02     
+TS1                         1:15       48.02     
+TS1                         1:20       40.82     
+TS1                         1:25       31.21     
+TS1                         1:30       12        
+TS1                         1:35       7.2       
+TS1                         1:40       4.8       
+TS1                         1:45       0         
+TS1                         1:50       2.4       
+TS1                         1:55       4.8       
+TS1                         2:00       4.8       
+TS1                         2:05       2.4       
+TS1                         2:10       2.4       
+TS1                         2:15       4.8       
+TS1                         2:20       4.8       
+TS1                         2:25       2.4       
+TS1                         2:30       2.4       
+TS1                         2:35       2.4       
+TS1                         2:40       2.4       
+TS1                         2:45       4.8       
+TS1                         2:50       0         
+TS1                         2:55       4.8       
+TS1                         3:00       2.4       
+TS1                         3:05       2.4       
+TS1                         3:10       4.8       
+TS1                         3:15       2.4       
+TS1                         3:20       2.4       
+TS1                         3:25       0         
+TS1                         3:30       2.4       
+TS1                         3:35       0         
+TS1                         3:40       2.4       
+;
+TS2              8/26/2013  0          0         
+TS2                         0:05       0.2       
+TS2                         0:10       7         
+TS2                         0:15       8.4       
+TS2                         0:20       0.6       
+TS2                         0:25       0         
+TS2                         0:30       0.4       
+TS2                         0:35       1         
+TS2                         0:40       0         
+TS2                         0:45       0.8       
+TS2                         0:50       0.8       
+TS2                         0:55       4.2       
+TS2                         1:00       4.2       
+TS2                         1:05       2.2       
+TS2                         1:10       5         
+TS2                         1:15       4         
+TS2                         1:20       3.4       
+TS2                         1:25       2.6       
+TS2                         1:30       1         
+TS2                         1:35       0.6       
+TS2                         1:40       0.4       
+TS2                         1:45       0         
+TS2                         1:50       0.2       
+TS2                         1:55       0.4       
+TS2                         2:00       0.4       
+TS2                         2:05       0.2       
+TS2                         2:10       0.2       
+TS2                         2:15       0.4       
+TS2                         2:20       0.4       
+TS2                         2:25       0.2       
+TS2                         2:30       0.2       
+TS2                         2:35       0.2       
+TS2                         2:40       0.2       
+TS2                         2:45       0.4       
+TS2                         2:50       0         
+TS2                         2:55       0.4       
+TS2                         3:00       0.2       
+TS2                         3:05       0.2       
+TS2                         3:10       0.4       
+TS2                         3:15       0.2       
+TS2                         3:20       0.2       
+TS2                         3:25       0         
+TS2                         3:30       0.2       
+TS2                         3:35       0         
+TS2                         3:40       0.2       
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -2892.738 1705.760 5931.135 5130.634
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Out1             -2491.653          1861.436          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+S1               1556.761           4974.958          
+S1               1560.935           2725.376          
+S1               -1172.788          2729.549          
+S1               -1164.441          4924.875          
+S2               3155.259           4148.581          
+S2               3134.391           3526.711          
+S2               1786.311           3514.190          
+S2               1777.963           4140.234          
+S3               3130.217           3514.190          
+S3               3130.217           2963.272          
+S3               1794.658           2946.578          
+S3               1798.831           3510.017          
+S4               3134.391           2950.751          
+S4               3126.043           2700.334          
+S4               1807.179           2671.119          
+S4               1794.658           2938.230          
+S5               4699.499           4520.033          
+S5               4724.541           4415.693          
+S5               4904.007           4419.866          
+S5               4916.528           4244.574          
+S5               5183.639           4277.963          
+S5               5200.334           4094.324          
+S5               5505.008           4081.803          
+S5               5521.703           2658.598          
+S5               3138.564           2650.250          
+S5               3151.085           4286.311          
+S5               3318.030           4494.992          
+S5               3405.676           4507.513          
+Swale1           1774.753           3707.140          
+Swale1           2613.651           3707.140          
+Swale1           2667.908           3773.918          
+Swale1           2688.776           4024.335          
+Swale1           2642.867           4145.370          
+Swale1           2584.436           4137.023          
+Swale1           2584.436           3782.265          
+Swale1           2246.372           3773.918          
+Swale1           2254.720           4141.196          
+Swale1           2183.768           4149.544          
+Swale1           2175.421           4120.328          
+Swale1           2183.768           3782.265          
+Swale1           1783.100           3757.223          
+Swale2           1794.658           3280.467          
+Swale2           2191.152           3288.815          
+Swale2           2199.499           3439.065          
+Swale2           2262.103           3443.239          
+Swale2           2270.451           3280.467          
+Swale2           2608.514           3297.162          
+Swale2           2608.514           3455.760          
+Swale2           2691.987           3397.329          
+Swale2           2679.466           3080.133          
+Swale2           2604.340           3021.703          
+Swale2           2595.993           3188.648          
+Swale2           2262.103           3184.474          
+Swale2           2262.103           3030.050          
+Swale2           2195.325           3021.703          
+Swale2           2203.673           3188.648          
+Swale2           1790.484           3184.474          
+Swale3           1798.831           2691.987          
+Swale3           2182.805           2687.813          
+Swale3           2199.499           2850.584          
+Swale3           2253.756           2850.584          
+Swale3           2257.930           2691.987          
+Swale3           2595.993           2683.639          
+Swale3           2612.688           2846.411          
+Swale3           2687.813           2796.327          
+Swale3           2683.639           2604.341          
+Swale3           1798.831           2595.993          
+Swale3           1807.179           2666.945          
+Swale4           1661.102           2583.472          
+Swale4           200.334            2591.820          
+Swale4           62.604             2516.694          
+Swale4           -12.521            2433.222          
+Swale4           -121.035           2353.923          
+Swale4           -304.674           2270.451          
+Swale4           -638.564           2170.284          
+Swale4           -876.461           2103.506          
+Swale4           -1135.225          2040.902          
+Swale4           -1139.399          2086.811          
+Swale4           -1076.795          2095.159          
+Swale4           -893.155           2153.589          
+Swale4           -759.599           2199.499          
+Swale4           -525.876           2245.409          
+Swale4           -421.536           2287.145          
+Swale4           -104.341           2424.875          
+Swale4           146.077            2637.730          
+Swale4           1648.581           2641.903          
+Swale5           2687.813           2656.511          
+Swale5           2687.813           2610.601          
+Swale5           5513.356           2579.299          
+Swale5           5530.050           2654.424          
+Bio1             1786.310           4131.886          
+Bio1             1803.005           2591.820          
+Bio1             1652.755           2595.993          
+Bio1             1652.754           4131.886          
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+RG1              2487.479           4924.875          
+

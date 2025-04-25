@@ -1,0 +1,1110 @@
+[TITLE]
+;;Project Title/Notes
+Example of using control rules with a pump.
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/2001
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/2001
+REPORT_START_TIME    00:00:00
+END_DATE             01/02/2001
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:05:00
+WET_STEP             00:15:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:05 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  SLOPE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     5
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.001
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+;                 Invert      Max.       Init.      Surcharge  Ponded
+;Name             Elev.       Depth      Depth      Depth      Area
+;------------------------------------------------------------------------
+KRO3001          556.19     10         0          0          0         
+KRO6015          585.98     8          0          0          0         
+KRO6016          584.14     9          0          0          0         
+KRO6017          582.01     14         0          0          0         
+KRO1002          594.89     3          0          0          0         
+KRO1003          594.73     5          0          0          0         
+KRO1004          588.09     8          0          0          0         
+KRO1005          579.40     16         0          0          0         
+KRO1006          602.48     7          0          0          0         
+KRO1007          596.76     15         0          0          0         
+KRO1008          593.58     12         0          0          0         
+KRO1009          590.56     15         0          0          0         
+KRO1010          584.82     11         0          0          0         
+KRO1012          584.25     10         0          0          0         
+KRO1013          591.58     14         0          0          0         
+KRO1014          592.41     6          0          0          0         
+KRO1015          586.69     10         0          0          0         
+KRO2001          576.29     8          0          0          0         
+KRO4004          587.39     11         0          0          0         
+KRO4008          583.48     10         0          0          0         
+KRO4009          581.68     8          0          0          0         
+KRO4010          579.88     12         0          0          0         
+KRO4011          578.43     10         0          0          0         
+KRO4012          564.71     10         0          0          0         
+KRO4013          567.88     12         0          0          0         
+KRO4014          573.18     14         0          0          0         
+KRO4015          563.71     10         0          0          0         
+KRO4016          563.24     10         0          0          0         
+KRO4017          558.36     10         0          0          0         
+KRO4018          556.02     9          0          0          0         
+KRO4019          552.42     10         0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+;                 Invert     Outfall      Stage/Table
+;Name             Elev.      Type         Time Series
+;----------------------------------------------------
+KRO2005          574.32     FREE                        NO                       
+PSO              548.36     FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+;                 Invert     Max.       Init.
+;Name             Elev.      Depth      Depth      Geometry
+;---------------------------------------------------------------------
+SU1              544.74   17         0          FUNCTIONAL 100       0         0        0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+;                 Inlet            Outlet                      Manning    Inlet      Outlet     Init.
+;Name             Node             Node             Length     N          Height     Height     Flow
+;------------------------------------------------------------------------------------------------------------
+KRO3001-KRO3002  KRO3001          SU1              176.7171053 0.013      0          5          0          0         
+;Pump Station
+SU1-PSO          SU1              PSO              65.78947368 0.013      6          0          0          0         
+KRO1002-KRO1003  KRO1002          KRO1003          27.23684211 0.013      0          0          0          0         
+KRO1003-KRO1008  KRO1003          KRO1008          197.7236842 0.013      0          0          0          0         
+KRO1004-KRO6016  KRO1004          KRO6016          197.4144737 0.013      0          0          0          0         
+KRO1005-KRO2001  KRO1005          KRO2001          134.3092105 0.013      0          0          0          0         
+KRO1006-KRO1007  KRO1006          KRO1007          162.5921053 0.013      0          0          0          0         
+KRO1007-KRO1008  KRO1007          KRO1008          165.8881579 0.013      0          0          0          0         
+KRO1008-KRO1009  KRO1008          KRO1009          157.3223684 0.013      0          0          0          0         
+KRO1009-KRO1010  KRO1009          KRO1010          210.9539474 0.013      0          0          0          0         
+KRO1010-KRO2001  KRO1010          KRO2001          190.1842105 0.013      0          0          0          0         
+KRO1012-KRO4009  KRO1012          KRO4009          128.2631579 0.013      0          0          0          0         
+KRO1013-KRO1009  KRO1013          KRO1009          170.1052632 0.013      0          0          0          0         
+KRO1014-KRO1013  KRO1014          KRO1013          500        0.013      0          0          0          0         
+KRO1015-KRO4014  KRO1015          KRO4014          151.4342105 0.013      0          0          0          0         
+KRO2001-KRO2005  KRO2001          KRO2005          243.7631579 0.013      0          0          0          0         
+KRO4004-KRO4008  KRO4004          KRO4008          140        0.013      0          0          0          0         
+KRO4008-KRO4011  KRO4008          KRO4011          78.72368421 0.013      0          0          0          0         
+KRO4009-KRO4010  KRO4009          KRO4010          180.0526316 0.013      0          0          0          0         
+KRO4010-KRO4011  KRO4010          KRO4011          144.5328947 0.013      0          0          0          0         
+KRO4011-KRO4012  KRO4011          KRO4012          198.0723684 0.013      0          0          0          0         
+KRO4012-KRO3001  KRO4012          KRO3001          129.0526316 0.013      0          0.5        0          0         
+KRO4013-KRO4017  KRO4013          KRO4017          176.5394737 0.013      0          0          0          0         
+KRO4014-KRO4015  KRO4014          KRO4015          138.7039474 0.013      0          0          0          0         
+KRO4015-KRO4016  KRO4015          KRO4016          16.95394737 0.013      0          0          0          0         
+KRO4016-KRO4017  KRO4016          KRO4017          108.7697368 0.013      0          0          0          0         
+KRO4017-KRO4018  KRO4017          KRO4018          101.5592105 0.013      0          0          0          0         
+KRO4018-KRO4019  KRO4018          KRO4019          159.8486842 0.013      0          0          0          0         
+KRO4019-KRO3002  KRO4019          SU1              87.57894737 0.013      0          5          0          0         
+KRO6015-KRO6016  KRO6015          KRO6016          91.85526316 0.013      0          0          0          0         
+KRO6016-KRO6017  KRO6016          KRO6017          211.9736842 0.013      0          0          0          0         
+KRO6017-KRO1005  KRO6017          KRO1005          178.8092105 0.013      0          0          0          0         
+
+[PUMPS]
+;;Name           From Node        To Node          Pump Curve       Status   Sartup Shutoff 
+;;-------------- ---------------- ---------------- ---------------- ------ -------- --------
+;                 Inlet            Outlet           Pump       Pump             Initial
+;Name             Node             Node             Type       Curve            Status
+;--------------------------------------------------------------------------------------
+PUMP@SU1-KRO1014 SU1              KRO1014          PCurve           ON       2        1       
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+KRO3001-KRO3002  CIRCULAR     1                0          0          0          1                    
+SU1-PSO          CIRCULAR     1                0          0          0          1                    
+KRO1002-KRO1003  CIRCULAR     1                0          0          0          1                    
+KRO1003-KRO1008  CIRCULAR     1                0          0          0          1                    
+KRO1004-KRO6016  CIRCULAR     1                0          0          0          1                    
+KRO1005-KRO2001  CIRCULAR     1                0          0          0          1                    
+KRO1006-KRO1007  CIRCULAR     1                0          0          0          1                    
+KRO1007-KRO1008  CIRCULAR     1                0          0          0          1                    
+KRO1008-KRO1009  CIRCULAR     1                0          0          0          1                    
+KRO1009-KRO1010  CIRCULAR     1                0          0          0          1                    
+KRO1010-KRO2001  CIRCULAR     1                0          0          0          1                    
+KRO1012-KRO4009  CIRCULAR     1                0          0          0          1                    
+KRO1013-KRO1009  CIRCULAR     1                0          0          0          1                    
+KRO1014-KRO1013  CIRCULAR     1                0          0          0          1                    
+KRO1015-KRO4014  CIRCULAR     1                0          0          0          1                    
+KRO2001-KRO2005  CIRCULAR     1                0          0          0          1                    
+KRO4004-KRO4008  CIRCULAR     1                0          0          0          1                    
+KRO4008-KRO4011  CIRCULAR     1                0          0          0          1                    
+KRO4009-KRO4010  CIRCULAR     1                0          0          0          1                    
+KRO4010-KRO4011  CIRCULAR     1                0          0          0          1                    
+KRO4011-KRO4012  CIRCULAR     1                0          0          0          1                    
+KRO4012-KRO3001  CIRCULAR     1                0          0          0          1                    
+KRO4013-KRO4017  CIRCULAR     1                0          0          0          1                    
+KRO4014-KRO4015  CIRCULAR     1                0          0          0          1                    
+KRO4015-KRO4016  CIRCULAR     1                0          0          0          1                    
+KRO4016-KRO4017  CIRCULAR     1                0          0          0          1                    
+KRO4017-KRO4018  CIRCULAR     1                0          0          0          1                    
+KRO4018-KRO4019  CIRCULAR     1                0          0          0          1                    
+KRO4019-KRO3002  CIRCULAR     1                0          0          0          1                    
+KRO6015-KRO6016  CIRCULAR     1                0          0          0          1                    
+KRO6016-KRO6017  CIRCULAR     1                0          0          0          1                    
+KRO6017-KRO1005  CIRCULAR     1                0          0          0          1                    
+
+[CONTROLS]
+;===============================================================================
+RULE PUMP1A
+IF NODE SU1 DEPTH >= 4
+THEN PUMP PUMP@SU1-KRO1014 status = ON
+PRIORITY 1
+
+RULE PUMP1B
+IF NODE SU1 DEPTH < 1
+THEN PUMP PUMP@SU1-KRO1014 status = OFF
+PRIORITY 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+KRO3001          FLOW             FLOW@KRO3001     FLOW     1.0      1.0              
+KRO6015          FLOW             FLOW@KRO6015     FLOW     1.0      1.0              
+KRO6016          FLOW             FLOW@KRO6016     FLOW     1.0      1.0              
+KRO6017          FLOW             FLOW@KRO6017     FLOW     1.0      1.0              
+KRO1002          FLOW             FLOW@KRO1002     FLOW     1.0      1.0              
+KRO1003          FLOW             FLOW@KRO1003     FLOW     1.0      1.0              
+KRO1004          FLOW             FLOW@KRO1004     FLOW     1.0      1.0              
+KRO1005          FLOW             FLOW@KRO1005     FLOW     1.0      1.0              
+KRO1006          FLOW             FLOW@KRO1006     FLOW     1.0      1.0              
+KRO1007          FLOW             FLOW@KRO1007     FLOW     1.0      1.0              
+KRO1008          FLOW             FLOW@KRO1008     FLOW     1.0      1.0              
+KRO1009          FLOW             FLOW@KRO1009     FLOW     1.0      1.0              
+KRO1010          FLOW             FLOW@KRO1010     FLOW     1.0      1.0              
+KRO1012          FLOW             FLOW@KRO1012     FLOW     1.0      1.0              
+KRO1013          FLOW             FLOW@KRO1013     FLOW     1.0      1.0              
+KRO1015          FLOW             FLOW@KRO1015     FLOW     1.0      1.0              
+KRO2001          FLOW             FLOW@KRO2001     FLOW     1.0      1.0              
+KRO4004          FLOW             FLOW@KRO4004     FLOW     1.0      1.0              
+KRO4008          FLOW             FLOW@KRO4008     FLOW     1.0      1.0              
+KRO4009          FLOW             FLOW@KRO4009     FLOW     1.0      1.0              
+KRO4010          FLOW             FLOW@KRO4010     FLOW     1.0      1.0              
+KRO4011          FLOW             FLOW@KRO4011     FLOW     1.0      1.0              
+KRO4012          FLOW             FLOW@KRO4012     FLOW     1.0      1.0              
+KRO4013          FLOW             FLOW@KRO4013     FLOW     1.0      1.0              
+KRO4014          FLOW             FLOW@KRO4014     FLOW     1.0      1.0              
+KRO4015          FLOW             FLOW@KRO4015     FLOW     1.0      1.0              
+KRO4017          FLOW             FLOW@KRO4017     FLOW     1.0      1.0              
+KRO4018          FLOW             FLOW@KRO4018     FLOW     1.0      1.0              
+KRO4019          FLOW             FLOW@KRO4019     FLOW     1.0      1.0              
+SU1              FLOW             FLOW@KRO3002     FLOW     1.0      1.0              
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+PCurve           Pump3      5          0         
+PCurve                      10         5         
+PCurve                      25         10        
+;
+;Name             Type       X-Value    Y-Value
+;-------------------------------------------------
+;===============================================================================
+PUMPCURVEforPUMP@SU1 STORAGE    0          0.45      
+PUMPCURVEforPUMP@SU1            4          0.45      
+PUMPCURVEforPUMP@SU1            4.75       0.9       
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+;Name             Date       Time       Value
+;-------------------------------------------------
+;-------------------------------------------------
+FLOW@KRO4004     01/01/2001 00:00      0.01510   
+FLOW@KRO4004                01:00      0.01373   
+FLOW@KRO4004                02:00      0.01812   
+FLOW@KRO4004                03:00      0.01098   
+FLOW@KRO4004                04:00      0.01098   
+FLOW@KRO4004     01/01/2001 05:00      0.01922   
+FLOW@KRO4004                06:00      0.02773   
+FLOW@KRO4004                07:00      0.03789   
+FLOW@KRO4004                08:00      0.03515   
+FLOW@KRO4004                09:00      0.03982   
+FLOW@KRO4004     01/01/2001 10:00      0.02059   
+FLOW@KRO4004                11:00      0.02471   
+FLOW@KRO4004                12:00      0.03021   
+FLOW@KRO4004                13:00      0.03789   
+FLOW@KRO4004                14:00      0.03350   
+FLOW@KRO4004     01/01/2001 15:00      0.03158   
+FLOW@KRO4004                16:00      0.03954   
+FLOW@KRO4004                17:00      0.02114   
+FLOW@KRO4004                18:00      0.02801   
+FLOW@KRO4004                19:00      0.03680   
+FLOW@KRO4004     01/01/2001 20:00      0.02911   
+FLOW@KRO4004                21:00      0.02334   
+FLOW@KRO4004                22:00      0.02499   
+FLOW@KRO4004                23:00      0.02718   
+FLOW@KRO4004     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO1012     01/01/2001 00:00      0.01510   
+FLOW@KRO1012                01:00      0.01373   
+FLOW@KRO1012                02:00      0.01812   
+FLOW@KRO1012                03:00      0.01098   
+FLOW@KRO1012                04:00      0.01098   
+FLOW@KRO1012     01/01/2001 05:00      0.01922   
+FLOW@KRO1012                06:00      0.02773   
+FLOW@KRO1012                07:00      0.03789   
+FLOW@KRO1012                08:00      0.03515   
+FLOW@KRO1012                09:00      0.03982   
+FLOW@KRO1012     01/01/2001 10:00      0.02059   
+FLOW@KRO1012                11:00      0.02471   
+FLOW@KRO1012                12:00      0.03021   
+FLOW@KRO1012                13:00      0.03789   
+FLOW@KRO1012                14:00      0.03350   
+FLOW@KRO1012     01/01/2001 15:00      0.03158   
+FLOW@KRO1012                16:00      0.03954   
+FLOW@KRO1012                17:00      0.02114   
+FLOW@KRO1012                18:00      0.02801   
+FLOW@KRO1012                19:00      0.03680   
+FLOW@KRO1012     01/01/2001 20:00      0.02911   
+FLOW@KRO1012                21:00      0.02334   
+FLOW@KRO1012                22:00      0.02499   
+FLOW@KRO1012                23:00      0.02718   
+FLOW@KRO1012     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO4009     01/01/2001 00:00      0.01510   
+FLOW@KRO4009                01:00      0.01373   
+FLOW@KRO4009                02:00      0.01812   
+FLOW@KRO4009                03:00      0.01098   
+FLOW@KRO4009                04:00      0.01098   
+FLOW@KRO4009     01/01/2001 05:00      0.01922   
+FLOW@KRO4009                06:00      0.02773   
+FLOW@KRO4009                07:00      0.03789   
+FLOW@KRO4009                08:00      0.03515   
+FLOW@KRO4009                09:00      0.03982   
+FLOW@KRO4009     01/01/2001 10:00      0.02059   
+FLOW@KRO4009                11:00      0.02471   
+FLOW@KRO4009                12:00      0.03021   
+FLOW@KRO4009                13:00      0.03789   
+FLOW@KRO4009                14:00      0.03350   
+FLOW@KRO4009     01/01/2001 15:00      0.03158   
+FLOW@KRO4009                16:00      0.03954   
+FLOW@KRO4009                17:00      0.02114   
+FLOW@KRO4009                18:00      0.02801   
+FLOW@KRO4009                19:00      0.03680   
+FLOW@KRO4009     01/01/2001 20:00      0.02911   
+FLOW@KRO4009                21:00      0.02334   
+FLOW@KRO4009                22:00      0.02499   
+FLOW@KRO4009                23:00      0.02718   
+FLOW@KRO4009     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO4010     01/01/2001 00:00      0.01510   
+FLOW@KRO4010                01:00      0.01373   
+FLOW@KRO4010                02:00      0.01812   
+FLOW@KRO4010                03:00      0.01098   
+FLOW@KRO4010                04:00      0.01098   
+FLOW@KRO4010     01/01/2001 05:00      0.01922   
+FLOW@KRO4010                06:00      0.02773   
+FLOW@KRO4010                07:00      0.03789   
+FLOW@KRO4010                08:00      0.03515   
+FLOW@KRO4010                09:00      0.03982   
+FLOW@KRO4010     01/01/2001 10:00      0.02059   
+FLOW@KRO4010                11:00      0.02471   
+FLOW@KRO4010                12:00      0.03021   
+FLOW@KRO4010                13:00      0.03789   
+FLOW@KRO4010                14:00      0.03350   
+FLOW@KRO4010     01/01/2001 15:00      0.03158   
+FLOW@KRO4010                16:00      0.03954   
+FLOW@KRO4010                17:00      0.02114   
+FLOW@KRO4010                18:00      0.02801   
+FLOW@KRO4010                19:00      0.03680   
+FLOW@KRO4010     01/01/2001 20:00      0.02911   
+FLOW@KRO4010                21:00      0.02334   
+FLOW@KRO4010                22:00      0.02499   
+FLOW@KRO4010                23:00      0.02718   
+FLOW@KRO4010     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO4008     01/01/2001 00:00      0.01510   
+FLOW@KRO4008                01:00      0.01373   
+FLOW@KRO4008                02:00      0.01812   
+FLOW@KRO4008                03:00      0.01098   
+FLOW@KRO4008                04:00      0.01098   
+FLOW@KRO4008     01/01/2001 05:00      0.01922   
+FLOW@KRO4008                06:00      0.02773   
+FLOW@KRO4008                07:00      0.03789   
+FLOW@KRO4008                08:00      0.03515   
+FLOW@KRO4008                09:00      0.03982   
+FLOW@KRO4008     01/01/2001 10:00      0.02059   
+FLOW@KRO4008                11:00      0.02471   
+FLOW@KRO4008                12:00      0.03021   
+FLOW@KRO4008                13:00      0.03789   
+FLOW@KRO4008                14:00      0.03350   
+FLOW@KRO4008     01/01/2001 15:00      0.03158   
+FLOW@KRO4008                16:00      0.03954   
+FLOW@KRO4008                17:00      0.02114   
+FLOW@KRO4008                18:00      0.02801   
+FLOW@KRO4008                19:00      0.03680   
+FLOW@KRO4008     01/01/2001 20:00      0.02911   
+FLOW@KRO4008                21:00      0.02334   
+FLOW@KRO4008                22:00      0.02499   
+FLOW@KRO4008                23:00      0.02718   
+FLOW@KRO4008     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO4011     01/01/2001 00:00      0.01510   
+FLOW@KRO4011                01:00      0.01373   
+FLOW@KRO4011                02:00      0.01812   
+FLOW@KRO4011                03:00      0.01098   
+FLOW@KRO4011                04:00      0.01098   
+FLOW@KRO4011     01/01/2001 05:00      0.01922   
+FLOW@KRO4011                06:00      0.02773   
+FLOW@KRO4011                07:00      0.03789   
+FLOW@KRO4011                08:00      0.03515   
+FLOW@KRO4011                09:00      0.03982   
+FLOW@KRO4011     01/01/2001 10:00      0.02059   
+FLOW@KRO4011                11:00      0.02471   
+FLOW@KRO4011                12:00      0.03021   
+FLOW@KRO4011                13:00      0.03789   
+FLOW@KRO4011                14:00      0.03350   
+FLOW@KRO4011     01/01/2001 15:00      0.03158   
+FLOW@KRO4011                16:00      0.03954   
+FLOW@KRO4011                17:00      0.02114   
+FLOW@KRO4011                18:00      0.02801   
+FLOW@KRO4011                19:00      0.03680   
+FLOW@KRO4011     01/01/2001 20:00      0.02911   
+FLOW@KRO4011                21:00      0.02334   
+FLOW@KRO4011                22:00      0.02499   
+FLOW@KRO4011                23:00      0.02718   
+FLOW@KRO4011     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO4012     01/01/2001 00:00      0.01510   
+FLOW@KRO4012                01:00      0.01373   
+FLOW@KRO4012                02:00      0.01812   
+FLOW@KRO4012                03:00      0.01098   
+FLOW@KRO4012                04:00      0.01098   
+FLOW@KRO4012     01/01/2001 05:00      0.01922   
+FLOW@KRO4012                06:00      0.02773   
+FLOW@KRO4012                07:00      0.03789   
+FLOW@KRO4012                08:00      0.03515   
+FLOW@KRO4012                09:00      0.03982   
+FLOW@KRO4012     01/01/2001 10:00      0.02059   
+FLOW@KRO4012                11:00      0.02471   
+FLOW@KRO4012                12:00      0.03021   
+FLOW@KRO4012                13:00      0.03789   
+FLOW@KRO4012                14:00      0.03350   
+FLOW@KRO4012     01/01/2001 15:00      0.03158   
+FLOW@KRO4012                16:00      0.03954   
+FLOW@KRO4012                17:00      0.02114   
+FLOW@KRO4012                18:00      0.02801   
+FLOW@KRO4012                19:00      0.03680   
+FLOW@KRO4012     01/01/2001 20:00      0.02911   
+FLOW@KRO4012                21:00      0.02334   
+FLOW@KRO4012                22:00      0.02499   
+FLOW@KRO4012                23:00      0.02718   
+FLOW@KRO4012     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO3001     01/01/2001 00:00      0.01510   
+FLOW@KRO3001                01:00      0.01373   
+FLOW@KRO3001                02:00      0.01812   
+FLOW@KRO3001                03:00      0.01098   
+FLOW@KRO3001                04:00      0.01098   
+FLOW@KRO3001     01/01/2001 05:00      0.01922   
+FLOW@KRO3001                06:00      0.02773   
+FLOW@KRO3001                07:00      0.03789   
+FLOW@KRO3001                08:00      0.03515   
+FLOW@KRO3001                09:00      0.03982   
+FLOW@KRO3001     01/01/2001 10:00      0.02059   
+FLOW@KRO3001                11:00      0.02471   
+FLOW@KRO3001                12:00      0.03021   
+FLOW@KRO3001                13:00      0.03789   
+FLOW@KRO3001                14:00      0.03350   
+FLOW@KRO3001     01/01/2001 15:00      0.03158   
+FLOW@KRO3001                16:00      0.03954   
+FLOW@KRO3001                17:00      0.02114   
+FLOW@KRO3001                18:00      0.02801   
+FLOW@KRO3001                19:00      0.03680   
+FLOW@KRO3001     01/01/2001 20:00      0.02911   
+FLOW@KRO3001                21:00      0.02334   
+FLOW@KRO3001                22:00      0.02499   
+FLOW@KRO3001                23:00      0.02718   
+FLOW@KRO3001     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO4013     01/01/2001 00:00      0.01510   
+FLOW@KRO4013                01:00      0.01373   
+FLOW@KRO4013                02:00      0.01812   
+FLOW@KRO4013                03:00      0.01098   
+FLOW@KRO4013                04:00      0.01098   
+FLOW@KRO4013     01/01/2001 05:00      0.01922   
+FLOW@KRO4013                06:00      0.02773   
+FLOW@KRO4013                07:00      0.03789   
+FLOW@KRO4013                08:00      0.03515   
+FLOW@KRO4013                09:00      0.03982   
+FLOW@KRO4013     01/01/2001 10:00      0.02059   
+FLOW@KRO4013                11:00      0.02471   
+FLOW@KRO4013                12:00      0.03021   
+FLOW@KRO4013                13:00      0.03789   
+FLOW@KRO4013                14:00      0.03350   
+FLOW@KRO4013     01/01/2001 15:00      0.03158   
+FLOW@KRO4013                16:00      0.03954   
+FLOW@KRO4013                17:00      0.02114   
+FLOW@KRO4013                18:00      0.02801   
+FLOW@KRO4013                19:00      0.03680   
+FLOW@KRO4013     01/01/2001 20:00      0.02911   
+FLOW@KRO4013                21:00      0.02334   
+FLOW@KRO4013                22:00      0.02499   
+FLOW@KRO4013                23:00      0.02718   
+FLOW@KRO4013     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO4019     01/01/2001 00:00      0.01510   
+FLOW@KRO4019                01:00      0.01373   
+FLOW@KRO4019                02:00      0.01812   
+FLOW@KRO4019                03:00      0.01098   
+FLOW@KRO4019                04:00      0.01098   
+FLOW@KRO4019     01/01/2001 05:00      0.01922   
+FLOW@KRO4019                06:00      0.02773   
+FLOW@KRO4019                07:00      0.03789   
+FLOW@KRO4019                08:00      0.03515   
+FLOW@KRO4019                09:00      0.03982   
+FLOW@KRO4019     01/01/2001 10:00      0.02059   
+FLOW@KRO4019                11:00      0.02471   
+FLOW@KRO4019                12:00      0.03021   
+FLOW@KRO4019                13:00      0.03789   
+FLOW@KRO4019                14:00      0.03350   
+FLOW@KRO4019     01/01/2001 15:00      0.03158   
+FLOW@KRO4019                16:00      0.03954   
+FLOW@KRO4019                17:00      0.02114   
+FLOW@KRO4019                18:00      0.02801   
+FLOW@KRO4019                19:00      0.03680   
+FLOW@KRO4019     01/01/2001 20:00      0.02911   
+FLOW@KRO4019                21:00      0.02334   
+FLOW@KRO4019                22:00      0.02499   
+FLOW@KRO4019                23:00      0.02718   
+FLOW@KRO4019     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO4018     01/01/2001 00:00      0.01510   
+FLOW@KRO4018                01:00      0.01373   
+FLOW@KRO4018                02:00      0.01812   
+FLOW@KRO4018                03:00      0.01098   
+FLOW@KRO4018                04:00      0.01098   
+FLOW@KRO4018     01/01/2001 05:00      0.01922   
+FLOW@KRO4018                06:00      0.02773   
+FLOW@KRO4018                07:00      0.03789   
+FLOW@KRO4018                08:00      0.03515   
+FLOW@KRO4018                09:00      0.03982   
+FLOW@KRO4018     01/01/2001 10:00      0.02059   
+FLOW@KRO4018                11:00      0.02471   
+FLOW@KRO4018                12:00      0.03021   
+FLOW@KRO4018                13:00      0.03789   
+FLOW@KRO4018                14:00      0.03350   
+FLOW@KRO4018     01/01/2001 15:00      0.03158   
+FLOW@KRO4018                16:00      0.03954   
+FLOW@KRO4018                17:00      0.02114   
+FLOW@KRO4018                18:00      0.02801   
+FLOW@KRO4018                19:00      0.03680   
+FLOW@KRO4018     01/01/2001 20:00      0.02911   
+FLOW@KRO4018                21:00      0.02334   
+FLOW@KRO4018                22:00      0.02499   
+FLOW@KRO4018                23:00      0.02718   
+FLOW@KRO4018     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO4017     01/01/2001 00:00      0.01510   
+FLOW@KRO4017                01:00      0.01373   
+FLOW@KRO4017                02:00      0.01812   
+FLOW@KRO4017                03:00      0.01098   
+FLOW@KRO4017                04:00      0.01098   
+FLOW@KRO4017     01/01/2001 05:00      0.01922   
+FLOW@KRO4017                06:00      0.02773   
+FLOW@KRO4017                07:00      0.03789   
+FLOW@KRO4017                08:00      0.03515   
+FLOW@KRO4017                09:00      0.03982   
+FLOW@KRO4017     01/01/2001 10:00      0.02059   
+FLOW@KRO4017                11:00      0.02471   
+FLOW@KRO4017                12:00      0.03021   
+FLOW@KRO4017                13:00      0.03789   
+FLOW@KRO4017                14:00      0.03350   
+FLOW@KRO4017     01/01/2001 15:00      0.03158   
+FLOW@KRO4017                16:00      0.03954   
+FLOW@KRO4017                17:00      0.02114   
+FLOW@KRO4017                18:00      0.02801   
+FLOW@KRO4017                19:00      0.03680   
+FLOW@KRO4017     01/01/2001 20:00      0.02911   
+FLOW@KRO4017                21:00      0.02334   
+FLOW@KRO4017                22:00      0.02499   
+FLOW@KRO4017                23:00      0.02718   
+FLOW@KRO4017     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO1013     01/01/2001 00:00      0.01510   
+FLOW@KRO1013                01:00      0.01373   
+FLOW@KRO1013                02:00      0.01812   
+FLOW@KRO1013                03:00      0.01098   
+FLOW@KRO1013                04:00      0.01098   
+FLOW@KRO1013     01/01/2001 05:00      0.01922   
+FLOW@KRO1013                06:00      0.02773   
+FLOW@KRO1013                07:00      0.03789   
+FLOW@KRO1013                08:00      0.03515   
+FLOW@KRO1013                09:00      0.03982   
+FLOW@KRO1013     01/01/2001 10:00      0.02059   
+FLOW@KRO1013                11:00      0.02471   
+FLOW@KRO1013                12:00      0.03021   
+FLOW@KRO1013                13:00      0.03789   
+FLOW@KRO1013                14:00      0.03350   
+FLOW@KRO1013     01/01/2001 15:00      0.03158   
+FLOW@KRO1013                16:00      0.03954   
+FLOW@KRO1013                17:00      0.02114   
+FLOW@KRO1013                18:00      0.02801   
+FLOW@KRO1013                19:00      0.03680   
+FLOW@KRO1013     01/01/2001 20:00      0.02911   
+FLOW@KRO1013                21:00      0.02334   
+FLOW@KRO1013                22:00      0.02499   
+FLOW@KRO1013                23:00      0.02718   
+FLOW@KRO1013     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO1015     01/01/2001 00:00      0.01510   
+FLOW@KRO1015                01:00      0.01373   
+FLOW@KRO1015                02:00      0.01812   
+FLOW@KRO1015                03:00      0.01098   
+FLOW@KRO1015                04:00      0.01098   
+FLOW@KRO1015     01/01/2001 05:00      0.01922   
+FLOW@KRO1015                06:00      0.02773   
+FLOW@KRO1015                07:00      0.03789   
+FLOW@KRO1015                08:00      0.03515   
+FLOW@KRO1015                09:00      0.03982   
+FLOW@KRO1015     01/01/2001 10:00      0.02059   
+FLOW@KRO1015                11:00      0.02471   
+FLOW@KRO1015                12:00      0.03021   
+FLOW@KRO1015                13:00      0.03789   
+FLOW@KRO1015                14:00      0.03350   
+FLOW@KRO1015     01/01/2001 15:00      0.03158   
+FLOW@KRO1015                16:00      0.03954   
+FLOW@KRO1015                17:00      0.02114   
+FLOW@KRO1015                18:00      0.02801   
+FLOW@KRO1015                19:00      0.03680   
+FLOW@KRO1015     01/01/2001 20:00      0.02911   
+FLOW@KRO1015                21:00      0.02334   
+FLOW@KRO1015                22:00      0.02499   
+FLOW@KRO1015                23:00      0.02718   
+FLOW@KRO1015     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO4014     01/01/2001 00:00      0.01510   
+FLOW@KRO4014                01:00      0.01373   
+FLOW@KRO4014                02:00      0.01812   
+FLOW@KRO4014                03:00      0.01098   
+FLOW@KRO4014                04:00      0.01098   
+FLOW@KRO4014     01/01/2001 05:00      0.01922   
+FLOW@KRO4014                06:00      0.02773   
+FLOW@KRO4014                07:00      0.03789   
+FLOW@KRO4014                08:00      0.03515   
+FLOW@KRO4014                09:00      0.03982   
+FLOW@KRO4014     01/01/2001 10:00      0.02059   
+FLOW@KRO4014                11:00      0.02471   
+FLOW@KRO4014                12:00      0.03021   
+FLOW@KRO4014                13:00      0.03789   
+FLOW@KRO4014                14:00      0.03350   
+FLOW@KRO4014     01/01/2001 15:00      0.03158   
+FLOW@KRO4014                16:00      0.03954   
+FLOW@KRO4014                17:00      0.02114   
+FLOW@KRO4014                18:00      0.02801   
+FLOW@KRO4014                19:00      0.03680   
+FLOW@KRO4014     01/01/2001 20:00      0.02911   
+FLOW@KRO4014                21:00      0.02334   
+FLOW@KRO4014                22:00      0.02499   
+FLOW@KRO4014                23:00      0.02718   
+FLOW@KRO4014     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO4015     01/01/2001 00:00      0.01510   
+FLOW@KRO4015                01:00      0.01373   
+FLOW@KRO4015                02:00      0.01812   
+FLOW@KRO4015                03:00      0.01098   
+FLOW@KRO4015                04:00      0.01098   
+FLOW@KRO4015     01/01/2001 05:00      0.01922   
+FLOW@KRO4015                06:00      0.02773   
+FLOW@KRO4015                07:00      0.03789   
+FLOW@KRO4015                08:00      0.03515   
+FLOW@KRO4015                09:00      0.03982   
+FLOW@KRO4015     01/01/2001 10:00      0.02059   
+FLOW@KRO4015                11:00      0.02471   
+FLOW@KRO4015                12:00      0.03021   
+FLOW@KRO4015                13:00      0.03789   
+FLOW@KRO4015                14:00      0.03350   
+FLOW@KRO4015     01/01/2001 15:00      0.03158   
+FLOW@KRO4015                16:00      0.03954   
+FLOW@KRO4015                17:00      0.02114   
+FLOW@KRO4015                18:00      0.02801   
+FLOW@KRO4015                19:00      0.03680   
+FLOW@KRO4015     01/01/2001 20:00      0.02911   
+FLOW@KRO4015                21:00      0.02334   
+FLOW@KRO4015                22:00      0.02499   
+FLOW@KRO4015                23:00      0.02718   
+FLOW@KRO4015     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO1002     01/01/2001 00:00      0.01510   
+FLOW@KRO1002                01:00      0.01373   
+FLOW@KRO1002                02:00      0.01812   
+FLOW@KRO1002                03:00      0.01098   
+FLOW@KRO1002                04:00      0.01098   
+FLOW@KRO1002     01/01/2001 05:00      0.01922   
+FLOW@KRO1002                06:00      0.02773   
+FLOW@KRO1002                07:00      0.03789   
+FLOW@KRO1002                08:00      0.03515   
+FLOW@KRO1002                09:00      0.03982   
+FLOW@KRO1002     01/01/2001 10:00      0.02059   
+FLOW@KRO1002                11:00      0.02471   
+FLOW@KRO1002                12:00      0.03021   
+FLOW@KRO1002                13:00      0.03789   
+FLOW@KRO1002                14:00      0.03350   
+FLOW@KRO1002     01/01/2001 15:00      0.03158   
+FLOW@KRO1002                16:00      0.03954   
+FLOW@KRO1002                17:00      0.02114   
+FLOW@KRO1002                18:00      0.02801   
+FLOW@KRO1002                19:00      0.03680   
+FLOW@KRO1002     01/01/2001 20:00      0.02911   
+FLOW@KRO1002                21:00      0.02334   
+FLOW@KRO1002                22:00      0.02499   
+FLOW@KRO1002                23:00      0.02718   
+FLOW@KRO1002     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO1007     01/01/2001 00:00      0.01510   
+FLOW@KRO1007                01:00      0.01373   
+FLOW@KRO1007                02:00      0.01812   
+FLOW@KRO1007                03:00      0.01098   
+FLOW@KRO1007                04:00      0.01098   
+FLOW@KRO1007     01/01/2001 05:00      0.01922   
+FLOW@KRO1007                06:00      0.02773   
+FLOW@KRO1007                07:00      0.03789   
+FLOW@KRO1007                08:00      0.03515   
+FLOW@KRO1007                09:00      0.03982   
+FLOW@KRO1007     01/01/2001 10:00      0.02059   
+FLOW@KRO1007                11:00      0.02471   
+FLOW@KRO1007                12:00      0.03021   
+FLOW@KRO1007                13:00      0.03789   
+FLOW@KRO1007                14:00      0.03350   
+FLOW@KRO1007     01/01/2001 15:00      0.03158   
+FLOW@KRO1007                16:00      0.03954   
+FLOW@KRO1007                17:00      0.02114   
+FLOW@KRO1007                18:00      0.02801   
+FLOW@KRO1007                19:00      0.03680   
+FLOW@KRO1007     01/01/2001 20:00      0.02911   
+FLOW@KRO1007                21:00      0.02334   
+FLOW@KRO1007                22:00      0.02499   
+FLOW@KRO1007                23:00      0.02718   
+FLOW@KRO1007     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO1004     01/01/2001 00:00      0.01510   
+FLOW@KRO1004                01:00      0.01373   
+FLOW@KRO1004                02:00      0.01812   
+FLOW@KRO1004                03:00      0.01098   
+FLOW@KRO1004                04:00      0.01098   
+FLOW@KRO1004     01/01/2001 05:00      0.01922   
+FLOW@KRO1004                06:00      0.02773   
+FLOW@KRO1004                07:00      0.03789   
+FLOW@KRO1004                08:00      0.03515   
+FLOW@KRO1004                09:00      0.03982   
+FLOW@KRO1004     01/01/2001 10:00      0.02059   
+FLOW@KRO1004                11:00      0.02471   
+FLOW@KRO1004                12:00      0.03021   
+FLOW@KRO1004                13:00      0.03789   
+FLOW@KRO1004                14:00      0.03350   
+FLOW@KRO1004     01/01/2001 15:00      0.03158   
+FLOW@KRO1004                16:00      0.03954   
+FLOW@KRO1004                17:00      0.02114   
+FLOW@KRO1004                18:00      0.02801   
+FLOW@KRO1004                19:00      0.03680   
+FLOW@KRO1004     01/01/2001 20:00      0.02911   
+FLOW@KRO1004                21:00      0.02334   
+FLOW@KRO1004                22:00      0.02499   
+FLOW@KRO1004                23:00      0.02718   
+FLOW@KRO1004     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO6015     01/01/2001 00:00      0.01510   
+FLOW@KRO6015                01:00      0.01373   
+FLOW@KRO6015                02:00      0.01812   
+FLOW@KRO6015                03:00      0.01098   
+FLOW@KRO6015                04:00      0.01098   
+FLOW@KRO6015     01/01/2001 05:00      0.01922   
+FLOW@KRO6015                06:00      0.02773   
+FLOW@KRO6015                07:00      0.03789   
+FLOW@KRO6015                08:00      0.03515   
+FLOW@KRO6015                09:00      0.03982   
+FLOW@KRO6015     01/01/2001 10:00      0.02059   
+FLOW@KRO6015                11:00      0.02471   
+FLOW@KRO6015                12:00      0.03021   
+FLOW@KRO6015                13:00      0.03789   
+FLOW@KRO6015                14:00      0.03350   
+FLOW@KRO6015     01/01/2001 15:00      0.03158   
+FLOW@KRO6015                16:00      0.03954   
+FLOW@KRO6015                17:00      0.02114   
+FLOW@KRO6015                18:00      0.02801   
+FLOW@KRO6015                19:00      0.03680   
+FLOW@KRO6015     01/01/2001 20:00      0.02911   
+FLOW@KRO6015                21:00      0.02334   
+FLOW@KRO6015                22:00      0.02499   
+FLOW@KRO6015                23:00      0.02718   
+FLOW@KRO6015     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO6016     01/01/2001 00:00      0.01510   
+FLOW@KRO6016                01:00      0.01373   
+FLOW@KRO6016                02:00      0.01812   
+FLOW@KRO6016                03:00      0.01098   
+FLOW@KRO6016                04:00      0.01098   
+FLOW@KRO6016     01/01/2001 05:00      0.01922   
+FLOW@KRO6016                06:00      0.02773   
+FLOW@KRO6016                07:00      0.03789   
+FLOW@KRO6016                08:00      0.03515   
+FLOW@KRO6016                09:00      0.03982   
+FLOW@KRO6016     01/01/2001 10:00      0.02059   
+FLOW@KRO6016                11:00      0.02471   
+FLOW@KRO6016                12:00      0.03021   
+FLOW@KRO6016                13:00      0.03789   
+FLOW@KRO6016                14:00      0.03350   
+FLOW@KRO6016     01/01/2001 15:00      0.03158   
+FLOW@KRO6016                16:00      0.03954   
+FLOW@KRO6016                17:00      0.02114   
+FLOW@KRO6016                18:00      0.02801   
+FLOW@KRO6016                19:00      0.03680   
+FLOW@KRO6016     01/01/2001 20:00      0.02911   
+FLOW@KRO6016                21:00      0.02334   
+FLOW@KRO6016                22:00      0.02499   
+FLOW@KRO6016                23:00      0.02718   
+FLOW@KRO6016     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO6017     01/01/2001 00:00      0.01510   
+FLOW@KRO6017                01:00      0.01373   
+FLOW@KRO6017                02:00      0.01812   
+FLOW@KRO6017                03:00      0.01098   
+FLOW@KRO6017                04:00      0.01098   
+FLOW@KRO6017     01/01/2001 05:00      0.01922   
+FLOW@KRO6017                06:00      0.02773   
+FLOW@KRO6017                07:00      0.03789   
+FLOW@KRO6017                08:00      0.03515   
+FLOW@KRO6017                09:00      0.03982   
+FLOW@KRO6017     01/01/2001 10:00      0.02059   
+FLOW@KRO6017                11:00      0.02471   
+FLOW@KRO6017                12:00      0.03021   
+FLOW@KRO6017                13:00      0.03789   
+FLOW@KRO6017                14:00      0.03350   
+FLOW@KRO6017     01/01/2001 15:00      0.03158   
+FLOW@KRO6017                16:00      0.03954   
+FLOW@KRO6017                17:00      0.02114   
+FLOW@KRO6017                18:00      0.02801   
+FLOW@KRO6017                19:00      0.03680   
+FLOW@KRO6017     01/01/2001 20:00      0.02911   
+FLOW@KRO6017                21:00      0.02334   
+FLOW@KRO6017                22:00      0.02499   
+FLOW@KRO6017                23:00      0.02718   
+FLOW@KRO6017     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO1005     01/01/2001 00:00      0.01510   
+FLOW@KRO1005                01:00      0.01373   
+FLOW@KRO1005                02:00      0.01812   
+FLOW@KRO1005                03:00      0.01098   
+FLOW@KRO1005                04:00      0.01098   
+FLOW@KRO1005     01/01/2001 05:00      0.01922   
+FLOW@KRO1005                06:00      0.02773   
+FLOW@KRO1005                07:00      0.03789   
+FLOW@KRO1005                08:00      0.03515   
+FLOW@KRO1005                09:00      0.03982   
+FLOW@KRO1005     01/01/2001 10:00      0.02059   
+FLOW@KRO1005                11:00      0.02471   
+FLOW@KRO1005                12:00      0.03021   
+FLOW@KRO1005                13:00      0.03789   
+FLOW@KRO1005                14:00      0.03350   
+FLOW@KRO1005     01/01/2001 15:00      0.03158   
+FLOW@KRO1005                16:00      0.03954   
+FLOW@KRO1005                17:00      0.02114   
+FLOW@KRO1005                18:00      0.02801   
+FLOW@KRO1005                19:00      0.03680   
+FLOW@KRO1005     01/01/2001 20:00      0.02911   
+FLOW@KRO1005                21:00      0.02334   
+FLOW@KRO1005                22:00      0.02499   
+FLOW@KRO1005                23:00      0.02718   
+FLOW@KRO1005     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO1006     01/01/2001 00:00      0.01510   
+FLOW@KRO1006                01:00      0.01373   
+FLOW@KRO1006                02:00      0.01812   
+FLOW@KRO1006                03:00      0.01098   
+FLOW@KRO1006                04:00      0.01098   
+FLOW@KRO1006     01/01/2001 05:00      0.01922   
+FLOW@KRO1006                06:00      0.02773   
+FLOW@KRO1006                07:00      0.03789   
+FLOW@KRO1006                08:00      0.03515   
+FLOW@KRO1006                09:00      0.03982   
+FLOW@KRO1006     01/01/2001 10:00      0.02059   
+FLOW@KRO1006                11:00      0.02471   
+FLOW@KRO1006                12:00      0.03021   
+FLOW@KRO1006                13:00      0.03789   
+FLOW@KRO1006                14:00      0.03350   
+FLOW@KRO1006     01/01/2001 15:00      0.03158   
+FLOW@KRO1006                16:00      0.03954   
+FLOW@KRO1006                17:00      0.02114   
+FLOW@KRO1006                18:00      0.02801   
+FLOW@KRO1006                19:00      0.03680   
+FLOW@KRO1006     01/01/2001 20:00      0.02911   
+FLOW@KRO1006                21:00      0.02334   
+FLOW@KRO1006                22:00      0.02499   
+FLOW@KRO1006                23:00      0.02718   
+FLOW@KRO1006     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO1003     01/01/2001 00:00      0.01510   
+FLOW@KRO1003                01:00      0.01373   
+FLOW@KRO1003                02:00      0.01812   
+FLOW@KRO1003                03:00      0.01098   
+FLOW@KRO1003                04:00      0.01098   
+FLOW@KRO1003     01/01/2001 05:00      0.01922   
+FLOW@KRO1003                06:00      0.02773   
+FLOW@KRO1003                07:00      0.03789   
+FLOW@KRO1003                08:00      0.03515   
+FLOW@KRO1003                09:00      0.03982   
+FLOW@KRO1003     01/01/2001 10:00      0.02059   
+FLOW@KRO1003                11:00      0.02471   
+FLOW@KRO1003                12:00      0.03021   
+FLOW@KRO1003                13:00      0.03789   
+FLOW@KRO1003                14:00      0.03350   
+FLOW@KRO1003     01/01/2001 15:00      0.03158   
+FLOW@KRO1003                16:00      0.03954   
+FLOW@KRO1003                17:00      0.02114   
+FLOW@KRO1003                18:00      0.02801   
+FLOW@KRO1003                19:00      0.03680   
+FLOW@KRO1003     01/01/2001 20:00      0.02911   
+FLOW@KRO1003                21:00      0.02334   
+FLOW@KRO1003                22:00      0.02499   
+FLOW@KRO1003                23:00      0.02718   
+FLOW@KRO1003     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO1008     01/01/2001 00:00      0.01510   
+FLOW@KRO1008                01:00      0.01373   
+FLOW@KRO1008                02:00      0.01812   
+FLOW@KRO1008                03:00      0.01098   
+FLOW@KRO1008                04:00      0.01098   
+FLOW@KRO1008     01/01/2001 05:00      0.01922   
+FLOW@KRO1008                06:00      0.02773   
+FLOW@KRO1008                07:00      0.03789   
+FLOW@KRO1008                08:00      0.03515   
+FLOW@KRO1008                09:00      0.03982   
+FLOW@KRO1008     01/01/2001 10:00      0.02059   
+FLOW@KRO1008                11:00      0.02471   
+FLOW@KRO1008                12:00      0.03021   
+FLOW@KRO1008                13:00      0.03789   
+FLOW@KRO1008                14:00      0.03350   
+FLOW@KRO1008     01/01/2001 15:00      0.03158   
+FLOW@KRO1008                16:00      0.03954   
+FLOW@KRO1008                17:00      0.02114   
+FLOW@KRO1008                18:00      0.02801   
+FLOW@KRO1008                19:00      0.03680   
+FLOW@KRO1008     01/01/2001 20:00      0.02911   
+FLOW@KRO1008                21:00      0.02334   
+FLOW@KRO1008                22:00      0.02499   
+FLOW@KRO1008                23:00      0.02718   
+FLOW@KRO1008     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO1010     01/01/2001 00:00      0.01510   
+FLOW@KRO1010                01:00      0.01373   
+FLOW@KRO1010                02:00      0.01812   
+FLOW@KRO1010                03:00      0.01098   
+FLOW@KRO1010                04:00      0.01098   
+FLOW@KRO1010     01/01/2001 05:00      0.01922   
+FLOW@KRO1010                06:00      0.02773   
+FLOW@KRO1010                07:00      0.03789   
+FLOW@KRO1010                08:00      0.03515   
+FLOW@KRO1010                09:00      0.03982   
+FLOW@KRO1010     01/01/2001 10:00      0.02059   
+FLOW@KRO1010                11:00      0.02471   
+FLOW@KRO1010                12:00      0.03021   
+FLOW@KRO1010                13:00      0.03789   
+FLOW@KRO1010                14:00      0.03350   
+FLOW@KRO1010     01/01/2001 15:00      0.03158   
+FLOW@KRO1010                16:00      0.03954   
+FLOW@KRO1010                17:00      0.02114   
+FLOW@KRO1010                18:00      0.02801   
+FLOW@KRO1010                19:00      0.03680   
+FLOW@KRO1010     01/01/2001 20:00      0.02911   
+FLOW@KRO1010                21:00      0.02334   
+FLOW@KRO1010                22:00      0.02499   
+FLOW@KRO1010                23:00      0.02718   
+FLOW@KRO1010     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO1009     01/01/2001 00:00      0.01510   
+FLOW@KRO1009                01:00      0.01373   
+FLOW@KRO1009                02:00      0.01812   
+FLOW@KRO1009                03:00      0.01098   
+FLOW@KRO1009                04:00      0.01098   
+FLOW@KRO1009     01/01/2001 05:00      0.01922   
+FLOW@KRO1009                06:00      0.02773   
+FLOW@KRO1009                07:00      0.03789   
+FLOW@KRO1009                08:00      0.03515   
+FLOW@KRO1009                09:00      0.03982   
+FLOW@KRO1009     01/01/2001 10:00      0.02059   
+FLOW@KRO1009                11:00      0.02471   
+FLOW@KRO1009                12:00      0.03021   
+FLOW@KRO1009                13:00      0.03789   
+FLOW@KRO1009                14:00      0.03350   
+FLOW@KRO1009     01/01/2001 15:00      0.03158   
+FLOW@KRO1009                16:00      0.03954   
+FLOW@KRO1009                17:00      0.02114   
+FLOW@KRO1009                18:00      0.02801   
+FLOW@KRO1009                19:00      0.03680   
+FLOW@KRO1009     01/01/2001 20:00      0.02911   
+FLOW@KRO1009                21:00      0.02334   
+FLOW@KRO1009                22:00      0.02499   
+FLOW@KRO1009                23:00      0.02718   
+FLOW@KRO1009     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO3002     01/01/2001 00:00      0.01510   
+FLOW@KRO3002                01:00      0.01373   
+FLOW@KRO3002                02:00      0.01812   
+FLOW@KRO3002                03:00      0.01098   
+FLOW@KRO3002                04:00      0.01098   
+FLOW@KRO3002     01/01/2001 05:00      0.01922   
+FLOW@KRO3002                06:00      0.02773   
+FLOW@KRO3002                07:00      0.03789   
+FLOW@KRO3002                08:00      0.03515   
+FLOW@KRO3002                09:00      0.03982   
+FLOW@KRO3002     01/01/2001 10:00      0.02059   
+FLOW@KRO3002                11:00      0.02471   
+FLOW@KRO3002                12:00      0.03021   
+FLOW@KRO3002                13:00      0.03789   
+FLOW@KRO3002                14:00      0.03350   
+FLOW@KRO3002     01/01/2001 15:00      0.03158   
+FLOW@KRO3002                16:00      0.03954   
+FLOW@KRO3002                17:00      0.02114   
+FLOW@KRO3002                18:00      0.02801   
+FLOW@KRO3002                19:00      0.03680   
+FLOW@KRO3002     01/01/2001 20:00      0.02911   
+FLOW@KRO3002                21:00      0.02334   
+FLOW@KRO3002                22:00      0.02499   
+FLOW@KRO3002                23:00      0.02718   
+FLOW@KRO3002     01/02/2001 00:00      0.01510   
+;
+FLOW@KRO2001     01/01/2001 00:00      0.01510   
+FLOW@KRO2001                01:00      0.01373   
+FLOW@KRO2001                02:00      0.01812   
+FLOW@KRO2001                03:00      0.01098   
+FLOW@KRO2001                04:00      0.01098   
+FLOW@KRO2001     01/01/2001 05:00      0.01922   
+FLOW@KRO2001                06:00      0.02773   
+FLOW@KRO2001                07:00      0.03789   
+FLOW@KRO2001                08:00      0.03515   
+FLOW@KRO2001                09:00      0.03982   
+FLOW@KRO2001     01/01/2001 10:00      0.02059   
+FLOW@KRO2001                11:00      0.02471   
+FLOW@KRO2001                12:00      0.03021   
+FLOW@KRO2001                13:00      0.03789   
+FLOW@KRO2001                14:00      0.03350   
+FLOW@KRO2001     01/01/2001 15:00      0.03158   
+FLOW@KRO2001                16:00      0.03954   
+FLOW@KRO2001                17:00      0.02114   
+FLOW@KRO2001                18:00      0.02801   
+FLOW@KRO2001                19:00      0.03680   
+FLOW@KRO2001     01/01/2001 20:00      0.02911   
+FLOW@KRO2001                21:00      0.02334   
+FLOW@KRO2001                22:00      0.02499   
+FLOW@KRO2001                23:00      0.02718   
+FLOW@KRO2001     01/02/2001 00:00      0.01510   
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 1361856.360 428553.260 1363638.770 431235.740
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+KRO3001          1362408.250        431113.810        
+KRO6015          1362748.630        428675.190        
+KRO6016          1362767.000        428813.590        
+KRO6017          1363087.250        428778.190        
+KRO1002          1362361.780        429189.370        
+KRO1003          1362367.000        429230.440        
+KRO1004          1362860.250        429098.810        
+KRO1005          1363142.000        429044.410        
+KRO1006          1361937.380        429699.810        
+KRO1007          1362171.000        429619.190        
+KRO1008          1362406.250        429528.410        
+KRO1009          1362629.000        429441.410        
+KRO1010          1362927.630        429324.590        
+KRO1012          1362287.630        429934.410        
+KRO1013          1362657.380        429698.410        
+KRO1014          1362655.010        430868.660        
+KRO1015          1362725.750        429953.810        
+KRO2001          1363203.750        429239.000        
+KRO4004          1362024.630        430653.190        
+KRO4008          1362236.380        430632.000        
+KRO4009          1362307.000        430128.410        
+KRO4010          1362333.380        430400.810        
+KRO4011          1362355.380        430619.410        
+KRO4012          1362385.250        430919.000        
+KRO4013          1362511.750        430605.810        
+KRO4014          1362751.190        430182.590        
+KRO4015          1362774.000        430392.190        
+KRO4016          1362761.250        430414.590        
+KRO4017          1362778.750        430579.000        
+KRO4018          1362796.000        430732.410        
+KRO4019          1362704.750        430957.590        
+KRO2005          1363557.750        429129.590        
+PSO              1362670.630        431107.000        
+SU1              1362652.040        431078.910        
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[LABELS]
+;;X-Coord          Y-Coord            Label           
+1362744.750        431134.300         "Regulator Point" "" "Arial" 10 0 0
+1362510.690        431003.570         "Force" "" "Arial" 10 0 0
+1362516.970        430947.100         "Main" "" "Arial" 10 0 0
+

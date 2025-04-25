@@ -1,0 +1,244 @@
+[TITLE]
+;;Project Title/Notes
+Validation of functional
+CONICAL and PYRAMIDAL
+storage shapes.
+
+[OPTIONS]
+;;Option            	Value
+FLOW_UNITS          	CFS
+INFILTRATION        	HORTON
+FLOW_ROUTING        	DYNWAVE
+LINK_OFFSETS        	DEPTH
+MIN_SLOPE           	0
+ALLOW_PONDING       	NO
+SKIP_STEADY_STATE   	NO
+
+START_DATE          	01/30/2021
+START_TIME          	00:00:00
+REPORT_START_DATE   	01/30/2021
+REPORT_START_TIME   	00:00:00
+END_DATE            	01/30/2021
+END_TIME            	06:00:00
+SWEEP_START         	01/01
+SWEEP_END           	12/31
+DRY_DAYS            	0
+REPORT_STEP         	00:15:00
+WET_STEP            	00:05:00
+DRY_STEP            	01:00:00
+ROUTING_STEP        	0:00:30 
+RULE_STEP           	00:00:00
+
+INERTIAL_DAMPING    	PARTIAL
+NORMAL_FLOW_LIMITED 	BOTH
+FORCE_MAIN_EQUATION 	H-W
+VARIABLE_STEP       	0.75
+LENGTHENING_STEP    	0
+MIN_SURFAREA        	12.566
+MAX_TRIALS          	8
+HEAD_TOLERANCE      	0.005
+SYS_FLOW_TOL        	5
+LAT_FLOW_TOL        	5
+MINIMUM_STEP        	0.5
+THREADS             	1
+
+[EVAPORATION]
+;;Data Source   	Parameters
+;;--------------	----------------
+CONSTANT        	0.0
+DRY_ONLY        	NO
+
+[OUTFALLS]
+;;Name          	Elevation 	Type      	Stage Data      	Gated   	Route To        
+;;--------------	----------	----------	----------------	--------	----------------
+2               	0         	FIXED     	0               	NO      	                
+4               	0         	FIXED     	0               	NO      	                
+6               	0         	FIXED     	0               	NO      	                
+8               	0         	FIXED     	0               	NO      	                
+
+[STORAGE]
+;;Name          	Elev.   	MaxDepth  	InitDepth 	Shape     	Curve Type/Params           	SurDepth 	Fevap   	Psi     	Ksat    	IMD     
+;;--------------	--------	----------	-----------	----------	----------------------------	---------	--------	        	--------	--------
+Conical-Tabular 	0       	6         	6         	TABULAR   	ConicalCurve                	0        	0       
+Conical         	0       	6         	6         	CONICAL   	20        	10        	3       	0        	0       
+Pyramidal-Tabular	0       	6         	6         	TABULAR   	PrismaticCurve              	0        	0       
+Pyramidal       	0       	6         	6         	PYRAMIDAL 	20        	10        	3       	0        	0       
+
+[ORIFICES]
+;;Name          	From Node       	To Node         	Type        	Offset    	Qcoeff    	Gated   	CloseTime 
+;;--------------	----------------	----------------	------------	----------	----------	--------	----------
+1               	Conical-Tabular 	2               	SIDE        	0         	0.65      	NO      	0         
+2               	Conical         	4               	SIDE        	0         	0.65      	NO      	0         
+3               	Pyramidal-Tabular	6               	SIDE        	0         	0.65      	NO      	0         
+4               	Pyramidal       	8               	SIDE        	0         	0.65      	NO      	0         
+
+[XSECTIONS]
+;;Link          	Shape       	Geom1           	Geom2     	Geom3     	Geom4     	Barrels   	Culvert   
+;;--------------	------------	----------------	----------	----------	----------	----------	----------
+1               	CIRCULAR    	0.25            	0         	0         	0
+2               	CIRCULAR    	0.25            	0         	0         	0
+3               	CIRCULAR    	0.25            	0         	0         	0
+4               	CIRCULAR    	0.25            	0         	0         	0
+
+[CURVES]
+;;Name          	Type      	X-Value   	Y-Value   
+;;--------------	----------	----------	----------
+ConicalCurve    	Storage   	0         	157.0796327
+ConicalCurve    	          	0.1       	166.6457823
+ConicalCurve    	          	0.2       	176.4946753
+ConicalCurve    	          	0.3       	186.6263116
+ConicalCurve    	          	0.4       	197.0406912
+ConicalCurve    	          	0.5       	207.7378142
+ConicalCurve    	          	0.6       	218.7176805
+ConicalCurve    	          	0.7       	229.9802902
+ConicalCurve    	          	0.8       	241.5256432
+ConicalCurve    	          	0.9       	253.3537395
+ConicalCurve    	          	1         	265.4645792
+ConicalCurve    	          	1.1       	277.8581622
+ConicalCurve    	          	1.2       	290.5344886
+ConicalCurve    	          	1.3       	303.4935583
+ConicalCurve    	          	1.4       	316.7353713
+ConicalCurve    	          	1.5       	330.2599277
+ConicalCurve    	          	1.6       	344.0672274
+ConicalCurve    	          	1.7       	358.1572705
+ConicalCurve    	          	1.8       	372.5300569
+ConicalCurve    	          	1.9       	387.1855866
+ConicalCurve    	          	2         	402.1238597
+ConicalCurve    	          	2.1       	417.3448761
+ConicalCurve    	          	2.2       	432.8486358
+ConicalCurve    	          	2.3       	448.6351389
+ConicalCurve    	          	2.4       	464.7043853
+ConicalCurve    	          	2.5       	481.0563751
+ConicalCurve    	          	2.6       	497.6911082
+ConicalCurve    	          	2.7       	514.6085846
+ConicalCurve    	          	2.8       	531.8088044
+ConicalCurve    	          	2.9       	549.2917675
+ConicalCurve    	          	3         	567.057474
+ConicalCurve    	          	3.1       	585.1059238
+ConicalCurve    	          	3.2       	603.4371169
+ConicalCurve    	          	3.3       	622.0510534
+ConicalCurve    	          	3.4       	640.9477332
+ConicalCurve    	          	3.5       	660.1271563
+ConicalCurve    	          	3.6       	679.5893228
+ConicalCurve    	          	3.7       	699.3342327
+ConicalCurve    	          	3.8       	719.3618858
+ConicalCurve    	          	3.9       	739.6722823
+ConicalCurve    	          	4         	760.2654222
+ConicalCurve    	          	4.1       	781.1413054
+ConicalCurve    	          	4.2       	802.2999319
+ConicalCurve    	          	4.3       	823.7413017
+ConicalCurve    	          	4.4       	845.4654149
+ConicalCurve    	          	4.5       	867.4722715
+ConicalCurve    	          	4.6       	889.7618713
+ConicalCurve    	          	4.7       	912.3342146
+ConicalCurve    	          	4.8       	935.1893011
+ConicalCurve    	          	4.9       	958.327131
+ConicalCurve    	          	5         	981.7477042
+ConicalCurve    	          	5.1       	1005.451021
+ConicalCurve    	          	5.2       	1029.437081
+ConicalCurve    	          	5.3       	1053.705884
+ConicalCurve    	          	5.4       	1078.257431
+ConicalCurve    	          	5.5       	1103.09172
+ConicalCurve    	          	5.6       	1128.208754
+ConicalCurve    	          	5.7       	1153.60853
+ConicalCurve    	          	5.8       	1179.29105
+ConicalCurve    	          	5.9       	1205.256314
+ConicalCurve    	          	6         	1231.50432
+;
+PrismaticCurve  	Storage   	0         	200       
+PrismaticCurve  	          	0.1       	218.36    
+PrismaticCurve  	          	0.2       	237.44    
+PrismaticCurve  	          	0.3       	257.24    
+PrismaticCurve  	          	0.4       	277.76    
+PrismaticCurve  	          	0.5       	299       
+PrismaticCurve  	          	0.6       	320.96    
+PrismaticCurve  	          	0.7       	343.64    
+PrismaticCurve  	          	0.8       	367.04    
+PrismaticCurve  	          	0.9       	391.16    
+PrismaticCurve  	          	1         	416       
+PrismaticCurve  	          	1.1       	441.56    
+PrismaticCurve  	          	1.2       	467.84    
+PrismaticCurve  	          	1.3       	494.84    
+PrismaticCurve  	          	1.4       	522.56    
+PrismaticCurve  	          	1.5       	551       
+PrismaticCurve  	          	1.6       	580.16    
+PrismaticCurve  	          	1.7       	610.04    
+PrismaticCurve  	          	1.8       	640.64    
+PrismaticCurve  	          	1.9       	671.96    
+PrismaticCurve  	          	2         	704       
+PrismaticCurve  	          	2.1       	736.76    
+PrismaticCurve  	          	2.2       	770.24    
+PrismaticCurve  	          	2.3       	804.44    
+PrismaticCurve  	          	2.4       	839.36    
+PrismaticCurve  	          	2.5       	875       
+PrismaticCurve  	          	2.6       	911.36    
+PrismaticCurve  	          	2.7       	948.44    
+PrismaticCurve  	          	2.8       	986.24    
+PrismaticCurve  	          	2.9       	1024.76   
+PrismaticCurve  	          	3         	1064      
+PrismaticCurve  	          	3.1       	1103.96   
+PrismaticCurve  	          	3.2       	1144.64   
+PrismaticCurve  	          	3.3       	1186.04   
+PrismaticCurve  	          	3.4       	1228.16   
+PrismaticCurve  	          	3.5       	1271      
+PrismaticCurve  	          	3.6       	1314.56   
+PrismaticCurve  	          	3.7       	1358.84   
+PrismaticCurve  	          	3.8       	1403.84   
+PrismaticCurve  	          	3.9       	1449.56   
+PrismaticCurve  	          	4         	1496      
+PrismaticCurve  	          	4.1       	1543.16   
+PrismaticCurve  	          	4.2       	1591.04   
+PrismaticCurve  	          	4.3       	1639.64   
+PrismaticCurve  	          	4.4       	1688.96   
+PrismaticCurve  	          	4.5       	1739      
+PrismaticCurve  	          	4.6       	1789.76   
+PrismaticCurve  	          	4.7       	1841.24   
+PrismaticCurve  	          	4.8       	1893.44   
+PrismaticCurve  	          	4.9       	1946.36   
+PrismaticCurve  	          	5         	2000      
+PrismaticCurve  	          	5.1       	2054.36   
+PrismaticCurve  	          	5.2       	2109.44   
+PrismaticCurve  	          	5.3       	2165.24   
+PrismaticCurve  	          	5.4       	2221.76   
+PrismaticCurve  	          	5.5       	2279      
+PrismaticCurve  	          	5.6       	2336.96   
+PrismaticCurve  	          	5.7       	2395.64   
+PrismaticCurve  	          	5.8       	2455.04   
+PrismaticCurve  	          	5.9       	2515.16   
+PrismaticCurve  	          	6         	2576      
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS	ALL
+NODES	ALL
+LINKS	ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS	0.000	0.000	10000.000	10000.000
+Units     	None
+
+[COORDINATES]
+;;Node          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+2               	4721.793          	7418.856          
+4               	4706.337          	6166.924          
+6               	4737.249          	5085.008          
+8               	4690.881          	4095.827          
+Conical-Tabular 	2094.281          	7418.856          
+Conical         	2140.649          	6182.380          
+Pyramidal-Tabular	2187.017          	5100.464          
+Pyramidal       	2264.297          	4080.371          
+
+[VERTICES]
+;;Link          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+
+[LABELS]
+;;X-Coord         	Y-Coord           	Label           
+1986.090          	7928.903          	"Conical- Tabular"	""	"Arial"	10	0	0
+2001.546          	6615.147          	"Conical - Functional"	""	"Arial"	10	0	0
+2094.281          	5641.422          	"Pyramidal - Tabular"	""	"Arial"	10	0	0
+2156.105          	4497.682          	"Pyramidal - Functional"	""	"Arial"	10	0	0
+

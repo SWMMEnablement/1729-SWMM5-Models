@@ -1,0 +1,197 @@
+[TITLE]
+;;Project Title/Notes
+ SW 1 0 9A1 'BROWARD COUNTY Multi FAMILY SITE - Runoff example # 44'A2 'RUNO
+ FF MODELING OF HDR STORM USGS STORM # 3 May 5 1977'RUNOFFMODELINGOFHDRSTORM
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           05/11/1977
+START_TIME           04:40:00
+REPORT_START_DATE    05/11/1977
+REPORT_START_TIME    04:40:00
+END_DATE             05/11/1977
+END_TIME             06:40:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             7
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             23:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.566
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+MONTHLY          0.09   0.11   0.14   0.17   0.18   0.17   0.17   0.16   0.14   0.13   0.11   0.09  
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+GAGE1            INTENSITY 0.08333  1.0      TIMESERIES RainSeries1     
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+CA-1             GAGE1            P001             4.999    39.0     600.0    2.7      0                        
+CA-7             GAGE1            P005             1.599    48.6     200.0    2.7      0                        
+CA-8             GAGE1            P009             4.565    46.7     500.0    2.7      0                        
+CA-11            GAGE1            P011             3.58     47.0     600.0    2.7      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+CA-1             0.015      0.41       0.06       0.2        25         OUTLET    
+CA-7             0.015      0.41       0.06       0.2        25         OUTLET    
+CA-8             0.015      0.41       0.06       0.2        25         OUTLET    
+CA-11            0.015      0.41       0.06       0.2        25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Suction    Ksat       IMD       
+;;-------------- ---------- ---------- ----------
+CA-1             5.0        0.3        0.06      
+CA-7             5.0        0.3        0.06      
+CA-8             5.0        0.3        0.06      
+CA-11            5.0        0.3        0.06      
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+P001             0          FREE                        NO                       
+P005             0          FREE                        NO                       
+P009             0          FREE                        NO                       
+P011             0          FREE                        NO                       
+
+[POLLUTANTS]
+;;Name           Units  Crain      Cgw        Crdii      Kdecay     SnowOnly   Co-Pollutant     Co-Frac    Cdwf       Cinit     
+;;-------------- ------ ---------- ---------- ---------- ---------- ---------- ---------------- ---------- ---------- ----------
+COD              MG/L   5          0          0          0          NO         *                0.0        0          0         
+TOT.SOL          MG/L   5          0          0          0          NO         *                0.0        0          0         
+TOT.NIT          MG/L   0.3        0          0          0          NO         *                0.0        0          0         
+TSS              MG/L   5          0          0          0          NO         *                0.0        0          0         
+O-PO4-P          MG/L   0.002      0          0          0          NO         *                0.0        0          0         
+
+[LANDUSES]
+;;               Sweeping   Fraction   Last      
+;;Name           Interval   Available  Swept     
+;;-------------- ---------- ---------- ----------
+HOUSING          0          0          0         
+
+[COVERAGES]
+;;Subcatchment   Land Use         Percent   
+;;-------------- ---------------- ----------
+CA-1             HOUSING          100       
+CA-7             HOUSING          100       
+CA-8             HOUSING          100       
+CA-11            HOUSING          100       
+
+[LOADINGS]
+;;Subcatchment   Pollutant        Buildup   
+;;-------------- ---------------- ----------
+
+[BUILDUP]
+;;Land Use       Pollutant        Function   Coeff1     Coeff2     Coeff3     Per Unit  
+;;-------------- ---------------- ---------- ---------- ---------- ---------- ----------
+HOUSING          COD              POWER      100000     1          3          AREA      
+HOUSING          TOT.SOL          POWER      100000     1          3.5        AREA      
+HOUSING          TOT.NIT          POWER      100000     1          1.1        AREA      
+HOUSING          TSS              POWER      100000     1          3.5        AREA      
+HOUSING          O-PO4-P          POWER      100        1          1.002      AREA      
+
+[WASHOFF]
+;;Land Use       Pollutant        Function   Coeff1     Coeff2     SweepRmvl  BmpRmvl   
+;;-------------- ---------------- ---------- ---------- ---------- ---------- ----------
+HOUSING          COD              EXP        2          1.4        35         0         
+HOUSING          TOT.SOL          EXP        20         1.5        40         0         
+HOUSING          TOT.NIT          EXP        0.5        1.5        45         0         
+HOUSING          TSS              EXP        100        1.5        40         0         
+HOUSING          O-PO4-P          EXP        1          1.6        25         0         
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+RainSeries1      05/11/1977 04:40      2.76000   
+RainSeries1                 04:45      5.16000   
+RainSeries1                 04:50      3.36000   
+RainSeries1                 04:55      2.40000   
+RainSeries1                 05:00      0.12000   
+RainSeries1      05/11/1977 05:05      0.00000   
+RainSeries1                 05:10      0.12000   
+RainSeries1                 05:15      0.00000   
+RainSeries1                 05:20      0.00000   
+RainSeries1                 05:25      0.12000   
+RainSeries1      05/11/1977 05:30      0.00000   
+RainSeries1                 05:35      0.00000   
+RainSeries1                 05:40      0.00000   
+RainSeries1                 05:45      0.00000   
+RainSeries1                 05:50      0.00000   
+RainSeries1      05/11/1977 05:55      0.00000   
+RainSeries1                 06:00      0.00000   
+RainSeries1                 06:05      0.00000   
+RainSeries1                 06:10      0.00000   
+RainSeries1                 06:15      0.00000   
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+Subcatch  CA-1             CA              
+Subcatch  CA-7             CA              
+Subcatch  CA-8             CA              
+Subcatch  CA-11            CA              
+
+[MAP]
+DIMENSIONS -5.500 -5.500 5.500 5.500
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+P001             -0.482             3.229             
+P005             0.444              2.024             
+P009             1.928              1.681             
+P011             2.753              0.298             
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+CA-1             -2.550             3.026             
+CA-7             -2.373             1.491             
+CA-8             -1.028             0.438             
+CA-11            0.178              -0.933            
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+GAGE1            0.000              0.000             
+

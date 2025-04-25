@@ -1,0 +1,121 @@
+[TITLE]
+;;Project Title/Notes
+SWMM QA Input file-dw node storage eqn.inp
+One pipe. E2 line describes eqn for node storage
+;  CDM SWMM4 Converter
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/1999
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/1999
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/1999
+END_TIME             12:00:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:01:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:10 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  SLOPE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+;                 Invert     Outfall      Stage/Table
+;Name             Elev.      Type         Time Series
+;===============================================================================
+j2               987.00     NORMAL                      NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+;Name  InvertEl  MaxDepth  InitDepth
+;===============================================================================
+j1               1000     5          0          FUNCTIONAL 0.5       0.1       0        0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+;                 Inlet            Outlet                      Manning    Inlet      Outlet     Init.
+;Name             Node             Node             Length     N          Height     Height     Flow
+;===============================================================================
+; *   NCOND NJ1   NJ2    QO  NKLASS AFULL DEEP WIDE  LEN   ZP1 ZP2 ROUGH STHETA SPHI
+c1               j1               j2               400        0.01       0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+c1               CIRCULAR     2                0          0          0          1                    
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+j1               FLOW             INFLOW@j1        FLOW     1.0      1.0              
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+;Name             Date       Time       Value
+INFLOW@j1        01/01/1999 00:00      0.00000   
+INFLOW@j1                   01:00      0.00000   
+INFLOW@j1                   03:30      6.66670   
+INFLOW@j1                   04:00      8.00000   
+INFLOW@j1                   05:00      4.75000   
+INFLOW@j1        01/01/1999 06:00      1.50000   
+INFLOW@j1                   07:00      1.15000   
+INFLOW@j1                   10:00      0.10000   
+INFLOW@j1        01/05/1999 03:00      0.00000   
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 6.615 4.725 7.385 5.275
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+j2               7.000              5.000             
+j1               7.019              5.072             
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

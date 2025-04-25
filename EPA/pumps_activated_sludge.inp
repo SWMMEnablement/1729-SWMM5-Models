@@ -1,0 +1,177 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           LPS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/28/2012
+START_TIME           00:00:00
+REPORT_START_DATE    01/28/2012
+REPORT_START_TIME    00:00:00
+END_DATE             01/28/2012
+END_TIME             23:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:01:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:10 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+RawWater         11         0          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Sludge           0          FREE                        NO                       
+TreatedWater     0          FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+AerationTank     0        10         9          FUNCTIONAL 1000      0         0        0        0       
+Clarifier        0        10         9          FUNCTIONAL 1000      0         0        0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+RawIn            RawWater         AerationTank     400        0.01       0          0          0          0         
+
+[PUMPS]
+;;Name           From Node        To Node          Pump Curve       Status   Sartup Shutoff 
+;;-------------- ---------------- ---------------- ---------------- ------ -------- --------
+Recycle          Clarifier        AerationTank     Recyle           ON       0        0       
+Sludge_Out       Clarifier        Sludge           Sludge           ON       0        0       
+
+[WEIRS]
+;;Name           From Node        To Node          Type         CrestHt    Qcoeff     Gated    EndCon   EndCoeff   Surcharge  RoadWidth  RoadSurf  
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- -------- ---------- ---------- ---------- ----------
+AS_Weir          AerationTank     Clarifier        TRANSVERSE   9          3.33       NO       0        0          YES       
+TW_Weir          Clarifier        TreatedWater     TRANSVERSE   9          3.33       NO       0        0          YES       
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+RawIn            CIRCULAR     1                0          0          0          1                    
+AS_Weir          RECT_OPEN    1                10         0          0         
+TW_Weir          RECT_OPEN    1                5          0          0         
+
+[DWF]
+;;Node           Constituent      Baseline   Patterns  
+;;-------------- ---------------- ---------- ----------
+RawWater         FLOW             100        "" ""
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+Recyle           Pump2      0          0         
+Recyle                      1          20        
+Recyle                      9.01       20        
+Recyle                      10         20        
+;
+Sludge           Pump2      0          0         
+Sludge                      9          0         
+Sludge                      9.01       10        
+Sludge                      10         10        
+;
+Under5           Rating     0          0         
+Under5                      .25        2         
+Under5                      .50        5         
+Under5                      .5001      0         
+Under5                      11         0         
+;
+Over5            Rating     0          0         
+Over5                       .25        0         
+Over5                       .5         0         
+Over5                       .5001      5         
+Over5                       .75        10        
+Over5                       11         50        
+;
+ReverseQ         Rating     0          0         
+ReverseQ                    .100       0         
+ReverseQ                    .10001     1         
+ReverseQ                    .5         1         
+ReverseQ                    .5001      0         
+ReverseQ                    11         0         
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -181.870 3315.825 10592.360 9808.463
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+RawWater         1274.906           9142.931          
+Sludge           6685.785           3447.146          
+TreatedWater     8452.173           8782.955          
+AerationTank     3585.446           7155.826          
+Clarifier        6539.197           7148.497          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+RawIn            1269.353           7470.991          
+RawIn            2911.140           7507.638          
+RawIn            3248.293           7492.979          
+RawIn            3387.552           7302.414          
+RawIn            3394.881           7309.744          
+Recycle          5000.022           5755.909          
+Recycle          2588.646           5763.239          
+Recycle          2016.881           5780.374          
+Recycle          2016.809           5782.850          
+Recycle          2016.666           5787.803          
+Recycle          2009.623           5792.556          
+Recycle          1987.635           7126.508          
+Sludge_Out       6517.209           4033.498          
+AS_Weir          4538.269           7463.661          
+AS_Weir          5022.010           7478.320          
+AS_Weir          6084.774           7456.332          
+AS_Weir          6465.903           7463.661          
+AS_Weir          6465.903           7463.661          
+AS_Weir          6487.891           7463.661          
+AS_Weir          6487.891           7463.661          
+AS_Weir          6487.891           7463.661          
+AS_Weir          6487.891           7463.661          
+AS_Weir          6487.891           7470.991          
+AS_Weir          6487.891           7470.991          
+TW_Weir          9566.243           7133.838          
+

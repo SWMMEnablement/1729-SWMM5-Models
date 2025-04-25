@@ -1,0 +1,2121 @@
+[TITLE]
+;;Project Title/Notes
+  University Storm Drainage Evaluation
+  Project No: VOF02-11
+  October 2003
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           09/23/2003
+START_TIME           00:00:00
+REPORT_START_DATE    09/23/2003
+REPORT_START_TIME    00:00:00
+END_DATE             09/24/2003
+END_TIME             00:00:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:01:00
+WET_STEP             00:00:20
+DRY_STEP             00:01:00
+ROUTING_STEP         0:00:10 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  SLOPE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+University       CUMULATIVE .25      1.0      TIMESERIES Chautauqua-10yr 
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+;Area A1
+A1               University       J3               2.83     29.9     174      1.14     0                        
+;Area A2
+A2               University       J4               3.96     6.4      209      1.07     0                        
+;Area A3
+A3               University       J7               1.1      73.9     157      1.72     0                        
+;Area A4
+A4               University       J9               1.38     64.7     143      2.41     0                        
+;Area A5
+A5               University       J13              1.41     16.3     153      2.08     0                        
+;Area A6
+A6               University       J14              9.87     7.5      354      1.01     0                        
+;Area A7
+A7               University       J15              1.36     77.7     197      1.72     0                        
+;Area A8
+A8               University       J12              .98      23.1     104      1.88     0                        
+;Area A9
+A9               University       J17              2.44     49.5     183      1.0      0                        
+;Area A10
+A10              University       J22              1.01     58.5     176      0.7      0                        
+;Area A11
+A11              University       J21              1.98     49       215      0.7      0                        
+;Area A12
+A12              University       J20              2.55     10.3     216      1.3      0                        
+;Area A13
+A13              University       J5               2.96     38.1     184      1.62     0                        
+;Area A14
+A14              University       J30              5.16     7.7      232      0.7      0                        
+;Area 15
+A15              University       J27              .17      4        79       5.5      0                        
+;Area 16
+A16              University       J29              .96      0        205      0.5      0                        
+;Area 17
+A17              University       J35              1.44     0        185      1.35     0                        
+;Area A18
+A18              University       J31              1.43     78.3     174      0.4      0                        
+;Area A19
+A19              University       J33              1.44     57.4     165      1.55     0                        
+;Area A20
+A20              University       J36              4.67     0        299      1.0      0                        
+;Area A21
+A21              University       J32              1.7      29.9     114      1.23     0                        
+;Area A22
+A22              University       J37              1.62     0        221      0.8      0                        
+;Area A23
+A23              University       J38              2.28     56.2     129      0.6      0                        
+;Area A24
+A24              University       J39              1.22     0        138      2.8      0                        
+;Area A25
+A25              University       J42              16.46    3.7      520      1.16     0                        
+;Area A26
+A26              University       J41              16.98    4.5      508      1.98     0                        
+;Area A27
+A27              University       J43              5.24     30.9     293      3.8      0                        
+;Area A28
+A28              University       J45              .12      89.7     48       2.38     0                        
+;Area A29
+A29              University       J46              1.76     70.5     226      2.39     0                        
+;Area A30
+A30              University       J48              1.12     60.1     180      1.65     0                        
+;Area A31
+A31              University       J51              .20      13.4     55       2.16     0                        
+;Area A32
+A32              University       J49              .75      73.4     92       1.8      0                        
+;Area A33
+A33              University       J56              4.69     45.1     296      0.8      0                        
+;Area A34
+A34              University       J52              1.84     67.1     210      0.8      0                        
+;Area A35
+A35              University       J57              2.43     27.2     225      1.55     0                        
+;Area A36
+A36              University       J53              10.27    25       588      2.6      0                        
+;Area A37
+A37              University       J55              1.73     30.2     215      3.95     0                        
+;Area A38
+A38              University       J58              1.92     47.1     182      2.06     0                        
+;Area A39
+A39              University       J61              1.52     37.7     175      2.0      0                        
+;Area A40
+A40              University       J69              .91      95.1     153      1.0      0                        
+;Area A41
+A41              University       J60              1.30     75.1     162      0.7      0                        
+;Area A42
+A42              University       J64              1.15     40.9     135      1.32     0                        
+;Area A43
+A43              University       J62              1.1      70.9     174      1.77     0                        
+;Area A44
+A44              University       J65              6.40     28.8     365      1.34     0                        
+;Area A45
+A45              University       J68              .12      78.6     57       0.5      0                        
+;Area A46
+A46              University       J47              2.87     54.6     167      1.61     0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+A1               0.011      .24        0.028      0.15       20         OUTLET    
+A2               0.011      0.24       0.029      0.15       5          OUTLET    
+A3               0.011      0.24       0.023      0.2        16         IMPERVIOUS 100       
+A4               0.011      0.24       0.02       0.18       17         IMPERVIOUS 100       
+A5               0.011      0.24       0.021      0.13       25         PERVIOUS   100       
+A6               0.011      0.24       0.03       0.3        21         OUTLET    
+A7               0.011      0.24       0.023      0.2        6          IMPERVIOUS 100       
+A8               0.011      0.24       0.022      0.15       12         IMPERVIOUS 100       
+A9               0.011      0.24       0.03       0.15       5          OUTLET    
+A10              0.011      0.24       0.036      0.25       30         PERVIOUS   100       
+A11              0.011      0.24       0.036      0.25       30         PERVIOUS   100       
+A12              0.011      0.24       0.027      0.15       30         PERVIOUS   100       
+A13              0.011      0.24       0.024      .13        20         IMPERVIOUS 100       
+A14              0.011      0.2        0.036      0.25       23         PERVIOUS   100       
+A15              0.011      0.24       0.013      0.1        30         PERVIOUS   100       
+A16              0.011      0.24       0.043      0.15       30         PERVIOUS   100       
+A17              0.011      0.2        0.026      0.15       30         PERVIOUS   100       
+A18              0.011      0.24       0.047      0.25       10         IMPERVIOUS 100       
+A19              0.011      0.24       0.024      0.2        17         IMPERVIOUS 100       
+A20              0.011      0.24       0.03       0.15       30         PERVIOUS   100       
+A21              0.011      0.24       0.027      0.15       25         PERVIOUS   100       
+A22              0.011      0.24       0.034      0.25       30         PERVIOUS   100       
+A23              0.011      0.24       0.039      0.3        25         IMPERVIOUS 100       
+A24              0.011      0.24       0.018      0.1        30         PERVIOUS   100       
+A25              0.011      0.24       0.028      0.15       30         PERVIOUS   100       
+A26              0.011      0.24       0.022      0.15       30         PERVIOUS   100       
+A27              0.011      0.24       0.016      0.1        11         OUTLET    
+A28              0.011      0.24       0.02       .12        5          IMPERVIOUS 100       
+A29              0.011      0.24       0.02       0.12       14         OUTLET    
+A30              0.011      0.24       0.024      0.15       5          OUTLET    
+A31              0.011      0.24       0.021      0.12       20         PERVIOUS   100       
+A32              0.011      0.24       0.023      0.15       6          IMPERVIOUS 100       
+A33              0.011      0.24       0.034      0.25       20         OUTLET    
+A34              0.011      0.24       0.034      0.25       13         OUTLET    
+A35              0.011      0.24       0.024      0.18       20         PERVIOUS   100       
+A36              0.011      0.24       0.019      0.13       10         OUTLET    
+A37              0.011      0.24       0.015      0.1        20         PERVIOUS   100       
+A38              0.011      0.24       0.021      .13        17         OUTLET    
+A39              0.011      0.24       0.022      0.13       20         PERVIOUS   100       
+A40              0.011      0.24       0.03       0.15       10         IMPERVIOUS 100       
+A41              0.011      0.24       0.036      0.3        10         OUTLET    
+A42              0.011      0.24       0.026      0.15       10         IMPERVIOUS 100       
+A43              0.011      0.24       0.023      0.15       5          IMPERVIOUS 100       
+A44              0.011      0.24       0.026      0.2        15         IMPERVIOUS 100       
+A45              0.011      0.24       0.043      0.25       10         IMPERVIOUS 100       
+A46              0.011      0.24       0.024      0.15       12         IMPERVIOUS 100       
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+A1               6.0        0.225      0.00115    0          0         
+A2               6.0        0.225      .00115     0          0         
+A3               6.0        0.225      0.00115    0          0         
+A4               6.0        0.225      .00115     0          0         
+A5               6.0        0.375      .00115     0          0         
+A6               6.0        0.300      0.00115    0          0         
+A7               6.0        0.375      0.00115    0          0         
+A8               6.0        0.375      0.00115    0          0         
+A9               6.0        0.375      0.00115    0          0         
+A10              6.0        0.375      0.00115    0          0         
+A11              6.0        0.375      0.00115    0          0         
+A12              6.0        0.375      0.00115    0          0         
+A13              6.0        0.225      0.00115    0          0         
+A14              6.0        0.225      0.00115    0          0         
+A15              6.0        0.225      0.00115    0          0         
+A16              6.0        0.225      0.00115    0          0         
+A17              6.0        0.225      0.00115    0          0         
+A18              6.0        0.163      0.00115    0          0         
+A19              6.0        0.1        0.00115    0          0         
+A20              6.0        0.1        0.00115    0          0         
+A21              6.0        0.100      0.00115    0          0         
+A22              6.0        0.100      0.00115    0          0         
+A23              6.0        0.10       0.00115    0          0         
+A24              6.0        0.100      0.00115    0          0         
+A25              6.0        0.163      0.00115    0          0         
+A26              6.0        0.225      0.00115    0          0         
+A27              6.0        0.225      0.00115    0          0         
+A28              6.0        0.225      0.00115    0          0         
+A29              6.0        0.225      0.00115    0          0         
+A30              6.0        0.225      0.00115    0          0         
+A31              6.0        0.225      0.00115    0          0         
+A32              6.0        0.225      0.00115    0          0         
+A33              6.0        0.225      0.00115    0          0         
+A34              6.0        0.300      0.00115    0          0         
+A35              6.0        0.300      0.00115    0          0         
+A36              6.0        0.163      0.00115    0          0         
+A37              6.0        0.225      0.00115    0          0         
+A38              6.0        0.225      0.00115    0          0         
+A39              6.0        0.225      0.00115    0          0         
+A40              6.0        0.225      0.00115    0          0         
+A41              6.0        0.225      0.00115    0          0         
+A42              6.0        0.225      0.00115    0          0         
+A43              6.0        0.225      0.00115    0          0         
+A44              6.0        0.225      0.00115    0          0         
+A45              6.0        0.225      0.00115    0          0         
+A46              6.0        0.225      0.00115    0          0         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+;MH
+J1               647.23     15.17      0          0          0         
+;MH
+J2               650.17     13.8       0          0          0         
+;CB
+J3               651.71     9.2        0          0          0         
+;CB
+J4               654.4      7.83       0          0          0         
+;CB
+J5               653.90     3.98       0          0          0         
+;MH
+J6               659.26     6.91       0          0          0         
+;CB
+J7               660.25     4.5        0          0          0         
+;MH
+J8               660.94     6.98       0          0          0         
+;CB
+J9               662.90     4.5        0          0          0         
+;MH
+J10              662.25     6.97       0          0          0         
+;Tee
+J11              664.15     2          0          0          0         
+;MH
+J12              664.32     7.85       0          0          0         
+;CB
+J13              665.97     4.36       0          0          0         
+;MH
+J14              647.36     12.7       0          0          0         
+;CB
+J15              668.4      2.45       0          0          0         
+;MH
+J16              665.52     9.8        0          0          0         
+;MH
+J17              666.54     9.27       0          0          0         
+;Tee
+J18              668.89     2.01       0          0          0         
+;MH
+J19              670.11     9.99       0          0          0         
+;CB
+J20              670.91     4.4        0          0          0         
+;CB
+J21              672        7.16       0          0          0         
+;CB
+J22              673.05     7.07       0          0          0         
+;MH
+J23              648.3      9.51       0          0          0         
+;MH
+J24              648.49     16.7       0          0          0         
+;Tee
+J25              649.92     5.01       0          0          0         
+;Tee
+J26              650.46     5.01       0          0          0         
+;CB
+J27              661.24     6.95       0          0          0         
+;MH
+J28              650.2      9.4        0          0          0         
+;CB
+J29              650.31     7.98       0          0          0         
+;CB
+J30              651        2.7        0          0          0         
+;CB
+J31              650.42     6.65       0          0          0         
+;CB
+J32              651.51     5.87       0          0          0         
+;CB
+J33              650.62     6.44       0          0          0         
+;CB
+J34              650.81     6.24       0          0          0         
+;CB
+J35              651.02     3.49       0          0          0         
+;CB
+J36              651.75     4.6        0          0          0         
+;CB
+J37              652.19     4.23       0          0          0         
+;CB
+J38              653.11     4.5        0          0          0         
+;CB
+J39              653.84     3.1        0          0          0         
+;MH
+J40              653.9      4.4        0          0          0         
+;Inlet
+J41              657.14     2          0          0          0         
+;Inlet
+J42              654.47     2.5        0          0          0         
+;MH
+J43              652.59     19.0       0          0          0         
+;TEE
+J44              655.56     4.6        0          0          0         
+;CB
+J45              670.32     4.51       0          0          0         
+;CB
+J46              669.2      6.83       0          0          0         
+;CB
+J47              663.46     4.95       0          0          0         
+;MH
+J48              676.25     9.75       0          0          0         
+;CB
+J49              672.12     8.65       0          0          0         
+;TEE
+J50              674.06     2.01       0          0          0         
+;TEE
+J51              679.91     1.02       0          0          0         
+;MH
+J52              674.48     9.4        0          0          0         
+;MH
+J53              659.98     13.2       0          0          0         
+;MH
+J54              661.66     15.3       0          0          0         
+;CB
+J55              668.4      4.89       0          0          0         
+;CB
+J56              672.87     6.9        0          0          0         
+;CB
+J57              673.58     9.05       0          0          0         
+;CB
+J58              662.05     15.45      0          0          0         
+;MH
+J59              665.17     15.9       0          0          0         
+;MH
+J69              672.93     13.9       0          0          0         
+;MH
+J60              676.18     6.97       0          0          0         
+;CB
+J61              671.15     8.3        0          0          0         
+;TEE
+J62              672.53     3.01       0          0          0         
+;MH
+J63              672.91     8.5        0          0          0         
+;MH
+J64              675.76     7          0          0          0         
+;CB
+J65              674.39     6.43       0          0          0         
+;TEE
+J66              681.5      3.01       0          0          0         
+;CB
+J68              682.62     6.1        0          0          0         
+;MH
+J70              684.64     4.7        0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+;66" Pipe leaving universtiy
+Out              647.62     NORMAL                      NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+C1               J1               Out              50         0.024      0.5        0          0          0         
+C2               J2               J1               340        0.024      0.5        0.5        0          0         
+C3               J3               J2               165        0.013      0.5        1.76       0          0         
+C4               J4               J3               68         0.013      .5         1.9        0          0         
+;CB
+C5               J5               J3               287        0.013      .5         0.75       0          0         
+;24" RCP
+C6               J6               J2               250        0.013      .5         .71        0          0         
+;15" RCP
+C7               J7               J6               90         0.013      .5         1.4        0          0         
+;30" RCP
+C8               J8               J6               252        0.013      .5         .68        0          0         
+;12" RCP
+C9               J9               J8               102        0.013      .5         1.58       0          0         
+;24" RCP
+C10              J10              J8               106        0.013      .5         .66        0          0         
+;24" RCP
+C11              J11              J10              135        0.013      0          .62        0          0         
+;24" RCP
+C12              J12              J11              110        0.013      .5         0          0          0         
+;15"
+C13              J13              J12              130        0.013      .5         .76        0          0         
+;71x47 cmp
+C14              J14              J1               210        0.024      .5         .5         0          0         
+;10" PVC
+C15              J15              J11              105        0.013      .5         .7         0          0         
+;18" RCP
+C16              J16              J12              100        0.013      .5         .86        0          0         
+;15" RCP
+C17              J17              J16              165        0.013      .5         .58        0          0         
+;24" RCP
+C18              J18              J12              260        0.013      0          1.86       0          0         
+;24" RCP
+C19              J19              J18              120        0.013      .5         0          0          0         
+;15" RCP
+C20              J20              J19              90         0.013      .5         .71        0          0         
+;18" RCP
+C21              J21              J19              120        0.013      .5         .89        0          0         
+;12" RCP
+C22              J22              J18              75         0.013      .5         .1         0          0         
+;71x47 cmp
+C23              J23              J14              410        0.024      0          .7         0          0         
+;71x47 cmp
+C24              J24              J23              415        0.024      .5         0          0          0         
+;71x47 cmp
+C25              J25              J24              110        0.024      0          .5         0          0         
+C26              J26              J25              200        0.01       0          0          0          0         
+;12" RCP
+C27              J27              J26              30         0.013      .5         1          0          0         
+;71x47
+C28              J28              J26              50         0.013      .5         0          0          0         
+;71x47
+C29              J29              J28              70         0.024      .55        .55        0          0         
+;12" RCP
+C30              J30              J25              30         0.013      .5         1          0          0         
+;71x47
+C31              J31              J29              70         0.024      .5         .5         0          0         
+;36" RCP
+C32              J32              J31              440        0.013      .23        .5         0          0         
+;48" RCP
+C33              J33              J31              125        0.013      .5         .5         0          0         
+;48" RCP
+C34              J34              J33              115        0.013      .5         .5         0          0         
+;12" RCP
+C35              J35              J34              60         0.013      .5         .55        0          0         
+;48" RCP
+C36              J36              J34              275        0.013      .5         .5         0          0         
+;42" RCP
+C37              J37              J36              130        0.013      .5         .5         0          0         
+;24" RCP
+C38              J38              J32              630        0.013      .5         .25        0          0         
+;36" RCP
+C39              J39              J37              340        0.013      .5         .5         0          0         
+;21" RCP
+C40              J40              J39              155        0.013      .5         .5         0          0         
+;18" RCP
+C41              J41              J40              150        0.013      0          .85        0          0         
+;24" RCP
+C42              J42              J37              255        0.013      0          .5         0          0         
+;54" RCP
+C43              J43              J2               1116       0.013      .5         .5         0          0         
+;54" RCP
+C44              J44              J43              375        0.013      0          .5         0          0         
+;12" RCP
+C45              J45              J43              100        0.013      .5         6.1        0          0         
+;18" RCP
+C46              J46              J43              150        0.013      .5         6.1        0          0         
+;12" RCP
+C47              J47              J43              160        0.013      .5         7.3        0          0         
+;15" RCP
+C48              J48              J46              270        0.013      .5         2.8        0          0         
+;30" RCP
+C49              J49              J44              255        0.013      .5         1          0          0         
+;24" RCP
+C50              J50              J49              200        0.013      0          1.1        0          0         
+;12" RCP
+C51              J51              J50              110        0.013      0          .5         0          0         
+;24" RCP
+C52              J52              J50              265        0.013      .5         0          0          0         
+;54" RCP
+C53              J53              J44              745        0.013      .5         0          0          0         
+;48" RCP
+C54              J54              J53              190        0.013      .5         .7         0          0         
+;30" RCP
+C55              J55              J54              145        0.013      .5         6          0          0         
+;24" RCP
+C56              J56              J55              420        0.013      .5         .64        0          0         
+;24" RCP
+C57              J57              J56              370        0.013      0.5        0.6        0          0         
+;42" RCP
+C58              J58              J54              20         0.013      .5         .51        0          0         
+;42" RCP
+C59              J59              J58              430        0.013      .5         0.5        0          0         
+;12" RCP
+C60              J69              J59              150        0.013      .5         6          0          0         
+;15" RCP
+C61              J60              J59              255        0.013      .5         2.49       0          0         
+;36" RCP
+C62              J61              J59              25         0.013      .5         .6         0          0         
+;36" RCP
+C63              J62              J61              105        0.013      0          .81        0          0         
+;36" RCP
+C64              J63              J62              70         0.013      0          0          0          0         
+;12" RCP
+C65              J64              J63              95         0.013      .5         2.6        0          0         
+;36" RCP
+C66              J65              J63              50         0.013      .5         .1         0          0         
+;36" RCP
+C67              J66              J65              445        0.013      0          1.01       0          0         
+;8" Tile
+C69              J68              J66              210        0.013      .5         .5         0          0         
+;36" RCP
+C70              J70              J66              165        0.013      .5         0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+C1               CIRCULAR     5.5              0          0          0          1                    
+C2               CIRCULAR     5.5              0          0          0          1                    
+C3               CIRCULAR     2                0          0          0          1                    
+C4               CIRCULAR     1.5              0          0          0          1                    
+C5               CIRCULAR     1.5              0          0          0          1                    
+C6               CIRCULAR     2.5              0          0          0          1                    
+C7               CIRCULAR     1.25             0          0          0          1                    
+C8               CIRCULAR     2.5              0          0          0          1                    
+C9               CIRCULAR     1                0          0          0          1                    
+C10              CIRCULAR     2                0          0          0          1                    
+C11              CIRCULAR     2                0          0          0          1                    
+C12              CIRCULAR     2                0          0          0          1                    
+C13              CIRCULAR     1.25             0          0          0          1                    
+C14              CIRCULAR     5                0          0          0          1                    
+C15              CIRCULAR     0.8333           0          0          0          1                    
+C16              CIRCULAR     1.5              0          0          0          1                    
+C17              CIRCULAR     1.25             0          0          0          1                    
+C18              CIRCULAR     2                0          0          0          1                    
+C19              CIRCULAR     2                0          0          0          1                    
+C20              CIRCULAR     1.25             0          0          0          1                    
+C21              CIRCULAR     1.5              0          0          0          1                    
+C22              CIRCULAR     1                0          0          0          1                    
+C23              CIRCULAR     5                0          0          0          1                    
+C24              CIRCULAR     5                0          0          0          1                    
+C25              CIRCULAR     5                0          0          0          1                    
+C26              CIRCULAR     5                0          0          0          1                    
+C27              CIRCULAR     1                0          0          0          1                    
+C28              CIRCULAR     5                0          0          0          1                    
+C29              CIRCULAR     5                0          0          0          1                    
+C30              CIRCULAR     1                0          0          0          1                    
+C31              CIRCULAR     5                0          0          0          1                    
+C32              CIRCULAR     3                0          0          0          1                    
+C33              CIRCULAR     4                0          0          0          1                    
+C34              CIRCULAR     4                0          0          0          1                    
+C35              CIRCULAR     1                0          0          0          1                    
+C36              CIRCULAR     4                0          0          0          1                    
+C37              CIRCULAR     3.5              0          0          0          1                    
+C38              CIRCULAR     2                0          0          0          1                    
+C39              CIRCULAR     3                0          0          0          1                    
+C40              CIRCULAR     1.75             0          0          0          1                    
+C41              CIRCULAR     1.5              0          0          0          1                    
+C42              CIRCULAR     2                0          0          0          1                    
+C43              CIRCULAR     4.5              0          0          0          1                    
+C44              CIRCULAR     4.5              0          0          0          1                    
+C45              CIRCULAR     1                0          0          0          1                    
+C46              CIRCULAR     1.5              0          0          0          1                    
+C47              CIRCULAR     1                0          0          0          1                    
+C48              CIRCULAR     1.25             0          0          0          1                    
+C49              CIRCULAR     2.5              0          0          0          1                    
+C50              CIRCULAR     2                0          0          0          1                    
+C51              CIRCULAR     1                0          0          0          1                    
+C52              CIRCULAR     2                0          0          0          1                    
+C53              CIRCULAR     4.5              0          0          0          1                    
+C54              CIRCULAR     4                0          0          0          1                    
+C55              CIRCULAR     2.5              0          0          0          1                    
+C56              CIRCULAR     2                0          0          0          1                    
+C57              CIRCULAR     2                0          0          0          1                    
+C58              CIRCULAR     3.5              0          0          0          1                    
+C59              CIRCULAR     3.5              0          0          0          1                    
+C60              CIRCULAR     1                0          0          0          1                    
+C61              CIRCULAR     1.25             0          0          0          1                    
+C62              CIRCULAR     3                0          0          0          1                    
+C63              CIRCULAR     3                0          0          0          1                    
+C64              CIRCULAR     3                0          0          0          1                    
+C65              CIRCULAR     1                0          0          0          1                    
+C66              CIRCULAR     3                0          0          0          1                    
+C67              CIRCULAR     3                0          0          0          1                    
+C69              CIRCULAR     0.667            0          0          0          1                    
+C70              CIRCULAR     3                0          0          0          1                    
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+;Chautauqua County Rainfall
+Chautauqua-1yr              0          0         
+Chautauqua-1yr              0.25       0.0058    
+Chautauqua-1yr              0.5        0.0116    
+Chautauqua-1yr              0.75       0.0173    
+Chautauqua-1yr              1          0.0231    
+Chautauqua-1yr              1.25       0.0289    
+Chautauqua-1yr              1.5        0.0347    
+Chautauqua-1yr              1.75       0.0404    
+Chautauqua-1yr              2.00       0.046     
+Chautauqua-1yr              2.25       0.053     
+Chautauqua-1yr              2.50       0.060     
+Chautauqua-1yr              2.75       0.067     
+Chautauqua-1yr              3.00       0.074     
+Chautauqua-1yr              3.25       0.080     
+Chautauqua-1yr              3.50       0.087     
+Chautauqua-1yr              3.75       0.094     
+Chautauqua-1yr              4.00       0.101     
+Chautauqua-1yr              4.25       0.109     
+Chautauqua-1yr              4.50       0.118     
+Chautauqua-1yr              4.75       0.126     
+Chautauqua-1yr              5.00       0.134     
+Chautauqua-1yr              5.25       0.143     
+Chautauqua-1yr              5.50       0.151     
+Chautauqua-1yr              5.75       0.160     
+Chautauqua-1yr              6.00       0.168     
+Chautauqua-1yr              6.25       0.177     
+Chautauqua-1yr              6.50       0.187     
+Chautauqua-1yr              6.75       0.196     
+Chautauqua-1yr              7.00       0.206     
+Chautauqua-1yr              7.25       0.217     
+Chautauqua-1yr              7.50       0.229     
+Chautauqua-1yr              7.75       0.240     
+Chautauqua-1yr              8.00       0.252     
+Chautauqua-1yr              8.25       0.266     
+Chautauqua-1yr              8.50       0.279     
+Chautauqua-1yr              8.75       0.294     
+Chautauqua-1yr              9.00       0.309     
+Chautauqua-1yr              9.25       0.326     
+Chautauqua-1yr              9.50       0.342     
+Chautauqua-1yr              9.75       0.361     
+Chautauqua-1yr              10.00      0.380     
+Chautauqua-1yr              10.25      0.404     
+Chautauqua-1yr              10.50      0.428     
+Chautauqua-1yr              10.75      0.461     
+Chautauqua-1yr              11.00      0.494     
+Chautauqua-1yr              11.25      0.544     
+Chautauqua-1yr              11.50      0.594     
+Chautauqua-1yr              11.75      0.750     
+Chautauqua-1yr              12.00      1.392     
+Chautauqua-1yr              12.25      1.468     
+Chautauqua-1yr              12.50      1.544     
+Chautauqua-1yr              12.75      1.582     
+Chautauqua-1yr              13.00      1.621     
+Chautauqua-1yr              13.25      1.650     
+Chautauqua-1yr              13.50      1.678     
+Chautauqua-1yr              13.75      1.700     
+Chautauqua-1yr              14.00      1.722     
+Chautauqua-1yr              14.25      1.738     
+Chautauqua-1yr              14.50      1.754     
+Chautauqua-1yr              14.75      1.769     
+Chautauqua-1yr              15.00      1.785     
+Chautauqua-1yr              15.25      1.801     
+Chautauqua-1yr              15.50      1.817     
+Chautauqua-1yr              15.75      1.832     
+Chautauqua-1yr              16.00      1.848     
+Chautauqua-1yr              16.25      1.857     
+Chautauqua-1yr              16.50      1.867     
+Chautauqua-1yr              16.75      1.876     
+Chautauqua-1yr              17.00      1.886     
+Chautauqua-1yr              17.25      1.895     
+Chautauqua-1yr              17.50      1.905     
+Chautauqua-1yr              17.75      1.914     
+Chautauqua-1yr              18.00      1.924     
+Chautauqua-1yr              18.25      1.933     
+Chautauqua-1yr              18.50      1.943     
+Chautauqua-1yr              18.75      1.952     
+Chautauqua-1yr              19.00      1.961     
+Chautauqua-1yr              19.25      1.971     
+Chautauqua-1yr              19.50      1.980     
+Chautauqua-1yr              19.75      1.990     
+Chautauqua-1yr              20.00      1.999     
+Chautauqua-1yr              20.25      2.006     
+Chautauqua-1yr              20.50      2.012     
+Chautauqua-1yr              20.75      2.018     
+Chautauqua-1yr              21.00      2.024     
+Chautauqua-1yr              21.25      2.031     
+Chautauqua-1yr              21.50      2.037     
+Chautauqua-1yr              21.75      2.043     
+Chautauqua-1yr              22.00      2.050     
+Chautauqua-1yr              22.25      2.056     
+Chautauqua-1yr              22.50      2.062     
+Chautauqua-1yr              22.75      2.069     
+Chautauqua-1yr              23.00      2.075     
+Chautauqua-1yr              23.25      2.081     
+Chautauqua-1yr              23.50      2.087     
+Chautauqua-1yr              23.75      2.094     
+Chautauqua-1yr              24.00      2.100     
+;
+;Chautauqua County Rainfall
+Chautauqua-2yr              0          0         
+Chautauqua-2yr              0.25       0.0069    
+Chautauqua-2yr              0.5        0.0138    
+Chautauqua-2yr              0.75       0.0206    
+Chautauqua-2yr              1          0.0275    
+Chautauqua-2yr              1.25       0.0344    
+Chautauqua-2yr              1.5        0.0413    
+Chautauqua-2yr              1.75       0.0481    
+Chautauqua-2yr              2.00       0.055     
+Chautauqua-2yr              2.25       0.063     
+Chautauqua-2yr              2.50       0.071     
+Chautauqua-2yr              2.75       0.079     
+Chautauqua-2yr              3.00       0.088     
+Chautauqua-2yr              3.25       0.096     
+Chautauqua-2yr              3.50       0.104     
+Chautauqua-2yr              3.75       0.112     
+Chautauqua-2yr              4.00       0.120     
+Chautauqua-2yr              4.25       0.130     
+Chautauqua-2yr              4.50       0.140     
+Chautauqua-2yr              4.75       0.150     
+Chautauqua-2yr              5.00       0.160     
+Chautauqua-2yr              5.25       0.170     
+Chautauqua-2yr              5.50       0.180     
+Chautauqua-2yr              5.75       0.190     
+Chautauqua-2yr              6.00       0.200     
+Chautauqua-2yr              6.25       0.211     
+Chautauqua-2yr              6.50       0.223     
+Chautauqua-2yr              6.75       0.234     
+Chautauqua-2yr              7.00       0.245     
+Chautauqua-2yr              7.25       0.259     
+Chautauqua-2yr              7.50       0.273     
+Chautauqua-2yr              7.75       0.286     
+Chautauqua-2yr              8.00       0.300     
+Chautauqua-2yr              8.25       0.316     
+Chautauqua-2yr              8.50       0.333     
+Chautauqua-2yr              8.75       0.350     
+Chautauqua-2yr              9.00       0.368     
+Chautauqua-2yr              9.25       0.388     
+Chautauqua-2yr              9.50       0.408     
+Chautauqua-2yr              9.75       0.430     
+Chautauqua-2yr              10.00      0.453     
+Chautauqua-2yr              10.25      0.481     
+Chautauqua-2yr              10.50      0.510     
+Chautauqua-2yr              10.75      0.549     
+Chautauqua-2yr              11.00      0.588     
+Chautauqua-2yr              11.25      0.648     
+Chautauqua-2yr              11.50      0.708     
+Chautauqua-2yr              11.75      0.893     
+Chautauqua-2yr              12.00      1.658     
+Chautauqua-2yr              12.25      1.748     
+Chautauqua-2yr              12.50      1.838     
+Chautauqua-2yr              12.75      1.884     
+Chautauqua-2yr              13.00      1.930     
+Chautauqua-2yr              13.25      1.964     
+Chautauqua-2yr              13.50      1.998     
+Chautauqua-2yr              13.75      2.024     
+Chautauqua-2yr              14.00      2.050     
+Chautauqua-2yr              14.25      2.069     
+Chautauqua-2yr              14.50      2.088     
+Chautauqua-2yr              14.75      2.106     
+Chautauqua-2yr              15.00      2.125     
+Chautauqua-2yr              15.25      2.144     
+Chautauqua-2yr              15.50      2.163     
+Chautauqua-2yr              15.75      2.181     
+Chautauqua-2yr              16.00      2.200     
+Chautauqua-2yr              16.25      2.211     
+Chautauqua-2yr              16.50      2.223     
+Chautauqua-2yr              16.75      2.234     
+Chautauqua-2yr              17.00      2.245     
+Chautauqua-2yr              17.25      2.256     
+Chautauqua-2yr              17.50      2.268     
+Chautauqua-2yr              17.75      2.279     
+Chautauqua-2yr              18.00      2.290     
+Chautauqua-2yr              18.25      2.301     
+Chautauqua-2yr              18.50      2.313     
+Chautauqua-2yr              18.75      2.324     
+Chautauqua-2yr              19.00      2.335     
+Chautauqua-2yr              19.25      2.346     
+Chautauqua-2yr              19.50      2.358     
+Chautauqua-2yr              19.75      2.369     
+Chautauqua-2yr              20.00      2.380     
+Chautauqua-2yr              20.25      2.388     
+Chautauqua-2yr              20.50      2.395     
+Chautauqua-2yr              20.75      2.403     
+Chautauqua-2yr              21.00      2.410     
+Chautauqua-2yr              21.25      2.418     
+Chautauqua-2yr              21.50      2.425     
+Chautauqua-2yr              21.75      2.433     
+Chautauqua-2yr              22.00      2.440     
+Chautauqua-2yr              22.25      2.448     
+Chautauqua-2yr              22.50      2.455     
+Chautauqua-2yr              22.75      2.463     
+Chautauqua-2yr              23.00      2.470     
+Chautauqua-2yr              23.25      2.478     
+Chautauqua-2yr              23.50      2.485     
+Chautauqua-2yr              23.75      2.493     
+Chautauqua-2yr              24.00      2.500     
+;
+;Chautauqua County Rainfall
+Chautauqua-5yr              0          0         
+Chautauqua-5yr              0.25       0.0085    
+Chautauqua-5yr              0.5        0.0171    
+Chautauqua-5yr              0.75       0.0256    
+Chautauqua-5yr              1          0.0341    
+Chautauqua-5yr              1.25       0.0426    
+Chautauqua-5yr              1.5        0.0512    
+Chautauqua-5yr              1.75       0.0597    
+Chautauqua-5yr              2.00       0.068     
+Chautauqua-5yr              2.25       0.078     
+Chautauqua-5yr              2.50       0.088     
+Chautauqua-5yr              2.75       0.098     
+Chautauqua-5yr              3.00       0.109     
+Chautauqua-5yr              3.25       0.119     
+Chautauqua-5yr              3.50       0.129     
+Chautauqua-5yr              3.75       0.139     
+Chautauqua-5yr              4.00       0.149     
+Chautauqua-5yr              4.25       0.161     
+Chautauqua-5yr              4.50       0.174     
+Chautauqua-5yr              4.75       0.186     
+Chautauqua-5yr              5.00       0.198     
+Chautauqua-5yr              5.25       0.211     
+Chautauqua-5yr              5.50       0.223     
+Chautauqua-5yr              5.75       0.236     
+Chautauqua-5yr              6.00       0.248     
+Chautauqua-5yr              6.25       0.262     
+Chautauqua-5yr              6.50       0.276     
+Chautauqua-5yr              6.75       0.290     
+Chautauqua-5yr              7.00       0.304     
+Chautauqua-5yr              7.25       0.321     
+Chautauqua-5yr              7.50       0.338     
+Chautauqua-5yr              7.75       0.355     
+Chautauqua-5yr              8.00       0.372     
+Chautauqua-5yr              8.25       0.392     
+Chautauqua-5yr              8.50       0.412     
+Chautauqua-5yr              8.75       0.434     
+Chautauqua-5yr              9.00       0.456     
+Chautauqua-5yr              9.25       0.481     
+Chautauqua-5yr              9.50       0.505     
+Chautauqua-5yr              9.75       0.533     
+Chautauqua-5yr              10.00      0.561     
+Chautauqua-5yr              10.25      0.597     
+Chautauqua-5yr              10.50      0.632     
+Chautauqua-5yr              10.75      0.680     
+Chautauqua-5yr              11.00      0.729     
+Chautauqua-5yr              11.25      0.803     
+Chautauqua-5yr              11.50      0.877     
+Chautauqua-5yr              11.75      1.107     
+Chautauqua-5yr              12.00      2.055     
+Chautauqua-5yr              12.25      2.167     
+Chautauqua-5yr              12.50      2.279     
+Chautauqua-5yr              12.75      2.336     
+Chautauqua-5yr              13.00      2.393     
+Chautauqua-5yr              13.25      2.435     
+Chautauqua-5yr              13.50      2.477     
+Chautauqua-5yr              13.75      2.509     
+Chautauqua-5yr              14.00      2.542     
+Chautauqua-5yr              14.25      2.565     
+Chautauqua-5yr              14.50      2.589     
+Chautauqua-5yr              14.75      2.612     
+Chautauqua-5yr              15.00      2.635     
+Chautauqua-5yr              15.25      2.658     
+Chautauqua-5yr              15.50      2.682     
+Chautauqua-5yr              15.75      2.705     
+Chautauqua-5yr              16.00      2.728     
+Chautauqua-5yr              16.25      2.742     
+Chautauqua-5yr              16.50      2.756     
+Chautauqua-5yr              16.75      2.770     
+Chautauqua-5yr              17.00      2.784     
+Chautauqua-5yr              17.25      2.798     
+Chautauqua-5yr              17.50      2.812     
+Chautauqua-5yr              17.75      2.826     
+Chautauqua-5yr              18.00      2.840     
+Chautauqua-5yr              18.25      2.854     
+Chautauqua-5yr              18.50      2.868     
+Chautauqua-5yr              18.75      2.881     
+Chautauqua-5yr              19.00      2.895     
+Chautauqua-5yr              19.25      2.909     
+Chautauqua-5yr              19.50      2.923     
+Chautauqua-5yr              19.75      2.937     
+Chautauqua-5yr              20.00      2.951     
+Chautauqua-5yr              20.25      2.961     
+Chautauqua-5yr              20.50      2.970     
+Chautauqua-5yr              20.75      2.979     
+Chautauqua-5yr              21.00      2.988     
+Chautauqua-5yr              21.25      2.998     
+Chautauqua-5yr              21.50      3.007     
+Chautauqua-5yr              21.75      3.016     
+Chautauqua-5yr              22.00      3.026     
+Chautauqua-5yr              22.25      3.035     
+Chautauqua-5yr              22.50      3.044     
+Chautauqua-5yr              22.75      3.054     
+Chautauqua-5yr              23.00      3.063     
+Chautauqua-5yr              23.25      3.072     
+Chautauqua-5yr              23.50      3.081     
+Chautauqua-5yr              23.75      3.091     
+Chautauqua-5yr              24.00      3.100     
+;
+;Chautauqua County Rainfall
+Chautauqua-10yr             0          0         
+Chautauqua-10yr             0.25       0.0099    
+Chautauqua-10yr             0.5        0.0198    
+Chautauqua-10yr             0.75       0.0297    
+Chautauqua-10yr             1          0.0396    
+Chautauqua-10yr             1.25       0.0495    
+Chautauqua-10yr             1.5        0.0594    
+Chautauqua-10yr             1.75       0.0693    
+Chautauqua-10yr             2.00       0.079     
+Chautauqua-10yr             2.25       0.091     
+Chautauqua-10yr             2.50       0.103     
+Chautauqua-10yr             2.75       0.114     
+Chautauqua-10yr             3.00       0.126     
+Chautauqua-10yr             3.25       0.138     
+Chautauqua-10yr             3.50       0.149     
+Chautauqua-10yr             3.75       0.161     
+Chautauqua-10yr             4.00       0.173     
+Chautauqua-10yr             4.25       0.187     
+Chautauqua-10yr             4.50       0.202     
+Chautauqua-10yr             4.75       0.216     
+Chautauqua-10yr             5.00       0.230     
+Chautauqua-10yr             5.25       0.245     
+Chautauqua-10yr             5.50       0.259     
+Chautauqua-10yr             5.75       0.274     
+Chautauqua-10yr             6.00       0.288     
+Chautauqua-10yr             6.25       0.304     
+Chautauqua-10yr             6.50       0.320     
+Chautauqua-10yr             6.75       0.337     
+Chautauqua-10yr             7.00       0.353     
+Chautauqua-10yr             7.25       0.373     
+Chautauqua-10yr             7.50       0.392     
+Chautauqua-10yr             7.75       0.412     
+Chautauqua-10yr             8.00       0.432     
+Chautauqua-10yr             8.25       0.455     
+Chautauqua-10yr             8.50       0.479     
+Chautauqua-10yr             8.75       0.504     
+Chautauqua-10yr             9.00       0.529     
+Chautauqua-10yr             9.25       0.558     
+Chautauqua-10yr             9.50       0.587     
+Chautauqua-10yr             9.75       0.619     
+Chautauqua-10yr             10.00      0.652     
+Chautauqua-10yr             10.25      0.693     
+Chautauqua-10yr             10.50      0.734     
+Chautauqua-10yr             10.75      0.790     
+Chautauqua-10yr             11.00      0.846     
+Chautauqua-10yr             11.25      0.932     
+Chautauqua-10yr             11.50      1.019     
+Chautauqua-10yr             11.75      1.285     
+Chautauqua-10yr             12.00      2.387     
+Chautauqua-10yr             12.25      2.516     
+Chautauqua-10yr             12.50      2.646     
+Chautauqua-10yr             12.75      2.713     
+Chautauqua-10yr             13.00      2.779     
+Chautauqua-10yr             13.25      2.828     
+Chautauqua-10yr             13.50      2.876     
+Chautauqua-10yr             13.75      2.914     
+Chautauqua-10yr             14.00      2.952     
+Chautauqua-10yr             14.25      2.979     
+Chautauqua-10yr             14.50      3.006     
+Chautauqua-10yr             14.75      3.033     
+Chautauqua-10yr             15.00      3.060     
+Chautauqua-10yr             15.25      3.087     
+Chautauqua-10yr             15.50      3.114     
+Chautauqua-10yr             15.75      3.141     
+Chautauqua-10yr             16.00      3.168     
+Chautauqua-10yr             16.25      3.184     
+Chautauqua-10yr             16.50      3.200     
+Chautauqua-10yr             16.75      3.217     
+Chautauqua-10yr             17.00      3.233     
+Chautauqua-10yr             17.25      3.249     
+Chautauqua-10yr             17.50      3.265     
+Chautauqua-10yr             17.75      3.281     
+Chautauqua-10yr             18.00      3.298     
+Chautauqua-10yr             18.25      3.314     
+Chautauqua-10yr             18.50      3.330     
+Chautauqua-10yr             18.75      3.346     
+Chautauqua-10yr             19.00      3.362     
+Chautauqua-10yr             19.25      3.379     
+Chautauqua-10yr             19.50      3.395     
+Chautauqua-10yr             19.75      3.411     
+Chautauqua-10yr             20.00      3.427     
+Chautauqua-10yr             20.25      3.438     
+Chautauqua-10yr             20.50      3.449     
+Chautauqua-10yr             20.75      3.460     
+Chautauqua-10yr             21.00      3.470     
+Chautauqua-10yr             21.25      3.481     
+Chautauqua-10yr             21.50      3.492     
+Chautauqua-10yr             21.75      3.503     
+Chautauqua-10yr             22.00      3.514     
+Chautauqua-10yr             22.25      3.524     
+Chautauqua-10yr             22.50      3.535     
+Chautauqua-10yr             22.75      3.546     
+Chautauqua-10yr             23.00      3.557     
+Chautauqua-10yr             23.25      3.568     
+Chautauqua-10yr             23.50      3.578     
+Chautauqua-10yr             23.75      3.589     
+Chautauqua-10yr             24.00      3.600     
+;
+;Chautauqua County Rainfall
+Chautauqua-25yr             0          0         
+Chautauqua-25yr             0.25       0.0113    
+Chautauqua-25yr             0.5        0.0226    
+Chautauqua-25yr             0.75       0.0338    
+Chautauqua-25yr             1          0.0451    
+Chautauqua-25yr             1.25       0.0564    
+Chautauqua-25yr             1.5        0.0677    
+Chautauqua-25yr             1.75       0.0789    
+Chautauqua-25yr             2.00       0.090     
+Chautauqua-25yr             2.25       0.104     
+Chautauqua-25yr             2.50       0.117     
+Chautauqua-25yr             2.75       0.130     
+Chautauqua-25yr             3.00       0.144     
+Chautauqua-25yr             3.25       0.157     
+Chautauqua-25yr             3.50       0.170     
+Chautauqua-25yr             3.75       0.183     
+Chautauqua-25yr             4.00       0.197     
+Chautauqua-25yr             4.25       0.213     
+Chautauqua-25yr             4.50       0.230     
+Chautauqua-25yr             4.75       0.246     
+Chautauqua-25yr             5.00       0.262     
+Chautauqua-25yr             5.25       0.279     
+Chautauqua-25yr             5.50       0.295     
+Chautauqua-25yr             5.75       0.312     
+Chautauqua-25yr             6.00       0.328     
+Chautauqua-25yr             6.25       0.346     
+Chautauqua-25yr             6.50       0.365     
+Chautauqua-25yr             6.75       0.383     
+Chautauqua-25yr             7.00       0.402     
+Chautauqua-25yr             7.25       0.424     
+Chautauqua-25yr             7.50       0.447     
+Chautauqua-25yr             7.75       0.469     
+Chautauqua-25yr             8.00       0.492     
+Chautauqua-25yr             8.25       0.519     
+Chautauqua-25yr             8.50       0.545     
+Chautauqua-25yr             8.75       0.574     
+Chautauqua-25yr             9.00       0.603     
+Chautauqua-25yr             9.25       0.636     
+Chautauqua-25yr             9.50       0.668     
+Chautauqua-25yr             9.75       0.705     
+Chautauqua-25yr             10.00      0.742     
+Chautauqua-25yr             10.25      0.789     
+Chautauqua-25yr             10.50      0.836     
+Chautauqua-25yr             10.75      0.900     
+Chautauqua-25yr             11.00      0.964     
+Chautauqua-25yr             11.25      1.062     
+Chautauqua-25yr             11.50      1.160     
+Chautauqua-25yr             11.75      1.464     
+Chautauqua-25yr             12.00      2.718     
+Chautauqua-25yr             12.25      2.866     
+Chautauqua-25yr             12.50      3.014     
+Chautauqua-25yr             12.75      3.089     
+Chautauqua-25yr             13.00      3.165     
+Chautauqua-25yr             13.25      3.221     
+Chautauqua-25yr             13.50      3.276     
+Chautauqua-25yr             13.75      3.319     
+Chautauqua-25yr             14.00      3.362     
+Chautauqua-25yr             14.25      3.393     
+Chautauqua-25yr             14.50      3.424     
+Chautauqua-25yr             14.75      3.454     
+Chautauqua-25yr             15.00      3.485     
+Chautauqua-25yr             15.25      3.516     
+Chautauqua-25yr             15.50      3.547     
+Chautauqua-25yr             15.75      3.577     
+Chautauqua-25yr             16.00      3.608     
+Chautauqua-25yr             16.25      3.626     
+Chautauqua-25yr             16.50      3.645     
+Chautauqua-25yr             16.75      3.663     
+Chautauqua-25yr             17.00      3.682     
+Chautauqua-25yr             17.25      3.700     
+Chautauqua-25yr             17.50      3.719     
+Chautauqua-25yr             17.75      3.737     
+Chautauqua-25yr             18.00      3.756     
+Chautauqua-25yr             18.25      3.774     
+Chautauqua-25yr             18.50      3.793     
+Chautauqua-25yr             18.75      3.811     
+Chautauqua-25yr             19.00      3.829     
+Chautauqua-25yr             19.25      3.848     
+Chautauqua-25yr             19.50      3.866     
+Chautauqua-25yr             19.75      3.885     
+Chautauqua-25yr             20.00      3.903     
+Chautauqua-25yr             20.25      3.916     
+Chautauqua-25yr             20.50      3.928     
+Chautauqua-25yr             20.75      3.940     
+Chautauqua-25yr             21.00      3.952     
+Chautauqua-25yr             21.25      3.965     
+Chautauqua-25yr             21.50      3.977     
+Chautauqua-25yr             21.75      3.989     
+Chautauqua-25yr             22.00      4.002     
+Chautauqua-25yr             22.25      4.014     
+Chautauqua-25yr             22.50      4.026     
+Chautauqua-25yr             22.75      4.039     
+Chautauqua-25yr             23.00      4.051     
+Chautauqua-25yr             23.25      4.063     
+Chautauqua-25yr             23.50      4.075     
+Chautauqua-25yr             23.75      4.088     
+Chautauqua-25yr             24.00      4.100     
+;
+;Chautauqua County Rainfall
+Chautauqua-50yr             0          0         
+Chautauqua-50yr             0.25       0.0127    
+Chautauqua-50yr             0.5        0.0253    
+Chautauqua-50yr             0.75       0.0380    
+Chautauqua-50yr             1          0.0506    
+Chautauqua-50yr             1.25       0.0633    
+Chautauqua-50yr             1.5        0.0759    
+Chautauqua-50yr             1.75       0.0886    
+Chautauqua-50yr             2.00       0.101     
+Chautauqua-50yr             2.25       0.116     
+Chautauqua-50yr             2.50       0.131     
+Chautauqua-50yr             2.75       0.146     
+Chautauqua-50yr             3.00       0.161     
+Chautauqua-50yr             3.25       0.176     
+Chautauqua-50yr             3.50       0.191     
+Chautauqua-50yr             3.75       0.206     
+Chautauqua-50yr             4.00       0.221     
+Chautauqua-50yr             4.25       0.239     
+Chautauqua-50yr             4.50       0.258     
+Chautauqua-50yr             4.75       0.276     
+Chautauqua-50yr             5.00       0.294     
+Chautauqua-50yr             5.25       0.313     
+Chautauqua-50yr             5.50       0.331     
+Chautauqua-50yr             5.75       0.350     
+Chautauqua-50yr             6.00       0.368     
+Chautauqua-50yr             6.25       0.389     
+Chautauqua-50yr             6.50       0.409     
+Chautauqua-50yr             6.75       0.430     
+Chautauqua-50yr             7.00       0.451     
+Chautauqua-50yr             7.25       0.476     
+Chautauqua-50yr             7.50       0.501     
+Chautauqua-50yr             7.75       0.527     
+Chautauqua-50yr             8.00       0.552     
+Chautauqua-50yr             8.25       0.582     
+Chautauqua-50yr             8.50       0.612     
+Chautauqua-50yr             8.75       0.644     
+Chautauqua-50yr             9.00       0.676     
+Chautauqua-50yr             9.25       0.713     
+Chautauqua-50yr             9.50       0.750     
+Chautauqua-50yr             9.75       0.791     
+Chautauqua-50yr             10.00      0.833     
+Chautauqua-50yr             10.25      0.886     
+Chautauqua-50yr             10.50      0.938     
+Chautauqua-50yr             10.75      1.010     
+Chautauqua-50yr             11.00      1.081     
+Chautauqua-50yr             11.25      1.191     
+Chautauqua-50yr             11.50      1.302     
+Chautauqua-50yr             11.75      1.642     
+Chautauqua-50yr             12.00      3.050     
+Chautauqua-50yr             12.25      3.215     
+Chautauqua-50yr             12.50      3.381     
+Chautauqua-50yr             12.75      3.466     
+Chautauqua-50yr             13.00      3.551     
+Chautauqua-50yr             13.25      3.613     
+Chautauqua-50yr             13.50      3.675     
+Chautauqua-50yr             13.75      3.724     
+Chautauqua-50yr             14.00      3.772     
+Chautauqua-50yr             14.25      3.807     
+Chautauqua-50yr             14.50      3.841     
+Chautauqua-50yr             14.75      3.876     
+Chautauqua-50yr             15.00      3.910     
+Chautauqua-50yr             15.25      3.945     
+Chautauqua-50yr             15.50      3.979     
+Chautauqua-50yr             15.75      4.014     
+Chautauqua-50yr             16.00      4.048     
+Chautauqua-50yr             16.25      4.069     
+Chautauqua-50yr             16.50      4.089     
+Chautauqua-50yr             16.75      4.110     
+Chautauqua-50yr             17.00      4.131     
+Chautauqua-50yr             17.25      4.152     
+Chautauqua-50yr             17.50      4.172     
+Chautauqua-50yr             17.75      4.193     
+Chautauqua-50yr             18.00      4.214     
+Chautauqua-50yr             18.25      4.234     
+Chautauqua-50yr             18.50      4.255     
+Chautauqua-50yr             18.75      4.276     
+Chautauqua-50yr             19.00      4.296     
+Chautauqua-50yr             19.25      4.317     
+Chautauqua-50yr             19.50      4.338     
+Chautauqua-50yr             19.75      4.359     
+Chautauqua-50yr             20.00      4.379     
+Chautauqua-50yr             20.25      4.393     
+Chautauqua-50yr             20.50      4.407     
+Chautauqua-50yr             20.75      4.421     
+Chautauqua-50yr             21.00      4.434     
+Chautauqua-50yr             21.25      4.448     
+Chautauqua-50yr             21.50      4.462     
+Chautauqua-50yr             21.75      4.476     
+Chautauqua-50yr             22.00      4.490     
+Chautauqua-50yr             22.25      4.503     
+Chautauqua-50yr             22.50      4.517     
+Chautauqua-50yr             22.75      4.531     
+Chautauqua-50yr             23.00      4.545     
+Chautauqua-50yr             23.25      4.559     
+Chautauqua-50yr             23.50      4.572     
+Chautauqua-50yr             23.75      4.586     
+Chautauqua-50yr             24.00      4.600     
+;
+;Chautauqua County Rainfall
+Chautauqua-100yr            0          0         
+Chautauqua-100yr            0.25       0.0135    
+Chautauqua-100yr            0.5        0.0270    
+Chautauqua-100yr            0.75       0.0404    
+Chautauqua-100yr            1          0.0539    
+Chautauqua-100yr            1.25       0.0674    
+Chautauqua-100yr            1.5        0.0809    
+Chautauqua-100yr            1.75       0.0943    
+Chautauqua-100yr            2.00       0.108     
+Chautauqua-100yr            2.25       0.124     
+Chautauqua-100yr            2.50       0.140     
+Chautauqua-100yr            2.75       0.156     
+Chautauqua-100yr            3.00       0.172     
+Chautauqua-100yr            3.25       0.187     
+Chautauqua-100yr            3.50       0.203     
+Chautauqua-100yr            3.75       0.219     
+Chautauqua-100yr            4.00       0.235     
+Chautauqua-100yr            4.25       0.255     
+Chautauqua-100yr            4.50       0.274     
+Chautauqua-100yr            4.75       0.294     
+Chautauqua-100yr            5.00       0.314     
+Chautauqua-100yr            5.25       0.333     
+Chautauqua-100yr            5.50       0.353     
+Chautauqua-100yr            5.75       0.372     
+Chautauqua-100yr            6.00       0.392     
+Chautauqua-100yr            6.25       0.414     
+Chautauqua-100yr            6.50       0.436     
+Chautauqua-100yr            6.75       0.458     
+Chautauqua-100yr            7.00       0.480     
+Chautauqua-100yr            7.25       0.507     
+Chautauqua-100yr            7.50       0.534     
+Chautauqua-100yr            7.75       0.561     
+Chautauqua-100yr            8.00       0.588     
+Chautauqua-100yr            8.25       0.620     
+Chautauqua-100yr            8.50       0.652     
+Chautauqua-100yr            8.75       0.686     
+Chautauqua-100yr            9.00       0.720     
+Chautauqua-100yr            9.25       0.760     
+Chautauqua-100yr            9.50       0.799     
+Chautauqua-100yr            9.75       0.843     
+Chautauqua-100yr            10.00      0.887     
+Chautauqua-100yr            10.25      0.943     
+Chautauqua-100yr            10.50      1.000     
+Chautauqua-100yr            10.75      1.076     
+Chautauqua-100yr            11.00      1.152     
+Chautauqua-100yr            11.25      1.269     
+Chautauqua-100yr            11.50      1.387     
+Chautauqua-100yr            11.75      1.749     
+Chautauqua-100yr            12.00      3.249     
+Chautauqua-100yr            12.25      3.425     
+Chautauqua-100yr            12.50      3.602     
+Chautauqua-100yr            12.75      3.692     
+Chautauqua-100yr            13.00      3.783     
+Chautauqua-100yr            13.25      3.849     
+Chautauqua-100yr            13.50      3.915     
+Chautauqua-100yr            13.75      3.967     
+Chautauqua-100yr            14.00      4.018     
+Chautauqua-100yr            14.25      4.055     
+Chautauqua-100yr            14.50      4.092     
+Chautauqua-100yr            14.75      4.128     
+Chautauqua-100yr            15.00      4.165     
+Chautauqua-100yr            15.25      4.202     
+Chautauqua-100yr            15.50      4.239     
+Chautauqua-100yr            15.75      4.275     
+Chautauqua-100yr            16.00      4.312     
+Chautauqua-100yr            16.25      4.334     
+Chautauqua-100yr            16.50      4.356     
+Chautauqua-100yr            16.75      4.378     
+Chautauqua-100yr            17.00      4.400     
+Chautauqua-100yr            17.25      4.422     
+Chautauqua-100yr            17.50      4.444     
+Chautauqua-100yr            17.75      4.466     
+Chautauqua-100yr            18.00      4.488     
+Chautauqua-100yr            18.25      4.510     
+Chautauqua-100yr            18.50      4.533     
+Chautauqua-100yr            18.75      4.555     
+Chautauqua-100yr            19.00      4.577     
+Chautauqua-100yr            19.25      4.599     
+Chautauqua-100yr            19.50      4.621     
+Chautauqua-100yr            19.75      4.643     
+Chautauqua-100yr            20.00      4.665     
+Chautauqua-100yr            20.25      4.680     
+Chautauqua-100yr            20.50      4.694     
+Chautauqua-100yr            20.75      4.709     
+Chautauqua-100yr            21.00      4.724     
+Chautauqua-100yr            21.25      4.738     
+Chautauqua-100yr            21.50      4.753     
+Chautauqua-100yr            21.75      4.768     
+Chautauqua-100yr            22.00      4.782     
+Chautauqua-100yr            22.25      4.797     
+Chautauqua-100yr            22.50      4.812     
+Chautauqua-100yr            22.75      4.827     
+Chautauqua-100yr            23.00      4.841     
+Chautauqua-100yr            23.25      4.856     
+Chautauqua-100yr            23.50      4.871     
+Chautauqua-100yr            23.75      4.885     
+Chautauqua-100yr            24.00      4.900     
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -328.220 1578.790 3546.700 4888.120
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+J1               -50.000            3000.000          
+J2               290.000            3000.000          
+J3               370.000            3140.000          
+J4               440.000            3140.000          
+J5               390.000            3430.000          
+J6               350.000            2750.000          
+J7               440.000            2750.000          
+J8               460.000            2510.000          
+J9               562.000            2510.000          
+J10              495.000            2425.000          
+J11              575.000            2315.000          
+J12              650.000            2240.000          
+J13              765.000            2300.000          
+J14              -52.000            3210.000          
+J15              470.000            2315.000          
+J16              630.000            2140.000          
+J17              530.000            2015.000          
+J18              840.000            2060.000          
+J19              930.000            1980.000          
+J20              1005.000           2030.000          
+J21              1020.000           1890.000          
+J22              765.000            2075.000          
+J23              -52.000            3620.000          
+J24              -52.000            4035.000          
+J25              -52.000            4230.000          
+J26              -52.000            4340.000          
+J27              -22.000            4340.000          
+J28              -52.000            4390.000          
+J29              13.000             4415.000          
+J30              -82.000            4230.000          
+J31              83.000             4415.000          
+J32              328.000            4690.000          
+J33              208.000            4415.000          
+J34              325.000            4415.000          
+J35              325.000            4355.000          
+J36              575.000            4305.000          
+J37              705.000            4305.000          
+J38              958.000            4690.000          
+J39              1045.000           4360.000          
+J40              1200.000           4380.000          
+J41              1200.000           4230.000          
+J42              759.750            4098.440          
+J43              1406.000           3000.000          
+J44              1775.000           3055.000          
+J45              1490.830           2918.880          
+J46              1406.000           2860.000          
+J47              1266.000           2940.000          
+J48              1406.000           2600.000          
+J49              1775.000           2800.000          
+J50              1775.000           2600.000          
+J51              1665.000           2600.000          
+J52              1775.000           2335.000          
+J53              2505.000           3170.000          
+J54              2505.000           2980.000          
+J55              2365.000           2935.000          
+J56              2045.000           2665.000          
+J57              2045.000           2285.000          
+J58              2505.000           2960.000          
+J59              2505.000           2530.000          
+J69              2351.030           2530.000          
+J60              2505.000           2275.000          
+J61              2530.000           2530.000          
+J62              2635.000           2530.000          
+J63              2705.000           2530.000          
+J64              2705.000           2625.000          
+J65              2755.000           2530.000          
+J66              2985.000           2290.000          
+J68              3150.000           2155.000          
+J70              3150.000           2290.000          
+Out              -100.000           3000.000          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+A1               273.220            3236.930          
+A1               210.010            3153.970          
+A1               203.430            3022.290          
+A1               281.120            3020.980          
+A1               296.920            3085.500          
+A1               356.180            3135.540          
+A1               364.080            3201.380          
+A1               302.190            3246.150          
+A2               439.140            3115.790          
+A2               378.570            3111.840          
+A2               323.260            3007.810          
+A2               366.720            2773.410          
+A2               511.570            2773.410          
+A2               618.230            3071.010          
+A2               549.750            3131.590          
+A2               460.210            3135.540          
+A3               666.950            2740.490          
+A3               760.450            2556.130          
+A3               458.890            2548.230          
+A3               382.520            2731.270          
+A4               498.400            2463.960          
+A4               533.950            2394.160          
+A4               591.890            2317.790          
+A4               644.570            2270.380          
+A4               681.440            2295.400          
+A4               716.990            2287.500          
+A4               748.600            2350.710          
+A4               818.390            2365.190          
+A4               759.130            2503.460          
+A4               486.550            2494.240          
+A5               728.460            2174.230          
+A5               828.030            2090.920          
+A5               909.320            2019.800          
+A5               930.320            2063.640          
+A5               970.280            2052.310          
+A5               1010.920           2092.950          
+A5               946.120            2191.370          
+A5               889.500            2253.260          
+A5               831.560            2341.490          
+A5               793.370            2332.270          
+A5               784.150            2284.870          
+A5               681.730            2235.190          
+A6               -32.470            2984.750          
+A6               -77.550            2968.230          
+A6               -77.550            2938.180          
+A6               -71.540            2811.970          
+A6               12.600             2739.850          
+A6               14.110             2628.660          
+A6               23.120             2511.470          
+A6               44.160             2386.760          
+A6               173.370            2379.250          
+A6               332.640            2374.740          
+A6               484.390            2376.240          
+A6               234.970            2983.250          
+A6               206.430            2980.250          
+A6               119.250            3392.270          
+A6               -19.900            3392.270          
+A7               506.920            2356.710          
+A7               530.960            2340.180          
+A7               473.870            2340.180          
+A7               455.840            2323.660          
+A7               461.850            2299.620          
+A7               556.510            2296.610          
+A7               619.610            2244.020          
+A7               582.050            2241.020          
+A7               352.170            2238.010          
+A7               51.670             2242.520          
+A7               44.160             2371.740          
+A7               254.510            2364.220          
+A7               404.760            2362.720          
+A7               488.900            2361.220          
+A8               626.860            2194.550          
+A8               612.640            2166.100          
+A8               594.350            2125.460          
+A8               574.030            2090.920          
+A8               539.480            2060.440          
+A8               456.170            2029.960          
+A8               257.030            2029.960          
+A8               187.940            2068.570          
+A8               167.620            2092.950          
+A8               161.520            2231.130          
+A8               372.860            2225.030          
+A8               539.480            2229.100          
+A8               610.610            2229.100          
+A9               500.880            2025.040          
+A9               511.040            1996.590          
+A9               549.640            1994.560          
+A9               590.290            2033.170          
+A9               612.640            2073.810          
+A9               647.180            2120.540          
+A9               661.410            2167.280          
+A9               697.980            2132.740          
+A9               659.380            2068.570          
+A9               606.540            2003.540          
+A9               559.800            1958.840          
+A9               525.260            1924.290          
+A9               557.770            1814.560          
+A9               326.120            1791.350          
+A9               230.610            1791.350          
+A9               143.240            1846.220          
+A9               82.270             1880.760          
+A9               61.950             1968.140          
+A9               55.860             2018.940          
+A9               51.790             2230.270          
+A9               145.270            2222.150          
+A9               159.490            2065.680          
+A9               252.970            2016.910          
+A9               460.230            2014.880          
+A9               492.750            2031.130          
+A10              750.820            2101.080          
+A10              740.660            2062.470          
+A10              767.070            2021.830          
+A10              823.970            2044.180          
+A10              823.970            2011.670          
+A10              582.160            1812.530          
+A10              551.680            1920.230          
+A10              716.270            2125.460          
+A11              543.550            1788.140          
+A11              470.400            1784.080          
+A11              464.300            1737.340          
+A11              574.030            1729.210          
+A11              667.500            1745.470          
+A11              750.820            1751.570          
+A11              819.910            1741.410          
+A11              937.760            1804.400          
+A11              1041.400           1834.880          
+A11              1006.850           1863.330          
+A11              925.570            1922.260          
+A11              856.480            1995.410          
+A11              830.070            1993.380          
+A11              773.170            1944.610          
+A11              683.760            1875.520          
+A11              592.320            1802.370          
+A12              992.630            1944.610          
+A12              1019.050           1924.290          
+A12              1051.560           1928.350          
+A12              1053.590           1899.910          
+A12              1041.400           1879.590          
+A12              1057.660           1828.780          
+A12              1023.110           1810.500          
+A12              1047.500           1790.180          
+A12              1069.850           1751.570          
+A12              1114.550           1743.440          
+A12              1151.130           1741.410          
+A12              1208.030           1745.470          
+A12              1238.510           1765.790          
+A12              1256.800           1804.400          
+A12              1258.830           1832.850          
+A12              1181.610           1899.910          
+A12              1138.940           1936.480          
+A12              1051.560           2038.080          
+A12              996.690            1995.410          
+A12              960.120            1977.120          
+A13              606.380            3430.510          
+A13              610.330            3315.940          
+A13              740.690            3171.090          
+A13              391.740            3176.360          
+A13              416.750            3452.890          
+A14              -127.730           3058.320          
+A14              -138.170           3256.600          
+A14              -152.090           3479.240          
+A14              -141.650           3809.710          
+A14              -131.210           3997.560          
+A14              -114.450           4377.050          
+A14              -71.760            4369.140          
+A14              -25.900            4318.540          
+A14              128.380            4244.530          
+A14              295.260            4088.720          
+A14              105.340            3896.680          
+A14              126.210            3423.580          
+A14              -61.640            3430.540          
+A14              -65.120            3061.800          
+A14              -110.340           3054.840          
+A15              -33.810            4386.540          
+A15              -10.090            4394.440          
+A15              67.930             4405.450          
+A15              66.230             4356.920          
+A15              88.370             4280.290          
+A15              -29.070            4329.610          
+A15              -44.880            4381.790          
+A16              106.250            4392.680          
+A16              160.740            4391.820          
+A16              174.360            4390.120          
+A16              247.580            4384.160          
+A16              279.080            4362.020          
+A16              297.810            4324.560          
+A16              285.900            4279.440          
+A16              259.500            4241.970          
+A16              230.550            4219.840          
+A16              188.830            4215.580          
+A16              163.290            4228.350          
+A16              130.940            4252.190          
+A16              99.430             4268.370          
+A16              86.660             4303.280          
+A16              78.150             4348.400          
+A16              75.590             4369.690          
+A16              75.590             4401.190          
+A17              108.800            4408.000          
+A17              176.060            4408.850          
+A17              256.950            4405.450          
+A17              295.260            4406.300          
+A17              336.980            4400.340          
+A17              503.010            4325.410          
+A17              384.660            4189.190          
+A17              346.350            4153.430          
+A17              297.810            4114.260          
+A17              254.390            4148.320          
+A17              215.230            4174.710          
+A17              200.750            4203.660          
+A17              233.110            4212.170          
+A17              277.380            4251.340          
+A17              296.960            4286.250          
+A17              304.630            4328.820          
+A17              284.190            4366.280          
+A17              262.910            4383.310          
+A17              242.470            4390.120          
+A17              171.800            4396.080          
+A17              130.080            4396.080          
+A17              109.650            4396.080          
+A17              90.920             4400.340          
+A17              90.070             4408.850          
+A18              15.140             4436.100          
+A18              80.700             4438.650          
+A18              171.800            4436.950          
+A18              175.210            4670.240          
+A18              261.200            4664.280          
+A18              259.500            4721.320          
+A18              221.190            4723.030          
+A18              -18.910            4723.030          
+A18              -12.950            4572.330          
+A18              -11.250            4422.480          
+A19              183.720            4430.990          
+A19              193.090            4431.840          
+A19              241.620            4427.580          
+A19              301.220            4430.990          
+A19              380.400            4421.620          
+A19              417.870            4430.990          
+A19              451.920            4483.780          
+A19              460.440            4511.880          
+A19              457.880            4545.930          
+A19              422.970            4642.990          
+A19              351.450            4650.660          
+A19              271.420            4654.910          
+A19              183.720            4658.320          
+A19              184.580            4441.210          
+A20              438.540            4628.150          
+A20              451.190            4598.110          
+A20              470.170            4534.860          
+A20              460.680            4471.610          
+A20              429.060            4417.850          
+A20              525.510            4354.610          
+A20              498.630            4302.430          
+A20              307.300            4082.640          
+A20              122.300            3899.220          
+A20              275.680            3866.010          
+A20              547.650            3869.170          
+A20              645.680            3900.800          
+A20              688.370            3989.350          
+A20              696.280            4150.630          
+A20              691.540            4262.900          
+A20              686.790            4324.560          
+A20              704.190            4432.080          
+A20              718.420            4530.120          
+A20              726.320            4580.720          
+A20              748.460            4617.090          
+A20              682.050            4618.670          
+A20              585.600            4628.150          
+A20              498.630            4636.060          
+A20              436.960            4643.970          
+A21              281.740            4731.940          
+A21              371.010            4737.700          
+A21              529.390            4737.700          
+A21              661.850            4737.700          
+A21              926.770            4717.550          
+A21              929.650            4668.590          
+A21              915.250            4625.400          
+A21              906.610            4556.290          
+A21              817.350            4559.170          
+A21              736.720            4559.170          
+A21              754.000            4585.080          
+A21              756.880            4634.040          
+A21              270.230            4665.710          
+A21              267.350            4717.550          
+A22              739.600            4530.370          
+A22              805.830            4533.250          
+A22              897.970            4530.370          
+A22              900.850            4406.550          
+A22              900.850            4262.570          
+A22              883.580            4173.300          
+A22              710.800            4124.350          
+A22              705.040            4262.570          
+A22              702.160            4348.960          
+A22              728.080            4536.130          
+A23              1039.070           4717.550          
+A23              1105.300           4708.910          
+A23              1105.300           4680.110          
+A23              1085.150           4631.160          
+A23              1090.910           4567.810          
+A23              1154.260           4541.890          
+A23              1378.870           4550.530          
+A23              1399.020           4406.550          
+A23              1401.900           4294.250          
+A23              1329.910           4288.490          
+A23              1249.280           4372.000          
+A23              1237.770           4432.470          
+A23              1131.220           4423.830          
+A23              1021.800           4395.030          
+A23              912.370            4369.120          
+A23              923.890            4550.530          
+A23              938.290            4654.190          
+A23              1004.520           4708.910          
+A24              1183.050           4253.930          
+A24              1018.920           4233.780          
+A24              897.970            4176.180          
+A24              912.370            4225.140          
+A24              915.250            4325.920          
+A24              1183.050           4360.480          
+A24              1185.930           4314.400          
+A25              823.110            4132.990          
+A25              984.360            4181.940          
+A25              1007.400           4109.950          
+A25              1010.280           4037.960          
+A25              1024.680           3885.350          
+A25              1151.380           3588.750          
+A25              1200.330           3358.380          
+A25              1099.550           3251.840          
+A25              1001.640           3104.980          
+A25              952.690            3099.220          
+A25              895.100            3107.860          
+A25              872.060            3176.970          
+A25              851.900            3295.030          
+A25              831.740            3413.090          
+A25              794.310            3623.300          
+A25              771.270            3729.850          
+A25              728.080            3868.070          
+A25              710.800            3991.890          
+A25              719.440            4107.070          
+A26              1033.320           4187.700          
+A26              1076.510           4202.100          
+A26              1128.340           4204.980          
+A26              1180.170           4196.340          
+A26              1234.890           4216.500          
+A26              1266.560           4236.660          
+A26              1364.470           4248.170          
+A26              1433.580           4265.450          
+A26              1488.290           4279.850          
+A26              1519.960           4291.370          
+A26              1589.070           4297.130          
+A26              1646.670           4196.340          
+A26              1686.980           4089.800          
+A26              1718.660           4040.840          
+A26              1738.810           3940.060          
+A26              1758.970           3859.430          
+A26              1776.250           3764.400          
+A26              1782.010           3689.530          
+A26              1805.040           3608.910          
+A26              1796.400           3525.400          
+A26              1799.280           3439.010          
+A26              1799.280           3378.540          
+A26              1782.010           3309.430          
+A26              1603.470           3300.790          
+A26              1456.610           3300.790          
+A26              1401.900           3349.740          
+A26              1350.070           3418.850          
+A26              1324.150           3479.330          
+A26              1246.400           3496.600          
+A26              1191.690           3513.880          
+A26              1160.020           3600.270          
+A26              1128.340           3672.260          
+A26              1088.030           3787.440          
+A26              1059.230           3847.910          
+A26              1041.950           3885.350          
+A26              1039.070           3928.540          
+A26              1036.190           4006.290          
+A26              1041.950           4066.760          
+A26              1024.680           4115.710          
+A26              1007.400           4181.940          
+A27              1048.110           3062.870          
+A27              1136.230           3054.280          
+A27              1237.230           3039.230          
+A27              1348.990           3026.340          
+A27              1428.510           3052.130          
+A27              1473.640           2979.060          
+A27              1555.300           2927.480          
+A27              1718.640           2897.390          
+A27              1912.060           2843.660          
+A27              1798.150           3282.080          
+A27              1462.890           3275.640          
+A27              1383.370           3337.960          
+A27              1312.450           3462.610          
+A27              1224.340           3490.550          
+A27              1187.810           3479.800          
+A27              1213.590           3357.300          
+A27              1108.290           3241.250          
+A27              1022.320           3086.510          
+A28              1456.440           2976.910          
+A28              1473.640           2964.010          
+A28              1544.560           2914.580          
+A28              1533.810           2869.450          
+A28              1424.210           2867.300          
+A28              1415.610           2901.690          
+A28              1419.910           2951.120          
+A28              1452.150           2981.210          
+A29              1445.700           2845.810          
+A29              1544.560           2845.810          
+A29              1563.900           2893.090          
+A29              1669.210           2871.600          
+A29              1673.510           2764.150          
+A29              1652.010           2635.200          
+A29              1634.820           2600.810          
+A29              1604.730           2596.520          
+A29              1518.770           2590.070          
+A29              1439.250           2592.220          
+A29              1445.700           2633.050          
+A29              1422.060           2639.500          
+A29              1419.910           2682.480          
+A29              1419.910           2746.950          
+A29              1419.910           2847.960          
+A30              1370.480           2553.530          
+A30              1359.730           2478.310          
+A30              1372.630           2409.540          
+A30              1385.520           2353.670          
+A30              1443.550           2362.260          
+A30              1581.090           2353.670          
+A30              1634.820           2351.520          
+A30              1636.970           2405.240          
+A30              1634.820           2474.020          
+A30              1630.520           2499.810          
+A30              1634.820           2572.880          
+A30              1596.140           2572.880          
+A30              1488.680           2570.730          
+A30              1374.780           2579.320          
+A31              1682.100           2572.880          
+A31              1718.640           2562.130          
+A31              1727.230           2547.090          
+A31              1725.080           2510.550          
+A31              1712.190           2484.760          
+A31              1737.980           2448.230          
+A31              1725.080           2409.540          
+A31              1675.650           2411.690          
+A31              1647.720           2407.390          
+A31              1652.010           2489.060          
+A31              1647.720           2566.430          
+A32              1761.620           2815.730          
+A32              1755.170           2777.040          
+A32              1768.070           2731.910          
+A32              1761.620           2676.030          
+A32              1748.720           2639.500          
+A32              1667.060           2645.950          
+A32              1682.100           2725.460          
+A32              1692.850           2787.790          
+A32              1682.100           2863.010          
+A32              1763.770           2837.220          
+A33              1823.740           2818.260          
+A33              1868.090           2818.260          
+A33              1918.360           2815.310          
+A33              2012.980           2833.050          
+A33              2089.860           2841.920          
+A33              2104.640           2800.520          
+A33              2125.340           2640.850          
+A33              2148.990           2513.710          
+A33              2205.170           2339.250          
+A33              2110.550           2342.210          
+A33              2030.720           2333.340          
+A33              2027.760           2380.650          
+A33              2012.980           2463.440          
+A33              1915.400           2466.400          
+A33              1797.130           2448.660          
+A33              1800.080           2490.050          
+A33              1817.820           2590.590          
+A33              1832.610           2629.020          
+A33              1817.820           2697.030          
+A33              1814.870           2809.390          
+A34              1821.790           2437.480          
+A34              1903.460           2439.630          
+A34              1944.850           2454.690          
+A34              1995.550           2449.860          
+A34              2014.860           2377.440          
+A34              2019.690           2290.530          
+A34              2010.030           2150.510          
+A34              1793.860           2143.050          
+A34              1791.710           2274.150          
+A34              1800.300           2314.980          
+A34              1815.350           2362.260          
+A34              1787.410           2424.590          
+A35              2030.720           2229.850          
+A35              2027.760           2203.240          
+A35              2024.810           2090.880          
+A35              2101.680           2084.960          
+A35              2101.680           2138.180          
+A35              2199.260           2132.270          
+A35              2187.430           2309.680          
+A35              2098.730           2309.680          
+A35              2078.030           2253.500          
+A35              2027.760           2262.370          
+A36              1888.790           3042.990          
+A36              1891.750           2989.760          
+A36              1912.440           2942.450          
+A36              1924.270           2877.400          
+A36              1956.800           2859.660          
+A36              2083.940           2865.570          
+A36              2146.040           2883.310          
+A36              2225.870           2927.670          
+A36              2270.230           2954.280          
+A36              2302.750           2980.890          
+A36              2394.410           3031.160          
+A36              2468.340           3075.510          
+A36              2548.550           3101.490          
+A36              2592.910           3006.870          
+A36              2660.920           2980.260          
+A36              2740.750           2950.690          
+A36              2811.720           2915.210          
+A36              2870.850           2906.340          
+A36              2921.120           2906.340          
+A36              2979.870           2892.190          
+A36              3036.440           2888.600          
+A36              3086.700           2897.470          
+A36              3119.230           2909.300          
+A36              3166.540           2909.300          
+A36              3210.890           2930.000          
+A36              3270.030           2950.690          
+A36              3293.680           2995.050          
+A36              3293.680           3030.530          
+A36              3290.730           3066.010          
+A36              3311.430           3101.490          
+A36              3326.210           3128.110          
+A36              3338.040           3169.500          
+A36              3329.170           3246.380          
+A36              3355.780           3346.910          
+A36              3370.560           3471.100          
+A36              3358.740           3562.760          
+A36              3329.170           3627.820          
+A36              3258.200           3660.340          
+A36              3204.590           3658.010          
+A36              2731.500           3649.140          
+A36              2651.660           3584.090          
+A36              2580.700           3554.520          
+A36              2524.520           3504.260          
+A36              2489.030           3329.800          
+A36              2287.970           3309.100          
+A36              1918.360           3291.360          
+A36              1859.220           3294.320          
+A36              1814.870           3279.530          
+A36              1841.480           3179.000          
+A36              1868.090           3096.210          
+A37              2140.120           2850.790          
+A37              2219.960           2895.140          
+A37              2296.840           2942.450          
+A37              2367.800           3001.590          
+A37              2421.030           2892.190          
+A37              2373.720           2800.520          
+A37              2276.140           2676.330          
+A37              2205.170           2614.240          
+A37              2154.910           2611.280          
+A37              2134.210           2697.030          
+A37              2107.600           2838.960          
+A38              2270.230           2587.630          
+A38              2350.060           2634.940          
+A38              2450.590           2711.820          
+A38              2560.000           2762.080          
+A38              2571.830           2824.180          
+A38              2630.960           2815.310          
+A38              2630.960           2868.530          
+A38              2684.190           2859.660          
+A38              2681.230           2924.710          
+A38              2539.300           2927.670          
+A38              2438.770           2921.750          
+A38              2432.850           2898.100          
+A38              2388.500           2803.480          
+A38              2329.360           2708.860          
+A38              2299.790           2667.460          
+A38              2214.040           2602.410          
+A39              2418.870           2669.370          
+A39              2459.430           2693.020          
+A39              2493.220           2704.850          
+A39              2525.320           2689.640          
+A39              2528.700           2632.200          
+A39              2532.080           2569.680          
+A39              2560.800           2566.300          
+A39              2569.250           2478.440          
+A39              2569.250           2388.890          
+A39              2574.320           2280.750          
+A39              2528.700           2284.130          
+A39              2385.080           2292.580          
+A39              2383.390           2321.300          
+A39              2376.630           2368.610          
+A39              2380.010           2404.100          
+A39              2376.630           2431.130          
+A39              2376.630           2493.650          
+A39              2380.010           2539.270          
+A39              2363.120           2571.370          
+A39              2309.050           2601.780          
+A39              2401.980           2662.610          
+A40              2158.670           2589.960          
+A40              2177.260           2593.330          
+A40              2194.150           2591.650          
+A40              2212.740           2584.890          
+A40              2239.770           2584.890          
+A40              2270.190           2573.060          
+A40              2309.050           2576.440          
+A40              2342.840           2562.920          
+A40              2346.220           2551.090          
+A40              2336.080           2524.060          
+A40              2347.910           2512.230          
+A40              2364.810           2508.850          
+A40              2361.430           2424.370          
+A40              2359.740           2341.580          
+A40              2293.840           2341.580          
+A40              2260.050           2339.890          
+A40              2216.120           2343.270          
+A40              2173.880           2500.400          
+A40              2146.840           2586.580          
+A41              2216.120           2321.300          
+A41              2317.500           2316.230          
+A41              2361.430           2316.230          
+A41              2373.250           2285.820          
+A41              2472.940           2277.370          
+A41              2484.770           2260.480          
+A41              2523.630           2257.100          
+A41              2589.530           2255.410          
+A41              2604.730           2177.680          
+A41              2550.670           2182.750          
+A41              2410.430           2187.820          
+A41              2253.290           2203.030          
+A41              2224.570           2206.410          
+A41              2214.430           2221.610          
+A41              2211.050           2311.170          
+A42              2551.510           2731.890          
+A42              2536.730           2711.190          
+A42              2536.730           2655.010          
+A42              2539.680           2592.910          
+A42              2622.480           2581.090          
+A42              2625.430           2604.740          
+A42              2640.220           2643.180          
+A42              2690.480           2643.180          
+A42              2684.570           2669.790          
+A42              2737.790           2675.700          
+A42              2823.540           2702.320          
+A42              2900.420           2720.060          
+A42              2912.250           2734.840          
+A42              2980.260           2752.580          
+A42              2959.560           2785.110          
+A42              2950.690           2808.760          
+A42              2915.210           2856.070          
+A42              2864.940           2864.940          
+A42              2820.590           2859.030          
+A42              2764.410           2853.120          
+A42              2699.350           2859.030          
+A42              2705.270           2826.500          
+A42              2649.090           2829.460          
+A42              2649.090           2782.150          
+A42              2586.990           2796.940          
+A42              2584.040           2755.540          
+A43              2576.640           2475.380          
+A43              2583.300           2422.150          
+A43              2592.170           2346.750          
+A43              2581.080           2295.750          
+A43              2589.950           2278.010          
+A43              2614.340           2260.270          
+A43              2640.960           2240.310          
+A43              2674.220           2238.090          
+A43              2714.140           2238.090          
+A43              2734.100           2258.050          
+A43              2760.710           2271.350          
+A43              2774.020           2284.660          
+A43              2767.360           2335.670          
+A43              2760.710           2357.840          
+A43              2765.140           2382.240          
+A43              2751.840           2417.720          
+A43              2734.100           2439.890          
+A43              2740.750           2475.380          
+A43              2738.530           2510.860          
+A43              2578.860           2510.860          
+A44              2811.720           2663.880          
+A44              2873.810           2663.880          
+A44              2949.210           2710.450          
+A44              3015.740           2743.710          
+A44              3086.700           2677.180          
+A44              3088.920           2599.570          
+A44              3102.230           2490.900          
+A44              3122.190           2335.670          
+A44              3126.620           2227.000          
+A44              3131.060           2107.250          
+A44              2929.250           2120.550          
+A44              2782.890           2109.470          
+A44              2782.890           2142.730          
+A44              2802.840           2269.140          
+A44              2807.280           2309.050          
+A44              2774.020           2384.450          
+A44              2774.020           2479.810          
+A44              2796.190           2663.880          
+A45              3135.490           2122.770          
+A45              3157.670           2122.770          
+A45              3179.850           2120.550          
+A45              3221.980           2109.470          
+A45              3221.980           2195.950          
+A45              3184.280           2193.740          
+A45              3190.930           2224.780          
+A45              3131.060           2227.000          
+A46              1030.920           2936.080          
+A46              1041.670           2873.750          
+A46              1048.110           2796.380          
+A46              1024.470           2731.910          
+A46              1037.370           2643.800          
+A46              1039.520           2529.890          
+A46              1061.010           2446.080          
+A46              1103.990           2433.180          
+A46              1207.150           2424.590          
+A46              1205.000           2637.350          
+A46              1344.690           2641.650          
+A46              1348.990           2744.800          
+A46              1361.880           2852.260          
+A46              1355.440           2931.780          
+A46              1340.390           2979.060          
+A46              1237.230           2983.360          
+A46              1041.670           2976.910          
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+University       1854.370           4368.860          
+

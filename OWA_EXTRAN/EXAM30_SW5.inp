@@ -1,0 +1,144 @@
+[TITLE]
+;;Project Title/Notes
+  EXTRAN USER''S MANUAL EXAMPLE PROBLEM 30
+  SIMULATION OF A 3000 FOOT CONDUIT
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/1988
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/1988
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/1988
+END_TIME             04:00:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:30
+WET_STEP             00:15:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  FROUDE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     5
+MIN_SURFAREA         12
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+; *    JUNCTION DATA *    JUN   GRELEV   Z  QINST  Y
+1                50.00      10.00      .00        0          0         
+10               23.00      37.00      .00        0          0         
+2                47.00      13.00      .00        0          0         
+3                44.00      16.00      .00        0          0         
+4                41.00      19.00      .00        0          0         
+5                38.00      22.00      .00        0          0         
+6                35.00      30.00      .00        0          0         
+7                32.00      28.00      .00        0          0         
+8                29.00      31.00      .00        0          0         
+9                26.00      34.00      .00        0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+11               20.0       FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+; *   CONDUIT DATA *   NCOND NJ1  NJ2   QO  NKLASS AFULL DEEP WIDE LEN   ZP1  ZP2  ROUGH STHETA SPHI
+1                1                2                3000.0     0.012      0.0        0.0        0.0        0         
+2                2                3                3000.0     0.012      0.0        0.0        0.0        0         
+3                3                4                3000.0     0.012      0.0        0.0        0.0        0         
+4                4                5                3000.0     0.012      0.0        0.0        0.0        0         
+5                5                6                3000.0     0.012      0.0        0.0        0.0        0         
+6                6                7                3000.0     0.012      0.0        0.0        0.0        0         
+7                7                8                3000.0     0.012      0.0        0.0        0.0        0         
+8                8                9                3000.0     0.012      0.0        0.0        0.0        0         
+9                9                10               3000.0     0.012      0.0        0.0        0.0        0         
+10               10               11               3000.0     0.012      0.0        0.0        0.0        0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                CIRCULAR     6.0              0.0        0.0        0.0        1                    
+2                CIRCULAR     6.0              0.0        0.0        0.0        1                    
+3                CIRCULAR     6.0              0.0        0.0        0.0        1                    
+4                CIRCULAR     6.0              0.0        0.0        0.0        1                    
+5                CIRCULAR     6.0              0.0        0.0        0.0        1                    
+6                CIRCULAR     6.0              0.0        0.0        0.0        1                    
+7                CIRCULAR     6.0              0.0        0.0        0.0        1                    
+8                CIRCULAR     6.0              0.0        0.0        0.0        1                    
+9                CIRCULAR     6.0              0.0        0.0        0.0        1                    
+10               CIRCULAR     6.0              0.0        0.0        0.0        1                    
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+1                FLOW             INFLOW@1         FLOW     1.0      1.0              
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+;Name             Date       Time       Value
+INFLOW@1         01/01/1988 00:00      28.00000  
+INFLOW@1                    00:40      108.00000 
+INFLOW@1                    01:20      28.00000  
+INFLOW@1                    05:00      28.00000  
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 8500.000 9450.000 41500.000 10550.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                10000.000          10000.000         
+10               37000.000          10000.000         
+2                13000.000          10000.000         
+3                16000.000          10000.000         
+4                19000.000          10000.000         
+5                22000.000          10000.000         
+6                25000.000          10000.000         
+7                28000.000          10000.000         
+8                31000.000          10000.000         
+9                34000.000          10000.000         
+11               40000.000          10000.000         
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

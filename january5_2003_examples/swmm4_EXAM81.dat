@@ -1,0 +1,50 @@
+SW  1  0  20
+MM  3  10 11 12
+@   20  'C:\swmm_crada_files\OUTPUT.MST'
+*
+#   PLOT_ALL_NODES
+#   PLOT_ALL_CONDUITS
+$ANUM
+$EXTRAN
+*   ALPHANUMERIC JUNCTION AND CONDUIT NAMES
+*
+A1  'EXTRAN USER''S MANUAL EXAMPLE 44'
+A1  'Read HDR data from the Runoff Block'
+*
+*  OPTIONAL SOLUTION TECHNIQUES
+*  B0 LINE IS COMPLETELY OPTIONAL
+*                     ISOL = 0 --> EXPLICIT EXTRAN SOLUTION
+*                     ISOL = 1 --> SEMI-IMPLICIT SOLUTION
+*                     ISOL = 2 --> ITERATIVE EXTRAN SOLUTION
+*  ISOL  KSUPER
+B0  1      0
+*   NTCYC DELT TZERO NSTART INTER JNTER REDO
+B1 1440     20.0  0.0    1    45    45    0
+*B1  192    150.0  0.0    1    45    45    0
+*   METRIC NEQUAL  AMEN ITMAX SURTOL
+B2     0    0      0.0    10   0.005
+* NHPRT NQPRT NPLT LPLT NJSW
+B3   3    2    2    1    0
+*   PRINT HEADS
+B4  'P005'  'P001' 'Outlet'
+*   PRINT FLOWS
+B5  'P001'  'P005'
+*   PLOT HEADS
+B6  'P001'  'P005'
+*   PLOT FLOWS
+B7  'P001'
+*   CONDUIT DATA
+*   NCOND    NJ1      NJ2   QO  NKLASS AFULL DEEP WIDE LEN   ZP1  ZP2  ROUGH STHETA SPHI
+C1  'P001' 'P001' 'Outlet'  0.0    1     0.0  4.0  0.0 220.  0.0  0.0  0.015  0.0   0.0
+C1  'P005' 'P005' 'P001'    0.0    1     0.0  3.0  0.0 240.  0.0  0.0  0.015  0.0   0.0
+C1  'P009' 'P009' 'P005'    0.0    1     0.0  2.25 0.0 505.  0.0  0.0  0.024  0.0   0.0
+C1  'P011' 'P011' 'P005'    0.0    1     0.0  2.5  0.0 655.  0.0  0.0  0.024  0.0   0.0
+*    JUNCTION DATA
+D1  'P011'    13.0 8.9  0.0 0.0
+D1  'P009'    13.0 9.6  0.0 0.0
+D1  'P005'    12.0 7.6  0.0 0.0
+D1  'P001'    11.5 7.1  0.0 0.0
+D1  'Outlet'  11.0 6.0  0.0 0.0
+I1  'Outlet' 1
+J1  1
+$ENDPROGRAM

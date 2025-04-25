@@ -1,0 +1,174 @@
+[TITLE]
+;;Project Title/Notes
+ SW 1 9 8
+#SWMM4_TEMPERATURE   Reads a SWMM 4 Binary Temperature Interface File
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           07/01/1987
+START_TIME           12:00:00
+REPORT_START_DATE    07/01/1987
+REPORT_START_TIME    12:00:00
+END_DATE             07/02/1987
+END_TIME             23:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.566
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+MONTHLY          0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1   
+DRY_ONLY         NO
+
+[TEMPERATURE]
+;;Data Element     Values     
+TIMESERIES         TemperatureSeries
+WINDSPEED MONTHLY  10.5 10.7 11.3 12.5 11.6 10.7 9.3 9.1 10 10.5 11.1 10.4
+SNOWMELT           32 0.5 0.6 850 45 0
+ADC IMPERVIOUS     0 0 0 0 0 0 0 0 0 0
+ADC PERVIOUS       0 0 0 0 0 0 0 0 0 0
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+GAGE1            INTENSITY 0:30     1.0      TIMESERIES RainSeries1     
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+;  *  JK  NAMEW  NGTO  WIDTH  AREA    %IMP  SLP   IMPN    PERVN   IDS    PDS    MAX   MIN   DECAY
+100              GAGE1            1                300.0    50.0     100.0    0.1      0        Snow100         
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+100              0.04       0.3        0          0          25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Suction    Ksat       IMD       
+;;-------------- ---------- ---------- ----------
+100              5.0        5.0        0.001     
+
+[SNOWPACKS]
+;;Name           Surface    Parameters
+;;-------------- ---------- ----------
+Snow100          PLOWABLE   0.003      0.006      31         0.03       0.1        0          0         
+Snow100          IMPERVIOUS 0.003      0.006      32         0.05       0.1        0          1         
+Snow100          PERVIOUS   0.003      0.006      32         0.05       0.2        0          1         
+Snow100          REMOVAL    1.0        0.0        0.0        0.0        0.0        0.0        
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+; Runoff Node
+1                10.00      20.00      0.00       0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+2                0.00       FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1                1                2                1000.0     0.02       0.0        0.0        0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                CIRCULAR     3                0          0          0          1          0         
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+TemperatureSeries 07/01/1987 12:00      23        
+TemperatureSeries 07/01/1987 15:00      25        
+TemperatureSeries 07/01/1987 18:00      33        
+TemperatureSeries 07/01/1987 21:00      45        
+TemperatureSeries 07/02/1987 0:00       50        
+TemperatureSeries 07/02/1987 3:00       60        
+TemperatureSeries 07/02/1987 6:00       55        
+TemperatureSeries 07/02/1987 9:00       40        
+TemperatureSeries 07/02/1987 12:00      50        
+TemperatureSeries            15:00      53        
+TemperatureSeries            18:00      57        
+TemperatureSeries            21:00      60        
+;
+RainSeries1      07/01/1987 12:00      2         
+RainSeries1                 12:30      2         
+RainSeries1                 13:00      2         
+RainSeries1                 13:30      2         
+RainSeries1                 14:00      2.00000   
+RainSeries1      07/01/1987 14:30      2.00000   
+RainSeries1                 15:00      2.00000   
+RainSeries1                 15:30      2.00000   
+RainSeries1                 16:00      2.00000   
+RainSeries1                 16:30      2.00000   
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+Subcatch  100              100             
+
+[MAP]
+DIMENSIONS -1.296 -1.061 0.062 0.051
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                -1.011             -0.667            
+2                -1.235             -1.000            
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+100              -0.591             -0.386            
+100              -0.946             -0.360            
+100              -1.025             -0.448            
+100              -1.181             -0.361            
+100              -1.207             -0.168            
+100              -0.918             0.009             
+100              -0.541             -0.167            
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+GAGE1            -0.856             -0.343            
+

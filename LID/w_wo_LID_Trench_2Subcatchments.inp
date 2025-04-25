@@ -1,0 +1,180 @@
+[TITLE]
+;;Project Title/Notes
+ Example 5
+ A simple groundwater example.
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           09/13/2014
+START_TIME           00:00:00
+REPORT_START_DATE    09/13/2014
+REPORT_START_TIME    00:00:00
+END_DATE             09/15/2014
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             00:05:00
+ROUTING_STEP         0:00:30 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+1                INTENSITY 0:15     1.0      TIMESERIES Rainfall        
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+wTrench          1                2                50       50       100      1        0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+wTrench          0.01       0.1        0.05       0.05       25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Param1     Param2     Param3     Param4     Param5    
+;;-------------- ---------- ---------- ---------- ---------- ----------
+wTrench          1.2        0.1        2          7          0         
+
+[LID_CONTROLS]
+;;Name           Type/Layer Parameters
+;;-------------- ---------- ----------
+Trench           IT
+Trench           SURFACE    12         .25        0.1        1.0        1         
+Trench           STORAGE    120        0.75       0.1        0          NO        
+Trench           DRAIN      1          0.5        1          6          0          0                    
+
+[LID_USAGE]
+;;Subcatchment   LID Process      Number  Area       Width      InitSat    FromImp    ToPerv     RptFile                  DrainTo          FromPerv  
+;;-------------- ---------------- ------- ---------- ---------- ---------- ---------- ---------- ------------------------ ---------------- ----------
+wTrench          Trench           10      500        100        0          25         0          *                        2                0               
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+2                0          5          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+1                0          FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1                2                1                400        0.01       0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                CIRCULAR     1                0          0          0          1                    
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+Rainfall                    0:00       0.037     
+Rainfall                    0:15       0.111     
+Rainfall                    0:30       0.185     
+Rainfall                    0:45       0.259     
+Rainfall                    1:00       0.333     
+Rainfall                    1:15       0.407     
+Rainfall                    1:30       0.481     
+Rainfall                    1:45       0.556     
+Rainfall                    2:00       0.630     
+Rainfall                    2:15       0.644     
+Rainfall                    2:30       0.600     
+Rainfall                    2:45       0.556     
+Rainfall                    3:00       0.511     
+Rainfall                    3:15       0.467     
+Rainfall                    3:30       0.422     
+Rainfall                    3:45       0.378     
+Rainfall                    4:00       0.333     
+Rainfall                    4:15       0.289     
+Rainfall                    4:30       0.244     
+Rainfall                    4:45       0.200     
+Rainfall                    5:00       0.156     
+Rainfall                    5:15       0.111     
+Rainfall                    5:30       0.067     
+Rainfall                    5:45       0.022     
+Rainfall                    6:00       0         
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   YES
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 716.234 3147.900 5739.067 7640.577
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+2                2481.359           6088.290          
+1                2769.925           5854.452          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+wTrench          2321.109           7200.582          
+wTrench          2122.956           6709.524          
+wTrench          2461.771           6088.821          
+wTrench          2120.000           6253.377          
+wTrench          1704.038           6253.377          
+wTrench          1288.076           6149.387          
+wTrench          1004.765           6082.725          
+wTrench          962.351            6670.022          
+wTrench          944.545            7065.034          
+wTrench          1037.053           7240.448          
+wTrench          1291.007           7259.941          
+wTrench          1473.574           7265.474          
+wTrench          1772.320           7276.538          
+wTrench          2015.743           7254.409          
+wTrench          2120.857           7193.553          
+wTrench          2321.109           7200.582          
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                1207.687           6521.139          
+

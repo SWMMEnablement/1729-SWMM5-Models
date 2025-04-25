@@ -1,0 +1,325 @@
+[TITLE]
+;;Project Title/Notes
+Scenario Run :  BASE
+ 'BROWARD COUNTY Multi FAMILY SITE
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           LPS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+IGNORE_SNOWMELT      YES
+IGNORE_GROUNDWATER   YES
+START_DATE           07/15/1977
+START_TIME           00:00:00
+REPORT_START_DATE    07/15/1977
+REPORT_START_TIME    00:00:00
+END_DATE             07/17/1977
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             7.000000
+REPORT_STEP          00:00:30
+WET_STEP             00:01:00
+DRY_STEP             00:01:00
+ROUTING_STEP         0:00:01 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.566000
+MAX_TRIALS           4
+HEAD_TOLERANCE       0.005000
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         1
+RECOVERY         EVAPORATION
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+GAGE1            INTENSITY 0.083333 1.000000 TIMESERIES RAINSERIES1     
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+CA-1             GAGE1            P001             5        100      600.000000 2.700000 0.000000                 
+CA-11            GAGE1            P011             0        99       600.000000 1        0.000000                 
+CA-7             GAGE1            P005             33       100      200.000000 2.700000 0.000000                 
+CA-8             GAGE1            P009             5        100      500.000000 1        0.000000                 
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+CA-1             0.015000   0.410000   0.060000   0.200000   25.000000  OUTLET    
+CA-11            0.015000   0.410000   0.060000   0.200000   25.000000  OUTLET    
+CA-7             0.015000   0.410000   0.060000   0.200000   25.000000  OUTLET    
+CA-8             0.015000   0.410000   0.060000   0.200000   25.000000  OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+CA-1             3.000000   0.100000   0.050000   5.000000   0.000000  
+CA-11            3.000000   0.100000   0.050000   0.001000   0.000000  
+CA-7             3.000000   0.100000   0.050000   0.001000   0.000000  
+CA-8             3.000000   0.100000   0.050000   0.001000   0.000000  
+
+[LID_CONTROLS]
+;;Name           Type/Layer Parameters
+;;-------------- ---------- ----------
+Bio              BC
+Bio              SURFACE    0.0        0.0        0.1        1.0        5         
+Bio              SOIL       12         0.5        0.2        0.1        0.5        10.0       3.5       
+Bio              STORAGE    12         0.75       0.5        0         
+Bio              DRAIN      0          0.5        6          6         
+
+RainGarden       RG
+RainGarden       SURFACE    0.0        0.0        0.1        1.0        5         
+RainGarden       SOIL       12         0.5        0.2        0.1        0.5        10.0       3.5       
+RainGarden       STORAGE    0          0.75       0.5        0         
+
+GreenRoof        GR
+GreenRoof        SURFACE    0.0        0.0        0.1        1.0        5         
+GreenRoof        SOIL       12         0.5        0.2        0.1        0.5        10.0       3.5       
+GreenRoof        DRAINMAT   3          0.5        0.1       
+
+InfilTrench      IT
+InfilTrench      SURFACE    0.0        0.0        0.1        1.0        5         
+InfilTrench      STORAGE    12         0.75       0.5        0         
+InfilTrench      DRAIN      0          0.5        6          6         
+
+Pavement         PP
+Pavement         SURFACE    0.0        0.0        0.1        1.0        5         
+Pavement         PAVEMENT   4          0.15       0          100        0         
+Pavement         STORAGE    12         0.75       0.5        0         
+Pavement         DRAIN      0          0.5        6          6         
+
+Cistern          RB
+Cistern          STORAGE    12         0.75       0.5        0         
+Cistern          DRAIN      0          0.5        6          6         
+
+Swale            VS
+Swale            SURFACE    5          0.0        0.1        1.0        5         
+
+[LID_USAGE]
+;;Subcatchment   LID Process      Number  Area       Width      InitSat    FromImp    ToPerv     RptFile                  DrainTo         
+;;-------------- ---------------- ------- ---------- ---------- ---------- ---------- ---------- ------------------------ ----------------
+
+[AQUIFERS]
+;;Name           Por    WP     FC     Ksat   Kslope Tslope ETu    ETs    Seep   Ebot   Egw    Umc    ETupat 
+;;-------------- ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------
+Monrovia         0.5    0.15   0.30   5.0    10.0   15.0   0.35   14.0   0.002  0.0    10.0   0.30   EVAPORATION
+
+[GROUNDWATER]
+;;Subcatchment   Aquifer          Node             Esurf  A1     B1     A2     B2     A3     Dsw    Egwt   Ebot   Wgr    Umc   
+;;-------------- ---------------- ---------------- ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------
+CA-11            Monrovia         P011             5      0.01   1      0      1      0      2      1      0      3      *     
+CA-7             Monrovia         p005             10     1      1      1      1      0      0      2      1      3      0.5   
+
+[GWF]
+;;Subcatchment   Flow    Equation
+;;-------------- ------- --------
+CA-11            LATERAL 0.001 * (Hgw - 5) * STEP(Hgw - 5)
+CA-11            DEEP    0.01*Hgs
+CA-7             LATERAL 0.001 * (Hgw - 1) * STEP(Hgw - 1)
+CA-7             DEEP    0.001 * (Hgw - 1)
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+P001             4          0.0        0.000000   0.000000   0.000000  
+; Runoff Node
+P009             0          0.0        0.000000   0.000000   0.000000  
+; Runoff Node
+P011             0          0.0        0.000000   0.000000   0.000000  
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+OUTLET           0.000000   FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+P005             1.580000 10         0.000000   FUNCTIONAL 1000.000000  0.000000  0.000000 0.000000 1        5        1.000000 0.25    
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+P001             P001             OUTLET           220.000000 0.015000   0.000000   0.000000   0.000000   0.000000  
+P005             P005             P001             240.000000 0.015000   0.000000   0.000000   0.000000   0.000000  
+P009             P009             P005             505.000000 0.024000   0.000000   0.000000   0.000000   0.000000  
+P011             P011             P005             655.000000 0.024000   0.000000   0.000000   0.000000   0.000000  
+
+[WEIRS]
+;;Name           From Node        To Node          Type         CrestHt    Qcoeff     Gated    EndCon   EndCoeff   Surcharge  RoadWidth  RoadSurf  
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- -------- ---------- ---------- ---------- ----------
+1                P011             P009             TRANSVERSE   0.1        3.33       NO       0        0          YES       
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+P001             CIRCULAR     8                0.000000   0.000000   0.000000   1          0         
+P005             CIRCULAR     3.000000         0.000000   0.000000   0.000000   1          0         
+P009             CIRCULAR     2.250000         0.000000   0.000000   0.000000   1          0         
+P011             CIRCULAR     2.500000         0.000000   0.000000   0.000000   1          0         
+1                RECT_OPEN    1                1          0          0         
+
+[LOSSES]
+;;Link           Kentry     Kexit      Kavg       Flap Gate  Seepage   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+P001             0.000000   0.000000   0.000000   NO         0.100000  
+P005             0.000000   0.000000   0.000000   NO         0.100000  
+P009             0.000000   0.000000   0.000000   NO         0.000000  
+P011             0.000000   0.000000   0.000000   NO         0.000000  
+
+[CONTROLS]
+;;Control Rules
+;;Control Rules
+;;Control Rules
+;;Control Rules
+
+
+
+
+
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+P011             FLOW             ""               FLOW     1.0      1.000000 1.000000 EVAPORATION
+
+[DWF]
+;;Node           Constituent      Baseline   Patterns  
+;;-------------- ---------------- ---------- ----------
+P011             FLOW             10.000000  "ODDDATYPATTERN" "ONEDAY"
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+RAINSERIES1      07/15/1977 06:30      0.000000  
+RAINSERIES1                 06:35      0.840000  
+RAINSERIES1                 06:40      0.040000  
+RAINSERIES1                 06:45      0.020000  
+RAINSERIES1                 06:50      0.000000  
+RAINSERIES1      07/15/1977 06:55      0.000000  
+RAINSERIES1                 07:00      0.000000  
+RAINSERIES1                 07:05      0.000000  
+RAINSERIES1                 07:10      0.680000  
+RAINSERIES1                 07:15      0.880000  
+RAINSERIES1      07/15/1977 07:20      2.020000  
+RAINSERIES1                 07:25      2.130000  
+RAINSERIES1                 07:30      0.630000  
+RAINSERIES1                 07:35      2.330000  
+RAINSERIES1                 07:40      0.310000  
+RAINSERIES1      07/15/1977 07:45      0.200000  
+RAINSERIES1                 07:50      0.000000  
+RAINSERIES1                 07:55      0.000000  
+RAINSERIES1                 08:00      0.000000  
+RAINSERIES1                 08:05      0.020000  
+RAINSERIES1      07/15/1977 08:10      0.000000  
+RAINSERIES1                 08:15      0.000000  
+RAINSERIES1                 08:20      0.000000  
+RAINSERIES1                 08:25      0.000000  
+RAINSERIES1                 08:30      0.220000  
+RAINSERIES1      07/15/1977 08:35      2.390000  
+RAINSERIES1                 08:40      0.400000  
+RAINSERIES1                 08:45      0.860000  
+RAINSERIES1                 08:50      2.790000  
+RAINSERIES1                 08:55      1.380000  
+RAINSERIES1      07/15/1977 09:00      1.080000  
+RAINSERIES1                 09:05      0.640000  
+RAINSERIES1                 09:10      0.020000  
+RAINSERIES1                 09:15      0.150000  
+RAINSERIES1                 09:20      0.000000  
+
+[PATTERNS]
+;;Name           Type       Multipliers
+;;-------------- ---------- -----------
+EVAPORATION      MONTHLY    5.000000 5.000000 2.000000 2.000000 3.000000 3.000000
+EVAPORATION                 2.000000 2.000000 2.000000 1.000000 1.000000 1.000000
+;
+NORMALDAYS       DAILY      1.000000 1.000000 1.000000 0.000000 1.000000 1.000000 1.000000
+;
+ODDDATYPATTERN   HOURLY     0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+ODDDATYPATTERN              0.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ODDDATYPATTERN              0.000000 0.000000 0.000000 1.000000 1.000000 1.000000
+ODDDATYPATTERN              1.000000 1.000000 0.000000 0.000000 0.000000 0.000000
+;
+ONEDAY           DAILY      0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[ADJUSTMENTS]
+;;Parameter  Monthly Adjustments
+TEMPERATURE    1      1      1      1      1      1      1      1      1      1      1      1     
+EVAPORATION    1      1      1      1      1      1      1      1      1      1      1      1     
+RAINFALL       1.0    1.0    1.0    1.0    1.0    1.0    1.0    1.0    2      2      2      2     
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -95.962 79.665 747.036 660.287
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+P001             147.531            119.924           
+P009             281.276            352.903           
+P011             400.000            400.000           
+OUTLET           -8.449             111.653           
+P005             198.227            200.920           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+CA-1             230.769            402.206           
+CA-1             162.277            464.779           
+CA-1             117.461            514.668           
+CA-1             -57.644            368.074           
+CA-1             60.088             250.342           
+CA-11            708.718            347.243           
+CA-11            590.986            464.975           
+CA-11            473.255            347.243           
+CA-11            590.986            229.512           
+CA-7             592.873            223.788           
+CA-7             475.142            341.520           
+CA-7             357.410            223.788           
+CA-7             475.142            106.057           
+CA-8             350.139            516.163           
+CA-8             366.979            570.801           
+CA-8             383.819            625.439           
+CA-8             232.408            633.895           
+CA-8             114.677            516.163           
+CA-8             232.408            398.432           
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+GAGE1            242.100            568.930           
+

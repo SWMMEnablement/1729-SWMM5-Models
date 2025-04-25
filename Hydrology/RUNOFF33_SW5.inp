@@ -1,0 +1,124 @@
+[TITLE]
+;;Project Title/Notes
+Runoff example number 33 - small horton infiltration
+SINGLE SUBCATCHMENT  LOW INFILTRATION AND HIGH RAINFALL
+;  CDM SWMM4 Converter
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           05/23/1985
+START_TIME           12:00:00
+REPORT_START_DATE    05/23/1985
+REPORT_START_TIME    12:00:00
+END_DATE             05/24/1985
+END_TIME             00:00:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             60:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+GAGE1            INTENSITY 0.50000  1.0      TIMESERIES SERIES1         
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+;Name RAINGAGE OUTLET AREA %IMPERV WIDTH SLOPE
+;===============================================================================
+101              GAGE1            301              10       40       997      0.02     0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+101              0.017      0.025      0.05       0.2        30         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+101              9          0.005      0.001115   7          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+301              0          FREE                        NO                       
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+SERIES1          05/23/1985 12:00      1.00000   
+SERIES1                     12:30      1.00000   
+SERIES1                     13:00      1.00000   
+SERIES1                     13:30      1.00000   
+SERIES1                     14:00      1.00000   
+SERIES1          05/23/1985 14:30      1.00000   
+SERIES1                     15:00      1.00000   
+SERIES1                     15:30      1.00000   
+SERIES1                     16:00      1.00000   
+SERIES1                     16:30      1.00000   
+SERIES1          05/23/1985 17:00      1.00000   
+SERIES1                     17:30      1.00000   
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -2658750000.000 -2086250000.000 -1916250000.000 -1426250000.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+301              -2419956747.405    -1902789792.388   
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+101              -2483140138.408    -1689641003.460   
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

@@ -1,0 +1,427 @@
+[TITLE]
+;;Project Title/Notes
+There is always the time honored option of adding
+code to Extran to help it better simulate
+the hydraulic structure of interest....
+The City of Seattle's Engineering Design Division
+once upon a time added code into Extran to simulate
+Leaping Weirs based on either depth at the node or
+the velocity in the upstream pipe. It works like an
+ on-off switch. At low flows, all of the flow falls
+down into the weir/orifice opening and into the first
+ downstream location. Once the set depth or velocity
+is exceeding, then all of the flow "leaps"
+over the weir to the other downstream location.
+The input parameters are fairly simple.
+Our notes shows that the City of Seattle's experience
+suggests that the depth control was more stable than
+using velocity control.
+The leaping weir works on the principle that storm flows have a higher velocity
+ than those in dry weather, and will therefore leap
+over a gap. Figure 1 shows how, under dry weather
+conditions, the relatively low flow falls down the
+ opening and is passed forward for treatment.
+With a storm, the flows increase and, once a certain
+ velocity is achieved, most of the flow leaps over
+the weir to the overflow pipe. Although the function
+is simple, it is difficult to represent in most
+standard hydraulic software.
+Figure 2 shows a typical arrangement, and in showing
+it demonstrates that the potential exists for operators
+ to adjust the 'weir' distance if the need arises.
+We can see too that while the hydraulics may be
+appropriate, the ability of the leaping weir to deal
+with any floating matter is less than desirable -
+though of course the original engineers could not
+have foreseen the changing nature of materials
+discharged into sewers.
+There is no easy way to model a leaping weir regulator. You might try it first with a bottom orifice (which EXTRAN converts it to an equivalent pipe anyway) at the first node coupled with with a weir (or an elevated equivalent pipe) on the next downstream node (if there is a weir to back the flow upstream into the bottom orifice for dry weather flow). EXTRAN may get very unstable with this sort of arrangements, especially when you have an orifice link followed by a weir link and if there is surcharge and backwater reverse flow. On the other hand, you might try using equivalent pipes for everything. It will be more stable. You will have to convert the bottom orifice opening and the downstream weir (if there is one downstream of the orifice) to equivalent pipes with equivalent manning's and diameter. Make sure that your pipe lengths are meeting the courant number criteria too. The EXTRAN maunal has explanations for converting orifce and weir to equivalent pipes.
+Philip Cheung
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            1.000000
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           07/22/2009
+START_TIME           00:00:00
+REPORT_START_DATE    07/22/2009
+REPORT_START_TIME    00:00:00
+END_DATE             07/22/2009
+END_TIME             08:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0.000000
+REPORT_STEP          00:01:00
+WET_STEP             00:15:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:02 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.000000
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+bend             100.000000 4.000000   0.000000   0.000000   0.000000  
+berm             100.000000 4.000000   0.000000   0.000000   0.000000  
+INFLOW           100.000000 4          0.000000   0.000000   0.000000  
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+5                98.000000  FREE                        NO                       
+6                100.000000 FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+LEAPNODE         100.000000 4.000000   0.000000   FUNCTIONAL 100       0         0        0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+4                bend             5                100.000000 0.010000   0.000000   0.000000   0.000000   0.000000  
+5                berm             6                100.000000 0.010000   0.000000   0.000000   0.000000   0.000000  
+REFERENCELINK    INFLOW           LEAPNODE         100.000000 0.010000   0.000000   0.000000   0.000000   0.000000  
+
+[WEIRS]
+;;Name           From Node        To Node          Type         CrestHt    Qcoeff     Gated    EndCon   EndCoeff   Surcharge  RoadWidth  RoadSurf  
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- -------- ---------- ---------- ---------- ----------
+LEAPWEIR         LEAPNODE         berm             TRANSVERSE   1          3.330000   NO       0        0.000000   YES       
+
+[OUTLETS]
+;;Name           From Node        To Node          Offset     Type            QTable/Qcoeff    Qexpon     Gated   
+;;-------------- ---------------- ---------------- ---------- --------------- ---------------- ---------- --------
+LEAPORIFICE      LEAPNODE         bend             0          TABULAR/DEPTH   Leapcontrol                 NO      
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+4                RECT_OPEN    2.000000         1.000000   0.000000   0.000000   1          0         
+5                CIRCULAR     2.000000         0.000000   0.000000   0.000000   1          0         
+REFERENCELINK    CIRCULAR     2                0          0          0          1          0         
+LEAPWEIR         RECT_OPEN    2.000000         4.000000   0.000000   0.000000  
+
+[LOSSES]
+;;Link           Kentry     Kexit      Kavg       Flap Gate  Seepage   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+4                0.000000   0.000000   0.000000   NO         0         
+5                0.000000   0.000000   0.000000   NO         0         
+REFERENCELINK    0.000000   0.000000   0.000000   NO         0         
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+INFLOW           FLOW             RAMP             FLOW     1.0      1.5      0       
+
+[DWF]
+;;Node           Constituent      Baseline   Patterns  
+;;-------------- ---------------- ---------- ----------
+INFLOW           FLOW             0          "month" "day" "hourly"
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+ORIFICE          Control    0.000000   1.000000  
+ORIFICE                     1.000000   1.000000  
+ORIFICE                     2.000000   1.000000  
+ORIFICE                     3.000000   1.000000  
+ORIFICE                     4.000000   1.000000  
+ORIFICE                     4.100000   1.000000  
+ORIFICE                     4.200000   1.000000  
+ORIFICE                     4.300000   1.000000  
+ORIFICE                     4.400000   1.000000  
+ORIFICE                     4.500000   1.000000  
+ORIFICE                     4.510000   0.990000  
+ORIFICE                     4.520000   0.980000  
+ORIFICE                     4.530000   0.970000  
+ORIFICE                     4.540000   0.960000  
+ORIFICE                     4.550000   0.950000  
+ORIFICE                     4.560000   0.940000  
+ORIFICE                     4.570000   0.930000  
+ORIFICE                     4.580000   0.920000  
+ORIFICE                     4.590000   0.910000  
+ORIFICE                     4.600000   0.900000  
+ORIFICE                     4.610000   0.890000  
+ORIFICE                     4.620000   0.880000  
+ORIFICE                     4.630000   0.870000  
+ORIFICE                     4.640000   0.860000  
+ORIFICE                     4.650000   0.850000  
+ORIFICE                     4.660000   0.840000  
+ORIFICE                     4.670000   0.830000  
+ORIFICE                     4.680000   0.820000  
+ORIFICE                     4.690000   0.810000  
+ORIFICE                     4.700000   0.800000  
+ORIFICE                     4.710000   0.790000  
+ORIFICE                     4.720000   0.780000  
+ORIFICE                     4.730000   0.770000  
+ORIFICE                     4.740000   0.760000  
+ORIFICE                     4.750000   0.750000  
+ORIFICE                     4.760000   0.740000  
+ORIFICE                     4.770000   0.730000  
+ORIFICE                     4.780000   0.720000  
+ORIFICE                     4.790000   0.710000  
+ORIFICE                     4.800000   0.700000  
+ORIFICE                     4.810000   0.690000  
+ORIFICE                     4.820000   0.680000  
+ORIFICE                     4.830000   0.670000  
+ORIFICE                     4.840000   0.660000  
+ORIFICE                     4.850000   0.650000  
+ORIFICE                     4.860000   0.640000  
+ORIFICE                     4.870000   0.630000  
+ORIFICE                     4.880000   0.620000  
+ORIFICE                     4.890000   0.610000  
+ORIFICE                     4.900000   0.600000  
+ORIFICE                     4.910000   0.590000  
+ORIFICE                     4.920000   0.580000  
+ORIFICE                     4.930000   0.570000  
+ORIFICE                     4.940000   0.560000  
+ORIFICE                     4.950000   0.550000  
+ORIFICE                     4.960000   0.540000  
+ORIFICE                     4.970000   0.530000  
+ORIFICE                     4.980000   0.520000  
+ORIFICE                     4.990000   0.510000  
+ORIFICE                     5.000000   0.500000  
+ORIFICE                     5.010000   0.490000  
+ORIFICE                     5.020000   0.480000  
+ORIFICE                     5.030000   0.470000  
+ORIFICE                     5.040000   0.460000  
+ORIFICE                     5.050000   0.450000  
+ORIFICE                     5.060000   0.440000  
+ORIFICE                     5.070000   0.430000  
+ORIFICE                     5.080000   0.420000  
+ORIFICE                     5.090000   0.410000  
+ORIFICE                     5.100000   0.400000  
+ORIFICE                     5.110000   0.390000  
+ORIFICE                     5.120000   0.380000  
+ORIFICE                     5.130000   0.370000  
+ORIFICE                     5.140000   0.360000  
+ORIFICE                     5.150000   0.350000  
+ORIFICE                     5.160000   0.340000  
+ORIFICE                     5.170000   0.330000  
+ORIFICE                     5.180000   0.320000  
+ORIFICE                     5.190000   0.310000  
+ORIFICE                     5.200000   0.300000  
+ORIFICE                     5.210000   0.290000  
+ORIFICE                     5.220000   0.280000  
+ORIFICE                     5.230000   0.270000  
+ORIFICE                     5.240000   0.260000  
+ORIFICE                     5.250000   0.250000  
+ORIFICE                     5.260000   0.240000  
+ORIFICE                     5.270000   0.230000  
+ORIFICE                     5.280000   0.220000  
+ORIFICE                     5.290000   0.210000  
+ORIFICE                     5.300000   0.200000  
+ORIFICE                     5.310000   0.190000  
+ORIFICE                     5.320000   0.180000  
+ORIFICE                     5.330000   0.170000  
+ORIFICE                     5.340000   0.160000  
+ORIFICE                     5.350000   0.150000  
+ORIFICE                     5.360000   0.140000  
+ORIFICE                     5.370000   0.130000  
+ORIFICE                     5.380000   0.120000  
+ORIFICE                     5.390000   0.110000  
+ORIFICE                     5.400000   0.100000  
+ORIFICE                     5.410000   0.090000  
+ORIFICE                     5.420000   0.080000  
+ORIFICE                     5.430000   0.070000  
+ORIFICE                     5.440000   0.060000  
+ORIFICE                     5.450000   0.050000  
+ORIFICE                     5.460000   0.040000  
+ORIFICE                     5.470000   0.030000  
+ORIFICE                     5.480000   0.020000  
+ORIFICE                     5.490000   0.010000  
+ORIFICE                     5.500000   0.000000  
+ORIFICE                     6.000000   0.000000  
+ORIFICE                     10.000000  0.000000  
+;
+ORIFICE_DEPTH    CONTROL    0.000000   1.000000  
+ORIFICE_DEPTH               0.100000   1.000000  
+ORIFICE_DEPTH               0.200000   1.000000  
+ORIFICE_DEPTH               0.300000   1.000000  
+ORIFICE_DEPTH               0.400000   1.000000  
+ORIFICE_DEPTH               0.500000   1.000000  
+ORIFICE_DEPTH               0.510000   0.990000  
+ORIFICE_DEPTH               0.520000   0.980000  
+ORIFICE_DEPTH               0.530000   0.970000  
+ORIFICE_DEPTH               0.540000   0.960000  
+ORIFICE_DEPTH               0.550000   0.950000  
+ORIFICE_DEPTH               0.560000   0.940000  
+ORIFICE_DEPTH               0.570000   0.930000  
+ORIFICE_DEPTH               0.580000   0.920000  
+ORIFICE_DEPTH               0.590000   0.910000  
+ORIFICE_DEPTH               0.600000   0.900000  
+ORIFICE_DEPTH               0.610000   0.890000  
+ORIFICE_DEPTH               0.620000   0.880000  
+ORIFICE_DEPTH               0.630000   0.870000  
+ORIFICE_DEPTH               0.640000   0.860000  
+ORIFICE_DEPTH               0.650000   0.850000  
+ORIFICE_DEPTH               0.660000   0.840000  
+ORIFICE_DEPTH               0.670000   0.830000  
+ORIFICE_DEPTH               0.680000   0.820000  
+ORIFICE_DEPTH               0.690000   0.810000  
+ORIFICE_DEPTH               0.700000   0.800000  
+ORIFICE_DEPTH               0.710000   0.790000  
+ORIFICE_DEPTH               0.720000   0.780000  
+ORIFICE_DEPTH               0.730000   0.770000  
+ORIFICE_DEPTH               0.740000   0.760000  
+ORIFICE_DEPTH               0.750000   0.750000  
+ORIFICE_DEPTH               0.760000   0.740000  
+ORIFICE_DEPTH               0.770000   0.730000  
+ORIFICE_DEPTH               0.780000   0.720000  
+ORIFICE_DEPTH               0.790000   0.710000  
+ORIFICE_DEPTH               0.800000   0.700000  
+ORIFICE_DEPTH               0.810000   0.690000  
+ORIFICE_DEPTH               0.820000   0.680000  
+ORIFICE_DEPTH               0.830000   0.670000  
+ORIFICE_DEPTH               0.840000   0.660000  
+ORIFICE_DEPTH               0.850000   0.650000  
+ORIFICE_DEPTH               0.860000   0.640000  
+ORIFICE_DEPTH               0.870000   0.630000  
+ORIFICE_DEPTH               0.880000   0.620000  
+ORIFICE_DEPTH               0.890000   0.610000  
+ORIFICE_DEPTH               0.900000   0.600000  
+ORIFICE_DEPTH               0.910000   0.590000  
+ORIFICE_DEPTH               0.920000   0.580000  
+ORIFICE_DEPTH               0.930000   0.570000  
+ORIFICE_DEPTH               0.940000   0.560000  
+ORIFICE_DEPTH               0.950000   0.550000  
+ORIFICE_DEPTH               0.960000   0.540000  
+ORIFICE_DEPTH               0.970000   0.530000  
+ORIFICE_DEPTH               0.980000   0.520000  
+ORIFICE_DEPTH               0.990000   0.510000  
+ORIFICE_DEPTH               1.000000   0.500000  
+ORIFICE_DEPTH               1.010000   0.490000  
+ORIFICE_DEPTH               1.020000   0.480000  
+ORIFICE_DEPTH               1.030000   0.470000  
+ORIFICE_DEPTH               1.040000   0.460000  
+ORIFICE_DEPTH               1.050000   0.450000  
+ORIFICE_DEPTH               1.060000   0.440000  
+ORIFICE_DEPTH               1.070000   0.430000  
+ORIFICE_DEPTH               1.080000   0.420000  
+ORIFICE_DEPTH               1.090000   0.410000  
+ORIFICE_DEPTH               1.100000   0.400000  
+ORIFICE_DEPTH               1.110000   0.390000  
+ORIFICE_DEPTH               1.120000   0.380000  
+ORIFICE_DEPTH               1.130000   0.370000  
+ORIFICE_DEPTH               1.140000   0.360000  
+ORIFICE_DEPTH               1.150000   0.350000  
+ORIFICE_DEPTH               1.160000   0.340000  
+ORIFICE_DEPTH               1.170000   0.330000  
+ORIFICE_DEPTH               1.180000   0.320000  
+ORIFICE_DEPTH               1.190000   0.310000  
+ORIFICE_DEPTH               1.200000   0.300000  
+ORIFICE_DEPTH               1.210000   0.290000  
+ORIFICE_DEPTH               1.220000   0.280000  
+ORIFICE_DEPTH               1.230000   0.270000  
+ORIFICE_DEPTH               1.240000   0.260000  
+ORIFICE_DEPTH               1.250000   0.250000  
+ORIFICE_DEPTH               1.260000   0.240000  
+ORIFICE_DEPTH               1.270000   0.230000  
+ORIFICE_DEPTH               1.280000   0.220000  
+ORIFICE_DEPTH               1.290000   0.210000  
+ORIFICE_DEPTH               1.300000   0.200000  
+ORIFICE_DEPTH               1.310000   0.190000  
+ORIFICE_DEPTH               1.320000   0.180000  
+ORIFICE_DEPTH               1.330000   0.170000  
+ORIFICE_DEPTH               1.340000   0.160000  
+ORIFICE_DEPTH               1.350000   0.150000  
+ORIFICE_DEPTH               1.360000   0.140000  
+ORIFICE_DEPTH               1.370000   0.130000  
+ORIFICE_DEPTH               1.380000   0.120000  
+ORIFICE_DEPTH               1.390000   0.110000  
+ORIFICE_DEPTH               1.400000   0.100000  
+ORIFICE_DEPTH               1.410000   0.090000  
+ORIFICE_DEPTH               1.420000   0.080000  
+ORIFICE_DEPTH               1.430000   0.070000  
+ORIFICE_DEPTH               1.440000   0.060000  
+ORIFICE_DEPTH               1.450000   0.050000  
+ORIFICE_DEPTH               1.460000   0.040000  
+ORIFICE_DEPTH               1.470000   0.030000  
+ORIFICE_DEPTH               1.480000   0.020000  
+ORIFICE_DEPTH               1.490000   0.010000  
+ORIFICE_DEPTH               1.500000   0.000000  
+ORIFICE_DEPTH               2.000000   0.000000  
+ORIFICE_DEPTH               6.000000   0.000000  
+ORIFICE_DEPTH               16.000000  0.000000  
+ORIFICE_DEPTH               46.000000  0.000000  
+;
+Leapcontrol      Rating     0          0         
+Leapcontrol                 0.5        5         
+Leapcontrol                 1          10        
+Leapcontrol                 1.01       1         
+Leapcontrol                 10         1         
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+RAMP             07/22/2009 0:0        0.000000  
+RAMP                        1:0        0         
+RAMP                        2:00       10.000000 
+RAMP                        3:00       5         
+RAMP                        5:00       1         
+RAMP                        15:00      0.000000  
+
+[PATTERNS]
+;;Name           Type       Multipliers
+;;-------------- ---------- -----------
+month            MONTHLY    1.0   1.0   1.0   1.0   1.0   1.0  
+month                       1.0   1.0   1.0   1.0   1.0   1.0  
+;
+day              DAILY      1.0   1.0   1.0   1.0   1.0   1.0   1.0  
+;
+hourly           HOURLY     1.0   1.0   1.0   1.0   1.0   1.0  
+hourly                      1.0   1.0   1.0   1.0   1.0   1.0  
+hourly                      1.0   1.0   1.0   1.0   1.0   1.0  
+hourly                      1.0   1.0   1.0   1.0   1.0   1.0  
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   YES
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -4942.987 -1800.218 12147.957 9565.764
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+bend             5199.462           2391.846          
+berm             6917.910           432.836           
+INFLOW           4984.152           9049.128          
+5                -2835.411          1473.863          
+6                7529.851           -1283.582         
+LEAPNODE         5110.935           5182.250          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

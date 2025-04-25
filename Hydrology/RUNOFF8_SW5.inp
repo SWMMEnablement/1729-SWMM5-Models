@@ -1,0 +1,174 @@
+[TITLE]
+;;Project Title/Notes
+RUNOFF EXAMPLE 8  PARABOLIC CHANNELS  NO GROUNDWATER
+SIMILAR TO RUNOFF EXAMPLE 1 - VERY LARGE/LONG CHANNELS
+;  CDM SWMM4 Converter
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           07/01/1987
+START_TIME           00:00:00
+REPORT_START_DATE    07/01/1987
+REPORT_START_TIME    00:00:00
+END_DATE             07/02/1987
+END_TIME             12:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             23:59:59
+ROUTING_STEP         0:00:30 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  SLOPE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+MONTHLY          0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1   
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+GAGE1            VOLUME    0.25000  1.0      TIMESERIES RainSeries1     
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+;Name	RAINGAGE	OUTLET	AREA	%IMPERV	WIDTH	SLOPE
+;===============================================================================
+1                GAGE1            gutter1          300.0    1.0      10.0     0.1      0                        
+2                GAGE1            gutter3          500.0    1.0      10.0     0.1      0                        
+3                GAGE1            gutter6          500.0    1.0      10.0     0.1      0                        
+4                GAGE1            gutter5          500.0    1.0      10.0     0.1      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+1                0.04       0.6        0          0          25         OUTLET    
+2                0.04       0.6        0          0          25         OUTLET    
+3                0.04       0.6        1          1          25         OUTLET    
+4                0.04       0.6        0          0          25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Suction    Ksat       IMD       
+;;-------------- ---------- ---------- ----------
+1                5.0        5.0        0.001     
+2                5.0        5.0        0.001     
+3                5.0        5.0        0.001     
+4                5.0        5.0        0.001     
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+;                 Invert      Max.       Init.      Surcharge  Ponded
+;Name             Elev.       Depth      Depth      Depth      Area
+;===============================================================================
+gutter1          200.00     0          0          0          0         
+gutter2          100.00     0          0          0          0         
+gutter3          200.00     0          0          0          0         
+gutter4          100.00     0          0          0          0         
+gutter5          100.00     0          0          0          0         
+gutter6          200.00     0          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+;===============================================================================
+7                0.00       FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+;Name  Node1   Node2   Length  N   Z1  Z2  Q0
+;===============================================================================
+1                gutter1          gutter2          20000.0    0.02       0          0          0          0         
+2                gutter2          7                20000.0    0.02       0          0          0          0         
+3                gutter3          gutter4          20000.0    0.02       0          0          0          0         
+4                gutter4          7                20000.0    0.02       0          0          0          0         
+5                gutter5          7                20000.0    0.02       0          0          0          0         
+6                gutter6          gutter5          20000.0    0.02       0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                PARABOLIC    10.0             120        0          0          1                    
+2                PARABOLIC    10.0             120        0          0          1                    
+3                PARABOLIC    10.0             120        0          0          1                    
+4                PARABOLIC    10.0             120        0          0          1                    
+5                PARABOLIC    10.0             120        0          0          1                    
+6                PARABOLIC    10.0             120        0          0          1                    
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+;Name             Date       Time       Value
+RainSeries1      07/01/1987 00:00      2.00000   
+RainSeries1                 00:30      2.00000   
+RainSeries1                 01:00      2.00000   
+RainSeries1                 01:30      2.00000   
+RainSeries1                 02:00      2.00000   
+RainSeries1      07/01/1987 02:30      2.00000   
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -4296250000.000 -4405625000.000 6346250000.000 2180625000.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+gutter1          -3200000000.000    -3256250000.000   
+gutter2          -1200000000.000    -106250000.000    
+gutter3          1262500000.000     -2956250000.000   
+gutter4          -387500000.000     -2506250000.000   
+gutter5          4250000000.000     -2331250000.000   
+gutter6          3900000000.000     -581250000.000    
+7                1675000000.000     393750000.000     
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                -3812500000.000    -1818750000.000   
+2                2125000000.000     -4106250000.000   
+3                4925000000.000     1881250000.000    
+4                5862500000.000     -2156250000.000   
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+GAGE1            1425000000.000     -1506250000.000   
+

@@ -1,0 +1,352 @@
+[TITLE]
+;;Project Title/Notes
+ SW 1 9 8A1 'runoff.dat test case using only precipitation quality'A1 'gener
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/1960
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/1960
+REPORT_START_TIME    00:00:00
+END_DATE             02/03/1960
+END_TIME             08:00:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             01:00:00
+DRY_STEP             23:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.566
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[FILES]
+;;Interfacing Files
+SAVE RUNOFF "D:\SWMMandSoftware\swmm_crada_files\Other SWMM5 Files\runoff42.INT"
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+MONTHLY          0      0      0      0      0      0      0      0      0      0      0      0     
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+GAGE1            VOLUME    4.00000  1.0      TIMESERIES RainSeries1     
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+;  * * catchment parameters 100% impervious area *  JK  NAMEW  NGTO WIDTH  AREA   %IMP  SLP   IMPN   PERVN   IDS    PDS  MAXi  MINi   DECAY
+101              GAGE1            102              100.0    90.0     500.0    2.0      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+101              0.017      0          0.02       0          25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+101              1.0        0.1        7.2        2.2639     0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+102              0          FREE                        NO                       
+
+[POLLUTANTS]
+;;Name           Units  Crain      Cgw        Crdii      Kdecay     SnowOnly   Co-Pollutant     Co-Frac    Cdwf       Cinit     
+;;-------------- ------ ---------- ---------- ---------- ---------- ---------- ---------------- ---------- ---------- ----------
+ss-0             MG/L   10         0          0          0          NO         *                0.0        0          0         
+ss-1             MG/L   10         0          0          0          NO         *                0.0        0          0         
+ss-2             MG/L   10         0          0          0          NO         *                0.0        0          0         
+ss-3             MG/L   10         0          0          0          NO         *                0.0        0          0         
+
+[LANDUSES]
+;;               Sweeping   Fraction   Last      
+;;Name           Interval   Available  Swept     
+;;-------------- ---------- ---------- ----------
+imperv           0          0          0         
+
+[COVERAGES]
+;;Subcatchment   Land Use         Percent   
+;;-------------- ---------------- ----------
+101              imperv           100       
+
+[LOADINGS]
+;;Subcatchment   Pollutant        Buildup   
+;;-------------- ---------------- ----------
+
+[BUILDUP]
+;;Land Use       Pollutant        Function   Coeff1     Coeff2     Coeff3     Per Unit  
+;;-------------- ---------------- ---------- ---------- ---------- ---------- ----------
+imperv           ss-0                                                                   
+imperv           ss-1                                                                   
+imperv           ss-2                                                                   
+imperv           ss-3                                                                   
+
+[WASHOFF]
+;;Land Use       Pollutant        Function   Coeff1     Coeff2     SweepRmvl  BmpRmvl   
+;;-------------- ---------------- ---------- ---------- ---------- ---------- ----------
+imperv           ss-0             RC         0.1        1.1        0          0         
+imperv           ss-1             RC         0.1        1.1        0          0         
+imperv           ss-2             RC         10         2          0          0         
+imperv           ss-3             RC         0.1        1.1        0          0         
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+RainSeries1      01/01/1960 00:00      0.40000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/01/1960 20:00      0.00000   
+RainSeries1      01/02/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/02/1960 20:00      0.00000   
+RainSeries1      01/03/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/03/1960 20:00      0.00000   
+RainSeries1      01/04/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.40000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/04/1960 20:00      0.00000   
+RainSeries1      01/05/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/05/1960 20:00      0.00000   
+RainSeries1      01/06/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/06/1960 20:00      0.00000   
+RainSeries1      01/07/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.40000   
+RainSeries1      01/07/1960 20:00      0.00000   
+RainSeries1      01/08/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/08/1960 20:00      0.00000   
+RainSeries1      01/09/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/09/1960 20:00      0.00000   
+RainSeries1      01/10/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/10/1960 20:00      0.00000   
+RainSeries1      01/11/1960 00:00      0.40000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/11/1960 20:00      0.00000   
+RainSeries1      01/12/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/12/1960 20:00      0.00000   
+RainSeries1      01/13/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/13/1960 20:00      0.00000   
+RainSeries1      01/14/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.40000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/14/1960 20:00      0.00000   
+RainSeries1      01/15/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/15/1960 20:00      0.00000   
+RainSeries1      01/16/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/16/1960 20:00      0.00000   
+RainSeries1      01/17/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.40000   
+RainSeries1      01/17/1960 20:00      0.00000   
+RainSeries1      01/18/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/18/1960 20:00      0.00000   
+RainSeries1      01/19/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/19/1960 20:00      0.00000   
+RainSeries1      01/20/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/20/1960 20:00      0.00000   
+RainSeries1      01/21/1960 00:00      0.40000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/21/1960 20:00      0.00000   
+RainSeries1      01/22/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/22/1960 20:00      0.00000   
+RainSeries1      01/23/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/23/1960 20:00      0.00000   
+RainSeries1      01/24/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.40000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/24/1960 20:00      0.00000   
+RainSeries1      01/25/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/25/1960 20:00      0.00000   
+RainSeries1      01/26/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/26/1960 20:00      0.00000   
+RainSeries1      01/27/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.40000   
+RainSeries1      01/27/1960 20:00      0.00000   
+RainSeries1      01/28/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/28/1960 20:00      0.00000   
+RainSeries1      01/29/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/29/1960 20:00      0.00000   
+RainSeries1      01/30/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/30/1960 20:00      0.00000   
+RainSeries1      01/31/1960 00:00      0.40000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      01/31/1960 20:00      0.00000   
+RainSeries1      02/01/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      02/01/1960 20:00      0.00000   
+RainSeries1      02/02/1960 00:00      0.00000   
+RainSeries1                 04:00      0.00000   
+RainSeries1                 08:00      0.00000   
+RainSeries1                 12:00      0.00000   
+RainSeries1                 16:00      0.00000   
+RainSeries1      02/02/1960 20:00      0.00000   
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+Subcatch  101              101             
+
+[MAP]
+DIMENSIONS -5.500 -5.500 5.500 5.500
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+102              -1.725             0.412             
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+101              -1.180             0.856             
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+GAGE1            0.000              0.000             
+

@@ -1,0 +1,462 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           LPS
+INFILTRATION         GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/2009
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/2009
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/2010
+END_TIME             06:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          01:00:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         1.14
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.0015
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         1
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+R1               INTENSITY 1:00     1.0      TIMESERIES MyStorm         
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+Haus1            R1               Soilfilter2      0.043    100      16       2        0                        
+Haus2            R1               Soilfilter1      0.041    100      19.15    35       0                        
+Haus3            R1               Soilfilter12     0.041    100      19.15    35       0                        
+Haus4            R1               Soilfilter10     0.041    100      19.15    35       0                        
+Haus5            R1               Soilfilter1      0.041    100      19.15    35       0                        
+Haus6            R1               Soilfilter6      0.041    100      19.15    35       0                        
+Haus7            R1               Soilfilter4      0.041    100      19.15    35       0                        
+Befestigt1       R1               Mainsoilfilter2  0.0355   100      32       2        0                        
+Befestigt2       R1               Mainsoilfilter3  0.0315   100      30       2        0                        
+Befestigt3       R1               Soilfilter1      0.03     100      25       2        0                        
+Befestigt4       R1               Soilfilter12     0.04     100      32       2        0                        
+Befestigt5       R1               Soilfilter10     0.032    100      25       0.5      0                        
+Befestigt6       R1               Soilfilter6      0.04     100      32       2        0                        
+Befestigt7       R1               Soilfilter4      0.032    100      25       2        0                        
+Hauptstraﬂe1     R1               Soilfilter9      0.04     100      53       2        0                        
+Haupstraﬂe2      R1               Soilfilter7      0.04     100      53       2        0                        
+Mainsoilfilter1  R1               Vorfluter        0.00075  25       500      0.5      0                        
+Mainsoilfilter2  R1               Mainsoilfilter1  0.003    25       500      0.5      0                        
+Mainsoilfilter3  R1               Mainsoilfilter2  0.0032   25       500      0.5      0                        
+Mainsoilfilter4  R1               Mainsoilfilter3  0.0015   25       500      0.5      0                        
+Soilfilter1      R1               Soilfilter2      0.0028   25       500      0.5      0                        
+Soilfilter2      R1               Soilfilter3      0.0035   25       500      0.5      0                        
+Soilfilter3      R1               Mainsoilfilter1  0.0043   25       500      0.5      0                        
+Soilfilter4      R1               Soilfilter5      0.0015   25       500      0.5      0                        
+Soilfilter5      R1               Soilfilter6      0.0017   25       500      0.5      0                        
+Soilfilter6      R1               Soilfilter8      0.0024   25       500      0.5      0                        
+Soilfilter7      R1               Soilfilter8      0.0023   25       500      0.5      0                        
+Soilfilter8      R1               Soilfilter9      0.001    25       500      0.5      0                        
+Soilfilter9      R1               Soilfilter13     0.0035   25       500      0.5      0                        
+Soilfilter10     R1               Soilfilter11     0.0015   25       500      0.5      0                        
+Soilfilter11     R1               Soilfilter12     0.0017   25       500      0.5      0                        
+Soilfilter12     R1               Soilfilter13     0.0024   25       500      0.5      0                        
+Soilfilter13     R1               Mainsoilfilter4  0.0009   25       500      0.5      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+Haus1            0.014      0.1        2.5        0.05       25         OUTLET    
+Haus2            0.014      0.1        1          0.05       25         OUTLET    
+Haus3            0.014      0.1        1          0.05       25         OUTLET    
+Haus4            0.014      0.1        1          0.05       25         OUTLET    
+Haus5            0.014      0.1        1          0.05       25         OUTLET    
+Haus6            0.014      0.1        1          0.05       25         OUTLET    
+Haus7            0.014      0.1        1          0.05       25         OUTLET    
+Befestigt1       0.017      0.1        2.5        0.05       25         OUTLET    
+Befestigt2       0.017      0.1        2.5        0.05       25         OUTLET    
+Befestigt3       0.017      0.1        2.5        0.05       25         OUTLET    
+Befestigt4       0.017      0.1        2.5        0.05       25         OUTLET    
+Befestigt5       0.017      0.1        2.5        0.05       25         OUTLET    
+Befestigt6       0.017      0.1        2.5        0.05       25         OUTLET    
+Befestigt7       0.017      0.1        2.5        0.05       25         OUTLET    
+Hauptstraﬂe1     0.017      0.1        2.5        0.05       25         OUTLET    
+Haupstraﬂe2      0.017      0.1        2.5        0.05       25         OUTLET    
+Mainsoilfilter1  0.01       0.1        0.05       0.05       25         OUTLET    
+Mainsoilfilter2  0.01       0.1        0.05       0.05       25         OUTLET    
+Mainsoilfilter3  0.01       0.1        0.05       0.05       25         OUTLET    
+Mainsoilfilter4  0.01       0.1        0.05       0.05       25         OUTLET    
+Soilfilter1      0.01       0.1        0.05       0.05       25         OUTLET    
+Soilfilter2      0.01       0.1        0.05       0.05       25         OUTLET    
+Soilfilter3      0.01       0.1        0.05       0.05       25         OUTLET    
+Soilfilter4      0.01       0.1        0.05       0.05       25         OUTLET    
+Soilfilter5      0.01       0.1        0.05       0.05       25         OUTLET    
+Soilfilter6      0.01       0.1        0.05       0.05       25         OUTLET    
+Soilfilter7      0.01       0.1        0.05       0.05       25         OUTLET    
+Soilfilter8      0.01       0.1        0.05       0.05       25         OUTLET    
+Soilfilter9      0.01       0.1        0.05       0.05       25         OUTLET    
+Soilfilter10     0.01       0.1        0.05       0.05       25         OUTLET    
+Soilfilter11     0.01       0.1        0.05       0.05       25         OUTLET    
+Soilfilter12     0.01       0.1        0.05       0.05       25         OUTLET    
+Soilfilter13     0.01       0.1        0.05       0.05       25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Suction    Ksat       IMD       
+;;-------------- ---------- ---------- ----------
+Haus1            3.0        0.5        4         
+Haus2            3.0        0.5        4         
+Haus3            3.0        0.5        4         
+Haus4            3.0        0.5        4         
+Haus5            3.0        0.5        4         
+Haus6            3.0        0.5        4         
+Haus7            3.0        0.5        4         
+Befestigt1       3.0        0.5        4         
+Befestigt2       3.0        0.5        4         
+Befestigt3       3.0        0.5        4         
+Befestigt4       3.0        0.5        4         
+Befestigt5       3.0        0.5        4         
+Befestigt6       3.0        0.5        4         
+Befestigt7       3.0        0.5        4         
+Hauptstraﬂe1     3.0        0.5        4         
+Haupstraﬂe2      3.0        0.5        4         
+Mainsoilfilter1  3.0        0.5        4         
+Mainsoilfilter2  3.0        0.5        4         
+Mainsoilfilter3  3.0        0.5        4         
+Mainsoilfilter4  3.0        0.5        4         
+Soilfilter1      3.0        0.5        4         
+Soilfilter2      3.0        0.5        4         
+Soilfilter3      3.0        0.5        4         
+Soilfilter4      3.0        0.5        4         
+Soilfilter5      3.0        0.5        4         
+Soilfilter6      3.0        0.5        4         
+Soilfilter7      3.0        0.5        4         
+Soilfilter8      3.0        0.5        4         
+Soilfilter9      3.0        0.5        4         
+Soilfilter10     3.0        0.5        4         
+Soilfilter11     3.0        0.5        4         
+Soilfilter12     3.0        0.5        4         
+Soilfilter13     3.0        0.5        4         
+
+[LID_CONTROLS]
+;;Name           Type/Layer Parameters
+;;-------------- ---------- ----------
+Energieallee     BC
+Energieallee     SURFACE    225        0.1        0.4        1.0        5         
+Energieallee     SOIL       500        0.52       0.15       0.08       119        39.3       48        
+Energieallee     STORAGE    500        0.5        0          0         
+Energieallee     DRAIN      0.23       0.5        0          6          0          0                    
+
+[LID_USAGE]
+;;Subcatchment   LID Process      Number  Area       Width      InitSat    FromImp    ToPerv     RptFile                  DrainTo          FromPerv  
+;;-------------- ---------------- ------- ---------- ---------- ---------- ---------- ---------- ------------------------ ---------------- ----------
+Mainsoilfilter1  Energieallee     1       7.50       0          80         0          1          *                        *                0               
+Mainsoilfilter2  Energieallee     1       30.00      0          80         0          1          *                        *                0               
+Mainsoilfilter3  Energieallee     1       32.00      0          80         0          1          *                        *                0               
+Mainsoilfilter4  Energieallee     1       15.00      0          80         0          1          *                        *                0               
+Soilfilter1      Energieallee     1       28.00      0          80         0          1          *                        *                0               
+Soilfilter2      Energieallee     1       35.00      0          80         0          1          *                        *                0               
+Soilfilter3      Energieallee     1       43.00      0          80         0          1          *                        *                0               
+Soilfilter4      Energieallee     1       15.00      0          80         0          0          *                        *                0               
+Soilfilter5      Energieallee     1       17.00      0          80         0          0          *                        *                0               
+Soilfilter6      Energieallee     1       24.00      0          80         0          0          *                        *                0               
+Soilfilter7      Energieallee     1       23.00      0          80         0          0          *                        *                0               
+Soilfilter8      Energieallee     1       10.00      0          80         0          0          *                        *                0               
+Soilfilter9      Energieallee     1       35.00      0          80         0          0          *                        *                0               
+Soilfilter10     Energieallee     1       15.00      0          80         0          0          *                        *                0               
+Soilfilter11     Energieallee     1       17.00      0          80         0          0          *                        *                0               
+Soilfilter12     Energieallee     1       24.00      0          80         0          0          *                        *                0               
+Soilfilter13     Energieallee     1       9.00       0          0          0          0          *                        *                0               
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Vorfluter        0          FREE                        NO                       
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+MyStorm                     0          0         
+MyStorm                     1          1         
+MyStorm                     2          2         
+MyStorm                     3          3         
+MyStorm                     4          4         
+MyStorm                     5          5         
+MyStorm                     6          6         
+MyStorm                     7          7         
+MyStorm                     8          8         
+MyStorm                     9          4         
+MyStorm                     10         2         
+MyStorm                     11         1         
+MyStorm                     12         0         
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 4.565 49.361 151.042 162.593
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Vorfluter        11.223             157.446           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Haus1            41.706             132.566           
+Haus1            55.457             132.566           
+Haus1            55.457             122.975           
+Haus1            51.943             122.975           
+Haus1            51.867             120.506           
+Haus1            43.769             120.221           
+Haus1            43.769             122.975           
+Haus1            41.782             122.975           
+Haus1            41.782             132.566           
+Haus2            70.660             133.705           
+Haus2            82.502             133.800           
+Haus2            82.578             116.138           
+Haus2            72.647             115.948           
+Haus2            72.723             126.868           
+Haus2            70.737             126.868           
+Haus2            70.737             133.895           
+Haus3            102.976            133.800           
+Haus3            114.742            133.895           
+Haus3            114.742            126.868           
+Haus3            112.985            126.678           
+Haus3            112.908            116.043           
+Haus3            102.976            116.043           
+Haus3            102.976            133.895           
+Haus4            129.333            125.159           
+Haus4            141.022            125.159           
+Haus4            141.022            118.227           
+Haus4            139.265            118.227           
+Haus4            139.189            107.306           
+Haus4            129.257            107.306           
+Haus4            129.333            124.969           
+Haus5            70.813             93.632            
+Haus5            82.578             93.537            
+Haus5            82.502             75.779            
+Haus5            72.647             75.779            
+Haus5            72.570             86.605            
+Haus5            70.890             86.605            
+Haus5            70.813             93.537            
+Haus6            102.976            93.632            
+Haus6            114.742            93.537            
+Haus6            114.665            86.605            
+Haus6            112.908            86.605            
+Haus6            112.908            75.684            
+Haus6            102.900            75.684            
+Haus6            102.976            93.632            
+Haus7            129.333            84.800            
+Haus7            140.946            84.610            
+Haus7            141.099            77.868            
+Haus7            139.265            77.773            
+Haus7            139.112            66.948            
+Haus7            129.333            66.948            
+Haus7            129.333            84.895            
+Befestigt1       41.782             146.430           
+Befestigt1       57.062             146.335           
+Befestigt1       57.138             140.543           
+Befestigt1       61.798             140.543           
+Befestigt1       61.875             134.560           
+Befestigt1       34.907             134.655           
+Befestigt1       34.907             140.448           
+Befestigt1       41.859             140.733           
+Befestigt1       41.859             146.525           
+Befestigt2       61.875             134.655           
+Befestigt2       85.634             134.655           
+Befestigt2       89.149             134.370           
+Befestigt2       89.072             140.638           
+Befestigt2       85.864             140.638           
+Befestigt2       79.981             140.543           
+Befestigt2       79.981             146.335           
+Befestigt2       64.778             146.335           
+Befestigt2       64.701             140.543           
+Befestigt2       61.798             140.353           
+Befestigt3       89.072             93.822            
+Befestigt3       89.225             100.279           
+Befestigt3       83.342             100.089           
+Befestigt3       83.342             106.167           
+Befestigt3       68.292             106.167           
+Befestigt3       68.292             100.279           
+Befestigt3       67.910             100.564           
+Befestigt3       67.834             94.202            
+Befestigt3       89.301             93.917            
+Befestigt4       95.948             140.638           
+Befestigt4       95.872             134.465           
+Befestigt4       117.339            134.275           
+Befestigt4       122.840            127.913           
+Befestigt4       123.375            136.744           
+Befestigt4       127.042            140.922           
+Befestigt4       123.375            144.816           
+Befestigt4       117.339            146.335           
+Befestigt4       102.060            146.525           
+Befestigt4       101.983            140.543           
+Befestigt4       95.795             140.638           
+Befestigt5       127.042            140.922           
+Befestigt5       123.527            136.934           
+Befestigt5       122.993            128.293           
+Befestigt5       125.437            125.539           
+Befestigt5       144.231            125.919           
+Befestigt5       144.384            131.806           
+Befestigt5       143.620            131.806           
+Befestigt5       143.696            137.694           
+Befestigt5       130.174            137.599           
+Befestigt5       126.965            140.828           
+Befestigt6       95.872             100.184           
+Befestigt6       95.872             94.297            
+Befestigt6       117.416            94.012            
+Befestigt6       123.069            87.744            
+Befestigt6       123.069            96.196            
+Befestigt6       127.042            100.564           
+Befestigt6       123.451            104.647           
+Befestigt6       117.339            106.072           
+Befestigt6       102.060            106.167           
+Befestigt6       102.060            100.279           
+Befestigt6       95.795             100.279           
+Befestigt7       127.042            100.469           
+Befestigt7       123.145            96.386            
+Befestigt7       123.145            87.839            
+Befestigt7       125.208            85.370            
+Befestigt7       144.384            85.465            
+Befestigt7       144.307            91.638            
+Befestigt7       143.620            91.638            
+Befestigt7       143.696            97.240            
+Befestigt7       130.250            97.050            
+Befestigt7       126.965            100.659           
+Hauptstraﬂe1     89.454             153.267           
+Hauptstraﬂe1     89.454             104.837           
+Hauptstraﬂe1     96.024             104.837           
+Hauptstraﬂe1     95.566             153.078           
+Hauptstraﬂe1     89.301             153.078           
+Haupstraﬂe2      89.454             104.647           
+Haupstraﬂe2      96.024             104.647           
+Haupstraﬂe2      96.330             54.698            
+Haupstraﬂe2      89.454             54.508            
+Haupstraﬂe2      89.454             104.837           
+Mainsoilfilter1  31.087             155.452           
+Mainsoilfilter1  34.754             155.452           
+Mainsoilfilter1  34.830             156.876           
+Mainsoilfilter1  28.871             156.686           
+Mainsoilfilter1  28.871             155.452           
+Mainsoilfilter1  31.316             155.452           
+Mainsoilfilter2  34.754             156.781           
+Mainsoilfilter2  34.830             155.452           
+Mainsoilfilter2  59.736             155.452           
+Mainsoilfilter2  59.965             156.876           
+Mainsoilfilter2  34.830             156.876           
+Mainsoilfilter3  59.736             155.452           
+Mainsoilfilter3  59.812             156.781           
+Mainsoilfilter3  89.378             156.591           
+Mainsoilfilter3  89.378             155.452           
+Mainsoilfilter3  59.888             155.452           
+Mainsoilfilter4  89.454             156.591           
+Mainsoilfilter4  89.454             155.262           
+Mainsoilfilter4  101.831            155.262           
+Mainsoilfilter4  101.754            156.496           
+Mainsoilfilter4  89.378             156.591           
+Soilfilter1      85.023             112.054           
+Soilfilter1      85.252             113.004           
+Soilfilter1      60.576             114.428           
+Soilfilter1      60.500             113.574           
+Soilfilter1      85.329             112.149           
+Soilfilter2      60.500             114.238           
+Soilfilter2      60.500             113.574           
+Soilfilter2      31.392             115.378           
+Soilfilter2      31.392             116.517           
+Soilfilter2      60.500             114.428           
+Soilfilter3      31.316             116.422           
+Soilfilter3      32.309             116.328           
+Soilfilter3      32.156             155.547           
+Soilfilter3      31.392             155.547           
+Soilfilter3      31.392             116.422           
+Soilfilter4      143.161            98.950            
+Soilfilter4      143.238            100.184           
+Soilfilter4      130.327            100.184           
+Soilfilter4      130.403            99.140            
+Soilfilter4      143.238            99.140            
+Soilfilter5      130.479            99.045            
+Soilfilter5      130.479            100.279           
+Soilfilter5      123.069            107.021           
+Soilfilter5      122.611            106.452           
+Soilfilter5      130.327            99.140            
+Soilfilter6      123.069            107.116           
+Soilfilter6      122.611            106.262           
+Soilfilter6      99.233             107.496           
+Soilfilter6      99.233             108.731           
+Soilfilter6      122.916            107.116           
+Soilfilter7      98.632             81.762            
+Soilfilter7      99.771             81.857            
+Soilfilter7      99.107             104.552           
+Soilfilter7      98.157             104.552           
+Soilfilter7      98.632             81.572            
+Soilfilter8      97.777             113.384           
+Soilfilter8      98.917             113.289           
+Soilfilter8      99.202             104.552           
+Soilfilter8      98.157             104.457           
+Soilfilter8      97.872             113.384           
+Soilfilter9      97.967             147.285           
+Soilfilter9      98.917             147.380           
+Soilfilter9      98.822             113.384           
+Soilfilter9      97.777             113.384           
+Soilfilter9      97.777             147.285           
+Soilfilter10     143.314            139.118           
+Soilfilter10     143.238            140.258           
+Soilfilter10     130.327            140.163           
+Soilfilter10     130.327            139.023           
+Soilfilter10     143.467            139.118           
+Soilfilter11     130.174            138.833           
+Soilfilter11     130.479            140.258           
+Soilfilter11     123.986            147.095           
+Soilfilter11     123.298            146.335           
+Soilfilter11     130.327            139.023           
+Soilfilter12     123.986            147.095           
+Soilfilter12     123.145            146.240           
+Soilfilter12     98.927             147.950           
+Soilfilter12     99.004             149.184           
+Soilfilter12     123.909            147.190           
+Soilfilter13     97.705             155.167           
+Soilfilter13     98.775             155.262           
+Soilfilter13     98.927             147.380           
+Soilfilter13     97.858             147.285           
+Soilfilter13     97.781             155.167           
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+R1               99.940             69.381            
+

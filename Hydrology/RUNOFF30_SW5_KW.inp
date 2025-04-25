@@ -1,0 +1,212 @@
+[TITLE]
+;;Project Title/Notes
+\
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           06/30/1987
+START_TIME           00:00:00
+REPORT_START_DATE    06/30/1987
+REPORT_START_TIME    00:00:00
+END_DATE             07/02/1987
+END_TIME             12:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:05:00
+WET_STEP             00:15:00
+DRY_STEP             23:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  SLOPE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     5
+MIN_SURFAREA         12.566
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.0015
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0
+THREADS              1
+
+[FILES]
+;;Interfacing Files
+SAVE RUNOFF "D:\SWMMandSoftware\swmm_crada_files\Other SWMM5 Files\RUNOFF30.INT"
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+MONTHLY          0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1    0.1   
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+GAGE1            VOLUME    0.25000  1.0      TIMESERIES RainSeries1     
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+Wat1             GAGE1            Chan1            300.0    1.0      10.0     0.1      0                        
+Wat2             GAGE1            Chan2            500.0    1.0      10.0     0.1      0                        
+Wat3             GAGE1            Chan6            500.0    1.0      10.0     0.1      0                        
+Wat4             GAGE1            Chan5            500.0    1.0      10.0     0.1      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+Wat1             0.04       0.6        0          0          25         OUTLET    
+Wat2             0.04       0.6        0          0          25         OUTLET    
+Wat3             0.04       0.6        0          0          25         OUTLET    
+Wat4             0.04       0.3        0          0          25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Suction    Ksat       IMD       
+;;-------------- ---------- ---------- ----------
+Wat1             5.0        5.0        0.001     
+Wat2             5.0        5.0        0.001     
+Wat3             5.0        5.0        0.001     
+Wat4             5.0        5.0        0.001     
+
+[AQUIFERS]
+;;Name           Por    WP     FC     Ksat   Kslope Tslope ETu    ETs    Seep   Ebot   Egw    Umc    ETupat 
+;;-------------- ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------
+AQUIFER1         0.46   0.15   0.3    5      10     15     0.35   14     0.002  0      8.55   0.301        
+AQUIFER2         0.46   0.15   0.3    5      10     15     0.35   14     0.002  0      8.55   0.301        
+
+[GROUNDWATER]
+;;Subcatchment   Aquifer          Node             Esurf  A1     B1     A2     B2     A3     Dsw    Egwt   Ebot   Wgr    Umc   
+;;-------------- ---------------- ---------------- ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------
+Wat1             AQUIFER1         Chan1            20     0.000045 2.6    0      1      0      8.55   *     
+Wat2             AQUIFER2         Chan2            20     0.000045 2.6    0      1      0      8.55   *     
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+;Runoff Node
+Chan1            40.00      20.00      0.00       0          0         
+;Runoff Node
+Chan2            30.00      20.00      0.00       0          0         
+;Runoff Node
+Chan3            20.00      20.00      0.00       0          0         
+;Runoff Node
+Chan4            10.00      20.00      0.00       0          0         
+;Runoff Node
+Chan5            10.00      20.00      0.00       0          0         
+;Runoff Node
+Chan6            20.00      20.00      0.00       0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Node7            0.00       FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+Chan1            Chan1            Chan2            2000.0     0.02       0.0        0.0        0          0         
+Chan2            Chan2            Chan3            2000.0     0.02       0.0        0.0        0          0         
+Chan3            Chan3            Chan4            2000.0     0.02       0.0        0.0        0          0         
+Chan4            Chan4            Node7            2000.0     0.02       0.0        0.0        0          0         
+Chan5            Chan5            Node7            2000.0     0.02       0.0        0.0        0          0         
+Chan6            Chan6            Chan5            2000.0     0.02       0.0        0.0        0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+Chan1            PARABOLIC    10.0             20         0          0          1                    
+Chan2            PARABOLIC    10.0             20         0          0          1                    
+Chan3            PARABOLIC    10.0             20         0          0          1                    
+Chan4            PARABOLIC    10.0             20         0          0          1                    
+Chan5            PARABOLIC    10.0             20         0          0          1                    
+Chan6            PARABOLIC    10.0             20         0          0          1                    
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+RainSeries1      07/01/1987 00:00      2.00000   
+RainSeries1                 00:30      2.00000   
+RainSeries1                 01:00      2.00000   
+RainSeries1                 01:30      2.00000   
+RainSeries1                 02:00      2.00000   
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+Subcatch  Wat1             Wat1            
+Subcatch  Wat2             Wat2            
+Subcatch  Wat3             Wat3            
+Subcatch  Wat4             Wat4            
+
+[MAP]
+DIMENSIONS -69.321 -40.000 895.777 840.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Chan1            100.000            100.000           
+Chan2            200.000            200.000           
+Chan3            331.772            303.924           
+Chan4            400.000            400.000           
+Chan5            500.000            500.000           
+Chan6            530.190            294.177           
+Node7            800.000            800.000           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Wat1             210.010            427.848           
+Wat1             125.000            617.215           
+Wat1             92.278             545.580           
+Wat1             -25.453            427.848           
+Wat1             92.278             310.117           
+Wat2             570.643            120.127           
+Wat2             576.176            163.291           
+Wat2             581.709            206.456           
+Wat2             496.772            271.899           
+Wat2             452.911            237.858           
+Wat2             335.180            120.127           
+Wat2             310.190            39.367            
+Wat2             452.911            2.395             
+Wat3             843.481            146.582           
+Wat3             821.377            127.089           
+Wat3             799.272            107.595           
+Wat3             755.063            68.608            
+Wat3             733.481            47.722            
+Wat3             649.937            81.139            
+Wat3             595.633            225.949           
+Wat3             737.658            352.658           
+Wat3             829.557            234.304           
+Wat4             851.909            554.557           
+Wat4             900.570            697.975           
+Wat4             734.177            672.288           
+Wat4             616.446            554.557           
+Wat4             734.177            436.826           
+Wat4             872.722            409.747           
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+GAGE1            0.000              0.000             
+

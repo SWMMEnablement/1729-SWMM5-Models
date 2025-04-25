@@ -1,0 +1,650 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/14/2011
+START_TIME           00:00:00
+REPORT_START_DATE    01/14/2011
+REPORT_START_TIME    00:00:00
+END_DATE             01/16/2011
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:01:00
+WET_STEP             00:01:00
+DRY_STEP             00:01:00
+ROUTING_STEP         0:00:30 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[TEMPERATURE]
+;;Data Element     Values     
+TIMESERIES         WU_Temperature
+WINDSPEED MONTHLY  0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+SNOWMELT           34 0.5 0.6 0.0 50.0 0.0
+ADC IMPERVIOUS     1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+ADC PERVIOUS       1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+1                INTENSITY 0:15     1.0      TIMESERIES Zero_Rainfall   
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+1                1                3                5        25       500      0.5      0        MySnowPack      
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+1                0.01       0.1        0.05       0.05       25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+1                3.0        0.5        4          7          0         
+
+[SNOWPACKS]
+;;Name           Surface    Parameters
+;;-------------- ---------- ----------
+MySnowPack       PLOWABLE   0.001      0.001      32.0       0.10       0          0.00       0.0       
+MySnowPack       IMPERVIOUS 0.001      0.001      32.0       0.10       1          0.00       0.00      
+MySnowPack       PERVIOUS   0.001      0.001      32.0       0.10       1          0.00       0.00      
+MySnowPack       REMOVAL    1.0        0.0        0.0        0.0        0.0        0.0        
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+3                0          0          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+2                0          FREE                        NO                       
+4                0          FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1                3                2                400        0.01       0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                CIRCULAR     1                0          0          0          1                    
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+Zero_Rainfall    01/14/2011 0:00       0         
+Zero_Rainfall    01/14/2011 0:15       0         
+Zero_Rainfall    01/14/2011 0:30       0         
+;
+WU_Temperature   1/14/2011  0:00:00    39.9      
+WU_Temperature   1/14/2011  0:05:00    39.7      
+WU_Temperature   1/14/2011  0:10:00    39.7      
+WU_Temperature   1/14/2011  0:15:00    39.7      
+WU_Temperature   1/14/2011  0:16:00    39.7      
+WU_Temperature   1/14/2011  0:20:00    39.7      
+WU_Temperature   1/14/2011  0:25:00    39.7      
+WU_Temperature   1/14/2011  0:26:00    39.7      
+WU_Temperature   1/14/2011  0:31:00    39.7      
+WU_Temperature   1/14/2011  0:32:00    39.7      
+WU_Temperature   1/14/2011  0:36:00    39.7      
+WU_Temperature   1/14/2011  0:41:00    39.7      
+WU_Temperature   1/14/2011  0:46:00    39.7      
+WU_Temperature   1/14/2011  0:51:00    39.7      
+WU_Temperature   1/14/2011  0:52:00    39.7      
+WU_Temperature   1/14/2011  0:56:00    39.7      
+WU_Temperature   1/14/2011  0:57:00    39.7      
+WU_Temperature   1/14/2011  1:01:00    39.6      
+WU_Temperature   1/14/2011  1:02:00    39.6      
+WU_Temperature   1/14/2011  1:07:00    39.6      
+WU_Temperature   1/14/2011  1:12:00    39.4      
+WU_Temperature   1/14/2011  1:17:00    39.4      
+WU_Temperature   1/14/2011  1:22:00    39.3      
+WU_Temperature   1/14/2011  1:27:00    39.3      
+WU_Temperature   1/14/2011  1:28:00    39.3      
+WU_Temperature   1/14/2011  1:32:00    39.2      
+WU_Temperature   1/14/2011  1:33:00    39.2      
+WU_Temperature   1/14/2011  1:35:00    39        
+WU_Temperature   1/14/2011  1:38:00    39        
+WU_Temperature   1/14/2011  1:43:00    38.9      
+WU_Temperature   1/14/2011  1:48:00    38.9      
+WU_Temperature   1/14/2011  1:53:00    38.7      
+WU_Temperature   1/14/2011  1:54:00    38.7      
+WU_Temperature   1/14/2011  1:58:00    38.6      
+WU_Temperature   1/14/2011  1:59:00    38.6      
+WU_Temperature   1/14/2011  2:03:00    38.6      
+WU_Temperature   1/14/2011  2:04:00    38.6      
+WU_Temperature   1/14/2011  2:08:00    38.4      
+WU_Temperature   1/14/2011  2:13:00    38.4      
+WU_Temperature   1/14/2011  2:14:00    38.4      
+WU_Temperature   1/14/2011  2:18:00    38.4      
+WU_Temperature   1/14/2011  2:19:00    38.4      
+WU_Temperature   1/14/2011  2:24:00    38.3      
+WU_Temperature   1/14/2011  2:29:00    38.1      
+WU_Temperature   1/14/2011  2:31:00    38.1      
+WU_Temperature   1/14/2011  2:34:00    38.1      
+WU_Temperature   1/14/2011  2:35:00    38.1      
+WU_Temperature   1/14/2011  2:36:00    38.1      
+WU_Temperature   1/14/2011  2:39:00    38        
+WU_Temperature   1/14/2011  2:44:00    37.9      
+WU_Temperature   1/14/2011  2:45:00    37.9      
+WU_Temperature   1/14/2011  2:50:00    37.9      
+WU_Temperature   1/14/2011  2:55:00    37.9      
+WU_Temperature   1/14/2011  2:57:00    37.7      
+WU_Temperature   1/14/2011  3:00:00    37.7      
+WU_Temperature   1/14/2011  3:05:00    37.7      
+WU_Temperature   1/14/2011  3:10:00    37.7      
+WU_Temperature   1/14/2011  3:15:00    37.6      
+WU_Temperature   1/14/2011  3:20:00    37.6      
+WU_Temperature   1/14/2011  3:21:00    37.6      
+WU_Temperature   1/14/2011  3:25:00    37.4      
+WU_Temperature   1/14/2011  3:26:00    37.4      
+WU_Temperature   1/14/2011  3:31:00    37.3      
+WU_Temperature   1/14/2011  3:32:00    37.3      
+WU_Temperature   1/14/2011  3:36:00    37.3      
+WU_Temperature   1/14/2011  3:38:00    37.3      
+WU_Temperature   1/14/2011  3:41:00    37.1      
+WU_Temperature   1/14/2011  3:43:00    37.1      
+WU_Temperature   1/14/2011  3:48:00    37.1      
+WU_Temperature   1/14/2011  3:53:00    37        
+WU_Temperature   1/14/2011  3:54:00    37        
+WU_Temperature   1/14/2011  3:58:00    36.9      
+WU_Temperature   1/14/2011  3:59:00    36.9      
+WU_Temperature   1/14/2011  4:03:00    36.9      
+WU_Temperature   1/14/2011  4:04:00    36.7      
+WU_Temperature   1/14/2011  4:08:00    36.7      
+WU_Temperature   1/14/2011  4:09:00    36.7      
+WU_Temperature   1/14/2011  4:14:00    36.6      
+WU_Temperature   1/14/2011  4:19:00    36.4      
+WU_Temperature   1/14/2011  4:24:00    36.3      
+WU_Temperature   1/14/2011  4:29:00    36.1      
+WU_Temperature   1/14/2011  4:34:00    36        
+WU_Temperature   1/14/2011  4:35:00    36        
+WU_Temperature   1/14/2011  4:39:00    35.9      
+WU_Temperature   1/14/2011  4:40:00    35.9      
+WU_Temperature   1/14/2011  4:44:00    35.9      
+WU_Temperature   1/14/2011  4:49:00    35.7      
+WU_Temperature   1/14/2011  4:54:00    35.6      
+WU_Temperature   1/14/2011  4:55:00    35.6      
+WU_Temperature   1/14/2011  4:59:00    35.6      
+WU_Temperature   1/14/2011  5:04:00    35.4      
+WU_Temperature   1/14/2011  5:05:00    35.4      
+WU_Temperature   1/14/2011  5:09:00    35.4      
+WU_Temperature   1/14/2011  5:10:00    35.4      
+WU_Temperature   1/14/2011  5:15:00    35.4      
+WU_Temperature   1/14/2011  5:20:00    35.3      
+WU_Temperature   1/14/2011  5:25:00    35.3      
+WU_Temperature   1/14/2011  5:30:00    35.3      
+WU_Temperature   1/14/2011  5:31:00    35.3      
+WU_Temperature   1/14/2011  5:35:00    35.1      
+WU_Temperature   1/14/2011  5:37:00    35.1      
+WU_Temperature   1/14/2011  5:41:00    35.1      
+WU_Temperature   1/14/2011  5:46:00    35        
+WU_Temperature   1/14/2011  5:51:00    35        
+WU_Temperature   1/14/2011  5:56:00    34.8      
+WU_Temperature   1/14/2011  5:57:00    34.8      
+WU_Temperature   1/14/2011  6:01:00    34.8      
+WU_Temperature   1/14/2011  6:02:00    34.8      
+WU_Temperature   1/14/2011  6:06:00    34.8      
+WU_Temperature   1/14/2011  6:11:00    34.7      
+WU_Temperature   1/14/2011  6:16:00    34.7      
+WU_Temperature   1/14/2011  6:21:00    34.7      
+WU_Temperature   1/14/2011  6:26:00    34.7      
+WU_Temperature   1/14/2011  6:27:00    34.7      
+WU_Temperature   1/14/2011  6:31:00    34.7      
+WU_Temperature   1/14/2011  6:32:00    34.7      
+WU_Temperature   1/14/2011  6:33:00    34.7      
+WU_Temperature   1/14/2011  6:35:00    34.7      
+WU_Temperature   1/14/2011  6:36:00    34.7      
+WU_Temperature   1/14/2011  6:40:00    34.5      
+WU_Temperature   1/14/2011  6:41:00    34.5      
+WU_Temperature   1/14/2011  6:46:00    34.5      
+WU_Temperature   1/14/2011  6:51:00    34.4      
+WU_Temperature   1/14/2011  6:52:00    34.4      
+WU_Temperature   1/14/2011  6:56:00    34.4      
+WU_Temperature   1/14/2011  6:57:00    34.4      
+WU_Temperature   1/14/2011  7:02:00    34.4      
+WU_Temperature   1/14/2011  7:07:00    34.2      
+WU_Temperature   1/14/2011  7:12:00    34.2      
+WU_Temperature   1/14/2011  7:17:00    34.1      
+WU_Temperature   1/14/2011  7:22:00    34.1      
+WU_Temperature   1/14/2011  7:27:00    33.9      
+WU_Temperature   1/14/2011  7:32:00    33.8      
+WU_Temperature   1/14/2011  7:33:00    33.8      
+WU_Temperature   1/14/2011  7:34:00    33.8      
+WU_Temperature   1/14/2011  7:37:00    33.8      
+WU_Temperature   1/14/2011  7:39:00    33.8      
+WU_Temperature   1/14/2011  7:42:00    33.6      
+WU_Temperature   1/14/2011  7:47:00    33.6      
+WU_Temperature   1/14/2011  7:48:00    33.6      
+WU_Temperature   1/14/2011  7:52:00    33.6      
+WU_Temperature   1/14/2011  7:53:00    33.6      
+WU_Temperature   1/14/2011  7:57:00    33.6      
+WU_Temperature   1/14/2011  7:58:00    33.6      
+WU_Temperature   1/14/2011  8:03:00    33.6      
+WU_Temperature   1/14/2011  8:08:00    33.6      
+WU_Temperature   1/14/2011  8:09:00    33.6      
+WU_Temperature   1/14/2011  8:13:00    33.8      
+WU_Temperature   1/14/2011  8:18:00    33.9      
+WU_Temperature   1/14/2011  8:23:00    34.2      
+WU_Temperature   1/14/2011  8:28:00    34.5      
+WU_Temperature   1/14/2011  8:29:00    34.5      
+WU_Temperature   1/14/2011  8:30:00    34.7      
+WU_Temperature   1/14/2011  8:33:00    35        
+WU_Temperature   1/14/2011  8:34:00    35        
+WU_Temperature   1/14/2011  8:36:00    35.1      
+WU_Temperature   1/14/2011  8:39:00    35.6      
+WU_Temperature   1/14/2011  8:41:00    35.7      
+WU_Temperature   1/14/2011  8:44:00    36.1      
+WU_Temperature   1/14/2011  8:46:00    36.4      
+WU_Temperature   1/14/2011  8:49:00    36.7      
+WU_Temperature   1/14/2011  8:52:00    37        
+WU_Temperature   1/14/2011  8:54:00    37.3      
+WU_Temperature   1/14/2011  8:57:00    37.7      
+WU_Temperature   1/14/2011  8:59:00    38        
+WU_Temperature   1/14/2011  9:04:00    38.6      
+WU_Temperature   1/14/2011  9:05:00    38.7      
+WU_Temperature   1/14/2011  9:09:00    39.2      
+WU_Temperature   1/14/2011  9:14:00    39.7      
+WU_Temperature   1/14/2011  9:15:00    39.7      
+WU_Temperature   1/14/2011  9:19:00    40.3      
+WU_Temperature   1/14/2011  9:20:00    40.3      
+WU_Temperature   1/14/2011  9:25:00    40.7      
+WU_Temperature   1/14/2011  9:26:00    41        
+WU_Temperature   1/14/2011  9:30:00    41.3      
+WU_Temperature   1/14/2011  9:31:00    41.4      
+WU_Temperature   1/14/2011  9:34:00    41.7      
+WU_Temperature   1/14/2011  9:35:00    41.9      
+WU_Temperature   1/14/2011  9:39:00    42.2      
+WU_Temperature   1/14/2011  9:40:00    42.3      
+WU_Temperature   1/14/2011  9:44:00    42.7      
+WU_Temperature   1/14/2011  9:49:00    43.3      
+WU_Temperature   1/14/2011  9:54:00    43.9      
+WU_Temperature   1/14/2011  9:55:00    43.9      
+WU_Temperature   1/14/2011  9:59:00    44.3      
+WU_Temperature   1/14/2011  10:00:00   44.3      
+WU_Temperature   1/14/2011  10:04:00   44.7      
+WU_Temperature   1/14/2011  10:05:00   44.9      
+WU_Temperature   1/14/2011  10:09:00   45.2      
+WU_Temperature   1/14/2011  10:10:00   45.3      
+WU_Temperature   1/14/2011  10:14:00   45.6      
+WU_Temperature   1/14/2011  10:15:00   45.8      
+WU_Temperature   1/14/2011  10:19:00   45.9      
+WU_Temperature   1/14/2011  10:20:00   45.9      
+WU_Temperature   1/14/2011  10:24:00   46.2      
+WU_Temperature   1/14/2011  10:25:00   46.3      
+WU_Temperature   1/14/2011  10:26:00   46.3      
+WU_Temperature   1/14/2011  10:30:00   46.6      
+WU_Temperature   1/14/2011  10:31:00   46.8      
+WU_Temperature   1/14/2011  10:35:00   47.2      
+WU_Temperature   1/14/2011  10:36:00   47.4      
+WU_Temperature   1/14/2011  10:40:00   47.8      
+WU_Temperature   1/14/2011  10:45:00   48.4      
+WU_Temperature   1/14/2011  10:46:00   48.4      
+WU_Temperature   1/14/2011  10:51:00   49        
+WU_Temperature   1/14/2011  10:56:00   49.5      
+WU_Temperature   1/14/2011  10:57:00   49.5      
+WU_Temperature   1/14/2011  11:01:00   50        
+WU_Temperature   1/14/2011  11:02:00   50        
+WU_Temperature   1/14/2011  11:06:00   50.6      
+WU_Temperature   1/14/2011  11:07:00   50.6      
+WU_Temperature   1/14/2011  11:12:00   51.1      
+WU_Temperature   1/14/2011  11:17:00   51.7      
+WU_Temperature   1/14/2011  11:18:00   51.7      
+WU_Temperature   1/14/2011  11:22:00   52.1      
+WU_Temperature   1/14/2011  11:23:00   52.1      
+WU_Temperature   1/14/2011  11:27:00   52.6      
+WU_Temperature   1/14/2011  11:28:00   52.6      
+WU_Temperature   1/14/2011  11:33:00   53        
+WU_Temperature   1/14/2011  11:34:00   53        
+WU_Temperature   1/14/2011  11:38:00   53.3      
+WU_Temperature   1/14/2011  11:39:00   53.3      
+WU_Temperature   1/14/2011  11:43:00   53.6      
+WU_Temperature   1/14/2011  11:44:00   53.6      
+WU_Temperature   1/14/2011  11:48:00   53.9      
+WU_Temperature   1/14/2011  11:49:00   53.9      
+WU_Temperature   1/14/2011  11:53:00   54.2      
+WU_Temperature   1/14/2011  11:54:00   54.2      
+WU_Temperature   1/14/2011  11:55:00   54.3      
+WU_Temperature   1/14/2011  11:58:00   54.6      
+WU_Temperature   1/14/2011  11:59:00   54.6      
+WU_Temperature   1/14/2011  12:00:00   54.8      
+WU_Temperature   1/14/2011  12:03:00   55.1      
+WU_Temperature   1/14/2011  12:05:00   55.1      
+WU_Temperature   1/14/2011  12:09:00   55.4      
+WU_Temperature   1/14/2011  12:10:00   55.5      
+WU_Temperature   1/14/2011  12:14:00   55.7      
+WU_Temperature   1/14/2011  12:15:00   55.8      
+WU_Temperature   1/14/2011  12:19:00   56.1      
+WU_Temperature   1/14/2011  12:20:00   56.1      
+WU_Temperature   1/14/2011  12:24:00   56.4      
+WU_Temperature   1/14/2011  12:25:00   56.6      
+WU_Temperature   1/14/2011  12:29:00   56.8      
+WU_Temperature   1/14/2011  12:30:00   56.8      
+WU_Temperature   1/14/2011  12:35:00   57.3      
+WU_Temperature   1/14/2011  12:40:00   57.4      
+WU_Temperature   1/14/2011  12:41:00   57.4      
+WU_Temperature   1/14/2011  12:45:00   57.6      
+WU_Temperature   1/14/2011  12:46:00   57.6      
+WU_Temperature   1/14/2011  12:51:00   57.9      
+WU_Temperature   1/14/2011  12:52:00   57.9      
+WU_Temperature   1/14/2011  12:56:00   58.2      
+WU_Temperature   1/14/2011  12:57:00   58.2      
+WU_Temperature   1/14/2011  13:01:00   58.7      
+WU_Temperature   1/14/2011  13:02:00   58.7      
+WU_Temperature   1/14/2011  13:07:00   59.1      
+WU_Temperature   1/14/2011  13:12:00   59.6      
+WU_Temperature   1/14/2011  13:17:00   60        
+WU_Temperature   1/14/2011  13:22:00   60.3      
+WU_Temperature   1/14/2011  13:23:00   60.3      
+WU_Temperature   1/14/2011  13:28:00   60.6      
+WU_Temperature   1/14/2011  13:33:00   60.8      
+WU_Temperature   1/14/2011  13:34:00   61        
+WU_Temperature   1/14/2011  13:38:00   61.1      
+WU_Temperature   1/14/2011  13:43:00   61.3      
+WU_Temperature   1/14/2011  13:48:00   61.4      
+WU_Temperature   1/14/2011  13:53:00   61.7      
+WU_Temperature   1/14/2011  13:54:00   61.7      
+WU_Temperature   1/14/2011  13:58:00   61.9      
+WU_Temperature   1/14/2011  13:59:00   61.9      
+WU_Temperature   1/14/2011  14:04:00   62.1      
+WU_Temperature   1/14/2011  14:08:00   62.2      
+WU_Temperature   1/14/2011  14:09:00   62.2      
+WU_Temperature   1/14/2011  14:14:00   62.4      
+WU_Temperature   1/14/2011  14:18:00   62.4      
+WU_Temperature   1/14/2011  14:19:00   62.4      
+WU_Temperature   1/14/2011  14:24:00   62.2      
+WU_Temperature   1/14/2011  14:29:00   62.4      
+WU_Temperature   1/14/2011  14:30:00   62.4      
+WU_Temperature   1/14/2011  14:34:00   62.5      
+WU_Temperature   1/14/2011  14:35:00   62.5      
+WU_Temperature   1/14/2011  14:39:00   62.7      
+WU_Temperature   1/14/2011  14:40:00   62.7      
+WU_Temperature   1/14/2011  14:44:00   62.7      
+WU_Temperature   1/14/2011  14:45:00   62.8      
+WU_Temperature   1/14/2011  14:46:00   62.8      
+WU_Temperature   1/14/2011  14:49:00   62.8      
+WU_Temperature   1/14/2011  14:51:00   62.8      
+WU_Temperature   1/14/2011  14:54:00   63        
+WU_Temperature   1/14/2011  14:55:00   63        
+WU_Temperature   1/14/2011  14:56:00   63        
+WU_Temperature   1/14/2011  14:59:00   63.2      
+WU_Temperature   1/14/2011  15:00:00   63.2      
+WU_Temperature   1/14/2011  15:01:00   63.2      
+WU_Temperature   1/14/2011  15:04:00   63.3      
+WU_Temperature   1/14/2011  15:05:00   63.3      
+WU_Temperature   1/14/2011  15:06:00   63.3      
+WU_Temperature   1/14/2011  15:09:00   63.3      
+WU_Temperature   1/14/2011  15:10:00   63.5      
+WU_Temperature   1/14/2011  15:15:00   63.5      
+WU_Temperature   1/14/2011  15:20:00   63.6      
+WU_Temperature   1/14/2011  15:25:00   63.6      
+WU_Temperature   1/14/2011  15:26:00   63.6      
+WU_Temperature   1/14/2011  15:30:00   63.6      
+WU_Temperature   1/14/2011  15:31:00   63.6      
+WU_Temperature   1/14/2011  15:33:00   63.6      
+WU_Temperature   1/14/2011  15:36:00   63.6      
+WU_Temperature   1/14/2011  15:41:00   63.6      
+WU_Temperature   1/14/2011  15:46:00   63.6      
+WU_Temperature   1/14/2011  15:47:00   63.6      
+WU_Temperature   1/14/2011  15:51:00   63.5      
+WU_Temperature   1/14/2011  15:52:00   63.5      
+WU_Temperature   1/14/2011  15:56:00   63.5      
+WU_Temperature   1/14/2011  15:57:00   63.5      
+WU_Temperature   1/14/2011  16:01:00   63.5      
+WU_Temperature   1/14/2011  16:02:00   63.5      
+WU_Temperature   1/14/2011  16:06:00   63.5      
+WU_Temperature   1/14/2011  16:07:00   63.5      
+WU_Temperature   1/14/2011  16:12:00   63.5      
+WU_Temperature   1/14/2011  16:17:00   63.5      
+WU_Temperature   1/14/2011  16:18:00   63.5      
+WU_Temperature   1/14/2011  16:22:00   63.3      
+WU_Temperature   1/14/2011  16:27:00   63.3      
+WU_Temperature   1/14/2011  16:28:00   63.2      
+WU_Temperature   1/14/2011  16:33:00   63        
+WU_Temperature   1/14/2011  16:35:00   62.8      
+WU_Temperature   1/14/2011  16:38:00   62.7      
+WU_Temperature   1/14/2011  16:43:00   62.5      
+WU_Temperature   1/14/2011  16:48:00   62.2      
+WU_Temperature   1/14/2011  16:49:00   62.2      
+WU_Temperature   1/14/2011  16:53:00   62.1      
+WU_Temperature   1/14/2011  16:54:00   62.1      
+WU_Temperature   1/14/2011  16:58:00   61.6      
+WU_Temperature   1/14/2011  16:59:00   61.6      
+WU_Temperature   1/14/2011  17:04:00   61.3      
+WU_Temperature   1/14/2011  17:09:00   60.8      
+WU_Temperature   1/14/2011  17:14:00   60.3      
+WU_Temperature   1/14/2011  17:15:00   60.3      
+WU_Temperature   1/14/2011  17:19:00   60        
+WU_Temperature   1/14/2011  17:20:00   60        
+WU_Temperature   1/14/2011  17:24:00   59.7      
+WU_Temperature   1/14/2011  17:27:00   59.6      
+WU_Temperature   1/14/2011  17:29:00   59.4      
+WU_Temperature   1/14/2011  17:30:00   59.4      
+WU_Temperature   1/14/2011  17:35:00   59        
+WU_Temperature   1/14/2011  17:40:00   58.7      
+WU_Temperature   1/14/2011  17:45:00   58.2      
+WU_Temperature   1/14/2011  17:46:00   58.2      
+WU_Temperature   1/14/2011  17:50:00   57.7      
+WU_Temperature   1/14/2011  17:51:00   57.7      
+WU_Temperature   1/14/2011  17:53:00   57.6      
+WU_Temperature   1/14/2011  17:55:00   57.3      
+WU_Temperature   1/14/2011  17:56:00   57.3      
+WU_Temperature   1/14/2011  17:57:00   57.1      
+WU_Temperature   1/14/2011  17:58:00   57.1      
+WU_Temperature   1/14/2011  18:01:00   56.8      
+WU_Temperature   1/14/2011  18:02:00   56.7      
+WU_Temperature   1/14/2011  18:03:00   56.7      
+WU_Temperature   1/14/2011  18:08:00   56.1      
+WU_Temperature   1/14/2011  18:13:00   55.7      
+WU_Temperature   1/14/2011  18:18:00   55.2      
+WU_Temperature   1/14/2011  18:23:00   54.8      
+WU_Temperature   1/14/2011  18:28:00   54.3      
+WU_Temperature   1/14/2011  18:29:00   54.2      
+WU_Temperature   1/14/2011  18:33:00   53.9      
+WU_Temperature   1/14/2011  18:34:00   53.9      
+WU_Temperature   1/14/2011  18:35:00   53.7      
+WU_Temperature   1/14/2011  18:38:00   53.4      
+WU_Temperature   1/14/2011  18:40:00   53.3      
+WU_Temperature   1/14/2011  18:45:00   53        
+WU_Temperature   1/14/2011  18:50:00   52.6      
+WU_Temperature   1/14/2011  18:51:00   52.4      
+WU_Temperature   1/14/2011  18:55:00   52.1      
+WU_Temperature   1/14/2011  18:56:00   52.1      
+WU_Temperature   1/14/2011  18:57:00   52        
+WU_Temperature   1/14/2011  19:01:00   51.7      
+WU_Temperature   1/14/2011  19:02:00   51.5      
+WU_Temperature   1/14/2011  19:07:00   51.1      
+WU_Temperature   1/14/2011  19:12:00   50.8      
+WU_Temperature   1/14/2011  19:17:00   50.5      
+WU_Temperature   1/14/2011  19:22:00   50.2      
+WU_Temperature   1/14/2011  19:27:00   50        
+WU_Temperature   1/14/2011  19:28:00   49.9      
+WU_Temperature   1/14/2011  19:32:00   49.7      
+WU_Temperature   1/14/2011  19:33:00   49.7      
+WU_Temperature   1/14/2011  19:37:00   49.5      
+WU_Temperature   1/14/2011  19:38:00   49.5      
+WU_Temperature   1/14/2011  19:42:00   49.3      
+WU_Temperature   1/14/2011  19:43:00   49.3      
+WU_Temperature   1/14/2011  19:48:00   49.2      
+WU_Temperature   1/14/2011  19:53:00   48.9      
+WU_Temperature   1/14/2011  19:58:00   48.7      
+WU_Temperature   1/14/2011  20:03:00   48.6      
+WU_Temperature   1/14/2011  20:04:00   48.6      
+WU_Temperature   1/14/2011  20:08:00   48.4      
+WU_Temperature   1/14/2011  20:09:00   48.4      
+WU_Temperature   1/14/2011  20:13:00   48.3      
+WU_Temperature   1/14/2011  20:14:00   48.3      
+WU_Temperature   1/14/2011  20:19:00   48.3      
+WU_Temperature   1/14/2011  20:24:00   48.1      
+WU_Temperature   1/14/2011  20:25:00   48.1      
+WU_Temperature   1/14/2011  20:26:00   48        
+WU_Temperature   1/14/2011  20:30:00   48        
+WU_Temperature   1/14/2011  20:35:00   47.8      
+WU_Temperature   1/14/2011  20:40:00   47.8      
+WU_Temperature   1/14/2011  20:45:00   47.8      
+WU_Temperature   1/14/2011  20:46:00   47.8      
+WU_Temperature   1/14/2011  20:51:00   47.7      
+WU_Temperature   1/14/2011  20:53:00   47.7      
+WU_Temperature   1/14/2011  20:56:00   47.7      
+WU_Temperature   1/14/2011  20:58:00   47.7      
+WU_Temperature   1/14/2011  21:02:00   47.5      
+WU_Temperature   1/14/2011  21:03:00   47.5      
+WU_Temperature   1/14/2011  21:08:00   47.5      
+WU_Temperature   1/14/2011  21:13:00   47.5      
+WU_Temperature   1/14/2011  21:18:00   47.5      
+WU_Temperature   1/14/2011  21:23:00   47.4      
+WU_Temperature   1/14/2011  21:28:00   47.4      
+WU_Temperature   1/14/2011  21:29:00   47.4      
+WU_Temperature   1/14/2011  21:33:00   47.4      
+WU_Temperature   1/14/2011  21:34:00   47.4      
+WU_Temperature   1/14/2011  21:35:00   47.4      
+WU_Temperature   1/14/2011  21:39:00   47.2      
+WU_Temperature   1/14/2011  21:40:00   47.2      
+WU_Temperature   1/14/2011  21:44:00   47.1      
+WU_Temperature   1/14/2011  21:45:00   47.1      
+WU_Temperature   1/14/2011  21:49:00   47.1      
+WU_Temperature   1/14/2011  21:50:00   47.1      
+WU_Temperature   1/14/2011  21:51:00   47.1      
+WU_Temperature   1/14/2011  21:54:00   46.9      
+WU_Temperature   1/14/2011  21:55:00   46.9      
+WU_Temperature   1/14/2011  21:56:00   46.9      
+WU_Temperature   1/14/2011  21:59:00   46.9      
+WU_Temperature   1/14/2011  22:04:00   46.8      
+WU_Temperature   1/14/2011  22:09:00   46.8      
+WU_Temperature   1/14/2011  22:14:00   46.8      
+WU_Temperature   1/14/2011  22:19:00   46.6      
+WU_Temperature   1/14/2011  22:24:00   46.6      
+WU_Temperature   1/14/2011  22:29:00   46.6      
+WU_Temperature   1/14/2011  22:30:00   46.6      
+WU_Temperature   1/14/2011  22:35:00   46.5      
+WU_Temperature   1/14/2011  22:36:00   46.5      
+WU_Temperature   1/14/2011  22:40:00   46.5      
+WU_Temperature   1/14/2011  22:41:00   46.5      
+WU_Temperature   1/14/2011  22:45:00   46.5      
+WU_Temperature   1/14/2011  22:46:00   46.5      
+WU_Temperature   1/14/2011  22:50:00   46.3      
+WU_Temperature   1/14/2011  22:51:00   46.3      
+WU_Temperature   1/14/2011  22:52:00   46.3      
+WU_Temperature   1/14/2011  22:55:00   46.3      
+WU_Temperature   1/14/2011  22:56:00   46.3      
+WU_Temperature   1/14/2011  22:57:00   46.3      
+WU_Temperature   1/14/2011  23:00:00   46.3      
+WU_Temperature   1/14/2011  23:02:00   46.3      
+WU_Temperature   1/14/2011  23:05:00   46.2      
+WU_Temperature   1/14/2011  23:10:00   46.2      
+WU_Temperature   1/14/2011  23:15:00   46.2      
+WU_Temperature   1/14/2011  23:20:00   46.1      
+WU_Temperature   1/14/2011  23:21:00   46.1      
+WU_Temperature   1/14/2011  23:26:00   45.9      
+WU_Temperature   1/14/2011  23:31:00   45.9      
+WU_Temperature   1/14/2011  23:32:00   45.9      
+WU_Temperature   1/14/2011  23:36:00   45.8      
+WU_Temperature   1/14/2011  23:37:00   45.8      
+WU_Temperature   1/14/2011  23:41:00   45.8      
+WU_Temperature   1/14/2011  23:42:00   45.8      
+WU_Temperature   1/14/2011  23:43:00   45.6      
+WU_Temperature   1/14/2011  23:47:00   45.6      
+WU_Temperature   1/14/2011  23:48:00   45.6      
+WU_Temperature   1/14/2011  23:53:00   45.5      
+WU_Temperature   1/14/2011  23:54:00   45.5      
+WU_Temperature   1/14/2011  23:58:00   45.3      
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 0.000 0.000 10000.000 10000.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+3                5349.650           2494.172          
+2                6526.807           1864.802          
+4                6538.462           1876.457          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                1753.247           9012.987          
+1                1753.247           8974.026          
+1                1753.247           8974.026          
+1                2155.844           8844.156          
+1                2961.039           8883.117          
+1                4220.779           9051.948          
+1                5051.948           8935.065          
+1                5337.662           8233.766          
+1                5493.506           7038.961          
+1                5428.571           5831.169          
+1                5337.662           4714.286          
+1                5337.662           3753.247          
+1                5584.416           3103.896          
+1                5675.325           2636.364          
+1                5571.429           2194.805          
+1                3831.169           2558.442          
+1                1662.338           3688.312          
+1                1311.688           3792.208          
+1                376.623            3870.130          
+1                -246.753           3896.104          
+1                -675.325           3922.078          
+1                -1090.909          4519.481          
+1                -1259.740          5298.701          
+1                -1363.636          6220.779          
+1                -1298.701          6857.143          
+1                -1064.935          7519.481          
+1                -896.104           8038.961          
+1                -636.364           8649.351          
+1                -337.662           9000.000          
+1                -51.948            9155.844          
+1                428.571            9168.831          
+1                974.026            9090.909          
+1                1532.468           9038.961          
+1                1844.156           9051.948          
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                792.208            7727.273          
+

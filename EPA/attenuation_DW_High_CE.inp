@@ -1,0 +1,231 @@
+[TITLE]
+;;Project Title/Notes
+  Input and Output FilesSW 1 0 20
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           GPM
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           02/22/2002
+START_TIME           00:00:00
+REPORT_START_DATE    02/22/2002
+REPORT_START_TIME    00:00:00
+END_DATE             02/28/2002
+END_TIME             13:20:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:10
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:01 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  FROUDE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     1.0
+MIN_SURFAREA         10.0
+MAX_TRIALS           20
+HEAD_TOLERANCE       0.0001
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.1
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+;   *    JUNCTION   GRELEV   Z      QINST  Y
+Inflow           10.00      10.00      .00        0          0         
+mid1             10.00      10.00      .00        0          0         
+mid10            10.00      10.00      .00        0          0         
+mid11            10.00      10.00      .00        0          0         
+mid12            10.00      10.00      .00        0          0         
+mid13            10.00      10.00      .00        0          0         
+mid14            10.00      10.00      .00        0          0         
+mid15            10.00      10.00      .00        0          0         
+mid16            10.00      10.00      .00        0          0         
+mid17            10.00      10.00      .00        0          0         
+mid18            10.00      10.00      .00        0          0         
+mid19            10.00      10.00      .00        0          0         
+mid2             10.00      10.00      .00        0          0         
+mid20            10.00      10.00      .00        0          0         
+mid3             10.00      10.00      .00        0          0         
+mid4             10.00      10.00      .00        0          0         
+mid5             10.00      10.00      .00        0          0         
+mid6             10.00      10.00      .00        0          0         
+mid7             10.00      10.00      .00        0          0         
+mid8             10.00      10.00      .00        0          0         
+mid9             10.00      10.00      .00        0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+;  *   Extran outfall nodes I1 - free I2 - gates
+Outlet           10.0       FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+;   *   NCOND          NJ1          NJ2       QO  NKLASS    AFULL       DEEP       WIDE      LEN          ZP1        ZP2     ROUGH    STHETA      SPHI      ENTK     EXITK    OTHERK   C1 Flags
+pipe1            Inflow           mid1             1000.0     0.011      0.0        0.0        0.0        0         
+pipe2            mid1             mid2             1000.0     0.011      0.0        0.0        0.0        0         
+pipe3            mid2             mid3             1000.0     0.011      0.0        0.0        0.0        0         
+pipe4            mid3             mid4             1000.0     0.011      0.0        0.0        0.0        0         
+pipe5            mid4             mid5             1000.0     0.011      0.0        0.0        0.0        0         
+pipe6            mid5             mid6             1000.0     0.011      0.0        0.0        0.0        0         
+pipe7            mid6             mid7             1000.0     0.011      0.0        0.0        0.0        0         
+pipe8            mid7             mid8             1000.0     0.011      0.0        0.0        0.0        0         
+pipe9            mid8             mid9             1000.0     0.011      0.0        0.0        0.0        0         
+pip10            mid9             mid10            1000.0     0.011      0.0        0.0        0.0        0         
+pip11            mid10            mid11            1000.0     0.011      0.0        0.0        0.0        0         
+pip12            mid11            mid12            1000.0     0.011      0.0        0.0        0.0        0         
+pip13            mid12            mid13            1000.0     0.011      0.0        0.0        0.0        0         
+pip14            mid13            mid14            1000.0     0.011      0.0        0.0        0.0        0         
+pip15            mid14            mid15            1000.0     0.011      0.0        0.0        0.0        0         
+pip16            mid15            mid16            1000.0     0.011      0.0        0.0        0.0        0         
+pip17            mid16            mid17            1000.0     0.011      0.0        0.0        0.0        0         
+pip18            mid17            mid18            1000.0     0.011      0.0        0.0        0.0        0         
+pip19            mid18            mid19            1000.0     0.011      0.0        0.0        0.0        0         
+pip20            mid19            mid20            1000.0     0.011      0.0        0.0        0.0        0         
+outlet           mid20            Outlet           1000.0     0.011      0.0        0.0        0.0        0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+pipe1            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe2            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe3            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe4            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe5            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe6            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe7            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe8            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe9            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip10            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip11            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip12            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip13            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip14            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip15            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip16            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip17            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip18            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip19            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip20            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+outlet           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+Inflow           FLOW             INFLOWatInflow   FLOW     1.0      1.0              
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+INFLOWatInflow   02/22/2002 00:00      0.00000   
+INFLOWatInflow              00:15      2.00000   
+INFLOWatInflow              08:00      2.00000   
+INFLOWatInflow              08:15      0.00000   
+INFLOWatInflow   02/23/2002 00:00      0.00000   
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+Node       Inflow           Inflow          
+Node       mid1             mid1            
+Node       mid10            mid10           
+Node       mid11            mid11           
+Node       mid12            mid12           
+Node       mid13            mid13           
+Node       mid14            mid14           
+Node       mid15            mid15           
+Node       mid16            mid16           
+Node       mid17            mid17           
+Node       mid18            mid18           
+Node       mid19            mid19           
+Node       mid2             mid2            
+Node       mid20            mid20           
+Node       mid3             mid3            
+Node       mid4             mid4            
+Node       mid5             mid5            
+Node       mid6             mid6            
+Node       mid7             mid7            
+Node       mid8             mid8            
+Node       mid9             mid9            
+Node       Outlet           Outlet          
+Link       pipe1            pipe1           
+Link       pipe2            pipe2           
+Link       pipe3            pipe3           
+Link       pipe4            pipe4           
+Link       pipe5            pipe5           
+Link       pipe6            pipe6           
+Link       pipe7            pipe7           
+Link       pipe8            pipe8           
+Link       pipe9            pipe9           
+Link       pip10            pip10           
+Link       pip11            pip11           
+Link       pip12            pip12           
+Link       pip13            pip13           
+Link       pip14            pip14           
+Link       pip15            pip15           
+Link       pip16            pip16           
+Link       pip17            pip17           
+Link       pip18            pip18           
+Link       pip19            pip19           
+Link       pip20            pip20           
+Link       outlet           outlet          
+
+[MAP]
+DIMENSIONS 29.500 29.500 260.500 260.500
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Inflow           40.000             40.000            
+mid1             50.000             50.000            
+mid10            140.000            140.000           
+mid11            150.000            150.000           
+mid12            160.000            160.000           
+mid13            170.000            170.000           
+mid14            180.000            180.000           
+mid15            190.000            190.000           
+mid16            200.000            200.000           
+mid17            210.000            210.000           
+mid18            220.000            220.000           
+mid19            230.000            230.000           
+mid2             60.000             60.000            
+mid20            240.000            240.000           
+mid3             70.000             70.000            
+mid4             80.000             80.000            
+mid5             90.000             90.000            
+mid6             100.000            100.000           
+mid7             110.000            110.000           
+mid8             120.000            120.000           
+mid9             130.000            130.000           
+Outlet           250.000            250.000           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
