@@ -1,0 +1,87 @@
+[TITLE]
+;;Project Title/Notes
+'EXTRAN USER''S MANUAL EXAMPLE PROBLEM 73 ISOL = 0 SOLUTION' ;'Simple surcharge example in three conduits with medium surcharge level' ;
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/1988
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/1988
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/1988
+END_TIME             03:00:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:30
+WET_STEP             00:15:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:10 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+;                 Invert     Outfall      Stage/Table
+;Name             Elev.      Type         Time Series
+;----------------------------------------------------
+4                171.9      FREE                        NO                       
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+;Name             Date       Time       Value
+;-------------------------------------------------
+FLOW@1           01/01/1988 00:00      0.00000   
+FLOW@1           01/01/1988 00:15      80.00000  
+FLOW@1           01/01/1988 03:00      80.00000  
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 1985.000 1890.000 2315.000 2110.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+4                2152.791           1951.153          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

@@ -1,0 +1,204 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.1 (Build 5.1.012)
+  --------------------------------------------------------------
+
+  Example 3 of Extran Manual - 
+  Sump Orifice 
+  
+  
+  *********************************************************
+  NOTE: The summary statistics displayed in this report are
+  based on results found at every computational time step,  
+  not just on results from each reporting time step.
+  *********************************************************
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... LPS
+  Process Models:
+    Rainfall/Runoff ........ NO
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Flow Routing Method ...... DYNWAVE
+  Starting Date ............ 01/01/2002 00:00:00
+  Ending Date .............. 01/01/2002 08:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:05:00
+  Routing Time Step ........ 20.00 sec
+  Variable Time Step ....... NO
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 m
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        hectare-m      10^6 ltr
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.000         0.000
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.146         1.458
+  External Outflow .........         0.030         0.297
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.157         1.568
+  Continuity Error (%) .....       -27.918
+  
+  
+  *************************
+  Highest Continuity Errors
+  *************************
+  Node 16009 (56.42%)
+  Node 10309 (39.52%)
+  Node 81309 (26.44%)
+  Node 80608 (17.41%)
+  Node 15009 (12.23%)
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :    20.00 sec
+  Average Time Step           :    20.00 sec
+  Maximum Time Step           :    20.00 sec
+  Percent in Steady State     :     0.00
+  Average Iterations per Step :     2.00
+  Percent Not Converging      :     0.00
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type       Meters   Meters   Meters  days hr:min      Meters
+  ---------------------------------------------------------------------------------
+  80408                JUNCTION     0.04     0.10   124.70     0  01:05        0.10
+  80608                JUNCTION     0.08     0.11   118.41     0  03:10        0.11
+  81009                JUNCTION     0.07     0.12   128.32     0  03:01        0.12
+  81309                JUNCTION     0.06     0.08   117.58     0  04:15        0.08
+  82309                JUNCTION     0.03     0.06   112.36     0  03:01        0.06
+  10309                JUNCTION     0.07     0.17   101.77     0  08:00        0.17
+  15009                JUNCTION     0.09     0.13   111.63     0  03:34        0.13
+  16009                JUNCTION     0.12     0.19   102.19     0  06:33        0.19
+  16109                JUNCTION     0.01     0.01   102.81     0  03:32        0.01
+  10208                OUTFALL      0.05     0.13    90.03     0  08:00        0.13
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           LPS      LPS  days hr:min    10^6 ltr    10^6 ltr     Percent
+  -------------------------------------------------------------------------------------------------
+  80408                JUNCTION     45.00    45.00     0  00:15       0.486       0.486      -4.753
+  80608                JUNCTION      0.00    48.50     0  01:43           0        0.51      21.078
+  81009                JUNCTION     50.00    50.00     0  00:15        0.54        0.54      -7.460
+  81309                JUNCTION      0.00    46.54     0  03:03           0       0.584      35.935
+  82309                JUNCTION     40.00    77.69     0  03:00       0.432       0.853      -0.133
+  10309                JUNCTION      0.00    44.11     0  07:32           0       0.491      65.344
+  15009                JUNCTION      0.00    92.16     0  03:02           0        1.25      13.938
+  16009                JUNCTION      0.00    74.67     0  03:47           0        1.13     129.444
+  16109                JUNCTION      0.00     2.90     0  03:02           0      0.0349      10.821
+  10208                OUTFALL       0.00    39.95     0  08:00           0       0.297       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  No nodes were surcharged.
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       LPS       LPS    10^6 ltr
+  -----------------------------------------------------------
+  10208                 64.93     15.92     39.95       0.297
+  -----------------------------------------------------------
+  System                64.93     15.92     39.95       0.297
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          LPS  days hr:min     m/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  8040                 CONDUIT     48.50     0  01:43      0.79    0.00    0.03
+  8060                 CONDUIT     38.28     0  03:10      0.71    0.00    0.02
+  8100                 CONDUIT     46.54     0  03:03      0.68    0.00    0.02
+  8130                 CONDUIT     25.63     0  04:15      0.29    0.00    0.02
+  1030                 CONDUIT     39.95     0  08:00      0.60    0.00    0.02
+  1570                 CONDUIT     72.72     0  03:47      0.53    0.00    0.03
+  1600                 CONDUIT      1.98     0  03:32      0.10    0.00    0.02
+  1630                 CONDUIT     44.11     0  07:32      0.48    0.00    0.02
+  1602                 CONDUIT      2.90     0  03:02      0.12    0.00    0.01
+  90010                ORIFICE     72.72     0  03:01                      0.03
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  8040                    1.00   0.00  0.00  0.00  0.89  0.11  0.00  0.00  0.78  0.00
+  8060                    1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  8100                    1.00   0.00  0.00  0.00  0.97  0.03  0.00  0.00  0.48  0.00
+  8130                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00
+  1030                    1.00   0.06  0.00  0.00  0.94  0.00  0.00  0.00  0.00  0.00
+  1570                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.53  0.00
+  1600                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00
+  1630                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  1602                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  No conduits were surcharged.
+  
+
+  Analysis begun on:  Tue Nov 20 16:56:22 2018
+  Analysis ended on:  Tue Nov 20 16:56:22 2018
+  Total elapsed time: < 1 sec

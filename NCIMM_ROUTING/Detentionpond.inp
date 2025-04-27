@@ -1,0 +1,281 @@
+[TITLE]
+;;Project Title/Notes
+ Sample using Malaysian Master Rainfall and Infiltration
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/2008
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/2008
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/2008
+END_TIME             03:00:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:05
+WET_STEP             00:01:00
+DRY_STEP             00:01:00
+ROUTING_STEP         0:00:05 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  FROUDE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+EWCPM~60min      VOLUME    0.08333  1.0      TIMESERIES RN#3            
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+Inlet~C#1        EWCPM~60min      Inlet~C          0.442    65       1        100      0                        
+Inlet~E#1        EWCPM~60min      Inlet~E          0.303    65       1        100      0                        
+Inlet~H#1        EWCPM~60min      Inlet~H          0.993    65       1        100      0                        
+Inlet~G#1        EWCPM~60min      Inlet~G          0.678    65       1        100      0                        
+Inlet~F#1        EWCPM~60min      Inlet~F          0.668    65       1        100      0                        
+Inlet~D#1        EWCPM~60min      Inlet~D          0.506    65       1        100      0                        
+Inlet~B#1        EWCPM~60min      Inlet~B          0.243    65       1        100      0                        
+Inlet~A#1        EWCPM~60min      Inlet~A          0.324    65       1        100      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+Inlet~C#1        0.014      0.03       1.5        0          0          OUTLET    
+Inlet~E#1        0.014      0.03       1.5        0          0          OUTLET    
+Inlet~H#1        0.014      0.03       1.5        0          0          OUTLET    
+Inlet~G#1        0.014      0.03       1.5        0          0          OUTLET    
+Inlet~F#1        0.014      0.03       1.5        0          0          OUTLET    
+Inlet~D#1        0.014      0.03       1.5        0          0          OUTLET    
+Inlet~B#1        0.014      0.03       1.5        0          0          OUTLET    
+Inlet~A#1        0.014      0.03       1.5        0          0          OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+Inlet~C#1        0.157      0.039      0.3        7          0         
+Inlet~E#1        0.157      0.039      0.3        7          0         
+Inlet~H#1        0.157      0.039      0.3        7          0         
+Inlet~G#1        0.157      0.039      0.3        7          0         
+Inlet~F#1        0.157      0.039      0.3        7          0         
+Inlet~D#1        0.157      0.039      0.3        7          0         
+Inlet~B#1        0.157      0.039      0.3        7          0         
+Inlet~A#1        0.157      0.039      0.3        7          0         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+MainDrain1       43.1       3          0          0          0         
+MainDrain2       42.4       3.4        0          0          0         
+MainDrain3       41.8       3.4        0          0          0         
+Inlet~C          46.9       2          0          0          0         
+Inlet~E          46.4       2          0.1        0          0         
+Inlet~H          46.1       2          0.4        0          0         
+Inlet~G          45.8       2          0.7        0          0         
+Inlet~F          45.4       2.3        1.1        0          0         
+Inlet~D          47.1       2.3        0          0          0         
+Inlet~B          55         2.9        0          0          0         
+Inlet~A          53.4       2          0          0          0         
+Riser            44.7       4          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Lake             40         FIXED      42               NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+Pond             44.7     4          1.8        TABULAR    Pond_ST                      7.42066e+06 0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+Drain1           MainDrain1       MainDrain2       146.21     0.025      0          0          0          0         
+Drain2           MainDrain2       MainDrain3       97.64      0.025      0          0          0          0         
+Drain3           MainDrain3       Lake             48.57      0.025      0          1          0          0         
+L7               Inlet~C          Inlet~E          50.89      0.025      0          0          0          0         
+L8               Inlet~E          Pond             50.49      0.025      0          1.2        0          0         
+L9               Inlet~H          Inlet~G          139.13     0.025      0          0          0          0         
+L10              Inlet~G          Inlet~F          113.61     0.025      0          0          0          0         
+L11              Inlet~F          Pond             47.29      0.025      0          0.3        0          0         
+L12              Inlet~B          Inlet~D          129.17     0.025      0          0          0          0         
+L13              Inlet~B          Inlet~A          72.86      0.025      0          0          0          0         
+L14              Inlet~A          Inlet~C          137.54     0.025      0          0          0          0         
+L15              Inlet~D          Inlet~H          122.89     0.025      0          0          0          0         
+culvert          Riser            MainDrain3       40         0.025      0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+Drain1           TRAPEZOIDAL  3                3          0          0          1                    
+Drain2           TRAPEZOIDAL  3.4              3          0          0          1                    
+Drain3           TRAPEZOIDAL  1                3          0          0          1                    
+L7               TRAPEZOIDAL  2                1          0          0          1                    
+L8               TRAPEZOIDAL  2                1          0          0          1                    
+L9               TRAPEZOIDAL  2                1          0          0          1                    
+L10              TRAPEZOIDAL  2                1          0          0          1                    
+L11              TRAPEZOIDAL  2                1          0          0          1                    
+L12              TRAPEZOIDAL  2                1          0          0          1                    
+L13              TRAPEZOIDAL  2                1          0          0          1                    
+L14              TRAPEZOIDAL  2                1          0          0          1                    
+L15              TRAPEZOIDAL  2                1          0          0          1                    
+culvert          CIRCULAR     1.5              0.0001     0          0          1                    
+
+[POLLUTANTS]
+;;Name           Units  Crain      Cgw        Crdii      Kdecay     SnowOnly   Co-Pollutant     Co-Frac    Cdwf       Cinit     
+;;-------------- ------ ---------- ---------- ---------- ---------- ---------- ---------------- ---------- ---------- ----------
+BMP              MG/L   0          0          0          0          NO         *                0.0        0          0         
+
+[LOADINGS]
+;;Subcatchment   Pollutant        Buildup   
+;;-------------- ---------------- ----------
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+MainDrain1       FLOW             ""               FLOW     1.0      1.0      1.500000
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+Pond_ST          Storage    0          450       
+Pond_ST                     4          970       
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+RN#3                        0.00000    3.27132   
+RN#3                        0.08333    5.8716    
+RN#3                        0.16667    14.0918   
+RN#3                        0.25000    10.0656   
+RN#3                        0.33333    19.4602   
+RN#3                        0.41667    8.47188   
+RN#3                        0.50000    7.46532   
+RN#3                        0.58333    4.78116   
+RN#3                        0.66667    4.02624   
+RN#3                        0.75000    2.60028   
+RN#3                        0.83333    2.34864   
+RN#3                        0.91667    1.42596   
+RN#3                        1.00000    0.0       
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 911681.501 192527.904 911998.564 192841.780
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+MainDrain1       911974.929         192542.171        
+MainDrain2       911835.420         192585.940        
+MainDrain3       911742.254         192615.152        
+Inlet~C          911806.630         192721.062        
+Inlet~E          911755.798         192718.708        
+Inlet~H          911984.152         192551.187        
+Inlet~G          911851.160         192592.056        
+Inlet~F          911742.557         192625.418        
+Inlet~D          911973.421         192673.609        
+Inlet~B          911962.071         192802.283        
+Inlet~A          911893.718         192827.513        
+Riser            911752.058         192653.481        
+Lake             911695.913         192629.705        
+Pond             911756.740         192669.745        
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Inlet~C#1        911855.340         192780.716        
+Inlet~C#1        911905.706         192762.203        
+Inlet~C#1        911882.950         192703.324        
+Inlet~C#1        911855.037         192713.339        
+Inlet~C#1        911827.123         192721.534        
+Inlet~C#1        911821.358         192705.448        
+Inlet~C#1        911801.030         192721.230        
+Inlet~C#1        911806.182         192721.852        
+Inlet~C#1        911855.340         192780.716        
+Inlet~E#1        911801.030         192721.230        
+Inlet~E#1        911821.358         192705.448        
+Inlet~E#1        911810.132         192667.511        
+Inlet~E#1        911749.450         192678.134        
+Inlet~E#1        911754.733         192720.205        
+Inlet~E#1        911801.030         192721.230        
+Inlet~H#1        911911.133         192692.258        
+Inlet~H#1        911876.629         192584.325        
+Inlet~H#1        911983.876         192550.789        
+Inlet~H#1        911973.973         192668.118        
+Inlet~H#1        911911.133         192692.258        
+Inlet~G#1        911876.629         192584.325        
+Inlet~G#1        911821.358         192601.955        
+Inlet~G#1        911855.037         192713.339        
+Inlet~G#1        911882.950         192703.324        
+Inlet~G#1        911911.133         192692.258        
+Inlet~G#1        911876.629         192584.325        
+Inlet~F#1        911821.358         192601.955        
+Inlet~F#1        911855.037         192713.339        
+Inlet~F#1        911827.123         192721.534        
+Inlet~F#1        911821.358         192705.448        
+Inlet~F#1        911810.132         192667.511        
+Inlet~F#1        911749.450         192678.134        
+Inlet~F#1        911742.385         192625.098        
+Inlet~F#1        911821.358         192601.955        
+Inlet~D#1        911930.282         192751.277        
+Inlet~D#1        911905.706         192762.203        
+Inlet~D#1        911882.950         192703.324        
+Inlet~D#1        911911.133         192692.258        
+Inlet~D#1        911973.973         192668.118        
+Inlet~D#1        911967.905         192733.977        
+Inlet~D#1        911930.282         192751.277        
+Inlet~B#1        911924.517         192816.529        
+Inlet~B#1        911930.282         192751.277        
+Inlet~B#1        911967.905         192733.977        
+Inlet~B#1        911962.140         192802.872        
+Inlet~B#1        911924.517         192816.529        
+Inlet~A#1        911924.517         192816.529        
+Inlet~A#1        911930.282         192751.277        
+Inlet~A#1        911905.706         192762.203        
+Inlet~A#1        911855.340         192780.716        
+Inlet~A#1        911893.646         192827.251        
+Inlet~A#1        911924.517         192816.529        
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

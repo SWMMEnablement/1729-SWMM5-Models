@@ -1,0 +1,1435 @@
+[TITLE]
+;;Project Title/Notes
+THE PONDS
+Green-Ampt Silty Sand
+Volume Based Heytographs
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           LPS
+INFILTRATION         GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           04/28/2010
+START_TIME           00:00:00
+REPORT_START_DATE    04/28/2010
+REPORT_START_TIME    00:00:00
+END_DATE             04/28/2010
+END_TIME             05:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:10
+WET_STEP             00:05:00
+DRY_STEP             00:05:00
+ROUTING_STEP         0:00:10 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         1.14
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.0015
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+RG1              VOLUME    0:05     1.0      TIMESERIES 5Y1Hr           
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+1                RG1              j6               1.0675   40       213.5    10.5     0                        
+2                RG1              j4               1.9320   40       411      8        0                        
+3                RG1              j5               1.9250   40       331      14       0                        
+4                RG1              j7               2.9013   40       483      16       0                        
+5                RG1              j8               2.7743   40       346      6        0                        
+6                RG1              j11              2.0315   40       338      5        0                        
+7                RG1              j9               3.8382   40       462      20       0                        
+8                RG1              mairpond         1.8915   50       259      20       0                        
+9                RG1              j14              0.7369   40       122      4        0                        
+10               RG1              j10              4.1362   40       413      14       0                        
+11               RG1              j22              3.3805   40       563      3        0                        
+12               RG1              j15              7.4624   40       746      11       0                        
+13               RG1              j2               3.8783   40       646      12       0                        
+14               RG1              j12              3.5249   35       440      15       0                        
+15               RG1              j13              6.2782   35       600      14       0                        
+16               RG1              crawfordslough   2.0434   50       335      20       0                        
+17               RG1              j25              3.563    40       400      12       0                        
+18               RG1              47               2.6495   25       264      28       0                        
+20               RG1              j20              2.535    40       298      13       0                        
+21               RG1              j19              1.4932   40       213      3        0                        
+22               RG1              j27              2.9466   40       382      8        0                        
+23               RG1              j24              1.4726   40       294      2        0                        
+24               RG1              j23              1.0021   40       286      15       0                        
+28               RG1              52               1.9716   25       197      25       0                        
+29               RG1              j55              5.8392   35       583      8        0                        
+30               RG1              j47              4.5640   34       507      16       0                        
+31               RG1              j45              4.5950   34       306      26       0                        
+32               RG1              j42              6.3596   34       706      15       0                        
+33               RG1              j51              1.9527   40       216      17       0                        
+34               RG1              j48              4.3410   40       394      26       0                        
+35               RG1              j50              2.2147   40       233      24       0                        
+36               RG1              j53              1.9887   40       497      22       0                        
+37               RG1              SouthCrestPond   1.5772   25       197      30       0                        
+38               RG1              j56              4.4384   35       634      6        0                        
+39               RG1              j37              4.8197   60       370      12       0                        
+40               RG1              j38              3.2379   70       360      6        0                        
+41               RG1              j41              2.6990   85       199      4        0                        
+42               RG1              j40              2.2738   25       151      9        0                        
+43               RG1              j39              1.6893   50       168      13       0                        
+44               RG1              j61              1.9910   40       242      4        0                        
+45               RG1              j17              6.1729   30       385      3        0                        
+46               RG1              j61              1.5895   50       122      13       0                        
+47               RG1              j29              .3482    40       174      7        0                        
+48               RG1              j28              .2695    40       67       2        0                        
+49               RG1              j30              .6859    40       228      2        0                        
+50               RG1              j24              .5020    40       167      2        0                        
+51               RG1              j31              1.2671   40       158      .5       0                        
+52               RG1              j32              .9245    40       260      3        0                        
+53               RG1              j33              .7164    40       238      7        0                        
+54               RG1              j34              .6550    40       163      9        0                        
+SC1              RG1              Jacksmithlake    6.94     61       466      25       0                        
+SC4              rg1              j62              1.57     51       174      30       0                        
+SC7              RG1              j64              1        80       139      9        0                        
+SC8              RG1              j67              .917     80       180      7        0                        
+SC9              RG1              j66              .153     80       180      6.24     0                        
+SC10             RG1              j65              .149     80       180      7.76     0                        
+SC11             RG1              j63              .43      80       180      9.22     0                        
+SC12             RG1              j68              .88      80       180      9        0                        
+SC16             RG1              r6               1.71     25       190      12       0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+1                .014       .35        2          5          25         OUTLET    
+2                .014       .35        2          5          25         OUTLET    
+3                .014       .35        2          5          25         OUTLET    
+4                .014       .35        2          5          25         OUTLET    
+5                .014       .35        2          5          25         OUTLET    
+6                .014       .35        2          5          25         OUTLET    
+7                .014       .35        2          5          25         OUTLET    
+8                .014       .35        2          5          25         OUTLET    
+9                .014       .35        2          5          25         OUTLET    
+10               .014       .35        2          5          25         OUTLET    
+11               .014       .35        2          5          25         OUTLET    
+12               .014       .35        2          5          25         OUTLET    
+13               .014       .35        2          5          25         OUTLET    
+14               .014       .35        2          5          25         OUTLET    
+15               .014       .35        2          5          25         OUTLET    
+16               .014       .35        2          5          25         OUTLET    
+17               .014       .35        2          5          25         OUTLET    
+18               .014       .35        2          5          25         OUTLET    
+20               .014       .35        2          5          25         OUTLET    
+21               .014       .35        2          5          25         OUTLET    
+22               .014       .35        2          5          25         OUTLET    
+23               .014       .35        2          5          25         OUTLET    
+24               .014       .35        2          5          25         OUTLET    
+28               .014       .35        2          5          25         OUTLET    
+29               .014       .35        2          5          25         OUTLET    
+30               .014       .35        2          5          25         OUTLET    
+31               .014       .35        2          5          25         OUTLET    
+32               .014       .35        2          5          25         OUTLET    
+33               .014       .35        2          5          25         OUTLET    
+34               .014       .35        2          5          25         OUTLET    
+35               .014       .35        2          5          25         OUTLET    
+36               .014       .35        2          5          25         OUTLET    
+37               .014       .35        2          5          25         OUTLET    
+38               .014       .35        2          5          25         OUTLET    
+39               .014       .35        2          5          25         OUTLET    
+40               .014       .35        2          5          25         OUTLET    
+41               .014       .35        2          5          25         OUTLET    
+42               .014       .35        2          5          25         OUTLET    
+43               .014       .35        2          5          25         OUTLET    
+44               .014       .35        2          5          25         OUTLET    
+45               .014       .35        2          5          25         OUTLET    
+46               .014       .35        2          5          25         OUTLET    
+47               .014       .35        2          5          25         OUTLET    
+48               .014       .35        2          5          25         OUTLET    
+49               .014       .35        2          5          25         OUTLET    
+50               .014       .35        2          5          25         OUTLET    
+51               .014       .35        2          5          25         OUTLET    
+52               .014       .35        2          5          25         OUTLET    
+53               .014       .35        2          5          25         OUTLET    
+54               .014       .35        2          5          25         OUTLET    
+SC1              .01        .35        0          5          100        OUTLET    
+SC4              .014       .35        2          5          25         OUTLET    
+SC7              .014       .35        2          5          25         OUTLET    
+SC8              .014       .35        2          5          25         OUTLET    
+SC9              .014       .35        2          5          25         OUTLET    
+SC10             .014       .35        2          5          25         OUTLET    
+SC11             .014       .35        2          5          25         OUTLET    
+SC12             .014       .35        2          5          25         OUTLET    
+SC16             .014       .35        2          5          25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Suction    Ksat       IMD       
+;;-------------- ---------- ---------- ----------
+1                61.3       59.8       .437      
+2                61.3       59.8       .437      
+3                61.3       59.8       .437      
+4                61.3       59.8       .437      
+5                61.3       59.8       .437      
+6                61.3       59.8       .437      
+7                61.3       59.8       .437      
+8                61.3       59.8       .437      
+9                61.3       59.8       .437      
+10               61.3       59.8       .437      
+11               61.3       59.8       .437      
+12               61.3       59.8       .437      
+13               61.3       59.8       .437      
+14               61.3       59.8       .437      
+15               61.3       59.8       .437      
+16               61.3       59.8       .437      
+17               61.3       59.8       .437      
+18               61.3       59.8       .437      
+20               61.3       59.8       .437      
+21               61.3       59.8       .437      
+22               61.3       59.8       .437      
+23               61.3       59.8       .437      
+24               61.3       59.8       .437      
+28               61.3       59.8       .437      
+29               61.3       59.8       .437      
+30               61.3       59.8       .437      
+31               61.3       59.8       .437      
+32               61.3       59.8       .437      
+33               61.3       59.8       .437      
+34               61.3       59.8       .437      
+35               61.3       59.8       .437      
+36               61.3       59.8       .437      
+37               61.3       59.8       .437      
+38               61.3       59.8       .437      
+39               61.3       59.8       .437      
+40               61.3       59.8       .437      
+41               61.3       59.8       .437      
+42               61.3       59.8       .437      
+43               61.3       59.8       .437      
+44               61.3       59.8       .437      
+45               61.3       59.8       .437      
+46               61.3       59.8       .437      
+47               61.3       59.8       .437      
+48               61.3       59.8       .437      
+49               61.3       59.8       .437      
+50               61.3       59.8       .437      
+51               61.3       59.8       .437      
+52               61.3       59.8       .437      
+53               61.3       59.8       .437      
+54               61.3       59.8       .437      
+SC1              61.3       59.8       .437      
+SC4              61.3       59.8       .437      
+SC7              61.3       59.8       .437      
+SC8              61.3       59.8       .437      
+SC9              61.3       59.8       .437      
+SC10             61.3       59.8       .437      
+SC11             61.3       59.8       .437      
+SC12             61.3       59.8       .437      
+SC16             61.3       59.8       .437      
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+J10              570        1.2        0          0          0         
+J11              575        1.2        0          0          0         
+J12              563        1.2        0          0          0         
+J13              552        1.2        0          0          0         
+J14              553        1.2        0          0          0         
+J15              525        1.37       0          0          0         
+J16              504        1.37       0          0          0         
+J17              491        1.2        0          0          0         
+J19              550        1.2        0          0          0         
+J2               575        1.2        0          0          0         
+J20              548        1.2        0          0          0         
+J21              540        1.2        0          0          0         
+J22              528        1.37       0          0          0         
+J23              530        1.37       0          0          0         
+J24              516.1      1.37       0          0          0         
+J25              540        1.2        0          0          0         
+J26              519        1.37       0          0          0         
+J27              523        1.37       0          0          0         
+J28              519.7      1.2        0          0          0         
+J29              521        1.2        0          0          0         
+J3               572.3      1.2        0          0          0         
+J30              517.8      1.37       0          0          0         
+J31              513.9      1.37       0          0          0         
+J32              514        1.2        0          0          0         
+J33              509.6      1.2        0          0          0         
+J34              507.7      1.2        0          0          0         
+J35              499.8      1.27       0          0          0         
+J37              510        1.37       0          0          0         
+J38              512        1.37       0          0          0         
+J39              498        1.2        0          0          0         
+J4               588        1.2        0          0          0         
+J40              486        1.37       0          0          0         
+J41              500        1.2        0          0          0         
+J42              645        1.2        0          0          0         
+J43              630        1.2        0          0          0         
+J44              626        1.2        0          0          0         
+J45              638        1.2        0          0          0         
+J46              607        1.37       0          0          0         
+J47              625        1.2        0          0          0         
+J48              595        1.37       0          0          0         
+J49              580        1.37       0          0          0         
+J5               570        1.37       0          0          0         
+J50              565        1.37       0          0          0         
+J51              603        1.2        0          0          0         
+J52              560        1.37       0          0          0         
+J53              570        1.2        0          0          0         
+J54              545        1.2        0          0          0         
+J55              577.1      1.2        0          0          0         
+J56              541.05     1.2        0          0          0         
+J57              523.89     1.2        0          0          0         
+J58              548        1.2        0          0          0         
+J59              538        1.2        0          0          0         
+J6               589        1.2        0          0          0         
+J60              535        1.2        0          0          0         
+J61              496.4      1.27       0          0          0         
+J62              515.3      1.2        0          0          0         
+J63              478.2      1.37       0          0          0         
+J64              437.44     1.37       0          0          0         
+J65              490.92     1.2        0          0          0         
+J66              495.19     1.2        0          0          0         
+J67              498.62     1.37       0          0          0         
+J68              454.26     1.37       0          0          0         
+J7               571        1.37       0          0          0         
+J70              476        1.37       0          0          0         
+J74              512.       1.37       0          0          0         
+J75              482.9      1.37       0          0          0         
+J8               565        1.2        0          0          0         
+J9               553        1.2        0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Out1             423        FREE                        NO                       
+Out2             427.24     FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+CrawfordSlough   551.7    .3         0          TABULAR    CrawfordSlough               3700     0       
+SeepageSpring    551.7    0.3        0          TABULAR    SeepageSpring                1800     0       
+HillSpring       540.85   0.65       0          TABULAR    HillSpring                   2800     0       
+JackSmithLake    572      1          0          TABULAR    JackSmithLake                34000    0       
+SouthCrestPond   539      1          0          TABULAR    SouthCrestPond               3000     0       
+MairPond         537.9    1.3        0          TABULAR    MairPond                     3275     0       
+R6               426      1.1        0          TABULAR    LowerPond                    0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+P1               J17              J75              85.45      .011       0          0          0          0         
+P2               J2               J3               64.51      .011       0          0          0          0         
+P3               J3               JackSmithLake    10         .011       0          0.500      0          0         
+P4               J75              J70              144.32     .011       0          0          0          0         
+P5               J56              J57              228.73     .011       0          0          0          0         
+P6               J19              J21              116.69     .011       0          0          0          0         
+P7               J20              J21              173.12     .011       0          0          0          0         
+P8               SeepageSpring    CrawfordSlough   111.61     .011       0          0          0          0         
+P9               J57              J62              107.47     .011       0          0          0          0         
+P10              J58              J25              175.78     .011       0          0          0          0         
+P11              J21              J23              105.39     .011       0          0          0          0         
+P12              J59              J29              92.28      .011       0          0          0          0         
+P13              J60              J22              93.53      .011       0          0          0          0         
+P14              J41              J40              191.90     .011       0          0          0          0         
+P15              J39              J40              109.13     .011       0          0          0          0         
+P16              J35              J61              76.05      .011       0          0          0          0         
+P17              J61              J17              87         .011       0          0          0          0         
+P18              J64              Out2             213.39     .011       0          0          0          0         
+P19              J65              J63              138        .011       0          0          0          0         
+P20              J66              J65              55         .011       0          0          0          0         
+P21              J67              J66              55         .011       0          0          0          0         
+P22              J62              J67              170.16     .011       0          0          0          0         
+P23              J68              J64              200        .011       0          0          0          0         
+P24              J63              J68              266.39     .011       0          0          0          0         
+P25              J40              J75              179        .011       0          0          0          0         
+P26              J70              R6               147.47     .011       0          0          0          0         
+P27              J74              J34              70.2       .011       0          0          0          0         
+P52              J42              J43              197.11     .011       0          0          0          0         
+P53              J43              J44              77.05      .011       0          0          0          0         
+P54              J45              J44              171.66     .011       0          0          0          0         
+P55              J47              J46              142.82     .011       0          0          0          0         
+P56              J46              J48              240.49     .011       0          0          0          0         
+P57              J44              J46              179.32     .011       0          0          0          0         
+P58              J51              J49              193.01     .011       0          0          0          0         
+P59              J48              J49              152.03     .011       0          0          0          0         
+P60              J49              J50              149.21     .011       0          0          0          0         
+P61              J50              J52              106.70     .011       0          0          0          0         
+P62              J53              J52              165.22     .011       0          0          0          0         
+P63              J52              J54              181.94     .011       0          0          0          0         
+P64              J54              SouthCrestPond   40.23      .011       0          0          0          0         
+P65              J27              J26              122.24     .011       0          0          0          0         
+P66              J26              J30              120.03     .011       0          0          0          0         
+P67              J28              J26              45.16      .011       0          0          0          0         
+P68              J29              J30              63.69      .011       0          0          0          0         
+P69              J30              J31              84.92      .011       0          0          0          0         
+P70              J24              J31              136.71     .011       0          0          0          0         
+P71              J31              J74              63.5       .011       0          0          0          0         
+P72              J32              J33              41.74      .011       0          0          0          0         
+P73              J33              J34              63.08      .011       0          0          0          0         
+P74              J38              J37              176.38     .011       0          0          0          0         
+P75              J37              J35              190.87     .011       0          0          0          0         
+P79              J34              J35              101.02     .011       0          0          0          0         
+P83              J9               MairPond         89.13      .011       0          0          0          0         
+P84              J14              MairPond         81.57      .011       0          0          0          0         
+P85              J22              J15              95.97      .011       0          0          0          0         
+P86              J23              J24              248.69     .011       0          0          0          0         
+P87              J15              J16              456.39     .011       0          0          0          0         
+P88              J16              J70              310        .011       0          0          0          0         
+P89              J10              J15              436.84     .011       0          0          0          0         
+P90              J11              J9               145.30     .011       0          0          0          0         
+P91              J8               J9               245.69     .011       0          0          0          0         
+P92              J6               J7               174.48     .011       0          0          0          0         
+P93              J4               J5               183.88     .011       0          0          0          0         
+P94              J7               J5               83.68      .011       0          0          0          0         
+P95              J5               J8               237.20     .011       0          0          0          0         
+P96              J12              SeepageSpring    75.72      .011       0          0          0          0         
+P97              J13              HillSpring       91.98      .011       0          0          0          0         
+P98              J25              J27              108.26     .011       0          0          0          0         
+P99              J55              J56              515.69     .011       0          0          0          0         
+
+[ORIFICES]
+;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime 
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- ----------
+1                R6               Out1             SIDE         0          .61        NO       0         
+2                SouthCrestPond   J57              SIDE         0          .61        NO       0         
+3                CrawfordSlough   J58              SIDE         0          0.61       NO       0         
+4                HillSpring       J59              SIDE         0          .61        NO       0         
+5                MairPond         J60              SIDE         0          .61        NO       0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+P1               CIRCULAR     .525             0          0          0          1                    
+P2               CIRCULAR     .3               0          0          0          1                    
+P3               CIRCULAR     .3               0          0          0          1                    
+P4               CIRCULAR     .6               0          0          0          1                    
+P5               CIRCULAR     .375             0          0          0          1                    
+P6               CIRCULAR     .25              0          0          0          1                    
+P7               CIRCULAR     .25              0          0          0          1                    
+P8               TRAPEZOIDAL  1                .5         2          2          1                    
+P9               CIRCULAR     .375             0          0          0          1                    
+P10              CIRCULAR     .3               0          0          0          1                    
+P11              CIRCULAR     .25              0          0          0          1                    
+P12              CIRCULAR     .25              0          0          0          1                    
+P13              CIRCULAR     .25              0          0          0          1                    
+P14              CIRCULAR     .25              0          0          0          1                    
+P15              CIRCULAR     .25              0          0          0          1                    
+P16              CIRCULAR     .525             0          0          0          1                    
+P17              CIRCULAR     .525             0          0          0          1                    
+P18              CIRCULAR     .45              0          0          0          1                    
+P19              CIRCULAR     .375             0          0          0          1                    
+P20              CIRCULAR     .375             0          0          0          1                    
+P21              CIRCULAR     .375             0          0          0          1                    
+P22              CIRCULAR     .375             0          0          0          1                    
+P23              CIRCULAR     .375             0          0          0          1                    
+P24              CIRCULAR     .375             0          0          0          1                    
+P25              CIRCULAR     .375             0          0          0          1                    
+P26              CIRCULAR     .6               0          0          0          1                    
+P27              CIRCULAR     .45              0          0          0          1                    
+P52              CIRCULAR     .25              0          0          0          1                    
+P53              CIRCULAR     .3               0          0          0          1                    
+P54              CIRCULAR     .25              0          0          0          1                    
+P55              CIRCULAR     .25              0          0          0          1                    
+P56              CIRCULAR     .375             0          0          0          1                    
+P57              CIRCULAR     .3               0          0          0          1                    
+P58              CIRCULAR     .25              0          0          0          1                    
+P59              CIRCULAR     .375             0          0          0          1                    
+P60              CIRCULAR     .375             0          0          0          1                    
+P61              CIRCULAR     .45              0          0          0          1                    
+P62              CIRCULAR     .25              0          0          0          1                    
+P63              CIRCULAR     .45              0          0          0          1                    
+P64              CIRCULAR     .45              0          0          0          1                    
+P65              CIRCULAR     .3               0          0          0          1                    
+P66              CIRCULAR     .375             0          0          0          1                    
+P67              CIRCULAR     .25              0          0          0          1                    
+P68              CIRCULAR     .250             0          0          0          1                    
+P69              CIRCULAR     .375             0          0          0          1                    
+P70              CIRCULAR     .375             0          0          0          1                    
+P71              CIRCULAR     .45              0          0          0          1                    
+P72              CIRCULAR     .25              0          0          0          1                    
+P73              CIRCULAR     .25              0          0          0          1                    
+P74              CIRCULAR     .375             0          0          0          1                    
+P75              CIRCULAR     .375             0          0          0          1                    
+P79              CIRCULAR     .45              0          0          0          1                    
+P83              CIRCULAR     .375             0          0          0          1                    
+P84              CIRCULAR     .25              0          0          0          1                    
+P85              CIRCULAR     .25              0          0          0          1                    
+P86              CIRCULAR     .25              0          0          0          1                    
+P87              CIRCULAR     .375             0          0          0          1                    
+P88              CIRCULAR     .375             0          0          0          1                    
+P89              CIRCULAR     .25              0          0          0          1                    
+P90              CIRCULAR     .25              0          0          0          1                    
+P91              CIRCULAR     .375             0          0          0          1                    
+P92              CIRCULAR     .25              0          0          0          1                    
+P93              CIRCULAR     .25              0          0          0          1                    
+P94              CIRCULAR     .3               0          0          0          1                    
+P95              CIRCULAR     .375             0          0          0          1                    
+P96              CIRCULAR     .3               0          0          0          1                    
+P97              CIRCULAR     .3               0          0          0          1                    
+P98              CIRCULAR     .25              0          0          0          1                    
+P99              CIRCULAR     .3               0          0          0          1                    
+1                CIRCULAR     .265             0          0          0
+2                CIRCULAR     .194             0          0          0
+3                CIRCULAR     .15              0          0          0
+4                CIRCULAR     .07              0          0          0
+5                CIRCULAR     .1               0          0          0
+
+[TRANSECTS]
+;;Transect Data in HEC-2 format
+;
+NC .015     .015     .014    
+X1 Road              9        -6.4     6.4      0.0      0.0      0.0      0.0      0.0     
+GR .15      -6.7     .15      -6.4     0        -6.4     .052     -6.1     .174     0       
+GR .052     6.1      0        6.4      .15      6.4      .15      6.7     
+
+[DWF]
+;;Node           Constituent      Baseline   Patterns  
+;;-------------- ---------------- ---------- ----------
+J59              FLOW             9         
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+JackSmithLake    Storage    0          32000     
+JackSmithLake               .75        32802     
+JackSmithLake               1          32813     
+JackSmithLake               3          38620     
+;
+HillSpring       Storage    0          2387      
+HillSpring                  .15        2500      
+HillSpring                  .29        2737      
+HillSpring                  .65        2800      
+;
+SeepageSpring    Storage    0          620       
+SeepageSpring               0.3        620       
+;
+CrawfordSlough   Storage    0          3600      
+CrawfordSlough              .3         3645      
+;
+MairPond         Storage    0          1000      
+MairPond                    .25        3200      
+MairPond                    .5         3275      
+MairPond                    1          3275      
+MairPond                    1.3        3300      
+;
+LowerPond        Storage    0          3000      
+LowerPond                   .25        6000      
+LowerPond                   .75        7500      
+LowerPond                   1          7500      
+LowerPond                   1.1        7500      
+;
+SouthCrestPond   Storage    0          840       
+SouthCrestPond              1          3102      
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+;Volume Based
+100Y1HR                     0          1.512     
+100Y1HR                     0:05       1.89      
+100Y1HR                     0:10       3.591     
+100Y1HR                     0:15       3.78      
+100Y1HR                     0:20       1.701     
+100Y1HR                     0:25       1.512     
+100Y1HR                     0:30       1.323     
+100Y1HR                     0:35       1.134     
+100Y1HR                     0:40       0.945     
+100Y1HR                     0:45       0.756     
+100Y1HR                     0:50       0.567     
+100Y1HR                     0:55       0.189     
+;
+;1 in 100 year 3 hour storm
+100Y3HR                     0          2.008     
+100Y3HR                     0:15       2.51      
+100Y3HR                     0:30       4.769     
+100Y3HR                     0:45       5.02      
+100Y3HR                     1          2.259     
+100Y3HR                     1:15       2.008     
+100Y3HR                     1:30       1.757     
+100Y3HR                     1:45       1.506     
+100Y3HR                     2          1.255     
+100Y3HR                     2:15       1.004     
+100Y3HR                     2:30       0.753     
+100Y3HR                     2:45       0.251     
+100Y3HR                     3          0         
+;
+100Y6HR                     0          2.408     
+100Y6HR                     0:30       3.01      
+100Y6HR                     1          5.719     
+100Y6HR                     1:30       6.02      
+100Y6HR                     2          2.709     
+100Y6HR                     2:30       2.408     
+100Y6HR                     3          2.107     
+100Y6HR                     3:30       1.806     
+100Y6HR                     4          1.505     
+100Y6HR                     4:30       1.204     
+100Y6HR                     5          0.903     
+100Y6HR                     5:30       0.301     
+100Y6HR                     6          0         
+;
+100Y12HR                    0          2.888     
+100Y12HR                    1          3.249     
+100Y12HR                    2          3.61      
+100Y12HR                    3          3.61      
+100Y12HR                    4          3.61      
+100Y12HR                    5          3.971     
+100Y12HR                    6          3.971     
+100Y12HR                    7          3.971     
+100Y12HR                    8          2.888     
+100Y12HR                    9          2.527     
+100Y12HR                    10         1.083     
+100Y12HR                    11         0.722     
+100Y12HR                    12         0         
+;
+100Y24HR                    0          3.456     
+100Y24HR                    2          3.888     
+100Y24HR                    4          4.32      
+100Y24HR                    6          4.32      
+100Y24HR                    8          4.32      
+100Y24HR                    10         4.752     
+100Y24HR                    12         4.752     
+100Y24HR                    14         4.752     
+100Y24HR                    16         3.456     
+100Y24HR                    18         3.024     
+100Y24HR                    20         1.296     
+100Y24HR                    22         0.864     
+100Y24HR                    24         0         
+;
+;Volume Based
+5Y1Hr                       0          .9        
+5Y1Hr                       0:05       1.1       
+5Y1Hr                       0:10       2.1       
+5Y1Hr                       0:15       2.3       
+5Y1Hr                       0:20       1.0       
+5Y1Hr                       0:25       .9        
+5Y1Hr                       0:30       .8        
+5Y1Hr                       0:35       .7        
+5Y1Hr                       0:40       .6        
+5Y1Hr                       0:45       .5        
+5Y1Hr                       0:50       .3        
+5Y1Hr                       0:55       .1        
+5Y1Hr                       1          0         
+;
+;No Rain
+0                           0          0         
+0                           1          0         
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 321521.944 5518746.814 323501.500 5520482.129
+Units      Meters
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+J10              323243.869         5519451.370       
+J11              323145.527         5519337.796       
+J12              322734.674         5519273.416       
+J13              322494.448         5519278.134       
+J14              323128.987         5519547.496       
+J15              323094.301         5519759.019       
+J16              322648.357         5519845.252       
+J17              322366.708         5519897.420       
+J19              322929.701         5519517.017       
+J2               322660.080         5519087.967       
+J20              322824.197         5519538.118       
+J21              322885.155         5519624.866       
+J22              323047.551         5519667.388       
+J23              322805.441         5519692.857       
+J24              322566.115         5519684.486       
+J25              322671.803         5519514.673       
+J26              322563.248         5519589.169       
+J27              322683.649         5519617.835       
+J28              322563.965         5519544.018       
+J29              322460.764         5519482.385       
+J3               322637.776         5519026.871       
+J30              322456.464         5519569.819       
+J31              322449.072         5519661.206       
+J32              322256.820         5519620.177       
+J33              322282.610         5519653.000       
+J34              322315.280         5519697.386       
+J35              322260.097         5519766.903       
+J37              322070.896         5519749.703       
+J38              321895.504         5519750.376       
+J39              322213.429         5519823.354       
+J4               322838.265         5518907.438       
+J40              322123.832         5519909.338       
+J41              322023.397         5519850.089       
+J42              321848.538         5519078.398       
+J43              321984.379         5519194.007       
+J44              322060.970         5519186.782       
+J45              322161.405         5519053.109       
+J46              322243.613         5519185.683       
+J47              322281.349         5519050.941       
+J48              322083.796         5519340.484       
+J49              321963.425         5519418.000       
+J5               322852.783         5519094.666       
+J50              322102.155         5519446.902       
+J51              321803.740         5519319.732       
+J52              322013.562         5519496.002       
+J53              321864.434         5519448.347       
+J54              321834.810         5519546.615       
+J55              322371.010         5519179.050       
+J56              322071.808         5519564.679       
+J57              321868.078         5519648.652       
+J58              322780.493         5519427.368       
+J59              322465.484         5519405.652       
+J6               322931.616         5518899.732       
+J60              323042.577         5519573.988       
+J61              322323.190         5519832.945       
+J62              321785.569         5519704.580       
+J63              322102.081         5519955.445       
+J64              322352.946         5520206.310       
+J65              321977.983         5519975.430       
+J66              321841.290         5519936.044       
+J67              321783.369         5519871.173       
+J68              322323.190         5520068.103       
+J7               322944.517         5519075.316       
+J70              322389.906         5520061.739       
+J74              322363.016         5519671.671       
+J75              322293.248         5519955.415       
+J8               322951.683         5519303.217       
+J9               323138.365         5519463.093       
+Out1             322495.963         5520253.201       
+Out2             322232.834         5520383.191       
+CrawfordSlough   322821.853         5519393.929       
+SeepageSpring    322719.712         5519344.291       
+HillSpring       322469.150         5519364.946       
+JackSmithLake    322528.786         5518944.951       
+SouthCrestPond   321797.292         5519536.946       
+MairPond         323052.990         5519499.322       
+R6               322443.665         5520201.320       
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+P5               322012.129         5519587.735       
+P5               321928.278         5519620.702       
+P7               322809.783         5519571.252       
+P7               322788.282         5519597.052       
+P7               322817.164         5519610.798       
+P7               322852.332         5519610.798       
+P10              322754.834         5519462.190       
+P10              322735.966         5519521.802       
+P10              322711.599         5519533.268       
+P11              322848.305         5519663.793       
+P18              322329.501         5520281.335       
+P18              322280.266         5520339.948       
+P22              321767.152         5519790.084       
+P24              322262.952         5519984.697       
+P27              322330.905         5519689.001       
+P52              321879.608         5519149.209       
+P52              321959.812         5519165.105       
+P52              321970.650         5519175.944       
+P53              322022.674         5519188.227       
+P54              322110.826         5519124.642       
+P54              322073.976         5519149.209       
+P55              322277.737         5519083.456       
+P55              322246.667         5519176.666       
+P56              322229.996         5519213.634       
+P56              322212.080         5519271.684       
+P56              322176.246         5519307.517       
+P57              322135.393         5519196.898       
+P57              322177.301         5519191.117       
+P57              322204.758         5519181.001       
+P58              321896.227         5519401.381       
+P58              321933.077         5519414.387       
+P59              321980.043         5519378.982       
+P60              322072.531         5519423.780       
+P60              322092.762         5519431.006       
+P61              322089.149         5519461.353       
+P62              321889.001         5519460.631       
+P62              321934.522         5519468.579       
+P62              321974.862         5519466.618       
+P62              322002.812         5519480.235       
+P65              322610.835         5519597.194       
+P70              322517.381         5519679.469       
+P71              322368.056         5519668.727       
+P74              321977.729         5519760.453       
+P75              322166.213         5519744.686       
+P75              322226.413         5519753.286       
+P79              322295.213         5519720.319       
+P79              322275.863         5519751.136       
+P86              322771.243         5519706.300       
+P86              322703.322         5519716.416       
+P86              322659.246         5519711.358       
+P87              323033.531         5519765.550       
+P87              322944.656         5519774.943       
+P87              322822.544         5519794.452       
+P87              322717.773         5519824.077       
+P89              323266.194         5519519.158       
+P89              323277.755         5519590.691       
+P89              323287.870         5519670.895       
+P89              323208.968         5519698.819       
+P89              323125.834         5519748.269       
+P90              323175.152         5519363.808       
+P91              322995.958         5519348.635       
+P91              323059.543         5519388.375       
+P92              322933.050         5518979.282       
+P93              322843.498         5519048.051       
+P95              322885.406         5519170.163       
+P95              322930.928         5519265.541       
+P99              322344.212         5519301.668       
+P99              322285.180         5519394.951       
+P99              322219.963         5519468.051       
+P99              322148.296         5519520.368       
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                322884.214         5518855.728       
+1                322910.932         5518855.728       
+1                322931.730         5518867.704       
+1                322947.449         5518867.704       
+1                322947.449         5518893.325       
+1                322969.807         5518896.969       
+1                322989.624         5518938.245       
+1                322991.084         5518983.763       
+1                322884.214         5518975.658       
+2                322814.799         5518979.960       
+2                322717.142         5518927.129       
+2                322673.984         5518858.690       
+2                322884.214         5518855.728       
+2                322884.214         5518911.319       
+2                322884.214         5518975.658       
+3                322715.349         5519082.116       
+3                322823.123         5519025.088       
+3                322814.799         5518979.960       
+3                322884.214         5518975.658       
+3                322888.807         5519045.160       
+3                322896.051         5519078.986       
+3                322912.512         5519115.946       
+3                322795.992         5519151.569       
+3                322784.629         5519115.936       
+3                322740.936         5519140.866       
+4                322972.638         5519252.329       
+4                322896.124         5519078.773       
+4                322888.807         5519045.160       
+4                322884.214         5518975.658       
+4                322990.932         5518983.751       
+4                322993.363         5519043.022       
+4                323076.906         5519227.191       
+5                322859.687         5519312.193       
+5                322813.577         5519206.586       
+5                322795.992         5519151.569       
+5                322912.512         5519115.946       
+5                322972.638         5519252.329       
+5                322997.360         5519286.430       
+5                323020.209         5519309.268       
+5                322966.664         5519341.009       
+5                322935.779         5519343.909       
+5                322899.447         5519323.697       
+6                323020.209         5519309.268       
+6                322997.360         5519286.430       
+6                322972.638         5519252.329       
+6                323076.906         5519227.191       
+6                323182.387         5519275.612       
+6                323270.049         5519386.836       
+6                323203.017         5519383.524       
+6                323193.503         5519399.579       
+6                323123.967         5519332.054       
+6                323043.905         5519298.100       
+7                323218.214         5519540.496       
+7                323232.918         5519498.567       
+7                323193.503         5519399.579       
+7                323193.503         5519399.579       
+7                323123.967         5519332.054       
+7                323043.905         5519298.100       
+7                323020.209         5519309.268       
+7                322966.664         5519341.009       
+7                322922.783         5519428.739       
+7                322990.328         5519465.438       
+7                323032.249         5519401.057       
+7                323089.715         5519428.455       
+7                323104.666         5519501.361       
+7                323164.205         5519562.468       
+8                322987.171         5519464.806       
+8                323010.412         5519481.865       
+8                322980.171         5519524.805       
+8                322959.760         5519600.583       
+8                322987.396         5519585.321       
+8                323015.372         5519612.557       
+8                323080.796         5519633.591       
+8                323115.912         5519617.278       
+8                323078.695         5519611.353       
+8                323048.122         5519567.143       
+8                323101.509         5519500.729       
+8                323086.558         5519427.823       
+8                323029.092         5519400.425       
+9                323104.666         5519501.361       
+9                323164.205         5519562.468       
+9                323119.069         5519617.910       
+9                323081.165         5519612.025       
+9                323051.279         5519567.775       
+10               323270.049         5519386.836       
+10               323202.937         5519383.286       
+10               323193.503         5519399.579       
+10               323232.918         5519498.567       
+10               323218.214         5519540.496       
+10               323228.082         5519598.539       
+10               323254.958         5519736.559       
+10               323346.064         5519683.532       
+10               323411.520         5519645.686       
+10               323389.733         5519596.042       
+10               323361.609         5519560.308       
+10               323347.839         5519485.069       
+10               323336.616         5519471.386       
+11               323218.214         5519540.496       
+11               323164.205         5519562.468       
+11               323119.069         5519617.910       
+11               323083.953         5519634.223       
+11               323017.823         5519613.034       
+11               322990.553         5519585.953       
+11               322962.917         5519601.215       
+11               322846.219         5519739.257       
+11               322985.684         5519721.451       
+11               323105.807         5519706.189       
+11               323235.268         5519635.443       
+12               323254.958         5519736.559       
+12               323211.182         5519744.742       
+12               323135.316         5519794.184       
+12               323056.449         5519800.357       
+12               323008.500         5519813.842       
+12               322945.101         5519893.234       
+12               322894.257         5519893.234       
+12               322837.278         5519821.905       
+12               322790.765         5519832.756       
+12               322694.569         5519851.693       
+12               322642.031         5519863.126       
+12               322570.699         5519806.437       
+12               322568.883         5519718.883       
+12               322705.660         5519741.163       
+12               322787.483         5519736.744       
+12               322846.219         5519739.257       
+12               323105.807         5519706.189       
+12               323235.268         5519635.443       
+13               322415.159         5519092.555       
+13               322417.056         5519055.086       
+13               322415.940         5519041.106       
+13               322409.168         5519016.154       
+13               322454.905         5519022.485       
+13               322546.525         5519015.508       
+13               322640.188         5519039.876       
+13               322677.120         5519014.840       
+13               322716.660         5519084.422       
+13               322741.015         5519141.050       
+13               322690.402         5519168.697       
+13               322649.702         5519176.946       
+13               322618.702         5519176.780       
+13               322553.426         5519164.973       
+13               322488.159         5519161.484       
+13               322485.930         5519109.428       
+14               322593.659         5519342.040       
+14               322634.957         5519261.633       
+14               322678.159         5519228.983       
+14               322678.159         5519200.639       
+14               322649.702         5519176.946       
+14               322690.402         5519168.697       
+14               322741.015         5519141.050       
+14               322784.598         5519115.922       
+14               322813.577         5519206.586       
+14               322859.687         5519312.193       
+14               322811.434         5519297.549       
+14               322716.339         5519369.251       
+15               322415.513         5519093.747       
+15               322486.284         5519110.620       
+15               322488.513         5519162.676       
+15               322519.449         5519163.799       
+15               322553.780         5519166.165       
+15               322590.596         5519172.417       
+15               322619.056         5519177.972       
+15               322650.056         5519178.138       
+15               322678.513         5519201.831       
+15               322678.513         5519230.175       
+15               322635.311         5519262.825       
+15               322588.976         5519353.038       
+15               322487.599         5519396.234       
+15               322472.731         5519396.234       
+15               322386.683         5519396.234       
+15               322324.099         5519374.047       
+15               322349.899         5519328.594       
+15               322365.212         5519282.677       
+15               322380.143         5519241.351       
+15               322397.753         5519177.450       
+15               322413.732         5519108.635       
+16               322716.339         5519369.251       
+16               322811.434         5519297.549       
+16               322899.447         5519323.697       
+16               322935.779         5519343.909       
+16               322966.664         5519341.009       
+16               322922.783         5519428.739       
+16               322853.358         5519438.184       
+16               322810.382         5519414.874       
+17               322588.622         5519351.846       
+17               322593.659         5519342.040       
+17               322716.339         5519369.251       
+17               322810.382         5519414.874       
+17               322796.826         5519482.212       
+17               322736.849         5519546.676       
+17               322687.553         5519546.676       
+17               322621.825         5519521.219       
+17               322530.749         5519376.505       
+18               322272.311         5519445.424       
+18               322323.745         5519372.855       
+18               322386.329         5519395.042       
+18               322487.245         5519395.042       
+18               322530.749         5519376.505       
+18               322590.224         5519471.006       
+18               322565.590         5519489.725       
+18               322565.590         5519489.725       
+18               322554.074         5519488.677       
+18               322542.686         5519486.669       
+18               322484.998         5519474.863       
+18               322457.372         5519471.419       
+18               322456.268         5519486.381       
+18               322443.212         5519485.348       
+18               322430.792         5519519.745       
+20               322810.382         5519414.874       
+20               322853.358         5519438.184       
+20               322922.783         5519428.739       
+20               322918.654         5519524.204       
+20               322918.654         5519524.204       
+20               322896.605         5519575.859       
+20               322875.263         5519619.993       
+20               322859.499         5519629.000       
+20               322766.653         5519597.891       
+20               322736.849         5519546.676       
+20               322796.826         5519482.212       
+21               322859.499         5519629.000       
+21               322875.263         5519619.993       
+21               322918.654         5519524.204       
+21               322922.783         5519428.739       
+21               322990.328         5519465.438       
+21               323013.569         5519482.497       
+21               322983.328         5519525.437       
+21               322962.917         5519601.215       
+21               322911.494         5519662.044       
+22               322766.846         5519673.198       
+22               322868.199         5519623.791       
+22               322775.353         5519592.682       
+22               322745.549         5519541.467       
+22               322696.253         5519541.467       
+22               322630.525         5519516.010       
+22               322598.924         5519465.797       
+22               322574.290         5519484.516       
+22               322576.760         5519631.951       
+22               322706.116         5519663.726       
+23               322568.060         5519637.160       
+23               322568.883         5519718.883       
+23               322705.660         5519741.163       
+23               322787.483         5519736.744       
+23               322758.146         5519678.407       
+23               322697.416         5519668.935       
+24               322846.219         5519739.257       
+24               322911.494         5519662.044       
+24               322859.499         5519629.000       
+24               322758.146         5519678.407       
+24               322787.483         5519736.744       
+28               322430.792         5519519.745       
+28               322430.792         5519519.745       
+28               322272.311         5519445.424       
+28               322255.996         5519468.485       
+28               322216.881         5519507.879       
+28               322171.689         5519539.841       
+28               322251.140         5519618.292       
+28               322251.140         5519618.292       
+28               322279.672         5519596.304       
+28               322306.938         5519581.205       
+28               322340.573         5519568.865       
+28               322335.207         5519549.598       
+28               322369.517         5519542.682       
+28               322367.628         5519527.801       
+28               322385.147         5519526.187       
+28               322384.795         5519520.259       
+29               322287.148         5518996.296       
+29               322287.148         5518996.296       
+29               322287.148         5518996.296       
+29               322320.111         5519042.274       
+29               322300.750         5519138.363       
+29               322216.423         5519289.493       
+29               322153.868         5519448.487       
+29               322255.996         5519468.485       
+29               322315.763         5519384.005       
+29               322323.745         5519372.855       
+29               322349.545         5519327.402       
+29               322379.789         5519240.159       
+29               322413.378         5519107.443       
+29               322415.159         5519092.555       
+29               322417.056         5519055.086       
+29               322415.755         5519040.598       
+29               322409.168         5519016.154       
+29               322395.299         5518987.917       
+29               322351.563         5518973.568       
+30               322060.329         5519228.356       
+30               322078.938         5519190.539       
+30               322220.593         5519077.402       
+30               322232.164         5519043.091       
+30               322187.884         5519002.538       
+30               322157.715         5518963.630       
+30               322227.505         5518934.508       
+30               322282.644         5518970.086       
+30               322293.943         5519003.182       
+30               322326.906         5519049.160       
+30               322307.545         5519145.249       
+30               322223.218         5519296.379       
+31               322072.430         5519181.372       
+31               322020.436         5519173.342       
+31               321983.455         5519102.797       
+31               321953.979         5519019.707       
+31               321844.514         5518950.642       
+31               321924.079         5518943.215       
+31               321964.174         5518981.023       
+31               322022.021         5518964.090       
+31               322068.629         5518954.463       
+31               322151.207         5518954.463       
+31               322181.376         5518993.371       
+31               322225.656         5519033.924       
+31               322214.085         5519068.235       
+32               321844.227         5518952.923       
+32               321953.692         5519021.988       
+32               321983.168         5519105.078       
+32               322020.149         5519175.623       
+32               322072.143         5519183.653       
+32               322053.534         5519221.470       
+32               321987.166         5519249.368       
+32               321934.133         5519219.610       
+32               321741.241         5519196.806       
+32               321718.711         5518971.584       
+33               321741.241         5519196.806       
+33               321934.133         5519219.610       
+33               321987.379         5519249.424       
+33               321840.273         5519297.908       
+33               321794.741         5519336.297       
+33               321745.654         5519328.676       
+34               321794.741         5519336.297       
+34               321893.053         5519409.851       
+34               321939.576         5519425.251       
+34               321976.734         5519429.478       
+34               321981.265         5519397.472       
+34               321991.838         5519383.582       
+34               322194.270         5519310.159       
+34               322216.423         5519289.493       
+34               322053.534         5519221.470       
+34               321840.273         5519297.908       
+35               321976.734         5519429.478       
+35               321981.265         5519397.472       
+35               321991.838         5519383.582       
+35               322194.270         5519310.159       
+35               322216.423         5519289.493       
+35               322154.263         5519448.409       
+35               322061.353         5519485.262       
+36               321794.741         5519336.297       
+36               321893.053         5519409.851       
+36               321939.576         5519425.251       
+36               321976.734         5519429.478       
+36               322061.353         5519485.262       
+36               322011.746         5519509.679       
+36               321977.208         5519518.894       
+36               321956.922         5519490.507       
+36               321820.598         5519454.416       
+36               321748.741         5519378.569       
+37               321748.741         5519378.569       
+37               321820.598         5519454.416       
+37               321956.922         5519490.507       
+37               321977.208         5519518.894       
+37               321787.635         5519569.399       
+37               321842.534         5519535.000       
+37               321751.292         5519482.264       
+38               321775.247         5519565.556       
+38               321999.358         5519505.836       
+38               322048.965         5519481.419       
+38               322141.875         5519444.566       
+38               322243.608         5519464.642       
+38               322204.493         5519504.036       
+38               322159.301         5519535.998       
+38               322117.809         5519555.281       
+38               321982.921         5519606.279       
+38               321868.951         5519649.003       
+38               321832.396         5519672.901       
+38               321807.963         5519670.315       
+38               321777.749         5519676.218       
+38               321761.672         5519579.071       
+39               322064.905         5519769.216       
+39               322064.905         5519769.216       
+39               322179.634         5519765.827       
+39               322270.956         5519789.481       
+39               322270.956         5519789.481       
+39               322300.637         5519734.306       
+39               322319.776         5519706.419       
+39               322323.091         5519702.984       
+39               322283.537         5519656.426       
+39               322251.140         5519618.292       
+39               322171.689         5519539.841       
+39               322129.329         5519559.257       
+39               322021.353         5519600.725       
+40               322064.905         5519769.216       
+40               322021.353         5519600.725       
+40               321881.339         5519652.846       
+40               321844.784         5519676.744       
+40               321820.351         5519674.158       
+40               321790.546         5519680.195       
+40               321797.620         5519738.275       
+40               321823.751         5519738.383       
+40               321916.867         5519786.043       
+40               322007.657         5519783.221       
+40               322064.905         5519769.216       
+41               321797.620         5519738.275       
+41               321797.620         5519738.275       
+41               321823.751         5519738.383       
+41               321916.867         5519786.043       
+41               322007.657         5519783.221       
+41               322064.905         5519769.216       
+41               322064.853         5519876.524       
+41               321951.008         5519886.580       
+41               321847.760         5519862.260       
+41               321791.305         5519807.271       
+42               321791.305         5519807.271       
+42               321788.699         5519819.474       
+42               321802.650         5519862.681       
+42               321845.705         5519917.147       
+42               321926.372         5519953.133       
+42               322018.522         5519961.519       
+42               322139.374         5519929.199       
+42               322142.776         5519879.017       
+42               322064.853         5519876.524       
+42               321951.008         5519886.580       
+42               321847.760         5519862.260       
+43               322062.041         5519877.052       
+43               322139.964         5519879.545       
+43               322213.298         5519838.900       
+43               322268.144         5519790.009       
+43               322268.144         5519790.009       
+43               322176.822         5519766.355       
+43               322062.093         5519769.744       
+44               322139.374         5519929.199       
+44               322142.776         5519879.017       
+44               322216.110         5519838.372       
+44               322216.110         5519838.372       
+44               322270.956         5519789.481       
+44               322298.640         5519810.820       
+44               322316.346         5519829.425       
+44               322369.511         5519899.028       
+44               322369.511         5519899.028       
+44               322298.875         5519946.543       
+44               322230.928         5519919.650       
+44               322139.374         5519929.199       
+45               322430.193         5519707.040       
+45               322483.865         5519716.397       
+45               322498.131         5519728.639       
+45               322569.202         5519750.623       
+45               322570.699         5519806.437       
+45               322568.157         5519963.741       
+45               322568.157         5519963.741       
+45               322561.013         5519975.248       
+45               322403.359         5520061.749       
+45               322317.706         5519953.867       
+45               322298.972         5519946.480       
+45               322369.511         5519899.028       
+45               322316.346         5519829.425       
+45               322453.464         5519739.934       
+46               322278.578         5519785.296       
+46               322308.259         5519730.121       
+46               322327.398         5519702.234       
+46               322327.355         5519702.217       
+46               322330.713         5519698.799       
+46               322371.312         5519673.398       
+46               322399.778         5519667.849       
+46               322437.565         5519667.700       
+46               322437.815         5519702.855       
+46               322461.086         5519735.749       
+46               322461.086         5519735.749       
+46               322323.968         5519825.240       
+46               322306.262         5519806.635       
+47               322454.283         5519513.271       
+47               322456.268         5519486.381       
+47               322457.372         5519471.419       
+47               322484.998         5519474.863       
+47               322512.359         5519480.001       
+47               322542.686         5519486.669       
+47               322554.074         5519488.677       
+47               322565.590         5519489.725       
+47               322565.827         5519503.881       
+47               322560.294         5519504.416       
+47               322560.614         5519511.045       
+47               322538.405         5519510.005       
+47               322507.613         5519501.842       
+47               322503.341         5519521.089       
+48               322500.565         5519543.457       
+48               322534.753         5519551.124       
+48               322552.528         5519553.134       
+48               322566.655         5519553.315       
+48               322565.827         5519503.881       
+48               322560.294         5519504.416       
+48               322560.614         5519511.045       
+48               322538.405         5519510.005       
+48               322507.613         5519501.842       
+48               322501.622         5519528.835       
+48               322502.392         5519535.147       
+48               322500.565         5519543.457       
+49               322503.341         5519521.089       
+49               322501.622         5519528.835       
+49               322502.392         5519535.147       
+49               322500.565         5519543.457       
+49               322534.753         5519551.124       
+49               322552.528         5519553.134       
+49               322566.652         5519553.134       
+49               322567.450         5519600.733       
+49               322538.368         5519600.733       
+49               322463.867         5519587.203       
+49               322448.826         5519587.203       
+49               322454.283         5519513.271       
+49               322503.341         5519521.089       
+49               322503.341         5519521.089       
+49               322503.341         5519521.089       
+49               322503.341         5519521.089       
+49               322503.341         5519521.089       
+49               322503.341         5519521.089       
+49               322503.341         5519521.089       
+49               322503.341         5519521.089       
+49               322503.341         5519521.089       
+49               322503.341         5519521.089       
+50               322448.826         5519587.203       
+50               322463.867         5519587.203       
+50               322538.368         5519600.733       
+50               322567.450         5519600.733       
+50               322568.060         5519637.160       
+50               322568.118         5519642.887       
+50               322531.212         5519641.451       
+50               322460.815         5519628.550       
+50               322445.894         5519626.924       
+51               322568.118         5519642.887       
+51               322531.212         5519641.451       
+51               322460.815         5519628.550       
+51               322445.894         5519626.924       
+51               322432.466         5519626.282       
+51               322430.975         5519651.911       
+51               322429.943         5519671.885       
+51               322430.193         5519707.040       
+51               322483.865         5519716.397       
+51               322498.131         5519728.639       
+51               322569.202         5519750.623       
+52               322448.826         5519587.203       
+52               322454.283         5519513.271       
+52               322456.268         5519486.381       
+52               322443.212         5519485.348       
+52               322430.792         5519519.745       
+52               322384.795         5519520.259       
+52               322385.147         5519526.187       
+52               322367.628         5519527.801       
+52               322369.517         5519542.682       
+52               322335.207         5519549.598       
+52               322340.573         5519568.865       
+52               322306.938         5519581.205       
+52               322279.672         5519596.304       
+52               322251.140         5519618.292       
+52               322259.966         5519628.680       
+52               322272.290         5519620.019       
+52               322275.611         5519623.928       
+52               322325.809         5519597.784       
+52               322375.070         5519584.401       
+52               322448.826         5519587.203       
+53               322445.894         5519626.924       
+53               322448.826         5519587.203       
+53               322375.070         5519584.401       
+53               322325.809         5519597.784       
+53               322275.611         5519623.928       
+53               322272.290         5519620.019       
+53               322259.966         5519628.680       
+53               322289.208         5519663.100       
+53               322300.942         5519653.745       
+53               322346.478         5519630.729       
+53               322389.752         5519624.237       
+54               322289.208         5519663.100       
+54               322300.942         5519653.745       
+54               322348.117         5519630.729       
+54               322389.752         5519624.237       
+54               322432.466         5519626.282       
+54               322429.943         5519671.885       
+54               322392.156         5519672.034       
+54               322363.690         5519677.583       
+54               322323.091         5519702.984       
+SC1              322475.487         5518849.137       
+SC1              322498.933         5518825.692       
+SC1              322564.580         5518842.104       
+SC1              322672.428         5518865.549       
+SC1              322712.285         5518933.540       
+SC1              322810.756         5518985.120       
+SC1              322824.823         5519029.666       
+SC1              322716.974         5519088.280       
+SC1              322677.117         5519020.288       
+SC1              322644.294         5519043.734       
+SC1              322548.168         5519020.288       
+SC1              322475.487         5519029.666       
+SC1              322409.840         5519020.288       
+SC1              322398.118         5518945.263       
+SC1              322381.706         5518851.482       
+SC4              321776.191         5519796.017       
+SC4              321787.914         5519746.781       
+SC4              321762.124         5519648.311       
+SC4              321651.931         5519634.244       
+SC4              321649.586         5519711.613       
+SC7              322331.845         5520182.865       
+SC7              322308.400         5520267.268       
+SC7              322275.576         5520323.537       
+SC7              322200.551         5520377.461       
+SC7              322209.930         5520403.251       
+SC7              322308.400         5520354.016       
+SC7              322369.358         5520274.301       
+SC7              322395.148         5520185.209       
+SC7              322359.706         5520080.481       
+SC7              322291.988         5520098.461       
+SC8              321611.924         5519839.896       
+SC8              321653.627         5519948.786       
+SC8              321753.251         5519870.014       
+SC9              321797.270         5520039.143       
+SC9              321822.755         5519953.420       
+SC9              321716.181         5519990.489       
+SC10             321931.646         5520069.261       
+SC10             321950.181         5519990.489       
+SC10             321862.141         5520050.727       
+SC11             322098.458         5520056.519       
+SC11             322086.874         5519983.539       
+SC11             322017.369         5520057.677       
+SC12             322205.032         5520115.598       
+SC12             322288.437         5520069.261       
+SC12             322193.447         5520039.143       
+SC16             322138.401         5519958.129       
+SC16             322262.702         5519980.552       
+SC16             322360.193         5520069.757       
+SC16             322401.627         5520192.595       
+SC16             322448.910         5520170.660       
+SC16             322403.089         5520073.656       
+SC16             322313.885         5519959.104       
+SC16             322224.680         5519926.445       
+SC16             322142.788         5519938.631       
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+RG1              321862.141         5520310.211       
+

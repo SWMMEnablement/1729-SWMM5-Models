@@ -1,0 +1,410 @@
+[TITLE]
+;;Project Title/Notes
+make a change and have it stick
+
+[OPTIONS]
+;;Option            	Value
+FLOW_UNITS          	LPS
+INFILTRATION        	GREEN_AMPT
+FLOW_ROUTING        	DYNWAVE
+LINK_OFFSETS        	DEPTH
+MIN_SLOPE           	0
+ALLOW_PONDING       	NO
+SKIP_STEADY_STATE   	NO
+
+START_DATE          	07/15/1977
+START_TIME          	00:00:00
+REPORT_START_DATE   	07/15/1977
+REPORT_START_TIME   	00:00:00
+END_DATE            	07/17/1977
+END_TIME            	06:00:00
+SWEEP_START         	01/01
+SWEEP_END           	12/31
+DRY_DAYS            	7
+REPORT_STEP         	00:01:00
+WET_STEP            	00:05:00
+DRY_STEP            	00:05:00
+ROUTING_STEP        	0:00:10 
+
+INERTIAL_DAMPING    	NONE
+NORMAL_FLOW_LIMITED 	BOTH
+FORCE_MAIN_EQUATION 	H-W
+VARIABLE_STEP       	0.75
+LENGTHENING_STEP    	0
+MIN_SURFAREA        	12.566
+MAX_TRIALS          	20
+HEAD_TOLERANCE      	0.0001
+SYS_FLOW_TOL        	5
+LAT_FLOW_TOL        	5
+
+[FILES]
+;;Interfacing Files
+SAVE	RUNOFF	"D:\swmm_crada_files\RUNOFF47.INT"
+SAVE	HOTSTART	"D:\swmm_crada_files\usgs_polluion.HSF"
+
+[EVAPORATION]
+;;Evap Data     	Parameters
+;;--------------	----------------
+CONSTANT        	1
+RECOVERY        	evaporation
+DRY_ONLY        	NO
+
+[RAINGAGES]
+;;Gage          	Format   	Interval	SCF     	Source    
+;;--------------	---------	------	------	----------
+GAGE1           	CUMULATIVE	0:05    	1.0     	TIMESERIES	RainSeries1     
+
+[SUBCATCHMENTS]
+;;Subcatchment  	Rain Gage       	Outlet          	Area    	%Imperv 	Width   	%Slope  	CurbLen 	Snow Pack       
+;;--------------	----------------	----------------	--------	--------	--------	--------	--------	----------------
+80              	GAGE1           	P009            	1       	50      	600     	1       	0       	                
+85              	GAGE1           	P005            	1       	100     	600     	1       	0       	                
+90              	GAGE1           	P001            	1       	100     	600.0   	1       	0       	                
+95              	GAGE1           	P011            	1       	50      	600.0   	1       	0       	                
+
+[SUBAREAS]
+;;Subcatchment  	N-Imperv  	N-Perv    	S-Imperv  	S-Perv    	PctZero   	RouteTo   	PctRouted 
+;;--------------	----------	----------	----------	----------	----------	----------	----------
+80              	0.015     	0.41      	0.06      	0.2       	25        	OUTLET    
+85              	0.015     	0.41      	0.06      	0.2       	25        	OUTLET    
+90              	0.015     	0.41      	0.06      	0.2       	25        	OUTLET    
+95              	0.015     	0.41      	0.06      	0.2       	25        	OUTLET    
+
+[INFILTRATION]
+;;Subcatchment  	Suction   	HydCon    	IMDmax    
+;;--------------	----------	----------	----------
+80              	80        	0.3       	7         
+85              	85        	0.3       	7         
+90              	90        	0.3       	7         
+95              	95        	0.3       	7         
+
+[LID_CONTROLS]
+;;              	Type/Layer	Parameters
+;;--------------	----------	----------
+RB              	RB
+RB              	STORAGE   	12        	0.5       	10        	0.5       
+RB              	DRAIN     	2         	0.5       	0         	6         
+
+[LID_USAGE]
+;;Subcatchment  	LID Process     	Number 	Area      	Width     	InitSatur 	FromImprv 	ToPerv    	
+;;--------------	----------------	-------	----------	----------	----------	----------	----------	
+95              	RB              	1      	2         	0         	0         	0         	1         
+
+[AQUIFERS]
+;;Aquifer       	Phi   	WP    	FC    	HydCon	Kslope	Tslope	UEF   	LED   	LGLR  	BEL   	WTEL  	UZM   
+;;--------------	------	------	------	------	------	------	------	------	------	------	------	------
+broward         	0.5   	0.15  	0.30  	5.0   	10.0  	15.0  	0.35  	14.0  	0.002 	0.0   	10.0  	0.30  
+
+[GROUNDWATER]
+;;Subcatchment  	Aquifer         	Node            	Elev  	A1    	B1    	A2    	B2    	A3    	Hsw   	Hcb   	BEL   	WTEL  	UZM   
+;;--------------	----------------	----------------	------	------	------	------	------	------	------	------	------	------	------
+95              	broward         	P009            	10    	0.01  	1     	0.01  	1     	0     	2     	*     	*     	*     	*     
+
+[JUNCTIONS]
+;;Junction      	Invert    	Dmax      	Dinit     	Dsurch    	Aponded   
+;;--------------	----------	----------	----------	----------	----------
+; Runoff Node
+P001            	1.10      	20.00     	0.00      	0         	0         
+; Runoff Node
+P009            	3.60      	20.00     	0.00      	0         	0         
+; Runoff Node
+P011            	2.89      	20.00     	0.00      	0         	0         
+
+[OUTFALLS]
+;;Outfall       	Invert    	Type      	Stage Data      	Gated   
+;;--------------	----------	----------	----------------	--------
+Outlet          	0.00      	FREE      	                	NO
+
+[STORAGE]
+;;Storage Node  	Invert  	Dmax    	Dinit    	Curve     	Name/Params                 	Aponded 	Fevap   	SeepRate
+;;--------------	--------	--------	---------	----------	----------------------------	--------	--------	--------
+; Runoff Node
+P005            	1.58    	20.00   	0.00     	FUNCTIONAL	1000      0         0       	0       	1       	0       
+
+[CONDUITS]
+;;Conduit       	From Node       	To Node         	Length    	Roughness 	InOffset  	OutOffset 	InitFlow  	MaxFlow   
+;;--------------	----------------	----------------	----------	----------	----------	----------	----------	----------
+P001            	P001            	Outlet          	220.0     	0.015     	0.0       	0.0       	0         	0         
+P005            	P005            	P001            	240.0     	0.015     	0.0       	0.0       	0         	0         
+P009            	P009            	P005            	505.0     	0.024     	0.0       	0.0       	0         	0         
+P011            	P011            	P005            	655.0     	0.024     	0.0       	0.0       	0         	0         
+
+[WEIRS]
+;;Weir          	From Node       	To Node         	Type        	CrestHt   	Qcoeff    	Gated   	EndCon  	EndCoeff  
+;;--------------	----------------	----------------	------------	----------	----------	--------	--------	----------
+6               	P009            	P011            	TRAPEZOIDAL 	0         	3.33      	NO      	0       	0         
+
+[XSECTIONS]
+;;Link          	Shape       	Geom1           	Geom2     	Geom3     	Geom4     	Barrels   
+;;--------------	------------	----------------	----------	----------	----------	----------
+P001            	CIRCULAR    	4.0             	0         	0         	0         	1         	          
+P005            	CIRCULAR    	3.0             	0         	0         	0         	1         	          
+P009            	CIRCULAR    	2.25            	0         	0         	0         	1         	          
+P011            	CIRCULAR    	2.5             	0         	0         	0         	1         	          
+6               	TRAPEZOIDAL 	1               	1         	0         	0         
+
+[LOSSES]
+;;Link          	Kin       	Kout      	Kavg      	Flap Gate 	SeepRate  
+;;--------------	----------	----------	----------	----------	----------
+
+[POLLUTANTS]
+;;Pollutant     	Units 	Cppt      	Cgw       	Crdii     	Kdecay    	SnowOnly  	Co-Pollutant    	Co-Frac   	Cdwf      	Cinit     
+;;--------------	------	----------	----------	----------	----------	----------	----------------	----------	----------	----------
+COD             	MG/L  	5         	100       	0         	0         	NO        	*               	0.0       	0         	0         
+TOT.SOL         	MG/L  	5         	0         	0         	0         	NO        	*               	0.0       	0         	0         
+TOT.NIT         	MG/L  	0.3       	0         	0         	0         	NO        	*               	0.0       	0         	0         
+TSS             	MG/L  	5         	0         	0         	0         	NO        	*               	0.0       	0         	0         
+O-PO4-P         	MG/L  	0.002     	0         	0         	0         	NO        	*               	0.0       	0         	0         
+
+[LANDUSES]
+;;              	Cleaning  	Fraction  	Last      
+;;Land Use      	Interval  	Available 	Cleaned   
+;;--------------	----------	----------	----------
+HOUSING         	0         	0         	0         
+
+[COVERAGES]
+;;Subcatchment  	Land Use        	Percent   
+;;--------------	----------------	----------
+80              	HOUSING         	100       
+85              	HOUSING         	100       
+90              	HOUSING         	100       
+95              	HOUSING         	100       
+
+[LOADINGS]
+;;Subcatchment  	Pollutant       	InitLoad  
+;;--------------	----------------	----------
+
+[BUILDUP]
+;;Land Use      	Pollutant       	Function  	Coeff1    	Coeff2    	Coeff3    	Normalizer
+;;--------------	----------------	----------	----------	----------	----------	----------
+HOUSING         	COD             	POWER     	100000    	1         	3         	AREA      
+HOUSING         	TOT.SOL         	POWER     	100000    	1         	3.5       	AREA      
+HOUSING         	TOT.NIT         	POWER     	100000    	1         	1.1       	AREA      
+HOUSING         	TSS             	POWER     	100000    	1         	3.5       	AREA      
+HOUSING         	O-PO4-P         	POWER     	100       	1         	1.002     	AREA      
+
+[WASHOFF]
+;;Land Use      	Pollutant       	Function  	Coeff1    	Coeff2    	Ecleaning 	Ebmp      
+;;--------------	----------------	----------	----------	----------	----------	----------
+HOUSING         	COD             	EXP       	2         	1.4       	35        	0         
+HOUSING         	TOT.SOL         	EXP       	20        	1.5       	40        	0         
+HOUSING         	TOT.NIT         	EXP       	0.5       	1.5       	45        	0         
+HOUSING         	TSS             	EXP       	100       	1.5       	40        	0         
+HOUSING         	O-PO4-P         	EXP       	1         	1.6       	25        	0         
+
+[HYDROGRAPHS]
+;;Hydrograph    	Rain Gage/Month 	Response	R       	T       	K       	Dmax    	Drec    	D0      
+;;--------------	----------------	--------	--------	--------	--------	--------	--------	--------
+RDII            	GAGE1           
+RDII            	All             	Short   	.1      	1       	1       	0       	0       	0       
+RDII            	All             	Medium  	.1      	2       	2       	0       	0       	0       
+RDII            	All             	Long    	.1      	3       	3       	0       	0       	0       
+
+
+[RDII]
+;;Node          	Unit Hydrograph 	Sewer Area
+;;--------------	----------------	----------
+P009            	RDII            	1         
+P011            	RDII            	1         
+
+[TIMESERIES]
+;;Time Series   	Date      	Time      	Value     
+;;--------------	----------	----------	----------
+RainSeries1     	07/15/1977	06:30     	0.00000   
+RainSeries1     	          	06:35     	0.84000   
+RainSeries1     	          	06:40     	0.04000   
+RainSeries1     	          	06:45     	0.02000   
+RainSeries1     	          	06:50     	0.00000   
+RainSeries1     	07/15/1977	06:55     	0.00000   
+RainSeries1     	          	07:00     	0.00000   
+RainSeries1     	          	07:05     	0.00000   
+RainSeries1     	          	07:10     	0.68000   
+RainSeries1     	          	07:15     	0.88000   
+RainSeries1     	07/15/1977	07:20     	2.02000   
+RainSeries1     	          	07:25     	2.13000   
+RainSeries1     	          	07:30     	0.63000   
+RainSeries1     	          	07:35     	2.33000   
+RainSeries1     	          	07:40     	0.31000   
+RainSeries1     	07/15/1977	07:45     	0.20000   
+RainSeries1     	          	07:50     	0.00000   
+RainSeries1     	          	07:55     	0.00000   
+RainSeries1     	          	08:00     	0.00000   
+RainSeries1     	          	08:05     	0.02000   
+RainSeries1     	07/15/1977	08:10     	0.00000   
+RainSeries1     	          	08:15     	0.00000   
+RainSeries1     	          	08:20     	0.00000   
+RainSeries1     	          	08:25     	0.00000   
+RainSeries1     	          	08:30     	0.22000   
+RainSeries1     	07/15/1977	08:35     	2.39000   
+RainSeries1     	          	08:40     	0.40000   
+RainSeries1     	          	08:45     	0.86000   
+RainSeries1     	          	08:50     	2.79000   
+RainSeries1     	          	08:55     	1.38000   
+RainSeries1     	07/15/1977	09:00     	1.08000   
+RainSeries1     	          	09:05     	0.64000   
+RainSeries1     	          	09:10     	0.02000   
+RainSeries1     	          	09:15     	0.15000   
+RainSeries1     	          	09:20     	0.00000   
+RainSeries1     	          	09:25     	10        
+RainSeries1     	          	09:30     	0         
+;
+;scs 2a hyetograph for 5 inches
+scs2a           	          	0.250000  	0.013     
+scs2a           	          	0.500000  	0.027     
+scs2a           	          	0.750000  	0.040     
+scs2a           	          	1.000000  	0.054     
+scs2a           	          	1.250000  	0.068     
+scs2a           	          	1.500000  	0.083     
+scs2a           	          	1.750000  	0.097     
+scs2a           	          	2.000000  	0.112     
+scs2a           	          	2.250000  	0.127     
+scs2a           	          	2.500000  	0.143     
+scs2a           	          	2.750000  	0.158     
+scs2a           	          	3.000000  	0.174     
+scs2a           	          	3.250000  	0.191     
+scs2a           	          	3.500000  	0.208     
+scs2a           	          	3.750000  	0.225     
+scs2a           	          	4.000000  	0.242     
+scs2a           	          	4.250000  	0.260     
+scs2a           	          	4.500000  	0.279     
+scs2a           	          	4.750000  	0.298     
+scs2a           	          	5.000000  	0.317     
+scs2a           	          	5.250000  	0.337     
+scs2a           	          	5.500000  	0.358     
+scs2a           	          	5.750000  	0.379     
+scs2a           	          	6.000000  	0.400     
+scs2a           	          	6.250000  	0.423     
+scs2a           	          	6.500000  	0.446     
+scs2a           	          	6.750000  	0.470     
+scs2a           	          	7.000000  	0.495     
+scs2a           	          	7.250000  	0.521     
+scs2a           	          	7.500000  	0.548     
+scs2a           	          	7.750000  	0.576     
+scs2a           	          	8.000000  	0.605     
+scs2a           	          	8.250000  	0.636     
+scs2a           	          	8.500000  	0.668     
+scs2a           	          	8.750000  	0.703     
+scs2a           	          	9.000000  	0.739     
+scs2a           	          	9.250000  	0.777     
+scs2a           	          	9.500000  	0.819     
+scs2a           	          	9.750000  	0.864     
+scs2a           	          	10.000000 	0.913     
+scs2a           	          	10.250000 	0.966     
+scs2a           	          	10.500000 	1.026     
+scs2a           	          	10.750000 	1.095     
+scs2a           	          	11.000000 	1.175     
+scs2a           	          	11.250000 	1.273     
+scs2a           	          	11.500000 	1.402     
+scs2a           	          	11.750000 	1.602     
+scs2a           	          	12.000000 	2.500     
+scs2a           	          	12.250000 	3.398     
+scs2a           	          	12.500000 	3.598     
+scs2a           	          	12.750000 	3.727     
+scs2a           	          	13.000000 	3.825     
+scs2a           	          	13.250000 	3.905     
+scs2a           	          	13.500000 	3.974     
+scs2a           	          	13.750000 	4.034     
+scs2a           	          	14.000000 	4.087     
+scs2a           	          	14.250000 	4.136     
+scs2a           	          	14.500000 	4.181     
+scs2a           	          	14.750000 	4.223     
+scs2a           	          	15.000000 	4.261     
+scs2a           	          	15.250000 	4.297     
+scs2a           	          	15.500000 	4.332     
+scs2a           	          	15.750000 	4.364     
+scs2a           	          	16.000000 	4.395     
+scs2a           	          	16.250000 	4.424     
+scs2a           	          	16.500000 	4.452     
+scs2a           	          	16.750000 	4.479     
+scs2a           	          	17.000000 	4.505     
+scs2a           	          	17.250000 	4.530     
+scs2a           	          	17.500000 	4.554     
+scs2a           	          	17.750000 	4.577     
+scs2a           	          	18.000000 	4.600     
+scs2a           	          	18.250000 	4.621     
+scs2a           	          	18.500000 	4.642     
+scs2a           	          	18.750000 	4.663     
+scs2a           	          	19.000000 	4.683     
+scs2a           	          	19.250000 	4.702     
+scs2a           	          	19.500000 	4.721     
+scs2a           	          	19.750000 	4.740     
+scs2a           	          	20.000000 	4.758     
+scs2a           	          	20.250000 	4.775     
+scs2a           	          	20.500000 	4.792     
+scs2a           	          	20.750000 	4.809     
+scs2a           	          	21.000000 	4.826     
+scs2a           	          	21.250000 	4.842     
+scs2a           	          	21.500000 	4.857     
+scs2a           	          	21.750000 	4.873     
+scs2a           	          	22.000000 	4.888     
+scs2a           	          	22.250000 	4.903     
+scs2a           	          	22.500000 	4.917     
+scs2a           	          	22.750000 	4.932     
+scs2a           	          	23.000000 	4.946     
+scs2a           	          	23.250000 	4.960     
+scs2a           	          	23.500000 	4.973     
+scs2a           	          	23.750000 	4.987     
+scs2a           	          	24.000000 	5.000     
+
+[PATTERNS]
+;;Pattern       	Type      	Multipliers
+;;--------------	----------	-----------
+evaporation     	MONTHLY   	5    	5    	2    	2    	3    	3    
+evaporation     	          	2    	2    	2    	1.0  	1.0  	1.0  
+
+[REPORT]
+;;Reporting Options
+INPUT     	YES
+CONTROLS  	YES
+SUBCATCHMENTS	ALL
+NODES	ALL
+LINKS	ALL
+
+[TAGS]
+Subcatch  80              	CA              
+Subcatch  85              	CA              
+Subcatch  90              	CA              
+Subcatch  95              	CA              
+
+[MAP]
+DIMENSIONS	-111.501	12.393	742.155	663.490
+Units     	None
+
+[COORDINATES]
+;;Node          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+P001            	147.531           	119.924           
+P009            	282.342           	354.434           
+P011            	398.507           	400.326           
+Outlet          	-8.449            	111.653           
+P005            	198.227           	200.920           
+
+[VERTICES]
+;;Link          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+
+[Polygons]
+;;Subcatchment  	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+80              	351.312           	512.906           
+80              	233.581           	630.638           
+80              	115.850           	512.906           
+80              	233.581           	395.175           
+85              	549.360           	159.719           
+85              	431.629           	277.451           
+85              	313.897           	159.719           
+85              	431.629           	41.988            
+90              	177.819           	368.074           
+90              	60.088            	485.805           
+90              	-57.644           	368.074           
+90              	60.088            	250.342           
+95              	701.959           	341.527           
+95              	584.227           	459.259           
+95              	466.496           	341.527           
+95              	584.227           	223.796           
+
+[SYMBOLS]
+;;Gage          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+GAGE1           	242.100           	568.930           
+

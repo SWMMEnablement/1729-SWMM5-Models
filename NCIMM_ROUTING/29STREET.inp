@@ -1,0 +1,800 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/2014
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/2014
+REPORT_START_TIME    00:00:00
+END_DATE             01/02/2014
+END_TIME             01:00:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:05
+WET_STEP             00:01:00
+DRY_STEP             24:00:00
+ROUTING_STEP         0:00:05 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  FROUDE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+GidInl1          51.85      4.25       0          0          0         
+GidMan1          49.675     4.125      0          0          0         
+GidInl3          49.175     4.625      0          0          0         
+210              50         10         0          0          0         
+Basin#43         50         10         0          0          0         
+Basin44          50         10         0          0          0         
+FrMan2           50         10         0          0          0         
+FrIn3            50         10         0          0          0         
+FrMan1           50         10         0          0          0         
+FrIn1            50         10         0          0          0         
+FrIn2            50         10         0          0          0         
+ShadMan2         50         10         0          0          0         
+ShadMan1         50         10         0          0          0         
+ShadInl1         50         10         0          0          0         
+ShadInl2         50         10         0          0          0         
+McBerInl1        50         10         0          0          0         
+WilderInl1       50         10         0          0          0         
+McBerInl2        50         10         0          0          0         
+WilderInl2       50         10         0          0          0         
+CaracMan1        50         10         0          0          0         
+Basin45          50         10         0          0          0         
+EllInl1          50         10         0          0          0         
+EllInl2          50         10         0          0          0         
+EllInl4          50         10         0          0          0         
+EllInl3          50         10         0          0          0         
+CaracInl1        50         10         0          0          0         
+CarMan1          50         10         0          0          0         
+CarInl1          50         10         0          0          0         
+CarInl2          50         10         0          0          0         
+CarMan2          50         10         0          0          0         
+CarInl3          50         10         0          0          0         
+CarInl4          50         10         0          0          0         
+CarInl5          50         10         0          0          0         
+EllMan1          50         10         0          0          0         
+LouInl1          50         10         0          0          0         
+LouInl2          50         10         0          0          0         
+EllInl5          50         10         0          0          0         
+OsbornInl1       50         10         0          0          0         
+282              50         10         0          0          0         
+PaliInl1         50         10         0          0          0         
+Basin19          50         10         0          0          0         
+PaliInl2         50         10         0          0          0         
+PaliInl4         50         10         0          0          0         
+PaliInl3         50         10         0          0          0         
+CurtisMan1       50         10         0          0          0         
+CurtisInl1       50         10         0          0          0         
+CurtisInl2       50         10         0          0          0         
+PaliInl11        50         10         0          0          0         
+PaliInl10        50         10         0          0          0         
+PaliInl9         50         10         0          0          0         
+PaliInl8         50         10         0          0          0         
+PaliInl7         50         10         0          0          0         
+PaliInl6         50         10         0          0          0         
+PaliInl5         50         10         0          0          0         
+OsbornInl4       50         10         0          0          0         
+OsbornInl3       50         10         0          0          0         
+OsbornInl2       50         10         0          0          0         
+OsbornInl        50         10         0          0          0         
+OsbornInl0       50         10         0          0          0         
+324              50         10         0          0          0         
+325              50         10         0          0          0         
+OsbornInl5       50         10         0          0          0         
+OsbornInl6       50         10         0          0          0         
+29thInl2         50         10         0          0          0         
+29thInl3         50         10         0          0          0         
+29thMan1         50         10         0          0          0         
+29thInl4         50         10         0          0          0         
+29thInl1         50         10         0          0          0         
+30thMan1         50         10         0          0          0         
+30thInl2         50         10         0          0          0         
+30thInl3         50         10         0          0          0         
+ChelsaMan1       50         10         0          0          0         
+ChelsaMan2       50         10         0          0          0         
+ChelsaMan3       50         10         0          0          0         
+ChelsaMan4       50         10         0          0          0         
+ChelsaInl1       50         10         0          0          0         
+ChelsaInl3       50         10         0          0          0         
+ChelsaInl4       0          0          0          0          0         
+ChelsaMan5       0          0          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Basin1           50         FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+Giddons15        GidInl1          GidMan1          50         0.014      0          0          0          0         
+Giddons18        GidMan1          GidInl3          50         0.014      0          0          0          0         
+Giddons24        GidInl3          210              50         0.014      0.825      0          0          0         
+GidBas24         210              Basin#43         50         0.014      0          0          0          0         
+BasFri12         Basin44          FrMan2           50         0.014      0          0          0          0         
+Frierson1        FrMan2           FrIn3            50         0.014      0          0          0          0         
+Frierson2        FrIn3            FrMan1           50         0.014      0          0          0          0         
+222              FrMan1           Basin#43         50         0.014      0          0          0          0         
+Fr30#2           FrIn1            FrIn2            50         0.014      0          0          0          0         
+Fr30#1           FrIn2            Basin44          50         0.014      0          0          0          0         
+Shadow24         Basin#43         ShadMan2         50         0.014      0          0          0          0         
+Shadow30         ShadMan2         ShadMan1         50         0.014      0          0          0          0         
+Shad18.2         ShadInl1         ShadInl2         50         0.014      0          0          0          0         
+Shad18.1         ShadInl2         ShadMan1         50         0.014      0          0          0          0         
+McBerry30        ShadMan2         McBerInl1        50         0.014      0          0          0          0         
+Wilder30         McBerInl1        WilderInl1       50         0.014      0          0          0          0         
+McBerry18        McBerInl2        McBerInl1        50         0.014      0          0          0          0         
+Wilder18         WilderInl2       WilderInl1       50         0.014      0          0          0          0         
+Caracas36        WilderInl1       CaracMan1        50         0.014      0          0          0          0         
+Cararas48        CaracMan1        Basin45          50         0.014      0          0          0          0         
+Elli18.3         EllInl1          EllInl2          50         0.014      0          0          0          0         
+Elli18.1         EllInl4          EllInl3          50         0.014      0          0          0          0         
+Elli18.2         EllInl3          EllInl2          50         0.014      0          0          0          0         
+Elli24           EllInl2          Basin45          50         0.014      0          0          0          0         
+Caracas18        CaracInl1        Basin45          50         0.014      0          0          0          0         
+Cararas30        Basin45          CarMan1          50         0.014      0          0          0          0         
+Carac36.1        CarMan1          CarInl1          50         0.014      0          0          0          0         
+Carac36.2        CarInl1          CarInl2          50         0.014      0          0          0          0         
+Carac36.3        CarInl2          CarMan2          50         0.014      0          0          0          0         
+Carac36.4        CarMan2          CarInl3          50         0.014      0          0          0          0         
+Carac42.1        CarInl3          CarInl4          50         0.014      0          0          0          0         
+Carac42.2        CarInl4          CarInl5          50         0.014      0          0          0          0         
+Carac42.3        CarInl5          EllMan1          50         0.014      0          0          0          0         
+Lou48.1          EllMan1          LouInl1          50         0.014      0          0          0          0         
+Lou48.2          LouInl1          LouInl2          50         0.014      0          0          0          0         
+Elli18.4         EllInl5          EllMan1          50         0.014      0          0          0          0         
+Osborne54        LouInl2          OsbornInl1       50         0.014      0          0          0          0         
+Curtis54         OsbornInl1       282              50         0.014      0          0          0          0         
+Pali54.1         282              PaliInl1         50         0.014      0          0          0          0         
+Pali54.2         PaliInl1         Basin19          50         0.014      0          0          0          0         
+289              PaliInl2         PaliInl1         50         0.014      0          0          0          0         
+Pali18           PaliInl4         PaliInl3         50         0.014      0          0          0          0         
+Pali27           PaliInl3         PaliInl2         50         0.014      0          0          0          0         
+Curtis54.3       CurtisMan1       PaliInl2         50         0.014      0          0          0          0         
+Curtis54.2       CurtisInl1       CurtisMan1       50         0.014      0          0          0          0         
+Curtis54.1       CurtisInl2       CurtisInl1       50         0.014      0          0          0          0         
+Pali36.1         PaliInl11        PaliInl10        50         0.014      0          0          0          0         
+Pali36.2         PaliInl10        PaliInl9         50         0.014      0          0          0          0         
+Pali36.3         PaliInl9         PaliInl8         50         0.014      0          0          0          0         
+Pali36.4         PaliInl8         PaliInl7         50         0.014      0          0          0          0         
+Pali42.1         PaliInl7         PaliInl6         50         0.014      0          0          0          0         
+Pali42.2         PaliInl6         PaliInl5         50         0.014      0          0          0          0         
+Pali42.3         PaliInl5         CurtisInl2       50         0.014      0          0          0          0         
+Osborn21.1       OsbornInl4       OsbornInl3       50         0.014      0          0          0          0         
+Osborn24.2       OsbornInl3       OsbornInl2       50         0.014      0          0          0          0         
+Osborn30.2       OsbornInl2       OsbornInl        50         0.014      0          0          0          0         
+Osborn30.1       OsbornInl        OsbornInl0       50         0.014      0          0          0          0         
+Osborn36.1       OsbornInl0       CurtisInl2       50         0.014      0          0          0          0         
+Osborn18.1       324              325              50         0.014      0          0          0          0         
+Osborn24.1       325              OsbornInl0       50         0.014      0          0          0          0         
+Osborn18.3       OsbornInl5       OsbornInl6       50         0.014      0          0          0          0         
+Osborn18.2       OsbornInl6       OsbornInl0       50         0.014      0          0          0          0         
+29th15.2         29thInl2         29thInl3         50         0.014      0          0          0          0         
+29th18.1         29thInl3         29thMan1         50         0.014      0          0          0          0         
+29th18.2         29thMan1         29thInl4         50         0.014      0          0          0          0         
+29th18.3         29thInl4         Basin19          50         0.014      0          0          0          0         
+29th15.1         29thInl1         29thInl2         50         0.014      0          0          0          0         
+30th36.1         PaliInl1         30thMan1         50         0.014      0          0          0          0         
+30th42           30thMan1         30thInl2         50         0.014      0          0          0          0         
+30th48           30thInl2         30thInl3         50         0.014      0          0          0          0         
+Chelsa54.2       ChelsaMan1       ChelsaMan2       50         0.014      0          0          0          0         
+Chelsa54.3       ChelsaMan2       ChelsaMan3       50         0.014      0          0          0          0         
+Chelsa54.4       ChelsaMan4       ChelsaMan3       50         0.014      0          0          0          0         
+Chelsa60         ChelsaMan3       Basin1           50         0.014      0          0          0          0         
+Chelsa18         ChelsaInl1       ChelsaMan1       50         0.014      0          0          0          0         
+Chelsa54.1       30thInl3         ChelsaMan1       50         0.014      0          0          0          0         
+Chelsa15.1       ChelsaInl3       ChelsaMan2       50         0.014      0          0          0          0         
+Chelsa18.1       ChelsaInl4       ChelsaMan5       10         0.014      0.05       0          0          0         
+Chelsa18.2       ChelsaMan5       ChelsaMan4       10         0.014      0.05       -50        0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+Giddons15        CIRCULAR     2                0.0001     0          0          1                    
+Giddons18        CIRCULAR     2                0.0001     0          0          1                    
+Giddons24        CIRCULAR     2                0.0001     0          0          1                    
+GidBas24         CIRCULAR     2                0.0001     0          0          1                    
+BasFri12         CIRCULAR     2                0.0001     0          0          1                    
+Frierson1        CIRCULAR     2                0.0001     0          0          1                    
+Frierson2        CIRCULAR     2                0.0001     0          0          1                    
+222              CIRCULAR     2                0.0001     0          0          1                    
+Fr30#2           CIRCULAR     2                0.0001     0          0          1                    
+Fr30#1           CIRCULAR     2                0.0001     0          0          1                    
+Shadow24         CIRCULAR     2                0.0001     0          0          1                    
+Shadow30         CIRCULAR     2                0.0001     0          0          1                    
+Shad18.2         CIRCULAR     2                0.0001     0          0          1                    
+Shad18.1         CIRCULAR     2                0.0001     0          0          1                    
+McBerry30        CIRCULAR     2                0.0001     0          0          1                    
+Wilder30         CIRCULAR     2                0.0001     0          0          1                    
+McBerry18        CIRCULAR     2                0.0001     0          0          1                    
+Wilder18         CIRCULAR     2                0.0001     0          0          1                    
+Caracas36        CIRCULAR     2                0.0001     0          0          1                    
+Cararas48        CIRCULAR     2                0.0001     0          0          1                    
+Elli18.3         CIRCULAR     2                0.0001     0          0          1                    
+Elli18.1         CIRCULAR     2                0.0001     0          0          1                    
+Elli18.2         CIRCULAR     2                0.0001     0          0          1                    
+Elli24           CIRCULAR     2                0.0001     0          0          1                    
+Caracas18        CIRCULAR     2                0.0001     0          0          1                    
+Cararas30        CIRCULAR     2                0.0001     0          0          1                    
+Carac36.1        CIRCULAR     2                0.0001     0          0          1                    
+Carac36.2        CIRCULAR     2                0.0001     0          0          1                    
+Carac36.3        CIRCULAR     2                0.0001     0          0          1                    
+Carac36.4        CIRCULAR     2                0.0001     0          0          1                    
+Carac42.1        CIRCULAR     2                0.0001     0          0          1                    
+Carac42.2        CIRCULAR     2                0.0001     0          0          1                    
+Carac42.3        CIRCULAR     2                0.0001     0          0          1                    
+Lou48.1          CIRCULAR     2                0.0001     0          0          1                    
+Lou48.2          CIRCULAR     2                0.0001     0          0          1                    
+Elli18.4         CIRCULAR     2                0.0001     0          0          1                    
+Osborne54        CIRCULAR     2                0.0001     0          0          1                    
+Curtis54         CIRCULAR     2                0.0001     0          0          1                    
+Pali54.1         CIRCULAR     2                0.0001     0          0          1                    
+Pali54.2         CIRCULAR     2                0.0001     0          0          1                    
+289              CIRCULAR     2                0.0001     0          0          1                    
+Pali18           CIRCULAR     2                0.0001     0          0          1                    
+Pali27           CIRCULAR     2                0.0001     0          0          1                    
+Curtis54.3       CIRCULAR     2                0.0001     0          0          1                    
+Curtis54.2       CIRCULAR     2                0.0001     0          0          1                    
+Curtis54.1       CIRCULAR     2                0.0001     0          0          1                    
+Pali36.1         CIRCULAR     2                0.0001     0          0          1                    
+Pali36.2         CIRCULAR     2                0.0001     0          0          1                    
+Pali36.3         CIRCULAR     2                0.0001     0          0          1                    
+Pali36.4         CIRCULAR     2                0.0001     0          0          1                    
+Pali42.1         CIRCULAR     2                0.0001     0          0          1                    
+Pali42.2         CIRCULAR     2                0.0001     0          0          1                    
+Pali42.3         CIRCULAR     2                0.0001     0          0          1                    
+Osborn21.1       CIRCULAR     2                0.0001     0          0          1                    
+Osborn24.2       CIRCULAR     2                0.0001     0          0          1                    
+Osborn30.2       CIRCULAR     2                0.0001     0          0          1                    
+Osborn30.1       CIRCULAR     2                0.0001     0          0          1                    
+Osborn36.1       CIRCULAR     2                0.0001     0          0          1                    
+Osborn18.1       CIRCULAR     2                0.0001     0          0          1                    
+Osborn24.1       CIRCULAR     2                0.0001     0          0          1                    
+Osborn18.3       CIRCULAR     2                0.0001     0          0          1                    
+Osborn18.2       CIRCULAR     2                0.0001     0          0          1                    
+29th15.2         CIRCULAR     2                0.0001     0          0          1                    
+29th18.1         CIRCULAR     2                0.0001     0          0          1                    
+29th18.2         CIRCULAR     2                0.0001     0          0          1                    
+29th18.3         CIRCULAR     2                0.0001     0          0          1                    
+29th15.1         CIRCULAR     2                0.0001     0          0          1                    
+30th36.1         CIRCULAR     2                0.0001     0          0          1                    
+30th42           CIRCULAR     2                0.0001     0          0          1                    
+30th48           CIRCULAR     2                0.0001     0          0          1                    
+Chelsa54.2       CIRCULAR     2                0.0001     0          0          1                    
+Chelsa54.3       CIRCULAR     2                0.0001     0          0          1                    
+Chelsa54.4       CIRCULAR     2                0.0001     0          0          1                    
+Chelsa60         CIRCULAR     2                0.0001     0          0          1                    
+Chelsa18         CIRCULAR     2                0.0001     0          0          1                    
+Chelsa54.1       CIRCULAR     2                0.0001     0          0          1                    
+Chelsa15.1       CIRCULAR     2                0.0001     0          0          1                    
+Chelsa18.1       CIRCULAR     0.05             0.0001     0          0          1                    
+Chelsa18.2       CIRCULAR     0.05             0.0001     0          0          1                    
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+GidInl1          FLOW             ""               FLOW     1.0      1.0      .1      
+GidMan1          FLOW             ""               FLOW     1.0      1.0      .1      
+GidInl3          FLOW             ""               FLOW     1.0      1.0      .1      
+210              FLOW             ""               FLOW     1.0      1.0      .1      
+Basin#43         FLOW             ""               FLOW     1.0      1.0      .1      
+Basin44          FLOW             ""               FLOW     1.0      1.0      .1      
+FrMan2           FLOW             ""               FLOW     1.0      1.0      .1      
+FrIn3            FLOW             ""               FLOW     1.0      1.0      .1      
+FrMan1           FLOW             ""               FLOW     1.0      1.0      .1      
+FrIn1            FLOW             ""               FLOW     1.0      1.0      .1      
+FrIn2            FLOW             ""               FLOW     1.0      1.0      .1      
+ShadMan2         FLOW             ""               FLOW     1.0      1.0      .1      
+ShadMan1         FLOW             ""               FLOW     1.0      1.0      .1      
+ShadInl1         FLOW             ""               FLOW     1.0      1.0      .1      
+ShadInl2         FLOW             ""               FLOW     1.0      1.0      .1      
+McBerInl1        FLOW             ""               FLOW     1.0      1.0      .1      
+WilderInl1       FLOW             ""               FLOW     1.0      1.0      .1      
+McBerInl2        FLOW             ""               FLOW     1.0      1.0      .1      
+WilderInl2       FLOW             ""               FLOW     1.0      1.0      .1      
+CaracMan1        FLOW             ""               FLOW     1.0      1.0      .1      
+Basin45          FLOW             ""               FLOW     1.0      1.0      .1      
+EllInl1          FLOW             ""               FLOW     1.0      1.0      .1      
+EllInl2          FLOW             ""               FLOW     1.0      1.0      .1      
+EllInl4          FLOW             ""               FLOW     1.0      1.0      .1      
+EllInl3          FLOW             ""               FLOW     1.0      1.0      .1      
+CaracInl1        FLOW             ""               FLOW     1.0      1.0      .1      
+CarMan1          FLOW             ""               FLOW     1.0      1.0      .1      
+CarInl1          FLOW             ""               FLOW     1.0      1.0      .1      
+CarInl2          FLOW             ""               FLOW     1.0      1.0      .1      
+CarMan2          FLOW             ""               FLOW     1.0      1.0      .1      
+CarInl3          FLOW             ""               FLOW     1.0      1.0      .1      
+CarInl4          FLOW             ""               FLOW     1.0      1.0      .1      
+CarInl5          FLOW             ""               FLOW     1.0      1.0      .1      
+EllMan1          FLOW             ""               FLOW     1.0      1.0      .1      
+LouInl1          FLOW             ""               FLOW     1.0      1.0      .1      
+LouInl2          FLOW             ""               FLOW     1.0      1.0      .1      
+EllInl5          FLOW             ""               FLOW     1.0      1.0      .1      
+OsbornInl1       FLOW             ""               FLOW     1.0      1.0      .1      
+282              FLOW             ""               FLOW     1.0      1.0      .1      
+PaliInl1         FLOW             ""               FLOW     1.0      1.0      .1      
+Basin19          FLOW             ""               FLOW     1.0      1.0      .1      
+PaliInl2         FLOW             ""               FLOW     1.0      1.0      .1      
+PaliInl4         FLOW             ""               FLOW     1.0      1.0      .1      
+PaliInl3         FLOW             ""               FLOW     1.0      1.0      .1      
+CurtisMan1       FLOW             ""               FLOW     1.0      1.0      .1      
+CurtisInl1       FLOW             ""               FLOW     1.0      1.0      .1      
+CurtisInl2       FLOW             ""               FLOW     1.0      1.0      .1      
+PaliInl11        FLOW             ""               FLOW     1.0      1.0      .1      
+PaliInl10        FLOW             ""               FLOW     1.0      1.0      .1      
+PaliInl9         FLOW             ""               FLOW     1.0      1.0      .1      
+PaliInl8         FLOW             ""               FLOW     1.0      1.0      .1      
+PaliInl7         FLOW             ""               FLOW     1.0      1.0      .1      
+PaliInl6         FLOW             ""               FLOW     1.0      1.0      .1      
+PaliInl5         FLOW             ""               FLOW     1.0      1.0      .1      
+OsbornInl4       FLOW             ""               FLOW     1.0      1.0      .1      
+OsbornInl3       FLOW             ""               FLOW     1.0      1.0      .1      
+OsbornInl2       FLOW             ""               FLOW     1.0      1.0      .1      
+OsbornInl        FLOW             ""               FLOW     1.0      1.0      .1      
+OsbornInl0       FLOW             ""               FLOW     1.0      1.0      .1      
+324              FLOW             ""               FLOW     1.0      1.0      .1      
+325              FLOW             ""               FLOW     1.0      1.0      .1      
+OsbornInl5       FLOW             ""               FLOW     1.0      1.0      .1      
+OsbornInl6       FLOW             ""               FLOW     1.0      1.0      .1      
+29thInl2         FLOW             ""               FLOW     1.0      1.0      .1      
+29thInl3         FLOW             ""               FLOW     1.0      1.0      .1      
+29thMan1         FLOW             ""               FLOW     1.0      1.0      .1      
+29thInl4         FLOW             ""               FLOW     1.0      1.0      .1      
+29thInl1         FLOW             ""               FLOW     1.0      1.0      .1      
+30thMan1         FLOW             ""               FLOW     1.0      1.0      .1      
+30thInl2         FLOW             ""               FLOW     1.0      1.0      .1      
+30thInl3         FLOW             ""               FLOW     1.0      1.0      .1      
+ChelsaMan1       FLOW             ""               FLOW     1.0      1.0      .1      
+ChelsaMan2       FLOW             ""               FLOW     1.0      1.0      .1      
+ChelsaMan3       FLOW             ""               FLOW     1.0      1.0      .1      
+ChelsaMan4       FLOW             ""               FLOW     1.0      1.0      .1      
+ChelsaInl1       FLOW             ""               FLOW     1.0      1.0      .1      
+ChelsaInl3       FLOW             ""               FLOW     1.0      1.0      .1      
+ChelsaInl4       FLOW             ""               FLOW     1.0      1.0      .1      
+ChelsaMan5       FLOW             ""               FLOW     1.0      1.0      .1      
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+GidInl1                     0          0         
+GidInl1                     0.25       5         
+GidInl1                     1          5         
+;
+GidMan1                     0          0         
+GidMan1                     0.25       5         
+GidMan1                     1          5         
+;
+GidInl3                     0          0         
+GidInl3                     0.25       5         
+GidInl3                     1          5         
+;
+210                         0          0         
+210                         0.25       5         
+210                         1          5         
+;
+Basin#43                    0          0         
+Basin#43                    0.25       5         
+Basin#43                    1          5         
+;
+Basin44                     0          0         
+Basin44                     0.25       5         
+Basin44                     1          5         
+;
+FrMan2                      0          0         
+FrMan2                      0.25       5         
+FrMan2                      1          5         
+;
+FrIn3                       0          0         
+FrIn3                       0.25       5         
+FrIn3                       1          5         
+;
+FrMan1                      0          0         
+FrMan1                      0.25       5         
+FrMan1                      1          5         
+;
+FrIn1                       0          0         
+FrIn1                       0.25       5         
+FrIn1                       1          5         
+;
+FrIn2                       0          0         
+FrIn2                       0.25       5         
+FrIn2                       1          5         
+;
+ShadMan2                    0          0         
+ShadMan2                    0.25       5         
+ShadMan2                    1          5         
+;
+ShadMan1                    0          0         
+ShadMan1                    0.25       5         
+ShadMan1                    1          5         
+;
+ShadInl1                    0          0         
+ShadInl1                    0.25       5         
+ShadInl1                    1          5         
+;
+ShadInl2                    0          0         
+ShadInl2                    0.25       5         
+ShadInl2                    1          5         
+;
+McBerInl1                   0          0         
+McBerInl1                   0.25       5         
+McBerInl1                   1          5         
+;
+WilderInl1                  0          0         
+WilderInl1                  0.25       5         
+WilderInl1                  1          5         
+;
+McBerInl2                   0          0         
+McBerInl2                   0.25       5         
+McBerInl2                   1          5         
+;
+WilderInl2                  0          0         
+WilderInl2                  0.25       5         
+WilderInl2                  1          5         
+;
+CaracMan1                   0          0         
+CaracMan1                   0.25       5         
+CaracMan1                   1          5         
+;
+Basin45                     0          0         
+Basin45                     0.25       5         
+Basin45                     1          5         
+;
+EllInl1                     0          0         
+EllInl1                     0.25       5         
+EllInl1                     1          5         
+;
+EllInl2                     0          0         
+EllInl2                     0.25       5         
+EllInl2                     1          5         
+;
+EllInl4                     0          0         
+EllInl4                     0.25       5         
+EllInl4                     1          5         
+;
+EllInl3                     0          0         
+EllInl3                     0.25       5         
+EllInl3                     1          5         
+;
+CaracInl1                   0          0         
+CaracInl1                   0.25       5         
+CaracInl1                   1          5         
+;
+CarMan1                     0          0         
+CarMan1                     0.25       5         
+CarMan1                     1          5         
+;
+CarInl1                     0          0         
+CarInl1                     0.25       5         
+CarInl1                     1          5         
+;
+CarInl2                     0          0         
+CarInl2                     0.25       5         
+CarInl2                     1          5         
+;
+CarMan2                     0          0         
+CarMan2                     0.25       5         
+CarMan2                     1          5         
+;
+CarInl3                     0          0         
+CarInl3                     0.25       5         
+CarInl3                     1          5         
+;
+CarInl4                     0          0         
+CarInl4                     0.25       5         
+CarInl4                     1          5         
+;
+CarInl5                     0          0         
+CarInl5                     0.25       5         
+CarInl5                     1          5         
+;
+EllMan1                     0          0         
+EllMan1                     0.25       5         
+EllMan1                     1          5         
+;
+LouInl1                     0          0         
+LouInl1                     0.25       5         
+LouInl1                     1          5         
+;
+LouInl2                     0          0         
+LouInl2                     0.25       5         
+LouInl2                     1          5         
+;
+EllInl5                     0          0         
+EllInl5                     0.25       5         
+EllInl5                     1          5         
+;
+OsbornInl1                  0          0         
+OsbornInl1                  0.25       5         
+OsbornInl1                  1          5         
+;
+282                         0          0         
+282                         0.25       5         
+282                         1          5         
+;
+PaliInl1                    0          0         
+PaliInl1                    0.25       5         
+PaliInl1                    1          5         
+;
+Basin19                     0          0         
+Basin19                     0.25       5         
+Basin19                     1          5         
+;
+PaliInl2                    0          0         
+PaliInl2                    0.25       5         
+PaliInl2                    1          5         
+;
+PaliInl4                    0          0         
+PaliInl4                    0.25       5         
+PaliInl4                    1          5         
+;
+PaliInl3                    0          0         
+PaliInl3                    0.25       5         
+PaliInl3                    1          5         
+;
+CurtisMan1                  0          0         
+CurtisMan1                  0.25       5         
+CurtisMan1                  1          5         
+;
+CurtisInl1                  0          0         
+CurtisInl1                  0.25       5         
+CurtisInl1                  1          5         
+;
+CurtisInl2                  0          0         
+CurtisInl2                  0.25       5         
+CurtisInl2                  1          5         
+;
+PaliInl11                   0          0         
+PaliInl11                   0.25       5         
+PaliInl11                   1          5         
+;
+PaliInl10                   0          0         
+PaliInl10                   0.25       5         
+PaliInl10                   1          5         
+;
+PaliInl9                    0          0         
+PaliInl9                    0.25       5         
+PaliInl9                    1          5         
+;
+PaliInl8                    0          0         
+PaliInl8                    0.25       5         
+PaliInl8                    1          5         
+;
+PaliInl7                    0          0         
+PaliInl7                    0.25       5         
+PaliInl7                    1          5         
+;
+PaliInl6                    0          0         
+PaliInl6                    0.25       5         
+PaliInl6                    1          5         
+;
+PaliInl5                    0          0         
+PaliInl5                    0.25       5         
+PaliInl5                    1          5         
+;
+OsbornInl4                  0          0         
+OsbornInl4                  0.25       5         
+OsbornInl4                  1          5         
+;
+OsbornInl3                  0          0         
+OsbornInl3                  0.25       5         
+OsbornInl3                  1          5         
+;
+OsbornInl2                  0          0         
+OsbornInl2                  0.25       5         
+OsbornInl2                  1          5         
+;
+OsbornInl                   0          0         
+OsbornInl                   0.25       5         
+OsbornInl                   1          5         
+;
+OsbornInl0                  0          0         
+OsbornInl0                  0.25       5         
+OsbornInl0                  1          5         
+;
+324                         0          0         
+324                         0.25       5         
+324                         1          5         
+;
+325                         0          0         
+325                         0.25       5         
+325                         1          5         
+;
+OsbornInl5                  0          0         
+OsbornInl5                  0.25       5         
+OsbornInl5                  1          5         
+;
+OsbornInl6                  0          0         
+OsbornInl6                  0.25       5         
+OsbornInl6                  1          5         
+;
+29thInl2                    0          0         
+29thInl2                    0.25       5         
+29thInl2                    1          5         
+;
+29thInl3                    0          0         
+29thInl3                    0.25       5         
+29thInl3                    1          5         
+;
+29thMan1                    0          0         
+29thMan1                    0.25       5         
+29thMan1                    1          5         
+;
+29thInl4                    0          0         
+29thInl4                    0.25       5         
+29thInl4                    1          5         
+;
+29thInl1                    0          0         
+29thInl1                    0.25       5         
+29thInl1                    1          5         
+;
+30thMan1                    0          0         
+30thMan1                    0.25       5         
+30thMan1                    1          5         
+;
+30thInl2                    0          0         
+30thInl2                    0.25       5         
+30thInl2                    1          5         
+;
+30thInl3                    0          0         
+30thInl3                    0.25       5         
+30thInl3                    1          5         
+;
+ChelsaMan1                  0          0         
+ChelsaMan1                  0.25       5         
+ChelsaMan1                  1          5         
+;
+ChelsaMan2                  0          0         
+ChelsaMan2                  0.25       5         
+ChelsaMan2                  1          5         
+;
+ChelsaMan3                  0          0         
+ChelsaMan3                  0.25       5         
+ChelsaMan3                  1          5         
+;
+ChelsaMan4                  0          0         
+ChelsaMan4                  0.25       5         
+ChelsaMan4                  1          5         
+;
+Basin1                      0          0         
+Basin1                      0.25       5         
+Basin1                      1          5         
+;
+ChelsaInl1                  0          0         
+ChelsaInl1                  0.25       5         
+ChelsaInl1                  1          5         
+;
+ChelsaInl3                  0          0         
+ChelsaInl3                  0.25       5         
+ChelsaInl3                  1          5         
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 19.500 206.500 250.500 503.500
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+GidInl1          121.298            490.825           
+GidMan1          130.000            490.000           
+GidInl3          140.000            490.000           
+210              150.000            490.000           
+Basin#43         150.000            480.000           
+Basin44          210.000            480.000           
+FrMan2           210.000            470.000           
+FrIn3            180.000            470.000           
+FrMan1           160.000            480.000           
+FrIn1            240.000            470.000           
+FrIn2            220.000            470.000           
+ShadMan2         150.000            460.000           
+ShadMan1         160.000            460.000           
+ShadInl1         190.000            460.000           
+ShadInl2         180.000            460.000           
+McBerInl1        150.000            440.000           
+WilderInl1       150.000            430.000           
+McBerInl2        180.000            440.000           
+WilderInl2       180.000            430.000           
+CaracMan1        150.000            410.000           
+Basin45          140.000            400.000           
+EllInl1          120.000            390.000           
+EllInl2          140.000            390.000           
+EllInl4          180.000            390.000           
+EllInl3          160.000            390.000           
+CaracInl1        140.000            410.000           
+CarMan1          130.000            400.000           
+CarInl1          130.000            410.000           
+CarInl2          130.000            420.000           
+CarMan2          110.000            420.000           
+CarInl3          90.000             420.000           
+CarInl4          70.000             420.000           
+CarInl5          50.000             420.000           
+EllMan1          50.000             390.000           
+LouInl1          50.000             380.000           
+LouInl2          50.000             360.000           
+EllInl5          40.000             390.000           
+OsbornInl1       50.000             340.000           
+282              50.000             320.000           
+PaliInl1         50.000             300.000           
+Basin19          40.000             300.000           
+PaliInl2         80.000             300.000           
+PaliInl4         110.000            290.000           
+PaliInl3         80.000             290.000           
+CurtisMan1       80.000             320.000           
+CurtisInl1       110.000            320.000           
+CurtisInl2       140.000            320.000           
+PaliInl11        200.000            300.000           
+PaliInl10        190.000            300.000           
+PaliInl9         180.000            300.000           
+PaliInl8         170.000            300.000           
+PaliInl7         160.000            300.000           
+PaliInl6         150.000            300.000           
+PaliInl5         140.000            300.000           
+OsbornInl4       200.000            330.000           
+OsbornInl3       190.000            330.000           
+OsbornInl2       180.000            330.000           
+OsbornInl        160.000            330.000           
+OsbornInl0       140.000            330.000           
+324              100.000            330.000           
+325              120.000            330.000           
+OsbornInl5       140.000            370.000           
+OsbornInl6       140.000            350.000           
+29thInl2         30.000             260.000           
+29thInl3         30.000             270.000           
+29thMan1         30.000             280.000           
+29thInl4         30.000             290.000           
+29thInl1         30.000             250.000           
+30thMan1         60.000             290.000           
+30thInl2         60.000             270.000           
+30thInl3         60.000             250.000           
+ChelsaMan1       100.000            250.000           
+ChelsaMan2       100.000            230.000           
+ChelsaMan3       130.000            230.000           
+ChelsaMan4       160.000            230.000           
+ChelsaInl1       120.000            250.000           
+ChelsaInl3       90.000             220.000           
+ChelsaInl4       180.000            250.000           
+ChelsaMan5       160.000            250.000           
+Basin1           130.547            214.721           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

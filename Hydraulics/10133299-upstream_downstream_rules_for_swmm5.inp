@@ -1,0 +1,514 @@
+[TITLE]
+;;Project Title/Notes
+  Input and Output FilesSW 1 0 20
+  Input and Output FilesSW 1 0 20
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         ELEVATION
+MIN_SLOPE            0
+ALLOW_PONDING        YES
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/1988
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/1988
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/1988
+END_TIME             06:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:10
+WET_STEP             00:15:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:10 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     10
+MIN_SURFAREA         12.566
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.6
+DRY_ONLY         NO
+
+[TEMPERATURE]
+;;Data Element     Values     
+FILE               "C:\Documents and Settings\Robert E Dickinson\Desktop\WU_Temperature.dat"
+WINDSPEED MONTHLY  0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+SNOWMELT           34 0.5 0.6 0.0 50.0 0.0
+ADC IMPERVIOUS     1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+ADC PERVIOUS       1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+2                INTENSITY 1:00     1.0      FILE       "D:\swmm_crada_files\sample_rainfall_for_swmm5.dat" 1          IN   
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+10309b           101.60     9.40       .00        0          0         
+DNode            111.50     13.50      .00        0          0         
+16009b           102.00     18.00      .00        0          0         
+16109b           102.80     22.20      .00        0          0         
+;3rd network or extran example 3
+80408b           124.60     13.40      .00        0          0         
+80608b           118.30     16.70      .00        0          0         
+81009b           128.20     8.80       .00        0          0         
+81309b           117.50     12.50      .00        0          0         
+UPNode           112.30     42.70      .00        0          0         
+Mid              111.9      22         0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+10208b           89.9       FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1030b            10309b           10208b           4500.0     0.016      *          *          0.0        0         
+1570b            DNode            16009b           5000.0     0.0154     *          *          0.0        0         
+1600b            16009b           16109b           500.0      0.015      *          *          0.0        0         
+1602b            UPNode           16109b           5000.0     0.034      *          *          0.0        0         
+1630b            16009b           10309b           300.0      0.015      *          *          0.0        0         
+;3rd network or extran example 3
+8040b            80408b           80608b           1800.0     0.015      *          *          0.0        0         
+8060b            80608b           UPNode           2075.0     0.015      *          114.500    0.0        0         
+8100b            81009b           81309b           5100.0     0.015      *          *          0.0        0         
+8130b            81309b           DNode            3500.0     0.015      *          *          0.0        0         
+
+[ORIFICES]
+;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime 
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- ----------
+ORIFICE1         UPNode           Mid              BOTTOM       1          0.85       NO       0         
+Orifice2         Mid              DNode            BOTTOM       1          0.85       NO       0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1030b            TRIANGULAR   9.0              54.0       0          0          1.0        0         
+1570b            CIRCULAR     5.5              0.0        0.0        0.0        1.0        0         
+1600b            CIRCULAR     6.0              0.0        0.0        0.0        1.0        0         
+1602b            CIRCULAR     5.0              0.0        0.0        0.0        1.0        0         
+1630b            TRIANGULAR   9.0              54.0       0          0          1.0        0         
+8040b            CIRCULAR     4.0              0.0        0.0        0.0        1.0        0         
+8060b            CIRCULAR     4.0              0.0        0.0        0.0        1.0        0         
+8100b            CIRCULAR     4.5              0.0        0.0        0.0        1.0        0         
+8130b            CIRCULAR     4.5              0.0        0.0        0.0        1.0        0         
+ORIFICE1         CIRCULAR     1                0          0          0
+Orifice2         CIRCULAR     1                0          0          0
+
+[CONTROLS]
+RULE Orifice1
+IF  NODE UPNode  Depth >= 0
+THEN ORIFICE ORIFICE1 SETTING = Curve RuleOrf2
+PRIORITY 10
+
+RULE Orifice2
+IF  NODE DNode  Depth >= 0
+THEN ORIFICE ORIFICE2 SETTING = Curve RuleOrf1
+PRIORITY 10
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+80408b           FLOW             INFLOW@80408b    FLOW     1.0      1.0              
+81009b           FLOW             INFLOW@81009b    FLOW     1.0      1.0              
+UPNode           FLOW             INFLOW@82309b    FLOW     1.0      1.0              
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+RuleORF1         Control    0          1         
+RuleORF1                    1          .9        
+RuleORF1                    2          .8        
+RuleORF1                    3          .7        
+RuleORF1                    4          .6        
+RuleORF1                    5          .5        
+RuleORF1                    6          .4        
+RuleORF1                    7          .3        
+RuleORF1                    8          .2        
+RuleORF1                    9          .1        
+RuleORF1                    10         0         
+;
+RuleOrf2         Control    0          0         
+RuleOrf2                    1          .1        
+RuleOrf2                    2          .2        
+RuleOrf2                    3          .3        
+RuleOrf2                    4          .4        
+RuleOrf2                    5          .5        
+RuleOrf2                    6          .6        
+RuleOrf2                    7          .7        
+RuleOrf2                    8          .8        
+RuleOrf2                    9          .9        
+RuleOrf2                    10         1         
+;
+PUMPCURVEforPUMP1@82309e-15009e Pump3      6          5         
+;
+SB1              Storage    0          0         
+SB1                         1          0         
+SB1                         1.5        0         
+SB1                         2          0         
+SB1                         2.5        340       
+SB1                         3          2483      
+SB1                         3.5        5686      
+SB1                         4          11585     
+SB1                         4.5        51299     
+SB1                         5          278327    
+SB1                         5.5        526214    
+SB1                         6          740422    
+SB1                         6.5        839055    
+SB1                         7          864692    
+SB1                         8          866863    
+SB1                         9          868103    
+SB1                         10         868394    
+;
+SB2              Storage    0          0         
+SB2                         1          0         
+SB2                         1.5        7103      
+SB2                         2          31791     
+SB2                         2.5        71923     
+SB2                         3          122585    
+SB2                         3.5        183836    
+SB2                         4          272757    
+SB2                         4.5        460705    
+SB2                         5          751151    
+SB2                         5.5        967995    
+SB2                         6          1095621   
+SB2                         6.5        1101547   
+SB2                         7          1101970   
+SB2                         8          1102600   
+SB2                         9          1103111   
+SB2                         10         1103519   
+;
+SB3              Storage    0          0         
+SB3                         1          0         
+SB3                         1.5        0         
+SB3                         2          0         
+SB3                         2.5        0         
+SB3                         3          332       
+SB3                         3.5        23187     
+SB3                         4          127395    
+SB3                         4.5        316178    
+SB3                         5          471158    
+SB3                         5.5        554586    
+SB3                         6          598930    
+SB3                         6.5        615368    
+SB3                         7          619054    
+SB3                         8          623164    
+SB3                         9          626320    
+SB3                         10         628073    
+;
+SB4              Storage    0          1565      
+SB4                         1          2261      
+SB4                         1.5        2607      
+SB4                         2          3010      
+SB4                         2.5        3441      
+SB4                         3          3901      
+SB4                         3.5        4388      
+SB4                         4          6141      
+SB4                         4.5        73936     
+SB4                         5          305776    
+SB4                         5.5        477898    
+SB4                         6          581768    
+SB4                         6.5        602558    
+SB4                         7          605744    
+SB4                         8          606120    
+SB4                         9          606441    
+SB4                         10         606768    
+;
+SB5              Storage    0          0         
+SB5                         1          0         
+SB5                         1.5        0         
+SB5                         2          0         
+SB5                         2.5        39        
+SB5                         3          7520      
+SB5                         3.5        45065     
+SB5                         4          83112     
+SB5                         4.5        161541    
+SB5                         5          235404    
+SB5                         5.5        295242    
+SB5                         6          322603    
+SB5                         6.5        341396    
+SB5                         7          347583    
+SB5                         8          355460    
+SB5                         9          358876    
+SB5                         10         359746    
+;
+SB6              Storage    0          0         
+SB6                         1          28        
+SB6                         1.5        62        
+SB6                         2          111       
+SB6                         2.5        174       
+SB6                         3          671       
+SB6                         3.5        20637     
+SB6                         4          115442    
+SB6                         4.5        280562    
+SB6                         5          438832    
+SB6                         5.5        604771    
+SB6                         6          711883    
+SB6                         6.5        754132    
+SB6                         7          772875    
+SB6                         8          777041    
+SB6                         9          777041    
+SB6                         10         777041    
+;
+SB7              Storage    0          0         
+SB7                         1          76        
+SB7                         1.5        161       
+SB7                         2          277       
+SB7                         2.5        425       
+SB7                         3          604       
+SB7                         3.5        814       
+SB7                         4          1094      
+SB7                         4.5        13105     
+SB7                         5          92154     
+SB7                         5.5        244856    
+SB7                         6          425764    
+SB7                         6.5        534327    
+SB7                         7          603342    
+SB7                         8          629626    
+SB7                         9          635380    
+SB7                         10         639804    
+;
+SB8              Storage    0          0         
+SB8                         1          0         
+SB8                         1.5        0         
+SB8                         2          0         
+SB8                         2.5        3210      
+SB8                         3          18142     
+SB8                         3.5        39310     
+SB8                         4          66507     
+SB8                         4.5        121586    
+SB8                         5          199685    
+SB8                         5.5        318789    
+SB8                         6          434905    
+SB8                         6.5        529773    
+SB8                         7          610618    
+SB8                         8          692084    
+SB8                         9          742023    
+SB8                         10         766289    
+;
+SB9              Storage    0          0         
+SB9                         1          0         
+SB9                         1.5        0         
+SB9                         2          0         
+SB9                         2.5        0         
+SB9                         3          0         
+SB9                         3.5        0         
+SB9                         4          0         
+SB9                         4.5        2         
+SB9                         5          2361      
+SB9                         5.5        49440     
+SB9                         6          264589    
+SB9                         6.5        600759    
+SB9                         7          986301    
+SB9                         8          1176915   
+SB9                         9          1187853   
+SB9                         10         1189988   
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+INFLOW@82309     01/01/1988 00:00      0.00000   
+INFLOW@82309                00:15      40.00000  
+INFLOW@82309                03:00      40.00000  
+INFLOW@82309                03:15      0.00000   
+INFLOW@82309                12:00      0.00000   
+;
+INFLOW@80408     01/01/1988 00:00      0.00000   
+INFLOW@80408                00:15      45.00000  
+INFLOW@80408                03:00      45.00000  
+INFLOW@80408                03:15      0         
+INFLOW@80408                12:00      0         
+INFLOW@80408     01/11/1988 0:00       0         
+;
+INFLOW@81009     01/01/1988 00:00      0.00000   
+INFLOW@81009                00:15      50.00000  
+INFLOW@81009                03:00      50.00000  
+INFLOW@81009                03:15      0.00000   
+INFLOW@81009                12:00      0.00000   
+;
+INFLOW@82309a    01/01/1988 00:00      0.00000   
+INFLOW@82309a               00:15      40.00000  
+INFLOW@82309a               03:00      40.00000  
+INFLOW@82309a               03:15      0.00000   
+INFLOW@82309a               12:00      0.00000   
+;
+INFLOW@80408a    01/01/1988 00:00      0.00000   
+INFLOW@80408a               00:15      45.00000  
+INFLOW@80408a               03:00      45.00000  
+INFLOW@80408a               03:15      0.00000   
+INFLOW@80408a               12:00      0.00000   
+;
+INFLOW@81009a    01/01/1988 00:00      0.00000   
+INFLOW@81009a               00:15      50.00000  
+INFLOW@81009a               03:00      50.00000  
+INFLOW@81009a               03:15      0.00000   
+INFLOW@81009a               12:00      0.00000   
+;
+INFLOW@82309b    01/01/1988 00:00      0.00000   
+INFLOW@82309b               00:15      40.00000  
+INFLOW@82309b               03:00      40.00000  
+INFLOW@82309b               03:15      0.00000   
+INFLOW@82309b               12:00      0.00000   
+;
+INFLOW@80408b    01/01/1988 00:00      0.00000   
+INFLOW@80408b               00:15      45.00000  
+INFLOW@80408b               03:00      45.00000  
+INFLOW@80408b               03:15      0.00000   
+INFLOW@80408b               12:00      0.00000   
+;
+INFLOW@81009b    01/01/1988 00:00      0.00000   
+INFLOW@81009b               00:15      50.00000  
+INFLOW@81009b               03:00      50.00000  
+INFLOW@81009b               03:15      0.00000   
+INFLOW@81009b               12:00      0.00000   
+;
+INFLOW@82309c    01/01/1988 00:00      0.00000   
+INFLOW@82309c               00:15      40.00000  
+INFLOW@82309c               03:00      40.00000  
+INFLOW@82309c               03:15      0.00000   
+INFLOW@82309c               12:00      0.00000   
+;
+INFLOW@80408c    01/01/1988 00:00      0.00000   
+INFLOW@80408c               00:15      45.00000  
+INFLOW@80408c               03:00      45.00000  
+INFLOW@80408c               03:15      0.00000   
+INFLOW@80408c               12:00      0.00000   
+;
+INFLOW@81009c    01/01/1988 00:00      0.00000   
+INFLOW@81009c               00:15      50.00000  
+INFLOW@81009c               03:00      50.00000  
+INFLOW@81009c               03:15      0.00000   
+INFLOW@81009c               12:00      0.00000   
+;
+INFLOW@82309d    01/01/1988 00:00      0.00000   
+INFLOW@82309d               00:15      40.00000  
+INFLOW@82309d               03:00      40.00000  
+INFLOW@82309d               03:15      0.00000   
+INFLOW@82309d               12:00      0.00000   
+;
+INFLOW@80408d    01/01/1988 00:00      0.00000   
+INFLOW@80408d               00:15      45.00000  
+INFLOW@80408d               03:00      45.00000  
+INFLOW@80408d               03:15      0.00000   
+INFLOW@80408d               12:00      0.00000   
+;
+INFLOW@81009d    01/01/1988 00:00      0.00000   
+INFLOW@81009d               00:15      50.00000  
+INFLOW@81009d               03:00      50.00000  
+INFLOW@81009d               03:15      0.00000   
+INFLOW@81009d               12:00      0.00000   
+;
+INFLOW@82309e    01/01/1988 00:00      0.00000   
+INFLOW@82309e               00:15      40.00000  
+INFLOW@82309e               03:00      40.00000  
+INFLOW@82309e               03:15      0.00000   
+INFLOW@82309e               12:00      0.00000   
+;
+INFLOW@80408e    01/01/1988 00:00      0.00000   
+INFLOW@80408e               00:15      45.00000  
+INFLOW@80408e               03:00      45.00000  
+INFLOW@80408e               03:15      0.00000   
+INFLOW@80408e               12:00      0.00000   
+;
+INFLOW@81009e    01/01/1988 00:00      0.00000   
+INFLOW@81009e               00:15      50.00000  
+INFLOW@81009e               03:00      50.00000  
+INFLOW@81009e               03:15      0.00000   
+INFLOW@81009e               12:00      0.00000   
+;
+OpenOrifice                 0:00       0         
+OpenOrifice                 1:00       0         
+OpenOrifice                 1:05       0.1       
+OpenOrifice                 1:10       0.2       
+OpenOrifice                 1:15       0.5       
+OpenOrifice                 1:30       1         
+OpenOrifice                 11:00      1         
+
+[PATTERNS]
+;;Name           Type       Multipliers
+;;-------------- ---------- -----------
+30_Minute        MONTHLY    2     1.0   2     1.0   2     1.0  
+30_Minute                   2     1.0   2     1.0   2     1.0  
+30_Minute                   2     1.0   2     1.0   2     1.0  
+30_Minute                   2     1.0   2     1.0   2     1.0  
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   YES
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+Node       10309b           10309b          
+Node       DNode            15009b          
+Node       16009b           16009b          
+Node       16109b           16109b          
+Node       80408b           80408b          
+Node       80608b           80608b          
+Node       81009b           81009b          
+Node       81309b           81309b          
+Node       UPNode           82309b          
+Node       10208b           10208b          
+Link       1030b            1030b           
+Link       1570b            1570b           
+Link       1600b            1600b           
+Link       1602b            1602b           
+Link       1630b            1630b           
+Link       8040b            8040b           
+Link       8060b            8060b           
+Link       8100b            8100b           
+Link       8130b            8130b           
+
+[MAP]
+DIMENSIONS -1113.687 14165.261 10650.527 19792.630
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+10309b           389.470            14421.050         
+DNode            4978.950           14421.050         
+16009b           2494.740           14421.050         
+16109b           2494.740           19536.840         
+80408b           10115.790          19536.840         
+80608b           7463.160           19536.840         
+81009b           9989.470           14421.050         
+81309b           7568.420           14421.050         
+UPNode           4957.890           19536.840         
+Mid              4982.506           17051.981         
+10208b           -578.950           16947.370         
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+
+[PROFILES]
+;;Name           Links     
+;;-------------- ----------
+"profileA        " 8040 8060 1602

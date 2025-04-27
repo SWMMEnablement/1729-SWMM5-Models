@@ -1,0 +1,342 @@
+[TITLE]
+;;Project Title/Notes
+{Peter Klaver - Dec 7, 2018} for experimentation purposes only
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/1970
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/1970
+REPORT_START_TIME    00:00:00
+END_DATE             02/01/1970
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:01:00
+DRY_STEP             00:05:00
+ROUTING_STEP         0:00:02 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              4
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         .05
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+1970Actual       VOLUME    1:00     1.0      TIMESERIES 1970Actual      
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+BR-116           1970Actual       1014             146.647738 31       1277.85  0.386    0                        
+1                1970Actual       2                146.647738 31       1277.85  0.386    0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+BR-116           0.015      0.25       0.075      0.15       0          OUTLET    
+1                0.015      0.25       0.075      0.15       0          OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+BR-116           2          0.2        2          7          4         
+1                2          0.2        2          7          4         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+1014             584.018    10         0          0          0         
+2                584.018    10         0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+OF1              530        FREE                        NO                       
+Closed_Outfall   583.026    FREE                        NO                       
+Open_Outfall     583.026    FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+Closed_Link      1014             Closed_Outfall   2141.99    0.045      0          0          0          0         
+Open_Link        2                Open_Outfall     2141.99    0.045      0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+Closed_Link      RECT_CLOSED  2.483            3.966      0          0          1                    
+Open_Link        RECT_OPEN    2.483            3.966      0          0          1                    
+
+[POLLUTANTS]
+;;Name           Units  Crain      Cgw        Crdii      Kdecay     SnowOnly   Co-Pollutant     Co-Frac    Cdwf       Cinit     
+;;-------------- ------ ---------- ---------- ---------- ---------- ---------- ---------------- ---------- ---------- ----------
+CompundE         MG/L   0          100        945        0          NO         *                0          945        945       
+BaseTracer       MG/L   0.0        0.0        0.0        0.0        NO         *                0.0        0.0        1000      
+
+[LANDUSES]
+;;               Sweeping   Fraction   Last      
+;;Name           Interval   Available  Swept     
+;;-------------- ---------- ---------- ----------
+Agriculture      0          0          0         
+Commercial       0          0          0         
+Industrial       0          0          0         
+Open             0          0          0         
+Residential      0          0          0         
+Transportation   0          0          0         
+
+[COVERAGES]
+;;Subcatchment   Land Use         Percent   
+;;-------------- ---------------- ----------
+BR-116           Commercial       15.85     
+BR-116           Industrial       24.65     
+BR-116           Open             19.04     
+BR-116           Residential      27.16     
+BR-116           Transportation   13.3      
+1                Commercial       15.85     
+1                Industrial       24.65     
+1                Open             19.04     
+1                Residential      27.16     
+1                Transportation   13.3      
+
+[LOADINGS]
+;;Subcatchment   Pollutant        Buildup   
+;;-------------- ---------------- ----------
+
+[BUILDUP]
+;;Land Use       Pollutant        Function   Coeff1     Coeff2     Coeff3     Per Unit  
+;;-------------- ---------------- ---------- ---------- ---------- ---------- ----------
+Agriculture      CompundE         NONE       0          0          0.0        AREA      
+Agriculture      BaseTracer       NONE       0          0          0.0        AREA      
+Commercial       CompundE         NONE       0          0          0.0        AREA      
+Commercial       BaseTracer       NONE       0          0          0.0        AREA      
+Industrial       CompundE         NONE       0          0          0.0        AREA      
+Industrial       BaseTracer       NONE       0          0          0.0        AREA      
+Open             CompundE         NONE       0          0          0.0        AREA      
+Open             BaseTracer       NONE       0          0          0.0        AREA      
+Residential      CompundE         NONE       0          0          0.0        AREA      
+Residential      BaseTracer       NONE       0          0          0.0        AREA      
+Transportation   CompundE         NONE       0          0          0.0        AREA      
+Transportation   BaseTracer       NONE       0          0          0.0        AREA      
+
+[WASHOFF]
+;;Land Use       Pollutant        Function   Coeff1     Coeff2     SweepRmvl  BmpRmvl   
+;;-------------- ---------------- ---------- ---------- ---------- ---------- ----------
+Agriculture      CompundE         EMC        1000       0          0          0         
+Agriculture      BaseTracer       EMC        1000       0          0          0         
+Commercial       CompundE         EMC        12000      0          0          0         
+Commercial       BaseTracer       EMC        1000       0          0          0         
+Industrial       CompundE         EMC        19000      0          0          0         
+Industrial       BaseTracer       EMC        1000       0          0          0         
+Open             CompundE         EMC        7200       0          0          0         
+Open             BaseTracer       EMC        1000       0          0          0         
+Residential      CompundE         EMC        45000      0          0          0         
+Residential      BaseTracer       EMC        1000       0          0          0         
+Transportation   CompundE         EMC        3939       0          0          0         
+Transportation   BaseTracer       EMC        3939       0          0          0         
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+1014             FLOW             ""               FLOW     1.0      1        0.05    
+1014             CompundE         ""               CONCEN   1        1        0       
+1014             BaseTracer       ""               CONCEN   1        1        1000    
+2                FLOW             ""               FLOW     1.0      1        0.05    
+2                CompundE         ""               CONCEN   1        1        0       
+2                BaseTracer       ""               CONCEN   1        1        1000    
+Closed_Outfall   FLOW             ""               FLOW     1.0      1        0.05    
+Closed_Outfall   BaseTracer       ""               CONCEN   1        1        1000    
+Closed_Outfall   CompundE         ""               CONCEN   1        1        300     
+Open_Outfall     FLOW             ""               FLOW     1.0      1        0.05    
+Open_Outfall     BaseTracer       ""               CONCEN   1        1        1000    
+Open_Outfall     CompundE         ""               CONCEN   1        1        300     
+
+[DWF]
+;;Node           Constituent      Baseline   Patterns  
+;;-------------- ---------------- ---------- ----------
+1014             CompundE         945       
+2                CompundE         945       
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+1970Actual       1/1/1970   4:00       0.01      
+1970Actual       1/1/1970   5:00       0.02      
+1970Actual       1/1/1970   6:00       0.01      
+1970Actual       1/1/1970   7:00       0.01      
+1970Actual       1/1/1970   9:00       0.02      
+1970Actual       1/1/1970   10:00      0.01      
+1970Actual       1/1/1970   13:00      0.01      
+1970Actual       1/2/1970   5:00       0.01      
+1970Actual       1/2/1970   8:00       0.01      
+1970Actual       1/2/1970   9:00       0.01      
+1970Actual       1/2/1970   10:00      0.01      
+1970Actual       1/2/1970   11:00      0.01      
+1970Actual       1/2/1970   16:00      0.02      
+1970Actual       1/3/1970   4:00       0.01      
+1970Actual       1/3/1970   5:00       0.01      
+1970Actual       1/4/1970   4:00       0.01      
+1970Actual       1/9/1970   1:00       0.01      
+1970Actual       1/9/1970   6:00       0.01      
+1970Actual       1/11/1970  7:00       0.01      
+1970Actual       1/11/1970  8:00       0.03      
+1970Actual       1/11/1970  9:00       0.03      
+1970Actual       1/11/1970  10:00      0.04      
+1970Actual       1/11/1970  11:00      0.02      
+1970Actual       1/11/1970  12:00      0.01      
+1970Actual       1/11/1970  15:00      0.01      
+1970Actual       1/18/1970  3:00       0.02      
+1970Actual       1/18/1970  4:00       0.01      
+1970Actual       1/18/1970  5:00       0.01      
+1970Actual       1/20/1970  8:00       0.01      
+1970Actual       1/20/1970  9:00       0.01      
+1970Actual       1/20/1970  10:00      0.01      
+1970Actual       1/20/1970  11:00      0.01      
+1970Actual       1/23/1970  1:00       0.02      
+1970Actual       1/23/1970  2:00       0.01      
+1970Actual       1/23/1970  4:00       0.01      
+1970Actual       1/23/1970  5:00       0.02      
+1970Actual       1/23/1970  6:00       0.01      
+1970Actual       1/23/1970  9:00       0.01      
+1970Actual       1/29/1970  2:00       0.37      
+1970Actual       1/29/1970  3:00       0.28      
+1970Actual       1/29/1970  4:00       0.05      
+1970Actual       1/29/1970  5:00       0.05      
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 431322.696 145309.318 433084.328 146414.292
+Units      Meters
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1014             432808.076         146205.350        
+2                431890.518         145754.003        
+Closed_Outfall   432652.879         145359.544        
+Open_Outfall     431945.644         145589.849        
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Closed_Link      432813.343         146188.807        
+Closed_Link      432825.206         146145.269        
+Closed_Link      432848.459         146036.254        
+Closed_Link      432856.672         145992.802        
+Closed_Link      432858.789         145977.514        
+Closed_Link      432859.793         145967.743        
+Closed_Link      432860.213         145959.207        
+Closed_Link      432859.361         145947.640        
+Closed_Link      432857.888         145936.094        
+Closed_Link      432855.772         145922.725        
+Closed_Link      432851.185         145907.589        
+Closed_Link      432845.295         145888.801        
+Closed_Link      432838.193         145870.677        
+Closed_Link      432833.049         145857.973        
+Closed_Link      432815.842         145823.003        
+Closed_Link      432778.984         145753.069        
+Closed_Link      432768.106         145728.918        
+Closed_Link      432749.622         145691.518        
+Closed_Link      432732.971         145654.092        
+Closed_Link      432725.770         145631.084        
+Closed_Link      432719.958         145615.959        
+Closed_Link      432713.963         145592.318        
+Closed_Link      432707.233         145562.600        
+Closed_Link      432690.295         145512.367        
+Closed_Link      432682.367         145483.890        
+Closed_Link      432677.448         145466.372        
+Closed_Link      432677.092         145465.104        
+Closed_Link      432669.681         145432.335        
+Closed_Link      432660.243         145389.877        
+Closed_Link      432656.240         145374.107        
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+BR-116           432943.273         146020.966        
+BR-116           432926.769         145990.020        
+BR-116           432933.252         145943.968        
+BR-116           432932.741         145943.974        
+BR-116           432958.593         145812.745        
+BR-116           432912.744         145738.117        
+BR-116           432897.245         145660.834        
+BR-116           432846.459         145524.103        
+BR-116           432789.758         145442.181        
+BR-116           432690.938         145472.285        
+BR-116           432632.983         145446.830        
+BR-116           432555.392         145517.398        
+BR-116           432532.522         145723.477        
+BR-116           432486.119         145821.639        
+BR-116           432480.731         145870.184        
+BR-116           432358.714         145990.630        
+BR-116           432348.087         146009.080        
+BR-116           432108.289         146043.087        
+BR-116           432071.105         146068.296        
+BR-116           431894.856         146113.462        
+BR-116           431827.292         146091.650        
+BR-116           431765.636         146071.744        
+BR-116           431564.435         146090.193        
+BR-116           431489.614         146204.325        
+BR-116           431415.288         146321.185        
+BR-116           431402.770         146332.561        
+BR-116           431427.375         146328.437        
+BR-116           431523.248         146308.687        
+BR-116           431636.837         146317.785        
+BR-116           431868.169         146364.066        
+BR-116           432121.224         146327.123        
+BR-116           432386.935         146345.769        
+BR-116           432492.220         146253.321        
+BR-116           432692.375         146236.651        
+BR-116           432716.912         146227.016        
+BR-116           432913.174         146180.347        
+BR-116           433004.254         146111.898        
+BR-116           432943.273         146020.966        
+1                431546.285         145758.903        
+1                431546.285         145758.903        
+1                431546.285         145757.678        
+1                431597.736         145754.003        
+1                431672.463         145768.703        
+1                431695.738         145735.627        
+1                431603.861         145678.051        
+1                431526.685         145720.927        
+1                431549.960         145763.803        
+1                431549.960         145762.578        
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

@@ -1,0 +1,211 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    YES
+
+START_DATE           01/01/1960
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/1960
+REPORT_START_TIME    00:00:00
+END_DATE             01/02/1960
+END_TIME             23:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          01:00:00
+WET_STEP             00:01:00
+DRY_STEP             00:01:00
+ROUTING_STEP         0:00:05 
+
+INERTIAL_DAMPING     FULL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+MONTHLY          0.1    0.38   1.12   2.4    3.61   4.57   4.99   4.00   2.24   0.99   0.27   0.07  
+DRY_ONLY         NO
+
+[TEMPERATURE]
+;;Data Element     Values     
+TIMESERIES         1960-2014-temp
+WINDSPEED MONTHLY  0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+SNOWMELT           34 0.5 0.6 0.0 50.0 0.0
+ADC IMPERVIOUS     1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+ADC PERVIOUS       1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+1960-2014-CoC-rain INTENSITY 1:00     1.0      TIMESERIES 1960-2014-rain  
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+Lumped_A         1960-2014-CoC-rain depression       815      1        970      0.4      0        Snowpack1       
+wetlands         1960-2014-CoC-rain depression       44.9     50       5000     4        0        Snowpack1       
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+Lumped_A         0.015      0.5        1.6        7          0          OUTLET    
+wetlands         0.015      0.5        0          8          0          OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Suction    Ksat       IMD       
+;;-------------- ---------- ---------- ----------
+Lumped_A         270        1.016      0.21      
+wetlands         320        0.254      0.265     
+
+[SNOWPACKS]
+;;Name           Surface    Parameters
+;;-------------- ---------- ----------
+Snowpack1        PLOWABLE   0.05       5          0          0.10       0.00       0.00       0.0       
+Snowpack1        IMPERVIOUS 0.05       5          0          0.10       0.00       0.00       15        
+Snowpack1        PERVIOUS   0.05       5          0          0.10       0.00       0.00       15        
+Snowpack1        REMOVAL    1.0        0.0        0.0        0.0        0.0        0.0        
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+outfall          1040.9     FREE                        NO                       
+Spill            1042.9     FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+depression       1040.9   2          0          TABULAR    wetland_min                  0        1       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+culvert          depression       outfall          17         0.024      0.1        0          0          0         
+
+[WEIRS]
+;;Name           From Node        To Node          Type         CrestHt    Qcoeff     Gated    EndCon   EndCoeff   Surcharge  RoadWidth  RoadSurf  
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- -------- ---------- ---------- ---------- ----------
+road_overtop     depression       Spill            TRANSVERSE   2          1.7        NO       0        0          YES       
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+culvert          CIRCULAR     0.45             0          0          0          1                    
+road_overtop     RECT_OPEN    0.1              100        0          0         
+
+[LOSSES]
+;;Link           Kentry     Kexit      Kavg       Flap Gate  Seepage   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+culvert          0.5        1          0.3        NO         0         
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+natural_dis_min  Rating     0          0         
+natural_dis_min             0.25       0         
+natural_dis_min             0.29       0         
+natural_dis_min             0.295      0         
+natural_dis_min             0.3        3         
+;
+natural_dis_nm   Rating     0          0         
+natural_dis_nm              0.45       0         
+natural_dis_nm              0.48       0         
+natural_dis_nm              0.49       0         
+natural_dis_nm              0.495      0         
+natural_dis_nm              0.5        3         
+;
+wetland_high     Storage    0          22450     
+wetland_high                0.15       150415    
+wetland_high                0.3        278380    
+wetland_high                0.5        449000    
+wetland_high                1          1000000   
+;
+wetland_min      Storage    0          22426.5   
+wetland_min                 0.025      57935.125 
+wetland_min                 0.075      128952.375
+wetland_min                 0.1        448530    
+wetland_min                 1.0        1000000   
+;
+wetland_nm       Storage    0          22450     
+wetland_nm                  0.1        164633.3333
+wetland_nm                  0.2        306816.6667
+wetland_nm                  0.3        449000    
+wetland_nm                  1.0        1000000   
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+;hourly temp
+1960-2014-temp              0:0        6         
+1960-2014-temp              1:0        6         
+1960-2014-temp              2:00       6         
+;
+; hourly rain
+1960-2014-rain              0:0        0         
+1960-2014-rain              1:0        4         
+1960-2014-rain              2:00       0         
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -150.775 4094.755 5132.896 8146.007
+Units      Meters
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+outfall          3791.975           4426.461          
+Spill            3977.196           5099.782          
+depression       3380.174           4777.427          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Lumped_A         3569.726           7961.859          
+Lumped_A         4892.729           6853.397          
+Lumped_A         3474.374           5292.014          
+Lumped_A         1019.070           4278.903          
+Lumped_A         89.392             5363.528          
+Lumped_A         983.313            7151.371          
+Lumped_A         1901.073           7842.670          
+Lumped_A         3569.726           7961.859          
+wetlands         2907.540           4777.427          
+wetlands         3459.727           5170.509          
+wetlands         3857.488           4641.720          
+wetlands         3375.495           4403.064          
+wetlands         2907.540           4777.427          
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1960-2014-CoC-rain 339.690            7592.372          
+

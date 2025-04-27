@@ -1,0 +1,145 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           LPS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         ELEVATION
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           04/30/2012
+START_TIME           00:00:00
+REPORT_START_DATE    04/30/2012
+REPORT_START_TIME    00:00:00
+END_DATE             04/30/2012
+END_TIME             23:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:01:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:04 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  D-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+RO_2             102.81     0.16       0          100        0         
+RO_3             103        0.16       0          100        0         
+RO_4             99.84      0.16       0          100        0         
+RO_5             99.84      0.16       0          100        0         
+RO_6             102.54     0.16       0          100        0         
+RO_7             102.58     0.16       0          100        0         
+RO_8             102.63     0.16       0          100        0         
+RO_9             102.70     0.16       0          100        0         
+RO_10            102        0.16       0          100        0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+RO_1             102.96     FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+BAZEN_1          99.64    0.9        0.3        FUNCTIONAL 25        0         0        0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+C_1              RO_2             RO_1             36.24      0.011      *          *          0          0         
+C_2              RO_3             RO_2             19.84      0.011      *          *          0          0         
+C_3              RO_4             RO_3             4.53       0.011      *          *          0          0         
+C_4              RO_5             RO_4             12.26      0.011      *          *          0          0         
+C_5              RO_6             RO_5             4.04       0.011      *          *          0          0         
+C_6              RO_7             RO_6             17.99      0.011      *          *          0          0         
+C_7              RO_8             RO_7             23.74      0.011      *          *          0          0         
+C_8              RO_9             RO_8             39.10      0.011      *          *          0          0         
+C_9              RO_10            RO_9             13.98      0.011      *          *          0          0         
+
+[PUMPS]
+;;Name           From Node        To Node          Pump Curve       Status   Sartup Shutoff 
+;;-------------- ---------------- ---------------- ---------------- ------ -------- --------
+P_1              BAZEN_1          RO_10            pumpa            ON       0.8      0.3     
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+C_1              FORCE_MAIN   1                .025       0          0          1                    
+C_2              FORCE_MAIN   1                .025       0          0          1                    
+C_3              FORCE_MAIN   1                .025       0          0          1                    
+C_4              FORCE_MAIN   1                .025       0          0          1                    
+C_5              FORCE_MAIN   1                .025       0          0          1                    
+C_6              FORCE_MAIN   1                .025       0          0          1                    
+C_7              FORCE_MAIN   1                .025       0          0          1                    
+C_8              FORCE_MAIN   1                .025       0          0          1                    
+C_9              FORCE_MAIN   1                .025       0          0          1                    
+
+[DWF]
+;;Node           Constituent      Baseline   Patterns  
+;;-------------- ---------------- ---------- ----------
+BAZEN_1          FLOW             15        
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+pumpa            Pump3      2.3        34        
+pumpa                       5.2        20        
+pumpa                       9.6        0         
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -2022.337 2896.907 9078.465 6702.177
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+RO_2             5.727              6529.210          
+RO_3             1964.490           6116.838          
+RO_4             2182.131           6002.291          
+RO_5             3533.792           5418.099          
+RO_6             3751.432           5292.096          
+RO_7             4759.450           4833.906          
+RO_8             5859.107           4043.528          
+RO_9             7268.041           3069.874          
+RO_10            8035.510           4135.166          
+RO_1             -1517.755          5589.920          
+BAZEN_1          8573.883           4112.257          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

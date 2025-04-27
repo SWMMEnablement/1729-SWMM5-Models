@@ -1,0 +1,182 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           LPS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+IGNORE_RAINFALL      YES
+IGNORE_SNOWMELT      YES
+IGNORE_GROUNDWATER   YES
+IGNORE_QUALITY       YES
+START_DATE           05/31/2016
+START_TIME           00:00:00
+REPORT_START_DATE    05/31/2016
+REPORT_START_TIME    00:00:00
+END_DATE             06/02/2016
+END_TIME             10:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             5.000000
+REPORT_STEP          00:00:05
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:05 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  SLOPE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.20
+LENGTHENING_STEP     5
+MIN_SURFAREA         0
+MAX_TRIALS           20
+HEAD_TOLERANCE       0.005000
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.100000
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+FIT1             0.000000   0.100000   0.000000   25.000000  0.000000  
+FIT2             6.000000   0.100000   0.000000   25.000000  0.000000  
+; New Junction
+JCT-10           5.000000   0.100000   0.000000   25.000000  0.000000  
+; New Junction
+JCT-12           10.000000  0.100000   0.000000   25.000000  0.000000  
+; New Junction
+JCT-14           11.200000  1.300000   0.000000   0.000000   0.000000  
+MANHOLE          6.200000   2.000000   0.000000   0.000000   0.000000  
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+OFALL            4.000000   FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+WW               -5.000000 5.000000   1.500000   FUNCTIONAL 0.000000  2.000000  0.000000 0.000000 0.000000
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+FM1              FIT1             FIT2             70.716678  0.010000   0.000000   0.000000   0.000000   0.000000  
+FM2              FIT2             JCT-10           99.389900  0.010000   0.000000   0.000000   0.000000   0.000000  
+FM3              JCT-10           JCT-12           80.474807  0.010000   0.000000   0.000000   0.000000   0.000000  
+GRAVITY          JCT-12           JCT-14           17.774447  0.010000   0.000000   0.500000   0.000000   0.000000  
+GRAVITY2         JCT-14           MANHOLE          44.208764  0.010000   0.000000   0.000000   0.000000   0.000000  
+GRAVITY3         MANHOLE          OFALL            26.422197  0.010000   0.000000   0.000000   0.000000   0.000000  
+
+[PUMPS]
+;;Name           From Node        To Node          Pump Curve       Status   Sartup Shutoff 
+;;-------------- ---------------- ---------------- ---------------- ------ -------- --------
+VSD              WW               FIT1             CURVE-1          ON       3.000000 1.000000
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+FM1              FORCE_MAIN   0.100000         120.000000 0.000000   0.000000   1          0         
+FM2              FORCE_MAIN   0.100000         120.000000 0.000000   0.000000   1          0         
+FM3              FORCE_MAIN   0.100000         120.000000 0.000000   0.000000   1          0         
+GRAVITY          CIRCULAR     0.100000         0.000000   0.000000   0.000000   1          0         
+GRAVITY2         CIRCULAR     0.250000         0.000000   0.000000   0.000000   1          0         
+GRAVITY3         CIRCULAR     0.285000         0.000000   0.000000   0.000000   1          0         
+
+[LOSSES]
+;;Link           Kentry     Kexit      Kavg       Flap Gate  Seepage   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+FM1              0.000000   0.000000   0.000000   NO         0.000000  
+FM2              0.000000   0.000000   0.000000   NO         0.000000  
+FM3              0.000000   0.000000   0.000000   NO         0.000000  
+GRAVITY          0.000000   0.000000   0.000000   NO         0.000000  
+GRAVITY2         0.000000   0.000000   0.000000   NO         0.000000  
+GRAVITY3         0.000000   0.000000   0.000000   NO         0.000000  
+
+[CONTROLS]
+RULE INNOVYZE-SIMPLE-RULE-0
+IF NODE WW DEPTH > 4.200000
+THEN PUMP VSD SETTING = 2.000000
+PRIORITY 1.000000
+
+; New Real Time Control (RTC) Rules
+RULE RULE-1
+IF NODE WW DEPTH <> 3.100000
+THEN PUMP VSD SETTING = PID 1.000000	-0.010000	-0.010000
+PRIORITY 0.000000
+
+
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+WW               FLOW             ""               FLOW     1.0      1.000000         
+
+[DWF]
+;;Node           Constituent      Baseline   Patterns  
+;;-------------- ---------------- ---------- ----------
+WW               FLOW             1.000000   "DWF" "" ""
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+; New Curve
+CURVE-1          PUMP3      0.100000   7.200000  
+CURVE-1                     5.000000   6.800000  
+CURVE-1                     10.000000  6.000000  
+CURVE-1                     15.000000  4.500000  
+CURVE-1                     18.000000  2.000000  
+CURVE-1                     19.500000  0.100000  
+
+[PATTERNS]
+;;Name           Type       Multipliers
+;;-------------- ---------- -----------
+DWF              HOURLY     1.000000 1.000000 1.000000 2.000000 2.000000 2.000000
+DWF                         3.000000 3.000000 3.000000 4.000000 4.000000 4.000000
+DWF                         5.000000 5.000000 5.000000 6.000000 6.000000 6.000000
+DWF                         7.000000 7.000000 7.000000 6.000000 6.000000 6.000000
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   YES
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 494598.158 7005881.848 494775.673 7006190.046
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+FIT1             494621.547         7006145.396       
+FIT2             494647.810         7006079.737       
+JCT-10           494682.829         7005986.720       
+JCT-12           494713.469         7005912.307       
+JCT-14           494720.035         7005895.893       
+MANHOLE          494764.128         7005899.091       
+OFALL            494767.604         7005925.283       
+WW               494606.227         7006176.037       
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+GRAVITY          494720.070         7005895.857       
+

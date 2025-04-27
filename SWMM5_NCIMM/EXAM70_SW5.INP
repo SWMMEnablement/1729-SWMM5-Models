@@ -1,0 +1,103 @@
+[TITLE]
+;;Project Title/Notes
+'EXTRAN USER''S MANUAL EXAMPLE PROBLEM 70 - ISOL = 0 SOLUTION ' ;'CIRCULAR PIPE COMPARISON WITH RUNOFF AND TRANSPORT BLOCKS' ;
+;  CDM SWMM4 Converter
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/1988
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/1988
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/1988
+END_TIME             03:00:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:10 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+;===============================================================================
+101              88.824     FREE                        NO                       
+;Name  InvertEl  Diameter  MaxDepth  InitDepth  SurDepth
+;===============================================================================
+; *    JUNCTION DATA *    JUN   GRELEV   Z    QINST  Y
+401              90.00      FREE                        NO                       
+301              89.61      FREE                        NO                       
+201              89.22      FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+;Name  Node1   Node2   Length  N   Z1  Z2  Q0
+;===============================================================================
+; *   CONDUIT DATA *   NCOND NJ1  NJ2   QO  NKLASS AFULL DEEP WIDE  LEN   ZP1  ZP2  ROUGH STHETA SPHI
+10               401              301              560        0.01       0          0          0          0         
+20               301              201              560        0.01       0          0          0          0         
+30               201              101              560        0.01       0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+10               CIRCULAR     6                0          0          0          1                    
+20               CIRCULAR     6                0          0          0          1                    
+30               CIRCULAR     6                0          0          0          1                    
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 10000000000.000 10000000000.000 -10000000000.000 -10000000000.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+101              5037500000.000     -1756250000.000   
+401              4825000000.000     243750000.000     
+301              2837500000.000     818750000.000     
+201              175000000.000      -2193750000.000   
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

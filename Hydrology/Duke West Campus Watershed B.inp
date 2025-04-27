@@ -1,0 +1,672 @@
+[TITLE]
+;;Project Title/Notes
+            DUKE UNIVERSITY- WEST CAMPUS
+            Continuous Simulation
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         KINWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/2000
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/2000
+REPORT_START_TIME    00:00:00
+END_DATE             12/31/2000
+END_TIME             23:55:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          01:00:00
+WET_STEP             00:15:00
+DRY_STEP             02:00:00
+ROUTING_STEP         0:05:00 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.00
+LENGTHENING_STEP     10
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              8
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+GAGE1            INTENSITY 1.00000  1.0      FILE       "D:\SWMMandSoftware\SWMM5.013_June2018\EPASWMM5.1.013\Swmm5.1.013UpdateTests\DataFiles\rdu.dat" 317069     IN   
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+5                GAGE1            305              8.2      95       770      2.34     0                        
+6                GAGE1            306              8.7      100      720      3.89     0                        
+7                GAGE1            307              8.2      60       600      5.83     0                        
+8                GAGE1            308              8.6      100      420      0.5      0                        
+9                GAGE1            309              6.8      80       380      3.16     0                        
+10               GAGE1            310              2.9      60       340      2.94     0                        
+12               GAGE1            312a             1.5      0        313      10       0                        
+13               GAGE1            313a             10.6     0        580      5.17     0                        
+14               GAGE1            314              9.9      0        520      6.35     0                        
+15               GAGE1            315              1.9      0        320      3.44     0                        
+16               GAGE1            316              6.8      5        540      4.44     0                        
+17               GAGE1            317              2.3      80       140      11.43    0                        
+18               GAGE1            318              7.4      0        560      7.14     0                        
+19               GAGE1            89               14.1     5        1060     2.92     0                        
+20               GAGE1            320              7.3      3        260      7.69     0                        
+21               GAGE1            321              4.8      10       340      9.41     0                        
+22               GAGE1            322              19.2     10       540      4.81     0                        
+24               GAGE1            324              3.6      90       620      3.23     0                        
+25               GAGE1            325              1.9      30       380      6.05     0                        
+26               GAGE1            326              8.3      90       840      2.26     0                        
+27               GAGE1            327              18.9     35       1080     6.11     0                        
+28               GAGE1            328              7.6      16       800      4.13     0                        
+29               GAGE1            47               7.7      7        740      8.51     0                        
+30               GAGE1            330              6.1      0        420      11.19    0                        
+31               GAGE1            331              2.5      0        320      9.38     0                        
+33               GAGE1            333              6.8      33       540      5.93     0                        
+42               GAGE1            342              6.6      31.4     387      0.68     0                        
+51               GAGE1            351              7.7      29       925      0.68     0                        
+54               GAGE1            354              3.8      24       238      0.68     0                        
+55               GAGE1            355              3.1      8.2      150      0.68     0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+5                0.035      0.2        0.06       0.1        25         OUTLET    
+6                0.035      0.2        0.06       0.1        25         OUTLET    
+7                0.035      0.2        0.06       0.1        25         OUTLET    
+8                0.035      0.2        0.06       0.1        25         OUTLET    
+9                0.035      0.2        0.06       0.1        25         OUTLET    
+10               0.035      0.2        0.06       0.1        25         OUTLET    
+12               0.035      0.2        0.06       0.1        25         OUTLET    
+13               0.035      0.2        0.06       0.1        25         OUTLET    
+14               0.035      0.2        0.06       0.1        25         OUTLET    
+15               0.035      0.2        0.06       0.1        25         OUTLET    
+16               0.035      0.2        0.06       0.1        25         OUTLET    
+17               0.035      0.2        0.06       0.1        25         OUTLET    
+18               0.035      0.2        0.06       0.1        25         OUTLET    
+19               0.035      0.2        0.06       0.1        25         OUTLET    
+20               0.035      0.2        0.06       0.1        25         OUTLET    
+21               0.035      0.2        0.06       0.1        25         OUTLET    
+22               0.035      0.2        0.06       0.1        25         OUTLET    
+24               0.035      0.2        0.06       0.1        25         OUTLET    
+25               0.035      0.2        0.06       0.1        25         OUTLET    
+26               0.035      0.2        0.06       0.1        25         OUTLET    
+27               0.035      0.2        0.06       0.1        25         OUTLET    
+28               0.035      0.2        0.06       0.1        25         OUTLET    
+29               0.035      0.2        0.06       0.1        25         OUTLET    
+30               0.035      0.2        0.06       0.1        25         OUTLET    
+31               0.035      0.2        0.06       0.1        25         OUTLET    
+33               0.035      0.2        0.06       0.1        25         OUTLET    
+42               0.035      0.2        0.06       0.1        25         OUTLET    
+51               0.035      0.2        0.06       0.1        25         OUTLET    
+54               0.035      0.2        0.06       0.1        25         OUTLET    
+55               0.035      0.2        0.06       0.1        25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+5                0.2        0.05       2.52       0.03       0         
+6                0.2        0.05       2.52       0.03       0         
+7                0.2        0.05       2.52       0.03       0         
+8                0.2        0.05       2.52       0.03       0         
+9                0.2        0.05       2.52       0.03       0         
+10               0.2        0.05       2.52       0.03       0         
+12               0.2        0.05       2.52       0.03       0         
+13               0.2        0.05       2.52       0.03       0         
+14               0.2        0.05       2.52       0.03       0         
+15               0.2        0.05       2.52       0.03       0         
+16               0.2        0.05       2.52       0.03       0         
+17               0.2        0.05       2.52       0.03       0         
+18               0.2        0.05       2.52       0.03       0         
+19               0.2        0.05       2.52       0.03       0         
+20               0.2        0.05       2.52       0.03       0         
+21               0.2        0.05       2.52       0.03       0         
+22               0.2        0.05       2.52       0.03       0         
+24               0.2        0.05       2.52       0.03       0         
+25               0.2        0.05       2.52       0.03       0         
+26               0.2        0.05       2.52       0.03       0         
+27               0.2        0.05       2.52       0.03       0         
+28               0.2        0.05       2.52       0.03       0         
+29               0.2        0.05       2.52       0.03       0         
+30               0.2        0.05       2.52       0.03       0         
+31               0.2        0.05       2.52       0.03       0         
+33               0.2        0.05       2.52       0.03       0         
+42               0.2        0.05       2.52       0.03       0         
+51               0.2        0.05       2.52       0.03       0         
+54               0.2        0.05       2.52       0.03       0         
+55               0.2        0.05       2.52       0.03       0         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+305              55.66      0          0          0          0         
+306              51.52      0          0          0          0         
+307              40.27      0          0          0          0         
+308              29.75      0          0          0          0         
+309              42.48      0          0          0          0         
+310              67.98      0          0          0          0         
+314              29.8       0          0          0          0         
+316              50.43      0          0          0          0         
+317              30         0          0          0          0         
+318              44.10      0          0          0          0         
+320              57.11      0          0          0          0         
+321              11.08      0          0          0          0         
+322              21.50      0          0          0          0         
+324              53.73      0          0          0          0         
+325              45.93      0          0          0          0         
+326              49.03      0          0          0          0         
+327              3.97       0          0          0          0         
+328              2.48       0          0          0          0         
+333              40.92      0          0          0          0         
+342              49.42      0          0          0          0         
+351              37.82      0          0          0          0         
+355              57.19      0          0          0          0         
+64               62.96      0          0          0          0         
+47               0.85       0          0          0          0         
+49               3.86       0          0          0          0         
+51               9.42       0          0          0          0         
+53               18.25      0          0          0          0         
+54               19.55      0          0          0          0         
+56               4.14       0          0          0          0         
+57               11.98      0          0          0          0         
+58               12.60      0          0          0          0         
+60               35.51      0          0          0          0         
+62               48.55      0          0          0          0         
+63               40.96      0          0          0          0         
+354              66.65      0          0          0          0         
+66               23.73      0          0          0          0         
+67               25.98      0          0          0          0         
+68               38.88      0          0          0          0         
+71               29.235     0          0          0          0         
+82               33.77      0          0          0          0         
+84               57.08      0          0          0          0         
+86               34.82      0          0          0          0         
+89               7.35       0          0          0          0         
+90               42.96      0          0          0          0         
+102n             39.54      0          0          0          0         
+312b             29.238     0          0          0          0         
+313b             29.21      0          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+315              0.00       FREE                        NO                       
+319              0.00       FREE                        NO                       
+;#print
+329              0.00       FREE                        NO                       
+330              0.00       FREE                        NO                       
+331              0.00       FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+312a             29.24    21         17         TABULAR    STORAGEat312                 0        0       
+313a             29.23    21         0          TABULAR    STORAGEat313                 0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+243              47               329              328        0.05       0          0          0.0        0         
+244              328              47               161        0.015      0          0          0.0        0         
+245              49               328              246        0.05       0          0          0.0        0         
+246              327              49               70         0.015      0          0          0.0        0         
+247              51               327              192        0.02       0          0          0.0        0         
+248              333              51               428        0.015      0          0          0.0        0         
+249              53               51               120        0.015      0          0          0.0        0         
+250              54               53               90         0.015      0          0          0.0        0         
+251              351              54               142        0.015      0          0          0.0        0         
+252              56               327              110        0.05       0          0          0.0        0         
+253              57               56               548        0.03       0          0          0.0        0         
+254              58               57               81.25      0.05       0          0          0.0        0         
+255              322              58               200        0.015      0          0          0.0        0         
+256              66               322              213        0.015      0          0          0.0        0         
+257              67               66               299        0.025      0          0          0.0        0         
+258              68               67               228        0.015      0          0          0.0        0         
+259              326              68               63         0.015      0          0          0.0        0         
+260              102n             67               346        0.02       0          0          0.0        0         
+261              313b             67               315        0.05       0          0          0.0        0         
+262              71               313a             288.02     0.05       0          0          0.0        0         
+263              324              313a             437.5      0.025      0          0          0.0        0         
+264              312b             71               632.93     0.05       0          0          0.0        0         
+265              317              314              536        0.03       0          0          0.0        0         
+266              314              71               118.52     0.03       0          0          0.0        0         
+268              307              312a             138        0.03       0          0          0.0        0         
+269              325              312a             162.5      0.017      0          0          0.0        0         
+270              308              312a             62.5       0.017      0          0          0.0        0         
+271              306              308              496        0.02       0          0          0.0        0         
+272              82               308              220        0.016      0          0          0.0        0         
+273              309              82               236        0.015      0          0          0.0        0         
+274              84               309              331        0.015      0          0          0.0        0         
+275              310              84               307        0.015      0          0          0.0        0         
+276              86               82               386        0.015      0          0          0.0        0         
+277              305              86               307        0.015      0          0          0.0        0         
+278              89               319              118        0.015      0          0          0.0        0         
+279              90               89               516        0.025      0          0          0.0        0         
+280              316              90               63         0.012      0          0          0.0        0         
+281              60               322              300        0.015      0          0          0.0        0         
+282              63               60               90         0.015      0          0          0.0        0         
+283              62               63               196        0.015      0          0          0.0        0         
+284              342              62               155        0.015      0          0          0.0        0         
+285              355              62               660        0.015      0          0          0.0        0         
+286              64               62               527.8      0.015      0          0          0.0        0         
+287              354              64               211        0.015      0          0          0.0        0         
+295              318              102n             480        0.015      0          0          0.0        0         
+297              320              321              653.34     0.03       0          0          0.0        0         
+298              321              327              383        0.03       0          0          0.0        0         
+
+[ORIFICES]
+;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime 
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- ----------
+O1               312a             312b             SIDE         0.1        0.5        YES      0         
+O2               313a             313b             SIDE         0.1        0.5        YES      0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+243              TRAPEZOIDAL  7.3              4.5        3.5        3.5        1                    
+244              CIRCULAR     5.33             0          0          0          1                    
+245              TRAPEZOIDAL  7.3              4.5        3.5        3.5        1                    
+246              RECT_CLOSED  5.5              4.5        0          0          1                    
+247              CIRCULAR     3                0          0          0          1                    
+248              CIRCULAR     1.5              0          0          0          1                    
+249              CIRCULAR     3                0          0          0          1                    
+250              CIRCULAR     2                0          0          0          1                    
+251              CIRCULAR     2                0          0          0          1                    
+252              TRAPEZOIDAL  7.3              4.5        3.5        3.5        1                    
+253              TRAPEZOIDAL  3.5              4.5        3.5        3.5        1                    
+254              TRAPEZOIDAL  3.5              4.5        3.5        3.5        1                    
+255              RECT_CLOSED  4.5              4.5        0          0          1                    
+256              CIRCULAR     2                0          0          0          1                    
+257              RECT_CLOSED  2.3              5          0          0          1                    
+258              CIRCULAR     2                0          0          0          1                    
+259              CIRCULAR     2.5              0          0          0          1                    
+260              CIRCULAR     2                0          0          0          1                    
+261              RECT_CLOSED  1                5          0          0          1                    
+262              RECT_CLOSED  3.2              2.2        0          0          1                    
+263              CIRCULAR     1.5              0          0          0          1                    
+264              CIRCULAR     1.2              0          0          0          1                    
+265              RECT_CLOSED  1                3          0          0          1                    
+266              RECT_CLOSED  3.2              2.2        0          0          1                    
+268              RECT_CLOSED  1                3          0          0          1                    
+269              CIRCULAR     1.5              0          0          0          1                    
+270              CIRCULAR     3                0          0          0          1                    
+271              CIRCULAR     1.5              0          0          0          1                    
+272              CIRCULAR     2.5              0          0          0          1                    
+273              CIRCULAR     2                0          0          0          1                    
+274              CIRCULAR     2                0          0          0          1                    
+275              CIRCULAR     2                0          0          0          1                    
+276              CIRCULAR     2.5              0          0          0          1                    
+277              CIRCULAR     1                0          0          0          1                    
+278              CIRCULAR     2.5              0          0          0          1                    
+279              RECT_CLOSED  1                2          0          0          1                    
+280              CIRCULAR     1.5              0          0          0          1                    
+281              CIRCULAR     3                0          0          0          1                    
+282              CIRCULAR     2                0          0          0          1                    
+283              CIRCULAR     2                0          0          0          1                    
+284              CIRCULAR     1                0          0          0          1                    
+285              CIRCULAR     1.5              0          0          0          1                    
+286              CIRCULAR     1.5              0          0          0          1                    
+287              CIRCULAR     1                0          0          0          1                    
+295              CIRCULAR     3                0          0          0          1                    
+297              CIRCULAR     2                0          0          0          1                    
+298              CIRCULAR     2.5              0          0          0          1                    
+O1               CIRCULAR     1                0          0          0
+O2               CIRCULAR     1                0          0          0
+
+[POLLUTANTS]
+;;Name           Units  Crain      Cgw        Crdii      Kdecay     SnowOnly   Co-Pollutant     Co-Frac    Cdwf       Cinit     
+;;-------------- ------ ---------- ---------- ---------- ---------- ---------- ---------------- ---------- ---------- ----------
+BOD5             MG/L   0.0        0.0        0.0        0.08       NO         *                0.0        0          0         
+NITRO            MG/L   0.0        0.0        0.0        0.20       NO         *                0.0        0          0         
+PHOS             MG/L   0.0        0.0        0.0        1.5        NO         *                0.0        0          0         
+LEAD             MG/L   0.0        0.0        0.0        0.90       NO         *                0.0        0          0         
+
+[LANDUSES]
+;;               Sweeping   Fraction   Last      
+;;Name           Interval   Available  Swept     
+;;-------------- ---------- ---------- ----------
+COMM             14         0.38       14        
+SRES             0          0          0         
+MRES             0          0          0         
+ATHL             0          0          0         
+OPEN             0          0          0         
+FOREST           0          0          0         
+GARDEN           0          0          0         
+LOT              0          0          0         
+
+[COVERAGES]
+;;Subcatchment   Land Use         Percent   
+;;-------------- ---------------- ----------
+5                COMM             100.00    
+6                LOT              100.00    
+7                MRES             100.00    
+8                LOT              100.00    
+9                COMM             100.00    
+10               COMM             100.00    
+12               GARDEN           100.00    
+13               GARDEN           100.00    
+14               COMM             13.15     
+14               GARDEN           86.85     
+15               COMM             100.00    
+16               SRES             40.92     
+16               LOT              59.08     
+17               COMM             71.79     
+17               LOT              28.21     
+18               GARDEN           92.16     
+18               LOT              7.84      
+19               SRES             100.00    
+20               SRES             68.77     
+20               GARDEN           31.23     
+21               SRES             63.22     
+21               FOREST           29.66     
+21               LOT              7.12      
+22               GARDEN           100.00    
+24               COMM             100.00    
+25               COMM             100.00    
+26               COMM             100.00    
+27               MRES             57.25     
+27               OPEN             35.16     
+27               FOREST           6.12      
+27               LOT              1.47      
+28               FOREST           97.22     
+28               LOT              2.78      
+29               COMM             21.40     
+29               FOREST           74.02     
+29               LOT              4.58      
+30               FOREST           73.87     
+30               LOT              26.13     
+31               LOT              100.00    
+33               COMM             42.92     
+33               LOT              55.08     
+42               COMM             100.00    
+51               MRES             100.00    
+54               COMM             100.00    
+55               MRES             100.00    
+
+[LOADINGS]
+;;Subcatchment   Pollutant        Buildup   
+;;-------------- ---------------- ----------
+
+[BUILDUP]
+;;Land Use       Pollutant        Function   Coeff1     Coeff2     Coeff3     Per Unit  
+;;-------------- ---------------- ---------- ---------- ---------- ---------- ----------
+COMM             BOD5             EXP        5          3          0.0        AREA      
+COMM             NITRO            EXP        1.25       5.0        0.0        AREA      
+COMM             PHOS             EXP        0.18       0.45       0.0        AREA      
+COMM             LEAD             EXP        0.11       0.099      0.0        AREA      
+SRES             BOD5             NONE       0.0        0.0        0.0        AREA      
+SRES             NITRO            POW        1.25       5          0.0        AREA      
+SRES             PHOS             EXP        0.18       0.45       0.0        AREA      
+SRES             LEAD             NONE       0.0        0.0        0.0        AREA      
+MRES             BOD5             NONE       0.0        0.0        0.0        AREA      
+MRES             NITRO            EXP        1.25       5          0.0        AREA      
+MRES             PHOS             EXP        0.18       0.45       0.0        AREA      
+MRES             LEAD             NONE       0.0        0.0        0.0        AREA      
+ATHL             BOD5             NONE       0.0        0.0        0.0        AREA      
+ATHL             NITRO            EXP        1.25       5          0.0        AREA      
+ATHL             PHOS             EXP        0.18       0.45       0.0        AREA      
+ATHL             LEAD             NONE       0.0        0.0        0.0        AREA      
+OPEN             BOD5             NONE       0.0        0.0        0.0        AREA      
+OPEN             NITRO            EXP        1.25       5          0.0        AREA      
+OPEN             PHOS             EXP        0.18       0.45       0.0        AREA      
+OPEN             LEAD             NONE       0.0        0.0        0.0        AREA      
+FOREST           BOD5             NONE       0.0        0.0        0.0        AREA      
+FOREST           NITRO            EXP        1.25       5          0.0        AREA      
+FOREST           PHOS             EXP        0.18       0.45       0.0        AREA      
+FOREST           LEAD             NONE       0.0        0.0        0.0        AREA      
+GARDEN           BOD5             NONE       0          0          0.0        AREA      
+GARDEN           NITRO            EXP        1.25       5          0.0        AREA      
+GARDEN           PHOS             EXP        0.18       0.45       0.0        AREA      
+GARDEN           LEAD             NONE       0.0        0.0        0.0        AREA      
+LOT              BOD5             NONE       0.0        0.0        0.0        AREA      
+LOT              NITRO            EXP        1.25       5          0.0        AREA      
+LOT              PHOS             EXP        0.18       0.45       0.0        AREA      
+LOT              LEAD             NONE       0.0        0.0        0.0        AREA      
+
+[WASHOFF]
+;;Land Use       Pollutant        Function   Coeff1     Coeff2     SweepRmvl  BmpRmvl   
+;;-------------- ---------------- ---------- ---------- ---------- ---------- ----------
+COMM             BOD5             EXP        0.4        2.0        0.0        0.0       
+COMM             NITRO            EXP        0.20       1.0        0.0        0.0       
+COMM             PHOS             EXP        0.9        1.2        0.0        0.0       
+COMM             LEAD             EXP        0.9        1.2        0.0        0.0       
+SRES             BOD5             EMC        0.0        0.0        0.0        0.0       
+SRES             NITRO            EXP        0.2        1          0.0        0.0       
+SRES             PHOS             EXP        0.9        1.2        0.0        0.0       
+SRES             LEAD             EMC        0.0        0.0        0.0        0.0       
+MRES             BOD5             EMC        0.0        0.0        0.0        0.0       
+MRES             NITRO            EXP        0.2        1          0.0        0.0       
+MRES             PHOS             EXP        0.9        1.2        0.0        0.0       
+MRES             LEAD             EMC        0.0        0.0        0.0        0.0       
+ATHL             BOD5             EMC        0.0        0.0        0.0        0.0       
+ATHL             NITRO            EXP        0.2        1          0.0        0.0       
+ATHL             PHOS             EXP        0.9        1.2        0.0        0.0       
+ATHL             LEAD             EMC        0.0        0.0        0.0        0.0       
+OPEN             BOD5             EMC        0.0        0.0        0.0        0.0       
+OPEN             NITRO            EXP        0.2        1          0.0        0.0       
+OPEN             PHOS             EXP        0.9        1.2        0.0        0.0       
+OPEN             LEAD             EMC        0.0        0.0        0.0        0.0       
+FOREST           BOD5             EMC        0.0        0.0        0.0        0.0       
+FOREST           NITRO            EXP        0.2        1          0.0        0.0       
+FOREST           PHOS             EXP        0.9        1.2        0.0        0.0       
+FOREST           LEAD             EMC        0.0        0.0        0.0        0.0       
+GARDEN           BOD5             EMC        0          0          0.0        0.0       
+GARDEN           NITRO            EXP        0.2        1          0.0        0.0       
+GARDEN           PHOS             EXP        0.9        1.2        0.0        0.0       
+GARDEN           LEAD             EMC        0.0        0.0        0.0        0.0       
+LOT              BOD5             EMC        0.0        0.0        0.0        0.0       
+LOT              NITRO            EXP        0.2        1          0.0        0.0       
+LOT              PHOS             EXP        0.9        1.2        0.0        0.0       
+LOT              LEAD             EMC        0.0        0.0        0.0        0.0       
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+322              NITRO            Nitro22          MASS     5.25     1.0              
+322              PHOS             Phos22           MASS     5.25     1.0              
+
+[DWF]
+;;Node           Constituent      Baseline   Patterns  
+;;-------------- ---------------- ---------- ----------
+305              FLOW             0.01       "" "" "" ""
+306              FLOW             0.01       "" "" "" "" ""
+307              FLOW             0.01       "" "" "" "" ""
+308              FLOW             0.01       "" "" "" "" ""
+309              FLOW             0.01       "" "" "" "" ""
+310              FLOW             0.01       "" "" "" "" ""
+314              FLOW             0.01       "" "" "" "" ""
+316              FLOW             0.01       "" "" "" "" ""
+317              FLOW             0.01       "" "" "" "" ""
+318              FLOW             0.01       "" "" "" "" ""
+320              FLOW             0.01       "" "" "" "" ""
+321              FLOW             0.01       "" "" "" "" ""
+322              FLOW             0.01       "" "" "" ""
+324              FLOW             0.01       "" "" "" "" ""
+325              FLOW             0.01       "" "" "" "" ""
+326              FLOW             0.01       "" "" "" "" ""
+327              FLOW             0.01       "" "" "" "" ""
+328              FLOW             0.01       "" "" "" "" ""
+333              FLOW             0.01       "" "" "" "" ""
+342              FLOW             0.01       "" "" "" "" ""
+351              FLOW             0.01       "" "" "" "" ""
+355              FLOW             0.01       "" "" "" "" ""
+315              FLOW             0.01       "" "" "" "" ""
+319              FLOW             0.01       "" "" "" "" ""
+329              FLOW             0.01       "" "" "" "" ""
+330              FLOW             0.01       "" "" "" "" ""
+331              FLOW             0.01       "" "" "" "" ""
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+;===============================================================================
+STORAGEat312     STORAGE    0.0        0.0       
+STORAGEat312                10.0       39884.0   
+STORAGEat312                13.0       43560.0   
+STORAGEat312                14.8       98368.0   
+STORAGEat312                15.0       99202.0   
+STORAGEat312                16.0       103360.0  
+STORAGEat312                17.0       107520.0  
+STORAGEat312                18.0       111680.0  
+STORAGEat312                19.0       115840.0  
+STORAGEat312                20.0       120000.0  
+STORAGEat312                21.0       121000.0  
+;
+STORAGEat313     STORAGE    0.0        0.0       
+STORAGEat313                10.0       39884.0   
+STORAGEat313                13.0       43560.0   
+STORAGEat313                14.8       98368.0   
+STORAGEat313                15.0       99202.0   
+STORAGEat313                16.0       103360.0  
+STORAGEat313                17.0       107520.0  
+STORAGEat313                18.0       111680.0  
+STORAGEat313                19.0       115840.0  
+STORAGEat313                20.0       120000.0  
+STORAGEat313                21.0       121000.0  
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+;Test Nitrogen loading at Node 322
+Nitro22          8/20/1986  05:00      .163      
+;
+;Test Phosphorus loading at Node 22
+Phos22           8/20/1986  05:00      0.2177    
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 2017890.150 816326.800 2020856.850 822029.200
+Units      Feet
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+305              2019867.000        821745.000        
+306              2020254.000        821103.000        
+307              2020140.000        820626.000        
+308              2019760.000        820995.000        
+309              2019767.000        821333.000        
+310              2019480.000        821770.000        
+314              2019769.000        820124.000        
+316              2020514.000        818995.000        
+317              2020064.000        819862.000        
+318              2019901.000        819355.000        
+320              2019839.000        818637.000        
+321              2019325.000        818284.000        
+322              2019030.000        819098.000        
+324              2019270.000        820199.000        
+325              2019651.000        820834.000        
+326              2019016.000        819810.000        
+327              2019027.000        818280.000        
+328              2018960.000        817859.000        
+333              2018507.000        818078.000        
+342              2018042.000        819499.000        
+351              2018352.000        818611.000        
+355              2018025.000        818862.000        
+64               2018484.000        819652.000        
+47               2018903.000        817646.000        
+49               2019003.000        818127.000        
+51               2018795.000        818235.000        
+53               2018692.000        818337.000        
+54               2018500.000        818434.000        
+56               2018864.000        818400.000        
+57               2018800.000        818655.000        
+58               2018854.000        818762.000        
+60               2018827.000        819132.000        
+62               2018355.000        819314.000        
+63               2018593.000        819180.000        
+354              2018584.580        819823.900        
+66               2019133.000        819269.000        
+67               2019365.000        819560.000        
+68               2019189.000        819672.000        
+71               2019656.000        820163.000        
+82               2019867.000        821139.000        
+84               2019803.000        821663.000        
+86               2019987.000        821505.000        
+89               2020469.000        818418.000        
+90               2020475.000        818828.000        
+102n             2019554.000        819393.000        
+312b             2019842.000        820764.000        
+313b             2019495.000        819918.000        
+315              2020722.000        819673.000        
+319              2020504.000        818296.000        
+329              2018881.000        817339.000        
+330              2018654.000        816977.000        
+331              2018429.000        816586.000        
+312a             2019842.000        820766.000        
+313a             2019495.000        819920.000        
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+5                2019274.843        821305.712        
+6                2020899.402        821391.215        
+7                2020610.007        820641.419        
+8                2019320.883        820963.700        
+9                2019557.661        821154.437        
+10               2018972.293        821739.805        
+12               2020471.886        820930.814        
+13               2019031.488        820069.206        
+14               2019965.445        820444.104        
+15               2021142.757        820134.977        
+16               2020767.858        819332.563        
+17               2020583.698        820194.172        
+18               2020300.880        819529.878        
+19               2020984.905        818773.504        
+20               2020116.719        818957.665        
+21               2019925.982        818313.103        
+22               2019459.003        819135.248        
+24               2018873.636        820654.573        
+25               2019366.923        820575.647        
+26               2018610.549        820220.480        
+27               2019307.728        818635.384        
+28               2019649.741        817997.399        
+29               2018597.395        817701.427        
+30               2018340.885        817168.677        
+31               2018090.953        816885.859        
+33               2017768.672        818168.406        
+42               2017564.780        819681.153        
+51               2018400.080        818964.242        
+54               2018189.611        820023.165        
+55               2017545.049        819010.282        
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+GAGE1            2018058.067        820292.829        
+
+[LABELS]
+;;X-Coord          Y-Coord            Label           
+2016045.500        821351.752         "Duke West Campus Watershed B" "" "Times New Roman" 14 1 0
+2016124.375        821029.471         "Continuous Simulation 1 year" "" "Times New Roman" 11 1 0
+

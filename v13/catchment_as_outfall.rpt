@@ -1,0 +1,199 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.1 (Build 5.1.013)
+  --------------------------------------------------------------
+
+  WARNING 01: wet weather time step reduced to recording interval for Rain Gage 38_Rain-Gage
+  
+  *********************************************************
+  NOTE: The summary statistics displayed in this report are
+  based on results found at every computational time step,  
+  not just on results from each reporting time step.
+  *********************************************************
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ YES
+    Water Quality .......... NO
+  Infiltration Method ...... GREEN_AMPT
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 01/01/2000 00:00:00
+  Ending Date .............. 01/01/2000 06:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:15:00
+  Wet Time Step ............ 00:12:00
+  Dry Time Step ............ 01:00:00
+  Routing Time Step ........ 1.00 sec
+  Variable Time Step ....... NO
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Total Precipitation ......         0.547         0.437
+  Outfall Runon ............         0.087         0.070
+  Evaporation Loss .........         0.000         0.000
+  Infiltration Loss ........         0.410         0.328
+  Surface Runoff ...........         0.175         0.140
+  Final Storage ............         0.050         0.040
+  Continuity Error (%) .....        -0.142
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.175         0.057
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         0.175         0.057
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.000         0.000
+  Continuity Error (%) .....         0.000
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     1.00 sec
+  Average Time Step           :     1.00 sec
+  Maximum Time Step           :     1.00 sec
+  Percent in Steady State     :     0.00
+  Average Iterations per Step :     2.00
+  Percent Not Converging      :     0.00
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in         in         in    10^6 gal      CFS
+  ------------------------------------------------------------------------------------------------------------------------------
+  CM-1                       0.66       0.00       0.00       0.49       0.11       0.00       0.11        0.03     0.69   0.161
+  CM-2                       0.00       0.21       0.00       0.00       0.21       0.00       0.21        0.03     0.66   1.000
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  MH-1                 JUNCTION     0.08     0.19   107.19     0  01:12        0.18
+  MH-2                 JUNCTION     0.08     0.19   103.19     0  01:12        0.19
+  MH-3                 JUNCTION     0.08     0.19   100.19     0  01:36        0.19
+  O-1                  OUTFALL      0.08     0.19   100.19     0  01:12        0.19
+  O-2                  OUTFALL      0.08     0.19    95.19     0  01:36        0.19
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  MH-1                 JUNCTION      0.69     0.69     0  01:12      0.0286      0.0286       0.011
+  MH-2                 JUNCTION      0.00     0.69     0  01:12           0      0.0286       0.016
+  MH-3                 JUNCTION      0.66     0.66     0  01:36      0.0284      0.0284       0.015
+  O-1                  OUTFALL       0.00     0.69     0  01:12           0      0.0286       0.000
+  O-2                  OUTFALL       0.00     0.66     0  01:36           0      0.0284       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  No nodes were surcharged.
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  O-1                   95.62      0.19      0.69       0.029
+  O-2                   91.97      0.19      0.66       0.028
+  -----------------------------------------------------------
+  System                93.79      0.38      1.28       0.057
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  CO-1                 CONDUIT      0.69     0  01:12      6.80    0.08    0.19
+  CO-2                 CONDUIT      0.69     0  01:12      6.79    0.08    0.19
+  CO-3                 CONDUIT      0.66     0  01:36      6.43    0.08    0.19
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  CO-1                    1.00   0.03  0.00  0.00  0.00  0.96  0.00  0.00  0.85  0.00
+  CO-2                    1.00   0.04  0.00  0.00  0.00  0.96  0.00  0.00  0.23  0.00
+  CO-3                    1.00   0.07  0.00  0.00  0.00  0.93  0.00  0.00  0.28  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  No conduits were surcharged.
+  
+
+  Analysis begun on:  Tue Nov 20 16:54:36 2018
+  Analysis ended on:  Tue Nov 20 16:54:36 2018
+  Total elapsed time: < 1 sec

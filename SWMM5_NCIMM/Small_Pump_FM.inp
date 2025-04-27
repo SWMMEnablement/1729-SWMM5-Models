@@ -1,0 +1,141 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           GPM
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        YES
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/03/2019
+START_TIME           00:00:00
+REPORT_START_DATE    01/03/2019
+REPORT_START_TIME    00:00:00
+END_DATE             01/03/2019
+END_TIME             12:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:01:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:10 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     1
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.001
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+Junction1        20.000000  0.000000   0.000000   3277.559055 0.000000  
+Junction2        20.000000  0.000000   0.000000   3277.559055 0.000000  
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+; Name InvertEl FREE FlapGate
+; Name InvertEl NORMAL FlapGate
+; Name InvertEl FIXED FixedStage FlapGate
+; Name InvertEl TIDAL TideTable FlapGate
+; Name InvertEl TIMESERIES StageSeries FlapGate
+WWTP             80.000000  FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+; Name Elev ( Ymax Y0 Ysur Apond )
+Community        0.000000 10.000000  0.000000   FUNCTIONAL 12.6      0         0        0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+; Name Node1 Node2 Length Nvalue Zup Zdown InitFlow
+Junction1.1      Junction1        Junction2        656.167979 0.012300   0.000000   0.000000   0.000000   0         
+Junction2.1      Junction2        WWTP             656.167979 0.009364   0.000000   0.000000   0.000000   0         
+
+[PUMPS]
+;;Name           From Node        To Node          Pump Curve       Status   Sartup Shutoff 
+;;-------------- ---------------- ---------------- ---------------- ------ -------- --------
+; Name Node1 Node2 CurveName ( InitStatus )
+Community.3      Community        Junction1        Community.3      ON       4        2       
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+Junction1.1      FORCE_MAIN   0.333333         120        0          0          1                    
+Junction2.1      FORCE_MAIN   0.333333         120        0          0          1                    
+
+[LOSSES]
+;;Link           Kentry     Kexit      Kavg       Flap Gate  Seepage   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+Junction1.1      0.000000   0.000000   0.000000   NO         0         
+Junction2.1      0.000000   0.000000   0.000000   NO         0         
+
+[CONTROLS]
+RULE Community.3_ON
+IF NODE Community HEAD >= 4.000000
+THEN PUMP Community.3 STATUS = ON
+RULE Community.3_OFF
+IF NODE Community HEAD <= 2.000000
+THEN PUMP Community.3 STATUS = OFF
+
+[DWF]
+;;Node           Constituent      Baseline   Patterns  
+;;-------------- ---------------- ---------- ----------
+Community        FLOW             30.000000  "" "" ""
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+Community.3      PUMP3      20.000000  1000.000000
+Community.3                 40.000000  800.000000
+Community.3                 60.000000  600.000000
+Community.3                 80.000000  400.000000
+Community.3                 100.000000 200.000000
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -1423.666 263.342 688.758 869.641
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Junction1        -863.955           395.888           
+Junction2        -124.672           290.901           
+WWTP             592.738            356.518           
+Community        -1130.796          548.994           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

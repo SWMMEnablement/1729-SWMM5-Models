@@ -1,0 +1,403 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.1 (Build 5.1.013)
+  --------------------------------------------------------------
+
+   SW 1 0 9A1 'BROWARD COUNTY Multi FAMILY SITE - Runoff example # 47'A2 'RUNO 
+  
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 1
+  Number of subcatchments ... 4
+  Number of nodes ........... 5
+  Number of links ........... 4
+  Number of pollutants ...... 5
+  Number of land uses ....... 1
+  
+  
+  *****************
+  Pollutant Summary
+  *****************
+                               Ppt.      GW         Kdecay
+  Name                 Units   Concen.   Concen.    1/days    CoPollutant
+  -----------------------------------------------------------------------
+  COD                   MG/L      5.00      0.00      0.00
+  TOTSOL                MG/L      5.00      0.00      0.00
+  TOTNIT                MG/L      0.30      0.00      0.00
+  TSS                   MG/L      5.00      0.00      0.00
+  PO4                   MG/L      0.00      0.00      0.00
+  
+  
+  ***************
+  Landuse Summary
+  ***************
+                         Sweeping   Maximum      Last
+  Name                   Interval   Removal     Swept
+  ---------------------------------------------------
+  HOUSING                    0.00      0.00      0.00
+  
+  
+  ****************
+  Raingage Summary
+  ****************
+                                                      Data       Recording
+  Name                 Data Source                    Type       Interval 
+  ------------------------------------------------------------------------
+  GAGE1                RainSeries1                    INTENSITY    5 min.
+  
+  
+  ********************
+  Subcatchment Summary
+  ********************
+  Name                       Area     Width   %Imperv    %Slope Rain Gage            Outlet              
+  -----------------------------------------------------------------------------------------------------------
+  CA-1                       5.00    600.00     39.00    2.7000 GAGE1                P001                
+  CA-7                       1.60    200.00     48.60    2.7000 GAGE1                P005                
+  CA-8                       4.57    500.00     46.70    2.7000 GAGE1                P009                
+  CA-11                      3.58    600.00     47.00    2.7000 GAGE1                P011                
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  P001                 JUNCTION              1.10     20.00       0.0
+  P005                 JUNCTION              1.58     20.00       0.0
+  P009                 JUNCTION              3.60     20.00       0.0
+  P011                 JUNCTION              2.89     20.00       0.0
+  Outlet               OUTFALL               0.00      4.00       0.0
+  
+  
+  ************
+  Link Summary
+  ************
+  Name             From Node        To Node          Type            Length    %Slope Roughness
+  ---------------------------------------------------------------------------------------------
+  P001             P001             Outlet           CONDUIT          220.0    0.5000    0.0150
+  P005             P005             P001             CONDUIT          240.0    0.2000    0.0150
+  P009             P009             P005             CONDUIT          505.0    0.4000    0.0240
+  P011             P011             P005             CONDUIT          655.0    0.2000    0.0240
+  
+  
+  *********************
+  Cross Section Summary
+  *********************
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  P001             CIRCULAR             4.00    12.57     1.00     4.00        1    88.03
+  P005             CIRCULAR             3.00     7.07     0.75     3.00        1    25.85
+  P009             CIRCULAR             2.25     3.98     0.56     2.25        1    10.61
+  P011             CIRCULAR             2.50     4.91     0.63     2.50        1     9.94
+  
+  
+  
+  *********************************************************
+  NOTE: The summary statistics displayed in this report are
+  based on results found at every computational time step,  
+  not just on results from each reporting time step.
+  *********************************************************
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... YES
+  Infiltration Method ...... GREEN_AMPT
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 07/15/1977 06:30:00
+  Ending Date .............. 07/15/1977 10:15:00
+  Antecedent Dry Days ...... 7.0
+  Report Time Step ......... 00:05:00
+  Wet Time Step ............ 00:05:00
+  Dry Time Step ............ 00:05:00
+  Routing Time Step ........ 30.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  *********************
+  Control Actions Taken
+  *********************
+   07/15/1977: 06:30:00 Link P001 setting changed to   0.00 by Control ValveOpen1
+   07/15/1977: 07:30:10 Link P001 setting changed to   1.00 by Control ValveOpen2
+   07/15/1977: 08:30:11 Link P001 setting changed to   0.00 by Control ValveOpen1
+   07/15/1977: 09:30:27 Link P001 setting changed to   1.00 by Control ValveOpen2
+
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Total Precipitation ......         2.051         1.669
+  Evaporation Loss .........         0.028         0.023
+  Infiltration Loss ........         1.001         0.815
+  Surface Runoff ...........         0.999         0.813
+  Final Storage ............         0.047         0.038
+  Continuity Error (%) .....        -1.159
+  
+  
+  **************************           COD        TOTSOL        TOTNIT           TSS           PO4
+  Runoff Quality Continuity            lbs           lbs           lbs           lbs           lbs
+  **************************    ----------    ----------    ----------    ----------    ----------
+  Initial Buildup ..........      5056.849     13379.165       125.370     13379.165       103.603
+  Surface Buildup ..........        22.568        23.242         0.384        23.242         0.296
+  Wet Deposition ...........        27.864        27.864         1.672        27.864         0.011
+  Sweeping Removal .........         0.000         0.000         0.000         0.000         0.000
+  Infiltration Loss ........        13.598        13.598         0.816        13.598         0.005
+  BMP Removal ..............         0.000         0.000         0.000         0.000         0.000
+  Surface Runoff ...........      3886.558     13415.987        36.453     13415.987        50.032
+  Remaining Buildup ........      1207.071         0.632        90.154         0.632        53.872
+  Continuity Error (%) .....         0.001         0.000         0.003         0.000         0.000
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.997         0.325
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         0.762         0.248
+  Flooding Loss ............         0.189         0.062
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.002         0.001
+  Continuity Error (%) .....         4.368
+  
+  
+  **************************           COD        TOTSOL        TOTNIT           TSS           PO4
+  Quality Routing Continuity           lbs           lbs           lbs           lbs           lbs
+  **************************    ----------    ----------    ----------    ----------    ----------
+  Dry Weather Inflow .......         0.000         0.000         0.000         0.000         0.000
+  Wet Weather Inflow .......      3865.554     13355.565        36.312     13401.923        49.806
+  Groundwater Inflow .......         0.000         0.000         0.000         0.000         0.000
+  RDII Inflow ..............         0.000         0.000         0.000         0.000         0.000
+  External Inflow ..........         0.000         0.000         0.000         0.000         0.000
+  External Outflow .........      2435.576     12732.212        19.824     11521.022        28.123
+  Flooding Loss ............       338.915         5.997         4.428         4.927         5.461
+  Exfiltration Loss ........         0.000         0.000         0.000         0.000         0.000
+  Mass Reacted .............      1162.855      3928.585        11.084      2074.681        15.160
+  Initial Stored Mass ......         0.000         0.000         0.000         0.000         0.000
+  Final Stored Mass ........         2.115         0.164         0.030         0.656         0.036
+  Continuity Error (%) .....        -1.912       -24.794         2.605        -1.488         2.060
+  
+  
+  *************************
+  Highest Continuity Errors
+  *************************
+  Node P005 (8.98%)
+  Node P001 (-2.78%)
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  Link P001 (25.15%)
+  Link P005 (5.70%)
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  Link P005 (13)
+  Link P011 (6)
+  Link P009 (5)
+  Link P001 (1)
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     2.04 sec
+  Average Time Step           :    26.52 sec
+  Maximum Time Step           :    30.00 sec
+  Percent in Steady State     :     0.00
+  Average Iterations per Step :     2.49
+  Percent Not Converging      :     5.11
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in         in         in    10^6 gal      CFS
+  ------------------------------------------------------------------------------------------------------------------------------
+  CA-1                       1.67       0.00       0.02       0.89       0.64       0.09       0.73        0.10     5.54   0.435
+  CA-7                       1.67       0.00       0.02       0.75       0.80       0.08       0.88        0.04     2.14   0.527
+  CA-8                       1.67       0.00       0.02       0.78       0.76       0.08       0.84        0.10     5.77   0.504
+  CA-11                      1.67       0.00       0.02       0.77       0.77       0.10       0.87        0.08     4.88   0.521
+  
+  
+  ****************************
+  Subcatchment Washoff Summary
+  ****************************
+  
+  ------------------------------------------------------------------------------------------
+                                 COD        TOTSOL        TOTNIT           TSS           PO4
+  Subcatchment                   lbs           lbs           lbs           lbs           lbs
+  ------------------------------------------------------------------------------------------
+  CA-1                      1217.888      4548.545        10.637      4548.545        14.771
+  CA-7                       443.846      1455.193         4.354      1455.193         5.929
+  CA-8                      1229.942      4154.252        11.702      4154.252        16.017
+  CA-11                      994.881      3257.996         9.760      3257.996        13.315
+  ------------------------------------------------------------------------------------------
+  System                    3886.558     13415.987        36.453     13415.987        50.032
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  P001                 JUNCTION     3.38    20.00    21.10     0  02:31       20.00
+  P005                 JUNCTION     3.27    19.73    21.31     0  02:31       19.55
+  P009                 JUNCTION     2.68    17.95    21.55     0  02:31       17.70
+  P011                 JUNCTION     2.85    18.58    21.47     0  02:31       18.33
+  Outlet               OUTFALL      0.31     4.00     4.00     0  03:00        1.15
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  P001                 JUNCTION      5.54    29.32     0  01:01      0.0983        0.31      -2.706
+  P005                 JUNCTION      2.14    16.34     0  01:01      0.0381       0.239       9.871
+  P009                 JUNCTION      5.77     7.40     0  02:24       0.104       0.105       1.373
+  P011                 JUNCTION      4.88     7.51     0  01:00      0.0844      0.0891       0.534
+  Outlet               OUTFALL       0.00   203.80     0  03:00           0       0.248       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  Surcharging occurs when water rises above the top of the highest conduit.
+  ---------------------------------------------------------------------
+                                               Max. Height   Min. Depth
+                                   Hours       Above Crown    Below Rim
+  Node                 Type      Surcharged           Feet         Feet
+  ---------------------------------------------------------------------
+  P001                 JUNCTION        0.63         16.000        0.000
+  P005                 JUNCTION        0.66         16.726        0.274
+  P009                 JUNCTION        0.61         15.701        2.049
+  P011                 JUNCTION        0.63         16.085        1.415
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  Flooding refers to all water that overflows a node, whether it ponds or not.
+  --------------------------------------------------------------------------
+                                                             Total   Maximum
+                                 Maximum   Time of Max       Flood    Ponded
+                        Hours       Rate    Occurrence      Volume     Depth
+  Node                 Flooded       CFS   days hr:min    10^6 gal      Feet
+  --------------------------------------------------------------------------
+  P001                    0.48     10.87      0  02:33       0.062     0.000
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  ---------------------------------------------------------------------------------------------------------------------------------
+                         Flow       Avg       Max       Total         Total         Total         Total         Total         Total
+                         Freq      Flow      Flow      Volume           COD        TOTSOL        TOTNIT           TSS           PO4
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal           lbs           lbs           lbs           lbs           lbs
+  ---------------------------------------------------------------------------------------------------------------------------------
+  Outlet                51.08      8.92    203.80       0.248      2712.090     13681.890        22.249     12533.308        31.519
+  ---------------------------------------------------------------------------------------------------------------------------------
+  System                51.08      8.92    203.80       0.248      2712.090     13681.890        22.249     12533.308        31.519
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  P001                 CONDUIT    203.80     0  03:00     16.95    2.32    0.93
+  P005                 CONDUIT     26.78     0  03:01      5.27    1.04    1.00
+  P009                 CONDUIT      7.09     0  03:01      2.55    0.67    1.00
+  P011                 CONDUIT      8.11     0  01:01      1.92    0.82    1.00
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  P001                    1.00   0.02  0.00  0.00  0.63  0.35  0.00  0.00  0.00  0.00
+  P005                    1.00   0.02  0.00  0.00  0.98  0.00  0.00  0.00  0.11  0.00
+  P009                    1.00   0.02  0.00  0.00  0.98  0.00  0.00  0.00  0.69  0.00
+  P011                    1.00   0.02  0.00  0.00  0.98  0.00  0.00  0.00  0.65  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  P001                        0.01      0.01      0.01      0.01         0.01
+  P005                        0.66      0.66      0.72      0.01         0.02
+  P009                        0.61      0.61      0.82      0.01         0.01
+  P011                        0.63      0.63      0.75      0.01         0.01
+  
+  
+  ***************************
+  Link Pollutant Load Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------
+                                 COD        TOTSOL        TOTNIT           TSS           PO4
+  Link                           lbs           lbs           lbs           lbs           lbs
+  ------------------------------------------------------------------------------------------
+  P001                      2712.090    1.368e+004        22.249    1.253e+004        31.519
+  P005                      1767.827      9121.438        15.767      9203.063        21.990
+  P009                        97.855       311.844         0.973      3247.261         1.330
+  P011                      1156.840      6230.306        10.385      6141.738        14.558
+  
+
+  Analysis begun on:  Tue Nov 20 16:56:04 2018
+  Analysis ended on:  Tue Nov 20 16:56:04 2018
+  Total elapsed time: < 1 sec

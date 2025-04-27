@@ -1,0 +1,262 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           LPS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           07/15/2018
+START_TIME           00:00:00
+REPORT_START_DATE    07/15/2018
+REPORT_START_TIME    00:00:00
+END_DATE             07/15/2018
+END_TIME             01:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:01:00
+WET_STEP             00:01:00
+DRY_STEP             00:01:00
+ROUTING_STEP         0:00:01 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         1.14
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.0015
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+Gauge1           INTENSITY 0:05     1.0      TIMESERIES RAU29_100_25m   
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+Roof             Gauge1           12               .008     100      8        30       0                        
+Garage           Gauge1           13               .003     100      6        0.5      0                        
+Driveway         Gauge1           15               .003     100      4        8        0                        
+BackYard         Gauge1           20               .03      2        15       9        0                        
+FrontYard        Gauge1           14               .0140    5        6        8        0                        
+Patio            Gauge1           11               .003     100      6        0.5      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+Roof             0.01       0.1        1          5          25         OUTLET    
+Garage           0.01       0.1        0.05       0.05       25         OUTLET    
+Driveway         0.01       0.1        0.05       0.05       25         OUTLET    
+BackYard         .0125      0.08       1          5          25         OUTLET    
+FrontYard        0.01       .08        1          5          25         OUTLET    
+Patio            0.01       0.1        1          5          25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+Roof             3.0        0.5        4          7          0         
+Garage           3.0        0.5        4          7          0         
+Driveway         3.0        0.5        4          7          0         
+BackYard         20         3          4          7          0         
+FrontYard        20         3          4          7          0         
+Patio            3.0        0.5        4          7          0         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+YardFlow         47.6       1          0          0          0         
+11               47.8       1          0          0          0         
+12               49.5       .6         0          0          0         
+13               47.7       1          0          0          0         
+14               48.5       1          0          0          0         
+15               47.65      1          0          0          0         
+16               49.25      .6         0          0          0         
+GutterFlow       49.15      1          0          0          0         
+20               48         1          0          0          0         
+21               47.5       1          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+TotalFlow        46         FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+FrontYardQ       14               YardFlow         5          0.01       0          0          0          0         
+Gutter_Pipe      16               GutterFlow       9          0.01       0          0          0          0         
+9                GutterFlow       21               5          0.01       0          0          0          0         
+TotalQ           21               TotalFlow        5          .035       0          0          0          0         
+BackYardQ        20               11               5          .035       0          0          0          0         
+13               11               13               5          .035       0          0          0          0         
+14               13               15               5          .035       0          0          0          0         
+15               15               YardFlow         5          .035       0          0          0          0         
+HouseQ           12               16               5          0.01       0          0          0          0         
+Yard_Runoff      YardFlow         21               5          0.01       0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+FrontYardQ       CIRCULAR     1                0          0          0          1                    
+Gutter_Pipe      CIRCULAR     .15              0          0          0          1                    
+9                CIRCULAR     1                0          0          0          1                    
+TotalQ           CIRCULAR     1                0          0          0          1                    
+BackYardQ        CIRCULAR     1                0          0          0          1                    
+13               CIRCULAR     1                0          0          0          1                    
+14               CIRCULAR     1                0          0          0          1                    
+15               CIRCULAR     1                0          0          0          1                    
+HouseQ           CIRCULAR     .15              0          0          0          1                    
+Yard_Runoff      CIRCULAR     1                0          0          0          1                    
+
+[LOSSES]
+;;Link           Kentry     Kexit      Kavg       Flap Gate  Seepage   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+TotalQ           0          0          0          YES        5         
+BackYardQ        0          0          0          NO         5         
+13               0          0          0          NO         5         
+14               0          0          0          NO         5         
+15               0          0          0          NO         5         
+Yard_Runoff      0          0          0          NO         5         
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+;RAU29_100_10m
+RAU29_100_10m               0:00       0.000     
+RAU29_100_10m               0:05       270.145   
+RAU29_100_10m               0:10       230.123   
+RAU29_100_10m               0:15       0.000     
+;
+;RAU29_100_15m
+RAU29_100_15m               0:00       0.000     
+RAU29_100_15m               0:05       215.584   
+RAU29_100_15m               0:10       307.043   
+RAU29_100_15m               0:15       130.657   
+RAU29_100_15m               0:20       0.000     
+;
+;100 Year 20 Minute
+RAU29_100_20m               0:00       0.000     
+RAU29_100_20m               0:05       156.674   
+RAU29_100_20m               0:10       313.348   
+RAU29_100_20m               0:15       235.011   
+RAU29_100_20m               0:20       78.337    
+RAU29_100_20m               0:25       0.000     
+;
+;RAU29_100_25m
+RAU29_100_25m               0:00       0.000     
+RAU29_100_25m               0:05       161.667   
+RAU29_100_25m               0:10       233.519   
+RAU29_100_25m               0:15       314.353   
+RAU29_100_25m               0:20       98.797    
+RAU29_100_25m               0:25       89.815    
+RAU29_100_25m               0:30       0.000     
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 304296.861 6190288.178 304347.216 6190313.906
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+YardFlow         304334.147         6190291.109       
+11               304319.700         6190293.033       
+12               304330.713         6190299.576       
+13               304324.673         6190292.234       
+14               304333.496         6190294.810       
+15               304331.690         6190291.553       
+16               304339.773         6190294.958       
+GutterFlow       304342.852         6190290.783       
+20               304317.450         6190293.626       
+21               304334.976         6190288.770       
+TotalFlow        304323.400         6190288.829       
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Roof             304321.150         6190297.593       
+Roof             304329.558         6190296.557       
+Roof             304330.239         6190301.975       
+Roof             304333.200         6190301.678       
+Roof             304333.614         6190305.883       
+Roof             304320.381         6190307.659       
+Roof             304321.565         6190306.297       
+Roof             304324.703         6190305.823       
+Roof             304323.963         6190299.813       
+Roof             304322.986         6190299.014       
+Garage           304319.451         6190294.484       
+Garage           304326.775         6190293.507       
+Garage           304327.072         6190296.409       
+Garage           304319.759         6190297.504       
+Driveway         304329.618         6190293.211       
+Driveway         304329.825         6190293.714       
+Driveway         304339.267         6190291.411       
+Driveway         304339.536         6190293.418       
+Driveway         304336.901         6190294.010       
+Driveway         304333.703         6190294.810       
+Driveway         304329.973         6190295.639       
+Driveway         304330.003         6190296.083       
+Driveway         304327.101         6190296.409       
+Driveway         304326.805         6190293.596       
+BackYard         304301.344         6190305.853       
+BackYard         304299.982         6190296.438       
+BackYard         304319.315         6190293.833       
+BackYard         304319.611         6190297.415       
+BackYard         304320.262         6190307.688       
+BackYard         304333.733         6190305.942       
+BackYard         304341.371         6190306.060       
+BackYard         304302.114         6190311.478       
+FrontYard        304333.822         6190305.705       
+FrontYard        304333.822         6190305.705       
+FrontYard        304333.289         6190301.442       
+FrontYard        304330.920         6190301.530       
+FrontYard        304330.151         6190295.757       
+FrontYard        304339.684         6190293.537       
+FrontYard        304341.223         6190305.823       
+FrontYard        304333.763         6190305.823       
+Patio            304321.506         6190306.267       
+Patio            304324.673         6190305.734       
+Patio            304323.933         6190299.902       
+Patio            304321.210         6190297.593       
+Patio            304321.565         6190301.116       
+Patio            304320.677         6190301.412       
+Patio            304321.121         6190305.231       
+Patio            304320.144         6190305.409       
+Patio            304320.351         6190307.481       
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Gauge1           304308.096         6190305.936       
+

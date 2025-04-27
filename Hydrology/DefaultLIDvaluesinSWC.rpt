@@ -1,0 +1,200 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.1 (Build 5.1.012)
+  --------------------------------------------------------------
+
+  WARNING 04: minimum elevation drop used for Conduit Dummy2
+  
+  *********************************************************
+  NOTE: The summary statistics displayed in this report are
+  based on results found at every computational time step,  
+  not just on results from each reporting time step.
+  *********************************************************
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Infiltration Method ...... GREEN_AMPT
+  Flow Routing Method ...... KINWAVE
+  Starting Date ............ 06/01/2006 00:00:00
+  Ending Date .............. 06/03/2006 23:59:59
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:15:00
+  Wet Time Step ............ 00:06:00
+  Dry Time Step ............ 00:06:00
+  Routing Time Step ........ 60.00 sec
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Initial LID Storage ......         0.001         0.001
+  Total Precipitation ......         3.947         4.736
+  Evaporation Loss .........         0.023         0.028
+  Infiltration Loss ........         1.231         1.477
+  Surface Runoff ...........         2.685         3.222
+  LID Drainage .............         0.019         0.023
+  Final Storage ............         0.003         0.004
+  Continuity Error (%) .....        -0.347
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         2.704         0.881
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         2.684         0.875
+  Flooding Loss ............         0.016         0.005
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.004         0.001
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.000         0.000
+  Continuity Error (%) .....         0.000
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :    58.00 sec
+  Average Time Step           :    60.00 sec
+  Maximum Time Step           :    60.00 sec
+  Percent in Steady State     :     0.00
+  Average Iterations per Step :     1.00
+  Percent Not Converging      :     0.00
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  --------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in    10^6 gal      CFS
+  --------------------------------------------------------------------------------------------------------
+  Subcatch1                  4.74       0.00       0.03       1.48       3.24        0.86    53.69   0.684
+  Subcatch2                  4.74       0.00       0.03       2.08       2.64        0.01     0.52   0.558
+  Subcatch3                  4.74       0.00       0.07       0.65       4.03        0.01     0.34   0.851
+  Subcatch4                  4.74       0.00       0.05       0.00       4.69        0.01     0.33   0.990
+  
+
+  ***********************
+  LID Performance Summary
+  ***********************
+
+  --------------------------------------------------------------------------------------------------------------------
+                                         Total      Evap     Infil   Surface    Drain    Initial     Final  Continuity
+                                        Inflow      Loss      Loss   Outflow   Outflow   Storage   Storage       Error
+  Subcatchment      LID Control             in        in        in        in        in        in        in           %
+  --------------------------------------------------------------------------------------------------------------------
+  Subcatch1         StreetPlanter        78.13      0.83     13.97     55.39      0.00      0.90      8.86       -0.03
+  Subcatch1         GreenRoof             4.74      0.20      0.00      0.00      4.53      0.20      0.20       -0.00
+  Subcatch1         RainGarden           93.70      0.83     13.87     78.41      0.00      0.60      1.19       -0.00
+  Subcatch1         PorousPavement        4.74      0.09      4.65      0.00      0.00      0.00      0.00        0.00
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  Outfall1             OUTFALL      0.00     0.00     0.00     0  00:00        0.00
+  Cisterns             STORAGE      2.33     4.00     4.00     0  10:21        4.00
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  Outfall1             OUTFALL      54.32    54.32     0  12:01       0.875       0.875       0.000
+  Cisterns             STORAGE       0.33     0.33     0  12:01     0.00636     0.00636       0.000
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  Flooding refers to all water that overflows a node, whether it ponds or not.
+  --------------------------------------------------------------------------
+                                                             Total   Maximum
+                                 Maximum   Time of Max       Flood    Ponded
+                        Hours       Rate    Occurrence      Volume    Volume
+  Node                 Flooded       CFS   days hr:min    10^6 gal  1000 ft3
+  --------------------------------------------------------------------------
+  Cisterns               14.50      0.32      0  12:02       0.005     0.000
+  
+  
+  **********************
+  Storage Volume Summary
+  **********************
+  
+  --------------------------------------------------------------------------------------------------
+                         Average     Avg  Evap Exfil       Maximum     Max    Time of Max    Maximum
+                          Volume    Pcnt  Pcnt  Pcnt        Volume    Pcnt     Occurrence    Outflow
+  Storage Unit          1000 ft3    Full  Loss  Loss      1000 ft3    Full    days hr:min        CFS
+  --------------------------------------------------------------------------------------------------
+  Cisterns                 0.065      58     0    19         0.111     100       0  09:44       0.00
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  Outfall1              32.27      1.40     54.32       0.875
+  -----------------------------------------------------------
+  System                32.27      1.40     54.32       0.875
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  Dummy2               DUMMY        0.00     0  00:00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  No conduits were surcharged.
+  
+
+  Analysis begun on:  Tue Dec 18 07:15:34 2018
+  Analysis ended on:  Tue Dec 18 07:15:34 2018
+  Total elapsed time: < 1 sec

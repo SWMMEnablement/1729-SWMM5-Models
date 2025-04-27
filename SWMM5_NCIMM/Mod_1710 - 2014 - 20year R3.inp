@@ -1,0 +1,1034 @@
+[TITLE]
+
+[OPTIONS]
+FLOW_UNITS          	CMS
+INFILTRATION        	HORTON
+FLOW_ROUTING        	DYNWAVE
+START_DATE          	03/03/2014
+START_TIME          	00:00:00
+REPORT_START_DATE   	03/03/2014
+REPORT_START_TIME   	00:00:00
+END_DATE            	03/04/2014
+END_TIME            	00:00:00
+SWEEP_START         	01/01
+SWEEP_END           	12/31
+DRY_DAYS            	0
+REPORT_STEP         	00:15:00
+WET_STEP            	00:05:00
+DRY_STEP            	01:00:00
+ROUTING_STEP        	0:00:10 
+ALLOW_PONDING       	YES
+INERTIAL_DAMPING    	NONE
+VARIABLE_STEP       	0.75
+LENGTHENING_STEP    	1
+MIN_SURFAREA        	0
+NORMAL_FLOW_LIMITED 	BOTH
+SKIP_STEADY_STATE   	NO
+FORCE_MAIN_EQUATION 	H-W
+LINK_OFFSETS        	DEPTH
+MIN_SLOPE           	0
+
+[EVAPORATION]
+;;Type      	Parameters
+;;----------	----------
+CONSTANT    	0.0
+DRY_ONLY     NO
+
+[RAINGAGES]
+;;              	Rain     	Time  	Snow  	Data      
+;;Name          	Type     	Intrvl	Catch 	Source    
+;;--------------	---------	------	------	----------
+2yearstorm      	INTENSITY	0:05  	1.0   	TIMESERIES	2yearstorm      
+20yearstorm     	INTENSITY	0:05  	1.0   	TIMESERIES	20yearstorm     
+
+[SUBCATCHMENTS]
+;;              	                	                	Total   	Pcnt.   	        	Pcnt.   	Curb    	Snow    
+;;Name          	Raingage        	Outlet          	Area    	Imperv  	Width   	Slope   	Length  	Pack    
+;;--------------	----------------	----------------	--------	--------	--------	--------	--------	--------
+S1              	20yearstorm     	J20             	1.596   	75      	62.01   	2.036   	0       	                
+S2              	20yearstorm     	J21             	0.882   	75      	35.28   	1.738   	0       	                
+S3              	20yearstorm     	J38             	2.251   	75      	105.7   	1.811   	0       	                
+S4              	20yearstorm     	j4              	1.025   	75      	45.12   	1.676   	0       	                
+S5              	20yearstorm     	J24             	1.236   	75      	70.37   	1.829   	0       	                
+S11             	20yearstorm     	J25             	0.626   	75      	40.685  	1.627   	0       	                
+S6              	20yearstorm     	J26             	1.316   	75      	44.21   	1.530   	0       	                
+S7              	20yearstorm     	J29             	0.924   	75      	38.56   	1.520   	0       	                
+S12             	20yearstorm     	J28             	0.751   	75      	40.685  	1.492   	0       	                
+S8              	20yearstorm     	J32             	1.005   	75      	40.37   	1.510   	0       	                
+S13             	20yearstorm     	J31             	0.721   	75      	42.62   	1.772   	0       	                
+S14             	20yearstorm     	J34             	0.941   	75      	52.19   	1.905   	0       	                
+S9              	20yearstorm     	J35             	0.929   	75      	47.68   	1.819   	0       	                
+S10             	20yearstorm     	J37             	2.374   	75      	99.95   	2.074   	0       	                
+S15             	20yearstorm     	J1              	3.91    	25      	66      	2.03    	0       	                
+
+[SUBAREAS]
+;;Subcatchment  	N-Imperv  	N-Perv    	S-Imperv  	S-Perv    	PctZero   	RouteTo   	PctRouted 
+;;--------------	----------	----------	----------	----------	----------	----------	----------
+S1              	0.02      	0.2       	0.10      	0.25      	25        	OUTLET    
+S2              	0.02      	0.2       	0.10      	0.25      	25        	OUTLET    
+S3              	0.02      	0.2       	0.10      	0.25      	25        	OUTLET    
+S4              	0.02      	0.2       	0.10      	0.25      	25        	OUTLET    
+S5              	0.02      	0.2       	0.10      	0.25      	25        	OUTLET    
+S11             	0.02      	0.2       	0.10      	0.25      	25        	OUTLET    
+S6              	0.02      	0.2       	0.10      	0.25      	25        	OUTLET    
+S7              	0.02      	0.2       	0.10      	0.25      	25        	OUTLET    
+S12             	0.02      	0.2       	0.10      	0.25      	25        	OUTLET    
+S8              	0.02      	0.2       	0.10      	0.25      	25        	OUTLET    
+S13             	0.02      	0.2       	0.10      	0.25      	25        	OUTLET    
+S14             	0.02      	0.2       	0.10      	0.25      	25        	OUTLET    
+S9              	0.02      	0.2       	0.10      	0.25      	25        	OUTLET    
+S10             	0.02      	0.2       	0.10      	0.25      	25        	OUTLET    
+S15             	0.02      	0.2       	0.10      	0.25      	25        	OUTLET    
+
+[INFILTRATION]
+;;Subcatchment  	MaxRate   	MinRate   	Decay     	DryTime   	MaxInfil  
+;;--------------	----------	----------	----------	----------	----------
+S1              	75        	25        	4         	7         	0         
+S2              	75        	25        	4         	7         	0         
+S3              	75        	25        	4         	7         	0         
+S4              	75        	25        	4         	7         	0         
+S5              	75        	25        	4         	7         	0         
+S11             	75        	25        	4         	7         	0         
+S6              	75        	25        	4         	7         	0         
+S7              	75        	25        	4         	7         	0         
+S12             	75        	25        	4         	7         	0         
+S8              	75        	25        	4         	7         	0         
+S13             	75        	25        	4         	7         	0         
+S14             	75        	25        	4         	7         	0         
+S9              	75        	25        	4         	7         	0         
+S10             	75        	25        	4         	7         	0         
+S15             	75        	25        	4         	7         	0         
+
+[JUNCTIONS]
+;;              	Invert    	Max.      	Init.     	Surcharge 	Ponded    
+;;Name          	Elev.     	Depth     	Depth     	Depth     	Area      
+;;--------------	----------	----------	----------	----------	----------
+J1              	1296.5    	1.78      	0         	0         	0         
+J2              	1298.4    	2.18      	0         	0         	0         
+J3              	1299.350  	2.2       	0         	0         	0         
+J4              	1302.788  	1.6       	0         	0         	0         
+J6              	1301.173  	1.8       	0         	0         	0         
+J8              	1302.050  	2         	0         	0         	0         
+J10             	1303.072  	1.6       	0         	0         	0         
+J18             	1303.442  	1.6       	0         	0         	0         
+J12             	1304.016  	1.6       	0         	0         	0         
+J14             	1305.627  	1.6       	0         	0         	0         
+J19             	1304.336  	1.6       	0         	0         	0         
+J13             	1305.876  	1.6       	0         	0         	0         
+J11             	1305.315  	1.6       	0         	0         	0         
+J9              	1304.693  	1.6       	0         	0         	0         
+J7              	1304.562  	1.6       	0         	0         	0         
+J5              	1303.124  	1.6       	0         	0         	0         
+J17             	1302.722  	1.6       	0         	0         	0         
+J16             	1301.792  	1.6       	0         	0         	0         
+
+[OUTFALLS]
+;;              	Invert    	Outfall   	Stage/Table     	Tide
+;;Name          	Elev.     	Type      	Time Series     	Gate
+;;--------------	----------	----------	----------------	----
+Out1            	1293.5    	FREE      	                	NO
+
+[DIVIDERS]
+;;              	Invert    	Diverted        	Divider   
+;;Name          	Elev.     	Link            	Type      	Parameters
+;;--------------	----------	----------------	----------	----------
+J20             	1298.28   	S44             	OVERFLOW  	0         	0         	0         	0         
+J21             	1300.58   	S43             	OVERFLOW  	0         	0         	0         	0         
+J22             	1301.451  	S42             	OVERFLOW  	0         	0         	0         	0         
+J23             	1304.388  	S40             	OVERFLOW  	0         	0         	0         	0         
+J24             	1304.724  	S41             	OVERFLOW  	0         	0         	0         	0         
+J25             	1306.162  	S53             	OVERFLOW  	0         	0         	0         	0         
+J26             	1303.392  	S54             	OVERFLOW  	0         	0         	0         	0         
+J27             	1302.973  	S45             	OVERFLOW  	0         	0         	0         	0         
+J30             	1304.05   	S46             	OVERFLOW  	0         	0         	0         	0         
+J33             	1304.676  	S47             	OVERFLOW  	0         	0         	0         	0         
+J36             	1305.616  	S48             	OVERFLOW  	0         	0         	0         	0         
+J37             	1307.227  	S49             	OVERFLOW  	0         	0         	0         	0         
+J34             	1307.476  	S50             	OVERFLOW  	0         	0         	0         	0         
+J35             	1305.936  	S57             	OVERFLOW  	0         	0         	0         	0         
+J31             	1306.915  	S51             	OVERFLOW  	0         	0         	0         	0         
+J32             	1305.042  	S56             	OVERFLOW  	0         	0         	0         	0         
+J28             	1306.293  	S52             	OVERFLOW  	0         	0         	0         	0         
+J29             	1304.322  	S39             	CUTOFF    	0         	0         	0         	0         	0         
+J38             	1301.551  	S60             	OVERFLOW  	0         	0         	0         	0         
+J15             	1295      	C15             	OVERFLOW  	0         	0         	0         	0         
+
+[STORAGE]
+;;              	Invert  	Max.    	Init.   	Storage   	Curve   	        	        	Ponded  	Evap.   
+;;Name          	Elev.   	Depth   	Depth   	Curve     	Params  	        	        	Area    	Frac.   	Infiltration Parameters
+;;--------------	--------	--------	--------	----------	--------	--------	--------	--------	--------	-----------------------
+Pond1           	1295.1  	2       	0       	FUNCTIONAL	1500    	1       	700     	0       	0       
+
+[CONDUITS]
+;;              	Inlet           	Outlet          	          	Manning   	Inlet     	Outlet    	Init.     	Max.      
+;;Name          	Node            	Node            	Length    	N         	Offset    	Offset    	Flow      	Flow      
+;;--------------	----------------	----------------	----------	----------	----------	----------	----------	----------
+P1              	J5              	J4              	19.468    	0.01      	0         	0         	0         	0         
+P2              	J4              	J3              	200.282   	0.01      	0         	0         	0         	0         
+P3              	J3              	J2              	57.30     	0.01      	0         	0         	0         	0         
+P4              	J2              	J1              	125.280   	0.01      	0         	0         	0         	0         
+P5              	J14             	J12             	87.239    	0.01      	0         	0         	0         	0         
+P6              	J12             	J10             	71.870    	0.01      	0         	0         	0         	0         
+P7              	J10             	J8              	68.109    	0.01      	0         	0         	0         	0         
+P8              	J8              	J6              	60.103    	0.01      	0         	0         	0         	0         
+P9              	J6              	J3              	115.206   	0.01      	0         	0         	0         	0         
+P14             	J1              	Pond1           	59.427    	0.01      	0         	0.4       	0         	0         
+C15             	J15             	Out1            	50        	0.01      	0         	0         	0         	0         
+P19             	J7              	J16             	197.437   	0.01      	0         	0         	0         	0         
+P20             	J16             	J6              	21.996    	0.01      	0         	0         	0         	0         
+P21             	J9              	J17             	168.317   	0.01      	0         	0         	0         	0         
+P22             	J17             	J8              	17.685    	0.01      	0         	0         	0         	0         
+P23             	J11             	J18             	155.369   	0.01      	0         	0         	0         	0         
+P24             	J18             	J10             	12.350    	0.01      	0         	0         	0         	0         
+P25             	J13             	J19             	107.287   	0.01      	0         	0         	0         	0         
+P26             	J19             	J12             	16.539    	0.01      	0         	0         	0         	0         
+S10             	J24             	J23             	19.468    	0.01      	0         	0         	0         	0.319     
+S12             	J22             	J21             	57.30     	0.01      	0         	0         	0         	0.358     
+S13             	J21             	J20             	125.280   	0.01      	0         	0         	0         	0.358     
+S27             	J25             	J26             	197.437   	0.01      	0         	0         	0         	0.360     
+S28             	J26             	J27             	50        	0.01      	0         	0         	0         	0.360     
+S29             	J27             	J22             	115.206   	0.01      	0         	0         	0         	0.337     
+S30             	J30             	J27             	60.103    	0.01      	0         	0         	0         	0.337     
+S31             	J33             	J30             	68.109    	0.01      	0         	0         	0         	0.337     
+S32             	J37             	J36             	87.239    	0.01      	0         	0         	0         	0.337     
+S33             	J36             	J33             	71.870    	0.01      	0         	0         	0         	0.337     
+S34             	J31             	J32             	155.369   	0.01      	0         	0         	0         	0.345     
+S35             	J32             	J33             	12.350    	0.01      	0         	0         	0         	0.345     
+S36             	J34             	J35             	107.287   	0.01      	0         	0         	0         	0.359     
+S37             	J35             	J36             	16.539    	0.01      	0         	0         	0         	0.359     
+S38             	J28             	J29             	168.317   	0.01      	0         	0         	0         	0.359     
+S39             	J29             	J30             	17.685    	0.01      	0         	0         	0         	0.359     
+S40             	J23             	J4              	5         	0.01      	0         	1.47      	0         	0         
+S41             	J24             	J5              	5         	0.01      	0         	1.47      	0         	0         
+S42             	J22             	J3              	5         	0.01      	0         	2.07      	0         	0         
+S43             	J21             	J2              	5         	0.01      	0         	2.06      	0         	0         
+S44             	J20             	J1              	5         	0.01      	0         	1.65      	0         	0         
+S45             	J27             	J6              	5         	0.01      	0         	1.67      	0         	0         
+S46             	J30             	J8              	5         	0.01      	0         	1.78      	0         	0         
+S47             	J33             	J10             	5         	0.01      	0         	1.45      	0         	0         
+S48             	J36             	J12             	5         	0.01      	0         	1.45      	0         	0         
+S49             	J37             	J14             	5         	0.01      	0         	1.45      	0         	0         
+S50             	J34             	J13             	5         	0.01      	0         	1.47      	0         	0         
+S51             	J31             	J11             	5         	0.01      	0         	1.47      	0         	0         
+S52             	J28             	J9              	5         	0.01      	0         	1.47      	0         	0         
+S53             	J25             	J7              	5         	0.01      	0         	1.47      	0         	0         
+S54             	J26             	J16             	5         	0.01      	0         	1.47      	0         	0         
+S56             	J32             	J18             	5         	0.01      	0         	1.47      	0         	0         
+S57             	J35             	J19             	5         	0.01      	0         	1.47      	0         	0         
+S59             	J23             	J38             	200.282   	0.01      	0         	0         	0         	0.358     
+S60             	J38             	J22             	5         	0.01      	0         	0         	0         	0.358     
+
+[ORIFICES]
+;;              	Inlet           	Outlet          	Orifice     	Crest     	Disch.    	Flap	Open/Close
+;;Name          	Node            	Node            	Type        	Height    	Coeff.    	Gate	Time      
+;;--------------	----------------	----------------	------------	----------	----------	----	----------
+C17             	Pond1           	J15             	SIDE        	0         	0.65      	NO  	0         
+C18             	Pond1           	J15             	BOTTOM      	1.750     	0.65      	NO  	0         
+
+[WEIRS]
+;;              	Inlet           	Outlet          	Weir        	Crest     	Disch.    	Flap	End     	End       
+;;Name          	Node            	Node            	Type        	Height    	Coeff.    	Gate	Con.    	Coeff.    
+;;--------------	----------------	----------------	------------	----------	----------	----	--------	----------
+C16             	Pond1           	J15             	TRANSVERSE  	2.05      	3.33      	NO  	0       	0         
+
+[XSECTIONS]
+;;Link          	Shape       	Geom1           	Geom2     	Geom3     	Geom4     	Barrels   
+;;--------------	------------	----------------	----------	----------	----------	----------
+P1              	CIRCULAR    	0.450           	0         	0         	0         	1         	          
+P2              	CIRCULAR    	0.600           	0         	0         	0         	1         	          
+P3              	CIRCULAR    	0.750           	0         	0         	0         	1         	          
+P4              	CIRCULAR    	0.900           	0         	0         	0         	1         	          
+P5              	CIRCULAR    	0.450           	0         	0         	0         	1         	          
+P6              	CIRCULAR    	0.6             	0         	0         	0         	1         	          
+P7              	CIRCULAR    	0.600           	0         	0         	0         	1         	          
+P8              	CIRCULAR    	0.750           	0         	0         	0         	1         	          
+P9              	CIRCULAR    	0.750           	0         	0         	0         	1         	          
+P14             	CIRCULAR    	0.9             	0         	0         	0         	1         	          
+C15             	CIRCULAR    	0.450           	0         	0         	0         	1         	          
+P19             	CIRCULAR    	0.450           	0         	0         	0         	1         	          
+P20             	CIRCULAR    	0.600           	0         	0         	0         	1         	          
+P21             	CIRCULAR    	0.450           	0         	0         	0         	1         	          
+P22             	CIRCULAR    	0.600           	0         	0         	0         	1         	          
+P23             	CIRCULAR    	0.450           	0         	0         	0         	1         	          
+P24             	CIRCULAR    	0.600           	0         	0         	0         	1         	          
+P25             	CIRCULAR    	0.450           	0         	0         	0         	1         	          
+P26             	CIRCULAR    	0.600           	0         	0         	0         	1         	          
+S10             	IRREGULAR   	5.5m            	0         	0         	0         	1         	          
+S12             	IRREGULAR   	5.5m            	0         	0         	0         	1         	          
+S13             	IRREGULAR   	5.5m            	0         	0         	0         	1         	          
+S27             	IRREGULAR   	5.5m            	0         	0         	0         	1         	          
+S28             	CIRCULAR    	1               	0         	0         	0         	1         	          
+S29             	IRREGULAR   	7.4m            	0         	0         	0         	1         	          
+S30             	IRREGULAR   	7.4m            	0         	0         	0         	1         	          
+S31             	IRREGULAR   	7.4m            	0         	0         	0         	1         	          
+S32             	IRREGULAR   	7.4m            	0         	0         	0         	1         	          
+S33             	IRREGULAR   	7.4m            	0         	0         	0         	1         	          
+S34             	IRREGULAR   	5m              	0         	0         	0         	1         	          
+S35             	IRREGULAR   	5m              	0         	0         	0         	1         	          
+S36             	IRREGULAR   	5m              	0         	0         	0         	1         	          
+S37             	IRREGULAR   	5m              	0         	0         	0         	1         	          
+S38             	IRREGULAR   	5m              	0         	0         	0         	1         	          
+S39             	IRREGULAR   	5m              	0         	0         	0         	1         	          
+S40             	IRREGULAR   	5.5m            	0         	0         	0         	1         	          
+S41             	IRREGULAR   	5.5m            	0         	0         	0         	1         	          
+S42             	IRREGULAR   	5.5m            	0         	0         	0         	1         	          
+S43             	IRREGULAR   	5.5m            	0         	0         	0         	1         	          
+S44             	IRREGULAR   	5.5m            	0         	0         	0         	1         	          
+S45             	IRREGULAR   	5m              	0         	0         	0         	1         	          
+S46             	IRREGULAR   	5m              	0         	0         	0         	1         	          
+S47             	IRREGULAR   	7.4m            	0         	0         	0         	1         	          
+S48             	IRREGULAR   	7.4m            	0         	0         	0         	1         	          
+S49             	IRREGULAR   	7.4m            	0         	0         	0         	1         	          
+S50             	IRREGULAR   	5m              	0         	0         	0         	1         	          
+S51             	IRREGULAR   	5m              	0         	0         	0         	1         	          
+S52             	IRREGULAR   	5m              	0         	0         	0         	1         	          
+S53             	IRREGULAR   	5m              	0         	0         	0         	1         	          
+S54             	IRREGULAR   	5m              	0         	0         	0         	1         	          
+S56             	IRREGULAR   	5m              	0         	0         	0         	1         	          
+S57             	IRREGULAR   	5m              	0         	0         	0         	1         	          
+S59             	IRREGULAR   	5.5m            	0         	0         	0         	1         	          
+S60             	IRREGULAR   	5.5m            	0         	0         	0         	1         	          
+C17             	RECT_CLOSED 	0.300           	0.300     	0         	0
+C18             	RECT_CLOSED 	1.2             	1.2       	0         	0
+C16             	RECT_OPEN   	0.15            	2         	1         	1         
+
+[TRANSECTS]
+
+;5m
+NC	0.025   	0.015   	0.025   
+X1	5m               	4       	0.0     	0.0     	0.0     	0.0     	0.0     	0.0     	0.0     
+GR	0.100   	-5      	0       	0       	0.02    	0.002   	0.130   	0.300   
+
+;5.5m
+NC	0.025   	0.015   	0.025   
+X1	5.5m             	4       	0.0     	0.0     	0.0     	0.0     	0.0     	0.0     	0.0     
+GR	0.100   	-5.5    	0       	0       	0.02    	0.002   	0.130   	0.300   
+
+;7.4m
+NC	0.025   	0.015   	0.025   
+X1	7.4m             	4       	0.0     	0.0     	0.0     	0.0     	0.0     	0.0     	0.0     
+GR	0.148   	-7.4    	0       	0       	0.02    	0.002   	0.130   	0.300   
+
+[LOSSES]
+;;Link          	Inlet     	Outlet    	Average   	Flap Gate 
+;;--------------	----------	----------	----------	----------
+
+[TIMESERIES]
+;;Name          	Date      	Time      	Value     
+;;--------------	----------	----------	----------
+2yearstorm      	          	00:00     	0.627     
+2yearstorm      	          	00:05     	0.627     
+2yearstorm      	          	00:10     	0.627     
+2yearstorm      	          	00:15     	0.627     
+2yearstorm      	          	00:20     	0.627     
+2yearstorm      	          	00:25     	0.627     
+2yearstorm      	          	00:30     	0.627     
+2yearstorm      	          	00:35     	0.627     
+2yearstorm      	          	00:40     	0.627     
+2yearstorm      	          	00:45     	0.627     
+2yearstorm      	          	00:50     	0.627     
+2yearstorm      	          	00:55     	0.627     
+2yearstorm      	          	01:00     	0.627     
+2yearstorm      	          	01:05     	0.627     
+2yearstorm      	          	01:10     	0.627     
+2yearstorm      	          	01:15     	0.627     
+2yearstorm      	          	01:20     	0.684     
+2yearstorm      	          	01:25     	0.684     
+2yearstorm      	          	01:30     	0.684     
+2yearstorm      	          	01:35     	0.684     
+2yearstorm      	          	01:40     	0.684     
+2yearstorm      	          	01:45     	0.684     
+2yearstorm      	          	01:50     	0.684     
+2yearstorm      	          	01:55     	0.684     
+2yearstorm      	          	02:00     	0.684     
+2yearstorm      	          	02:05     	0.684     
+2yearstorm      	          	02:10     	0.684     
+2yearstorm      	          	02:15     	0.684     
+2yearstorm      	          	02:20     	0.684     
+2yearstorm      	          	02:25     	0.741     
+2yearstorm      	          	02:30     	0.741     
+2yearstorm      	          	02:35     	0.741     
+2yearstorm      	          	02:40     	0.741     
+2yearstorm      	          	02:45     	0.741     
+2yearstorm      	          	02:50     	0.741     
+2yearstorm      	          	02:55     	0.741     
+2yearstorm      	          	03:00     	0.741     
+2yearstorm      	          	03:05     	0.741     
+2yearstorm      	          	03:10     	0.741     
+2yearstorm      	          	03:15     	0.741     
+2yearstorm      	          	03:20     	0.798     
+2yearstorm      	          	03:25     	0.798     
+2yearstorm      	          	03:30     	0.798     
+2yearstorm      	          	03:35     	0.798     
+2yearstorm      	          	03:40     	0.798     
+2yearstorm      	          	03:45     	0.798     
+2yearstorm      	          	03:50     	0.798     
+2yearstorm      	          	03:55     	0.798     
+2yearstorm      	          	04:00     	0.798     
+2yearstorm      	          	04:05     	0.798     
+2yearstorm      	          	04:10     	0.855     
+2yearstorm      	          	04:15     	0.855     
+2yearstorm      	          	04:20     	0.855     
+2yearstorm      	          	04:25     	0.855     
+2yearstorm      	          	04:30     	0.855     
+2yearstorm      	          	04:35     	0.855     
+2yearstorm      	          	04:40     	0.855     
+2yearstorm      	          	04:45     	0.855     
+2yearstorm      	          	04:50     	0.912     
+2yearstorm      	          	04:55     	0.912     
+2yearstorm      	          	05:00     	0.912     
+2yearstorm      	          	05:05     	0.912     
+2yearstorm      	          	05:10     	0.912     
+2yearstorm      	          	05:15     	0.912     
+2yearstorm      	          	05:20     	0.969     
+2yearstorm      	          	05:25     	0.969     
+2yearstorm      	          	05:30     	0.969     
+2yearstorm      	          	05:35     	0.969     
+2yearstorm      	          	05:40     	0.969     
+2yearstorm      	          	05:45     	0.969     
+2yearstorm      	          	05:50     	1.026     
+2yearstorm      	          	05:55     	1.026     
+2yearstorm      	          	06:00     	1.026     
+2yearstorm      	          	06:05     	1.026     
+2yearstorm      	          	06:10     	1.026     
+2yearstorm      	          	06:15     	1.026     
+2yearstorm      	          	06:20     	1.083     
+2yearstorm      	          	06:25     	1.083     
+2yearstorm      	          	06:30     	1.083     
+2yearstorm      	          	06:35     	1.083     
+2yearstorm      	          	06:40     	1.14      
+2yearstorm      	          	06:45     	1.14      
+2yearstorm      	          	06:50     	1.14      
+2yearstorm      	          	06:55     	1.14      
+2yearstorm      	          	07:00     	1.197     
+2yearstorm      	          	07:05     	1.197     
+2yearstorm      	          	07:10     	1.197     
+2yearstorm      	          	07:15     	1.197     
+2yearstorm      	          	07:20     	1.254     
+2yearstorm      	          	07:25     	1.254     
+2yearstorm      	          	07:30     	1.254     
+2yearstorm      	          	07:35     	1.311     
+2yearstorm      	          	07:40     	1.311     
+2yearstorm      	          	07:45     	1.311     
+2yearstorm      	          	07:50     	1.368     
+2yearstorm      	          	07:55     	1.368     
+2yearstorm      	          	08:00     	1.368     
+2yearstorm      	          	08:05     	1.425     
+2yearstorm      	          	08:10     	1.425     
+2yearstorm      	          	08:15     	1.482     
+2yearstorm      	          	08:20     	1.482     
+2yearstorm      	          	08:25     	1.539     
+2yearstorm      	          	08:30     	1.539     
+2yearstorm      	          	08:35     	1.596     
+2yearstorm      	          	08:40     	1.596     
+2yearstorm      	          	08:45     	1.653     
+2yearstorm      	          	08:50     	1.653     
+2yearstorm      	          	08:55     	1.71      
+2yearstorm      	          	09:00     	1.767     
+2yearstorm      	          	09:05     	1.767     
+2yearstorm      	          	09:10     	1.824     
+2yearstorm      	          	09:15     	1.881     
+2yearstorm      	          	09:20     	1.938     
+2yearstorm      	          	09:25     	1.938     
+2yearstorm      	          	09:30     	1.995     
+2yearstorm      	          	09:35     	2.052     
+2yearstorm      	          	09:40     	2.109     
+2yearstorm      	          	09:45     	2.166     
+2yearstorm      	          	09:50     	2.28      
+2yearstorm      	          	09:55     	2.337     
+2yearstorm      	          	10:00     	2.394     
+2yearstorm      	          	10:05     	2.508     
+2yearstorm      	          	10:10     	2.565     
+2yearstorm      	          	10:15     	2.679     
+2yearstorm      	          	10:20     	2.793     
+2yearstorm      	          	10:25     	2.907     
+2yearstorm      	          	10:30     	3.021     
+2yearstorm      	          	10:35     	3.192     
+2yearstorm      	          	10:40     	3.363     
+2yearstorm      	          	10:45     	3.534     
+2yearstorm      	          	10:50     	3.705     
+2yearstorm      	          	10:55     	3.933     
+2yearstorm      	          	11:00     	4.218     
+2yearstorm      	          	11:05     	4.56      
+2yearstorm      	          	11:10     	4.959     
+2yearstorm      	          	11:15     	5.415     
+2yearstorm      	          	11:20     	5.985     
+2yearstorm      	          	11:25     	6.726     
+2yearstorm      	          	11:30     	7.695     
+2yearstorm      	          	11:35     	9.006     
+2yearstorm      	          	11:40     	11.001    
+2yearstorm      	          	11:45     	14.307    
+2yearstorm      	          	11:50     	20.805    
+2yearstorm      	          	11:55     	39.045    
+2yearstorm      	          	12:00     	92.226    
+2yearstorm      	          	12:05     	39.045    
+2yearstorm      	          	12:10     	20.805    
+2yearstorm      	          	12:15     	14.307    
+2yearstorm      	          	12:20     	11.001    
+2yearstorm      	          	12:25     	9.006     
+2yearstorm      	          	12:30     	7.695     
+2yearstorm      	          	12:35     	6.726     
+2yearstorm      	          	12:40     	5.985     
+2yearstorm      	          	12:45     	5.415     
+2yearstorm      	          	12:50     	4.959     
+2yearstorm      	          	12:55     	4.56      
+2yearstorm      	          	13:00     	4.218     
+2yearstorm      	          	13:05     	3.933     
+2yearstorm      	          	13:10     	3.705     
+2yearstorm      	          	13:15     	3.534     
+2yearstorm      	          	13:20     	3.363     
+2yearstorm      	          	13:25     	3.192     
+2yearstorm      	          	13:30     	3.021     
+2yearstorm      	          	13:35     	2.907     
+2yearstorm      	          	13:40     	2.793     
+2yearstorm      	          	13:45     	2.679     
+2yearstorm      	          	13:50     	2.565     
+2yearstorm      	          	13:55     	2.508     
+2yearstorm      	          	14:00     	2.394     
+2yearstorm      	          	14:05     	2.337     
+2yearstorm      	          	14:10     	2.28      
+2yearstorm      	          	14:15     	2.166     
+2yearstorm      	          	14:20     	2.109     
+2yearstorm      	          	14:25     	2.052     
+2yearstorm      	          	14:30     	1.995     
+2yearstorm      	          	14:35     	1.938     
+2yearstorm      	          	14:40     	1.938     
+2yearstorm      	          	14:45     	1.881     
+2yearstorm      	          	14:50     	1.824     
+2yearstorm      	          	14:55     	1.767     
+2yearstorm      	          	15:00     	1.767     
+2yearstorm      	          	15:05     	1.71      
+2yearstorm      	          	15:10     	1.653     
+2yearstorm      	          	15:15     	1.653     
+2yearstorm      	          	15:20     	1.596     
+2yearstorm      	          	15:25     	1.596     
+2yearstorm      	          	15:30     	1.539     
+2yearstorm      	          	15:35     	1.539     
+2yearstorm      	          	15:40     	1.482     
+2yearstorm      	          	15:45     	1.482     
+2yearstorm      	          	15:50     	1.425     
+2yearstorm      	          	15:55     	1.425     
+2yearstorm      	          	16:00     	1.368     
+2yearstorm      	          	16:05     	1.368     
+2yearstorm      	          	16:10     	1.368     
+2yearstorm      	          	16:15     	1.311     
+2yearstorm      	          	16:20     	1.311     
+2yearstorm      	          	16:25     	1.311     
+2yearstorm      	          	16:30     	1.254     
+2yearstorm      	          	16:35     	1.254     
+2yearstorm      	          	16:40     	1.254     
+2yearstorm      	          	16:45     	1.197     
+2yearstorm      	          	16:50     	1.197     
+2yearstorm      	          	16:55     	1.197     
+2yearstorm      	          	17:00     	1.197     
+2yearstorm      	          	17:05     	1.14      
+2yearstorm      	          	17:10     	1.14      
+2yearstorm      	          	17:15     	1.14      
+2yearstorm      	          	17:20     	1.14      
+2yearstorm      	          	17:25     	1.083     
+2yearstorm      	          	17:30     	1.083     
+2yearstorm      	          	17:35     	1.083     
+2yearstorm      	          	17:40     	1.083     
+2yearstorm      	          	17:45     	1.026     
+2yearstorm      	          	17:50     	1.026     
+2yearstorm      	          	17:55     	1.026     
+2yearstorm      	          	18:00     	1.026     
+2yearstorm      	          	18:05     	1.026     
+2yearstorm      	          	18:10     	1.026     
+2yearstorm      	          	18:15     	0.969     
+2yearstorm      	          	18:20     	0.969     
+2yearstorm      	          	18:25     	0.969     
+2yearstorm      	          	18:30     	0.969     
+2yearstorm      	          	18:35     	0.969     
+2yearstorm      	          	18:40     	0.969     
+2yearstorm      	          	18:45     	0.912     
+2yearstorm      	          	18:50     	0.912     
+2yearstorm      	          	18:55     	0.912     
+2yearstorm      	          	19:00     	0.912     
+2yearstorm      	          	19:05     	0.912     
+2yearstorm      	          	19:10     	0.912     
+2yearstorm      	          	19:15     	0.855     
+2yearstorm      	          	19:20     	0.855     
+2yearstorm      	          	19:25     	0.855     
+2yearstorm      	          	19:30     	0.855     
+2yearstorm      	          	19:35     	0.855     
+2yearstorm      	          	19:40     	0.855     
+2yearstorm      	          	19:45     	0.855     
+2yearstorm      	          	19:50     	0.855     
+2yearstorm      	          	19:55     	0.798     
+2yearstorm      	          	20:00     	0.798     
+2yearstorm      	          	20:05     	0.798     
+2yearstorm      	          	20:10     	0.798     
+2yearstorm      	          	20:15     	0.798     
+2yearstorm      	          	20:20     	0.798     
+2yearstorm      	          	20:25     	0.798     
+2yearstorm      	          	20:30     	0.798     
+2yearstorm      	          	20:35     	0.798     
+2yearstorm      	          	20:40     	0.798     
+2yearstorm      	          	20:45     	0.741     
+2yearstorm      	          	20:50     	0.741     
+2yearstorm      	          	20:55     	0.741     
+2yearstorm      	          	21:00     	0.741     
+2yearstorm      	          	21:05     	0.741     
+2yearstorm      	          	21:10     	0.741     
+2yearstorm      	          	21:15     	0.741     
+2yearstorm      	          	21:20     	0.741     
+2yearstorm      	          	21:25     	0.741     
+2yearstorm      	          	21:30     	0.741     
+2yearstorm      	          	21:35     	0.741     
+2yearstorm      	          	21:40     	0.684     
+2yearstorm      	          	21:45     	0.684     
+2yearstorm      	          	21:50     	0.684     
+2yearstorm      	          	21:55     	0.684     
+2yearstorm      	          	22:00     	0.684     
+2yearstorm      	          	22:05     	0.684     
+2yearstorm      	          	22:10     	0.684     
+2yearstorm      	          	22:15     	0.684     
+2yearstorm      	          	22:20     	0.684     
+2yearstorm      	          	22:25     	0.684     
+2yearstorm      	          	22:30     	0.684     
+2yearstorm      	          	22:35     	0.684     
+2yearstorm      	          	22:40     	0.684     
+2yearstorm      	          	22:45     	0.627     
+2yearstorm      	          	22:50     	0.627     
+2yearstorm      	          	22:55     	0.627     
+2yearstorm      	          	23:00     	0.627     
+2yearstorm      	          	23:05     	0.627     
+2yearstorm      	          	23:10     	0.627     
+2yearstorm      	          	23:15     	0.627     
+2yearstorm      	          	23:20     	0.627     
+2yearstorm      	          	23:25     	0.627     
+2yearstorm      	          	23:30     	0.627     
+2yearstorm      	          	23:35     	0.627     
+2yearstorm      	          	23:40     	0.627     
+2yearstorm      	          	23:45     	0.627     
+2yearstorm      	          	23:50     	0.627     
+2yearstorm      	          	23:55     	0.627     
+2yearstorm      	          	24:00:00  	0         
+
+20yearstorm     	          	00:00     	1.188     
+20yearstorm     	          	00:05     	1.188     
+20yearstorm     	          	00:10     	1.188     
+20yearstorm     	          	00:15     	1.188     
+20yearstorm     	          	00:20     	1.188     
+20yearstorm     	          	00:25     	1.188     
+20yearstorm     	          	00:30     	1.188     
+20yearstorm     	          	00:35     	1.188     
+20yearstorm     	          	00:40     	1.188     
+20yearstorm     	          	00:45     	1.188     
+20yearstorm     	          	00:50     	1.188     
+20yearstorm     	          	00:55     	1.188     
+20yearstorm     	          	01:00     	1.188     
+20yearstorm     	          	01:05     	1.188     
+20yearstorm     	          	01:10     	1.188     
+20yearstorm     	          	01:15     	1.188     
+20yearstorm     	          	01:20     	1.296     
+20yearstorm     	          	01:25     	1.296     
+20yearstorm     	          	01:30     	1.296     
+20yearstorm     	          	01:35     	1.296     
+20yearstorm     	          	01:40     	1.296     
+20yearstorm     	          	01:45     	1.296     
+20yearstorm     	          	01:50     	1.296     
+20yearstorm     	          	01:55     	1.296     
+20yearstorm     	          	02:00     	1.296     
+20yearstorm     	          	02:05     	1.296     
+20yearstorm     	          	02:10     	1.296     
+20yearstorm     	          	02:15     	1.296     
+20yearstorm     	          	02:20     	1.296     
+20yearstorm     	          	02:25     	1.404     
+20yearstorm     	          	02:30     	1.404     
+20yearstorm     	          	02:35     	1.404     
+20yearstorm     	          	02:40     	1.404     
+20yearstorm     	          	02:45     	1.404     
+20yearstorm     	          	02:50     	1.404     
+20yearstorm     	          	02:55     	1.404     
+20yearstorm     	          	03:00     	1.404     
+20yearstorm     	          	03:05     	1.404     
+20yearstorm     	          	03:10     	1.404     
+20yearstorm     	          	03:15     	1.404     
+20yearstorm     	          	03:20     	1.512     
+20yearstorm     	          	03:25     	1.512     
+20yearstorm     	          	03:30     	1.512     
+20yearstorm     	          	03:35     	1.512     
+20yearstorm     	          	03:40     	1.512     
+20yearstorm     	          	03:45     	1.512     
+20yearstorm     	          	03:50     	1.512     
+20yearstorm     	          	03:55     	1.512     
+20yearstorm     	          	04:00     	1.512     
+20yearstorm     	          	04:05     	1.512     
+20yearstorm     	          	04:10     	1.62      
+20yearstorm     	          	04:15     	1.62      
+20yearstorm     	          	04:20     	1.62      
+20yearstorm     	          	04:25     	1.62      
+20yearstorm     	          	04:30     	1.62      
+20yearstorm     	          	04:35     	1.62      
+20yearstorm     	          	04:40     	1.62      
+20yearstorm     	          	04:45     	1.62      
+20yearstorm     	          	04:50     	1.728     
+20yearstorm     	          	04:55     	1.728     
+20yearstorm     	          	05:00     	1.728     
+20yearstorm     	          	05:05     	1.728     
+20yearstorm     	          	05:10     	1.728     
+20yearstorm     	          	05:15     	1.728     
+20yearstorm     	          	05:20     	1.836     
+20yearstorm     	          	05:25     	1.836     
+20yearstorm     	          	05:30     	1.836     
+20yearstorm     	          	05:35     	1.836     
+20yearstorm     	          	05:40     	1.836     
+20yearstorm     	          	05:45     	1.836     
+20yearstorm     	          	05:50     	1.944     
+20yearstorm     	          	05:55     	1.944     
+20yearstorm     	          	06:00     	1.944     
+20yearstorm     	          	06:05     	1.944     
+20yearstorm     	          	06:10     	1.944     
+20yearstorm     	          	06:15     	1.944     
+20yearstorm     	          	06:20     	2.052     
+20yearstorm     	          	06:25     	2.052     
+20yearstorm     	          	06:30     	2.052     
+20yearstorm     	          	06:35     	2.052     
+20yearstorm     	          	06:40     	2.16      
+20yearstorm     	          	06:45     	2.16      
+20yearstorm     	          	06:50     	2.16      
+20yearstorm     	          	06:55     	2.16      
+20yearstorm     	          	07:00     	2.268     
+20yearstorm     	          	07:05     	2.268     
+20yearstorm     	          	07:10     	2.268     
+20yearstorm     	          	07:15     	2.268     
+20yearstorm     	          	07:20     	2.376     
+20yearstorm     	          	07:25     	2.376     
+20yearstorm     	          	07:30     	2.376     
+20yearstorm     	          	07:35     	2.484     
+20yearstorm     	          	07:40     	2.484     
+20yearstorm     	          	07:45     	2.484     
+20yearstorm     	          	07:50     	2.592     
+20yearstorm     	          	07:55     	2.592     
+20yearstorm     	          	08:00     	2.592     
+20yearstorm     	          	08:05     	2.7       
+20yearstorm     	          	08:10     	2.7       
+20yearstorm     	          	08:15     	2.808     
+20yearstorm     	          	08:20     	2.808     
+20yearstorm     	          	08:25     	2.916     
+20yearstorm     	          	08:30     	2.916     
+20yearstorm     	          	08:35     	3.024     
+20yearstorm     	          	08:40     	3.024     
+20yearstorm     	          	08:45     	3.132     
+20yearstorm     	          	08:50     	3.132     
+20yearstorm     	          	08:55     	3.24      
+20yearstorm     	          	09:00     	3.348     
+20yearstorm     	          	09:05     	3.348     
+20yearstorm     	          	09:10     	3.456     
+20yearstorm     	          	09:15     	3.564     
+20yearstorm     	          	09:20     	3.672     
+20yearstorm     	          	09:25     	3.672     
+20yearstorm     	          	09:30     	3.78      
+20yearstorm     	          	09:35     	3.888     
+20yearstorm     	          	09:40     	3.996     
+20yearstorm     	          	09:45     	4.104     
+20yearstorm     	          	09:50     	4.32      
+20yearstorm     	          	09:55     	4.428     
+20yearstorm     	          	10:00     	4.536     
+20yearstorm     	          	10:05     	4.752     
+20yearstorm     	          	10:10     	4.86      
+20yearstorm     	          	10:15     	5.076     
+20yearstorm     	          	10:20     	5.292     
+20yearstorm     	          	10:25     	5.508     
+20yearstorm     	          	10:30     	5.724     
+20yearstorm     	          	10:35     	6.048     
+20yearstorm     	          	10:40     	6.372     
+20yearstorm     	          	10:45     	6.696     
+20yearstorm     	          	10:50     	7.02      
+20yearstorm     	          	10:55     	7.452     
+20yearstorm     	          	11:00     	7.992     
+20yearstorm     	          	11:05     	8.64      
+20yearstorm     	          	11:10     	9.396     
+20yearstorm     	          	11:15     	10.26     
+20yearstorm     	          	11:20     	11.34     
+20yearstorm     	          	11:25     	12.744    
+20yearstorm     	          	11:30     	14.58     
+20yearstorm     	          	11:35     	17.064    
+20yearstorm     	          	11:40     	20.844    
+20yearstorm     	          	11:45     	27.108    
+20yearstorm     	          	11:50     	39.42     
+20yearstorm     	          	11:55     	73.98     
+20yearstorm     	          	12:00     	174.744   
+20yearstorm     	          	12:05     	73.98     
+20yearstorm     	          	12:10     	39.42     
+20yearstorm     	          	12:15     	27.108    
+20yearstorm     	          	12:20     	20.844    
+20yearstorm     	          	12:25     	17.064    
+20yearstorm     	          	12:30     	14.58     
+20yearstorm     	          	12:35     	12.744    
+20yearstorm     	          	12:40     	11.34     
+20yearstorm     	          	12:45     	10.26     
+20yearstorm     	          	12:50     	9.396     
+20yearstorm     	          	12:55     	8.64      
+20yearstorm     	          	13:00     	7.992     
+20yearstorm     	          	13:05     	7.452     
+20yearstorm     	          	13:10     	7.02      
+20yearstorm     	          	13:15     	6.696     
+20yearstorm     	          	13:20     	6.372     
+20yearstorm     	          	13:25     	6.048     
+20yearstorm     	          	13:30     	5.724     
+20yearstorm     	          	13:35     	5.508     
+20yearstorm     	          	13:40     	5.292     
+20yearstorm     	          	13:45     	5.076     
+20yearstorm     	          	13:50     	4.86      
+20yearstorm     	          	13:55     	4.752     
+20yearstorm     	          	14:00     	4.536     
+20yearstorm     	          	14:05     	4.428     
+20yearstorm     	          	14:10     	4.32      
+20yearstorm     	          	14:15     	4.104     
+20yearstorm     	          	14:20     	3.996     
+20yearstorm     	          	14:25     	3.888     
+20yearstorm     	          	14:30     	3.78      
+20yearstorm     	          	14:35     	3.672     
+20yearstorm     	          	14:40     	3.672     
+20yearstorm     	          	14:45     	3.564     
+20yearstorm     	          	14:50     	3.456     
+20yearstorm     	          	14:55     	3.348     
+20yearstorm     	          	15:00     	3.348     
+20yearstorm     	          	15:05     	3.24      
+20yearstorm     	          	15:10     	3.132     
+20yearstorm     	          	15:15     	3.132     
+20yearstorm     	          	15:20     	3.024     
+20yearstorm     	          	15:25     	3.024     
+20yearstorm     	          	15:30     	2.916     
+20yearstorm     	          	15:35     	2.916     
+20yearstorm     	          	15:40     	2.808     
+20yearstorm     	          	15:45     	2.808     
+20yearstorm     	          	15:50     	2.7       
+20yearstorm     	          	15:55     	2.7       
+20yearstorm     	          	16:00     	2.592     
+20yearstorm     	          	16:05     	2.592     
+20yearstorm     	          	16:10     	2.592     
+20yearstorm     	          	16:15     	2.484     
+20yearstorm     	          	16:20     	2.484     
+20yearstorm     	          	16:25     	2.484     
+20yearstorm     	          	16:30     	2.376     
+20yearstorm     	          	16:35     	2.376     
+20yearstorm     	          	16:40     	2.376     
+20yearstorm     	          	16:45     	2.268     
+20yearstorm     	          	16:50     	2.268     
+20yearstorm     	          	16:55     	2.268     
+20yearstorm     	          	17:00     	2.268     
+20yearstorm     	          	17:05     	2.16      
+20yearstorm     	          	17:10     	2.16      
+20yearstorm     	          	17:15     	2.16      
+20yearstorm     	          	17:20     	2.16      
+20yearstorm     	          	17:25     	2.052     
+20yearstorm     	          	17:30     	2.052     
+20yearstorm     	          	17:35     	2.052     
+20yearstorm     	          	17:40     	2.052     
+20yearstorm     	          	17:45     	1.944     
+20yearstorm     	          	17:50     	1.944     
+20yearstorm     	          	17:55     	1.944     
+20yearstorm     	          	18:00     	1.944     
+20yearstorm     	          	18:05     	1.944     
+20yearstorm     	          	18:10     	1.944     
+20yearstorm     	          	18:15     	1.836     
+20yearstorm     	          	18:20     	1.836     
+20yearstorm     	          	18:25     	1.836     
+20yearstorm     	          	18:30     	1.836     
+20yearstorm     	          	18:35     	1.836     
+20yearstorm     	          	18:40     	1.836     
+20yearstorm     	          	18:45     	1.728     
+20yearstorm     	          	18:50     	1.728     
+20yearstorm     	          	18:55     	1.728     
+20yearstorm     	          	19:00     	1.728     
+20yearstorm     	          	19:05     	1.728     
+20yearstorm     	          	19:10     	1.728     
+20yearstorm     	          	19:15     	1.62      
+20yearstorm     	          	19:20     	1.62      
+20yearstorm     	          	19:25     	1.62      
+20yearstorm     	          	19:30     	1.62      
+20yearstorm     	          	19:35     	1.62      
+20yearstorm     	          	19:40     	1.62      
+20yearstorm     	          	19:45     	1.62      
+20yearstorm     	          	19:50     	1.62      
+20yearstorm     	          	19:55     	1.512     
+20yearstorm     	          	20:00     	1.512     
+20yearstorm     	          	20:05     	1.512     
+20yearstorm     	          	20:10     	1.512     
+20yearstorm     	          	20:15     	1.512     
+20yearstorm     	          	20:20     	1.512     
+20yearstorm     	          	20:25     	1.512     
+20yearstorm     	          	20:30     	1.512     
+20yearstorm     	          	20:35     	1.512     
+20yearstorm     	          	20:40     	1.512     
+20yearstorm     	          	20:45     	1.404     
+20yearstorm     	          	20:50     	1.404     
+20yearstorm     	          	20:55     	1.404     
+20yearstorm     	          	21:00     	1.404     
+20yearstorm     	          	21:05     	1.404     
+20yearstorm     	          	21:10     	1.404     
+20yearstorm     	          	21:15     	1.404     
+20yearstorm     	          	21:20     	1.404     
+20yearstorm     	          	21:25     	1.404     
+20yearstorm     	          	21:30     	1.404     
+20yearstorm     	          	21:35     	1.404     
+20yearstorm     	          	21:40     	1.296     
+20yearstorm     	          	21:45     	1.296     
+20yearstorm     	          	21:50     	1.296     
+20yearstorm     	          	21:55     	1.296     
+20yearstorm     	          	22:00     	1.296     
+20yearstorm     	          	22:05     	1.296     
+20yearstorm     	          	22:10     	1.296     
+20yearstorm     	          	22:15     	1.296     
+20yearstorm     	          	22:20     	1.296     
+20yearstorm     	          	22:25     	1.296     
+20yearstorm     	          	22:30     	1.296     
+20yearstorm     	          	22:35     	1.296     
+20yearstorm     	          	22:40     	1.296     
+20yearstorm     	          	22:45     	1.188     
+20yearstorm     	          	22:50     	1.188     
+20yearstorm     	          	22:55     	1.188     
+20yearstorm     	          	23:00     	1.188     
+20yearstorm     	          	23:05     	1.188     
+20yearstorm     	          	23:10     	1.188     
+20yearstorm     	          	23:15     	1.188     
+20yearstorm     	          	23:20     	1.188     
+20yearstorm     	          	23:25     	1.188     
+20yearstorm     	          	23:30     	1.188     
+20yearstorm     	          	23:35     	1.188     
+20yearstorm     	          	23:40     	1.188     
+20yearstorm     	          	23:45     	1.188     
+20yearstorm     	          	23:50     	1.188     
+20yearstorm     	          	23:55     	1.188     
+20yearstorm     	          	24:00:00  	0         
+
+[REPORT]
+INPUT     	NO
+CONTROLS  	NO
+SUBCATCHMENTS	ALL
+NODES	ALL
+LINKS	ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS	-4269.101	-400.354	14574.703	10108.964
+Units     	None
+
+[COORDINATES]
+;;Node          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+J1              	11336.858         	9335.347          
+J2              	8370.206          	9410.029          
+J3              	6482.301          	9365.782          
+J4              	2912.979          	9631.268          
+J6              	6550.765          	7121.001          
+J8              	6644.543          	5589.971          
+J10             	6587.436          	4261.460          
+J18             	5942.275          	4159.593          
+J12             	6689.304          	2903.226          
+J14             	6585.546          	1150.442          
+J19             	5789.086          	2772.861          
+J13             	2839.233          	2772.861          
+J11             	2971.138          	4142.615          
+J9              	2485.251          	5457.227          
+J7              	2116.519          	6710.914          
+J5              	2971.976          	7861.357          
+J17             	5213.864          	5545.723          
+J16             	5656.342          	7035.398          
+Out1            	13718.166         	9066.214          
+J20             	10417.246         	9095.967          
+J21             	8136.300          	9109.875          
+J22             	6731.572          	9040.334          
+J23             	3198.887          	9221.140          
+J24             	3240.612          	7621.697          
+J25             	1808.067          	6509.040          
+J26             	5674.548          	6787.204          
+J27             	6870.654          	6940.195          
+J30             	6968.011          	5299.026          
+J33             	6968.011          	4033.380          
+J36             	6995.828          	2559.110          
+J37             	6898.470          	945.758           
+J34             	2726.008          	2489.569          
+J35             	5632.823          	2489.569          
+J31             	2823.366          	3894.298          
+J32             	5897.079          	3922.114          
+J28             	2044.506          	5243.394          
+J29             	5118.220          	5326.843          
+J38             	5966.620          	9193.324          
+J15             	13183.362         	9117.148          
+Pond1           	12207.131         	9134.126          
+
+[VERTICES]
+;;Link          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+C17             	12580.645         	8217.317          
+C16             	12614.601         	9932.088          
+
+[Polygons]
+;;Subcatchment  	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+S1              	9809.361          	7809.459          
+S1              	10980.838         	7826.437          
+S1              	10963.860         	8760.223          
+S1              	9809.361          	8760.223          
+S2              	7482.797          	8764.042          
+S2              	7482.797          	7898.168          
+S2              	8773.120          	7881.190          
+S2              	8739.164          	8848.932          
+S3              	3989.813          	8692.699          
+S3              	3989.813          	7843.803          
+S3              	5806.452          	7843.803          
+S3              	5823.430          	8709.677          
+S4              	1218.817          	9075.580          
+S4              	1201.839          	8311.573          
+S4              	2424.250          	8294.595          
+S4              	2441.228          	9126.513          
+S5              	1176.585          	7155.296          
+S5              	2398.996          	7155.296          
+S5              	2415.974          	7800.457          
+S5              	1176.585          	7800.457          
+S11             	948.660           	5648.642          
+S11             	2289.917          	5631.664          
+S11             	2272.939          	6327.759          
+S11             	948.660           	6344.737          
+S6              	5743.798          	6555.471          
+S6              	5777.754          	5842.398          
+S6              	3672.491          	5876.354          
+S6              	3655.513          	6504.537          
+S7              	3870.968          	4431.239          
+S7              	5908.319          	4448.217          
+S7              	5908.319          	5127.334          
+S7              	3853.990          	5093.379          
+S12             	1077.159          	4492.152          
+S12             	2452.371          	4492.152          
+S12             	2418.416          	5103.357          
+S12             	1043.203          	5086.379          
+S8              	3670.586          	3767.222          
+S8              	3670.586          	3088.105          
+S8              	5809.805          	3071.127          
+S8              	5741.893          	3767.222          
+S8              	3636.630          	3784.200          
+S13             	1102.627          	3069.537          
+S13             	2426.905          	3052.559          
+S13             	2426.905          	3782.610          
+S13             	1034.715          	3782.610          
+S14             	1263.066          	1828.795          
+S14             	2502.454          	1777.862          
+S14             	2502.454          	2507.913          
+S14             	1195.154          	2440.001          
+S9              	5624.427          	2168.467          
+S9              	5641.405          	1489.350          
+S9              	3451.252          	1523.306          
+S9              	3247.517          	2134.511          
+S10             	2209.853          	111.298           
+S10             	5877.085          	77.342            
+S10             	5843.130          	1028.106          
+S10             	5062.145          	977.172           
+S10             	2209.853          	977.172           
+S15             	12137.462         	6208.459          
+S15             	12212.991         	3489.426          
+S15             	8965.257          	3474.320          
+S15             	8965.257          	6238.671          
+S15             	11231.118         	6193.353          
+
+[SYMBOLS]
+;;Gage          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+2yearstorm      	-3412.564         	9592.530          
+20yearstorm     	-1714.771         	9541.596          
+

@@ -1,0 +1,164 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           GPM
+INFILTRATION         CURVE_NUMBER
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        YES
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/2002
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/2002
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/2002
+END_TIME             23:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             5.000000
+REPORT_STEP          00:01:00
+WET_STEP             00:01:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:05 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           4
+HEAD_TOLERANCE       0.005000
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+N1               5867.868000 5.980000   0.000000   10.000000  0.000000  
+N2               5865.740000 1.444000   0.000000   5.000000   0.000000  
+N3               5863.870000 5.008000   0.000000   5.000000   0.000000  
+N4               5862.000000 1.500000   0.000000   10.000000  0.000000  
+; New Junction
+N5               5867.868000 5.980000   0.000000   0.000000   0.000000  
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+; New Outfall
+OFALL-10         5861.000000 FIXED      5868.230000      NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+; New Storage
+STOR-10          5865.740000 5.000000   0.000000   TABULAR    CURVE-1                      0.000000 0.000000
+; New Storage
+STOR-12          5865.740000 7.000000   0.000000   TABULAR    CURVE-1                      0.000000 0.000000
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1                N2               N3               69.370024  0.010000   0.000000   0.000000   0.000000   0.000000  
+2                N1               N5               153.650798 0.012000   0.000000   0.000000   0.000000   0.000000  
+; New Conduit
+3                N3               STOR-10          57.158326  0.010000   0.000000   0.000000   0.000000   0.000000  
+; New Conduit
+4                STOR-12          N4               352.802444 0.010000   0.000000   0.000000   0.000000   0.000000  
+; New Conduit
+5                N4               OFALL-10         46.130314  0.010000   0.000000   0.000000   0.000000   0.000000  
+; Splitted conduit
+6                N5               N2               2017.000000 0.012000   0.000000   0.000000   0.000000   0.000000  
+
+[WEIRS]
+;;Name           From Node        To Node          Type         CrestHt    Qcoeff     Gated    EndCon   EndCoeff   Surcharge  RoadWidth  RoadSurf  
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- -------- ---------- ---------- ---------- ----------
+; New Weir
+WEIR-11          STOR-10          STOR-12          TRANSVERSE   3.935000   2.800000   NO       2        0.000000   YES       
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                FORCE_MAIN   1.760833         125.000000 0.000000   0.000000   1          0         
+2                FORCE_MAIN   1.500000         125.000000 0.000000   0.000000   1          0         
+3                FORCE_MAIN   1.760833         125.000000 0.000000   0.000000   1          0         
+4                FORCE_MAIN   1.760833         125.000000 0.000000   0.000000   1          0         
+5                CIRCULAR     1.750000         0.000000   0.000000   0.000000   1          0         
+6                FORCE_MAIN   2.000000         125.000000 0.000000   0.000000   1          0         
+WEIR-11          RECT_OPEN    2.000000         15.000000  0.000000   0.000000  
+
+[LOSSES]
+;;Link           Kentry     Kexit      Kavg       Flap Gate  Seepage   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+1                0.000000   0.000000   0.000000   NO         0.000000  
+2                0.000000   0.000000   0.000000   NO         0.000000  
+3                0.000000   0.000000   0.000000   NO         0.000000  
+4                1.000000   0.000000   0.000000   NO         0.000000  
+5                0.000000   0.000000   0.000000   NO         0.000000  
+6                0.000000   0.000000   0.000000   NO         0.000000  
+
+[CONTROLS]
+
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+N1               FLOW             ""               FLOW     1.0      1.000000 4000.000000
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+; Box
+CURVE-1          STORAGE    0.000000   20.000000 
+CURVE-1                     7.000000   20.000000 
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 1642623.913 7366087.991 1645115.472 7366763.262
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+N1               1642737.166        7366732.568       
+N2               1644597.734        7366416.520       
+N3               1644661.421        7366389.020       
+N4               1645002.219        7366156.337       
+N5               1642877.806        7366670.919       
+OFALL-10         1644975.567        7366118.685       
+STOR-10          1644708.577        7366356.718       
+STOR-12          1644710.714        7366355.068       
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+2                1642860.791        7366676.517       
+6                1643142.041        7366584.156       
+6                1643689.264        7366623.739       
+6                1644153.876        7366669.370       
+6                1644253.485        7366744.674       
+6                1644327.704        7366755.958       
+6                1644524.101        7366482.087       
+6                1644589.206        7366437.816       
+

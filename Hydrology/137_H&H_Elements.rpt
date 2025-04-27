@@ -1,0 +1,556 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.1 (Build 5.1.012)
+  --------------------------------------------------------------
+
+  WARNING 04: minimum elevation drop used for Conduit CULV_21
+  WARNING 04: minimum elevation drop used for Conduit CULV_30
+  WARNING 04: minimum elevation drop used for Conduit GOLF_COURSE_CULV
+  WARNING 03: negative offset ignored for Link STM_7
+  WARNING 03: negative offset ignored for Link STM_JUNC_ROUND
+  WARNING 02: maximum depth increased for Node JUNC_11
+  WARNING 02: maximum depth increased for Node JUNC_12
+  WARNING 02: maximum depth increased for Node JUNC_13
+  WARNING 02: maximum depth increased for Node JUNC_16
+  WARNING 02: maximum depth increased for Node JUNC_17
+  WARNING 02: maximum depth increased for Node JUNC_18
+  WARNING 02: maximum depth increased for Node JUNC_23
+  WARNING 02: maximum depth increased for Node JUNC_24
+  WARNING 02: maximum depth increased for Node JUNC_26
+  WARNING 02: maximum depth increased for Node JUNC_27
+  WARNING 02: maximum depth increased for Node JUNC_28
+  WARNING 02: maximum depth increased for Node JUNC_PROP_2
+  WARNING 02: maximum depth increased for Node JUNC_ROUND
+  
+  *********************************************************
+  NOTE: The summary statistics displayed in this report are
+  based on results found at every computational time step,  
+  not just on results from each reporting time step.
+  *********************************************************
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ YES
+    Water Quality .......... NO
+  Infiltration Method ...... CURVE_NUMBER
+  Flow Routing Method ...... DYNWAVE
+  Starting Date ............ 01/01/2002 00:00:00
+  Ending Date .............. 01/03/2002 06:00:00
+  Antecedent Dry Days ...... 3.0
+  Report Time Step ......... 00:05:00
+  Wet Time Step ............ 00:05:00
+  Dry Time Step ............ 01:00:00
+  Routing Time Step ........ 10.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 4
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Total Precipitation ......       325.400         5.490
+  Evaporation Loss .........         0.000         0.000
+  Infiltration Loss ........       113.500         1.915
+  Surface Runoff ...........       202.058         3.409
+  Final Storage ............         9.964         0.168
+  Continuity Error (%) .....        -0.038
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......       202.156        65.876
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........        63.653        20.742
+  Flooding Loss ............        14.928         4.864
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........       116.001        37.801
+  Initial Stored Volume ....         0.290         0.095
+  Final Stored Volume ......         6.564         2.139
+  Continuity Error (%) .....         0.643
+  
+  
+  *************************
+  Highest Continuity Errors
+  *************************
+  Node STOR_1 (2.84%)
+  Node JUNC_28 (-1.34%)
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  Link CULV_STOR1-STOR2 (32.16%)
+  Link CULV_31-1 (8.62%)
+  Link STOR_7_OUT (6.33%)
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     0.54 sec
+  Average Time Step           :     8.33 sec
+  Maximum Time Step           :    10.00 sec
+  Percent in Steady State     :    -0.00
+  Average Iterations per Step :     2.02
+  Percent Not Converging      :     0.46
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  --------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in    10^6 gal      CFS
+  --------------------------------------------------------------------------------------------------------
+  ROUND_ABOUT                5.49       0.00       0.00       1.91       3.53        1.05    44.75   0.644
+  SUB_03                     5.49       0.00       0.00       1.91       3.52        2.78    91.79   0.640
+  SUB_1                      5.49       0.00       0.00       1.93       3.36       18.63   269.47   0.613
+  SUB_10                     5.49       0.00       0.00       1.91       3.52        2.55    91.90   0.642
+  SUB_13                     5.49       0.00       0.00       1.91       3.52        1.50    50.75   0.641
+  SUB_14                     5.49       0.00       0.00       1.90       3.54        0.91    43.71   0.645
+  SUB_15                     5.49       0.00       0.00       1.90       3.54        0.48    24.49   0.645
+  SUB_17                     5.49       0.00       0.00       1.91       3.53        1.34    53.38   0.643
+  SUB_18                     5.49       0.00       0.00       1.91       3.53        0.52    21.65   0.644
+  SUB_19                     5.49       0.00       0.00       1.90       3.55        0.31    16.83   0.646
+  SUB_20                     5.49       0.00       0.00       1.91       3.54        0.91    40.45   0.644
+  SUB_21                     5.49       0.00       0.00       1.91       3.53        1.39    54.67   0.643
+  SUB_22                     5.49       0.00       0.00       1.91       3.52        2.64    93.88   0.642
+  SUB_23                     5.49       0.00       0.00       1.90       3.54        0.49    26.13   0.646
+  SUB_23-2                   5.49       0.00       0.00       1.91       3.54        0.82    37.31   0.645
+  SUB_24                     5.49       0.00       0.00       1.91       3.51        2.57    80.50   0.640
+  SUB_25                     5.49       0.00       0.00       1.90       3.54        0.64    30.95   0.645
+  SUB_26                     5.49       0.00       0.00       1.91       3.52        1.85    65.92   0.642
+  SUB_28                     5.49       0.00       0.00       1.90       3.54        0.63    30.40   0.645
+  SUB_29                     5.49       0.00       0.00       1.90       3.54        0.15     9.20   0.646
+  SUB_30                     5.49       0.00       0.00       1.90       3.55        0.21    12.18   0.646
+  SUB_31                     5.49       0.00       0.00       1.95       3.12        7.69    68.50   0.568
+  SUB_32                     5.49       0.00       0.00       1.91       3.51        2.46    78.57   0.640
+  SUB_33                     5.49       0.00       0.00       1.94       3.26        5.17    58.59   0.594
+  SUB_5                      5.49       0.00       0.00       1.92       3.47        4.31    95.92   0.632
+  SUB_6                      5.49       0.00       0.00       1.40       4.05        0.62    34.11   0.738
+  SUB_7                      5.49       0.00       0.00       1.40       4.05        0.50    26.98   0.738
+  SUB_8                      5.49       0.00       0.00       1.90       3.54        0.46    23.65   0.645
+  SUB_9                      5.49       0.00       0.00       1.91       3.52        2.24    74.26   0.641
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  JUNC_04              JUNCTION     0.69     3.69  1196.11     0  12:51        3.69
+  JUNC_11              JUNCTION     0.75     5.11  1197.50     0  12:27        5.11
+  JUNC_12              JUNCTION     0.79     5.38  1199.19     0  12:27        5.37
+  JUNC_13              JUNCTION     1.15     6.69  1201.60     0  12:22        6.69
+  JUNC_16              JUNCTION     0.94     6.19  1202.28     0  12:22        6.19
+  JUNC_17              JUNCTION     1.06     7.44  1204.26     0  12:16        7.44
+  JUNC_18              JUNCTION     0.79     6.92  1206.64     0  12:22        6.91
+  JUNC_23              JUNCTION     0.39     5.76  1196.40     0  12:16        5.75
+  JUNC_24              JUNCTION     0.77     8.80  1200.96     0  12:13        8.77
+  JUNC_25              JUNCTION     0.51     7.87  1203.15     0  12:12        7.32
+  JUNC_26              JUNCTION     0.14     0.83  1200.83     0  13:06        0.82
+  JUNC_27              JUNCTION     1.29     3.82  1200.82     0  13:09        3.82
+  JUNC_28              JUNCTION     0.38     7.86  1209.86     0  12:18        7.86
+  JUNC_7               JUNCTION     0.92     4.69  1193.03     0  12:16        4.63
+  JUNC_8               JUNCTION     1.13     4.18  1189.98     0  12:15        4.15
+  JUNC_PROP_1          JUNCTION     1.63     7.94  1192.44     0  12:14        7.94
+  JUNC_PROP_2          JUNCTION     1.20     7.81  1193.72     0  12:16        7.80
+  JUNC_ROUND           JUNCTION     0.51     8.83  1199.64     0  12:20        8.82
+  JUNC_ROUND_2         JUNCTION     0.75     4.11  1193.91     0  12:15        4.06
+  DS_OUTFALL           OUTFALL      0.00     0.00  1180.00     0  00:00        0.00
+  EOF_OUTFALL          OUTFALL      0.00     0.00     0.00     0  00:00        0.00
+  OUTFALL_2            OUTFALL      0.00     0.55  1192.55     0  12:16        0.54
+  OUTFALL_3            OUTFALL      0.00     0.40  1200.40     0  12:13        0.38
+  OUTFALL_4            OUTFALL      0.00     0.00     0.00     0  00:00        0.00
+  OUTFALL_1            STORAGE      4.04     8.82  1188.82     0  12:38        8.82
+  STOR_03              STORAGE      2.11     3.71  1195.71     0  14:11        3.71
+  STOR_1               STORAGE      2.84     4.24  1197.24     0  18:22        4.24
+  STOR_10              STORAGE      0.81     2.36  1193.81     0  12:09        2.36
+  STOR_14              STORAGE      1.54     5.24  1202.24     0  13:26        5.24
+  STOR_15              STORAGE      1.39     2.77  1201.77     0  12:12        2.74
+  STOR_19              STORAGE      2.32     4.23  1208.23     0  15:09        4.23
+  STOR_2               STORAGE      2.22     3.53  1196.53     1  03:40        3.53
+  STOR_20              STORAGE      3.22     5.60  1208.60     0  13:44        5.60
+  STOR_21              STORAGE      2.34     4.23  1208.23     0  15:06        4.23
+  STOR_29              STORAGE      1.35     2.67  1206.67     0  15:07        2.67
+  STOR_30              STORAGE      1.26     2.67  1206.67     0  15:06        2.67
+  STOR_31              STORAGE      1.79     3.91  1199.91     0  16:06        3.91
+  STOR_32              STORAGE      1.21     2.33  1199.83     0  17:42        2.33
+  STOR_33              STORAGE      1.14     3.26  1202.26     0  14:05        3.26
+  STOR_5               STORAGE      1.49     4.62  1196.12     0  12:51        4.61
+  STOR_6               STORAGE      0.94     3.04  1194.04     0  12:15        3.02
+  STOR_7               STORAGE      0.92     3.24  1195.24     0  12:37        3.24
+  STOR_ROUND_OF        STORAGE      0.07     1.44  1199.64     0  12:20        1.44
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  JUNC_04              JUNCTION      0.00    15.81     0  12:13           0       0.771       0.069
+  JUNC_11              JUNCTION      0.00    78.50     0  12:27           0        5.41       0.000
+  JUNC_12              JUNCTION      0.00    83.16     0  12:22           0        5.39      -0.350
+  JUNC_13              JUNCTION     50.75   115.20     0  12:13         1.5        5.43       0.379
+  JUNC_16              JUNCTION      0.00    14.59     0  12:15           0         2.7      -0.002
+  JUNC_17              JUNCTION     53.38    61.90     0  12:12        1.34        3.13      -0.003
+  JUNC_18              JUNCTION     21.65    21.65     0  12:12       0.522         1.8       0.461
+  JUNC_23              JUNCTION     63.43    63.43     0  12:12        1.31        1.76      -0.450
+  JUNC_24              JUNCTION     80.50   103.21     0  12:12        2.57         5.2       0.256
+  JUNC_25              JUNCTION     30.95    30.95     0  12:12       0.645        2.68       0.018
+  JUNC_26              JUNCTION     65.92    76.46     0  12:12        1.85        2.44      -0.227
+  JUNC_27              JUNCTION      0.00    78.57     0  12:13           0        2.49       0.613
+  JUNC_28              JUNCTION     30.40    30.40     0  12:12       0.631        0.63      -1.323
+  JUNC_7               JUNCTION      0.00    43.78     0  12:10           0        9.18       0.018
+  JUNC_8               JUNCTION     23.65    61.07     0  12:12       0.463        9.64       0.000
+  JUNC_PROP_1          JUNCTION     74.26   152.96     0  12:12        2.24          11       0.025
+  JUNC_PROP_2          JUNCTION     93.88   149.15     0  12:12        2.64        9.12      -0.025
+  JUNC_ROUND           JUNCTION     44.75    44.75     0  12:12        1.05        1.08       0.346
+  JUNC_ROUND_2         JUNCTION      0.00    42.41     0  12:09           0        8.69       0.004
+  DS_OUTFALL           OUTFALL       0.00    25.22     0  12:38           0        11.3       0.000
+  EOF_OUTFALL          OUTFALL       0.00   127.32     0  12:38           0        8.54       0.000
+  OUTFALL_2            OUTFALL       0.00    61.09     0  12:16           0        0.39       0.000
+  OUTFALL_3            OUTFALL       0.00    70.58     0  12:13           0        0.47       0.000
+  OUTFALL_4            OUTFALL       0.00     0.00     0  00:00           0           0       0.000 gal
+  OUTFALL_1            STORAGE       0.00   198.96     0  12:12           0        20.7      -0.062
+  STOR_03              STORAGE      91.79    91.79     0  12:12        2.79        3.23      -0.027
+  STOR_1               STORAGE     269.47   284.17     0  12:18        18.6        28.9       2.920
+  STOR_10              STORAGE      91.90   153.94     0  12:24        2.56        8.75       0.032
+  STOR_14              STORAGE      43.71    45.82     0  12:12       0.911       0.926      -0.255
+  STOR_15              STORAGE      24.49    25.26     0  12:12       0.483       0.522       1.539
+  STOR_19              STORAGE      16.83    25.09     0  12:12       0.309        1.51       0.113
+  STOR_2               STORAGE       0.00    12.00     0  18:22           0        5.86      -0.009
+  STOR_20              STORAGE      40.45    40.45     0  12:12       0.914       0.913       0.113
+  STOR_21              STORAGE      54.67    54.67     0  12:12        1.39        1.54       0.159
+  STOR_29              STORAGE       9.20    11.61     0  12:12       0.154       0.209      -0.005
+  STOR_30              STORAGE      12.18    12.18     0  12:12       0.212       0.227       0.011
+  STOR_31              STORAGE      68.50    84.07     0  12:31        7.69        12.7       0.026
+  STOR_32              STORAGE      78.57    78.57     0  12:12        2.47         2.8       0.025
+  STOR_33              STORAGE      58.59    58.59     0  12:24        5.18        5.18       0.013
+  STOR_5               STORAGE      95.92    95.92     0  12:12        4.31           5       0.206
+  STOR_6               STORAGE      34.11   102.36     0  12:11       0.622        8.49       0.095
+  STOR_7               STORAGE      26.98    26.98     0  12:12       0.501       0.501       0.030
+  STOR_ROUND_OF        STORAGE       0.00    16.09     0  12:11           0      0.0364      -4.790
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  Surcharging occurs when water rises above the top of the highest conduit.
+  ---------------------------------------------------------------------
+                                               Max. Height   Min. Depth
+                                   Hours       Above Crown    Below Rim
+  Node                 Type      Surcharged           Feet         Feet
+  ---------------------------------------------------------------------
+  JUNC_04              JUNCTION        1.52          0.695        0.185
+  JUNC_25              JUNCTION        1.02          5.374        0.000
+  JUNC_8               JUNCTION        0.42          0.180        6.790
+  JUNC_PROP_1          JUNCTION        1.89          3.438        0.000
+  JUNC_ROUND           JUNCTION        0.31          0.435        0.000
+  JUNC_ROUND_2         JUNCTION        1.33          1.115        6.085
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  Flooding refers to all water that overflows a node, whether it ponds or not.
+  --------------------------------------------------------------------------
+                                                             Total   Maximum
+                                 Maximum   Time of Max       Flood    Ponded
+                        Hours       Rate    Occurrence      Volume     Depth
+  Node                 Flooded       CFS   days hr:min    10^6 gal      Feet
+  --------------------------------------------------------------------------
+  JUNC_25                 0.10      3.18      0  12:12       0.003     0.764
+  JUNC_PROP_1             0.54     11.42      0  12:10       0.016     1.138
+  JUNC_ROUND              0.31      4.93      0  12:13       0.006     0.435
+  STOR_10                 4.20    153.18      0  12:24       4.864     0.000
+  
+  
+  **********************
+  Storage Volume Summary
+  **********************
+  
+  --------------------------------------------------------------------------------------------------
+                         Average     Avg  Evap Exfil       Maximum     Max    Time of Max    Maximum
+                          Volume    Pcnt  Pcnt  Pcnt        Volume    Pcnt     Occurrence    Outflow
+  Storage Unit          1000 ft3    Full  Loss  Loss      1000 ft3    Full    days hr:min        CFS
+  --------------------------------------------------------------------------------------------------
+  OUTFALL_1               75.534       8     0     4       238.382      26       0  12:38     154.62
+  STOR_03                 73.759       8     0    82       206.075      21       0  14:11       9.39
+  STOR_1                 584.611      24     0    73      1221.261      50       0  18:22      47.47
+  STOR_10                  9.708      26     0     4        36.662     100       0  12:09      54.91
+  STOR_14                 14.383      13     0    35        67.202      61       0  13:26       4.46
+  STOR_15                  5.226      13     0    29        11.729      30       0  12:12      24.92
+  STOR_19                 30.265      22     0     0        77.502      57       0  15:09       5.53
+  STOR_2                 128.299      16     0    90       280.766      34       1  03:40       8.64
+  STOR_20                 25.869      32     0    60        67.068      83       0  13:44       3.50
+  STOR_21                 24.744      27     0    39        58.265      64       0  15:06      14.03
+  STOR_29                  5.990       7     0    93        14.033      16       0  15:07       0.50
+  STOR_30                  7.497       5     0    95        17.805      11       0  15:06       0.68
+  STOR_31                102.719       0     0    17       410.372       0       0  16:06      33.27
+  STOR_32                 73.579       0     0    85       214.880       0       0  17:42       6.64
+  STOR_33                 26.605       0     0    13       166.036       0       0  14:05      20.80
+  STOR_5                  12.235       9     0     9        81.861      61       0  12:51      38.12
+  STOR_6                   1.206       1     0     1         8.362       7       0  12:15      57.92
+  STOR_7                   2.172       3     0     0        21.732      33       0  12:37       5.42
+  STOR_ROUND_OF            0.043       0     0     3         3.325       0       0  12:20       6.41
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  DS_OUTFALL           100.00     10.18     25.22      11.345
+  EOF_OUTFALL           26.17     35.27    127.32       8.536
+  OUTFALL_2              1.56     29.37     61.09       0.390
+  OUTFALL_3              2.28     23.86     70.58       0.470
+  OUTFALL_4              0.00      0.00      0.00       0.000
+  -----------------------------------------------------------
+  System                26.00     98.69    185.59      20.741
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  CULV_20              CONDUIT      2.56     0  13:38      1.92    0.39    0.74
+  CULV_21              CONDUIT     10.32     0  12:28      3.29   23.13    1.00
+  CULV_30              CONDUIT      0.39     0  13:14      0.58    1.87    0.45
+  CULV_31-1            CONDUIT     23.17     0  16:30      7.62    1.12    0.94
+  CULV_31-2            CONDUIT      1.64     0  13:26      2.94    0.24    0.67
+  CULV_31-3            CONDUIT      1.27     0  15:18      1.66    0.42    0.96
+  CULV_32              CONDUIT      2.32     0  15:42      2.36    0.19    0.48
+  CULV_33              CONDUIT     18.05     0  14:05      6.15    1.24    0.88
+  CULV_5               CONDUIT     15.81     0  12:13      0.41    0.10    1.00
+  CULV_STOR1-STOR2     CONDUIT     12.00     0  18:22      4.40    1.68    0.81
+  CULV_STOR2-STOR3     CONDUIT      1.37     1  03:40      0.75    0.11    0.50
+  DITCH_26             CONDUIT     73.41     0  12:13      3.13    0.09    0.64
+  GOLF_COURSE_CULV     CONDUIT     25.22     0  12:38      5.72   74.02    0.84
+  GOLF_COURSE_EOF      CONDUIT    127.32     0  12:38      5.97    0.14    0.30
+  JUNC_10_EOF          CONDUIT     38.11     0  12:17      1.25    0.08    0.61
+  JUNC_11_EOF          CONDUIT     37.93     0  12:27      2.37    0.12    0.64
+  JUNC_12_EOF          CONDUIT     59.76     0  12:27      3.68    0.52    0.65
+  JUNC_13_EOF          CONDUIT     69.34     0  12:22      4.62    0.38    0.64
+  JUNC_16_EOF          CONDUIT      4.52     0  12:22      0.74    0.03    0.33
+  JUNC_17_EOF          CONDUIT     35.21     0  12:16      2.28    0.10    0.39
+  JUNC_18_EOF          CONDUIT      3.63     0  12:22      0.44    0.04    0.18
+  JUNC_22_EOF          CONDUIT     61.09     0  12:16      4.28    0.37    0.57
+  JUNC_23_EOF          CONDUIT     17.14     0  12:17      1.41    0.23    0.50
+  JUNC_24_EOF          CONDUIT     70.58     0  12:13      2.68    0.41    0.53
+  JUNC_27_EOF          CONDUIT     13.43     0  13:09      2.51    0.08    0.21
+  JUNC_28_EOF          CONDUIT      1.90     0  12:18      0.97    0.00    0.04
+  JUNC_ROUND_EOF       CONDUIT     16.09     0  12:11      1.18    0.12    1.00
+  STM_03-04            CONDUIT      3.15     0  14:21      1.01    0.50    0.75
+  STM_05               CONDUIT     33.31     0  12:53      4.76    1.13    0.98
+  STM_10               CONDUIT     19.31     0  12:09      3.59    0.79    0.89
+  STM_11               CONDUIT     40.52     0  12:28      7.04    1.68    0.93
+  STM_12               CONDUIT     26.19     0  12:13      5.33    1.36    1.00
+  STM_13               CONDUIT     19.60     0  12:06      6.24    1.92    1.00
+  STM_14               CONDUIT      3.26     0  17:47      2.76    0.85    1.00
+  STM_16               CONDUIT     11.58     0  12:07      3.69    0.82    1.00
+  STM_17               CONDUIT     14.59     0  12:15      4.64    1.43    1.00
+  STM_18               CONDUIT      7.59     0  12:41      3.27    0.88    1.00
+  STM_19               CONDUIT      5.53     0  16:16      4.68    1.06    1.00
+  STM_22               CONDUIT     90.12     0  12:09      5.67    0.84    1.00
+  STM_23               CONDUIT     22.24     0  12:51      4.53    0.86    1.00
+  STM_24               CONDUIT     31.97     0  12:07      6.51    1.20    1.00
+  STM_25               CONDUIT     23.79     0  12:13      4.85    0.72    1.00
+  STM_27               CONDUIT      5.45     0  13:23      4.65    1.60    1.00
+  STM_28               CONDUIT     11.12     0  12:13      6.28    1.72    0.74
+  STM_6                CONDUIT     29.10     0  15:37      4.82    1.00    1.00
+  STM_7                CONDUIT     38.98     0  12:09      5.75    1.03    1.00
+  STM_JUNC_ROUND       CONDUIT     23.93     0  12:09      7.62    2.14    1.00
+  STM_JUNC_ROUND_2     CONDUIT     39.54     0  12:10      5.85    0.64    1.00
+  STM_PROP_1           CONDUIT    144.40     0  12:12      9.08    1.05    1.00
+  STM_PROP_2           CONDUIT     54.79     0  12:13      4.38    0.63    1.00
+  STOR_14_EOF          CONDUIT      0.00     0  00:00      0.00    0.00    0.28
+  STOR_15_EOF          CONDUIT     24.73     0  12:13      1.78    0.11    0.36
+  STOR_15_OUTLET       CONDUIT      0.86     0  12:23      1.16    0.06    0.58
+  STOR_19_EOF          CONDUIT      0.09     0  15:09      0.11    0.00    0.02
+  STOR_20_EOF          CONDUIT      0.00     0  00:00      0.00    0.00    0.11
+  STOR_21_EOF          CONDUIT      4.87     0  13:25      0.21    0.01    0.61
+  STOR_28_OUT          CONDUIT      3.25     0  12:18      3.13    0.64    0.79
+  STOR_29_EOF          CONDUIT      0.00     0  00:00      0.00    0.00    0.50
+  STOR_30_EOF          CONDUIT      0.00     0  00:00      0.00    0.00    0.34
+  STOR_31_EOF-1        CONDUIT      0.00     0  00:00      0.00    0.00    0.50
+  STOR_32-EOF          CONDUIT      0.00     0  00:00      0.00    0.00    0.00
+  STOR_33_EOF          CONDUIT      0.00     0  00:00      0.00    0.00    0.00
+  STOR_7_OUT           CONDUIT      5.42     0  12:37      6.98    1.74    0.97
+  STOR_ROUND_EOF       CONDUIT      0.00     0  00:00      0.00    0.00    0.50
+  EOF_STOR2-STOR3      WEIR         0.00     0  00:00                      0.00
+  STOR_6_OF            WEIR         0.00     0  00:00                      0.00
+  WEIR_STOR1-STOR2     WEIR         0.00     0  00:00                      0.00
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  CULV_20                 1.00   0.45  0.24  0.00  0.13  0.00  0.18  0.00  0.00  0.00
+  CULV_21                 1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  CULV_30                 1.00   0.58  0.00  0.00  0.37  0.00  0.05  0.00  0.00  0.00
+  CULV_31-1               1.22   0.12  0.00  0.00  0.46  0.03  0.00  0.38  0.16  0.00
+  CULV_31-2               1.67   0.48  0.41  0.00  0.00  0.00  0.11  0.00  0.00  0.00
+  CULV_31-3               1.36   0.43  0.14  0.00  0.24  0.00  0.20  0.00  0.00  0.00
+  CULV_32                 1.70   0.56  0.00  0.00  0.28  0.00  0.00  0.16  0.00  0.00
+  CULV_33                 1.06   0.16  0.00  0.00  0.00  0.00  0.00  0.84  0.00  0.00
+  CULV_5                  1.00   0.11  0.05  0.00  0.84  0.00  0.00  0.00  0.09  0.00
+  CULV_STOR1-STOR2        2.06   0.22  0.00  0.00  0.42  0.00  0.00  0.36  0.00  0.00
+  CULV_STOR2-STOR3        1.00   0.30  0.31  0.00  0.39  0.00  0.00  0.00  0.65  0.00
+  DITCH_26                1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.76  0.00
+  GOLF_COURSE_CULV        1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  GOLF_COURSE_EOF         1.00   0.74  0.00  0.00  0.00  0.00  0.00  0.26  0.00  0.00
+  JUNC_10_EOF             1.00   0.00  0.81  0.00  0.19  0.00  0.00  0.00  0.68  0.00
+  JUNC_11_EOF             1.00   0.02  0.95  0.00  0.03  0.00  0.00  0.00  0.77  0.00
+  JUNC_12_EOF             1.00   0.94  0.00  0.00  0.00  0.00  0.00  0.06  0.00  0.00
+  JUNC_13_EOF             1.00   0.92  0.00  0.00  0.04  0.00  0.00  0.04  0.02  0.00
+  JUNC_16_EOF             1.00   0.92  0.02  0.00  0.06  0.00  0.00  0.00  0.78  0.00
+  JUNC_17_EOF             1.00   0.92  0.03  0.00  0.05  0.00  0.00  0.00  0.77  0.00
+  JUNC_18_EOF             1.00   0.95  0.02  0.00  0.03  0.00  0.00  0.00  0.77  0.00
+  JUNC_22_EOF             1.00   0.98  0.00  0.00  0.02  0.00  0.00  0.00  0.00  0.00
+  JUNC_23_EOF             1.00   0.98  0.00  0.00  0.02  0.00  0.00  0.01  0.01  0.00
+  JUNC_24_EOF             1.00   0.98  0.00  0.00  0.02  0.00  0.00  0.00  0.00  0.00
+  JUNC_27_EOF             1.00   0.88  0.02  0.00  0.00  0.00  0.00  0.10  0.00  0.00
+  JUNC_28_EOF             1.00   0.99  0.00  0.00  0.00  0.00  0.00  0.01  0.00  0.00
+  JUNC_ROUND_EOF          1.00   0.95  0.00  0.00  0.01  0.00  0.00  0.04  0.00  0.00
+  STM_03-04               1.00   0.16  0.34  0.00  0.49  0.00  0.00  0.00  0.73  0.00
+  STM_05                  1.00   0.08  0.24  0.00  0.68  0.00  0.00  0.00  0.67  0.00
+  STM_10                  1.00   0.00  0.07  0.00  0.93  0.00  0.00  0.00  0.52  0.00
+  STM_11                  1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.69  0.00
+  STM_12                  1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.10  0.00
+  STM_13                  1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  STM_14                  1.00   0.00  0.66  0.00  0.34  0.00  0.00  0.00  0.66  0.00
+  STM_16                  1.00   0.00  0.00  0.00  0.99  0.00  0.00  0.00  0.84  0.00
+  STM_17                  1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  STM_18                  1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.91  0.00
+  STM_19                  1.00   0.00  0.56  0.00  0.43  0.00  0.00  0.00  0.60  0.00
+  STM_22                  1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.35  0.00
+  STM_23                  1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.94  0.00
+  STM_24                  1.00   0.00  0.00  0.00  0.32  0.00  0.00  0.68  0.19  0.00
+  STM_25                  1.00   0.00  0.00  0.00  0.91  0.09  0.00  0.00  0.97  0.00
+  STM_27                  1.00   0.00  0.03  0.00  0.97  0.00  0.00  0.00  0.16  0.00
+  STM_28                  1.00   0.00  0.00  0.00  0.77  0.23  0.00  0.00  0.09  0.00
+  STM_6                   1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.15  0.00
+  STM_7                   1.00   0.00  0.00  0.00  0.99  0.00  0.00  0.00  0.49  0.00
+  STM_JUNC_ROUND          1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.61  0.00
+  STM_JUNC_ROUND_2        1.00   0.01  0.00  0.00  0.80  0.20  0.00  0.00  0.69  0.00
+  STM_PROP_1              1.00   0.00  0.00  0.00  0.44  0.00  0.00  0.56  0.05  0.00
+  STM_PROP_2              1.00   0.00  0.00  0.00  0.44  0.00  0.00  0.56  0.08  0.00
+  STOR_14_EOF             1.00   0.92  0.08  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  STOR_15_EOF             1.00   0.71  0.00  0.00  0.08  0.00  0.00  0.22  0.04  0.00
+  STOR_15_OUTLET          1.89   0.78  0.15  0.00  0.00  0.00  0.07  0.00  0.00  0.00
+  STOR_19_EOF             1.00   0.94  0.01  0.00  0.00  0.00  0.00  0.05  0.00  0.00
+  STOR_20_EOF             1.00   0.88  0.12  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  STOR_21_EOF             1.00   0.70  0.15  0.00  0.15  0.00  0.00  0.00  0.69  0.00
+  STOR_28_OUT             1.00   0.00  0.98  0.00  0.00  0.00  0.02  0.00  0.00  0.00
+  STOR_29_EOF             1.00   0.03  0.97  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  STOR_30_EOF             1.00   0.58  0.42  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  STOR_31_EOF-1           1.00   0.05  0.95  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  STOR_32-EOF             1.66   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  STOR_33_EOF             1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  STOR_7_OUT              3.22   0.12  0.00  0.00  0.00  0.00  0.00  0.88  0.00  0.00
+  STOR_ROUND_EOF          3.91   0.00  1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  CULV_20                     0.01      0.01      9.03      0.01         0.01
+  CULV_21                    30.39     30.44     30.40      8.55         7.78
+  CULV_30                     0.01      0.01      0.01      1.04         0.01
+  CULV_31-1                   0.01     13.86      0.01      9.28         0.01
+  CULV_31-2                   0.01      0.01     41.68      0.01         0.01
+  CULV_31-3                   0.01      0.01     10.10      0.01         0.01
+  CULV_33                     0.01      5.60      0.01      4.70         0.01
+  CULV_5                      1.52      1.52      2.48      0.01         0.01
+  CULV_STOR1-STOR2            0.01      5.55      0.01     16.07         0.01
+  DITCH_26                    0.01      0.01      8.20      0.01         0.01
+  GOLF_COURSE_CULV            0.01     17.58      0.01     36.65         0.01
+  JUNC_10_EOF                 0.01      0.01     41.89      0.01         0.01
+  JUNC_11_EOF                 0.01      0.01     41.69      0.01         0.01
+  JUNC_ROUND_EOF              0.18      0.18      0.31      0.01         0.01
+  STM_03-04                   0.01      0.01      2.56      0.01         0.01
+  STM_05                      0.01      1.33      0.04      1.24         0.01
+  STM_10                      0.01      0.01      0.05      0.01         0.01
+  STM_11                      0.01      1.75      0.01      1.77         0.01
+  STM_12                      2.00      2.54      2.00      1.71         2.00
+  STM_13                      3.31      6.78      3.31      7.03         3.31
+  STM_14                      5.44      5.44      9.17      0.01         0.01
+  STM_16                      5.20      5.20      6.78      0.01         0.01
+  STM_17                      4.87      4.87      5.20      2.07         3.55
+  STM_18                      3.66      3.66      5.24      0.01         0.01
+  STM_19                      2.98      5.71      3.78      3.45         0.24
+  STM_22                      1.36      1.36      1.89      0.01         0.42
+  STM_23                      1.35      1.35      7.03      0.01         0.01
+  STM_24                      1.49      1.52      1.79      1.20         1.37
+  STM_25                      1.02      1.02      1.52      0.01         0.01
+  STM_27                      1.23     15.34      1.29     13.26         0.39
+  STM_28                      0.01      1.07      0.01      0.99         0.01
+  STM_6                       0.05      0.05      1.33      0.01         0.01
+  STM_7                       3.26      3.29      5.81      0.03         2.24
+  STM_JUNC_ROUND              1.71      1.78      3.87      0.67         0.66
+  STM_JUNC_ROUND_2            1.33      1.33      3.29      0.01         0.01
+  STM_PROP_1                  1.89      1.89     13.38      0.13         0.61
+  STM_PROP_2                  0.42      0.42     13.73      0.01         0.01
+  STOR_15_OUTLET              0.01      0.01     41.90      0.01         0.01
+  STOR_21_EOF                 0.01      0.01      4.63      0.01         0.01
+  STOR_28_OUT                 0.01      0.01     41.86      0.01         0.01
+  STOR_7_OUT                  0.01      2.72      0.01      2.35         0.01
+  
+
+  Analysis begun on:  Mon Dec 17 23:37:22 2018
+  Analysis ended on:  Mon Dec 17 23:37:23 2018
+  Total elapsed time: 00:00:01

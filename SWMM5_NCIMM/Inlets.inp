@@ -1,0 +1,134 @@
+[TITLE]
+;;Project Title/Notes
+
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           MGD
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        YES
+SKIP_STEADY_STATE    NO
+
+START_DATE           06/07/2012
+START_TIME           00:00:00
+REPORT_START_DATE    06/07/2012
+REPORT_START_TIME    00:00:00
+END_DATE             06/07/2012
+END_TIME             20:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+; Name Elev ( Ymax Y0 Ysur Apond )
+A                44.127297  5.085302   0.000000   0.000000   0.000000  
+B                43.061024  3.526903   0.000000   0.000000   0.000000  
+X                52.165354  0.328084   0.000000   0.000000   0.000000  
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+; Name InvertEl FREE FlapGate
+; Name InvertEl NORMAL FlapGate
+; Name InvertEl FIXED FixedStage FlapGate
+; Name InvertEl TIDAL TideTable FlapGate
+; Name InvertEl TIMESERIES StageSeries FlapGate
+Cout             41.748688  FREE                        NO                       
+Yout             45.931759  FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+; Name Node1 Node2 Length Nvalue Zup Zdown InitFlow
+; ks value of 1.500000 mm converted using n = 0.038 * (ks / 1000.0)**(1./6.)
+A.1              A                B                98.425197  0.012857   0.000000   0.082021   0.000000   0         
+; ks value of 1.500000 mm converted using n = 0.038 * (ks / 1000.0)**(1./6.)
+A.2              A                Yout             193.589015 0.012857   5.085302   0.000000   0.000000   0         
+; ks value of 1.500000 mm converted using n = 0.038 * (ks / 1000.0)**(1./6.)
+B.1              B                Cout             98.425197  0.012857   0.000000   0.000000   0.000000   0         
+; ks value of 1.500000 mm converted using n = 0.038 * (ks / 1000.0)**(1./6.)
+X.1              X                A                163.864734 0.012857   0.328084   5.085302   0.000000   0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+A.1              CIRCULAR     1.476378         0.000000   0.000000   0.000000   1                    
+A.2              RECT_OPEN    0.984252         16.404199  0.000000   0.000000   1                    
+B.1              CIRCULAR     1.476378         0.000000   0.000000   0.000000   1                    
+X.1              RECT_OPEN    0.984252         16.404199  0.000000   0.000000   1                    
+
+[LOSSES]
+;;Link           Kentry     Kexit      Kavg       Flap Gate  Seepage   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+A.1              0.150000   0.015000   0.000000   NO         0         
+A.2              0.150000   0.015000   0.000000   NO         0         
+B.1              0.150000   0.015000   0.000000   NO         0         
+X.1              0.150000   0.015000   0.000000   NO         0         
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+X                FLOW             Inflow           FLOW     1.0      1.0              
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+Inflow                      0:00       0         
+Inflow                      10:00      4.5649    
+Inflow                      20:00      0         
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 1900.213 1292.782 2659.170 1722.966
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+A                1968.504           1541.995          
+B                2296.588           1443.570          
+X                1996.719           1703.412          
+Cout             2624.672           1312.336          
+Yout             1934.711           1351.378          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

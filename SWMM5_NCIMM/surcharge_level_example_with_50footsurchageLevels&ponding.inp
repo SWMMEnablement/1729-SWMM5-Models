@@ -1,0 +1,242 @@
+[TITLE]
+;;Project Title/Notes
+EXTRAN SAMPLE FILE
+INPUT HYDROGRAPHS ARE PRODUCED BY HEC-1
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        YES
+SKIP_STEADY_STATE    NO
+
+START_DATE           06/14/1979
+START_TIME           00:00:00
+REPORT_START_DATE    06/14/1979
+REPORT_START_TIME    00:00:00
+END_DATE             06/14/1979
+END_TIME             12:00:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:10
+WET_STEP             00:15:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:10 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  SLOPE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+;                 Invert     Max.       Init.      Surcharge  Ponded
+;Name             Elev.      Depth      Depth      Depth      Area
+;------------------------------------------------------------------------
+; *    JUN  GRELEV    Z     QINST    Y     X    Z
+1                96.00      4.00       .00        50         1000      
+2                96.00      3.80       .00        50         1000      
+3                94.80      3.30       .00        50         1000      
+4                93.90      3.80       .00        50         0         
+5                94.00      3.90       .00        50         0         
+6                93.20      3.40       .00        50         0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+;                 Invert     Outfall      Stage/Table
+;Name             Elev.      Type         Time Series
+;----------------------------------------------------
+7                92.84      FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+;                 Inlet            Outlet                      Manning    Inlet      Outlet     Init.
+;Name             Node             Node             Length     N          Height     Height     Flow
+;------------------------------------------------------------------------------------------------------------
+; *  above writes every 30x10s =5 minutes when flows are greater than 0 cms * *  NCOND  NJ1  NJ2  Q0   NKLASS  AFULL     DEEP  WIDE     LEN      ZP1      ZP2     ROUGH STHETA  SPHI
+13               1                3                800        0.014      0          0.48       1          0         
+23               2                3                1400       0.014      0          0.08       0          0         
+34               3                4                1200       0.014      0          0.06       0          0         
+46               4                6                1000       0.014      0          0          0          0         
+56               5                6                800        0.014      0          0.08       0          0         
+67               6                7                600        0.014      0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+13               EGG          1.2              2.0        0          0          1                    
+23               CIRCULAR     1.6              0          0          0          1                    
+34               CIRCULAR     1.8              0          0          0          1                    
+46               CIRCULAR     1.8              0          0          0          1                    
+56               CIRCULAR     1.8              0          0          0          1                    
+67               CIRCULAR     1.8              0          0          0          1                    
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+1                FLOW             FLOW@1           FLOW     1.0      1.0              
+2                FLOW             FLOW@2           FLOW     1.0      1.0              
+5                FLOW             FLOW@5           FLOW     1.0      1.0              
+
+[DWF]
+;;Node           Constituent      Baseline   Patterns  
+;;-------------- ---------------- ---------- ----------
+1                FLOW             10         "" "" "" "" ""
+2                FLOW             10         "" "" "" "" ""
+5                FLOW             0.14       "" "" "" "" "" ""
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+;Name             Date       Time       Value
+;-------------------------------------------------
+;Name             Date       Time       Value
+FLOW@1           06/14/1979 00:00      0.00000   
+FLOW@1                      00:15      0.01500   
+FLOW@1                      00:30      0.04200   
+FLOW@1                      00:45      0.05200   
+FLOW@1                      01:00      0.05500   
+FLOW@1           06/14/1979 01:15      0.06100   
+FLOW@1                      01:30      0.08000   
+FLOW@1                      01:45      0.10100   
+FLOW@1                      02:00      0.10900   
+FLOW@1                      02:15      0.11600   
+FLOW@1           06/14/1979 02:30      0.13600   
+FLOW@1                      02:45      0.17200   
+FLOW@1                      03:00      0.38400   
+FLOW@1                      03:15      0.83900   
+FLOW@1                      03:30      0.98000   
+FLOW@1           06/14/1979 03:45      0.47000   
+FLOW@1                      04:00      0.27200   
+FLOW@1                      04:15      0.18100   
+FLOW@1                      04:30      0.14500   
+FLOW@1                      04:45      0.13300   
+FLOW@1           06/14/1979 05:00      0.12000   
+FLOW@1                      05:15      0.09300   
+FLOW@1                      05:30      0.07600   
+FLOW@1                      05:45      0.07000   
+FLOW@1                      06:00      0.06800   
+FLOW@1           06/14/1979 06:15      0.05000   
+FLOW@1                      06:30      0.01700   
+FLOW@1                      06:45      0.00500   
+FLOW@1                      07:00      0.00200   
+FLOW@1                      07:15      0.00000   
+FLOW@1           06/14/1979 07:30      0.00000   
+FLOW@1                      12:00      0.00000   
+;
+FLOW@2           06/14/1979 00:00      0.00000   
+FLOW@2                      00:15      0.02200   
+FLOW@2                      00:30      0.07600   
+FLOW@2                      00:45      0.10400   
+FLOW@2                      01:00      0.11300   
+FLOW@2           06/14/1979 01:15      0.12400   
+FLOW@2                      01:30      0.15800   
+FLOW@2                      01:45      0.20300   
+FLOW@2                      02:00      0.22500   
+FLOW@2                      02:15      0.24000   
+FLOW@2           06/14/1979 02:30      0.27600   
+FLOW@2                      02:45      0.34400   
+FLOW@2                      03:00      0.68700   
+FLOW@2                      03:15      1.56000   
+FLOW@2                      03:30      2.01200   
+FLOW@2           06/14/1979 03:45      1.26000   
+FLOW@2                      04:00      0.73500   
+FLOW@2                      04:15      0.48100   
+FLOW@2                      04:30      0.36500   
+FLOW@2                      04:45      0.32200   
+FLOW@2           06/14/1979 05:00      0.28800   
+FLOW@2                      05:15      0.23000   
+FLOW@2                      05:30      0.18400   
+FLOW@2                      05:45      0.16400   
+FLOW@2                      06:00      0.15800   
+FLOW@2           06/14/1979 06:15      0.12700   
+FLOW@2                      06:30      0.05600   
+FLOW@2                      06:45      0.02000   
+FLOW@2                      07:00      0.00700   
+FLOW@2                      07:15      0.00200   
+FLOW@2           06/14/1979 07:30      0.00100   
+FLOW@2                      12:00      0.00000   
+;
+FLOW@5           06/14/1979 00:00      0.00000   
+FLOW@5                      00:15      0.02200   
+FLOW@5                      00:30      0.08500   
+FLOW@5                      00:45      0.13000   
+FLOW@5                      01:00      0.14700   
+FLOW@5           06/14/1979 01:15      0.16100   
+FLOW@5                      01:30      0.20000   
+FLOW@5                      01:45      0.25800   
+FLOW@5                      02:00      0.29400   
+FLOW@5                      02:15      0.31500   
+FLOW@5           06/14/1979 02:30      0.35600   
+FLOW@5                      02:45      0.43700   
+FLOW@5                      03:00      0.79800   
+FLOW@5                      03:15      1.87100   
+FLOW@5                      03:30      2.72300   
+FLOW@5           06/14/1979 03:45      2.03200   
+FLOW@5                      04:00      1.22000   
+FLOW@5                      04:15      0.80000   
+FLOW@5                      04:30      0.58400   
+FLOW@5                      04:45      0.49300   
+FLOW@5           06/14/1979 05:00      0.44000   
+FLOW@5                      05:15      0.35500   
+FLOW@5                      05:30      0.28200   
+FLOW@5                      05:45      0.24500   
+FLOW@5                      06:00      0.23200   
+FLOW@5           06/14/1979 06:15      0.20000   
+FLOW@5                      06:30      0.10400   
+FLOW@5                      06:45      0.04100   
+FLOW@5                      07:00      0.02000   
+FLOW@5                      07:15      0.00600   
+FLOW@5           06/14/1979 07:30      0.00200   
+FLOW@5                      12:00      0.00000   
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 72.250 5.500 132.750 104.500
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                75.730             100.250           
+2                120.000            100.000           
+3                90.000             70.000            
+4                90.600             49.900            
+5                130.540            40.130            
+6                89.970             19.950            
+7                90.000             10.000            
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

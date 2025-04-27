@@ -1,0 +1,2019 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/1960
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/1960
+REPORT_START_TIME    00:00:00
+END_DATE             12/31/2009
+END_TIME             23:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          01:00:00
+WET_STEP             00:01:00
+DRY_STEP             00:05:00
+ROUTING_STEP         0:01:00 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+MONTHLY          0.097  0.389  1.116  2.403  3.613  4.570  4.990  4.003  2.240  0.987  0.270  0.071 
+RECOVERY         Modified_Infiltration
+DRY_ONLY         NO
+
+[TEMPERATURE]
+;;Data Element     Values     
+FILE               "C:\Users\Robert E Dickinson\Desktop\Nate\Temp60_09.txt"
+WINDSPEED MONTHLY  14.8 14.6 15.0 16.6 15.6 15.6 14.0 13.2 14.1 14.6 13.7 14.9
+SNOWMELT           1 0.5 0.6 1000 51 40
+ADC IMPERVIOUS     0 0.01 0.015 0.04 0.07 0.13 0.22 0.34 0.51 0.73
+ADC PERVIOUS       0 0.01 0.015 0.04 0.07 0.13 0.22 0.34 0.51 0.73
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+Precip60-09      VOLUME    1:00     1.0      FILE       "C:\Users\Robert E Dickinson\Desktop\Nate\Precip60-09.txt" 3031093    MM   
+Precip60-09+Irr_S7 VOLUME    1:00     1.0      FILE       "C:\Users\Robert E Dickinson\Desktop\Nate\Precip60-09.txt" 3031094    MM   
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+SF_NDCIA         Precip60-09      SF_PERV          16.433   100      1650     1.0      0        calgary         
+SF_DCIA          Precip60-09      Cell_E_FB        3.566    100      360      1.0      0        calgary         
+SF_PERV          Precip60-09      Cell_E_Road_Perv 24.580   0        2460     1.0      0        calgary         
+COMM_DCIA        Precip60-09      Cell_E_FB        0.235    100      24       1.0      0        calgary         
+Pond             Precip60-09      Cell_E_Pond      4.697    100      470      1.0      0        calgary         
+COMM_PERV        Precip60-09      Cell_E_FB        0.141    0        14       1.0      0        calgary         
+COMM_NDCIA       Precip60-09      COMM_PERV        0.564    100      54       1.0      0        calgary         
+INST_Fields_IRR  Precip60-09+Irr_S7 Cell_E_Road_IMP  3.04     0        300      1.0      0        calgary         
+INST_PERV        Precip60-09      Cell_E_Road_IMP  2.573    0        260      1.0      0        calgary         
+SSA_DCIA         Precip60-09      Cell_E_FB        3.795    100      380      1.0      0        calgary         
+SSA_PERV         Precip60-09      Cell_E_FB        2.277    0        230      1.0      0        calgary         
+SSA_NDCIA        Precip60-09      SSA_PERV         9.108    100      910      1.0      0        calgary         
+INST_NDCIA       Precip60-09      INST_PERV        1.267    100      125      1.0      0        calgary         
+MF_PERV          Precip60-09      Cell_E_Road_Perv 1.274    0        130      1.0      0        calgary         
+MF_NDCIA         Precip60-09      MF_PERV          2.075    100      210      1.0      0        calgary         
+MF_DCIA          Precip60-09      Cell_E_FB        0.291    100      29       1.0      0        calgary         
+PUL_IRR          Precip60-09+Irr_S7 Cell_E_Pond      1.38     0        140      1.0      0        calgary         
+Cell_E_Road_IMP  Precip60-09      Cell_E_FB        21.764   100      2180     1.0      0        calgary         
+Cell_E_Road_NDCIA Precip60-09      Cell_E_Road_Perv .852     100      85       1.0      0        calgary         
+MR_PERV_IRR      Precip60-09+Irr_S7 Cell_E_Road_Perv 4.22     0        420      1.0      0        calgary         
+Fringe           Precip60-09      Wetland_42_BIA   3.408    0        340      1.0      0        calgary         
+Wetland          Precip60-09      Wetland_42_BIA   0.795    100      80       1.0      0        calgary         
+LRT_PERV         Precip60-09      Cell_E_FB        0.306    0        30       1        0        calgary         
+LRT_NDCIA        Precip60-09      LRT_PERV         0.613    100      60       1.0      0        calgary         
+LRT_DCIA         Precip60-09      Cell_E_FB        .306     100      30       1.0      0        calgary         
+Cell_E_Road_Perv Precip60-09      Cell_E_Road_IMP  6.834    0        680      1.0      0        calgary         
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+SF_NDCIA         0.014      0.25       1.6        3.2        0          OUTLET    
+SF_DCIA          0.014      0.25       1.6        3.2        0          OUTLET    
+SF_PERV          0.014      0.25       1.6        3.2        0          OUTLET    
+COMM_DCIA        0.014      0.25       1.6        3.2        0          OUTLET    
+Pond             0.014      0.25       1.6        3.2        100        OUTLET    
+COMM_PERV        0.014      0.25       1.6        3.2        0          OUTLET    
+COMM_NDCIA       0.014      0.25       1.6        3.2        0          OUTLET    
+INST_Fields_IRR  0.014      0.25       1.6        3.2        0          OUTLET    
+INST_PERV        0.014      0.25       1.6        3.2        0          OUTLET    
+SSA_DCIA         0.014      0.25       1.6        3.2        0          OUTLET    
+SSA_PERV         0.014      0.25       1.6        3.2        0          OUTLET    
+SSA_NDCIA        0.014      0.25       1.6        3.2        0          OUTLET    
+INST_NDCIA       0.014      0.25       1.6        3.2        0          OUTLET    
+MF_PERV          0.014      0.25       1.6        3.2        0          OUTLET    
+MF_NDCIA         0.014      0.25       1.6        3.2        0          OUTLET    
+MF_DCIA          0.014      0.25       1.6        3.2        0          OUTLET    
+PUL_IRR          0.014      0.25       1.6        3.2        0          OUTLET    
+Cell_E_Road_IMP  0.014      0.25       1.6        3.2        0          OUTLET    
+Cell_E_Road_NDCIA 0.014      0.25       1.6        3.2        0          OUTLET    
+MR_PERV_IRR      0.014      0.25       1.6        3.2        0          OUTLET    
+Fringe           0.014      0.25       1.6        3.2        0          OUTLET    
+Wetland          0.014      0.25       1.6        3.2        0          OUTLET    
+LRT_PERV         0.014      0.25       1.6        3.2        0          OUTLET    
+LRT_NDCIA        0.014      0.25       1.6        3.2        0          OUTLET    
+LRT_DCIA         0.014      0.25       1.6        3.2        0          OUTLET    
+Cell_E_Road_Perv 0.014      0.25       1.6        3.2        0          OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Suction    Ksat       IMD       
+;;-------------- ---------- ---------- ----------
+SF_NDCIA         170        6.604      0.135     
+SF_DCIA          170        6.604      0.135     
+SF_PERV          170        6.604      0.135     
+COMM_DCIA        170        6.604      0.135     
+Pond             170        6.604      0.135     
+COMM_PERV        170        6.604      0.135     
+COMM_NDCIA       170        6.604      0.135     
+INST_Fields_IRR  170        6.604      0.135     
+INST_PERV        170        6.604      0.135     
+SSA_DCIA         170        6.604      0.135     
+SSA_PERV         170        6.604      0.135     
+SSA_NDCIA        170        6.604      0.135     
+INST_NDCIA       170        6.604      0.135     
+MF_PERV          170        6.604      0.135     
+MF_NDCIA         170        6.604      0.135     
+MF_DCIA          170        6.604      0.135     
+PUL_IRR          170        6.604      0.135     
+Cell_E_Road_IMP  170        6.604      0.135     
+Cell_E_Road_NDCIA 170        6.604      0.135     
+MR_PERV_IRR      170        6.604      0.135     
+Fringe           170        6.604      0.135     
+Wetland          170        6.604      0.135     
+LRT_PERV         170        6.604      0.135     
+LRT_NDCIA        170        6.604      0.135     
+LRT_DCIA         170        6.604      0.135     
+Cell_E_Road_Perv 170        6.604      0.135     
+
+[LID_CONTROLS]
+;;Name           Type/Layer Parameters
+;;-------------- ---------- ----------
+AbsLand7.5in     BC
+AbsLand7.5in     SURFACE    0.001      0.05       0.25       0.5        10        
+AbsLand7.5in     SOIL       190.5      .501       0.284      0.135      6.604      8          170       
+AbsLand7.5in     STORAGE    0          0.904762   0.254      0         
+AbsLand7.5in     DRAIN      0          0.5        0          6         
+
+AbsLand12in      BC
+AbsLand12in      SURFACE    0.001      0.05       0.25       0.5        10        
+AbsLand12in      SOIL       300        0.501      0.284      0.135      6.604      8          170       
+AbsLand12in      STORAGE    0          0.904762   .254       0         
+AbsLand12in      DRAIN      0          0.5        0          6         
+
+Bioswale         BC
+Bioswale         SURFACE    300        0.05       0.25       0.5        10        
+Bioswale         SOIL       600        0.437      0.143      0.052      5.994      10         61        
+Bioswale         STORAGE    300        0.5        0.508      824       
+Bioswale         DRAIN      0.72       0.5        150        6         
+
+AbsLand16in      BC
+AbsLand16in      SURFACE    0.001      0.05       0.25       0.5        10        
+AbsLand16in      SOIL       400        0.501      0.284      0.135      6.604      8          170       
+AbsLand16in      STORAGE    0          0          .254       0         
+AbsLand16in      DRAIN      0          0.5        0          6         
+
+RainGarden       BC
+RainGarden       SURFACE    300        0.05       0.25       0.5        10        
+RainGarden       SOIL       900        0.501      0.284      0.135      6.604      8          170       
+RainGarden       STORAGE    300        0.5        0.254      824       
+RainGarden       DRAIN      0.72       0.5        150        6         
+
+AbsLand20in      BC
+AbsLand20in      SURFACE    0.001      0.05       0.25       0.5        10        
+AbsLand20in      SOIL       508        0.501      0.284      0.135      6.604      8          170       
+AbsLand20in      STORAGE    0          0          .254       0         
+AbsLand20in      DRAIN      0          0.5        0          6         
+
+AbsLand40in      BC
+AbsLand40in      SURFACE    0.001      0.05       0.25       0.5        10        
+AbsLand40in      SOIL       1000       0.463      0.232      0.116      11.9       10         89        
+AbsLand40in      STORAGE    0          0.75       10         1650      
+AbsLand40in      DRAIN      0          0.5        0          6         
+
+AbsLand9in       BC
+AbsLand9in       SURFACE    0.001      0.05       0.25       0.5        10        
+AbsLand9in       SOIL       228.6      .501       0.284      0.135      6.604      8          170       
+AbsLand9in       STORAGE    0          0          .254       0         
+AbsLand9in       DRAIN      0          0.5        0          6         
+
+[LID_USAGE]
+;;Subcatchment   LID Process      Number  Area       Width      InitSat    FromImp    ToPerv     RptFile                  DrainTo         
+;;-------------- ---------------- ------- ---------- ---------- ---------- ---------- ---------- ------------------------ ----------------
+SF_PERV          AbsLand7.5in     1       245800.00  2390       0          0          0         
+COMM_PERV        AbsLand12in      1       1410.00    14         0          0          0         
+INST_Fields_IRR  AbsLand12in      1       30400.00   300        0          0          0         
+INST_PERV        AbsLand12in      1       25730.00   260        0          0          0         
+SSA_PERV         AbsLand12in      1       22770.00   230        0          0          0         
+MF_PERV          AbsLand7.5in     1       12740.00   130        0          0          0         
+PUL_IRR          AbsLand12in      1       13800.00   120        0          0          0         
+MR_PERV_IRR      AbsLand12in      1       42200.00   430        0          0          0         
+LRT_PERV         AbsLand12in      1       3060.00    30         0          0          0         
+Cell_E_Road_Perv AbsLand12in      1       68340.00   680        0          0          0         
+
+[SNOWPACKS]
+;;Name           Surface    Parameters
+;;-------------- ---------- ----------
+calgary          PLOWABLE   0.02       0.10       1          0.03       0.00       0.00       0.0       
+calgary          IMPERVIOUS 0.02       0.10       1          0.08       2.7        1          0.00      
+calgary          PERVIOUS   0.02       0.15       1          0.3        2.7        1          0.00      
+calgary          REMOVAL    6.53       0.0        0.0        1.0        0.0        0.0        
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Outfall          1090       FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+Cell_E_FB        1086.3   6.5        3.7        TABULAR    Cell_E_FB                    18994.72 1       
+Cell_E_Pond      1086.3   6.5        3.7        TABULAR    Cell_E_Pond                  34844.86 1       
+Muni_Supply      1100     6          5          FUNCTIONAL 1000000   2         0        0        0       
+Wetland_42_BIA   1087.0   5          2.05       TABULAR    WETLAND                      12471.8  1        0        0.254    0       
+
+[PUMPS]
+;;Name           From Node        To Node          Pump Curve       Status   Sartup Shutoff 
+;;-------------- ---------------- ---------------- ---------------- ------ -------- --------
+Pond_IRRPUMP     Muni_Supply      Cell_E_Pond      Pumpto           OFF      0        0       
+WL_Recharge      Cell_E_Pond      Wetland_42_BIA   Pumpto           OFF      0        0       
+
+[WEIRS]
+;;Name           From Node        To Node          Type         CrestHt    Qcoeff     Gated    EndCon   EndCoeff   Surcharge  RoadWidth  RoadSurf  
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- -------- ---------- ---------- ---------- ----------
+FB_WEIR          Cell_E_FB        Cell_E_Pond      TRANSVERSE   3.3        1.60       NO       0        0          YES       
+
+[OUTLETS]
+;;Name           From Node        To Node          Offset     Type            QTable/Qcoeff    Qexpon     Gated   
+;;-------------- ---------------- ---------------- ---------- --------------- ---------------- ---------- --------
+Outlet_Cell_E_Pond Cell_E_Pond      Outfall          0          TABULAR/DEPTH   Outlet_Cell_E_Pond            YES     
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+FB_WEIR          RECT_OPEN    3.1              50         0          0         
+
+[CONTROLS]
+;;Control Rules
+RULE Pond_IRRPUMP
+IF NODE Cell_E_Pond DEPTH <= 2.0
+THEN PUMP Pond_IRRPUMP STATUS = ON
+ELSE PUMP Pond_IRRPUMP STATUS = OFF
+
+RULE WL_PUMP1A
+IF NODE Wetland_42_BIA Depth < 2.09
+AND SIMULATION DATE > 04/30/1960
+AND SIMULATION DATE < 10/01/1960
+OR SIMULATION DATE > 04/30/1961
+AND SIMULATION DATE < 10/01/1961
+OR SIMULATION DATE > 04/30/1962
+AND SIMULATION DATE < 10/01/1962
+OR SIMULATION DATE > 04/30/1963
+AND SIMULATION DATE < 10/01/1963
+OR SIMULATION DATE > 04/30/1964
+AND SIMULATION DATE < 10/01/1964
+OR SIMULATION DATE > 04/30/1965
+AND SIMULATION DATE < 10/01/1965
+OR SIMULATION DATE > 04/30/1966
+AND SIMULATION DATE < 10/01/1966
+OR SIMULATION DATE > 04/30/1967
+AND SIMULATION DATE < 10/01/1967
+OR SIMULATION DATE > 04/30/1968
+AND SIMULATION DATE < 10/01/1968
+OR SIMULATION DATE > 04/30/1969
+AND SIMULATION DATE < 10/01/1969
+OR SIMULATION DATE > 04/30/1970
+AND SIMULATION DATE < 10/01/1970
+OR SIMULATION DATE > 04/30/1971
+AND SIMULATION DATE < 10/01/1971
+OR SIMULATION DATE > 04/30/1972
+AND SIMULATION DATE < 10/01/1972
+OR SIMULATION DATE > 04/30/1973
+AND SIMULATION DATE < 10/01/1973
+OR SIMULATION DATE > 04/30/1974
+AND SIMULATION DATE < 10/01/1974
+OR SIMULATION DATE > 04/30/1975
+AND SIMULATION DATE < 10/01/1975
+OR SIMULATION DATE > 04/30/1976
+AND SIMULATION DATE < 10/01/1976
+OR SIMULATION DATE > 04/30/1977
+AND SIMULATION DATE < 10/01/1977
+OR SIMULATION DATE > 04/30/1978
+AND SIMULATION DATE < 10/01/1978
+OR SIMULATION DATE > 04/30/1979
+AND SIMULATION DATE < 10/01/1979
+OR SIMULATION DATE > 04/30/1980
+AND SIMULATION DATE < 10/01/1980
+OR SIMULATION DATE > 04/30/1981
+AND SIMULATION DATE < 10/01/1981
+OR SIMULATION DATE > 04/30/1982
+AND SIMULATION DATE < 10/01/1982
+OR SIMULATION DATE > 04/30/1983
+AND SIMULATION DATE < 10/01/1983
+OR SIMULATION DATE > 04/30/1984
+AND SIMULATION DATE < 10/01/1984
+OR SIMULATION DATE > 04/30/1985
+AND SIMULATION DATE < 10/01/1985
+OR SIMULATION DATE > 04/30/1986
+AND SIMULATION DATE < 10/01/1986
+OR SIMULATION DATE > 04/30/1987
+AND SIMULATION DATE < 10/01/1987
+OR SIMULATION DATE > 04/30/1988
+AND SIMULATION DATE < 10/01/1988
+OR SIMULATION DATE > 04/30/1989
+AND SIMULATION DATE < 10/01/1989
+OR SIMULATION DATE > 04/30/1990
+AND SIMULATION DATE < 10/01/1990
+OR SIMULATION DATE > 04/30/1991
+AND SIMULATION DATE < 10/01/1991
+OR SIMULATION DATE > 04/30/1992
+AND SIMULATION DATE < 10/01/1992
+OR SIMULATION DATE > 04/30/1993
+AND SIMULATION DATE < 10/01/1993
+OR SIMULATION DATE > 04/30/1994
+AND SIMULATION DATE < 10/01/1994
+OR SIMULATION DATE > 04/30/1995
+AND SIMULATION DATE < 10/01/1995
+OR SIMULATION DATE > 04/30/1996
+AND SIMULATION DATE < 10/01/1996
+OR SIMULATION DATE > 04/30/1997
+AND SIMULATION DATE < 10/01/1997
+OR SIMULATION DATE > 04/30/1998
+AND SIMULATION DATE < 10/01/1998
+OR SIMULATION DATE > 04/30/1999
+AND SIMULATION DATE < 10/01/1999
+OR SIMULATION DATE > 04/30/2000
+AND SIMULATION DATE < 10/01/2000
+OR SIMULATION DATE > 04/30/2001
+AND SIMULATION DATE < 10/01/2001
+OR SIMULATION DATE > 04/30/2002
+AND SIMULATION DATE < 10/01/2002
+OR SIMULATION DATE > 04/30/2003
+AND SIMULATION DATE < 10/01/2003
+OR SIMULATION DATE > 04/30/2004
+AND SIMULATION DATE < 10/01/2004
+OR SIMULATION DATE > 04/30/2005
+AND SIMULATION DATE < 10/01/2005
+OR SIMULATION DATE > 04/30/2006
+AND SIMULATION DATE < 10/01/2006
+OR SIMULATION DATE > 04/30/2007
+AND SIMULATION DATE < 10/01/2007
+OR SIMULATION DATE > 04/30/2008
+AND SIMULATION DATE < 10/01/2008
+OR SIMULATION DATE > 04/30/2009
+AND SIMULATION DATE < 10/01/2009
+THEN PUMP WL_Recharge Status = ON
+
+RULE WL_PUMP1B
+IF NODE Wetland_42_BIA Depth >= 2.70
+AND SIMULATION DATE > 04/30/1960
+AND SIMULATION DATE < 10/01/1960
+OR SIMULATION DATE > 04/30/1961
+AND SIMULATION DATE < 10/01/1961
+OR SIMULATION DATE > 04/30/1962
+AND SIMULATION DATE < 10/01/1962
+OR SIMULATION DATE > 04/30/1963
+AND SIMULATION DATE < 10/01/1963
+OR SIMULATION DATE > 04/30/1964
+AND SIMULATION DATE < 10/01/1964
+OR SIMULATION DATE > 04/30/1965
+AND SIMULATION DATE < 10/01/1965
+OR SIMULATION DATE > 04/30/1966
+AND SIMULATION DATE < 10/01/1966
+OR SIMULATION DATE > 04/30/1967
+AND SIMULATION DATE < 10/01/1967
+OR SIMULATION DATE > 04/30/1968
+AND SIMULATION DATE < 10/01/1968
+OR SIMULATION DATE > 04/30/1969
+AND SIMULATION DATE < 10/01/1969
+OR SIMULATION DATE > 04/30/1970
+AND SIMULATION DATE < 10/01/1970
+OR SIMULATION DATE > 04/30/1971
+AND SIMULATION DATE < 10/01/1971
+OR SIMULATION DATE > 04/30/1972
+AND SIMULATION DATE < 10/01/1972
+OR SIMULATION DATE > 04/30/1973
+AND SIMULATION DATE < 10/01/1973
+OR SIMULATION DATE > 04/30/1974
+AND SIMULATION DATE < 10/01/1974
+OR SIMULATION DATE > 04/30/1975
+AND SIMULATION DATE < 10/01/1975
+OR SIMULATION DATE > 04/30/1976
+AND SIMULATION DATE < 10/01/1976
+OR SIMULATION DATE > 04/30/1977
+AND SIMULATION DATE < 10/01/1977
+OR SIMULATION DATE > 04/30/1978
+AND SIMULATION DATE < 10/01/1978
+OR SIMULATION DATE > 04/30/1979
+AND SIMULATION DATE < 10/01/1979
+OR SIMULATION DATE > 04/30/1980
+AND SIMULATION DATE < 10/01/1980
+OR SIMULATION DATE > 04/30/1981
+AND SIMULATION DATE < 10/01/1981
+OR SIMULATION DATE > 04/30/1982
+AND SIMULATION DATE < 10/01/1982
+OR SIMULATION DATE > 04/30/1983
+AND SIMULATION DATE < 10/01/1983
+OR SIMULATION DATE > 04/30/1984
+AND SIMULATION DATE < 10/01/1984
+OR SIMULATION DATE > 04/30/1985
+AND SIMULATION DATE < 10/01/1985
+OR SIMULATION DATE > 04/30/1986
+AND SIMULATION DATE < 10/01/1986
+OR SIMULATION DATE > 04/30/1987
+AND SIMULATION DATE < 10/01/1987
+OR SIMULATION DATE > 04/30/1988
+AND SIMULATION DATE < 10/01/1988
+OR SIMULATION DATE > 04/30/1989
+AND SIMULATION DATE < 10/01/1989
+OR SIMULATION DATE > 04/30/1990
+AND SIMULATION DATE < 10/01/1990
+OR SIMULATION DATE > 04/30/1991
+AND SIMULATION DATE < 10/01/1991
+OR SIMULATION DATE > 04/30/1992
+AND SIMULATION DATE < 10/01/1992
+OR SIMULATION DATE > 04/30/1993
+AND SIMULATION DATE < 10/01/1993
+OR SIMULATION DATE > 04/30/1994
+AND SIMULATION DATE < 10/01/1994
+OR SIMULATION DATE > 04/30/1995
+AND SIMULATION DATE < 10/01/1995
+OR SIMULATION DATE > 04/30/1996
+AND SIMULATION DATE < 10/01/1996
+OR SIMULATION DATE > 04/30/1997
+AND SIMULATION DATE < 10/01/1997
+OR SIMULATION DATE > 04/30/1998
+AND SIMULATION DATE < 10/01/1998
+OR SIMULATION DATE > 04/30/1999
+AND SIMULATION DATE < 10/01/1999
+OR SIMULATION DATE > 04/30/2000
+AND SIMULATION DATE < 10/01/2000
+OR SIMULATION DATE > 04/30/2001
+AND SIMULATION DATE < 10/01/2001
+OR SIMULATION DATE > 04/30/2002
+AND SIMULATION DATE < 10/01/2002
+OR SIMULATION DATE > 04/30/2003
+AND SIMULATION DATE < 10/01/2003
+OR SIMULATION DATE > 04/30/2004
+AND SIMULATION DATE < 10/01/2004
+OR SIMULATION DATE > 04/30/2005
+AND SIMULATION DATE < 10/01/2005
+OR SIMULATION DATE > 04/30/2006
+AND SIMULATION DATE < 10/01/2006
+OR SIMULATION DATE > 04/30/2007
+AND SIMULATION DATE < 10/01/2007
+OR SIMULATION DATE > 04/30/2008
+AND SIMULATION DATE < 10/01/2008
+OR SIMULATION DATE > 04/30/2009
+AND SIMULATION DATE < 10/01/2009
+THEN PUMP WL_Recharge Status = OFF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[POLLUTANTS]
+;;Name           Units  Crain      Cgw        Crdii      Kdecay     SnowOnly   Co-Pollutant     Co-Frac    Cdwf       Cinit     
+;;-------------- ------ ---------- ---------- ---------- ---------- ---------- ---------------- ---------- ---------- ----------
+TSS<10           MG/L   0          0.0        0.0        0.0        NO         *                0.0        0.0        0         
+TSS10-20         MG/L   0          0.0        0.0        0.0        NO         *                0.0        0.0        0         
+TSS20-50         MG/L   0          0.0        0.0        0.0        NO         *                0.0        0.0        0         
+TSS50-150        MG/L   0          0.0        0.0        0.0        NO         *                0.0        0.0        0         
+TSS>150          MG/L   0          0.0        0.0        0.0        NO         *                0.0        0.0        0         
+
+[LANDUSES]
+;;               Sweeping   Fraction   Last      
+;;Name           Interval   Available  Swept     
+;;-------------- ---------- ---------- ----------
+;Impervious Areas
+Impervious       0          0          0         
+;Landscaped Areas
+Pervious         0          0          0         
+
+[COVERAGES]
+;;Subcatchment   Land Use         Percent   
+;;-------------- ---------------- ----------
+SF_NDCIA         Impervious       100       
+SF_DCIA          Impervious       100       
+SF_PERV          Pervious         100       
+COMM_DCIA        Impervious       100       
+COMM_PERV        Pervious         100       
+COMM_NDCIA       Impervious       100       
+INST_Fields_IRR  Pervious         100       
+INST_PERV        Pervious         100       
+SSA_DCIA         Impervious       100       
+SSA_PERV         Pervious         100       
+SSA_NDCIA        Impervious       100       
+INST_NDCIA       Impervious       100       
+MF_PERV          Pervious         100       
+MF_NDCIA         Impervious       100       
+MF_DCIA          Impervious       100       
+PUL_IRR          Pervious         100       
+Cell_E_Road_IMP  Pervious         100       
+Cell_E_Road_NDCIA Impervious       100       
+MR_PERV_IRR      Pervious         100       
+Fringe           Impervious       100       
+LRT_PERV         Pervious         100       
+LRT_NDCIA        Impervious       100       
+LRT_DCIA         Impervious       100       
+
+[LOADINGS]
+;;Subcatchment   Pollutant        Buildup   
+;;-------------- ---------------- ----------
+
+[BUILDUP]
+;;Land Use       Pollutant        Function   Coeff1     Coeff2     Coeff3     Per Unit  
+;;-------------- ---------------- ---------- ---------- ---------- ---------- ----------
+Impervious       TSS<10           NONE       460        1.265      0.95       AREA      
+Impervious       TSS10-20         NONE       180        0.495      0.95       AREA      
+Impervious       TSS20-50         NONE       260        0.715      0.95       AREA      
+Impervious       TSS50-150        NONE       460        1.265      0.95       AREA      
+Impervious       TSS>150          NONE       640        1.76       0.95       AREA      
+Pervious         TSS<10           NONE       460        1.265      0.95       AREA      
+Pervious         TSS10-20         NONE       180        0.495      0.95       AREA      
+Pervious         TSS20-50         NONE       260        0.715      0.95       AREA      
+Pervious         TSS50-150        NONE       460        1.265      0.95       AREA      
+Pervious         TSS>150          NONE       640        1.76       0.95       AREA      
+
+[WASHOFF]
+;;Land Use       Pollutant        Function   Coeff1     Coeff2     SweepRmvl  BmpRmvl   
+;;-------------- ---------------- ---------- ---------- ---------- ---------- ----------
+Impervious       TSS<10           EMC        102.12     1          0.0        0         
+Impervious       TSS10-20         EMC        39.96      1          0.0        0         
+Impervious       TSS20-50         EMC        57.72      1          0.0        0         
+Impervious       TSS50-150        EMC        102.12     1          0.0        0         
+Impervious       TSS>150          EMC        142.08     1          0.0        0         
+Pervious         TSS<10           EMC        102.12     1          0.0        0         
+Pervious         TSS10-20         EMC        39.96      1          0.0        0         
+Pervious         TSS20-50         EMC        57.72      1          0.0        0         
+Pervious         TSS50-150        EMC        102.12     1          0.0        0         
+Pervious         TSS>150          EMC        142.08     1          0.0        0         
+
+[TREATMENT]
+;;Node           Pollutant        Function  
+;;-------------- ---------------- ----------
+Cell_E_FB        TSS<10           R = 0.00000592*AREA/FLOW
+Cell_E_FB        TSS10-20         R = 0.0000473*AREA/FLOW
+Cell_E_FB        TSS20-50         R = 0.000283*AREA/FLOW
+Cell_E_FB        TSS50-150        R = 0.00195*AREA/FLOW
+Cell_E_FB        TSS>150          R = 0.0124*AREA/FLOW
+Cell_E_Pond      TSS<10           R = 0.00000592*AREA/FLOW
+Cell_E_Pond      TSS10-20         R = 0.0000473*AREA/FLOW
+Cell_E_Pond      TSS20-50         R = 0.000283*AREA/FLOW
+Cell_E_Pond      TSS50-150        R = 0.00195*AREA/FLOW
+Cell_E_Pond      TSS>150          R = 0.0124*AREA/FLOW
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+Cell_E_Pond      FLOW             Irr_Cell_E_Pond  FLOW     1.0      1.0              
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+Pumpto           Pump2      0          0         
+Pumpto                      1.5        0         
+Pumpto                      6          0.3       
+;
+Outlet_Cell_E_Pond Rating     0.00       0.0000    
+Outlet_Cell_E_Pond            3.70       0.0000    
+Outlet_Cell_E_Pond            3.71       0.0033    
+Outlet_Cell_E_Pond            3.72       0.0094    
+Outlet_Cell_E_Pond            3.73       0.0172    
+Outlet_Cell_E_Pond            3.74       0.0265    
+Outlet_Cell_E_Pond            3.75       0.0370    
+Outlet_Cell_E_Pond            3.76       0.0487    
+Outlet_Cell_E_Pond            3.77       0.0613    
+Outlet_Cell_E_Pond            3.78       0.0741    
+Outlet_Cell_E_Pond            3.79       0.0749    
+Outlet_Cell_E_Pond            3.80       0.0756    
+Outlet_Cell_E_Pond            3.81       0.0764    
+Outlet_Cell_E_Pond            3.82       0.0772    
+Outlet_Cell_E_Pond            3.83       0.0779    
+Outlet_Cell_E_Pond            3.84       0.0787    
+Outlet_Cell_E_Pond            3.85       0.0794    
+Outlet_Cell_E_Pond            3.86       0.0802    
+Outlet_Cell_E_Pond            3.87       0.0809    
+Outlet_Cell_E_Pond            3.88       0.0816    
+Outlet_Cell_E_Pond            3.89       0.0824    
+Outlet_Cell_E_Pond            3.90       0.0831    
+Outlet_Cell_E_Pond            3.91       0.0838    
+Outlet_Cell_E_Pond            3.92       0.0845    
+Outlet_Cell_E_Pond            3.93       0.0852    
+Outlet_Cell_E_Pond            3.94       0.0859    
+Outlet_Cell_E_Pond            3.95       0.0865    
+Outlet_Cell_E_Pond            3.96       0.0872    
+Outlet_Cell_E_Pond            3.97       0.0879    
+Outlet_Cell_E_Pond            3.98       0.0886    
+Outlet_Cell_E_Pond            3.99       0.0892    
+Outlet_Cell_E_Pond            4.00       0.0899    
+Outlet_Cell_E_Pond            4.01       0.0905    
+Outlet_Cell_E_Pond            4.02       0.0912    
+Outlet_Cell_E_Pond            4.03       0.0918    
+Outlet_Cell_E_Pond            4.04       0.0925    
+Outlet_Cell_E_Pond            4.05       0.0931    
+Outlet_Cell_E_Pond            4.06       0.0937    
+Outlet_Cell_E_Pond            4.07       0.0943    
+Outlet_Cell_E_Pond            4.08       0.0950    
+Outlet_Cell_E_Pond            4.09       0.0956    
+Outlet_Cell_E_Pond            4.10       0.0962    
+Outlet_Cell_E_Pond            4.11       0.0968    
+Outlet_Cell_E_Pond            4.12       0.0974    
+Outlet_Cell_E_Pond            4.13       0.0980    
+Outlet_Cell_E_Pond            4.14       0.0986    
+Outlet_Cell_E_Pond            4.15       0.0992    
+Outlet_Cell_E_Pond            4.16       0.0998    
+Outlet_Cell_E_Pond            4.17       0.1004    
+Outlet_Cell_E_Pond            4.18       0.1010    
+Outlet_Cell_E_Pond            4.19       0.1016    
+Outlet_Cell_E_Pond            4.20       0.1021    
+Outlet_Cell_E_Pond            4.21       0.1027    
+Outlet_Cell_E_Pond            4.22       0.1033    
+Outlet_Cell_E_Pond            4.23       0.1039    
+Outlet_Cell_E_Pond            4.24       0.1044    
+Outlet_Cell_E_Pond            4.25       0.1050    
+Outlet_Cell_E_Pond            4.26       0.1055    
+Outlet_Cell_E_Pond            4.27       0.1061    
+Outlet_Cell_E_Pond            4.28       0.1066    
+Outlet_Cell_E_Pond            4.29       0.1072    
+Outlet_Cell_E_Pond            4.30       0.1077    
+Outlet_Cell_E_Pond            4.31       0.1083    
+Outlet_Cell_E_Pond            4.32       0.1088    
+Outlet_Cell_E_Pond            4.33       0.1094    
+Outlet_Cell_E_Pond            4.34       0.1099    
+Outlet_Cell_E_Pond            4.35       0.1104    
+Outlet_Cell_E_Pond            4.36       0.1110    
+Outlet_Cell_E_Pond            4.37       0.1115    
+Outlet_Cell_E_Pond            4.38       0.1120    
+Outlet_Cell_E_Pond            4.39       0.1126    
+Outlet_Cell_E_Pond            4.40       0.1131    
+Outlet_Cell_E_Pond            4.41       0.1136    
+Outlet_Cell_E_Pond            4.42       0.1141    
+Outlet_Cell_E_Pond            4.43       0.1146    
+Outlet_Cell_E_Pond            4.44       0.1151    
+Outlet_Cell_E_Pond            4.45       0.1157    
+Outlet_Cell_E_Pond            4.46       0.1162    
+Outlet_Cell_E_Pond            4.47       0.1167    
+Outlet_Cell_E_Pond            4.48       0.1172    
+Outlet_Cell_E_Pond            4.49       0.1177    
+Outlet_Cell_E_Pond            4.50       0.1182    
+Outlet_Cell_E_Pond            4.51       0.1187    
+Outlet_Cell_E_Pond            4.52       0.1192    
+Outlet_Cell_E_Pond            4.53       0.1197    
+Outlet_Cell_E_Pond            4.54       0.1201    
+Outlet_Cell_E_Pond            4.55       0.1206    
+Outlet_Cell_E_Pond            4.56       0.1211    
+Outlet_Cell_E_Pond            4.57       0.1216    
+Outlet_Cell_E_Pond            4.58       0.1221    
+Outlet_Cell_E_Pond            4.59       0.1226    
+Outlet_Cell_E_Pond            4.60       0.1230    
+Outlet_Cell_E_Pond            4.61       0.1235    
+Outlet_Cell_E_Pond            4.62       0.1240    
+Outlet_Cell_E_Pond            4.63       0.1245    
+Outlet_Cell_E_Pond            4.64       0.1249    
+Outlet_Cell_E_Pond            4.65       0.1254    
+Outlet_Cell_E_Pond            4.66       0.1259    
+Outlet_Cell_E_Pond            4.67       0.1264    
+Outlet_Cell_E_Pond            4.68       0.1268    
+Outlet_Cell_E_Pond            4.69       0.1273    
+Outlet_Cell_E_Pond            4.70       0.1277    
+Outlet_Cell_E_Pond            4.71       0.1282    
+Outlet_Cell_E_Pond            4.72       0.1287    
+Outlet_Cell_E_Pond            4.73       0.1291    
+Outlet_Cell_E_Pond            4.74       0.1296    
+Outlet_Cell_E_Pond            4.75       0.1300    
+Outlet_Cell_E_Pond            4.76       0.1305    
+Outlet_Cell_E_Pond            4.77       0.1309    
+Outlet_Cell_E_Pond            4.78       0.1314    
+Outlet_Cell_E_Pond            4.79       0.1318    
+Outlet_Cell_E_Pond            4.80       0.1323    
+Outlet_Cell_E_Pond            4.81       0.1327    
+Outlet_Cell_E_Pond            4.82       0.1332    
+Outlet_Cell_E_Pond            4.83       0.1336    
+Outlet_Cell_E_Pond            4.84       0.1340    
+Outlet_Cell_E_Pond            4.85       0.1345    
+Outlet_Cell_E_Pond            4.86       0.1349    
+Outlet_Cell_E_Pond            4.87       0.1354    
+Outlet_Cell_E_Pond            4.88       0.1358    
+Outlet_Cell_E_Pond            4.89       0.1362    
+Outlet_Cell_E_Pond            4.90       0.1367    
+Outlet_Cell_E_Pond            4.91       0.1371    
+Outlet_Cell_E_Pond            4.92       0.1375    
+Outlet_Cell_E_Pond            4.93       0.1379    
+Outlet_Cell_E_Pond            4.94       0.1384    
+Outlet_Cell_E_Pond            4.95       0.1388    
+Outlet_Cell_E_Pond            4.96       0.1393    
+Outlet_Cell_E_Pond            4.97       0.1399    
+Outlet_Cell_E_Pond            4.98       0.1407    
+Outlet_Cell_E_Pond            4.99       0.1417    
+Outlet_Cell_E_Pond            5.00       0.1427    
+Outlet_Cell_E_Pond            5.01       0.1439    
+Outlet_Cell_E_Pond            5.02       0.1451    
+Outlet_Cell_E_Pond            5.03       0.1465    
+Outlet_Cell_E_Pond            5.04       0.1479    
+Outlet_Cell_E_Pond            5.05       0.1494    
+Outlet_Cell_E_Pond            5.06       0.1509    
+Outlet_Cell_E_Pond            5.07       0.1525    
+Outlet_Cell_E_Pond            5.08       0.1540    
+Outlet_Cell_E_Pond            5.09       0.1557    
+Outlet_Cell_E_Pond            5.10       0.1575    
+Outlet_Cell_E_Pond            5.11       0.1587    
+Outlet_Cell_E_Pond            5.12       0.1598    
+Outlet_Cell_E_Pond            5.13       0.1609    
+Outlet_Cell_E_Pond            5.14       0.1620    
+Outlet_Cell_E_Pond            5.15       0.1631    
+Outlet_Cell_E_Pond            5.16       0.1641    
+Outlet_Cell_E_Pond            5.17       0.1651    
+Outlet_Cell_E_Pond            5.18       0.1661    
+Outlet_Cell_E_Pond            5.19       0.1670    
+Outlet_Cell_E_Pond            5.20       0.1680    
+Outlet_Cell_E_Pond            5.21       0.1689    
+Outlet_Cell_E_Pond            5.22       0.1698    
+Outlet_Cell_E_Pond            5.23       0.1707    
+Outlet_Cell_E_Pond            5.24       0.1716    
+Outlet_Cell_E_Pond            5.25       0.1724    
+Outlet_Cell_E_Pond            5.26       0.1733    
+Outlet_Cell_E_Pond            5.27       0.1741    
+Outlet_Cell_E_Pond            5.28       0.1750    
+Outlet_Cell_E_Pond            5.29       0.1758    
+Outlet_Cell_E_Pond            5.30       0.1766    
+Outlet_Cell_E_Pond            5.31       0.1774    
+Outlet_Cell_E_Pond            5.32       0.1782    
+Outlet_Cell_E_Pond            5.33       0.1790    
+Outlet_Cell_E_Pond            5.34       0.1798    
+Outlet_Cell_E_Pond            5.35       0.1806    
+Outlet_Cell_E_Pond            5.36       0.1814    
+Outlet_Cell_E_Pond            5.37       0.1821    
+Outlet_Cell_E_Pond            5.38       0.1829    
+Outlet_Cell_E_Pond            5.39       0.1836    
+Outlet_Cell_E_Pond            5.40       0.1844    
+Outlet_Cell_E_Pond            5.41       0.1851    
+Outlet_Cell_E_Pond            5.42       0.1859    
+Outlet_Cell_E_Pond            5.43       0.1866    
+Outlet_Cell_E_Pond            5.44       0.1873    
+Outlet_Cell_E_Pond            5.45       0.1880    
+Outlet_Cell_E_Pond            5.46       0.1888    
+Outlet_Cell_E_Pond            5.47       0.1895    
+Outlet_Cell_E_Pond            5.48       0.1902    
+Outlet_Cell_E_Pond            5.49       0.1909    
+Outlet_Cell_E_Pond            5.50       0.1916    
+Outlet_Cell_E_Pond            5.51       1.0000    
+Outlet_Cell_E_Pond            5.52       1.0000    
+Outlet_Cell_E_Pond            5.53       1.0000    
+Outlet_Cell_E_Pond            5.54       1.0000    
+Outlet_Cell_E_Pond            5.55       1.0000    
+Outlet_Cell_E_Pond            5.56       1.0000    
+Outlet_Cell_E_Pond            5.57       1.0000    
+Outlet_Cell_E_Pond            5.58       1.0000    
+Outlet_Cell_E_Pond            5.59       1.0000    
+Outlet_Cell_E_Pond            5.60       1.0000    
+Outlet_Cell_E_Pond            5.61       1.0000    
+Outlet_Cell_E_Pond            5.62       1.0000    
+Outlet_Cell_E_Pond            5.63       1.0000    
+Outlet_Cell_E_Pond            5.64       1.0000    
+Outlet_Cell_E_Pond            5.65       1.0000    
+Outlet_Cell_E_Pond            5.66       1.0000    
+Outlet_Cell_E_Pond            5.67       1.0000    
+Outlet_Cell_E_Pond            5.68       1.0000    
+Outlet_Cell_E_Pond            5.69       1.0000    
+Outlet_Cell_E_Pond            5.70       1.0000    
+Outlet_Cell_E_Pond            5.71       1         
+;
+219mmDia@4.00m&154mmDia@6.00m Rating     0          0         
+219mmDia@4.00m&154mmDia@6.00m            4          0         
+219mmDia@4.00m&154mmDia@6.00m            4.01       0         
+219mmDia@4.00m&154mmDia@6.00m            4.02       0.000402889
+219mmDia@4.00m&154mmDia@6.00m            4.03       0.000850167
+219mmDia@4.00m&154mmDia@6.00m            4.04       0.001488198
+219mmDia@4.00m&154mmDia@6.00m            4.05       0.002294252
+219mmDia@4.00m&154mmDia@6.00m            4.06       0.003265421
+219mmDia@4.00m&154mmDia@6.00m            4.07       0.004383587
+219mmDia@4.00m&154mmDia@6.00m            4.08       0.005636563
+219mmDia@4.00m&154mmDia@6.00m            4.09       0.007017594
+219mmDia@4.00m&154mmDia@6.00m            4.1        0.008521416
+219mmDia@4.00m&154mmDia@6.00m            4.11       0.010126992
+219mmDia@4.00m&154mmDia@6.00m            4.12       0.01184277
+219mmDia@4.00m&154mmDia@6.00m            4.13       0.013643403
+219mmDia@4.00m&154mmDia@6.00m            4.14       0.015544061
+219mmDia@4.00m&154mmDia@6.00m            4.15       0.017514108
+219mmDia@4.00m&154mmDia@6.00m            4.16       0.019542806
+219mmDia@4.00m&154mmDia@6.00m            4.17       0.021619344
+219mmDia@4.00m&154mmDia@6.00m            4.18       0.023772522
+219mmDia@4.00m&154mmDia@6.00m            4.19       0.025915511
+219mmDia@4.00m&154mmDia@6.00m            4.2        0.028120182
+219mmDia@4.00m&154mmDia@6.00m            4.21       0.030335724
+219mmDia@4.00m&154mmDia@6.00m            4.22       0.033278213
+219mmDia@4.00m&154mmDia@6.00m            4.23       0.034751406
+219mmDia@4.00m&154mmDia@6.00m            4.24       0.036164638
+219mmDia@4.00m&154mmDia@6.00m            4.25       0.037524682
+219mmDia@4.00m&154mmDia@6.00m            4.26       0.038837129
+219mmDia@4.00m&154mmDia@6.00m            4.27       0.040106649
+219mmDia@4.00m&154mmDia@6.00m            4.28       0.0413372 
+219mmDia@4.00m&154mmDia@6.00m            4.29       0.042532163
+219mmDia@4.00m&154mmDia@6.00m            4.3        0.043694458
+219mmDia@4.00m&154mmDia@6.00m            4.31       0.044826626
+219mmDia@4.00m&154mmDia@6.00m            4.32       0.045930896
+219mmDia@4.00m&154mmDia@6.00m            4.33       0.047009232
+219mmDia@4.00m&154mmDia@6.00m            4.34       0.048063382
+219mmDia@4.00m&154mmDia@6.00m            4.35       0.049094903
+219mmDia@4.00m&154mmDia@6.00m            4.36       0.050105192
+219mmDia@4.00m&154mmDia@6.00m            4.37       0.051095509
+219mmDia@4.00m&154mmDia@6.00m            4.38       0.052066993
+219mmDia@4.00m&154mmDia@6.00m            4.39       0.05302068
+219mmDia@4.00m&154mmDia@6.00m            4.4        0.053957514
+219mmDia@4.00m&154mmDia@6.00m            4.41       0.054878357
+219mmDia@4.00m&154mmDia@6.00m            4.42       0.055784002
+219mmDia@4.00m&154mmDia@6.00m            4.43       0.056675176
+219mmDia@4.00m&154mmDia@6.00m            4.44       0.057552553
+219mmDia@4.00m&154mmDia@6.00m            4.45       0.058416754
+219mmDia@4.00m&154mmDia@6.00m            4.46       0.059268355
+219mmDia@4.00m&154mmDia@6.00m            4.47       0.060107892
+219mmDia@4.00m&154mmDia@6.00m            4.48       0.060935863
+219mmDia@4.00m&154mmDia@6.00m            4.49       0.061752734
+219mmDia@4.00m&154mmDia@6.00m            4.5        0.06255894
+219mmDia@4.00m&154mmDia@6.00m            4.51       0.063354887
+219mmDia@4.00m&154mmDia@6.00m            4.52       0.064140958
+219mmDia@4.00m&154mmDia@6.00m            4.53       0.064917511
+219mmDia@4.00m&154mmDia@6.00m            4.54       0.065684885
+219mmDia@4.00m&154mmDia@6.00m            4.55       0.066443396
+219mmDia@4.00m&154mmDia@6.00m            4.56       0.067193345
+219mmDia@4.00m&154mmDia@6.00m            4.57       0.067935016
+219mmDia@4.00m&154mmDia@6.00m            4.58       0.068668676
+219mmDia@4.00m&154mmDia@6.00m            4.59       0.069394581
+219mmDia@4.00m&154mmDia@6.00m            4.6        0.070112971
+219mmDia@4.00m&154mmDia@6.00m            4.61       0.070824074
+219mmDia@4.00m&154mmDia@6.00m            4.62       0.071528108
+219mmDia@4.00m&154mmDia@6.00m            4.63       0.072225279
+219mmDia@4.00m&154mmDia@6.00m            4.64       0.072915785
+219mmDia@4.00m&154mmDia@6.00m            4.65       0.073599813
+219mmDia@4.00m&154mmDia@6.00m            4.66       0.074277542
+219mmDia@4.00m&154mmDia@6.00m            4.67       0.074949143
+219mmDia@4.00m&154mmDia@6.00m            4.68       0.075614779
+219mmDia@4.00m&154mmDia@6.00m            4.69       0.076274606
+219mmDia@4.00m&154mmDia@6.00m            4.7        0.076928774
+219mmDia@4.00m&154mmDia@6.00m            4.71       0.077577427
+219mmDia@4.00m&154mmDia@6.00m            4.72       0.0782207 
+219mmDia@4.00m&154mmDia@6.00m            4.73       0.078858726
+219mmDia@4.00m&154mmDia@6.00m            4.74       0.079491631
+219mmDia@4.00m&154mmDia@6.00m            4.75       0.080119537
+219mmDia@4.00m&154mmDia@6.00m            4.76       0.08074256
+219mmDia@4.00m&154mmDia@6.00m            4.77       0.081360812
+219mmDia@4.00m&154mmDia@6.00m            4.78       0.081974401
+219mmDia@4.00m&154mmDia@6.00m            4.79       0.082583432
+219mmDia@4.00m&154mmDia@6.00m            4.8        0.083188004
+219mmDia@4.00m&154mmDia@6.00m            4.81       0.083788214
+219mmDia@4.00m&154mmDia@6.00m            4.82       0.084384155
+219mmDia@4.00m&154mmDia@6.00m            4.83       0.084975916
+219mmDia@4.00m&154mmDia@6.00m            4.84       0.085563585
+219mmDia@4.00m&154mmDia@6.00m            4.85       0.086147245
+219mmDia@4.00m&154mmDia@6.00m            4.86       0.086726978
+219mmDia@4.00m&154mmDia@6.00m            4.87       0.08730286
+219mmDia@4.00m&154mmDia@6.00m            4.88       0.087874969
+219mmDia@4.00m&154mmDia@6.00m            4.89       0.088443377
+219mmDia@4.00m&154mmDia@6.00m            4.9        0.089008155
+219mmDia@4.00m&154mmDia@6.00m            4.91       0.089569372
+219mmDia@4.00m&154mmDia@6.00m            4.92       0.090127095
+219mmDia@4.00m&154mmDia@6.00m            4.93       0.090681387
+219mmDia@4.00m&154mmDia@6.00m            4.94       0.091232312
+219mmDia@4.00m&154mmDia@6.00m            4.95       0.09177993
+219mmDia@4.00m&154mmDia@6.00m            4.96       0.0923243 
+219mmDia@4.00m&154mmDia@6.00m            4.97       0.092865478
+219mmDia@4.00m&154mmDia@6.00m            4.98       0.093403522
+219mmDia@4.00m&154mmDia@6.00m            4.99       0.093938483
+219mmDia@4.00m&154mmDia@6.00m            5          0.094470415
+219mmDia@4.00m&154mmDia@6.00m            5.01       0.094999369
+219mmDia@4.00m&154mmDia@6.00m            5.02       0.095525394
+219mmDia@4.00m&154mmDia@6.00m            5.03       0.096048538
+219mmDia@4.00m&154mmDia@6.00m            5.04       0.096568848
+219mmDia@4.00m&154mmDia@6.00m            5.05       0.09708637
+219mmDia@4.00m&154mmDia@6.00m            5.06       0.097601147
+219mmDia@4.00m&154mmDia@6.00m            5.07       0.098113224
+219mmDia@4.00m&154mmDia@6.00m            5.08       0.098622642
+219mmDia@4.00m&154mmDia@6.00m            5.09       0.099129442
+219mmDia@4.00m&154mmDia@6.00m            5.1        0.099633664
+219mmDia@4.00m&154mmDia@6.00m            5.11       0.100135348
+219mmDia@4.00m&154mmDia@6.00m            5.12       0.10063453
+219mmDia@4.00m&154mmDia@6.00m            5.13       0.101131248
+219mmDia@4.00m&154mmDia@6.00m            5.14       0.101625539
+219mmDia@4.00m&154mmDia@6.00m            5.15       0.102117437
+219mmDia@4.00m&154mmDia@6.00m            5.16       0.102606977
+219mmDia@4.00m&154mmDia@6.00m            5.17       0.103094192
+219mmDia@4.00m&154mmDia@6.00m            5.18       0.103579116
+219mmDia@4.00m&154mmDia@6.00m            5.19       0.10406178
+219mmDia@4.00m&154mmDia@6.00m            5.2        0.104542215
+219mmDia@4.00m&154mmDia@6.00m            5.21       0.105020453
+219mmDia@4.00m&154mmDia@6.00m            5.22       0.105496523
+219mmDia@4.00m&154mmDia@6.00m            5.23       0.105970454
+219mmDia@4.00m&154mmDia@6.00m            5.24       0.106442275
+219mmDia@4.00m&154mmDia@6.00m            5.25       0.106912013
+219mmDia@4.00m&154mmDia@6.00m            5.26       0.107379697
+219mmDia@4.00m&154mmDia@6.00m            5.27       0.107845353
+219mmDia@4.00m&154mmDia@6.00m            5.28       0.108309006
+219mmDia@4.00m&154mmDia@6.00m            5.29       0.108770684
+219mmDia@4.00m&154mmDia@6.00m            5.3        0.10923041
+219mmDia@4.00m&154mmDia@6.00m            5.31       0.109688209
+219mmDia@4.00m&154mmDia@6.00m            5.32       0.110144105
+219mmDia@4.00m&154mmDia@6.00m            5.33       0.110598123
+219mmDia@4.00m&154mmDia@6.00m            5.34       0.111050284
+219mmDia@4.00m&154mmDia@6.00m            5.35       0.111500611
+219mmDia@4.00m&154mmDia@6.00m            5.36       0.111949127
+219mmDia@4.00m&154mmDia@6.00m            5.37       0.112395853
+219mmDia@4.00m&154mmDia@6.00m            5.38       0.112840811
+219mmDia@4.00m&154mmDia@6.00m            5.39       0.113284021
+219mmDia@4.00m&154mmDia@6.00m            5.4        0.113725503
+219mmDia@4.00m&154mmDia@6.00m            5.41       0.114165279
+219mmDia@4.00m&154mmDia@6.00m            5.42       0.114603367
+219mmDia@4.00m&154mmDia@6.00m            5.43       0.115039786
+219mmDia@4.00m&154mmDia@6.00m            5.44       0.115474556
+219mmDia@4.00m&154mmDia@6.00m            5.45       0.115907696
+219mmDia@4.00m&154mmDia@6.00m            5.46       0.116339223
+219mmDia@4.00m&154mmDia@6.00m            5.47       0.116769155
+219mmDia@4.00m&154mmDia@6.00m            5.48       0.11719751
+219mmDia@4.00m&154mmDia@6.00m            5.49       0.117624304
+219mmDia@4.00m&154mmDia@6.00m            5.5        0.118049556
+219mmDia@4.00m&154mmDia@6.00m            5.51       0.118473282
+219mmDia@4.00m&154mmDia@6.00m            5.52       0.118895497
+219mmDia@4.00m&154mmDia@6.00m            5.53       0.119316219
+219mmDia@4.00m&154mmDia@6.00m            5.54       0.119735462
+219mmDia@4.00m&154mmDia@6.00m            5.55       0.120153242
+219mmDia@4.00m&154mmDia@6.00m            5.56       0.120569575
+219mmDia@4.00m&154mmDia@6.00m            5.57       0.120984475
+219mmDia@4.00m&154mmDia@6.00m            5.58       0.121397957
+219mmDia@4.00m&154mmDia@6.00m            5.59       0.121810035
+219mmDia@4.00m&154mmDia@6.00m            5.6        0.122220724
+219mmDia@4.00m&154mmDia@6.00m            5.61       0.122630038
+219mmDia@4.00m&154mmDia@6.00m            5.62       0.12303799
+219mmDia@4.00m&154mmDia@6.00m            5.63       0.123444594
+219mmDia@4.00m&154mmDia@6.00m            5.64       0.123849863
+219mmDia@4.00m&154mmDia@6.00m            5.65       0.12425381
+219mmDia@4.00m&154mmDia@6.00m            5.66       0.124656448
+219mmDia@4.00m&154mmDia@6.00m            5.67       0.12505779
+219mmDia@4.00m&154mmDia@6.00m            5.68       0.125457848
+219mmDia@4.00m&154mmDia@6.00m            5.69       0.125856634
+219mmDia@4.00m&154mmDia@6.00m            5.7        0.126254161
+219mmDia@4.00m&154mmDia@6.00m            5.71       0.12665044
+219mmDia@4.00m&154mmDia@6.00m            5.72       0.127045483
+219mmDia@4.00m&154mmDia@6.00m            5.73       0.127439301
+219mmDia@4.00m&154mmDia@6.00m            5.74       0.127831906
+219mmDia@4.00m&154mmDia@6.00m            5.75       0.128223309
+219mmDia@4.00m&154mmDia@6.00m            5.76       0.128613521
+219mmDia@4.00m&154mmDia@6.00m            5.77       0.129002552
+219mmDia@4.00m&154mmDia@6.00m            5.78       0.129390414
+219mmDia@4.00m&154mmDia@6.00m            5.79       0.129777117
+219mmDia@4.00m&154mmDia@6.00m            5.8        0.130162671
+219mmDia@4.00m&154mmDia@6.00m            5.81       0.130547086
+219mmDia@4.00m&154mmDia@6.00m            5.82       0.130930372
+219mmDia@4.00m&154mmDia@6.00m            5.83       0.13131254
+219mmDia@4.00m&154mmDia@6.00m            5.84       0.131693598
+219mmDia@4.00m&154mmDia@6.00m            5.85       0.132073558
+219mmDia@4.00m&154mmDia@6.00m            5.86       0.132452427
+219mmDia@4.00m&154mmDia@6.00m            5.87       0.132830216
+219mmDia@4.00m&154mmDia@6.00m            5.88       0.133206933
+219mmDia@4.00m&154mmDia@6.00m            5.89       0.133582588
+219mmDia@4.00m&154mmDia@6.00m            5.9        0.133957189
+219mmDia@4.00m&154mmDia@6.00m            5.91       0.134330746
+219mmDia@4.00m&154mmDia@6.00m            5.92       0.134703267
+219mmDia@4.00m&154mmDia@6.00m            5.93       0.13507476
+219mmDia@4.00m&154mmDia@6.00m            5.94       0.135445235
+219mmDia@4.00m&154mmDia@6.00m            5.95       0.135814698
+219mmDia@4.00m&154mmDia@6.00m            5.96       0.13618316
+219mmDia@4.00m&154mmDia@6.00m            5.97       0.136550627
+219mmDia@4.00m&154mmDia@6.00m            5.98       0.136917109
+219mmDia@4.00m&154mmDia@6.00m            5.99       0.137282611
+219mmDia@4.00m&154mmDia@6.00m            6          0.137647144
+219mmDia@4.00m&154mmDia@6.00m            6.01       0.13808547
+219mmDia@4.00m&154mmDia@6.00m            6.02       0.138687858
+219mmDia@4.00m&154mmDia@6.00m            6.03       0.139439314
+219mmDia@4.00m&154mmDia@6.00m            6.04       0.14031427
+219mmDia@4.00m&154mmDia@6.00m            6.05       0.141329061
+219mmDia@4.00m&154mmDia@6.00m            6.06       0.14245536
+219mmDia@4.00m&154mmDia@6.00m            6.07       0.143676249
+219mmDia@4.00m&154mmDia@6.00m            6.08       0.14499215
+219mmDia@4.00m&154mmDia@6.00m            6.09       0.146389953
+219mmDia@4.00m&154mmDia@6.00m            6.1        0.147861795
+219mmDia@4.00m&154mmDia@6.00m            6.11       0.149400412
+219mmDia@4.00m&154mmDia@6.00m            6.12       0.150968705
+219mmDia@4.00m&154mmDia@6.00m            6.13       0.152581952
+219mmDia@4.00m&154mmDia@6.00m            6.14       0.154233251
+219mmDia@4.00m&154mmDia@6.00m            6.15       0.155872982
+219mmDia@4.00m&154mmDia@6.00m            6.16       0.157615342
+219mmDia@4.00m&154mmDia@6.00m            6.17       0.158799186
+219mmDia@4.00m&154mmDia@6.00m            6.18       0.159938389
+219mmDia@4.00m&154mmDia@6.00m            6.19       0.161039202
+219mmDia@4.00m&154mmDia@6.00m            6.2        0.162106522
+219mmDia@4.00m&154mmDia@6.00m            6.21       0.163144264
+219mmDia@4.00m&154mmDia@6.00m            6.22       0.164155625
+219mmDia@4.00m&154mmDia@6.00m            6.23       0.165143248
+219mmDia@4.00m&154mmDia@6.00m            6.24       0.166109354
+219mmDia@4.00m&154mmDia@6.00m            6.25       0.167055827
+219mmDia@4.00m&154mmDia@6.00m            6.26       0.167984284
+219mmDia@4.00m&154mmDia@6.00m            6.27       0.168896123
+219mmDia@4.00m&154mmDia@6.00m            6.28       0.169792567
+219mmDia@4.00m&154mmDia@6.00m            6.29       0.170674686
+219mmDia@4.00m&154mmDia@6.00m            6.3        0.17154343
+219mmDia@4.00m&154mmDia@6.00m            6.31       0.172399643
+219mmDia@4.00m&154mmDia@6.00m            6.32       0.173244079
+219mmDia@4.00m&154mmDia@6.00m            6.33       0.174077416
+219mmDia@4.00m&154mmDia@6.00m            6.34       0.174900268
+219mmDia@4.00m&154mmDia@6.00m            6.35       0.175713188
+219mmDia@4.00m&154mmDia@6.00m            6.36       0.176516682
+219mmDia@4.00m&154mmDia@6.00m            6.37       0.177311211
+219mmDia@4.00m&154mmDia@6.00m            6.38       0.178097198
+219mmDia@4.00m&154mmDia@6.00m            6.39       0.17887503
+219mmDia@4.00m&154mmDia@6.00m            6.4        0.179645066
+219mmDia@4.00m&154mmDia@6.00m            6.41       0.180407637
+219mmDia@4.00m&154mmDia@6.00m            6.42       0.181163048
+219mmDia@4.00m&154mmDia@6.00m            6.43       0.181911584
+219mmDia@4.00m&154mmDia@6.00m            6.44       0.18265351
+219mmDia@4.00m&154mmDia@6.00m            6.45       0.183389073
+219mmDia@4.00m&154mmDia@6.00m            6.46       0.184118502
+219mmDia@4.00m&154mmDia@6.00m            6.47       0.184842015
+219mmDia@4.00m&154mmDia@6.00m            6.48       0.185559813
+219mmDia@4.00m&154mmDia@6.00m            6.49       0.186272088
+219mmDia@4.00m&154mmDia@6.00m            6.5        0.186979017
+219mmDia@4.00m&154mmDia@6.00m            7          1.1869    
+;
+100mmDia@4.00m&361mmDia@6.00m Rating     4          0         
+100mmDia@4.00m&361mmDia@6.00m            4.01       6.9627E-05
+100mmDia@4.00m&361mmDia@6.00m            4.02       0.000252524
+100mmDia@4.00m&361mmDia@6.00m            4.03       0.000549669
+100mmDia@4.00m&361mmDia@6.00m            4.04       0.000942974
+100mmDia@4.00m&361mmDia@6.00m            4.05       0.001417464
+100mmDia@4.00m&361mmDia@6.00m            4.06       0.001958645
+100mmDia@4.00m&361mmDia@6.00m            4.07       0.002559682
+100mmDia@4.00m&361mmDia@6.00m            4.08       0.003197523
+100mmDia@4.00m&361mmDia@6.00m            4.09       0.00386249
+100mmDia@4.00m&361mmDia@6.00m            4.1        0.004667407
+100mmDia@4.00m&361mmDia@6.00m            4.11       0.005112888
+100mmDia@4.00m&361mmDia@6.00m            4.12       0.00552255
+100mmDia@4.00m&361mmDia@6.00m            4.13       0.005903854
+100mmDia@4.00m&361mmDia@6.00m            4.14       0.006261983
+100mmDia@4.00m&361mmDia@6.00m            4.15       0.00660071
+100mmDia@4.00m&361mmDia@6.00m            4.16       0.006922883
+100mmDia@4.00m&361mmDia@6.00m            4.17       0.007230715
+100mmDia@4.00m&361mmDia@6.00m            4.18       0.007525967
+100mmDia@4.00m&361mmDia@6.00m            4.19       0.007810065
+100mmDia@4.00m&361mmDia@6.00m            4.2        0.008084185
+100mmDia@4.00m&361mmDia@6.00m            4.21       0.008349311
+100mmDia@4.00m&361mmDia@6.00m            4.22       0.008606273
+100mmDia@4.00m&361mmDia@6.00m            4.23       0.008855781
+100mmDia@4.00m&361mmDia@6.00m            4.24       0.00909845
+100mmDia@4.00m&361mmDia@6.00m            4.25       0.009334813
+100mmDia@4.00m&361mmDia@6.00m            4.26       0.009565337
+100mmDia@4.00m&361mmDia@6.00m            4.27       0.009790435
+100mmDia@4.00m&361mmDia@6.00m            4.28       0.010010472
+100mmDia@4.00m&361mmDia@6.00m            4.29       0.010225776
+100mmDia@4.00m&361mmDia@6.00m            4.3        0.010436638
+100mmDia@4.00m&361mmDia@6.00m            4.31       0.010643325
+100mmDia@4.00m&361mmDia@6.00m            4.32       0.010846073
+100mmDia@4.00m&361mmDia@6.00m            4.33       0.0110451 
+100mmDia@4.00m&361mmDia@6.00m            4.34       0.011240604
+100mmDia@4.00m&361mmDia@6.00m            4.35       0.011432765
+100mmDia@4.00m&361mmDia@6.00m            4.36       0.011621749
+100mmDia@4.00m&361mmDia@6.00m            4.37       0.011807708
+100mmDia@4.00m&361mmDia@6.00m            4.38       0.011990785
+100mmDia@4.00m&361mmDia@6.00m            4.39       0.012171107
+100mmDia@4.00m&361mmDia@6.00m            4.4        0.012348797
+100mmDia@4.00m&361mmDia@6.00m            4.41       0.012523966
+100mmDia@4.00m&361mmDia@6.00m            4.42       0.012696719
+100mmDia@4.00m&361mmDia@6.00m            4.43       0.012867152
+100mmDia@4.00m&361mmDia@6.00m            4.44       0.013035357
+100mmDia@4.00m&361mmDia@6.00m            4.45       0.013201419
+100mmDia@4.00m&361mmDia@6.00m            4.46       0.013365418
+100mmDia@4.00m&361mmDia@6.00m            4.47       0.013527429
+100mmDia@4.00m&361mmDia@6.00m            4.48       0.013687523
+100mmDia@4.00m&361mmDia@6.00m            4.49       0.013845765
+100mmDia@4.00m&361mmDia@6.00m            4.5        0.01400222
+100mmDia@4.00m&361mmDia@6.00m            4.51       0.014156945
+100mmDia@4.00m&361mmDia@6.00m            4.52       0.014309998
+100mmDia@4.00m&361mmDia@6.00m            4.53       0.01446143
+100mmDia@4.00m&361mmDia@6.00m            4.54       0.014611294
+100mmDia@4.00m&361mmDia@6.00m            4.55       0.014759636
+100mmDia@4.00m&361mmDia@6.00m            4.56       0.014906501
+100mmDia@4.00m&361mmDia@6.00m            4.57       0.015051934
+100mmDia@4.00m&361mmDia@6.00m            4.58       0.015195975
+100mmDia@4.00m&361mmDia@6.00m            4.59       0.015338663
+100mmDia@4.00m&361mmDia@6.00m            4.6        0.015480036
+100mmDia@4.00m&361mmDia@6.00m            4.61       0.01562013
+100mmDia@4.00m&361mmDia@6.00m            4.62       0.015758978
+100mmDia@4.00m&361mmDia@6.00m            4.63       0.015896614
+100mmDia@4.00m&361mmDia@6.00m            4.64       0.016033068
+100mmDia@4.00m&361mmDia@6.00m            4.65       0.016168371
+100mmDia@4.00m&361mmDia@6.00m            4.66       0.01630255
+100mmDia@4.00m&361mmDia@6.00m            4.67       0.016435635
+100mmDia@4.00m&361mmDia@6.00m            4.68       0.01656765
+100mmDia@4.00m&361mmDia@6.00m            4.69       0.016698621
+100mmDia@4.00m&361mmDia@6.00m            4.7        0.016828574
+100mmDia@4.00m&361mmDia@6.00m            4.71       0.01695753
+100mmDia@4.00m&361mmDia@6.00m            4.72       0.017085513
+100mmDia@4.00m&361mmDia@6.00m            4.73       0.017212545
+100mmDia@4.00m&361mmDia@6.00m            4.74       0.017338646
+100mmDia@4.00m&361mmDia@6.00m            4.75       0.017463836
+100mmDia@4.00m&361mmDia@6.00m            4.76       0.017588136
+100mmDia@4.00m&361mmDia@6.00m            4.77       0.017711563
+100mmDia@4.00m&361mmDia@6.00m            4.78       0.017834136
+100mmDia@4.00m&361mmDia@6.00m            4.79       0.017955872
+100mmDia@4.00m&361mmDia@6.00m            4.8        0.018076788
+100mmDia@4.00m&361mmDia@6.00m            4.81       0.018196901
+100mmDia@4.00m&361mmDia@6.00m            4.82       0.018316226
+100mmDia@4.00m&361mmDia@6.00m            4.83       0.018434779
+100mmDia@4.00m&361mmDia@6.00m            4.84       0.018552574
+100mmDia@4.00m&361mmDia@6.00m            4.85       0.018669626
+100mmDia@4.00m&361mmDia@6.00m            4.86       0.018785949
+100mmDia@4.00m&361mmDia@6.00m            4.87       0.018901556
+100mmDia@4.00m&361mmDia@6.00m            4.88       0.01901646
+100mmDia@4.00m&361mmDia@6.00m            4.89       0.019130674
+100mmDia@4.00m&361mmDia@6.00m            4.9        0.01924421
+100mmDia@4.00m&361mmDia@6.00m            4.91       0.019357081
+100mmDia@4.00m&361mmDia@6.00m            4.92       0.019469297
+100mmDia@4.00m&361mmDia@6.00m            4.93       0.019580869
+100mmDia@4.00m&361mmDia@6.00m            4.94       0.01969181
+100mmDia@4.00m&361mmDia@6.00m            4.95       0.019802129
+100mmDia@4.00m&361mmDia@6.00m            4.96       0.019911837
+100mmDia@4.00m&361mmDia@6.00m            4.97       0.020020944
+100mmDia@4.00m&361mmDia@6.00m            4.98       0.020129459
+100mmDia@4.00m&361mmDia@6.00m            4.99       0.020237393
+100mmDia@4.00m&361mmDia@6.00m            5          0.020344754
+100mmDia@4.00m&361mmDia@6.00m            5.01       0.020451551
+100mmDia@4.00m&361mmDia@6.00m            5.02       0.020557794
+100mmDia@4.00m&361mmDia@6.00m            5.03       0.02066349
+100mmDia@4.00m&361mmDia@6.00m            5.04       0.020768648
+100mmDia@4.00m&361mmDia@6.00m            5.05       0.020873277
+100mmDia@4.00m&361mmDia@6.00m            5.06       0.020977384
+100mmDia@4.00m&361mmDia@6.00m            5.07       0.021080976
+100mmDia@4.00m&361mmDia@6.00m            5.08       0.021184062
+100mmDia@4.00m&361mmDia@6.00m            5.09       0.021286649
+100mmDia@4.00m&361mmDia@6.00m            5.1        0.021388744
+100mmDia@4.00m&361mmDia@6.00m            5.11       0.021490354
+100mmDia@4.00m&361mmDia@6.00m            5.12       0.021591485
+100mmDia@4.00m&361mmDia@6.00m            5.13       0.021692146
+100mmDia@4.00m&361mmDia@6.00m            5.14       0.021792341
+100mmDia@4.00m&361mmDia@6.00m            5.15       0.021892077
+100mmDia@4.00m&361mmDia@6.00m            5.16       0.021991362
+100mmDia@4.00m&361mmDia@6.00m            5.17       0.0220902 
+100mmDia@4.00m&361mmDia@6.00m            5.18       0.022188598
+100mmDia@4.00m&361mmDia@6.00m            5.19       0.022286561
+100mmDia@4.00m&361mmDia@6.00m            5.2        0.022384096
+100mmDia@4.00m&361mmDia@6.00m            5.21       0.022481207
+100mmDia@4.00m&361mmDia@6.00m            5.22       0.022577901
+100mmDia@4.00m&361mmDia@6.00m            5.23       0.022674182
+100mmDia@4.00m&361mmDia@6.00m            5.24       0.022770057
+100mmDia@4.00m&361mmDia@6.00m            5.25       0.022865529
+100mmDia@4.00m&361mmDia@6.00m            5.26       0.022960605
+100mmDia@4.00m&361mmDia@6.00m            5.27       0.023055288
+100mmDia@4.00m&361mmDia@6.00m            5.28       0.023149584
+100mmDia@4.00m&361mmDia@6.00m            5.29       0.023243497
+100mmDia@4.00m&361mmDia@6.00m            5.3        0.023337033
+100mmDia@4.00m&361mmDia@6.00m            5.31       0.023430195
+100mmDia@4.00m&361mmDia@6.00m            5.32       0.023522988
+100mmDia@4.00m&361mmDia@6.00m            5.33       0.023615417
+100mmDia@4.00m&361mmDia@6.00m            5.34       0.023707485
+100mmDia@4.00m&361mmDia@6.00m            5.35       0.023799197
+100mmDia@4.00m&361mmDia@6.00m            5.36       0.023890557
+100mmDia@4.00m&361mmDia@6.00m            5.37       0.023981569
+100mmDia@4.00m&361mmDia@6.00m            5.38       0.024072237
+100mmDia@4.00m&361mmDia@6.00m            5.39       0.024162565
+100mmDia@4.00m&361mmDia@6.00m            5.4        0.024252556
+100mmDia@4.00m&361mmDia@6.00m            5.41       0.024342215
+100mmDia@4.00m&361mmDia@6.00m            5.42       0.024431544
+100mmDia@4.00m&361mmDia@6.00m            5.43       0.024520548
+100mmDia@4.00m&361mmDia@6.00m            5.44       0.02460923
+100mmDia@4.00m&361mmDia@6.00m            5.45       0.024697594
+100mmDia@4.00m&361mmDia@6.00m            5.46       0.024785643
+100mmDia@4.00m&361mmDia@6.00m            5.47       0.02487338
+100mmDia@4.00m&361mmDia@6.00m            5.48       0.024960809
+100mmDia@4.00m&361mmDia@6.00m            5.49       0.025047932
+100mmDia@4.00m&361mmDia@6.00m            5.5        0.025134754
+100mmDia@4.00m&361mmDia@6.00m            5.51       0.025221276
+100mmDia@4.00m&361mmDia@6.00m            5.52       0.025307503
+100mmDia@4.00m&361mmDia@6.00m            5.53       0.025393437
+100mmDia@4.00m&361mmDia@6.00m            5.54       0.025479081
+100mmDia@4.00m&361mmDia@6.00m            5.55       0.025564439
+100mmDia@4.00m&361mmDia@6.00m            5.56       0.025649512
+100mmDia@4.00m&361mmDia@6.00m            5.57       0.025734304
+100mmDia@4.00m&361mmDia@6.00m            5.58       0.025818818
+100mmDia@4.00m&361mmDia@6.00m            5.59       0.025903055
+100mmDia@4.00m&361mmDia@6.00m            5.6        0.02598702
+100mmDia@4.00m&361mmDia@6.00m            5.61       0.026070714
+100mmDia@4.00m&361mmDia@6.00m            5.62       0.026154141
+100mmDia@4.00m&361mmDia@6.00m            5.63       0.026237302
+100mmDia@4.00m&361mmDia@6.00m            5.64       0.026320201
+100mmDia@4.00m&361mmDia@6.00m            5.65       0.026402839
+100mmDia@4.00m&361mmDia@6.00m            5.66       0.026485219
+100mmDia@4.00m&361mmDia@6.00m            5.67       0.026567344
+100mmDia@4.00m&361mmDia@6.00m            5.68       0.026649216
+100mmDia@4.00m&361mmDia@6.00m            5.69       0.026730837
+100mmDia@4.00m&361mmDia@6.00m            5.7        0.02681221
+100mmDia@4.00m&361mmDia@6.00m            5.71       0.026893336
+100mmDia@4.00m&361mmDia@6.00m            5.72       0.026974218
+100mmDia@4.00m&361mmDia@6.00m            5.73       0.027054859
+100mmDia@4.00m&361mmDia@6.00m            5.74       0.02713526
+100mmDia@4.00m&361mmDia@6.00m            5.75       0.027215423
+100mmDia@4.00m&361mmDia@6.00m            5.76       0.027295351
+100mmDia@4.00m&361mmDia@6.00m            5.77       0.027375046
+100mmDia@4.00m&361mmDia@6.00m            5.78       0.027454509
+100mmDia@4.00m&361mmDia@6.00m            5.79       0.027533743
+100mmDia@4.00m&361mmDia@6.00m            5.8        0.02761275
+100mmDia@4.00m&361mmDia@6.00m            5.81       0.027691531
+100mmDia@4.00m&361mmDia@6.00m            5.82       0.027770089
+100mmDia@4.00m&361mmDia@6.00m            5.83       0.027848425
+100mmDia@4.00m&361mmDia@6.00m            5.84       0.027926541
+100mmDia@4.00m&361mmDia@6.00m            5.85       0.02800444
+100mmDia@4.00m&361mmDia@6.00m            5.86       0.028082122
+100mmDia@4.00m&361mmDia@6.00m            5.87       0.02815959
+100mmDia@4.00m&361mmDia@6.00m            5.88       0.028236846
+100mmDia@4.00m&361mmDia@6.00m            5.89       0.02831389
+100mmDia@4.00m&361mmDia@6.00m            5.9        0.028390726
+100mmDia@4.00m&361mmDia@6.00m            5.91       0.028467354
+100mmDia@4.00m&361mmDia@6.00m            5.92       0.028543777
+100mmDia@4.00m&361mmDia@6.00m            5.93       0.028619995
+100mmDia@4.00m&361mmDia@6.00m            5.94       0.028696011
+100mmDia@4.00m&361mmDia@6.00m            5.95       0.028771827
+100mmDia@4.00m&361mmDia@6.00m            5.96       0.028847443
+100mmDia@4.00m&361mmDia@6.00m            5.97       0.028922861
+100mmDia@4.00m&361mmDia@6.00m            5.98       0.028998083
+100mmDia@4.00m&361mmDia@6.00m            5.99       0.02907311
+100mmDia@4.00m&361mmDia@6.00m            6          0.029147945
+100mmDia@4.00m&361mmDia@6.00m            6.01       0.0292756 
+100mmDia@4.00m&361mmDia@6.00m            6.02       0.029717862
+100mmDia@4.00m&361mmDia@6.00m            6.03       0.030503656
+100mmDia@4.00m&361mmDia@6.00m            6.04       0.031320426
+100mmDia@4.00m&361mmDia@6.00m            6.05       0.032555613
+100mmDia@4.00m&361mmDia@6.00m            6.06       0.033863757
+100mmDia@4.00m&361mmDia@6.00m            6.07       0.035536346
+100mmDia@4.00m&361mmDia@6.00m            6.08       0.037277614
+100mmDia@4.00m&361mmDia@6.00m            6.09       0.039357085
+100mmDia@4.00m&361mmDia@6.00m            6.1        0.041527817
+100mmDia@4.00m&361mmDia@6.00m            6.11       0.043895657
+100mmDia@4.00m&361mmDia@6.00m            6.12       0.046526772
+100mmDia@4.00m&361mmDia@6.00m            6.13       0.049239239
+100mmDia@4.00m&361mmDia@6.00m            6.14       0.052202178
+100mmDia@4.00m&361mmDia@6.00m            6.15       0.055240483
+100mmDia@4.00m&361mmDia@6.00m            6.16       0.058502818
+100mmDia@4.00m&361mmDia@6.00m            6.17       0.061853833
+100mmDia@4.00m&361mmDia@6.00m            6.18       0.065385042
+100mmDia@4.00m&361mmDia@6.00m            6.19       0.068975672
+100mmDia@4.00m&361mmDia@6.00m            6.2        0.072740562
+100mmDia@4.00m&361mmDia@6.00m            6.21       0.076612356
+100mmDia@4.00m&361mmDia@6.00m            6.22       0.080666523
+100mmDia@4.00m&361mmDia@6.00m            6.23       0.08473315
+100mmDia@4.00m&361mmDia@6.00m            6.24       0.088978746
+100mmDia@4.00m&361mmDia@6.00m            6.25       0.093206459
+100mmDia@4.00m&361mmDia@6.00m            6.26       0.09761017
+100mmDia@4.00m&361mmDia@6.00m            6.27       0.101965049
+100mmDia@4.00m&361mmDia@6.00m            6.28       0.106493271
+100mmDia@4.00m&361mmDia@6.00m            6.29       0.111208227
+100mmDia@4.00m&361mmDia@6.00m            6.3        0.115700951
+100mmDia@4.00m&361mmDia@6.00m            6.31       0.120363434
+100mmDia@4.00m&361mmDia@6.00m            6.32       0.12489785
+100mmDia@4.00m&361mmDia@6.00m            6.33       0.129762814
+100mmDia@4.00m&361mmDia@6.00m            6.34       0.13431175
+100mmDia@4.00m&361mmDia@6.00m            6.35       0.139203578
+100mmDia@4.00m&361mmDia@6.00m            6.36       0.143732131
+100mmDia@4.00m&361mmDia@6.00m            6.37       0.150209026
+100mmDia@4.00m&361mmDia@6.00m            6.38       0.153361733
+100mmDia@4.00m&361mmDia@6.00m            6.39       0.156437915
+100mmDia@4.00m&361mmDia@6.00m            6.4        0.15944298
+100mmDia@4.00m&361mmDia@6.00m            6.41       0.162381729
+100mmDia@4.00m&361mmDia@6.00m            6.42       0.165258442
+100mmDia@4.00m&361mmDia@6.00m            6.43       0.168076959
+100mmDia@4.00m&361mmDia@6.00m            6.44       0.170840739
+100mmDia@4.00m&361mmDia@6.00m            6.45       0.173552909
+100mmDia@4.00m&361mmDia@6.00m            6.46       0.17621631
+100mmDia@4.00m&361mmDia@6.00m            6.47       0.178833531
+100mmDia@4.00m&361mmDia@6.00m            6.48       0.181406937
+100mmDia@4.00m&361mmDia@6.00m            6.49       0.183938701
+100mmDia@4.00m&361mmDia@6.00m            6.5        0.186430819
+100mmDia@4.00m&361mmDia@6.00m            7.0        1.86430819
+;
+;Pond Forebays Combined
+Cell_E_FB        Storage    0          3208.0566 
+Cell_E_FB                   0.5        4230.7408 
+Cell_E_FB                   1          5331.9962 
+Cell_E_FB                   1.5        6511.8117 
+Cell_E_FB                   2          7770.1823 
+Cell_E_FB                   2.5        9107.1062 
+Cell_E_FB                   3          10522.5735
+Cell_E_FB                   3.5        12016.6010
+Cell_E_FB                   4          13698.6424
+Cell_E_FB                   4.5        15241.9351
+Cell_E_FB                   5          16137.8687
+Cell_E_FB                   5.5        17050.5045
+Cell_E_FB                   6          17979.8126
+Cell_E_FB                   6.5        18994.72  
+;
+;Pond Area
+Cell_E_Pond      Storage    0          12765.51  
+Cell_E_Pond                 0.5        14249.58  
+Cell_E_Pond                 1          16027.73  
+Cell_E_Pond                 1.5        17849.31  
+Cell_E_Pond                 2          19701.51  
+Cell_E_Pond                 2.5        21594.74  
+Cell_E_Pond                 3          23534.25  
+Cell_E_Pond                 3.5        25576.34  
+Cell_E_Pond                 4          27707.98  
+Cell_E_Pond                 4.5        29512.27  
+Cell_E_Pond                 5          30828.56  
+Cell_E_Pond                 5.5        32167.43  
+Cell_E_Pond                 6          33528.92  
+Cell_E_Pond                 6.5        34844.86  
+;
+WETLAND          Storage    0.00       35.64     
+WETLAND                     0.50       532.88    
+WETLAND                     1.00       1491.18   
+WETLAND                     1.50       3189.42   
+WETLAND                     2.00       5473.38   
+WETLAND                     2.09       5910.05   
+WETLAND                     2.50       7952.95   
+WETLAND                     2.70       8675.39   
+WETLAND                     3.20       10535.37  
+WETLAND                     3.70       12471.81  
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+;Based on City of Calgary IDF
+100YR24HR                   0:05       1.094     
+100YR24HR                   0:10       1.103     
+100YR24HR                   0:15       1.113     
+100YR24HR                   0:20       1.122     
+100YR24HR                   0:25       1.132     
+100YR24HR                   0:30       1.142     
+100YR24HR                   0:35       1.153     
+100YR24HR                   0:40       1.163     
+100YR24HR                   0:45       1.174     
+100YR24HR                   0:50       1.185     
+100YR24HR                   0:55       1.196     
+100YR24HR                   1:00       1.208     
+100YR24HR                   1:05       1.220     
+100YR24HR                   1:10       1.232     
+100YR24HR                   1:15       1.244     
+100YR24HR                   1:20       1.257     
+100YR24HR                   1:25       1.270     
+100YR24HR                   1:30       1.283     
+100YR24HR                   1:35       1.297     
+100YR24HR                   1:40       1.311     
+100YR24HR                   1:45       1.325     
+100YR24HR                   1:50       1.340     
+100YR24HR                   1:55       1.355     
+100YR24HR                   2:00       1.371     
+100YR24HR                   2:05       1.387     
+100YR24HR                   2:10       1.404     
+100YR24HR                   2:15       1.421     
+100YR24HR                   2:20       1.438     
+100YR24HR                   2:25       1.456     
+100YR24HR                   2:30       1.475     
+100YR24HR                   2:35       1.494     
+100YR24HR                   2:40       1.514     
+100YR24HR                   2:45       1.534     
+100YR24HR                   2:50       1.556     
+100YR24HR                   2:55       1.577     
+100YR24HR                   3:00       1.600     
+100YR24HR                   3:05       1.623     
+100YR24HR                   3:10       1.648     
+100YR24HR                   3:15       1.673     
+100YR24HR                   3:20       1.699     
+100YR24HR                   3:25       1.726     
+100YR24HR                   3:30       1.754     
+100YR24HR                   3:35       1.783     
+100YR24HR                   3:40       1.814     
+100YR24HR                   3:45       1.845     
+100YR24HR                   3:50       1.879     
+100YR24HR                   3:55       1.913     
+100YR24HR                   4:00       1.949     
+100YR24HR                   4:05       1.987     
+100YR24HR                   4:10       2.027     
+100YR24HR                   4:15       2.068     
+100YR24HR                   4:20       2.112     
+100YR24HR                   4:25       2.158     
+100YR24HR                   4:30       2.206     
+100YR24HR                   4:35       2.258     
+100YR24HR                   4:40       2.312     
+100YR24HR                   4:45       2.369     
+100YR24HR                   4:50       2.430     
+100YR24HR                   4:55       2.495     
+100YR24HR                   5:00       2.564     
+100YR24HR                   5:05       2.638     
+100YR24HR                   5:10       2.717     
+100YR24HR                   5:15       2.802     
+100YR24HR                   5:20       2.894     
+100YR24HR                   5:25       2.994     
+100YR24HR                   5:30       3.102     
+100YR24HR                   5:35       3.220     
+100YR24HR                   5:40       3.350     
+100YR24HR                   5:45       3.493     
+100YR24HR                   5:50       3.651     
+100YR24HR                   5:55       3.828     
+100YR24HR                   6:00       4.027     
+100YR24HR                   6:05       4.253     
+100YR24HR                   6:10       4.512     
+100YR24HR                   6:15       4.812     
+100YR24HR                   6:20       5.165     
+100YR24HR                   6:25       5.588     
+100YR24HR                   6:30       6.105     
+100YR24HR                   6:35       6.754     
+100YR24HR                   6:40       7.598     
+100YR24HR                   6:45       8.751     
+100YR24HR                   6:50       10.438    
+100YR24HR                   6:55       13.201    
+100YR24HR                   7:00       18.798    
+100YR24HR                   7:05       39.998    
+100YR24HR                   7:10       171.712   
+100YR24HR                   7:15       53.640    
+100YR24HR                   7:20       31.361    
+100YR24HR                   7:25       23.002    
+100YR24HR                   7:30       18.502    
+100YR24HR                   7:35       15.649    
+100YR24HR                   7:40       13.659    
+100YR24HR                   7:45       12.182    
+100YR24HR                   7:50       11.037    
+100YR24HR                   7:55       10.119    
+100YR24HR                   8:00       9.366     
+100YR24HR                   8:05       8.734     
+100YR24HR                   8:10       8.195     
+100YR24HR                   8:15       7.730     
+100YR24HR                   8:20       7.323     
+100YR24HR                   8:25       6.965     
+100YR24HR                   8:30       6.645     
+100YR24HR                   8:35       6.359     
+100YR24HR                   8:40       6.101     
+100YR24HR                   8:45       5.866     
+100YR24HR                   8:50       5.652     
+100YR24HR                   8:55       5.456     
+100YR24HR                   9:00       5.276     
+100YR24HR                   9:05       5.109     
+100YR24HR                   9:10       4.954     
+100YR24HR                   9:15       4.810     
+100YR24HR                   9:20       4.676     
+100YR24HR                   9:25       4.550     
+100YR24HR                   9:30       4.433     
+100YR24HR                   9:35       4.322     
+100YR24HR                   9:40       4.218     
+100YR24HR                   9:45       4.119     
+100YR24HR                   9:50       4.026     
+100YR24HR                   9:55       3.938     
+100YR24HR                   10:00      3.854     
+100YR24HR                   10:05      3.775     
+100YR24HR                   10:10      3.699     
+100YR24HR                   10:15      3.627     
+100YR24HR                   10:20      3.558     
+100YR24HR                   10:25      3.492     
+100YR24HR                   10:30      3.429     
+100YR24HR                   10:35      3.369     
+100YR24HR                   10:40      3.311     
+100YR24HR                   10:45      3.256     
+100YR24HR                   10:50      3.202     
+100YR24HR                   10:55      3.151     
+100YR24HR                   11:00      3.102     
+100YR24HR                   11:05      3.054     
+100YR24HR                   11:10      3.008     
+100YR24HR                   11:15      2.964     
+100YR24HR                   11:20      2.922     
+100YR24HR                   11:25      2.880     
+100YR24HR                   11:30      2.841     
+100YR24HR                   11:35      2.802     
+100YR24HR                   11:40      2.765     
+100YR24HR                   11:45      2.729     
+100YR24HR                   11:50      2.694     
+100YR24HR                   11:55      2.660     
+100YR24HR                   12:00      2.627     
+100YR24HR                   12:05      2.595     
+100YR24HR                   12:10      2.564     
+100YR24HR                   12:15      2.534     
+100YR24HR                   12:20      2.504     
+100YR24HR                   12:25      2.476     
+100YR24HR                   12:30      2.448     
+100YR24HR                   12:35      2.421     
+100YR24HR                   12:40      2.395     
+100YR24HR                   12:45      2.369     
+100YR24HR                   12:50      2.344     
+100YR24HR                   12:55      2.320     
+100YR24HR                   13:00      2.296     
+100YR24HR                   13:05      2.273     
+100YR24HR                   13:10      2.250     
+100YR24HR                   13:15      2.228     
+100YR24HR                   13:20      2.206     
+100YR24HR                   13:25      2.185     
+100YR24HR                   13:30      2.165     
+100YR24HR                   13:35      2.145     
+100YR24HR                   13:40      2.125     
+100YR24HR                   13:45      2.106     
+100YR24HR                   13:50      2.087     
+100YR24HR                   13:55      2.068     
+100YR24HR                   14:00      2.050     
+100YR24HR                   14:05      2.032     
+100YR24HR                   14:10      2.015     
+100YR24HR                   14:15      1.998     
+100YR24HR                   14:20      1.981     
+100YR24HR                   14:25      1.965     
+100YR24HR                   14:30      1.949     
+100YR24HR                   14:35      1.934     
+100YR24HR                   14:40      1.918     
+100YR24HR                   14:45      1.903     
+100YR24HR                   14:50      1.888     
+100YR24HR                   14:55      1.874     
+100YR24HR                   15:00      1.859     
+100YR24HR                   15:05      1.845     
+100YR24HR                   15:10      1.832     
+100YR24HR                   15:15      1.818     
+100YR24HR                   15:20      1.805     
+100YR24HR                   15:25      1.792     
+100YR24HR                   15:30      1.779     
+100YR24HR                   15:35      1.766     
+100YR24HR                   15:40      1.754     
+100YR24HR                   15:45      1.742     
+100YR24HR                   15:50      1.730     
+100YR24HR                   15:55      1.718     
+100YR24HR                   16:00      1.706     
+100YR24HR                   16:05      1.695     
+100YR24HR                   16:10      1.684     
+100YR24HR                   16:15      1.673     
+100YR24HR                   16:20      1.662     
+100YR24HR                   16:25      1.651     
+100YR24HR                   16:30      1.641     
+100YR24HR                   16:35      1.630     
+100YR24HR                   16:40      1.620     
+100YR24HR                   16:45      1.610     
+100YR24HR                   16:50      1.600     
+100YR24HR                   16:55      1.590     
+100YR24HR                   17:00      1.581     
+100YR24HR                   17:05      1.571     
+100YR24HR                   17:10      1.562     
+100YR24HR                   17:15      1.552     
+100YR24HR                   17:20      1.543     
+100YR24HR                   17:25      1.534     
+100YR24HR                   17:30      1.526     
+100YR24HR                   17:35      1.517     
+100YR24HR                   17:40      1.508     
+100YR24HR                   17:45      1.500     
+100YR24HR                   17:50      1.491     
+100YR24HR                   17:55      1.483     
+100YR24HR                   18:00      1.475     
+100YR24HR                   18:05      1.467     
+100YR24HR                   18:10      1.459     
+100YR24HR                   18:15      1.451     
+100YR24HR                   18:20      1.443     
+100YR24HR                   18:25      1.436     
+100YR24HR                   18:30      1.428     
+100YR24HR                   18:35      1.421     
+100YR24HR                   18:40      1.413     
+100YR24HR                   18:45      1.406     
+100YR24HR                   18:50      1.399     
+100YR24HR                   18:55      1.392     
+100YR24HR                   19:00      1.385     
+100YR24HR                   19:05      1.378     
+100YR24HR                   19:10      1.371     
+100YR24HR                   19:15      1.364     
+100YR24HR                   19:20      1.358     
+100YR24HR                   19:25      1.351     
+100YR24HR                   19:30      1.345     
+100YR24HR                   19:35      1.338     
+100YR24HR                   19:40      1.332     
+100YR24HR                   19:45      1.325     
+100YR24HR                   19:50      1.319     
+100YR24HR                   19:55      1.313     
+100YR24HR                   20:00      1.307     
+100YR24HR                   20:05      1.301     
+100YR24HR                   20:10      1.295     
+100YR24HR                   20:15      1.289     
+100YR24HR                   20:20      1.283     
+100YR24HR                   20:25      1.277     
+100YR24HR                   20:30      1.272     
+100YR24HR                   20:35      1.266     
+100YR24HR                   20:40      1.261     
+100YR24HR                   20:45      1.255     
+100YR24HR                   20:50      1.250     
+100YR24HR                   20:55      1.244     
+100YR24HR                   21:00      1.239     
+100YR24HR                   21:05      1.233     
+100YR24HR                   21:10      1.228     
+100YR24HR                   21:15      1.223     
+100YR24HR                   21:20      1.218     
+100YR24HR                   21:25      1.213     
+100YR24HR                   21:30      1.208     
+100YR24HR                   21:35      1.203     
+100YR24HR                   21:40      1.198     
+100YR24HR                   21:45      1.193     
+100YR24HR                   21:50      1.188     
+100YR24HR                   21:55      1.183     
+100YR24HR                   22:00      1.179     
+100YR24HR                   22:05      1.174     
+100YR24HR                   22:10      1.169     
+100YR24HR                   22:15      1.165     
+100YR24HR                   22:20      1.160     
+100YR24HR                   22:25      1.156     
+100YR24HR                   22:30      1.151     
+100YR24HR                   22:35      1.147     
+100YR24HR                   22:40      1.142     
+100YR24HR                   22:45      1.138     
+100YR24HR                   22:50      1.134     
+100YR24HR                   22:55      1.129     
+100YR24HR                   23:00      1.125     
+100YR24HR                   23:05      1.121     
+100YR24HR                   23:10      1.117     
+100YR24HR                   23:15      1.113     
+100YR24HR                   23:20      1.108     
+100YR24HR                   23:25      1.104     
+100YR24HR                   23:30      1.100     
+100YR24HR                   23:35      1.096     
+100YR24HR                   23:40      1.092     
+100YR24HR                   23:45      1.088     
+100YR24HR                   23:50      1.085     
+100YR24HR                   23:55      1.081     
+100YR24HR                   24:00      1.077     
+;
+Irr_Cell_E_Pond  FILE "C:\Users\Robert E Dickinson\Desktop\Nate\IrrPump_Cell_E_8-640HA_S4_30cm.txt"
+;
+500YR24HR                   0:05       1.025     
+500YR24HR                   0:10       1.035     
+500YR24HR                   0:15       1.045     
+500YR24HR                   0:20       1.055     
+500YR24HR                   0:25       1.065     
+500YR24HR                   0:30       1.076     
+500YR24HR                   0:35       1.087     
+500YR24HR                   0:40       1.098     
+500YR24HR                   0:45       1.109     
+500YR24HR                   0:50       1.121     
+500YR24HR                   0:55       1.133     
+500YR24HR                   1:00       1.145     
+500YR24HR                   1:05       1.158     
+500YR24HR                   1:10       1.171     
+500YR24HR                   1:15       1.184     
+500YR24HR                   1:20       1.197     
+500YR24HR                   1:25       1.211     
+500YR24HR                   1:30       1.226     
+500YR24HR                   1:35       1.24      
+500YR24HR                   1:40       1.255     
+500YR24HR                   1:45       1.271     
+500YR24HR                   1:50       1.287     
+500YR24HR                   1:55       1.303     
+500YR24HR                   2:00       1.32      
+500YR24HR                   2:05       1.337     
+500YR24HR                   2:10       1.355     
+500YR24HR                   2:15       1.374     
+500YR24HR                   2:20       1.393     
+500YR24HR                   2:25       1.413     
+500YR24HR                   2:30       1.433     
+500YR24HR                   2:35       1.454     
+500YR24HR                   2:40       1.476     
+500YR24HR                   2:45       1.498     
+500YR24HR                   2:50       1.521     
+500YR24HR                   2:55       1.545     
+500YR24HR                   3:00       1.57      
+500YR24HR                   3:05       1.596     
+500YR24HR                   3:10       1.623     
+500YR24HR                   3:15       1.651     
+500YR24HR                   3:20       1.68      
+500YR24HR                   3:25       1.71      
+500YR24HR                   3:30       1.742     
+500YR24HR                   3:35       1.775     
+500YR24HR                   3:40       1.809     
+500YR24HR                   3:45       1.845     
+500YR24HR                   3:50       1.882     
+500YR24HR                   3:55       1.922     
+500YR24HR                   4:00       1.963     
+500YR24HR                   4:05       2.006     
+500YR24HR                   4:10       2.051     
+500YR24HR                   4:15       2.099     
+500YR24HR                   4:20       2.15      
+500YR24HR                   4:25       2.203     
+500YR24HR                   4:30       2.259     
+500YR24HR                   4:35       2.319     
+500YR24HR                   4:40       2.383     
+500YR24HR                   4:45       2.45      
+500YR24HR                   4:50       2.522     
+500YR24HR                   4:55       2.599     
+500YR24HR                   5:00       2.682     
+500YR24HR                   5:05       2.771     
+500YR24HR                   5:10       2.866     
+500YR24HR                   5:15       2.97      
+500YR24HR                   5:20       3.082     
+500YR24HR                   5:25       3.205     
+500YR24HR                   5:30       3.339     
+500YR24HR                   5:35       3.486     
+500YR24HR                   5:40       3.65      
+500YR24HR                   5:45       3.831     
+500YR24HR                   5:50       4.034     
+500YR24HR                   5:55       4.263     
+500YR24HR                   6:00       4.524     
+500YR24HR                   6:05       4.824     
+500YR24HR                   6:10       5.172     
+500YR24HR                   6:15       5.583     
+500YR24HR                   6:20       6.074     
+500YR24HR                   6:25       6.674     
+500YR24HR                   6:30       7.424     
+500YR24HR                   6:35       8.392     
+500YR24HR                   6:40       9.692     
+500YR24HR                   6:45       11.536    
+500YR24HR                   6:50       14.367    
+500YR24HR                   6:55       19.293    
+500YR24HR                   7:00       30.021    
+500YR24HR                   7:05       70.93     
+500YR24HR                   7:10       214.112   
+500YR24HR                   7:15       96.165    
+500YR24HR                   7:20       55.207    
+500YR24HR                   7:25       38.386    
+500YR24HR                   7:30       29.402    
+500YR24HR                   7:35       23.862    
+500YR24HR                   7:40       20.119    
+500YR24HR                   7:45       17.427    
+500YR24HR                   7:50       15.398    
+500YR24HR                   7:55       13.815    
+500YR24HR                   8:00       12.546    
+500YR24HR                   8:05       11.504    
+500YR24HR                   8:10       10.634    
+500YR24HR                   8:15       9.896     
+500YR24HR                   8:20       9.262     
+500YR24HR                   8:25       8.71      
+500YR24HR                   8:30       8.227     
+500YR24HR                   8:35       7.799     
+500YR24HR                   8:40       7.417     
+500YR24HR                   8:45       7.075     
+500YR24HR                   8:50       6.765     
+500YR24HR                   8:55       6.485     
+500YR24HR                   9:00       6.229     
+500YR24HR                   9:05       5.994     
+500YR24HR                   9:10       5.779     
+500YR24HR                   9:15       5.58      
+500YR24HR                   9:20       5.396     
+500YR24HR                   9:25       5.224     
+500YR24HR                   9:30       5.065     
+500YR24HR                   9:35       4.916     
+500YR24HR                   9:40       4.777     
+500YR24HR                   9:45       4.646     
+500YR24HR                   9:50       4.523     
+500YR24HR                   9:55       4.407     
+500YR24HR                   10:00      4.297     
+500YR24HR                   10:05      4.194     
+500YR24HR                   10:10      4.096     
+500YR24HR                   10:15      4.003     
+500YR24HR                   10:20      3.914     
+500YR24HR                   10:25      3.83      
+500YR24HR                   10:30      3.75      
+500YR24HR                   10:35      3.674     
+500YR24HR                   10:40      3.601     
+500YR24HR                   10:45      3.531     
+500YR24HR                   10:50      3.464     
+500YR24HR                   10:55      3.4       
+500YR24HR                   11:00      3.338     
+500YR24HR                   11:05      3.279     
+500YR24HR                   11:10      3.223     
+500YR24HR                   11:15      3.168     
+500YR24HR                   11:20      3.116     
+500YR24HR                   11:25      3.065     
+500YR24HR                   11:30      3.017     
+500YR24HR                   11:35      2.97      
+500YR24HR                   11:40      2.924     
+500YR24HR                   11:45      2.88      
+500YR24HR                   11:50      2.838     
+500YR24HR                   11:55      2.797     
+500YR24HR                   12:00      2.757     
+500YR24HR                   12:05      2.719     
+500YR24HR                   12:10      2.682     
+500YR24HR                   12:15      2.645     
+500YR24HR                   12:20      2.61      
+500YR24HR                   12:25      2.576     
+500YR24HR                   12:30      2.543     
+500YR24HR                   12:35      2.511     
+500YR24HR                   12:40      2.48      
+500YR24HR                   12:45      2.45      
+500YR24HR                   12:50      2.42      
+500YR24HR                   12:55      2.392     
+500YR24HR                   13:00      2.364     
+500YR24HR                   13:05      2.337     
+500YR24HR                   13:10      2.31      
+500YR24HR                   13:15      2.284     
+500YR24HR                   13:20      2.259     
+500YR24HR                   13:25      2.235     
+500YR24HR                   13:30      2.211     
+500YR24HR                   13:35      2.187     
+500YR24HR                   13:40      2.164     
+500YR24HR                   13:45      2.142     
+500YR24HR                   13:50      2.12      
+500YR24HR                   13:55      2.099     
+500YR24HR                   14:00      2.078     
+500YR24HR                   14:05      2.058     
+500YR24HR                   14:10      2.038     
+500YR24HR                   14:15      2.019     
+500YR24HR                   14:20      2         
+500YR24HR                   14:25      1.981     
+500YR24HR                   14:30      1.963     
+500YR24HR                   14:35      1.945     
+500YR24HR                   14:40      1.927     
+500YR24HR                   14:45      1.91      
+500YR24HR                   14:50      1.893     
+500YR24HR                   14:55      1.877     
+500YR24HR                   15:00      1.861     
+500YR24HR                   15:05      1.845     
+500YR24HR                   15:10      1.829     
+500YR24HR                   15:15      1.814     
+500YR24HR                   15:20      1.799     
+500YR24HR                   15:25      1.784     
+500YR24HR                   15:30      1.77      
+500YR24HR                   15:35      1.756     
+500YR24HR                   15:40      1.742     
+500YR24HR                   15:45      1.728     
+500YR24HR                   15:50      1.715     
+500YR24HR                   15:55      1.702     
+500YR24HR                   16:00      1.689     
+500YR24HR                   16:05      1.676     
+500YR24HR                   16:10      1.663     
+500YR24HR                   16:15      1.651     
+500YR24HR                   16:20      1.639     
+500YR24HR                   16:25      1.627     
+500YR24HR                   16:30      1.615     
+500YR24HR                   16:35      1.604     
+500YR24HR                   16:40      1.592     
+500YR24HR                   16:45      1.581     
+500YR24HR                   16:50      1.57      
+500YR24HR                   16:55      1.559     
+500YR24HR                   17:00      1.549     
+500YR24HR                   17:05      1.538     
+500YR24HR                   17:10      1.528     
+500YR24HR                   17:15      1.518     
+500YR24HR                   17:20      1.508     
+500YR24HR                   17:25      1.498     
+500YR24HR                   17:30      1.488     
+500YR24HR                   17:35      1.479     
+500YR24HR                   17:40      1.469     
+500YR24HR                   17:45      1.46      
+500YR24HR                   17:50      1.451     
+500YR24HR                   17:55      1.442     
+500YR24HR                   18:00      1.433     
+500YR24HR                   18:05      1.424     
+500YR24HR                   18:10      1.415     
+500YR24HR                   18:15      1.407     
+500YR24HR                   18:20      1.398     
+500YR24HR                   18:25      1.39      
+500YR24HR                   18:30      1.382     
+500YR24HR                   18:35      1.374     
+500YR24HR                   18:40      1.366     
+500YR24HR                   18:45      1.358     
+500YR24HR                   18:50      1.35      
+500YR24HR                   18:55      1.342     
+500YR24HR                   19:00      1.335     
+500YR24HR                   19:05      1.327     
+500YR24HR                   19:10      1.32      
+500YR24HR                   19:15      1.313     
+500YR24HR                   19:20      1.306     
+500YR24HR                   19:25      1.298     
+500YR24HR                   19:30      1.291     
+500YR24HR                   19:35      1.284     
+500YR24HR                   19:40      1.278     
+500YR24HR                   19:45      1.271     
+500YR24HR                   19:50      1.264     
+500YR24HR                   19:55      1.257     
+500YR24HR                   20:00      1.251     
+500YR24HR                   20:05      1.244     
+500YR24HR                   20:10      1.238     
+500YR24HR                   20:15      1.232     
+500YR24HR                   20:20      1.226     
+500YR24HR                   20:25      1.219     
+500YR24HR                   20:30      1.213     
+500YR24HR                   20:35      1.207     
+500YR24HR                   20:40      1.201     
+500YR24HR                   20:45      1.195     
+500YR24HR                   20:50      1.19      
+500YR24HR                   20:55      1.184     
+500YR24HR                   21:00      1.178     
+500YR24HR                   21:05      1.172     
+500YR24HR                   21:10      1.167     
+500YR24HR                   21:15      1.161     
+500YR24HR                   21:20      1.156     
+500YR24HR                   21:25      1.15      
+500YR24HR                   21:30      1.145     
+500YR24HR                   21:35      1.14      
+500YR24HR                   21:40      1.135     
+500YR24HR                   21:45      1.129     
+500YR24HR                   21:50      1.124     
+500YR24HR                   21:55      1.119     
+500YR24HR                   22:00      1.114     
+500YR24HR                   22:05      1.109     
+500YR24HR                   22:10      1.104     
+500YR24HR                   22:15      1.099     
+500YR24HR                   22:20      1.095     
+500YR24HR                   22:25      1.09      
+500YR24HR                   22:30      1.085     
+500YR24HR                   22:35      1.08      
+500YR24HR                   22:40      1.076     
+500YR24HR                   22:45      1.071     
+500YR24HR                   22:50      1.067     
+500YR24HR                   22:55      1.062     
+500YR24HR                   23:00      1.058     
+500YR24HR                   23:05      1.053     
+500YR24HR                   23:10      1.049     
+500YR24HR                   23:15      1.045     
+500YR24HR                   23:20      1.04      
+500YR24HR                   23:25      1.036     
+500YR24HR                   23:30      1.032     
+500YR24HR                   23:35      1.028     
+500YR24HR                   23:40      1.023     
+500YR24HR                   23:45      1.019     
+500YR24HR                   23:50      1.015     
+500YR24HR                   23:55      1.011     
+500YR24HR                   24:00      1.007     
+
+[PATTERNS]
+;;Name           Type       Multipliers
+;;-------------- ---------- -----------
+;Assumed linear relationship between 0% and 100%
+Modified_Infiltration MONTHLY    0     .33   .66   1.0   1.0   1.0  
+Modified_Infiltration            1.0   1.0   1.0   1.0   .66   .33  
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 1112.083 1720.131 6752.489 7927.879
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Outfall          3509.781           2002.301          
+Cell_E_FB        3515.017           4438.265          
+Cell_E_Pond      3515.017           3615.128          
+Muni_Supply      1368.465           2164.554          
+Wetland_42_BIA   5406.007           2803.115          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Pond_IRRPUMP     1379.310           2814.238          
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+SF_NDCIA         2891.174           7273.277          
+SF_DCIA          2392.115           4442.793          
+SF_PERV          2891.174           6588.002          
+COMM_DCIA        4254.276           4122.502          
+Pond             4686.297           3615.994          
+COMM_PERV        4313.865           4435.345          
+COMM_NDCIA       5043.832           4435.345          
+INST_Fields_IRR  4112.752           5664.371          
+INST_PERV        2809.239           5664.371          
+SSA_DCIA         3978.676           5180.209          
+SSA_PERV         4969.345           5075.928          
+SSA_NDCIA        5550.340           5075.928          
+INST_NDCIA       2809.239           5999.560          
+MF_PERV          3494.514           6655.040          
+MF_NDCIA         3494.514           7288.175          
+MF_DCIA          2459.153           4085.258          
+PUL_IRR          2354.872           3615.994          
+Cell_E_Road_IMP  3509.781           5661.680          
+Cell_E_Road_NDCIA 4023.368           6625.245          
+MR_PERV_IRR      4298.968           6133.635          
+Fringe           6496.107           2803.115          
+Wetland          5406.007           3526.140          
+LRT_PERV         2839.034           5195.106          
+LRT_NDCIA        2339.975           5195.106          
+LRT_DCIA         2421.910           4837.571          
+Cell_E_Road_Perv 3494.514           6133.174          
+Cell_E_Road_Perv 3494.238           6133.727          
+Cell_E_Road_Perv 3494.790           6134.003          
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Precip60-09      4127.649           7638.261          
+Precip60-09+Irr_S7 4894.859           7645.709          
+
+[LABELS]
+;;X-Coord          Y-Coord            Label           
+1701.891           8298.109           "Absorbent Landscaping,  Irrigation, & Wetland Recharge" "" "Arial" 10 0 0
+

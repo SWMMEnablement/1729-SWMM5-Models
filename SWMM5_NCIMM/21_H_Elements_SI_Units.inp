@@ -1,0 +1,163 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         ELEVATION
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           10/10/2018
+START_TIME           00:00:00
+REPORT_START_DATE    10/10/2018
+REPORT_START_TIME    00:00:00
+END_DATE             10/10/2018
+END_TIME             02:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:01
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:01 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         1.167
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.0001
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+S0002285         38.875     5.2799987793 0          0          0         
+S0067285         39.01499938960 5.2799987793 0          0          0         
+S0067286         39.12500000000 5.2599983215 0          0          0         
+S0067287         39.25500106810 4.950000763 0          0          0         
+S0067917         39.37500000000 5.1699981689 0          0          0         
+S0067918         39.47499847410 4.5900001526 0          0          0         
+S0067919         39.58499908450 4.799999237 0          0          0         
+S0067920         39.65499877930 4.5800018311 0          0          0         
+S0067921         39.78499984740 4.4799995422 0          0          0         
+S0067922         39.88499832150 4.700000763 0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Auslass          38         FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+H0007400         S0067922         S0067921         49.07      0.01176470588235294117647058823529 39.88499832150 39.78499984740 0          0         
+H0018501         S0067921         S0067920         48.52      0.01176470588235294117647058823529 39.78499984740 39.65499877930 0          0         
+H0013575         S0067920         S0067919         45.82      0.01176470588235294117647058823529 39.65499877930 39.58499908450 0          0         
+H0014075         S0067919         S0067918         53.61      0.01176470588235294117647058823529 39.58499908450 39.47499847410 0          0         
+H0014577         S0067918         S0067917         48.49      0.01176470588235294117647058823529 39.47499847410 39.37500000000 0          0         
+H0009317         S0067917         S0067287         51.67      0.01176470588235294117647058823529 39.37500000000 39.25500106810 0          0         
+H0018990         S0067287         S0067286         49.18      0.01176470588235294117647058823529 39.25500106810 39.12500000000 0          0         
+H0014672         S0067286         S0067285         46.72      0.01176470588235294117647058823529 39.12500000000 39.01499938960 0          0         
+H0000832         S0067285         S0002285         48.36      0.01176470588235294117647058823529 39.01499938960 38.875     0          0         
+H0008600         S0002285         Auslass          54.07      0.01176470588235294117647058823529 38.875     38.800     0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+H0007400         CIRCULAR     0.5              0          0          0          1                    
+H0018501         CIRCULAR     0.5              0          0          0          1                    
+H0013575         CIRCULAR     0.5              0          0          0          1                    
+H0014075         CIRCULAR     0.5              0          0          0          1                    
+H0014577         CIRCULAR     0.5              0          0          0          1                    
+H0009317         CIRCULAR     0.5              0          0          0          1                    
+H0018990         CIRCULAR     0.5              0          0          0          1                    
+H0014672         CIRCULAR     0.5              0          0          0          1                    
+H0000832         CIRCULAR     0.5              0          0          0          1                    
+H0008600         CIRCULAR     0.5              0          0          0          1                    
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+S0002285         FLOW             TS_S0002285      FLOW     1.0      1.0              
+S0067285         FLOW             TS_S0067285      FLOW     1.0      1.0              
+S0067286         FLOW             TS_S0067286      FLOW     1.0      1.0              
+S0067287         FLOW             TS_S0067287      FLOW     1.0      1.0              
+S0067917         FLOW             TS_S0067917      FLOW     1.0      1.0              
+S0067918         FLOW             TS_S0067918      FLOW     1.0      1.0              
+S0067919         FLOW             TS_S0067919      FLOW     1.0      1.0              
+S0067920         FLOW             TS_S0067920      FLOW     1.0      1.0              
+S0067921         FLOW             TS_S0067921      FLOW     1.0      1.0              
+S0067922         FLOW             TS_S0067922      FLOW     1.0      1.0              
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+TS_S0067285      FILE "D:\2019\case 1\S0067285_inflow.dat"
+;
+TS_S0067922      FILE "D:\2019\case 1\S0067922_inflow.dat"
+;
+TS_S0002285      FILE "D:\2019\case 1\S0002285_inflow.dat"
+;
+TS_S0067286      FILE "D:\2019\case 1\S0067286_inflow.dat"
+;
+TS_S0067287      FILE "D:\2019\case 1\S0067287_inflow.dat"
+;
+TS_S0067917      FILE "D:\2019\case 1\S0067917_inflow.dat"
+;
+TS_S0067918      FILE "D:\2019\case 1\S0067918_inflow.dat"
+;
+TS_S0067919      FILE "D:\2019\case 1\S0067919_inflow.dat"
+;
+TS_S0067920      FILE "D:\2019\case 1\S0067920_inflow.dat"
+;
+TS_S0067921      FILE "D:\2019\case 1\S0067921_inflow.dat"
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 2753.326 4333.703 9009.424 9723.947
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+S0002285         3037.694           7982.262          
+S0067285         3614.191           9423.503          
+S0067286         4323.725           8924.612          
+S0067287         6762.749           9478.936          
+S0067917         7827.051           8292.683          
+S0067918         7982.262           7272.727          
+S0067919         7239.468           7228.381          
+S0067920         6042.129           5388.027          
+S0067921         7217.295           4578.714          
+S0067922         8725.055           5077.605          
+Auslass          4944.568           5266.075          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

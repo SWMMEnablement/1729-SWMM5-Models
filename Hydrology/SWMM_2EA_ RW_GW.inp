@@ -1,0 +1,431 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           LPS
+INFILTRATION         GREEN_AMPT
+FLOW_ROUTING         KINWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/2009
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/2009
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/2010
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         1.14
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.0015
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+FILE             1.0    1.0    1.0    1.0    1.0    1.0    1.0    1.0    1.0    1.0    1.0    1.0   
+DRY_ONLY         NO
+
+[TEMPERATURE]
+;;Data Element     Values     
+FILE               "D:\2018\BenG\Klimadaten 2002 - 2012.txt"
+WINDSPEED MONTHLY  0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+SNOWMELT           34 0.5 0.6 0.0 50.0 0.0
+ADC IMPERVIOUS     1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+ADC PERVIOUS       1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+Grauwasser       INTENSITY 1:00     1.0      TIMESERIES MyStorm         
+Niederschlag     INTENSITY 1:00     1.0      TIMESERIES MyStorm         
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+Haus1            Niederschlag     Energieallee2    0.043    100      16       2        0                        
+Haus2            Niederschlag     Energieallee1    0.041    100      19.15    35       0                        
+Haus3            Niederschlag     Energieallee3    0.041    100      19.15    35       0                        
+Haus4            Niederschlag     Energieallee3    0.041    100      19.15    35       0                        
+Haus5            Niederschlag     Energieallee1    0.041    100      19.15    35       0                        
+Haus6            Niederschlag     Energieallee5    0.041    100      19.15    35       0                        
+Haus7            Niederschlag     Energieallee5    0.041    100      19.15    35       0                        
+Hauptstrasse     Niederschlag     Energieallee4    0.08     100      105      2        0                        
+Energieallee1    Niederschlag     Vorfluter        0.0068   25       15       0.5      0                        
+Energieallee2    Niederschlag     Vorfluter        0.004    25       500      0.5      0                        
+Energieallee3    Niederschlag     Vorfluter        0.0052   25       500      0.5      0                        
+Energieallee4    Niederschlag     Vorfluter        0.0085   25       500      0.5      0                        
+Energieallee5    Niederschlag     Vorfluter        0.0052   25       500      0.5      0                        
+Hauptenergieallee Niederschlag     vorfluter        0.0085   25       500      0.5      0                        
+Befestigt1       Niederschlag     Hauptenergieallee 0.0345   100      35       3        0                        
+Befestigt2       Niederschlag     Hauptenergieallee 0.0315   100      30       2        0                        
+Befestigt3       Niederschlag     Energieallee1    0.003    100      25       2        0                        
+Befestigt4       Niederschlag     Energieallee3    0.04     100      35       2        0                        
+Befestigt5       Niederschlag     Energieallee3    0.032    100      25       2        0                        
+Befestigt6       Niederschlag     Energieallee5    0.04     100      35       2        0                        
+Befestigt7       Niederschlag     Energieallee5    0.032    100      25       2        0                        
+Grauwasser1      Grauwasser       Energieallee2    0.0001   100      1        0.5      0                        
+Grauwasser2      Grauwasser       Energieallee1    0.0001   100      1        0.5      0                        
+Grauwasser3      Grauwasser       Energieallee3    0.0001   100      1        0.5      0                        
+Grauwasser4      Grauwasser       Energieallee3    0.0001   100      1        0.5      0                        
+Grauwasser5      Grauwasser       Energieallee1    0.0001   100      1        0.5      0                        
+Grauwasser6      Grauwasser       Energieallee5    0.0001   100      1        0.5      0                        
+Grauwasser7      Grauwasser       Energieallee5    0.0001   100      1        0.5      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+Haus1            0.014      0.1        2.5        0.05       25         OUTLET    
+Haus2            0.014      0.1        1          0.05       25         OUTLET    
+Haus3            0.014      0.1        1          0.05       25         OUTLET    
+Haus4            0.014      0.1        1          0.05       25         OUTLET    
+Haus5            0.014      0.1        1          0.05       25         OUTLET    
+Haus6            0.014      0.1        1          0.05       25         OUTLET    
+Haus7            0.014      0.1        1          0.05       25         OUTLET    
+Hauptstrasse     0.017      0.1        2.5        0.05       25         OUTLET    
+Energieallee1    0.01       0.1        0.05       0.05       25         OUTLET    
+Energieallee2    0.01       0.1        0.05       0.05       25         OUTLET    
+Energieallee3    0.01       0.1        0.05       0.05       25         OUTLET    
+Energieallee4    0.01       0.1        0.05       0.05       25         OUTLET    
+Energieallee5    0.01       0.1        0.05       0.05       25         OUTLET    
+Hauptenergieallee 0.01       0.1        0.05       0.05       25         OUTLET    
+Befestigt1       0.017      0.1        2.5        0.05       25         OUTLET    
+Befestigt2       0.017      0.1        2.5        0.05       25         OUTLET    
+Befestigt3       0.017      0.1        2.5        0.05       25         OUTLET    
+Befestigt4       0.017      0.1        2.5        0.05       25         OUTLET    
+Befestigt5       0.017      0.1        2.5        0.05       25         OUTLET    
+Befestigt6       0.017      0.1        2.5        0.05       25         OUTLET    
+Befestigt7       0.017      0.1        2.5        0.05       25         OUTLET    
+Grauwasser1      0.01       0.1        0.0        0.05       100        OUTLET    
+Grauwasser2      0.01       0.1        0.0        0.05       100        OUTLET    
+Grauwasser3      0.01       0.1        0.0        0.05       100        OUTLET    
+Grauwasser4      0.01       0.1        0.0        0.05       100        OUTLET    
+Grauwasser5      0.01       0.1        0.0        0.05       100        OUTLET    
+Grauwasser6      0.01       0.1        0.0        0.05       100        OUTLET    
+Grauwasser7      0.01       0.1        0.0        0.05       100        OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Suction    Ksat       IMD       
+;;-------------- ---------- ---------- ----------
+Haus1            3.0        0.5        4         
+Haus2            3.0        0.5        4         
+Haus3            3.0        0.5        4         
+Haus4            3.0        0.5        4         
+Haus5            3          0.5        4         
+Haus6            3.0        0.5        4         
+Haus7            3.0        0.5        4         
+Hauptstrasse     3.0        0.5        4         
+Energieallee1    120        15         4         
+Energieallee2    3.0        0.5        4         
+Energieallee3    3.5        0.5        0.25      
+Energieallee4    3.0        0.5        4         
+Energieallee5    3.5        0.5        0.25      
+Hauptenergieallee 3.0        0.5        4         
+Befestigt1       3.0        0.5        4         
+Befestigt2       3.0        0.5        4         
+Befestigt3       3.0        0.5        4         
+Befestigt4       3.0        0.5        4         
+Befestigt5       3.0        0.5        4         
+Befestigt6       3.0        0.5        4         
+Befestigt7       3.0        0.5        4         
+Grauwasser1      3.0        0.5        4         
+Grauwasser2      3.0        0.5        4         
+Grauwasser3      3.0        0.5        4         
+Grauwasser4      3.0        0.5        4         
+Grauwasser5      3.0        0.5        4         
+Grauwasser6      3.0        0.5        4         
+Grauwasser7      3.0        0.5        4         
+
+[LID_CONTROLS]
+;;Name           Type/Layer Parameters
+;;-------------- ---------- ----------
+Energieallee     BC
+Energieallee     SURFACE    225        0.1        0.4        0.5        5         
+Energieallee     SOIL       500        0.52       0.15       0.08       119        39.3       48        
+Energieallee     STORAGE    250        0.5        0          0         
+Energieallee     DRAIN      0.6        0.5        25         6         
+
+[LID_USAGE]
+;;Subcatchment   LID Process      Number  Area       Width      InitSat    FromImp    ToPerv     RptFile                  DrainTo         
+;;-------------- ---------------- ------- ---------- ---------- ---------- ---------- ---------- ------------------------ ----------------
+Energieallee1    Energieallee     1       68.00      0          80         0          0          *                        Vorfluter       
+Energieallee2    Energieallee     1       40.00      0          80         0          0          *                        Vorfluter       
+Energieallee3    Energieallee     1       52.00      0          80         0          0          *                        Vorfluter       
+Energieallee4    Energieallee     1       85.00      0          80         0          0          *                        Vorfluter       
+Energieallee5    Energieallee     1       52.00      0          80         0          0          *                        Vorfluter       
+Hauptenergieallee Energieallee     1       85.00      0          80         0          0          *                        Vorfluter       
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Vorfluter        0          FREE                        NO                       
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+MyStorm                     0          0         
+MyStorm                     1          1         
+MyStorm                     2          2         
+MyStorm                     3          3         
+MyStorm                     4          4         
+MyStorm                     5          3         
+MyStorm                     6          2         
+MyStorm                     7          1         
+MyStorm                     8          2         
+MyStorm                     9          2         
+MyStorm                     10         1         
+MyStorm                     11         0         
+MyStorm                     12         0         
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 193.361 495.084 1903.065 1669.383
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Vorfluter        196.812            1528.633          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Haus1            527.130            1347.979          
+Haus1            700.938            1347.979          
+Haus1            700.938            1250.453          
+Haus1            656.521            1250.453          
+Haus1            655.555            1225.347          
+Haus1            553.202            1222.451          
+Haus1            553.202            1250.453          
+Haus1            528.096            1250.453          
+Haus1            528.096            1347.979          
+Haus2            893.093            1359.566          
+Haus2            1042.761           1360.531          
+Haus2            1043.727           1180.930          
+Haus2            918.199            1178.999          
+Haus2            919.164            1290.043          
+Haus2            894.059            1290.043          
+Haus2            894.059            1361.497          
+Haus3            1301.542           1360.531          
+Haus3            1450.245           1361.497          
+Haus3            1450.245           1290.043          
+Haus3            1428.036           1288.111          
+Haus3            1427.070           1179.964          
+Haus3            1301.542           1179.964          
+Haus3            1301.542           1361.497          
+Haus4            1634.674           1272.662          
+Haus4            1782.411           1272.662          
+Haus4            1782.411           1202.173          
+Haus4            1760.203           1202.173          
+Haus4            1759.237           1091.129          
+Haus4            1633.709           1091.129          
+Haus4            1634.674           1270.731          
+Haus5            895.024            952.082           
+Haus5            1043.727           951.117           
+Haus5            1042.761           770.549           
+Haus5            918.199            770.549           
+Haus5            917.233            880.628           
+Haus5            895.990            880.628           
+Haus5            895.024            951.117           
+Haus6            1301.542           952.082           
+Haus6            1450.245           951.117           
+Haus6            1449.279           880.628           
+Haus6            1427.070           880.628           
+Haus6            1427.070           769.584           
+Haus6            1300.577           769.584           
+Haus6            1301.542           952.082           
+Haus7            1634.674           862.281           
+Haus7            1781.446           860.350           
+Haus7            1783.377           791.793           
+Haus7            1760.203           790.827           
+Haus7            1758.271           680.749           
+Haus7            1634.674           680.749           
+Haus7            1634.674           863.247           
+Hauptstrasse     1126.768           1556.548          
+Hauptstrasse     1209.810           1556.548          
+Hauptstrasse     1217.535           548.461           
+Hauptstrasse     1128.700           548.461           
+Hauptstrasse     1126.768           1554.617          
+Energieallee1    1030.576           1137.597          
+Energieallee1    1031.678           1153.030          
+Energieallee1    1031.678           1153.030          
+Energieallee1    385.717            1197.123          
+Energieallee1    385.717            1197.123          
+Energieallee1    383.512            1184.997          
+Energieallee1    1033.883           1138.700          
+Energieallee2    384.614            1196.020          
+Energieallee2    384.614            1196.020          
+Energieallee2    401.149            1196.020          
+Energieallee2    401.149            1196.020          
+Energieallee2    402.252            1580.731          
+Energieallee2    385.717            1580.731          
+Energieallee2    383.512            1196.020          
+Energieallee3    1808.816           1421.997          
+Energieallee3    1808.816           1440.736          
+Energieallee3    1646.774           1445.145          
+Energieallee3    1556.384           1520.103          
+Energieallee3    1245.529           1523.410          
+Energieallee3    1245.529           1502.466          
+Energieallee3    1554.179           1499.159          
+Energieallee3    1645.672           1419.792          
+Energieallee3    1813.225           1419.792          
+Energieallee4    1244.426           1498.057          
+Energieallee4    1248.836           771.626           
+Energieallee4    1234.506           771.626           
+Energieallee4    1225.687           1576.322          
+Energieallee4    1244.426           1577.424          
+Energieallee4    1245.529           1511.285          
+Energieallee5    1807.713           1027.365          
+Energieallee5    1648.979           1031.774          
+Energieallee5    1542.054           1111.142          
+Energieallee5    1247.733           1108.937          
+Energieallee5    1247.733           1091.300          
+Energieallee5    1540.951           1092.402          
+Energieallee5    1646.774           1008.626          
+Energieallee5    1808.816           1007.523          
+Hauptenergieallee 331.703            1581.834          
+Hauptenergieallee 333.908            1606.085          
+Hauptenergieallee 333.908            1606.085          
+Hauptenergieallee 1254.347           1608.289          
+Hauptenergieallee 1254.347           1580.731          
+Hauptenergieallee 1254.347           1580.731          
+Hauptenergieallee 329.498            1581.834          
+Befestigt1       444.140            1371.290          
+Befestigt1       774.837            1367.983          
+Befestigt1       775.939            1429.713          
+Befestigt1       720.823            1428.611          
+Befestigt1       718.618            1488.136          
+Befestigt1       527.916            1488.136          
+Befestigt1       526.814            1427.508          
+Befestigt1       441.935            1425.304          
+Befestigt1       443.038            1370.188          
+Befestigt2       775.939            1367.983          
+Befestigt2       1125.376           1364.676          
+Befestigt2       1124.273           1430.815          
+Befestigt2       1010.734           1430.815          
+Befestigt2       1010.734           1487.034          
+Befestigt2       818.930            1489.238          
+Befestigt2       818.930            1429.713          
+Befestigt2       774.837            1429.713          
+Befestigt3       1125.803           954.014           
+Befestigt3       1127.734           1019.674          
+Befestigt3       1053.383           1017.743          
+Befestigt3       1053.383           1079.542          
+Befestigt3       863.159            1079.542          
+Befestigt3       863.159            1019.674          
+Befestigt3       858.331            1022.571          
+Befestigt3       857.366            957.876           
+Befestigt3       1128.700           954.979           
+Befestigt4       1211.357           1429.713          
+Befestigt4       1212.459           1366.881          
+Befestigt4       1482.528           1365.778          
+Befestigt4       1555.282           1299.639          
+Befestigt4       1557.486           1388.927          
+Befestigt4       1603.784           1433.020          
+Befestigt4       1560.793           1472.704          
+Befestigt4       1482.528           1489.238          
+Befestigt4       1289.622           1489.238          
+Befestigt4       1290.724           1428.611          
+Befestigt4       1211.357           1429.713          
+Befestigt5       1557.486           1387.825          
+Befestigt5       1555.282           1300.741          
+Befestigt5       1582.840           1276.490          
+Befestigt5       1823.146           1276.490          
+Befestigt5       1825.351           1338.220          
+Befestigt5       1816.532           1338.220          
+Befestigt5       1816.532           1399.950          
+Befestigt5       1645.672           1398.848          
+Befestigt5       1602.681           1431.918          
+Befestigt6       1215.766           1020.751          
+Befestigt6       1215.766           954.612           
+Befestigt6       1482.528           955.714           
+Befestigt6       1553.077           893.984           
+Befestigt6       1558.588           977.761           
+Befestigt6       1603.784           1022.956          
+Befestigt6       1560.793           1060.435          
+Befestigt6       1482.528           1080.277          
+Befestigt6       1290.724           1079.174          
+Befestigt6       1289.622           1018.546          
+Befestigt6       1214.664           1019.649          
+Befestigt7       1556.384           976.658           
+Befestigt7       1554.179           893.984           
+Befestigt7       1585.044           867.528           
+Befestigt7       1823.146           867.528           
+Befestigt7       1823.146           930.361           
+Befestigt7       1815.430           931.463           
+Befestigt7       1814.327           989.886           
+Befestigt7       1646.774           987.681           
+Befestigt7       1603.784           1022.956          
+Grauwasser1      713.107            1306.253          
+Grauwasser1      737.358            1306.253          
+Grauwasser1      736.256            1286.411          
+Grauwasser1      713.107            1286.411          
+Grauwasser1      713.107            1309.560          
+Grauwasser2      849.795            1304.048          
+Grauwasser2      874.046            1302.946          
+Grauwasser2      872.944            1284.206          
+Grauwasser2      848.692            1284.206          
+Grauwasser2      849.795            1306.253          
+Grauwasser3      1439.538           1264.364          
+Grauwasser3      1468.198           1261.058          
+Grauwasser3      1467.096           1237.909          
+Grauwasser3      1439.538           1236.806          
+Grauwasser3      1439.538           1267.671          
+Grauwasser4      1589.454           1233.499          
+Grauwasser4      1621.421           1233.499          
+Grauwasser4      1621.421           1205.941          
+Grauwasser4      1588.351           1204.839          
+Grauwasser4      1589.454           1235.704          
+Grauwasser5      837.669            864.221           
+Grauwasser5      866.330            864.221           
+Grauwasser5      866.330            836.663           
+Grauwasser5      835.465            836.663           
+Grauwasser5      835.465            871.938           
+Grauwasser6      1439.538           841.072           
+Grauwasser6      1470.403           838.868           
+Grauwasser6      1471.505           813.514           
+Grauwasser6      1441.742           812.412           
+Grauwasser6      1440.640           844.379           
+Grauwasser7      1569.612           809.105           
+Grauwasser7      1598.272           806.900           
+Grauwasser7      1599.374           780.445           
+Grauwasser7      1568.509           780.445           
+Grauwasser7      1568.509           811.310           
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Grauwasser       403.354            1097.914          
+Niederschlag     1324.896           630.529           
+

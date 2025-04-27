@@ -1,0 +1,144 @@
+[TITLE]
+Test
+
+[OPTIONS]
+FLOW_UNITS          	CFS
+INFILTRATION        	HORTON
+FLOW_ROUTING        	DYNWAVE
+START_DATE          	05/23/1989
+START_TIME          	11:00:00
+REPORT_START_DATE   	05/23/1989
+REPORT_START_TIME   	13:59:00
+END_DATE            	05/23/1989
+END_TIME            	16:00:00
+SWEEP_START         	01/01
+SWEEP_END           	12/31
+DRY_DAYS            	0
+REPORT_STEP         	00:00:06
+WET_STEP            	00:01:00
+DRY_STEP            	01:00:00
+ROUTING_STEP        	0:00:05 
+ALLOW_PONDING       	NO
+INERTIAL_DAMPING    	NONE
+VARIABLE_STEP       	0.75
+LENGTHENING_STEP    	0
+MIN_SURFAREA        	
+NORMAL_FLOW_LIMITED 	BOTH
+SKIP_STEADY_STATE   	NO
+FORCE_MAIN_EQUATION 	H-W
+LINK_OFFSETS        	DEPTH
+MIN_SLOPE           	0
+; Added Parameters for QA/QC
+MAX_PROCESSORS      	NO
+BYPASS              	YES
+ThetaStorage        	NO
+MAX_ITERATIONS      	8
+MIN_ITERATIONS      	2
+TOLERANCE           	0.001
+RELAXATION          	0.50
+AREAWEIGHT          	1.00
+HYDRAULICWEIGHT     	1.00
+DWF_GLOBAL          	1.0
+RDII_GLOBAL         	1.0
+DEPTH_UNITS         	
+SaveAllData         	NO
+
+[EVAPORATION]
+;;Type      	Parameters
+;;----------	----------
+CONSTANT    	0.0
+DRY_ONLY     NO
+
+[JUNCTIONS]
+;;              	Invert    	Max.      	Init.     	Surcharge 	Ponded    
+;;Name          	Elev.     	Depth     	Depth     	Depth     	Area      
+;;--------------	----------	----------	----------	----------	----------
+LoadNode        	-32       	50        	0         	0         	0         
+
+[OUTFALLS]
+;;              	Invert    	Outfall   	Stage/Table     	Tide
+;;Name          	Elev.     	Type      	Time Series     	Gate
+;;--------------	----------	----------	----------------	----
+Overflow        	-50       	FREE      	                	NO
+ToTunnel        	-50       	FREE      	                	NO
+
+[STORAGE]
+;;              	Invert  	Max.    	Init.   	Storage   	Curve   	        	        	Ponded  	Evap.   
+;;Name          	Elev.   	Depth   	Depth   	Curve     	Params  	        	        	Area    	Frac.   	Infiltration Parameters
+;;--------------	--------	--------	--------	----------	--------	--------	--------	--------	--------	-----------------------
+Regulator       	-34     	50      	0       	FUNCTIONAL	10      	0       	0       	0       	0       
+
+[CONDUITS]
+;;              	Inlet           	Outlet          	          	Manning   	Inlet     	Outlet    	Init.     	Max.      
+;;Name          	Node            	Node            	Length    	N         	Offset    	Offset    	Flow      	Flow      
+;;--------------	----------------	----------------	----------	----------	----------	----------	----------	----------
+StoragePipe     	LoadNode        	Regulator       	3000      	0.013     	0         	0         	0         	0         
+
+[ORIFICES]
+;;              	Inlet           	Outlet          	Orifice     	Crest     	Disch.    	Flap	Open/Close
+;;Name          	Node            	Node            	Type        	Height    	Coeff.    	Gate	Time      
+;;--------------	----------------	----------------	------------	----------	----------	----	----------
+Gate            	Regulator       	ToTunnel        	SIDE        	0         	0.9       	NO  	0.17      
+OverflowGate    	Regulator       	Overflow        	SIDE        	13        	0.9       	NO  	0.17      
+
+[XSECTIONS]
+;;Link          	Shape       	Geom1           	Geom2     	Geom3     	Geom4     	Barrels   	Culvert Code 	Transition	Multipler
+;;--------------	------------	----------------	----------	----------	----------	----------	----------	----------	----------
+StoragePipe     	RECT_CLOSED 	10              	10        	0         	0         	1         	          	0         	0         
+Gate            	RECT_CLOSED 	10              	10        	0         	0
+OverflowGate    	CIRCULAR    	10              	0         	0         	0
+
+[LOSSES]
+;;Link          	Inlet     	Outlet    	Average   	Flap Gate 
+;;--------------	----------	----------	----------	----------
+
+[CONTROLS]
+Rule GateSetting
+If  Simulation Time > 1.25
+And Simulation Time < 3.25
+Then ORIFICE Gate SETTING = 0
+Else ORIFICE Gate SETTING = 1
+
+
+
+
+
+[INFLOWS]
+;;              	                	                	Param   	Units   	Scale   	Baseline	Baseline
+;;Node          	Parameter       	Time Series     	Type    	Factor  	Factor  	Value   	Pattern
+;;--------------	----------------	----------------	--------	--------	--------	--------	--------
+LoadNode        	FLOW            	FlowFor2Hours   	FLOW    	1.0     	500     	0       
+
+[TIMESERIES]
+;;Name          	Date      	Time      	Value     
+;;--------------	----------	----------	----------
+FlowFor2Hours   	          	0         	1         
+FlowFor2Hours   	          	2         	1         
+FlowFor2Hours   	          	2.1       	0         
+FlowFor2Hours   	          	24        	0         
+
+[REPORT]
+INPUT     	NO
+CONTROLS  	NO
+SUBCATCHMENTS	ALL
+NODES	ALL
+LINKS	ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS	1017567.187	838687.061	1020038.975	840975.729
+Units     	None
+
+[COORDINATES]
+;;Node          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+LoadNode        	1019926.621       	838791.091        
+Overflow        	1019333.073       	840871.699        
+ToTunnel        	1017679.541       	840530.307        
+Regulator       	1018115.593       	840098.092        
+
+[VERTICES]
+;;Link          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+

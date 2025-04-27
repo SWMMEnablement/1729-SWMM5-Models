@@ -1,0 +1,121 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option            	Value
+FLOW_UNITS          	CFS
+INFILTRATION        	HORTON
+FLOW_ROUTING        	KINWAVE
+LINK_OFFSETS        	DEPTH
+MIN_SLOPE           	0
+ALLOW_PONDING       	NO
+SKIP_STEADY_STATE   	NO
+
+START_DATE          	01/01/1948
+START_TIME          	00:00:00
+REPORT_START_DATE   	01/01/1948
+REPORT_START_TIME   	00:00:00
+END_DATE            	03/28/2014
+END_TIME            	06:00:00
+SWEEP_START         	01/01
+SWEEP_END           	12/31
+DRY_DAYS            	0
+REPORT_STEP         	01:00:00
+WET_STEP            	01:00:00
+DRY_STEP            	01:00:00
+ROUTING_STEP        	0:05:00 
+
+INERTIAL_DAMPING    	PARTIAL
+NORMAL_FLOW_LIMITED 	BOTH
+FORCE_MAIN_EQUATION 	H-W
+VARIABLE_STEP       	0.75
+LENGTHENING_STEP    	0
+MIN_SURFAREA        	12.557
+MAX_TRIALS          	8
+HEAD_TOLERANCE      	0.005
+SYS_FLOW_TOL        	5
+LAT_FLOW_TOL        	5
+
+[EVAPORATION]
+;;Evap Data     	Parameters
+;;--------------	----------------
+CONSTANT        	0.0
+DRY_ONLY        	NO
+
+[RAINGAGES]
+;;Gage          	Format   	Interval	SCF     	Source    
+;;--------------	---------	------	------	----------
+;PROVIDENCE T F GREEN STATE AIRPORT RI US
+1               	INTENSITY	1:00    	1.0     	FILE      	"C:\Users\Robert E Dickinson\Desktop\2013-swmm5 models\273434.dat"	376698    	IN   
+
+[SUBCATCHMENTS]
+;;Subcatchment  	Rain Gage       	Outlet          	Area    	%Imperv 	Width   	%Slope  	CurbLen 	Snow Pack       
+;;--------------	----------------	----------------	--------	--------	--------	--------	--------	----------------
+1               	1               	3               	1       	25      	500     	0.5     	0       	                
+
+[SUBAREAS]
+;;Subcatchment  	N-Imperv  	N-Perv    	S-Imperv  	S-Perv    	PctZero   	RouteTo   	PctRouted 
+;;--------------	----------	----------	----------	----------	----------	----------	----------
+1               	0.01      	0.1       	0.05      	0.05      	25        	OUTLET    
+
+[INFILTRATION]
+;;Subcatchment  	MaxRate   	MinRate   	Decay     	DryTime   	MaxInfil  
+;;--------------	----------	----------	----------	----------	----------
+1               	3.0       	0.5       	4         	7         	0         
+
+[OUTFALLS]
+;;Outfall       	Invert    	Type      	Stage Data      	Gated   
+;;--------------	----------	----------	----------------	--------
+3               	0         	FREE      	                	NO
+
+[REPORT]
+;;Reporting Options
+INPUT     	NO
+CONTROLS  	NO
+SUBCATCHMENTS	ALL
+NODES	ALL
+LINKS	ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS	2075.950	5074.367	4675.105	7847.574
+Units     	None
+
+[COORDINATES]
+;;Node          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+3               	3059.072          	5537.975          
+
+[VERTICES]
+;;Link          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+
+[Polygons]
+;;Subcatchment  	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+1               	3438.819          	7700.422          
+1               	3438.819          	7700.422          
+1               	3438.819          	7700.422          
+1               	3438.819          	7700.422          
+1               	3438.819          	7700.422          
+1               	3438.819          	7689.873          
+1               	3955.696          	7584.388          
+1               	4187.764          	7542.194          
+1               	4504.219          	7130.802          
+1               	4556.962          	6782.700          
+1               	4546.414          	6518.987          
+1               	4535.865          	6371.308          
+1               	4398.734          	6012.658          
+1               	4272.152          	5717.300          
+1               	3829.114          	5516.878          
+1               	2900.844          	5200.422          
+1               	2194.093          	6993.671          
+1               	2489.451          	7489.451          
+1               	3470.464          	7721.519          
+
+[SYMBOLS]
+;;Gage          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+1               	3270.042          	6561.181          
+

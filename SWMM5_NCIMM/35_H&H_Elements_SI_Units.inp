@@ -1,0 +1,357 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        YES
+SKIP_STEADY_STATE    YES
+
+START_DATE           12/09/2015
+START_TIME           00:00:00
+REPORT_START_DATE    12/09/2015
+REPORT_START_TIME    00:00:00
+END_DATE             12/19/2016
+END_TIME             09:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:01:00
+WET_STEP             00:01:00
+DRY_STEP             1416:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         1.14
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.0015
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              2
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+Gage1            VOLUME    0:05     1.0      FILE       "D:\2018\Download-2018\Rainfall1Minutecompletedata.dat" Gage1      MM   
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+Sub1             Gage1            Junc13           1.2771   36       39       1.85     0                        
+Sub10            Gage1            Junc6            4.04     39       113.787  1.97     0                        
+Sub11            Gage1            Junc12           2.48     51       113.787  2.16     0                        
+Sub2             Gage1            Junc4            1.66     25       38       1.79     0                        
+Sub3             Gage1            Junc5            0.5      50       113.787  1.73     0                        
+Sub4             Gage1            Junc8            0.1      49       113.787  2.44     0                        
+Sub5             Gage1            Junc2            2.42     65       113.787  1.6      0                        
+Sub6             Gage1            Junc1            2.2      36       113.787  1.65     0                        
+Sub7             Gage1            Junc7            0.8      34       113.787  1.69     0                        
+Sub9             Gage1            Junc5            2.03     38       113.787  1.83     0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+Sub1             0.01       0.03       0.2        7.5        0          PERVIOUS   21        
+Sub10            0.01       0.03       0.2        7.5        0          PERVIOUS   21        
+Sub11            0.01       0.03       0.2        7.5        0          PERVIOUS   21        
+Sub2             0.01       0.03       0.2        7.5        0          PERVIOUS   21        
+Sub3             0.01       0.03       0.2        7.5        0          PERVIOUS   21        
+Sub4             0.01       0.03       0.2        7.5        0          PERVIOUS   21        
+Sub5             0.01       0.03       0.2        7.5        0          PERVIOUS   21        
+Sub6             0.01       0.03       0.2        7.5        0          PERVIOUS   21        
+Sub7             0.01       0.03       0.2        7.5        0          PERVIOUS   21        
+Sub9             0.01       0.03       0.2        7.5        0          PERVIOUS   21        
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+Sub1             25.4       22         4          7          0         
+Sub10            25.4       22         4          7          0         
+Sub11            25.4       22         4          7          0         
+Sub2             25.4       22         4          7          0         
+Sub3             25.4       22         4          7          0         
+Sub4             25.4       22         4          7          0         
+Sub5             25.4       22         4          7          0         
+Sub6             25.4       22         4          7          0         
+Sub7             25.4       22         4          7          0         
+Sub9             25.4       22         4          7          0         
+
+[LID_CONTROLS]
+;;Name           Type/Layer Parameters
+;;-------------- ---------- ----------
+InfiltrationSys  IT
+InfiltrationSys  SURFACE    5000       0.0        0.1        1.0        5         
+InfiltrationSys  STORAGE    5500       0.91       0.254      0         
+InfiltrationSys  DRAIN      0          0.5        6          6         
+
+RainWaterTank    IT
+RainWaterTank    SURFACE    5000       0.0        0.1        1.0        5         
+RainWaterTank    STORAGE    5500       0.91       2.08       0         
+RainWaterTank    DRAIN      0          0.5        6          6         
+
+RWT_OtherMethod  RB
+RWT_OtherMethod  STORAGE    1000       0.75       0.5        0         
+RWT_OtherMethod  DRAIN      0.59       0.5        0          0         
+
+[LID_USAGE]
+;;Subcatchment   LID Process      Number  Area       Width      InitSat    FromImp    ToPerv     RptFile                  DrainTo         
+;;-------------- ---------------- ------- ---------- ---------- ---------- ---------- ---------- ------------------------ ----------------
+Sub1             InfiltrationSys  5       1          0          0          5.1        0          "D:\2018\Download-2018\Sub1_RWT.txt"
+Sub10            InfiltrationSys  34      1          0          0          8.5        0         
+Sub11            InfiltrationSys  17      1          0          0          7.7        0         
+Sub2             InfiltrationSys  8       1          0          0          9.5        0         
+Sub3             InfiltrationSys  4       1          0          0          7.9        0         
+Sub4             InfiltrationSys  1       1          0          0          23.6       0         
+Sub5             InfiltrationSys  24      1          0          0          9.8        0         
+Sub6             InfiltrationSys  12      1          0          0          7.5        0         
+Sub7             InfiltrationSys  8       1          0          0          11.5       0         
+Sub9             InfiltrationSys  8       1          0          0          4.9        0         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+Junc1            6.17       0.9        0          0          0         
+Junc10           9.51       0.9        0          0          0         
+Junc12           9.73       0.9        0          0          0         
+Junc13           10         0.9        0          0          0         
+Junc2            6.36       0.9        0          0          0         
+Junc3            7.17       0.9        0          0          0         
+Junc4            7.47       0.9        0          0          0         
+Junc5            9.62       0.9        0          0          0         
+Junc6            9.77       0.9        0          0          0         
+Junc7            9.65       0.9        0          0          0         
+Junc8            9.66       0.95       0          0          0         
+Junc9            7.44       0.9        0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Outfall1         4.15       FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+C1               Junc1            Outfall1         104.87     0.013      0          0          0          0         
+C10              Junc6            Junc5            31.698     0.013      0          0          0          0         
+C11              Junc13           Junc6            8.23       0.013      0          0          0          0         
+C12              Junc10           Junc9            59.25      0.013      0          0          0          0         
+C14              Junc7            Junc10           39.213     0.013      0          0          0          0         
+C16              Junc8            Junc7            3.805      0.013      0          0          0          0         
+C17              Junc12           Junc8            9.856      0.013      0          0          0          0         
+C3               Junc2            Junc1            20.57      0.013      0          0          0          0         
+C5               Junc3            Junc2            87.618     0.013      0          0          0          0         
+C6               Junc9            Junc3            7.542      0.013      0          0          0          0         
+C7               Junc4            Junc3            32.01      0.013      0          0          0          0         
+C9               Junc5            Junc4            120.709    0.01       0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+C1               CIRCULAR     0.450            0          0          0          1                    
+C10              CIRCULAR     0.375            0          0          0          1                    
+C11              CIRCULAR     0.300            0          0          0          1                    
+C12              CIRCULAR     0.225            0          0          0          1                    
+C14              CIRCULAR     0.225            0          0          0          1                    
+C16              CIRCULAR     0.450            0          0          0          1                    
+C17              CIRCULAR     0.450            0          0          0          1                    
+C3               CIRCULAR     0.450            0          0          0          1                    
+C5               CIRCULAR     0.450            0          0          0          1                    
+C6               CIRCULAR     0.300            0          0          0          1                    
+C7               CIRCULAR     0.375            0          0          0          1                    
+C9               CIRCULAR     1                0          0          0          1                    
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -36.268 -11.521 744.532 412.491
+Units      Meters
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Junc1            110.909            283.496           
+Junc10           225.260            229.955           
+Junc12           247.549            175.929           
+Junc13           400.178            301.424           
+Junc2            130.775            284.707           
+Junc3            217.992            293.187           
+Junc4            250.214            295.125           
+Junc5            370.474            305.522           
+Junc6            394.121            291.975           
+Junc7            235.920            181.985           
+Junc8            240.280            181.743           
+Junc9            220.657            286.161           
+Outfall1         -0.777             269.929           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+C10              386.023            305.940           
+C12              224.714            245.839           
+C14              231.624            184.571           
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Sub1             708.556            53.814            
+Sub1             632.433            49.450            
+Sub1             632.433            56.238            
+Sub1             625.645            55.753            
+Sub1             621.281            127.998           
+Sub1             567.461            183.757           
+Sub1             553.400            184.242           
+Sub1             552.915            191.515           
+Sub1             520.429            226.910           
+Sub1             442.851            220.607           
+Sub1             439.942            255.032           
+Sub1             400.668            252.608           
+Sub1             399.214            286.063           
+Sub1             391.941            285.578           
+Sub1             390.486            304.488           
+Sub1             392.284            307.897           
+Sub1             455.943            309.821           
+Sub1             709.041            54.299            
+Sub1             708.556            53.814            
+Sub10            393.880            282.669           
+Sub10            404.547            163.393           
+Sub10            410.850            148.847           
+Sub10            421.517            29.086            
+Sub10            450.124            31.025            
+Sub10            446.730            74.663            
+Sub10            468.549            76.602            
+Sub10            470.004            68.360            
+Sub10            489.398            68.360            
+Sub10            491.822            35.389            
+Sub10            542.733            38.783            
+Sub10            540.309            70.784            
+Sub10            597.038            76.602            
+Sub10            598.977            45.571            
+Sub10            619.826            47.026            
+Sub10            618.856            55.753            
+Sub10            623.705            55.753            
+Sub10            618.856            127.028           
+Sub10            567.946            180.848           
+Sub10            551.945            180.363           
+Sub10            551.461            191.030           
+Sub10            519.944            225.455           
+Sub10            441.882            218.667           
+Sub10            438.487            253.577           
+Sub10            399.214            250.183           
+Sub10            398.244            283.639           
+Sub10            392.910            283.639           
+Sub10            393.880            282.669           
+Sub11            245.027            180.848           
+Sub11            254.240            55.753            
+Sub11            323.090            59.632            
+Sub11            320.181            84.360            
+Sub11            360.909            87.269            
+Sub11            362.364            67.875            
+Sub11            407.941            70.299            
+Sub11            410.365            28.601            
+Sub11            419.578            28.601            
+Sub11            408.911            145.453           
+Sub11            402.123            162.423           
+Sub11            395.335            165.817           
+Sub11            354.606            163.393           
+Sub11            352.182            208.970           
+Sub11            293.513            203.636           
+Sub11            293.998            192.485           
+Sub11            272.179            192.000           
+Sub11            271.695            182.787           
+Sub11            245.512            180.848           
+Sub11            245.027            180.848           
+Sub2             388.547            302.549           
+Sub2             390.971            286.063           
+Sub2             386.122            286.063           
+Sub2             389.516            252.123           
+Sub2             351.212            249.214           
+Sub2             354.121            210.909           
+Sub2             292.544            205.091           
+Sub2             293.029            193.939           
+Sub2             270.240            193.939           
+Sub2             270.725            185.697           
+Sub2             249.391            184.242           
+Sub2             246.482            225.940           
+Sub2             228.542            224.970           
+Sub2             223.693            288.487           
+Sub2             389.516            303.033           
+Sub2             388.547            302.549           
+Sub3             387.577            284.124           
+Sub3             390.486            250.668           
+Sub3             352.667            247.274           
+Sub3             355.576            210.909           
+Sub3             353.636            209.455           
+Sub3             357.031            165.817           
+Sub3             395.335            167.272           
+Sub3             403.092            164.847           
+Sub3             391.456            285.093           
+Sub3             387.092            285.093           
+Sub3             387.577            284.124           
+Sub4             229.027            222.546           
+Sub4             233.390            186.181           
+Sub4             247.936            185.212           
+Sub4             244.542            224.486           
+Sub4             227.572            223.516           
+Sub4             229.027            222.546           
+Sub5             123.811            278.305           
+Sub5             143.206            7.752             
+Sub5             153.388            7.752             
+Sub5             151.933            32.480            
+Sub5             204.299            33.934            
+Sub5             191.692            178.908           
+Sub5             227.087            182.303           
+Sub5             216.905            286.063           
+Sub5             123.327            278.305           
+Sub5             123.811            278.305           
+Sub6             40.900             271.517           
+Sub6             39.930             170.666           
+Sub6             70.961             172.605           
+Sub6             81.144             24.722            
+Sub6             134.478            29.086            
+Sub6             133.994            7.752             
+Sub6             141.267            7.752             
+Sub6             121.872            277.821           
+Sub6             40.900             271.032           
+Sub6             40.900             271.517           
+Sub7             193.147            177.454           
+Sub7             203.814            51.874            
+Sub7             252.785            56.238            
+Sub7             243.088            178.424           
+Sub7             233.390            177.939           
+Sub7             232.906            181.333           
+Sub7             193.147            177.454           
+Sub9             229.512            392.248           
+Sub9             236.300            300.124           
+Sub9             436.063            314.670           
+Sub9             370.122            392.733           
+Sub9             229.996            393.218           
+Sub9             229.512            392.248           
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Gage1            28.778             303.518           
+

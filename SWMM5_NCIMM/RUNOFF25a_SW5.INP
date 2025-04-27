@@ -1,0 +1,153 @@
+[TITLE]
+;;Project Title/Notes
+                                                            SIMILARTORUNOFF24.DATBUTWITHALARGESUBCATCHMENTWIDTH
+                                                            SINGLESUBCATCHMENTWITHSNOWMELTANDINFILTRATION
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         KINWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           05/01/1985
+START_TIME           00:00:00
+REPORT_START_DATE    05/01/1985
+REPORT_START_TIME    00:00:00
+END_DATE             05/02/1985
+END_TIME             01:00:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:15:00
+DRY_STEP             23:00:00
+ROUTING_STEP         0:05:00 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.566
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+MONTHLY          0      0      0      0      0      0      0      0      0      0      0      0     
+DRY_ONLY         NO
+
+[TEMPERATURE]
+;;Data Element     Values     
+TIMESERIES         TempSeries1
+WINDSPEED MONTHLY  10 10 10 10 10 10 10 10 10 10 10 10
+SNOWMELT           34 0.5 0.6 600.0 50.0 0
+ADC IMPERVIOUS     1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+ADC PERVIOUS       1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+GAGE1            INTENSITY 0.08333  1.0      TIMESERIES RainSeries1     
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+101              GAGE1            301              10.0     40.0     9970.0   20.0     0        SNOW101         
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+101              0.017      0.025      0.05       0.2        .1         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+101              3.0        0.3        0.00112    0.01       0         
+
+[SNOWPACKS]
+;;Name           Surface    Parameters
+;;-------------- ---------- ----------
+Snow101          PLOWABLE   0          0.004      32.0       0.05       5          0.00       0.0       
+Snow101          IMPERVIOUS 0          0.004      32         0.05       5          0          1         
+Snow101          PERVIOUS   0          0.004      32         0.05       5          0          1         
+Snow101          REMOVAL    1.0        0.0        0.0        0.0        0.0        0.0        
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+;subcatchment outlet (when no sewer network in SWMM4 file)
+301              0          FREE                        NO                       
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+RainSeries1      05/01/1985 00:00      0.00000   
+;
+TempSeries1      05/01/1985 00:00      32.00000  
+TempSeries1      05/01/1985 01:00      32.00000  
+TempSeries1      05/01/1985 02:00      32.00000  
+TempSeries1      05/01/1985 03:00      32.00000  
+TempSeries1      05/01/1985 04:00      32.00000  
+TempSeries1      05/01/1985 05:00      32.00000  
+TempSeries1      05/01/1985 06:00      32.00000  
+TempSeries1      05/01/1985 07:00      34.00000  
+TempSeries1      05/01/1985 08:00      36.00000  
+TempSeries1      05/01/1985 09:00      38.00000  
+TempSeries1      05/01/1985 10:00      44.00000  
+TempSeries1      05/01/1985 11:00      50.00000  
+TempSeries1      05/01/1985 12:00      50.00000  
+TempSeries1      05/01/1985 13:00      50.00000  
+TempSeries1      05/01/1985 14:00      48.00000  
+TempSeries1      05/01/1985 15:00      46.00000  
+TempSeries1      05/01/1985 16:00      45.00000  
+TempSeries1      05/01/1985 17:00      40.00000  
+TempSeries1      05/01/1985 18:00      36.00000  
+TempSeries1      05/01/1985 19:00      34.00000  
+TempSeries1      05/01/1985 20:00      32.00000  
+TempSeries1      05/01/1985 21:00      32.00000  
+TempSeries1      05/01/1985 22:00      32.00000  
+TempSeries1      05/01/1985 23:00      32.00000  
+TempSeries1      05/01/1985 24:00      32.00000  
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 490.000 490.000 710.000 710.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+301              700.000            700.000           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+101              500.000            500.000           
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

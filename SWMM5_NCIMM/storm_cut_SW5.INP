@@ -1,0 +1,887 @@
+[TITLE]
+  XP File Date Stamp 12.00CP MINLEN5CP SPATIAL0.55 Input and Output FilesSW
+
+[OPTIONS]
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+START_DATE           11/15/2006
+START_TIME           00:00:00
+REPORT_START_DATE    11/15/2006
+REPORT_START_TIME    00:00:00
+END_DATE             11/17/2006
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          08:20:00
+WET_STEP             00:05:00
+DRY_STEP             23:00:00
+ROUTING_STEP         0:01:00 
+ALLOW_PONDING        NO
+INERTIAL_DAMPING     NONE
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.566
+NORMAL_FLOW_LIMITED  SLOPE
+SKIP_STEADY_STATE    NO
+IGNORE_RAINFALL      NO
+FORCE_MAIN_EQUATION  H-W
+LINK_OFFSETS         DEPTH
+
+[EVAPORATION]
+;;Type       Parameters
+;;---------- ----------
+MONTHLY      0.39   0.79   1.92   3.17   5.03   6.21   8.12   7.09   4.76   2.21   0.67   0.34  
+
+[RAINGAGES]
+;;               Rain      Recd.  Snow   Data      
+;;Name           Type      Freq.  Catch  Source    
+;;-------------- --------- ------ ------ ----------
+GAGE1            CUMULATIVE 0:06   1.0    TIMESERIES RainSeries1     
+
+[SUBCATCHMENTS]
+;;                                                 Total    Pcnt.             Pcnt.    Curb     Snow    
+;;Name           Raingage         Outlet           Area     Imperv   Width    Slope    Length   Pack    
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- --------
+;  *  JK  NAMEW  NGTO  WIDTH  AREA    %IMP  SLP   IMPN          PERVN   IDS    PDS    SUCT HYDCON SMDMAX RMAXINF
+Basin741         GAGE1            Basin74          24.92    0.0      1.0      4.7      0                        
+Basin23.2        GAGE1            nBasin23.2       8.94     0.0      1.0      2.4      0                        
+Basin23.1        GAGE1            nBasin23.1       8.94     0.0      1.0      2.4      0                        
+Basin831         GAGE1            Basin83          28.81    0.0      1.0      5.2      0                        
+Basin891         GAGE1            Basin89          104.4    0.0      1.0      3.0      0                        
+Basin90.1        GAGE1            nBasin90.1       8.155    0.0      1.0      6.6      0                        
+Basin90.2        GAGE1            nBasin90.2       8.155    0.0      1.0      6.6      0                        
+Basin841         GAGE1            Basin84          9.49     0.0      1.0      5.8      0                        
+Basin241         GAGE1            Basin24          9.68     0.0      1.0      1.9      0                        
+Basin281         GAGE1            Basin28          147.96001 0.0      1.0      2.8      0                        
+Basin271         GAGE1            Basin27          59.13    0.0      1.0      4.7      0                        
+Basin261         GAGE1            Basin26          16.59    0.0      1.0      3.4      0                        
+Basin251         GAGE1            Basin25          12.27    0.0      1.0      1.6      0                        
+Basin211         GAGE1            Basin21          29.72    0.0      1.0      0.5      0                        
+Basin221         GAGE1            Basin22          30.45    0.0      1.0      4.5      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+Basin741         0.0        0          0          0          25         OUTLET    
+Basin23.2        0.0        0          0          0          25         OUTLET    
+Basin23.1        0.0        0          0          0          25         OUTLET    
+Basin831         0.0        0          0          0          25         OUTLET    
+Basin891         0.0        0          0          0          25         OUTLET    
+Basin90.1        0.0        0          0          0          25         OUTLET    
+Basin90.2        0.0        0          0          0          25         OUTLET    
+Basin841         0.0        0          0          0          25         OUTLET    
+Basin241         0.0        0          0          0          25         OUTLET    
+Basin281         0.0        0          0          0          25         OUTLET    
+Basin271         0.0        0          0          0          25         OUTLET    
+Basin261         0.0        0          0          0          25         OUTLET    
+Basin251         0.0        0          0          0          25         OUTLET    
+Basin211         0.0        0          0          0          25         OUTLET    
+Basin221         0.0        0          0          0          25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+Basin741         72.0       34.0       1.         .00001     0         
+Basin23.2        83.0       15.0       1.         0.00001    0         
+Basin23.1        83.0       15.0       1.         0.00001    0         
+Basin831         80.0       20.0       1.         0.00001    0         
+Basin891         76.0       10.0       1.         0.00001    0         
+Basin90.1        76.0       60.0       1.         0.00001    0         
+Basin90.2        73.0       60.0       1          0.00001    0         
+Basin841         80.0       40.0       1.         0.00001    0         
+Basin241         83.0       47.0       1.         0.00001    0         
+Basin281         77.0       0.0        1.         0.00001    0         
+Basin271         76.0       50.0       1.         0.00001    0         
+Basin261         77.0       33.0       1.         0.00001    0         
+Basin251         90.0       32.0       1.         0.00001    0         
+Basin211         89.0       0.0        1.         0.00001    0         
+Basin221         81.0       5.0        1.         0.00001    0         
+
+[JUNCTIONS]
+;;               Invert     Max.       Init.      Surcharge  Ponded    
+;;Name           Elev.      Depth      Depth      Depth      Area      
+;;-------------- ---------- ---------- ---------- ---------- ----------
+Basin21          441.00     6.00       .00        0          0         
+Basin22          440.00     6.00       .00        0          0         
+nBasin23.1       448.07     6.50       .00        0          0         
+nBasin23.2       453.69     8.54       .00        0          0         
+Basin24          458.84     4.21       .00        0          0         
+Basin25          478.00     4.59       .00        0          0         
+Basin26          475.00     15.00      .00        0          0         
+Basin27          491.86     5.14       .00        0          0         
+Basin28          511.00     6.00       .00        0          0         
+Basin74          492.00     2.80       .00        0          0         
+Basin83          467.65     1.75       .00        0          0         
+Basin84          467.87     3.05       .00        0          0         
+Basin89          480.00     4.00       .00        0          0         
+nBasin90.1       477.22     2.05       .00        0          0         
+nBasin90.2       472.90     3.30       .00        0          0         
+;   *    JUNCTION       GRELEV       Z      QINST      Y
+N177             450.00     9.23       .00        0          0         
+N179             446.48     5.25       .00        0          0         
+N180             445.98     3.79       .00        0          0         
+N183             461.58     4.60       .00        0          0         
+N187             474.69     2.75       .00        0          0         
+N404             439.29     5.71       .00        0          0         
+N447.1           477.64     4.00       .00        0          0         
+N477             474.00     11.76      .00        0          0         
+Node105          439.63     5.37       .00        0          0         
+Node168          500.00     5.00       .00        0          0         
+Node171          494.00     5.00       .00        0          0         
+Node172          493.97     5.03       .00        0          0         
+Node174          489.81     8.19       .00        0          0         
+Node175          490.99     5.01       .00        0          0         
+Node205          437.00     8.00       .00        0          0         
+Node232          445.96     4.65       .00        0          0         
+Node233          445.20     3.30       .00        0          0         
+Node256          445.00     4.00       .00        0          0         
+Node385          462.18     5.83       .00        0          0         
+Node386          472.98     3.15       .00        0          0         
+Node388          459.26     5.30       .00        0          0         
+Node92           468.55     2.95       .00        0          0         
+Node93           463.69     4.35       .00        0          0         
+Node94           458.73     4.29       .00        0          0         
+Node95           458.46     3.54       .00        0          0         
+Node96           458.16     4.84       .00        0          0         
+Node99           443.00     6.00       .00        0          0         
+
+[OUTFALLS]
+;;               Invert     Outfall    Stage/Table      Tide
+;;Name           Elev.      Type       Time Series      Gate
+;;-------------- ---------- ---------- ---------------- ----
+;  *    Extran outfall nodes I1 - free I2 - gates
+Node108          435.0      FREE                        NO
+
+[STORAGE]
+;;               Invert   Max.     Init.    Shape      Shape                      Ponded   Evap.   
+;;Name           Elev.    Depth    Depth    Curve      Params                     Area     Frac.   
+;;-------------- -------- -------- -------- ---------- -------- -------- -------- -------- --------
+;  * JSTORE ZTOP ASTORE   NUMST
+Node116          464.0    4.0      0.0      FUNCTIONAL 5000.0   0        0        0        0       
+;  * JSTORE ZTOP ASTORE   NUMST
+Node107          436.0    14.0     5.0      FUNCTIONAL 43560.0  0        0        0        0       
+;  * JSTORE ZTOP ASTORE   NUMST
+Node165          510.0    5.0      0.0      FUNCTIONAL 60619.0  0        0        0        0       
+;  * JSTORE ZTOP ASTORE   NUMST
+Node166          505.63   4.37     0.0      FUNCTIONAL 56628.0  0        0        0        0       
+;  * JSTORE ZTOP ASTORE   NUMST
+Node167          502.89   5.11     0.0      FUNCTIONAL 52272.0  0        0        0        0       
+;  * JSTORE ZTOP ASTORE   NUMST
+Node200          445.0    4.0      0.0      TABULAR    Node200                    0        0       
+
+[CONDUITS]
+;;               Inlet            Outlet                      Manning    Inlet      Outlet     Init.      Max.      
+;;Name           Node             Node             Length     N          Offset     Offset     Flow       Flow      
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+;   *   NCOND NJ1 NJ2    QO  NKLASS AFULL DEEP WIDE  LEN       ZP1  ZP2  ROUGH  STHETA  SPHI  ENTK  EXITK  OTHERK
+L172             nBasin23.1       N179             383.62     0.014      0.0        0.1        0.0        0         
+L173             N179             N180             176.54     0.014      0.0        0.1        0.0        0         
+L180             Basin74          N187             396.24     0.014      0.0        0.0        0.0        0         
+Link355          Node385          N177             140.84     0.014      0.47       0.0        0.0        0         
+Link360          N183             Node388          51.75      0.014      0.0        0.0        0.0        0         
+Link361          Basin83          N183             346.64     0.014      0.0        1.1        0.0        0         
+Link106          N447.1           nBasin90.1       14.67      0.014      0.0        0.1        0.0        0         
+Link107          Basin89          N447.1           388.83     0.014      0.0        0.0        0.0        0         
+Link108          nBasin90.1       nBasin90.2       262.27     0.014      0.0        0.1        0.0        0         
+Link109          nBasin90.2       Node386          29.04      0.014      0.0        0.15       0.0        0         
+Link110          Node386          Basin84          308.31     0.014      0.0        0.1        0.0        0         
+Link111          Basin84          N183             308.36     0.014      0.0        0.1        0.0        0         
+Link112          Node388          Basin24          33.48      0.014      0.0        0.0        0.0        0         
+Link113          N187             Node92           291.75     0.014      0.0        0.1        0.0        0         
+Link114          Node92           Node93           435.95     0.014      0.0        0.1        0.0        0         
+Link115          Node93           Node385          48.24      0.014      0.0        0.08       0.0        0         
+Link116          Basin24          Node94           254.1      0.014      0.0        0.114      0.0        0         
+Link117          Node94           Node95           169.64     0.014      0.0        0.0        0.0        0         
+Link118          Node95           Node96           327.55     0.014      0.0        0.0        0.0        0         
+Link123          Node116          Node96           885.99     0.014      0.0        0.0        0.0        0         
+Link129          Node105          Node205          418.28     0.014      0.0        0.0        0.0        0         
+Link130          Node205          Node107          190.46     0.014      0.0        0.0        0.0        0         
+Link131          Node107          Node108          134.18     0.014      3.21       1.28       0.0        0         
+Link192          Basin28          Node165          123.31     0.014      0.0        0.0        0.0        0         
+Link193          Node165          Node166          197.25     0.014      0.0        1.97       0.0        0         
+Link194          Node166          Node167          414.67     0.014      1.96       0.97       0.0        0         
+Link198          Node168          Node171          422.44     0.014      0.0        0.0        0.0        0         
+Link199          Node171          Node172          85.52      0.014      0.03       0.0        0.0        0         
+Link200          Node172          Basin27          147.24     0.014      0.0        0.0        0.0        0         
+Link201          Basin27          Node174          106.36     0.014      0.0        0.0        0.0        0         
+Link202          Node174          Node175          61.76      0.014      0.0        0.0        0.0        0         
+Link203          Node175          Basin26          56.95      0.014      0.0        8.51       0.0        0         
+Link204          Basin26          N477             858.17     0.014      0.0        0.0        0.0        0         
+Link205          N477             Basin25          130.85     0.014      5.48       0.51       0.0        0         
+Link207          Basin25          Node116          992.39     0.014      0.0        0.0        0.0        0         
+Link237          N177             nBasin23.1       389.93     0.014      0.0        0.0        0.0        0         
+Link238          N180             Node200          133.94     0.014      0.0        0.7        0.0        0         
+Link240          Node96           Node99           798.77     0.014      0.0        0.0        0.0        0         
+Link246          Node99           Basin21          737.71     0.014      0.0        0.0        0.0        0         
+Link248          Basin21          Basin22          466.2      0.014      0.0        0.0        0.0        0         
+Link249          Basin22          N404             296.57     0.014      0.0        0.21       0.0        0         
+Link329          nBasin23.2       Node232          556.77     0.014      0.0        0.1        0.0        0         
+Link330          Node232          Node233          188.9      0.014      0.0        0.0        0.0        0         
+Link332          Node233          Node200          289.48     0.014      0.0        0.0        0.0        0         
+Link364          nBasin23.2       N177             203.22     0.014      0.0        0.0        0.0        0         
+Link368          Node256          Node99           83.5       0.014      0.0        1.0        0.0        0         
+1458.1           Node167          Node168          105.06     0.014      0.98       3.83       0.0        0         
+ditch            Node167          Node168          105.06     0.014      0.0        0.0        0.0        0         
+1544.1           N404             Node105          157.92     0.014      0.16       1.67       0.0        0         
+1544.2           N404             Node105          157.92     0.014      0.0        0.0        0.0        0         
+
+[WEIRS]
+;;               Inlet            Outlet           Weir         Crest      Disch.     Flap End      End       
+;;Name           Node             Node             Type         Height     Coeff.     Gate Con.     Coeff.    
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- ---- -------- ----------
+WEIR1atNode200-Node256 Node200          Node256          TRANSVERSE   3.0        2.1        NO   0        0         
+WEIR2atNode200-Node99 Node200          Node99           TRANSVERSE   3.5        3.0        NO   0        0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ----------
+L172             CIRCULAR     2.0              0.0        0.0        0.0        1.0       
+L173             CIRCULAR     2.0              0.0        0.0        0.0        1.0       
+L180             CIRCULAR     1.0              0.0        0.0        0.0        1.0       
+Link355          CIRCULAR     1.5              0.0        0.0        0.0        1.0       
+Link360          CIRCULAR     2.0              0.0        0.0        0.0        1.0       
+Link361          CIRCULAR     1.0              0.0        0.0        0.0        1.0       
+Link106          CIRCULAR     1.0              0.0        0.0        0.0        1.0       
+Link107          IRREGULAR    1                0          0          0          1         
+Link108          CIRCULAR     1.25             0.0        0.0        0.0        1.0       
+Link109          CIRCULAR     1.5              0.0        0.0        0.0        1.0       
+Link110          CIRCULAR     1.5              0.0        0.0        0.0        1.0       
+Link111          CIRCULAR     1.5              0.0        0.0        0.0        1.0       
+Link112          CIRCULAR     2.5              0.0        0.0        0.0        1.0       
+Link113          CIRCULAR     1.0              0.0        0.0        0.0        1.0       
+Link114          CIRCULAR     1.5              0.0        0.0        0.0        1.0       
+Link115          CIRCULAR     1.5              0.0        0.0        0.0        1.0       
+Link116          IRREGULAR    2                0          0          0          1         
+Link117          IRREGULAR    3                0          0          0          1         
+Link118          IRREGULAR    4                0          0          0          1         
+Link123          IRREGULAR    5                0          0          0          1         
+Link129          IRREGULAR    6                0          0          0          1         
+Link130          IRREGULAR    7                0          0          0          1         
+Link131          IRREGULAR    8                0          0          0          1         
+Link192          IRREGULAR    9                0          0          0          1         
+Link193          CIRCULAR     1.5              0.0        0.0        0.0        1.0       
+Link194          CIRCULAR     1.0              0.0        0.0        0.0        1.0       
+Link198          IRREGULAR    10               0          0          0          1         
+Link199          CIRCULAR     2.0              0.0        0.0        0.0        1.0       
+Link200          CIRCULAR     5.0              0.0        0.0        0.0        1.0       
+Link201          CIRCULAR     2.0              0.0        0.0        0.0        1.0       
+Link202          IRREGULAR    11               0          0          0          1         
+Link203          CIRCULAR     3.0              0.0        0.0        0.0        1.0       
+Link204          IRREGULAR    12               0          0          0          1         
+Link205          CIRCULAR     3.0              0.0        0.0        0.0        1.0       
+Link207          IRREGULAR    13               0          0          0          1         
+Link237          CIRCULAR     1.5              0.0        0.0        0.0        1.0       
+Link238          CIRCULAR     2.5              0.0        0.0        0.0        1.0       
+Link240          IRREGULAR    14               0          0          0          1         
+Link246          IRREGULAR    15               0          0          0          1         
+Link248          CIRCULAR     4.0              0.0        0.0        0.0        1.0       
+Link249          CIRCULAR     4.0              0.0        0.0        0.0        1.0       
+Link329          CIRCULAR     1.0              0.0        0.0        0.0        1.0       
+Link330          CIRCULAR     1.0              0.0        0.0        0.0        1.0       
+Link332          CIRCULAR     1.0              0.0        0.0        0.0        1.0       
+Link364          CIRCULAR     1.5              0.0        0.0        0.0        1.0       
+Link368          CIRCULAR     1.5              0.0        0.0        0.0        1.0       
+1458.1           CIRCULAR     0.667            0.0        0.0        0.0        1.0       
+ditch            IRREGULAR    16               0          0          0          1         
+1544.1           RECT_CLOSED  3.0              5.0        0.0        0.0        1.0       
+1544.2           RECT_CLOSED  4.5              6.0        0.0        0.0        1.0       
+WEIR1atNode200-Node256 RECT_OPEN    4                1          0          0         
+WEIR2atNode200-Node99 RECT_OPEN    4                1          0          0         
+
+[TRANSECTS]
+
+NC 0.05     0.05     0.05    
+X1 1                 5        40       44.343   0.0      0.0      0.0      1        0       
+GR 482      0        483      40       480      43       483.276  44.343   485      58      
+
+NC 0.05     0.05     0.05    
+X1 2                 6        0        22       0.0      0.0      0.0      1        0       
+GR 461      0        461      6        458      10       458      14       461      18      
+GR 461      22      
+
+NC 0.05     0.05     0.05    
+X1 3                 6        0        22       0.0      0.0      0.0      1        0       
+GR 461      0        461      6        458      10       458      14       461      18      
+GR 461      22      
+
+NC 0.05     0.05     0.05    
+X1 4                 6        0        22       0.0      0.0      0.0      1        0       
+GR 461      0        461      6        458      10       458      14       461      18      
+GR 461      22      
+
+NC 0.05     0.05     0.05    
+X1 5                 5        0        26       0.0      0.0      0.0      1        0       
+GR 454.2    0        453.9    6        451.9    8        450      22       454.2    26      
+
+NC 0.05     0.05     0.05    
+X1 6                 4        0        6        0.0      0.0      0.0      1        0       
+GR 8        0        0        2        0        4        8        6       
+
+NC 0.05     0.05     0.05    
+X1 7                 4        0        6        0.0      0.0      0.0      1        0       
+GR 8        0        0        2        0        4        8        6       
+
+NC 0.05     0.05     0.05    
+X1 8                 4        0        20.1     0.0      0.0      0.0      1        0       
+GR 10       0        0        0.1      0        20       10       20.1    
+
+NC 0.05     0.05     0.05    
+X1 9                 6        0        22       0.0      0.0      0.0      1        0       
+GR 461      0        461      6        456      10       456      14       461      18      
+GR 461      22      
+
+NC 0.05     0.05     0.05    
+X1 10                6        0        22       0.0      0.0      0.0      1        0       
+GR 461      0        461      6        456      10       456      14       461      18      
+GR 461      22      
+
+NC 0.05     0.05     0.05    
+X1 11                6        0        22       0.0      0.0      0.0      1        0       
+GR 461      0        461      6        456      10       456      14       461      18      
+GR 461      22      
+
+NC 0.05     0.05     0.05    
+X1 12                4        0        30       0.0      0.0      0.0      1        0       
+GR 10       0        0        5        0        25       10       30      
+
+NC 0.05     0.05     0.05    
+X1 13                6        0        22       0.0      0.0      0.0      1        0       
+GR 461      0        461      6        458      10       458      14       461      18      
+GR 461      22      
+
+NC 0.05     0.05     0.05    
+X1 14                5        0        26       0.0      0.0      0.0      1        0       
+GR 454.2    0        453.9    6        451.9    8        450      22       454.2    26      
+
+NC 0.05     0.05     0.05    
+X1 15                5        0        26       0.0      0.0      0.0      1        0       
+GR 454.2    0        453.9    6        451.9    8        450      22       454.2    26      
+
+NC 0.05     0.05     0.05    
+X1 16                6        0        22       0.0      0.0      0.0      1        0       
+GR 461      0        461      6        458      10       458      14       461      18      
+GR 461      22      
+
+[LOSSES]
+;;Link           Inlet      Outlet     Average    Flap Gate 
+;;-------------- ---------- ---------- ---------- ----------
+
+[DWF]
+;;                                Average    Time      
+;;Node           Parameter        Value      Patterns  
+;;-------------- ---------------- ---------- ----------
+Basin89          FLOW             0.48      
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+node200          Storage    0.0000     20948.0040
+node200                     1          23593.1850
+node200                     1.5000     24915.7755
+node200                     2.0000     26238.3660
+node200                     2.5000     27560.9565
+node200                     3.0000     28883.5470
+node200                     3.5000     30206.1375
+node200                     4.0000     31528.7280
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+RainSeries1      11/15/2006 00:00      .0055     
+RainSeries1                 00:06      .01075    
+RainSeries1                 00:12      .01575    
+RainSeries1                 00:18      .0205     
+RainSeries1                 00:24      .025      
+RainSeries1      11/15/2006 00:30      .0295     
+RainSeries1                 00:36      .03425    
+RainSeries1                 00:42      .03925    
+RainSeries1                 00:48      .0445     
+RainSeries1                 00:54      .05       
+RainSeries1      11/15/2006 01:00      .057      
+RainSeries1                 01:06      .06425    
+RainSeries1                 01:12      .07175    
+RainSeries1                 01:18      .0795     
+RainSeries1                 01:24      .0875     
+RainSeries1      11/15/2006 01:30      .095      
+RainSeries1                 01:36      .1025     
+RainSeries1                 01:42      .10975    
+RainSeries1                 01:48      .1175     
+RainSeries1                 01:54      .125      
+RainSeries1      11/15/2006 02:00      .13275    
+RainSeries1                 02:06      .14875    
+RainSeries1                 02:12      .157      
+RainSeries1                 02:18      .165      
+RainSeries1                 02:24      .173      
+RainSeries1      11/15/2006 02:30      .181      
+RainSeries1                 02:36      .189      
+RainSeries1                 02:42      .197      
+RainSeries1                 02:48      .205      
+RainSeries1                 02:54      .21275    
+RainSeries1      11/15/2006 03:00      .22075    
+RainSeries1                 03:06      .22875    
+RainSeries1                 03:12      .23675    
+RainSeries1                 03:18      .245      
+RainSeries1                 03:24      .25375    
+RainSeries1      11/15/2006 03:30      .26275    
+RainSeries1                 03:36      .2715     
+RainSeries1                 03:42      .28075    
+RainSeries1                 03:48      .29       
+RainSeries1                 03:54      .29925    
+RainSeries1      11/15/2006 04:00      .3085     
+RainSeries1                 04:06      .318      
+RainSeries1                 04:12      .32775    
+RainSeries1                 04:18      .3375     
+RainSeries1                 04:24      .3475     
+RainSeries1      11/15/2006 04:30      .35775    
+RainSeries1                 04:36      .36825    
+RainSeries1                 04:42      .379      
+RainSeries1                 04:48      .39       
+RainSeries1                 04:54      .4015     
+RainSeries1      11/15/2006 05:00      .41325    
+RainSeries1                 05:06      .42525    
+RainSeries1                 05:12      .4375     
+RainSeries1                 05:18      .45       
+RainSeries1                 05:24      .46225    
+RainSeries1      11/15/2006 05:30      .475      
+RainSeries1                 05:36      .488      
+RainSeries1                 05:42      .50125    
+RainSeries1                 05:48      .515      
+RainSeries1                 05:54      .53       
+RainSeries1      11/15/2006 06:00      .54525    
+RainSeries1                 06:06      .56075    
+RainSeries1                 06:12      .5765     
+RainSeries1                 06:18      .5925     
+RainSeries1                 06:24      .60725    
+RainSeries1      11/15/2006 06:30      .622      
+RainSeries1                 06:36      .63725    
+RainSeries1                 06:42      .65325    
+RainSeries1                 06:48      .67       
+RainSeries1                 06:54      .688      
+RainSeries1      11/15/2006 07:00      .70725    
+RainSeries1                 07:06      .728      
+RainSeries1                 07:12      .7505     
+RainSeries1                 07:18      .775      
+RainSeries1                 07:24      .8285     
+RainSeries1      11/15/2006 07:30      .88675    
+RainSeries1                 07:36      .947      
+RainSeries1                 07:42      1.0065    
+RainSeries1                 07:48      1.0625    
+RainSeries1                 07:54      1.0985    
+RainSeries1      11/15/2006 08:00      1.12925   
+RainSeries1                 08:06      1.15575   
+RainSeries1                 08:12      1.179     
+RainSeries1                 08:18      1.2       
+RainSeries1                 08:24      1.2225    
+RainSeries1      11/15/2006 08:30      1.24375   
+RainSeries1                 08:36      1.26375   
+RainSeries1                 08:42      1.2825    
+RainSeries1                 08:48      1.3       
+RainSeries1                 08:54      1.3165    
+RainSeries1      11/15/2006 09:00      1.33225   
+RainSeries1                 09:06      1.34725   
+RainSeries1                 09:12      1.3615    
+RainSeries1                 09:18      1.375     
+RainSeries1                 09:24      1.389     
+RainSeries1      11/15/2006 09:30      1.403     
+RainSeries1                 09:36      1.4165    
+RainSeries1                 09:42      1.4295    
+RainSeries1                 09:48      1.4425    
+RainSeries1                 09:54      1.455     
+RainSeries1      11/15/2006 10:00      1.467     
+RainSeries1                 10:06      1.479     
+RainSeries1                 10:12      1.491     
+RainSeries1                 10:18      1.5025    
+RainSeries1                 10:24      1.5145    
+RainSeries1      11/15/2006 10:30      1.526     
+RainSeries1                 10:36      1.5375    
+RainSeries1                 10:42      1.549     
+RainSeries1                 10:48      1.56      
+RainSeries1                 10:54      1.571     
+RainSeries1      11/15/2006 11:00      1.5815    
+RainSeries1                 11:06      1.592     
+RainSeries1                 11:12      1.6025    
+RainSeries1                 11:18      1.6125    
+RainSeries1                 11:24      1.62225   
+RainSeries1      11/15/2006 11:30      1.63175   
+RainSeries1                 11:36      1.64125   
+RainSeries1                 11:42      1.65075   
+RainSeries1                 11:48      1.66      
+RainSeries1                 11:54      1.66925   
+RainSeries1      11/15/2006 12:00      1.67875   
+RainSeries1                 12:06      1.68825   
+RainSeries1                 12:12      1.69775   
+RainSeries1                 12:18      1.7075    
+RainSeries1                 12:24      1.7165    
+RainSeries1      11/15/2006 12:30      1.72575   
+RainSeries1                 12:36      1.73475   
+RainSeries1                 12:42      1.7435    
+RainSeries1                 12:48      1.7525    
+RainSeries1                 12:54      1.76175   
+RainSeries1      11/15/2006 13:00      1.771     
+RainSeries1                 13:06      1.78      
+RainSeries1                 13:12      1.78875   
+RainSeries1                 13:18      1.7975    
+RainSeries1                 13:24      1.80625   
+RainSeries1      11/15/2006 13:30      1.81475   
+RainSeries1                 13:36      1.82325   
+RainSeries1                 13:42      1.8315    
+RainSeries1                 13:48      1.84      
+RainSeries1                 13:54      1.8485    
+RainSeries1      11/15/2006 14:00      1.857     
+RainSeries1                 14:06      1.86525   
+RainSeries1                 14:12      1.87375   
+RainSeries1                 14:18      1.882     
+RainSeries1                 14:24      1.89025   
+RainSeries1      11/15/2006 14:30      1.8985    
+RainSeries1                 14:36      1.90675   
+RainSeries1                 14:42      1.915     
+RainSeries1                 14:48      1.923     
+RainSeries1                 14:54      1.93125   
+RainSeries1      11/15/2006 15:00      1.93925   
+RainSeries1                 15:06      1.94725   
+RainSeries1                 15:12      1.95525   
+RainSeries1                 15:18      1.96325   
+RainSeries1                 15:24      1.97125   
+RainSeries1      11/15/2006 15:30      1.979     
+RainSeries1                 15:36      1.98675   
+RainSeries1                 15:42      1.99475   
+RainSeries1                 15:48      2.0025    
+RainSeries1                 15:54      2.01025   
+RainSeries1      11/15/2006 16:00      2.01775   
+RainSeries1                 16:06      2.0255    
+RainSeries1                 16:12      2.033     
+RainSeries1                 16:18      2.04075   
+RainSeries1                 16:24      2.04825   
+RainSeries1      11/15/2006 16:30      2.05575   
+RainSeries1                 16:36      2.063     
+RainSeries1                 16:42      2.0705    
+RainSeries1                 16:48      2.078     
+RainSeries1                 16:54      2.08525   
+RainSeries1      11/15/2006 17:00      2.0925    
+RainSeries1                 17:06      2.09975   
+RainSeries1                 17:12      2.107     
+RainSeries1                 17:18      2.11425   
+RainSeries1                 17:24      2.1215    
+RainSeries1      11/15/2006 17:30      2.1285    
+RainSeries1                 17:36      2.1355    
+RainSeries1                 17:42      2.1425    
+RainSeries1                 17:48      2.1495    
+RainSeries1                 17:54      2.1565    
+RainSeries1      11/15/2006 18:00      2.1635    
+RainSeries1                 18:06      2.17025   
+RainSeries1                 18:12      2.17725   
+RainSeries1                 18:18      2.184     
+RainSeries1                 18:24      2.19075   
+RainSeries1      11/15/2006 18:30      2.1975    
+RainSeries1                 18:36      2.20425   
+RainSeries1                 18:42      2.211     
+RainSeries1                 18:48      2.2175    
+RainSeries1                 18:54      2.224     
+RainSeries1      11/15/2006 19:00      2.23075   
+RainSeries1                 19:06      2.23725   
+RainSeries1                 19:12      2.2435    
+RainSeries1                 19:18      2.25      
+RainSeries1                 19:24      2.2565    
+RainSeries1      11/15/2006 19:30      2.26275   
+RainSeries1                 19:36      2.269     
+RainSeries1                 19:42      2.27525   
+RainSeries1                 19:48      2.2815    
+RainSeries1                 19:54      2.28775   
+RainSeries1      11/15/2006 20:00      2.294     
+RainSeries1                 20:06      2.3       
+RainSeries1                 20:12      2.30625   
+RainSeries1                 20:18      2.31225   
+RainSeries1                 20:24      2.31825   
+RainSeries1      11/15/2006 20:30      2.32425   
+RainSeries1                 20:36      2.33025   
+RainSeries1                 20:42      2.336     
+RainSeries1                 20:48      2.342     
+RainSeries1                 20:54      2.34775   
+RainSeries1      11/15/2006 21:00      2.3535    
+RainSeries1                 21:06      2.35925   
+RainSeries1                 21:12      2.365     
+RainSeries1                 21:18      2.3705    
+RainSeries1                 21:24      2.37625   
+RainSeries1      11/15/2006 21:30      2.38175   
+RainSeries1                 21:36      2.3875    
+RainSeries1                 21:42      2.393     
+RainSeries1                 21:48      2.3985    
+RainSeries1                 21:54      2.40375   
+RainSeries1      11/15/2006 22:00      2.40925   
+RainSeries1                 22:06      2.4145    
+RainSeries1                 22:12      2.42      
+RainSeries1                 22:18      2.42525   
+RainSeries1                 22:24      2.4305    
+RainSeries1      11/15/2006 22:30      2.43575   
+RainSeries1                 22:36      2.441     
+RainSeries1                 22:42      2.446     
+RainSeries1                 22:48      2.451     
+RainSeries1                 22:54      2.45625   
+RainSeries1      11/15/2006 23:00      2.46125   
+RainSeries1                 23:06      2.46625   
+RainSeries1                 23:12      2.471     
+RainSeries1                 23:18      2.476     
+RainSeries1                 23:24      2.481     
+RainSeries1      11/15/2006 23:30      2.48575   
+RainSeries1                 23:36      2.4905    
+RainSeries1                 23:42      2.49525   
+RainSeries1                 23:48      2.5       
+
+[PATTERNS]
+;;Name           Type       Multipliers
+;;-------------- ---------- -----------
+hourly           HOURLY     1.0   1.0   1.0   1.0   1.0   1.0  
+hourly                      1.0   1.0   1.0   1.0   1.0   1.0  
+hourly                      1.0   1.0   1.0   1.0   1.0   1.0  
+hourly                      1.0   1.0   1.0   1.0   1.0   1.0  
+
+[REPORT]
+INPUT      YES
+CONTROLS   NO
+
+[TAGS]
+Subcatch  Basin741         Basin741        
+Subcatch  Basin23.2        Basin23         
+Subcatch  Basin23.1        Basin23         
+Subcatch  Basin831         Basin831        
+Subcatch  Basin891         Basin891        
+Subcatch  Basin90.1        Basin90         
+Subcatch  Basin90.2        Basin90         
+Subcatch  Basin841         Basin841        
+Subcatch  Basin241         Basin241        
+Subcatch  Basin281         Basin281        
+Subcatch  Basin271         Basin271        
+Subcatch  Basin261         Basin261        
+Subcatch  Basin251         Basin251        
+Subcatch  Basin211         Basin211        
+Subcatch  Basin221         Basin221        
+Node       Basin21          Basin21         
+Node       Basin22          Basin22         
+Node       Basin24          Basin24         
+Node       Basin25          Basin25         
+Node       Basin26          Basin26         
+Node       Basin27          Basin27         
+Node       Basin28          Basin28         
+Node       Basin74          Basin74         
+Node       Basin83          Basin83         
+Node       Basin84          Basin84         
+Node       Basin89          Basin89         
+Node       N177             N177            
+Node       N179             N179            
+Node       N180             N180            
+Node       N183             N183            
+Node       N187             N187            
+Node       N404             N404            
+Node       N447.1           N447            
+Node       N477             N477            
+Node       Node105          Node105         
+Node       Node168          Node168         
+Node       Node171          Node171         
+Node       Node172          Node172         
+Node       Node174          Node174         
+Node       Node175          Node175         
+Node       Node205          Node205         
+Node       Node232          Node232         
+Node       Node233          Node233         
+Node       Node256          Node256         
+Node       Node385          Node385         
+Node       Node386          Node386         
+Node       Node388          Node388         
+Node       Node92           Node92          
+Node       Node93           Node93          
+Node       Node94           Node94          
+Node       Node95           Node95          
+Node       Node96           Node96          
+Node       Node99           Node99          
+Node       Node108          Node108         
+Node       Node116          Node116         
+Node       Node107          Node107         
+Node       Node165          Node165         
+Node       Node166          Node166         
+Node       Node167          Node167         
+Node       Node200          Node200         
+Link       L172             L172            
+Link       L173             L173            
+Link       L180             L180            
+Link       Link355          Link355         
+Link       Link360          Link360         
+Link       Link361          Link361         
+Link       Link106          Link106         
+Link       Link107          Link107         
+Link       Link108          Link108         
+Link       Link109          Link109         
+Link       Link110          Link110         
+Link       Link111          Link111         
+Link       Link112          Link112         
+Link       Link113          Link113         
+Link       Link114          Link114         
+Link       Link115          Link115         
+Link       Link116          Link116         
+Link       Link117          Link117         
+Link       Link118          Link118         
+Link       Link123          Link123         
+Link       Link129          Link129         
+Link       Link130          Link130         
+Link       Link131          Link131         
+Link       Link192          Link192         
+Link       Link193          Link193         
+Link       Link194          Link194         
+Link       Link198          Link198         
+Link       Link199          Link199         
+Link       Link200          Link200         
+Link       Link201          Link201         
+Link       Link202          Link202         
+Link       Link203          Link203         
+Link       Link204          Link204         
+Link       Link205          Link205         
+Link       Link207          Link207         
+Link       Link237          Link237         
+Link       Link238          Link238         
+Link       Link240          Link240         
+Link       Link246          Link246         
+Link       Link248          Link248         
+Link       Link249          Link249         
+Link       Link329          Link329         
+Link       Link330          Link330         
+Link       Link332          Link332         
+Link       Link364          Link364         
+Link       Link368          Link368         
+Link       1458.1           1458            
+Link       ditch            ditch           
+Link       1544.1           1544            
+Link       1544.2           1544            
+
+[MAP]
+DIMENSIONS 7606400.963 424643.685 7613969.768 426638.715
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Basin21          7608179.000        426330.300        
+Basin22          7607721.000        426255.400        
+nBasin23.1       7608996.000        425647.700        
+nBasin23.2       7608722.000        425323.700        
+Basin24          7609815.000        425194.500        
+Basin25          7611356.000        425265.500        
+Basin26          7612034.000        425301.800        
+Basin27          7612076.000        425132.900        
+Basin28          7613408.000        424863.500        
+Basin74          7608196.000        424752.100        
+Basin83          7609465.000        425114.000        
+Basin84          7610120.000        425099.600        
+Basin89          7611123.000        425084.000        
+nBasin90.1       7610720.000        425087.700        
+nBasin90.2       7610457.000        425091.500        
+N177             7608925.000        425318.400        
+N179             7608990.000        426031.300        
+N180             7608814.000        426040.450        
+N183             7609812.000        425109.300        
+N187             7608183.000        425148.100        
+N404             7607440.000        426204.400        
+N447.1           7610734.000        425086.450        
+N477             7611408.000        425385.500        
+Node105          7607329.000        426092.100        
+Node168          7612662.000        425045.200        
+Node171          7612275.000        425087.100        
+Node172          7612189.000        425091.800        
+Node174          7612087.000        425238.650        
+Node175          7612091.000        425300.200        
+Node205          7606945.000        425996.150        
+Node232          7608616.000        425864.700        
+Node233          7608546.000        426040.200        
+Node256          7608844.000        426199.300        
+Node385          7608910.000        425178.300        
+Node386          7610428.000        425093.900        
+Node388          7609814.000        425161.000        
+Node92           7608474.000        425138.400        
+Node93           7608910.000        425130.100        
+Node94           7609697.000        425419.300        
+Node95           7609580.000        425542.800        
+Node96           7609580.000        425854.100        
+Node99           7608912.000        426247.700        
+Node108          7606745.000        425815.600        
+Node116          7610429.000        425619.400        
+Node107          7606879.000        425817.500        
+Node165          7613285.000        424874.100        
+Node166          7613088.000        424885.550        
+Node167          7612677.000        424941.300        
+Node200          7608803.000        426173.950        
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+ditch            7612673.250        425019.225        
+1544.2           7607412.250        426120.175        
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Basin741         7608413.731        424852.100        
+Basin741         7608296.000        424969.831        
+Basin741         7608178.269        424852.100        
+Basin741         7608296.000        424734.369        
+Basin23.2        7608939.731        425423.700        
+Basin23.2        7608822.000        425541.431        
+Basin23.2        7608704.269        425423.700        
+Basin23.2        7608822.000        425305.969        
+Basin23.1        7609213.731        425747.700        
+Basin23.1        7609096.000        425865.431        
+Basin23.1        7608978.269        425747.700        
+Basin23.1        7609096.000        425629.969        
+Basin831         7609682.731        425214.000        
+Basin831         7609565.000        425331.731        
+Basin831         7609447.269        425214.000        
+Basin831         7609565.000        425096.269        
+Basin891         7611340.731        425184.000        
+Basin891         7611223.000        425301.731        
+Basin891         7611105.269        425184.000        
+Basin891         7611223.000        425066.269        
+Basin90.1        7610937.731        425187.700        
+Basin90.1        7610820.000        425305.431        
+Basin90.1        7610702.269        425187.700        
+Basin90.1        7610820.000        425069.969        
+Basin90.2        7610674.731        425191.500        
+Basin90.2        7610557.000        425309.231        
+Basin90.2        7610439.269        425191.500        
+Basin90.2        7610557.000        425073.769        
+Basin841         7610337.731        425199.600        
+Basin841         7610220.000        425317.331        
+Basin841         7610102.269        425199.600        
+Basin841         7610220.000        425081.869        
+Basin241         7610032.731        425294.500        
+Basin241         7609915.000        425412.231        
+Basin241         7609797.269        425294.500        
+Basin241         7609915.000        425176.769        
+Basin281         7613625.731        424963.500        
+Basin281         7613508.000        425081.231        
+Basin281         7613390.269        424963.500        
+Basin281         7613508.000        424845.769        
+Basin271         7612293.731        425232.900        
+Basin271         7612176.000        425350.631        
+Basin271         7612058.269        425232.900        
+Basin271         7612176.000        425115.169        
+Basin261         7612251.731        425401.800        
+Basin261         7612134.000        425519.531        
+Basin261         7612016.269        425401.800        
+Basin261         7612134.000        425284.069        
+Basin251         7611573.731        425365.500        
+Basin251         7611456.000        425483.231        
+Basin251         7611338.269        425365.500        
+Basin251         7611456.000        425247.769        
+Basin211         7608396.731        426430.300        
+Basin211         7608279.000        426548.031        
+Basin211         7608161.269        426430.300        
+Basin211         7608279.000        426312.569        
+Basin221         7607938.731        426355.400        
+Basin221         7607821.000        426473.131        
+Basin221         7607703.269        426355.400        
+Basin221         7607821.000        426237.669        
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+GAGE1            7608179.000        426330.300        
+

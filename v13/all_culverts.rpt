@@ -1,0 +1,1696 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.1 (Build 5.1.013)
+  --------------------------------------------------------------
+
+  As explained in Normann, 1985 (also known as HDS-5), the discharge through a culvert is controlled by either inlet or outlet conditions. 
+  Inlet control means that flow through the culvert is limited by culvert entrance characteristics. 
+  Outlet control means that flow through the culvert is limited by friction between the flowing water and the culvert barrel. 
+  
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 0
+  Number of subcatchments ... 0
+  Number of nodes ........... 228
+  Number of links ........... 171
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  in1                  JUNCTION             10.10     10.00       0.0    Yes
+  in2                  JUNCTION             10.10      5.00       0.0    Yes
+  in3                  JUNCTION             10.10      5.00       0.0    Yes
+  in4                  JUNCTION             10.10      5.00       0.0    Yes
+  in5                  JUNCTION             10.10      5.00       0.0    Yes
+  in6                  JUNCTION             10.10      5.00       0.0    Yes
+  in7                  JUNCTION             10.10      5.00       0.0    Yes
+  in8                  JUNCTION             10.10      5.00       0.0    Yes
+  in9                  JUNCTION             10.10      5.00       0.0    Yes
+  in10                 JUNCTION             10.10      5.00       0.0    Yes
+  in11                 JUNCTION             10.10      5.00       0.0    Yes
+  in12                 JUNCTION             10.10      5.00       0.0    Yes
+  in13                 JUNCTION             10.10      5.00       0.0    Yes
+  in14                 JUNCTION             10.10      5.00       0.0    Yes
+  in15                 JUNCTION             10.10      5.00       0.0    Yes
+  in16                 JUNCTION             10.10      5.00       0.0    Yes
+  in17                 JUNCTION             10.10      5.00       0.0    Yes
+  in18                 JUNCTION             10.10      5.00       0.0    Yes
+  in19                 JUNCTION             10.10      5.00       0.0    Yes
+  in20                 JUNCTION             10.10      5.00       0.0    Yes
+  in21                 JUNCTION             10.10      5.00       0.0    Yes
+  in22                 JUNCTION             10.10      5.00       0.0    Yes
+  in23                 JUNCTION             10.10      5.00       0.0    Yes
+  in24                 JUNCTION             10.10      5.00       0.0    Yes
+  in25                 JUNCTION             10.10      5.00       0.0    Yes
+  in26                 JUNCTION             10.10      5.00       0.0    Yes
+  in27                 JUNCTION             10.10      5.00       0.0    Yes
+  in28                 JUNCTION             10.10      5.00       0.0    Yes
+  in29                 JUNCTION             10.10      5.00       0.0    Yes
+  in30                 JUNCTION             10.10      5.00       0.0    Yes
+  in31                 JUNCTION             10.10      5.00       0.0    Yes
+  in32                 JUNCTION             10.10      5.00       0.0    Yes
+  in33                 JUNCTION             10.10      5.00       0.0    Yes
+  in34                 JUNCTION             10.10      5.00       0.0    Yes
+  in35                 JUNCTION             10.10      5.00       0.0    Yes
+  in36                 JUNCTION             10.10      5.00       0.0    Yes
+  in37                 JUNCTION             10.10      5.00       0.0    Yes
+  in38                 JUNCTION             10.10      5.00       0.0    Yes
+  in39                 JUNCTION             10.10      5.00       0.0    Yes
+  in40                 JUNCTION             10.10      5.00       0.0    Yes
+  in41                 JUNCTION             10.10      5.00       0.0    Yes
+  in42                 JUNCTION             10.10      5.00       0.0    Yes
+  in43                 JUNCTION             10.10      5.00       0.0    Yes
+  in44                 JUNCTION             10.10      5.00       0.0    Yes
+  in45                 JUNCTION             10.10      5.00       0.0    Yes
+  in46                 JUNCTION             10.10      5.00       0.0    Yes
+  in47                 JUNCTION             10.10      5.00       0.0    Yes
+  in48                 JUNCTION             10.10      5.00       0.0    Yes
+  in49                 JUNCTION             10.10      5.00       0.0    Yes
+  in50                 JUNCTION             10.10      5.00       0.0    Yes
+  in51                 JUNCTION             10.10      5.00       0.0    Yes
+  in52                 JUNCTION             10.10      5.00       0.0    Yes
+  in53                 JUNCTION             10.10      5.00       0.0    Yes
+  in54                 JUNCTION             10.10      5.00       0.0    Yes
+  in55                 JUNCTION             10.10      5.00       0.0    Yes
+  in56                 JUNCTION             10.10      5.00       0.0    Yes
+  in57                 JUNCTION             10.10      5.00       0.0    Yes
+  up1                  JUNCTION             10.00     10.00       0.0
+  up2                  JUNCTION             10.00     10.00       0.0
+  up3                  JUNCTION             10.00     10.00       0.0
+  up4                  JUNCTION             10.00     10.00       0.0
+  up5                  JUNCTION             10.00     10.00       0.0
+  up6                  JUNCTION             10.00     10.00       0.0
+  up7                  JUNCTION             10.00     10.00       0.0
+  up8                  JUNCTION             10.00     10.00       0.0
+  up9                  JUNCTION             10.00     10.00       0.0
+  up10                 JUNCTION             10.00     10.00       0.0
+  up11                 JUNCTION             10.00     10.00       0.0
+  up12                 JUNCTION             10.00     10.00       0.0
+  up13                 JUNCTION             10.00     10.00       0.0
+  up14                 JUNCTION             10.00     10.00       0.0
+  up15                 JUNCTION             10.00     10.00       0.0
+  up16                 JUNCTION             10.00     10.00       0.0
+  up17                 JUNCTION             10.00     10.00       0.0
+  up18                 JUNCTION             10.00     10.00       0.0
+  up19                 JUNCTION             10.00     10.00       0.0
+  up20                 JUNCTION             10.00     10.00       0.0
+  up21                 JUNCTION             10.00     10.00       0.0
+  up22                 JUNCTION             10.00     10.00       0.0
+  up23                 JUNCTION             10.00     10.00       0.0
+  up24                 JUNCTION             10.00     10.00       0.0
+  up25                 JUNCTION             10.00     10.00       0.0
+  up26                 JUNCTION             10.00     10.00       0.0
+  up27                 JUNCTION             10.00     10.00       0.0
+  up28                 JUNCTION             10.00     10.00       0.0
+  up29                 JUNCTION             10.00     10.00       0.0
+  up30                 JUNCTION             10.00     10.00       0.0
+  up31                 JUNCTION             10.00     10.00       0.0
+  up32                 JUNCTION             10.00     10.00       0.0
+  up33                 JUNCTION             10.00     10.00       0.0
+  up34                 JUNCTION             10.00     10.00       0.0
+  up35                 JUNCTION             10.00     10.00       0.0
+  up36                 JUNCTION             10.00     10.00       0.0
+  up37                 JUNCTION             10.00     10.00       0.0
+  up38                 JUNCTION             10.00     10.00       0.0
+  up39                 JUNCTION             10.00     10.00       0.0
+  up40                 JUNCTION             10.00     10.00       0.0
+  up41                 JUNCTION             10.00     10.00       0.0
+  up42                 JUNCTION             10.00     10.00       0.0
+  up43                 JUNCTION             10.00     10.00       0.0
+  up44                 JUNCTION             10.00     10.00       0.0
+  up45                 JUNCTION             10.00     10.00       0.0
+  up46                 JUNCTION             10.00     10.00       0.0
+  up47                 JUNCTION             10.00     10.00       0.0
+  up48                 JUNCTION             10.00     10.00       0.0
+  up49                 JUNCTION             10.00     10.00       0.0
+  up50                 JUNCTION             10.00     10.00       0.0
+  up51                 JUNCTION             10.00     10.00       0.0
+  up52                 JUNCTION             10.00     10.00       0.0
+  up53                 JUNCTION             10.00     10.00       0.0
+  up54                 JUNCTION             10.00     10.00       0.0
+  up55                 JUNCTION             10.00     10.00       0.0
+  up56                 JUNCTION             10.00     10.00       0.0
+  up57                 JUNCTION             10.00     10.00       0.0
+  dn1                  JUNCTION              9.50     10.00       0.0
+  dn2                  JUNCTION              9.50     10.00       0.0
+  dn3                  JUNCTION              9.50     10.00       0.0
+  dn4                  JUNCTION              9.50     10.00       0.0
+  dn5                  JUNCTION              9.50     10.00       0.0
+  dn6                  JUNCTION              9.50     10.00       0.0
+  dn7                  JUNCTION              9.50     10.00       0.0
+  dn8                  JUNCTION              9.50     10.00       0.0
+  dn9                  JUNCTION              9.50     10.00       0.0
+  dn10                 JUNCTION              9.50     10.00       0.0
+  dn11                 JUNCTION              9.50     10.00       0.0
+  dn12                 JUNCTION              9.50     10.00       0.0
+  dn13                 JUNCTION              9.50     10.00       0.0
+  dn14                 JUNCTION              9.50     10.00       0.0
+  dn15                 JUNCTION              9.50     10.00       0.0
+  dn16                 JUNCTION              9.50     10.00       0.0
+  dn17                 JUNCTION              9.50     10.00       0.0
+  dn18                 JUNCTION              9.50     10.00       0.0
+  dn19                 JUNCTION              9.50     10.00       0.0
+  dn20                 JUNCTION              9.50     10.00       0.0
+  dn21                 JUNCTION              9.50     10.00       0.0
+  dn22                 JUNCTION              9.50     10.00       0.0
+  dn23                 JUNCTION              9.50     10.00       0.0
+  dn24                 JUNCTION              9.50     10.00       0.0
+  dn25                 JUNCTION              9.50     10.00       0.0
+  dn26                 JUNCTION              9.50     10.00       0.0
+  dn27                 JUNCTION              9.50     10.00       0.0
+  dn28                 JUNCTION              9.50     10.00       0.0
+  dn29                 JUNCTION              9.50     10.00       0.0
+  dn30                 JUNCTION              9.50     10.00       0.0
+  dn31                 JUNCTION              9.50     10.00       0.0
+  dn32                 JUNCTION              9.50     10.00       0.0
+  dn33                 JUNCTION              9.50     10.00       0.0
+  dn34                 JUNCTION              9.50     10.00       0.0
+  dn35                 JUNCTION              9.50     10.00       0.0
+  dn36                 JUNCTION              9.50     10.00       0.0
+  dn37                 JUNCTION              9.50     10.00       0.0
+  dn38                 JUNCTION              9.50     10.00       0.0
+  dn39                 JUNCTION              9.50     10.00       0.0
+  dn40                 JUNCTION              9.50     10.00       0.0
+  dn41                 JUNCTION              9.50     10.00       0.0
+  dn42                 JUNCTION              9.50     10.00       0.0
+  dn43                 JUNCTION              9.50     10.00       0.0
+  dn44                 JUNCTION              9.50     10.00       0.0
+  dn45                 JUNCTION              9.50     10.00       0.0
+  dn46                 JUNCTION              9.50     10.00       0.0
+  dn47                 JUNCTION              9.50     10.00       0.0
+  dn48                 JUNCTION              9.50     10.00       0.0
+  dn49                 JUNCTION              9.50     10.00       0.0
+  dn50                 JUNCTION              9.50     10.00       0.0
+  dn51                 JUNCTION              9.50     10.00       0.0
+  dn52                 JUNCTION              9.50     10.00       0.0
+  dn53                 JUNCTION              9.50     10.00       0.0
+  dn54                 JUNCTION              9.50     10.00       0.0
+  dn55                 JUNCTION              9.50     10.00       0.0
+  dn56                 JUNCTION              9.50     10.00       0.0
+  dn57                 JUNCTION              9.50     10.00       0.0
+  out1                 OUTFALL               9.00      4.00       0.0
+  out2                 OUTFALL               9.00      4.00       0.0
+  out3                 OUTFALL               9.00      4.00       0.0
+  out4                 OUTFALL               9.00      4.00       0.0
+  out5                 OUTFALL               9.00      4.00       0.0
+  out6                 OUTFALL               9.00      4.00       0.0
+  out7                 OUTFALL               9.00      4.00       0.0
+  out8                 OUTFALL               9.00      4.00       0.0
+  out9                 OUTFALL               9.00      4.00       0.0
+  out10                OUTFALL               9.00      4.00       0.0
+  out11                OUTFALL               9.00      4.00       0.0
+  out12                OUTFALL               9.00      4.00       0.0
+  out13                OUTFALL               9.00      4.00       0.0
+  out14                OUTFALL               9.00      4.00       0.0
+  out15                OUTFALL               9.00      4.00       0.0
+  out16                OUTFALL               9.00      4.00       0.0
+  out17                OUTFALL               9.00      4.00       0.0
+  out18                OUTFALL               9.00      4.00       0.0
+  out19                OUTFALL               9.00      4.00       0.0
+  out20                OUTFALL               9.00      4.00       0.0
+  out21                OUTFALL               9.00      4.00       0.0
+  out22                OUTFALL               9.00      4.00       0.0
+  out23                OUTFALL               9.00      4.00       0.0
+  out24                OUTFALL               9.00      4.00       0.0
+  out25                OUTFALL               9.00      4.00       0.0
+  out26                OUTFALL               9.00      4.00       0.0
+  out27                OUTFALL               9.00      4.00       0.0
+  out28                OUTFALL               9.00      4.00       0.0
+  out29                OUTFALL               9.00      4.00       0.0
+  out30                OUTFALL               9.00      4.00       0.0
+  out31                OUTFALL               9.00      4.00       0.0
+  out32                OUTFALL               9.00      4.00       0.0
+  out33                OUTFALL               9.00      4.00       0.0
+  out34                OUTFALL               9.00      4.00       0.0
+  out35                OUTFALL               9.00      4.00       0.0
+  out36                OUTFALL               9.00      4.00       0.0
+  out37                OUTFALL               9.00      4.00       0.0
+  out38                OUTFALL               9.00      4.00       0.0
+  out39                OUTFALL               9.00      4.00       0.0
+  out40                OUTFALL               9.00      4.00       0.0
+  out41                OUTFALL               9.00      4.00       0.0
+  out42                OUTFALL               9.00      4.00       0.0
+  out43                OUTFALL               9.00      4.00       0.0
+  out44                OUTFALL               9.00      4.00       0.0
+  out45                OUTFALL               9.00      4.00       0.0
+  out46                OUTFALL               9.00      4.00       0.0
+  out47                OUTFALL               9.00      4.00       0.0
+  out48                OUTFALL               9.00      4.00       0.0
+  out49                OUTFALL               9.00      4.00       0.0
+  out50                OUTFALL               9.00      4.00       0.0
+  out51                OUTFALL               9.00      4.00       0.0
+  out52                OUTFALL               9.00      4.00       0.0
+  out53                OUTFALL               9.00      4.00       0.0
+  out54                OUTFALL               9.00      4.00       0.0
+  out55                OUTFALL               9.00      4.00       0.0
+  out56                OUTFALL               9.00      4.00       0.0
+  out57                OUTFALL               9.00      4.00       0.0
+  
+  
+  ************
+  Link Summary
+  ************
+  Name             From Node        To Node          Type            Length    %Slope Roughness
+  ---------------------------------------------------------------------------------------------
+  upstream1        in1              up1              CONDUIT          500.0    0.0200    0.0100
+  upstream2        in2              up2              CONDUIT          500.0    0.0200    0.0100
+  upstream3        in3              up3              CONDUIT          500.0    0.0200    0.0100
+  upstream4        in4              up4              CONDUIT          500.0    0.0200    0.0100
+  upstream5        in5              up5              CONDUIT          500.0    0.0200    0.0100
+  upstream6        in6              up6              CONDUIT          500.0    0.0200    0.0100
+  upstream7        in7              up7              CONDUIT          500.0    0.0200    0.0100
+  upstream8        in8              up8              CONDUIT          500.0    0.0200    0.0100
+  upstream9        in9              up9              CONDUIT          500.0    0.0200    0.0100
+  upstream10       in10             up10             CONDUIT          500.0    0.0200    0.0100
+  upstream11       in11             up11             CONDUIT          500.0    0.0200    0.0100
+  upstream12       in12             up12             CONDUIT          500.0    0.0200    0.0100
+  upstream13       in13             up13             CONDUIT          500.0    0.0200    0.0100
+  upstream14       in14             up14             CONDUIT          500.0    0.0200    0.0100
+  upstream15       in15             up15             CONDUIT          500.0    0.0200    0.0100
+  upstream16       in16             up16             CONDUIT          500.0    0.0200    0.0100
+  upstream17       in17             up17             CONDUIT          500.0    0.0200    0.0100
+  upstream18       in18             up18             CONDUIT          500.0    0.0200    0.0100
+  upstream19       in19             up19             CONDUIT          500.0    0.0200    0.0100
+  upstream20       in20             up20             CONDUIT          500.0    0.0200    0.0100
+  upstream21       in21             up21             CONDUIT          500.0    0.0200    0.0100
+  upstream22       in22             up22             CONDUIT          500.0    0.0200    0.0100
+  upstream23       in23             up23             CONDUIT          500.0    0.0200    0.0100
+  upstream24       in24             up24             CONDUIT          500.0    0.0200    0.0100
+  upstream25       in25             up25             CONDUIT          500.0    0.0200    0.0100
+  upstream26       in26             up26             CONDUIT          500.0    0.0200    0.0100
+  upstream27       in27             up27             CONDUIT          500.0    0.0200    0.0100
+  upstream28       in28             up28             CONDUIT          500.0    0.0200    0.0100
+  upstream29       in29             up29             CONDUIT          500.0    0.0200    0.0100
+  upstream30       in30             up30             CONDUIT          500.0    0.0200    0.0100
+  upstream31       in31             up31             CONDUIT          500.0    0.0200    0.0100
+  upstream32       in32             up32             CONDUIT          500.0    0.0200    0.0100
+  upstream33       in33             up33             CONDUIT          500.0    0.0200    0.0100
+  upstream34       in34             up34             CONDUIT          500.0    0.0200    0.0100
+  upstream35       in35             up35             CONDUIT          500.0    0.0200    0.0100
+  upstream36       in36             up36             CONDUIT          500.0    0.0200    0.0100
+  upstream37       in37             up37             CONDUIT          500.0    0.0200    0.0100
+  upstream38       in38             up38             CONDUIT          500.0    0.0200    0.0100
+  upstream39       in39             up39             CONDUIT          500.0    0.0200    0.0100
+  upstream40       in40             up40             CONDUIT          500.0    0.0200    0.0100
+  upstream41       in41             up41             CONDUIT          500.0    0.0200    0.0100
+  upstream42       in42             up42             CONDUIT          500.0    0.0200    0.0100
+  upstream43       in43             up43             CONDUIT          500.0    0.0200    0.0100
+  upstream44       in44             up44             CONDUIT          500.0    0.0200    0.0100
+  upstream45       in45             up45             CONDUIT          500.0    0.0200    0.0100
+  upstream46       in46             up46             CONDUIT          500.0    0.0200    0.0100
+  upstream47       in47             up47             CONDUIT          500.0    0.0200    0.0100
+  upstream48       in48             up48             CONDUIT          500.0    0.0200    0.0100
+  upstream49       in49             up49             CONDUIT          500.0    0.0200    0.0100
+  upstream50       in50             up50             CONDUIT          500.0    0.0200    0.0100
+  upstream51       in51             up51             CONDUIT          500.0    0.0200    0.0100
+  upstream52       in52             up52             CONDUIT          500.0    0.0200    0.0100
+  upstream53       in53             up53             CONDUIT          500.0    0.0200    0.0100
+  upstream54       in54             up54             CONDUIT          500.0    0.0200    0.0100
+  upstream55       in55             up55             CONDUIT          500.0    0.0200    0.0100
+  upstream56       in56             up56             CONDUIT          500.0    0.0200    0.0100
+  upstream57       in57             up57             CONDUIT          500.0    0.0200    0.0100
+  culvert1         up1              dn1              CONDUIT          100.0    0.5000    0.0100
+  culvert2         up2              dn2              CONDUIT          100.0    0.5000    0.0100
+  culvert3         up3              dn3              CONDUIT          100.0    0.5000    0.0100
+  culvert4         up4              dn4              CONDUIT          100.0    0.5000    0.0100
+  culvert5         up5              dn5              CONDUIT          100.0    0.5000    0.0100
+  culvert6         up6              dn6              CONDUIT          100.0    0.5000    0.0100
+  culvert7         up7              dn7              CONDUIT          100.0    0.5000    0.0100
+  culvert8         up8              dn8              CONDUIT          100.0    0.5000    0.0100
+  culvert9         up9              dn9              CONDUIT          100.0    0.5000    0.0100
+  culvert10        up10             dn10             CONDUIT          100.0    0.5000    0.0100
+  culvert11        up11             dn11             CONDUIT          100.0    0.5000    0.0100
+  culvert12        up12             dn12             CONDUIT          100.0    0.5000    0.0100
+  culvert13        up13             dn13             CONDUIT          100.0    0.5000    0.0100
+  culvert14        up14             dn14             CONDUIT          100.0    0.5000    0.0100
+  culvert15        up15             dn15             CONDUIT          100.0    0.5000    0.0100
+  culvert16        up16             dn16             CONDUIT          100.0    0.5000    0.0100
+  culvert17        up17             dn17             CONDUIT          100.0    0.5000    0.0100
+  culvert18        up18             dn18             CONDUIT          100.0    0.5000    0.0100
+  culvert19        up19             dn19             CONDUIT          100.0    0.5000    0.0100
+  culvert20        up20             dn20             CONDUIT          100.0    0.5000    0.0100
+  culvert21        up21             dn21             CONDUIT          100.0    0.5000    0.0100
+  culvert22        up22             dn22             CONDUIT          100.0    0.5000    0.0100
+  culvert23        up23             dn23             CONDUIT          100.0    0.5000    0.0100
+  culvert24        up24             dn24             CONDUIT          100.0    0.5000    0.0100
+  culvert25        up25             dn25             CONDUIT          100.0    0.5000    0.0100
+  culvert26        up26             dn26             CONDUIT          100.0    0.5000    0.0100
+  culvert27        up27             dn27             CONDUIT          100.0    0.5000    0.0100
+  culvert28        up28             dn28             CONDUIT          100.0    0.5000    0.0100
+  culvert29        up29             dn29             CONDUIT          100.0    0.5000    0.0100
+  culvert30        up30             dn30             CONDUIT          100.0    0.5000    0.0100
+  culvert31        up31             dn31             CONDUIT          100.0    0.5000    0.0100
+  culvert32        up32             dn32             CONDUIT          100.0    0.5000    0.0100
+  culvert33        up33             dn33             CONDUIT          100.0    0.5000    0.0100
+  culvert34        up34             dn34             CONDUIT          100.0    0.5000    0.0100
+  culvert35        up35             dn35             CONDUIT          100.0    0.5000    0.0100
+  culvert36        up36             dn36             CONDUIT          100.0    0.5000    0.0100
+  culvert37        up37             dn37             CONDUIT          100.0    0.5000    0.0100
+  culvert38        up38             dn38             CONDUIT          100.0    0.5000    0.0100
+  culvert39        up39             dn39             CONDUIT          100.0    0.5000    0.0100
+  culvert40        up40             dn40             CONDUIT          100.0    0.5000    0.0100
+  culvert41        up41             dn41             CONDUIT          100.0    0.5000    0.0100
+  culvert42        up42             dn42             CONDUIT          100.0    0.5000    0.0100
+  culvert43        up43             dn43             CONDUIT          100.0    0.5000    0.0100
+  culvert44        up44             dn44             CONDUIT          100.0    0.5000    0.0100
+  culvert45        up45             dn45             CONDUIT          100.0    0.5000    0.0100
+  culvert46        up46             dn46             CONDUIT          100.0    0.5000    0.0100
+  culvert47        up47             dn47             CONDUIT          100.0    0.5000    0.0100
+  culvert48        up48             dn48             CONDUIT          100.0    0.5000    0.0100
+  culvert49        up49             dn49             CONDUIT          100.0    0.5000    0.0100
+  culvert50        up50             dn50             CONDUIT          100.0    0.5000    0.0100
+  culvert51        up51             dn51             CONDUIT          100.0    0.5000    0.0100
+  culvert52        up52             dn52             CONDUIT          100.0    0.5000    0.0100
+  culvert53        up53             dn53             CONDUIT          100.0    0.5000    0.0100
+  culvert54        up54             dn54             CONDUIT          100.0    0.5000    0.0100
+  culvert55        up55             dn55             CONDUIT          100.0    0.5000    0.0100
+  culvert56        up56             dn56             CONDUIT          100.0    0.5000    0.0100
+  culvert57        up57             dn57             CONDUIT          100.0    0.5000    0.0100
+  downstream1      dn1              out1             CONDUIT          500.0    0.1000    0.0100
+  downstream2      dn2              out2             CONDUIT          500.0    0.1000    0.0100
+  downstream3      dn3              out3             CONDUIT          500.0    0.1000    0.0100
+  downstream4      dn4              out4             CONDUIT          500.0    0.1000    0.0100
+  downstream5      dn5              out5             CONDUIT          500.0    0.1000    0.0100
+  downstream6      dn6              out6             CONDUIT          500.0    0.1000    0.0100
+  downstream7      dn7              out7             CONDUIT          500.0    0.1000    0.0100
+  downstream8      dn8              out8             CONDUIT          500.0    0.1000    0.0100
+  downstream9      dn9              out9             CONDUIT          500.0    0.1000    0.0100
+  downstream10     dn10             out10            CONDUIT          500.0    0.1000    0.0100
+  downstream11     dn11             out11            CONDUIT          500.0    0.1000    0.0100
+  downstream12     dn12             out12            CONDUIT          500.0    0.1000    0.0100
+  downstream13     dn13             out13            CONDUIT          500.0    0.1000    0.0100
+  downstream14     dn14             out14            CONDUIT          500.0    0.1000    0.0100
+  downstream15     dn15             out15            CONDUIT          500.0    0.1000    0.0100
+  downstream16     dn16             out16            CONDUIT          500.0    0.1000    0.0100
+  downstream17     dn17             out17            CONDUIT          500.0    0.1000    0.0100
+  downstream18     dn18             out18            CONDUIT          500.0    0.1000    0.0100
+  downstream19     dn19             out19            CONDUIT          500.0    0.1000    0.0100
+  downstream20     dn20             out20            CONDUIT          500.0    0.1000    0.0100
+  downstream21     dn21             out21            CONDUIT          500.0    0.1000    0.0100
+  downstream22     dn22             out22            CONDUIT          500.0    0.1000    0.0100
+  downstream23     dn23             out23            CONDUIT          500.0    0.1000    0.0100
+  downstream24     dn24             out24            CONDUIT          500.0    0.1000    0.0100
+  downstream25     dn25             out25            CONDUIT          500.0    0.1000    0.0100
+  downstream26     dn26             out26            CONDUIT          500.0    0.1000    0.0100
+  downstream27     dn27             out27            CONDUIT          500.0    0.1000    0.0100
+  downstream28     dn28             out28            CONDUIT          500.0    0.1000    0.0100
+  downstream29     dn29             out29            CONDUIT          500.0    0.1000    0.0100
+  downstream30     dn30             out30            CONDUIT          500.0    0.1000    0.0100
+  downstream31     dn31             out31            CONDUIT          500.0    0.1000    0.0100
+  downstream32     dn32             out32            CONDUIT          500.0    0.1000    0.0100
+  downstream33     dn33             out33            CONDUIT          500.0    0.1000    0.0100
+  downstream34     dn34             out34            CONDUIT          500.0    0.1000    0.0100
+  downstream35     dn35             out35            CONDUIT          500.0    0.1000    0.0100
+  downstream36     dn36             out36            CONDUIT          500.0    0.1000    0.0100
+  downstream37     dn37             out37            CONDUIT          500.0    0.1000    0.0100
+  downstream38     dn38             out38            CONDUIT          500.0    0.1000    0.0100
+  downstream39     dn39             out39            CONDUIT          500.0    0.1000    0.0100
+  downstream40     dn40             out40            CONDUIT          500.0    0.1000    0.0100
+  downstream41     dn41             out41            CONDUIT          500.0    0.1000    0.0100
+  downstream42     dn42             out42            CONDUIT          500.0    0.1000    0.0100
+  downstream43     dn43             out43            CONDUIT          500.0    0.1000    0.0100
+  downstream44     dn44             out44            CONDUIT          500.0    0.1000    0.0100
+  downstream45     dn45             out45            CONDUIT          500.0    0.1000    0.0100
+  downstream46     dn46             out46            CONDUIT          500.0    0.1000    0.0100
+  downstream47     dn47             out47            CONDUIT          500.0    0.1000    0.0100
+  downstream48     dn48             out48            CONDUIT          500.0    0.1000    0.0100
+  downstream49     dn49             out49            CONDUIT          500.0    0.1000    0.0100
+  downstream50     dn50             out50            CONDUIT          500.0    0.1000    0.0100
+  downstream51     dn51             out51            CONDUIT          500.0    0.1000    0.0100
+  downstream52     dn52             out52            CONDUIT          500.0    0.1000    0.0100
+  downstream53     dn53             out53            CONDUIT          500.0    0.1000    0.0100
+  downstream54     dn54             out54            CONDUIT          500.0    0.1000    0.0100
+  downstream55     dn55             out55            CONDUIT          500.0    0.1000    0.0100
+  downstream56     dn56             out56            CONDUIT          500.0    0.1000    0.0100
+  downstream57     dn57             out57            CONDUIT          500.0    0.1000    0.0100
+  
+  
+  *********************
+  Cross Section Summary
+  *********************
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  upstream1        TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream2        TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream3        TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream4        TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream5        TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream6        TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream7        TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream8        TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream9        TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream10       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream11       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream12       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream13       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream14       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream15       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream16       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream17       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream18       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream19       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream20       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream21       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream22       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream23       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream24       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream25       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream26       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream27       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream28       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream29       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream30       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream31       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream32       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream33       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream34       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream35       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream36       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream37       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream38       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream39       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream40       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream41       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream42       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream43       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream44       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream45       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream46       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream47       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream48       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream49       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream50       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream51       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream52       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream53       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream54       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream55       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream56       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  upstream57       TRIANGULAR           4.00     8.00     0.89     4.00        1    15.61
+  culvert1         CIRCULAR             2.00     3.14     0.50     2.00        1    20.80
+  culvert2         CIRCULAR             2.00     3.14     0.50     2.00        1    20.80
+  culvert3         CIRCULAR             2.00     3.14     0.50     2.00        1    20.80
+  culvert4         CIRCULAR             2.00     3.14     0.50     2.00        1    20.80
+  culvert5         CIRCULAR             2.00     3.14     0.50     2.00        1    20.80
+  culvert6         CIRCULAR             2.00     3.14     0.50     2.00        1    20.80
+  culvert7         CIRCULAR             2.00     3.14     0.50     2.00        1    20.80
+  culvert8         CIRCULAR             2.00     3.14     0.50     2.00        1    20.80
+  culvert9         RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert10        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert11        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert12        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert13        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert14        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert15        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert16        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert17        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert18        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert19        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert20        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert21        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert22        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert23        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert24        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert25        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert26        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert27        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert28        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert29        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert30        HORIZ_ELLIPSE        2.00     5.08     0.61     2.00        1    38.46
+  culvert31        HORIZ_ELLIPSE        2.00     5.08     0.61     2.00        1    38.46
+  culvert32        HORIZ_ELLIPSE        2.00     5.08     0.61     2.00        1    38.46
+  culvert33        VERT_ELLIPSE         2.00     5.08     0.61     2.00        1    38.46
+  culvert34        VERT_ELLIPSE         2.00     5.08     0.61     2.00        1    38.46
+  culvert35        VERT_ELLIPSE         2.00     5.08     0.61     2.00        1    38.46
+  culvert36        ARCH                 2.00     3.15     0.60     2.00        1    23.51
+  culvert37        ARCH                 2.00     3.15     0.60     2.00        1    23.51
+  culvert38        ARCH                 2.00     3.15     0.60     2.00        1    23.51
+  culvert39        ARCH                 2.00     3.15     0.60     2.00        1    23.51
+  culvert40        ARCH                 2.00     3.15     0.60     2.00        1    23.51
+  culvert41        ARCH                 2.00     3.15     0.60     2.00        1    23.51
+  culvert42        ARCH                 2.00     3.15     0.60     2.00        1    23.51
+  culvert43        ARCH                 2.00     3.15     0.60     2.00        1    23.51
+  culvert44        ARCH                 2.00     3.15     0.60     2.00        1    23.51
+  culvert45        ARCH                 2.00     3.15     0.60     2.00        1    23.51
+  culvert46        ARCH                 2.00     3.15     0.60     2.00        1    23.51
+  culvert47        ARCH                 2.00     3.15     0.60     2.00        1    23.51
+  culvert48        CIRCULAR             2.00     3.14     0.50     2.00        1    20.80
+  culvert49        CIRCULAR             2.00     3.14     0.50     2.00        1    20.80
+  culvert50        HORIZ_ELLIPSE        2.00     5.08     0.61     2.00        1    38.46
+  culvert51        HORIZ_ELLIPSE        2.00     5.08     0.61     2.00        1    38.46
+  culvert52        HORIZ_ELLIPSE        2.00     5.08     0.61     2.00        1    38.46
+  culvert53        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert54        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert55        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert56        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  culvert57        RECT_CLOSED          2.00     4.00     0.50     2.00        1    26.48
+  downstream1      TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream2      TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream3      TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream4      TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream5      TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream6      TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream7      TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream8      TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream9      TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream10     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream11     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream12     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream13     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream14     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream15     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream16     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream17     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream18     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream19     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream20     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream21     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream22     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream23     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream24     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream25     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream26     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream27     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream28     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream29     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream30     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream31     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream32     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream33     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream34     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream35     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream36     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream37     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream38     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream39     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream40     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream41     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream42     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream43     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream44     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream45     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream46     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream47     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream48     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream49     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream50     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream51     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream52     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream53     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream54     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream55     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream56     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  downstream57     TRIANGULAR           4.00     8.00     0.89     4.00        1    34.90
+  
+  
+  
+  *********************************************************
+  NOTE: The summary statistics displayed in this report are
+  based on results found at every computational time step,  
+  not just on results from each reporting time step.
+  *********************************************************
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ NO
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 01/01/2010 00:00:00
+  Ending Date .............. 01/01/2010 05:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:01:00
+  Routing Time Step ........ 30.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  *********************
+  Control Actions Taken
+  *********************
+
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.000         0.000
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........       118.114        38.489
+  External Outflow .........       118.072        38.475
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.018         0.006
+  Continuity Error (%) .....         0.021
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  Link culvert33 (21.23%)
+  Link culvert37 (14.15%)
+  Link culvert30 (5.20%)
+  Link culvert34 (3.75%)
+  Link culvert9 (2.98%)
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  Link culvert5 (5)
+  Link culvert30 (3)
+  Link culvert32 (3)
+  Link culvert31 (3)
+  Link culvert51 (3)
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     0.49 sec
+  Average Time Step           :    15.35 sec
+  Maximum Time Step           :    30.00 sec
+  Percent in Steady State     :     0.00
+  Average Iterations per Step :     2.03
+  Percent Not Converging      :     0.00
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  in1                  JUNCTION     1.91     2.78    12.88     0  02:29        2.78
+  in2                  JUNCTION     1.91     2.78    12.88     0  02:29        2.78
+  in3                  JUNCTION     1.91     2.78    12.88     0  02:29        2.78
+  in4                  JUNCTION     1.91     2.78    12.88     0  02:23        2.78
+  in5                  JUNCTION     1.90     2.78    12.88     0  02:23        2.78
+  in6                  JUNCTION     1.91     2.78    12.88     0  02:23        2.78
+  in7                  JUNCTION     1.91     2.78    12.88     0  02:23        2.78
+  in8                  JUNCTION     1.91     2.78    12.88     0  02:23        2.78
+  in9                  JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in10                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in11                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in12                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in13                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in14                 JUNCTION     1.90     2.77    12.87     0  02:22        2.77
+  in15                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in16                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in17                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in18                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in19                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in20                 JUNCTION     1.90     2.77    12.87     0  02:21        2.77
+  in21                 JUNCTION     1.90     2.77    12.87     0  02:21        2.77
+  in22                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in23                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in24                 JUNCTION     1.90     2.77    12.87     0  02:21        2.77
+  in25                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in26                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in27                 JUNCTION     1.90     2.77    12.87     0  02:24        2.77
+  in28                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in29                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in30                 JUNCTION     1.90     2.76    12.86     0  02:07        2.76
+  in31                 JUNCTION     1.90     2.76    12.86     0  02:16        2.76
+  in32                 JUNCTION     1.90     2.76    12.86     0  02:16        2.76
+  in33                 JUNCTION     1.90     2.76    12.86     0  02:19        2.76
+  in34                 JUNCTION     1.90     2.76    12.86     0  02:13        2.76
+  in35                 JUNCTION     1.90     2.76    12.86     0  02:07        2.76
+  in36                 JUNCTION     1.91     2.78    12.88     0  02:38        2.78
+  in37                 JUNCTION     1.90     2.78    12.88     0  02:38        2.78
+  in38                 JUNCTION     1.91     2.78    12.88     0  02:38        2.78
+  in39                 JUNCTION     1.91     2.78    12.88     0  02:38        2.78
+  in40                 JUNCTION     1.91     2.78    12.88     0  02:38        2.78
+  in41                 JUNCTION     1.91     2.78    12.88     0  02:26        2.78
+  in42                 JUNCTION     1.91     2.78    12.88     0  02:38        2.78
+  in43                 JUNCTION     1.91     2.78    12.88     0  02:38        2.78
+  in44                 JUNCTION     1.91     2.78    12.88     0  02:26        2.78
+  in45                 JUNCTION     1.91     2.78    12.88     0  02:38        2.78
+  in46                 JUNCTION     1.90     2.78    12.88     0  02:38        2.78
+  in47                 JUNCTION     1.91     2.78    12.88     0  02:38        2.78
+  in48                 JUNCTION     1.91     2.78    12.88     0  02:23        2.78
+  in49                 JUNCTION     1.91     2.78    12.88     0  02:23        2.78
+  in50                 JUNCTION     1.90     2.76    12.86     0  02:07        2.76
+  in51                 JUNCTION     1.90     2.76    12.86     0  02:07        2.76
+  in52                 JUNCTION     1.90     2.76    12.86     0  02:06        2.76
+  in53                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in54                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in55                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in56                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  in57                 JUNCTION     1.90     2.77    12.87     0  02:23        2.77
+  up1                  JUNCTION     1.44     2.35    12.35     0  02:27        2.35
+  up2                  JUNCTION     1.44     2.35    12.35     0  02:27        2.35
+  up3                  JUNCTION     1.44     2.35    12.35     0  02:27        2.35
+  up4                  JUNCTION     1.44     2.35    12.35     0  02:25        2.35
+  up5                  JUNCTION     1.45     2.35    12.35     0  02:25        2.35
+  up6                  JUNCTION     1.44     2.35    12.35     0  02:25        2.35
+  up7                  JUNCTION     1.44     2.35    12.35     0  02:25        2.35
+  up8                  JUNCTION     1.44     2.35    12.35     0  02:25        2.35
+  up9                  JUNCTION     1.37     2.21    12.21     0  02:20        2.21
+  up10                 JUNCTION     1.37     2.21    12.21     0  02:19        2.21
+  up11                 JUNCTION     1.37     2.21    12.21     0  02:19        2.21
+  up12                 JUNCTION     1.37     2.21    12.21     0  02:20        2.21
+  up13                 JUNCTION     1.37     2.21    12.21     0  02:19        2.21
+  up14                 JUNCTION     1.37     2.21    12.21     0  02:19        2.21
+  up15                 JUNCTION     1.37     2.21    12.21     0  02:20        2.21
+  up16                 JUNCTION     1.37     2.21    12.21     0  02:19        2.21
+  up17                 JUNCTION     1.37     2.21    12.21     0  02:19        2.21
+  up18                 JUNCTION     1.37     2.21    12.21     0  02:20        2.21
+  up19                 JUNCTION     1.37     2.21    12.21     0  02:20        2.21
+  up20                 JUNCTION     1.37     2.21    12.21     0  02:22        2.21
+  up21                 JUNCTION     1.37     2.21    12.21     0  02:22        2.21
+  up22                 JUNCTION     1.37     2.21    12.21     0  02:20        2.21
+  up23                 JUNCTION     1.37     2.21    12.21     0  02:20        2.21
+  up24                 JUNCTION     1.37     2.21    12.21     0  02:22        2.21
+  up25                 JUNCTION     1.37     2.21    12.21     0  02:20        2.21
+  up26                 JUNCTION     1.37     2.21    12.21     0  02:20        2.21
+  up27                 JUNCTION     1.37     2.21    12.21     0  02:21        2.21
+  up28                 JUNCTION     1.37     2.21    12.21     0  02:19        2.21
+  up29                 JUNCTION     1.37     2.21    12.21     0  02:20        2.21
+  up30                 JUNCTION     1.34     2.12    12.12     0  02:18        2.12
+  up31                 JUNCTION     1.34     2.12    12.12     0  02:22        2.12
+  up32                 JUNCTION     1.34     2.12    12.12     0  02:22        2.12
+  up33                 JUNCTION     1.34     2.12    12.12     0  02:16        2.12
+  up34                 JUNCTION     1.34     2.12    12.12     0  02:18        2.12
+  up35                 JUNCTION     1.34     2.12    12.12     0  02:18        2.12
+  up36                 JUNCTION     1.43     2.32    12.32     0  02:26        2.32
+  up37                 JUNCTION     1.44     2.32    12.32     0  02:26        2.32
+  up38                 JUNCTION     1.43     2.32    12.32     0  02:26        2.32
+  up39                 JUNCTION     1.43     2.32    12.32     0  02:26        2.32
+  up40                 JUNCTION     1.43     2.32    12.32     0  02:26        2.32
+  up41                 JUNCTION     1.43     2.32    12.32     0  02:28        2.32
+  up42                 JUNCTION     1.43     2.32    12.32     0  02:26        2.32
+  up43                 JUNCTION     1.43     2.32    12.32     0  02:26        2.32
+  up44                 JUNCTION     1.43     2.32    12.32     0  02:28        2.32
+  up45                 JUNCTION     1.43     2.32    12.32     0  02:26        2.32
+  up46                 JUNCTION     1.44     2.32    12.32     0  02:26        2.32
+  up47                 JUNCTION     1.43     2.32    12.32     0  02:26        2.32
+  up48                 JUNCTION     1.44     2.35    12.35     0  02:25        2.35
+  up49                 JUNCTION     1.44     2.35    12.35     0  02:25        2.35
+  up50                 JUNCTION     1.34     2.12    12.12     0  02:18        2.12
+  up51                 JUNCTION     1.33     2.12    12.12     0  02:18        2.12
+  up52                 JUNCTION     1.33     2.12    12.12     0  02:13        2.12
+  up53                 JUNCTION     1.37     2.21    12.21     0  02:20        2.21
+  up54                 JUNCTION     1.38     2.21    12.21     0  02:20        2.21
+  up55                 JUNCTION     1.38     2.21    12.21     0  02:20        2.21
+  up56                 JUNCTION     1.37     2.21    12.21     0  02:20        2.21
+  up57                 JUNCTION     1.37     2.21    12.21     0  02:20        2.21
+  dn1                  JUNCTION     1.72     2.50    12.00     0  02:26        2.50
+  dn2                  JUNCTION     1.72     2.50    12.00     0  02:26        2.50
+  dn3                  JUNCTION     1.72     2.50    12.00     0  02:26        2.50
+  dn4                  JUNCTION     1.72     2.50    12.00     0  02:25        2.50
+  dn5                  JUNCTION     1.72     2.50    12.00     0  02:25        2.50
+  dn6                  JUNCTION     1.72     2.50    12.00     0  02:25        2.50
+  dn7                  JUNCTION     1.72     2.50    12.00     0  02:25        2.50
+  dn8                  JUNCTION     1.72     2.50    12.00     0  02:25        2.50
+  dn9                  JUNCTION     1.73     2.50    12.00     0  02:21        2.50
+  dn10                 JUNCTION     1.73     2.50    12.00     0  02:20        2.50
+  dn11                 JUNCTION     1.73     2.50    12.00     0  02:20        2.50
+  dn12                 JUNCTION     1.73     2.50    12.00     0  02:21        2.50
+  dn13                 JUNCTION     1.73     2.50    12.00     0  02:20        2.50
+  dn14                 JUNCTION     1.73     2.50    12.00     0  02:19        2.50
+  dn15                 JUNCTION     1.73     2.50    12.00     0  02:21        2.50
+  dn16                 JUNCTION     1.73     2.50    12.00     0  02:20        2.50
+  dn17                 JUNCTION     1.73     2.50    12.00     0  02:20        2.50
+  dn18                 JUNCTION     1.73     2.50    12.00     0  02:21        2.50
+  dn19                 JUNCTION     1.73     2.50    12.00     0  02:21        2.50
+  dn20                 JUNCTION     1.73     2.50    12.00     0  02:21        2.50
+  dn21                 JUNCTION     1.73     2.50    12.00     0  02:21        2.50
+  dn22                 JUNCTION     1.73     2.50    12.00     0  02:21        2.50
+  dn23                 JUNCTION     1.73     2.50    12.00     0  02:21        2.50
+  dn24                 JUNCTION     1.73     2.50    12.00     0  02:21        2.50
+  dn25                 JUNCTION     1.73     2.50    12.00     0  02:21        2.50
+  dn26                 JUNCTION     1.73     2.50    12.00     0  02:21        2.50
+  dn27                 JUNCTION     1.73     2.50    12.00     0  02:22        2.50
+  dn28                 JUNCTION     1.73     2.50    12.00     0  02:20        2.50
+  dn29                 JUNCTION     1.73     2.50    12.00     0  02:21        2.50
+  dn30                 JUNCTION     1.72     2.50    12.00     0  02:17        2.50
+  dn31                 JUNCTION     1.72     2.50    12.00     0  02:27        2.50
+  dn32                 JUNCTION     1.72     2.50    12.00     0  02:27        2.50
+  dn33                 JUNCTION     1.72     2.50    12.00     0  02:16        2.50
+  dn34                 JUNCTION     1.72     2.50    12.00     0  02:18        2.50
+  dn35                 JUNCTION     1.72     2.50    12.00     0  02:17        2.50
+  dn36                 JUNCTION     1.73     2.50    12.00     0  02:30        2.50
+  dn37                 JUNCTION     1.73     2.50    12.00     0  02:30        2.50
+  dn38                 JUNCTION     1.73     2.50    12.00     0  02:30        2.50
+  dn39                 JUNCTION     1.73     2.50    12.00     0  02:30        2.50
+  dn40                 JUNCTION     1.73     2.50    12.00     0  02:30        2.50
+  dn41                 JUNCTION     1.73     2.50    12.00     0  02:28        2.50
+  dn42                 JUNCTION     1.73     2.50    12.00     0  02:30        2.50
+  dn43                 JUNCTION     1.73     2.50    12.00     0  02:30        2.50
+  dn44                 JUNCTION     1.73     2.50    12.00     0  02:28        2.50
+  dn45                 JUNCTION     1.73     2.50    12.00     0  02:30        2.50
+  dn46                 JUNCTION     1.73     2.50    12.00     0  02:30        2.50
+  dn47                 JUNCTION     1.73     2.50    12.00     0  02:30        2.50
+  dn48                 JUNCTION     1.72     2.50    12.00     0  02:25        2.50
+  dn49                 JUNCTION     1.72     2.50    12.00     0  02:25        2.50
+  dn50                 JUNCTION     1.72     2.50    12.00     0  02:17        2.50
+  dn51                 JUNCTION     1.73     2.50    12.00     0  02:17        2.50
+  dn52                 JUNCTION     1.73     2.50    12.00     0  02:14        2.50
+  dn53                 JUNCTION     1.73     2.50    12.00     0  02:21        2.50
+  dn54                 JUNCTION     1.73     2.50    12.00     0  02:21        2.50
+  dn55                 JUNCTION     1.73     2.50    12.00     0  02:21        2.50
+  dn56                 JUNCTION     1.73     2.50    12.00     0  02:21        2.50
+  dn57                 JUNCTION     1.73     2.50    12.00     0  02:21        2.50
+  out1                 OUTFALL      1.27     1.90    10.90     0  02:27        1.90
+  out2                 OUTFALL      1.27     1.90    10.90     0  02:27        1.90
+  out3                 OUTFALL      1.27     1.90    10.90     0  02:27        1.90
+  out4                 OUTFALL      1.27     1.90    10.90     0  02:25        1.90
+  out5                 OUTFALL      1.27     1.90    10.90     0  02:25        1.90
+  out6                 OUTFALL      1.27     1.90    10.90     0  02:25        1.90
+  out7                 OUTFALL      1.27     1.90    10.90     0  02:25        1.90
+  out8                 OUTFALL      1.27     1.90    10.90     0  02:25        1.90
+  out9                 OUTFALL      1.27     1.90    10.90     0  02:20        1.90
+  out10                OUTFALL      1.27     1.90    10.90     0  02:19        1.90
+  out11                OUTFALL      1.27     1.90    10.90     0  02:19        1.90
+  out12                OUTFALL      1.27     1.90    10.90     0  02:20        1.90
+  out13                OUTFALL      1.27     1.90    10.90     0  02:19        1.90
+  out14                OUTFALL      1.27     1.90    10.90     0  02:19        1.90
+  out15                OUTFALL      1.27     1.90    10.90     0  02:20        1.90
+  out16                OUTFALL      1.27     1.90    10.90     0  02:19        1.90
+  out17                OUTFALL      1.27     1.90    10.90     0  02:19        1.90
+  out18                OUTFALL      1.27     1.90    10.90     0  02:20        1.90
+  out19                OUTFALL      1.27     1.90    10.90     0  02:20        1.90
+  out20                OUTFALL      1.27     1.90    10.90     0  02:22        1.90
+  out21                OUTFALL      1.27     1.90    10.90     0  02:22        1.90
+  out22                OUTFALL      1.27     1.90    10.90     0  02:20        1.90
+  out23                OUTFALL      1.27     1.90    10.90     0  02:20        1.90
+  out24                OUTFALL      1.27     1.90    10.90     0  02:22        1.90
+  out25                OUTFALL      1.27     1.90    10.90     0  02:20        1.90
+  out26                OUTFALL      1.27     1.90    10.90     0  02:20        1.90
+  out27                OUTFALL      1.27     1.90    10.90     0  02:21        1.90
+  out28                OUTFALL      1.27     1.90    10.90     0  02:19        1.90
+  out29                OUTFALL      1.27     1.90    10.90     0  02:20        1.90
+  out30                OUTFALL      1.27     1.90    10.90     0  02:19        1.90
+  out31                OUTFALL      1.27     1.90    10.90     0  02:15        1.90
+  out32                OUTFALL      1.27     1.90    10.90     0  02:15        1.90
+  out33                OUTFALL      1.27     1.90    10.90     0  02:18        1.90
+  out34                OUTFALL      1.27     1.90    10.90     0  02:26        1.90
+  out35                OUTFALL      1.27     1.90    10.90     0  02:19        1.90
+  out36                OUTFALL      1.27     1.90    10.90     0  02:26        1.90
+  out37                OUTFALL      1.27     1.90    10.90     0  02:26        1.90
+  out38                OUTFALL      1.27     1.90    10.90     0  02:26        1.90
+  out39                OUTFALL      1.27     1.90    10.90     0  02:26        1.90
+  out40                OUTFALL      1.27     1.90    10.90     0  02:26        1.90
+  out41                OUTFALL      1.27     1.90    10.90     0  02:29        1.90
+  out42                OUTFALL      1.27     1.90    10.90     0  02:26        1.90
+  out43                OUTFALL      1.27     1.90    10.90     0  02:26        1.90
+  out44                OUTFALL      1.27     1.90    10.90     0  02:29        1.90
+  out45                OUTFALL      1.27     1.90    10.90     0  02:26        1.90
+  out46                OUTFALL      1.27     1.90    10.90     0  02:26        1.90
+  out47                OUTFALL      1.27     1.90    10.90     0  02:26        1.90
+  out48                OUTFALL      1.27     1.90    10.90     0  02:25        1.90
+  out49                OUTFALL      1.27     1.90    10.90     0  02:25        1.90
+  out50                OUTFALL      1.27     1.90    10.90     0  02:19        1.90
+  out51                OUTFALL      1.27     1.90    10.90     0  02:19        1.90
+  out52                OUTFALL      1.27     1.90    10.90     0  02:15        1.90
+  out53                OUTFALL      1.27     1.90    10.90     0  02:20        1.90
+  out54                OUTFALL      1.27     1.90    10.90     0  02:20        1.90
+  out55                OUTFALL      1.27     1.90    10.90     0  02:20        1.90
+  out56                OUTFALL      1.27     1.90    10.90     0  02:20        1.90
+  out57                OUTFALL      1.27     1.90    10.90     0  02:20        1.90
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  in1                  JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.097
+  in2                  JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.097
+  in3                  JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.097
+  in4                  JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.097
+  in5                  JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.099
+  in6                  JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.097
+  in7                  JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.097
+  in8                  JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.097
+  in9                  JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in10                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in11                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in12                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in13                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in14                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in15                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in16                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in17                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in18                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in19                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in20                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in21                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in22                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in23                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in24                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in25                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in26                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in27                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.099
+  in28                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.099
+  in29                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.099
+  in30                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.090
+  in31                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.090
+  in32                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.090
+  in33                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.089
+  in34                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.089
+  in35                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.089
+  in36                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in37                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.099
+  in38                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in39                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in40                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in41                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in42                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in43                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in44                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in45                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in46                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.099
+  in47                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in48                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in49                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.099
+  in50                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.090
+  in51                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.091
+  in52                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.092
+  in53                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in54                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in55                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in56                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  in57                 JUNCTION     10.00    10.00     0  01:00       0.675       0.675      -0.098
+  up1                  JUNCTION      0.00    10.00     0  02:25           0       0.676       0.118
+  up2                  JUNCTION      0.00    10.00     0  02:25           0       0.676       0.119
+  up3                  JUNCTION      0.00    10.00     0  02:25           0       0.676       0.112
+  up4                  JUNCTION      0.00    10.00     0  02:25           0       0.676       0.120
+  up5                  JUNCTION      0.00    10.00     0  02:25           0       0.676       0.125
+  up6                  JUNCTION      0.00    10.00     0  02:25           0       0.676       0.118
+  up7                  JUNCTION      0.00    10.00     0  02:25           0       0.676       0.114
+  up8                  JUNCTION      0.00    10.00     0  02:25           0       0.676       0.114
+  up9                  JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  up10                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  up11                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  up12                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  up13                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  up14                 JUNCTION      0.00    10.00     0  02:17           0       0.676       0.126
+  up15                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  up16                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  up17                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  up18                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  up19                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  up20                 JUNCTION      0.00    10.00     0  02:17           0       0.676       0.126
+  up21                 JUNCTION      0.00    10.00     0  02:17           0       0.676       0.126
+  up22                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  up23                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  up24                 JUNCTION      0.00    10.00     0  02:17           0       0.676       0.126
+  up25                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  up26                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  up27                 JUNCTION      0.00    10.00     0  02:24           0       0.676       0.127
+  up28                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.127
+  up29                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.127
+  up30                 JUNCTION      0.00    10.00     0  02:11           0       0.676       0.119
+  up31                 JUNCTION      0.00    10.00     0  02:15           0       0.676       0.119
+  up32                 JUNCTION      0.00    10.00     0  02:15           0       0.676       0.119
+  up33                 JUNCTION      0.00    10.00     0  02:22           0       0.676       0.116
+  up34                 JUNCTION      0.00    10.00     0  02:07           0       0.676       0.116
+  up35                 JUNCTION      0.00    10.00     0  02:11           0       0.676       0.116
+  up36                 JUNCTION      0.00    10.00     0  02:25           0       0.676       0.122
+  up37                 JUNCTION      0.00    10.00     0  02:25           0       0.676       0.123
+  up38                 JUNCTION      0.00    10.00     0  02:25           0       0.676       0.122
+  up39                 JUNCTION      0.00    10.00     0  02:25           0       0.676       0.122
+  up40                 JUNCTION      0.00    10.00     0  02:25           0       0.676       0.122
+  up41                 JUNCTION      0.00    10.00     0  02:27           0       0.676       0.121
+  up42                 JUNCTION      0.00    10.00     0  02:25           0       0.676       0.122
+  up43                 JUNCTION      0.00    10.00     0  02:25           0       0.676       0.122
+  up44                 JUNCTION      0.00    10.00     0  02:27           0       0.676       0.121
+  up45                 JUNCTION      0.00    10.00     0  02:25           0       0.676       0.122
+  up46                 JUNCTION      0.00    10.00     0  02:25           0       0.676       0.123
+  up47                 JUNCTION      0.00    10.00     0  02:25           0       0.676       0.122
+  up48                 JUNCTION      0.00    10.00     0  02:25           0       0.676       0.120
+  up49                 JUNCTION      0.00    10.00     0  02:25           0       0.676       0.121
+  up50                 JUNCTION      0.00    10.00     0  02:11           0       0.676       0.119
+  up51                 JUNCTION      0.00    10.00     0  02:11           0       0.676       0.120
+  up52                 JUNCTION      0.00    10.00     0  02:07           0       0.676       0.120
+  up53                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  up54                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  up55                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  up56                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  up57                 JUNCTION      0.00    10.00     0  02:16           0       0.676       0.126
+  dn1                  JUNCTION      0.00    10.00     0  02:27           0       0.675       0.008
+  dn2                  JUNCTION      0.00    10.00     0  02:27           0       0.675       0.006
+  dn3                  JUNCTION      0.00    10.00     0  02:27           0       0.675       0.014
+  dn4                  JUNCTION      0.00    10.00     0  02:25           0       0.675       0.006
+  dn5                  JUNCTION      0.00    10.00     0  02:25           0       0.675       0.006
+  dn6                  JUNCTION      0.00    10.00     0  02:25           0       0.675       0.008
+  dn7                  JUNCTION      0.00    10.00     0  02:25           0       0.675       0.012
+  dn8                  JUNCTION      0.00    10.00     0  02:25           0       0.675       0.012
+  dn9                  JUNCTION      0.00    10.00     0  02:19           0       0.675       0.015
+  dn10                 JUNCTION      0.00    10.00     0  02:18           0       0.675       0.015
+  dn11                 JUNCTION      0.00    10.00     0  02:18           0       0.675       0.015
+  dn12                 JUNCTION      0.00    10.00     0  02:19           0       0.675       0.015
+  dn13                 JUNCTION      0.00    10.00     0  02:18           0       0.675       0.015
+  dn14                 JUNCTION      0.00    10.00     0  02:19           0       0.675       0.015
+  dn15                 JUNCTION      0.00    10.00     0  02:19           0       0.675       0.015
+  dn16                 JUNCTION      0.00    10.00     0  02:18           0       0.675       0.015
+  dn17                 JUNCTION      0.00    10.00     0  02:18           0       0.675       0.015
+  dn18                 JUNCTION      0.00    10.00     0  02:19           0       0.675       0.015
+  dn19                 JUNCTION      0.00    10.00     0  02:19           0       0.675       0.015
+  dn20                 JUNCTION      0.00    10.00     0  02:23           0       0.675       0.015
+  dn21                 JUNCTION      0.00    10.00     0  02:23           0       0.675       0.015
+  dn22                 JUNCTION      0.00    10.00     0  02:19           0       0.675       0.015
+  dn23                 JUNCTION      0.00    10.00     0  02:19           0       0.675       0.015
+  dn24                 JUNCTION      0.00    10.00     0  02:23           0       0.675       0.015
+  dn25                 JUNCTION      0.00    10.00     0  02:19           0       0.675       0.015
+  dn26                 JUNCTION      0.00    10.00     0  02:19           0       0.675       0.015
+  dn27                 JUNCTION      0.00    10.00     0  02:21           0       0.675       0.016
+  dn28                 JUNCTION      0.00    10.00     0  02:18           0       0.675       0.016
+  dn29                 JUNCTION      0.00    10.00     0  02:19           0       0.675       0.016
+  dn30                 JUNCTION      0.00    10.00     0  02:16           0       0.675       0.001
+  dn31                 JUNCTION      0.00    10.00     0  02:37           0       0.675       0.002
+  dn32                 JUNCTION      0.00    10.00     0  02:37           0       0.675       0.002
+  dn33                 JUNCTION      0.00    10.00     0  02:39           0       0.675       0.003
+  dn34                 JUNCTION      0.00    10.00     0  02:24           0       0.675       0.003
+  dn35                 JUNCTION      0.00    10.00     0  02:16           0       0.675       0.003
+  dn36                 JUNCTION      0.00    10.00     0  02:31           0       0.675       0.008
+  dn37                 JUNCTION      0.00    10.00     0  02:31           0       0.675       0.012
+  dn38                 JUNCTION      0.00    10.00     0  02:31           0       0.675       0.008
+  dn39                 JUNCTION      0.00    10.00     0  02:31           0       0.675       0.008
+  dn40                 JUNCTION      0.00    10.00     0  02:31           0       0.675       0.008
+  dn41                 JUNCTION      0.00    10.00     0  02:28           0       0.675       0.008
+  dn42                 JUNCTION      0.00    10.00     0  02:31           0       0.675       0.008
+  dn43                 JUNCTION      0.00    10.00     0  02:31           0       0.675       0.008
+  dn44                 JUNCTION      0.00    10.00     0  02:28           0       0.675       0.008
+  dn45                 JUNCTION      0.00    10.00     0  02:31           0       0.675       0.008
+  dn46                 JUNCTION      0.00    10.00     0  02:31           0       0.675       0.012
+  dn47                 JUNCTION      0.00    10.00     0  02:31           0       0.675       0.008
+  dn48                 JUNCTION      0.00    10.00     0  02:25           0       0.675       0.007
+  dn49                 JUNCTION      0.00    10.00     0  02:25           0       0.675       0.006
+  dn50                 JUNCTION      0.00    10.00     0  02:16           0       0.675       0.002
+  dn51                 JUNCTION      0.00    10.00     0  02:16           0       0.675       0.001
+  dn52                 JUNCTION      0.00    10.00     0  02:37           0       0.675       0.001
+  dn53                 JUNCTION      0.00    10.00     0  02:19           0       0.675       0.015
+  dn54                 JUNCTION      0.00    10.00     0  02:19           0       0.675       0.015
+  dn55                 JUNCTION      0.00    10.00     0  02:19           0       0.675       0.015
+  dn56                 JUNCTION      0.00    10.00     0  02:19           0       0.675       0.015
+  dn57                 JUNCTION      0.00    10.00     0  02:19           0       0.675       0.015
+  out1                 OUTFALL       0.00    10.00     0  02:27           0       0.675       0.000
+  out2                 OUTFALL       0.00    10.00     0  02:27           0       0.675       0.000
+  out3                 OUTFALL       0.00    10.00     0  02:27           0       0.675       0.000
+  out4                 OUTFALL       0.00    10.00     0  02:25           0       0.675       0.000
+  out5                 OUTFALL       0.00    10.00     0  02:25           0       0.675       0.000
+  out6                 OUTFALL       0.00    10.00     0  02:25           0       0.675       0.000
+  out7                 OUTFALL       0.00    10.00     0  02:25           0       0.675       0.000
+  out8                 OUTFALL       0.00    10.00     0  02:25           0       0.675       0.000
+  out9                 OUTFALL       0.00    10.00     0  02:20           0       0.675       0.000
+  out10                OUTFALL       0.00    10.00     0  02:19           0       0.675       0.000
+  out11                OUTFALL       0.00    10.00     0  02:19           0       0.675       0.000
+  out12                OUTFALL       0.00    10.00     0  02:20           0       0.675       0.000
+  out13                OUTFALL       0.00    10.00     0  02:19           0       0.675       0.000
+  out14                OUTFALL       0.00    10.00     0  02:19           0       0.675       0.000
+  out15                OUTFALL       0.00    10.00     0  02:20           0       0.675       0.000
+  out16                OUTFALL       0.00    10.00     0  02:19           0       0.675       0.000
+  out17                OUTFALL       0.00    10.00     0  02:19           0       0.675       0.000
+  out18                OUTFALL       0.00    10.00     0  02:20           0       0.675       0.000
+  out19                OUTFALL       0.00    10.00     0  02:20           0       0.675       0.000
+  out20                OUTFALL       0.00    10.00     0  02:24           0       0.675       0.000
+  out21                OUTFALL       0.00    10.00     0  02:24           0       0.675       0.000
+  out22                OUTFALL       0.00    10.00     0  02:20           0       0.675       0.000
+  out23                OUTFALL       0.00    10.00     0  02:20           0       0.675       0.000
+  out24                OUTFALL       0.00    10.00     0  02:24           0       0.675       0.000
+  out25                OUTFALL       0.00    10.00     0  02:20           0       0.675       0.000
+  out26                OUTFALL       0.00    10.00     0  02:20           0       0.675       0.000
+  out27                OUTFALL       0.00    10.00     0  02:21           0       0.675       0.000
+  out28                OUTFALL       0.00    10.00     0  02:19           0       0.675       0.000
+  out29                OUTFALL       0.00    10.00     0  02:20           0       0.675       0.000
+  out30                OUTFALL       0.00    10.00     0  02:19           0       0.675       0.000
+  out31                OUTFALL       0.00    10.00     0  02:15           0       0.675       0.000
+  out32                OUTFALL       0.00    10.00     0  02:15           0       0.675       0.000
+  out33                OUTFALL       0.00    10.00     0  02:18           0       0.675       0.000
+  out34                OUTFALL       0.00    10.00     0  02:26           0       0.675       0.000
+  out35                OUTFALL       0.00    10.00     0  02:19           0       0.675       0.000
+  out36                OUTFALL       0.00    10.00     0  02:26           0       0.675       0.000
+  out37                OUTFALL       0.00    10.00     0  02:26           0       0.675       0.000
+  out38                OUTFALL       0.00    10.00     0  02:26           0       0.675       0.000
+  out39                OUTFALL       0.00    10.00     0  02:26           0       0.675       0.000
+  out40                OUTFALL       0.00    10.00     0  02:26           0       0.675       0.000
+  out41                OUTFALL       0.00    10.00     0  02:29           0       0.675       0.000
+  out42                OUTFALL       0.00    10.00     0  02:26           0       0.675       0.000
+  out43                OUTFALL       0.00    10.00     0  02:26           0       0.675       0.000
+  out44                OUTFALL       0.00    10.00     0  02:29           0       0.675       0.000
+  out45                OUTFALL       0.00    10.00     0  02:26           0       0.675       0.000
+  out46                OUTFALL       0.00    10.00     0  02:26           0       0.675       0.000
+  out47                OUTFALL       0.00    10.00     0  02:26           0       0.675       0.000
+  out48                OUTFALL       0.00    10.00     0  02:25           0       0.675       0.000
+  out49                OUTFALL       0.00    10.00     0  02:25           0       0.675       0.000
+  out50                OUTFALL       0.00    10.00     0  02:19           0       0.675       0.000
+  out51                OUTFALL       0.00    10.00     0  02:19           0       0.675       0.000
+  out52                OUTFALL       0.00    10.00     0  02:15           0       0.675       0.000
+  out53                OUTFALL       0.00    10.00     0  02:20           0       0.675       0.000
+  out54                OUTFALL       0.00    10.00     0  02:20           0       0.675       0.000
+  out55                OUTFALL       0.00    10.00     0  02:20           0       0.675       0.000
+  out56                OUTFALL       0.00    10.00     0  02:20           0       0.675       0.000
+  out57                OUTFALL       0.00    10.00     0  02:20           0       0.675       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  No nodes were surcharged.
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  out1                  98.64      5.45     10.00       0.675
+  out2                  98.64      5.45     10.00       0.675
+  out3                  98.64      5.45     10.00       0.675
+  out4                  98.64      5.45     10.00       0.675
+  out5                  98.47      5.46     10.00       0.675
+  out6                  98.64      5.45     10.00       0.675
+  out7                  98.64      5.45     10.00       0.675
+  out8                  98.64      5.45     10.00       0.675
+  out9                  98.47      5.46     10.00       0.675
+  out10                 98.38      5.46     10.00       0.675
+  out11                 98.38      5.46     10.00       0.675
+  out12                 98.47      5.46     10.00       0.675
+  out13                 98.47      5.46     10.00       0.675
+  out14                 98.47      5.46     10.00       0.675
+  out15                 98.47      5.46     10.00       0.675
+  out16                 98.47      5.46     10.00       0.675
+  out17                 98.38      5.46     10.00       0.675
+  out18                 98.47      5.46     10.00       0.675
+  out19                 98.47      5.46     10.00       0.675
+  out20                 98.47      5.46     10.00       0.675
+  out21                 98.47      5.46     10.00       0.675
+  out22                 98.47      5.46     10.00       0.675
+  out23                 98.47      5.46     10.00       0.675
+  out24                 98.47      5.46     10.00       0.675
+  out25                 98.47      5.46     10.00       0.675
+  out26                 98.47      5.46     10.00       0.675
+  out27                 98.55      5.46     10.00       0.675
+  out28                 98.55      5.46     10.00       0.675
+  out29                 98.55      5.46     10.00       0.675
+  out30                 98.89      5.45     10.00       0.675
+  out31                 98.89      5.45     10.00       0.675
+  out32                 98.89      5.45     10.00       0.675
+  out33                 98.81      5.45     10.00       0.675
+  out34                 98.81      5.45     10.00       0.675
+  out35                 98.81      5.45     10.00       0.675
+  out36                 98.72      5.45     10.00       0.675
+  out37                 98.38      5.47     10.00       0.675
+  out38                 98.72      5.45     10.00       0.675
+  out39                 98.72      5.45     10.00       0.675
+  out40                 98.72      5.45     10.00       0.675
+  out41                 98.72      5.45     10.00       0.675
+  out42                 98.72      5.45     10.00       0.675
+  out43                 98.72      5.45     10.00       0.675
+  out44                 98.72      5.45     10.00       0.675
+  out45                 98.72      5.45     10.00       0.675
+  out46                 98.38      5.47     10.00       0.675
+  out47                 98.72      5.45     10.00       0.675
+  out48                 98.72      5.45     10.00       0.675
+  out49                 98.81      5.44     10.00       0.675
+  out50                 98.98      5.44     10.00       0.675
+  out51                 98.98      5.44     10.00       0.675
+  out52                 98.98      5.44     10.00       0.675
+  out53                 98.47      5.46     10.00       0.675
+  out54                 98.38      5.46     10.00       0.675
+  out55                 98.38      5.46     10.00       0.675
+  out56                 98.47      5.46     10.00       0.675
+  out57                 98.47      5.46     10.00       0.675
+  -----------------------------------------------------------
+  System                98.60    310.97    570.00      38.473
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  upstream1            CONDUIT     10.00     0  02:25      3.37    0.64    0.64
+  upstream2            CONDUIT     10.00     0  02:25      3.11    0.64    0.64
+  upstream3            CONDUIT     10.00     0  02:25      3.11    0.64    0.64
+  upstream4            CONDUIT     10.00     0  02:25      3.26    0.64    0.64
+  upstream5            CONDUIT     10.00     0  02:25      3.11    0.64    0.64
+  upstream6            CONDUIT     10.00     0  02:25      3.44    0.64    0.64
+  upstream7            CONDUIT     10.00     0  02:25      3.11    0.64    0.64
+  upstream8            CONDUIT     10.00     0  02:25      3.11    0.64    0.64
+  upstream9            CONDUIT     10.00     0  02:16      4.02    0.64    0.62
+  upstream10           CONDUIT     10.00     0  02:16      4.00    0.64    0.62
+  upstream11           CONDUIT     10.00     0  02:16      4.00    0.64    0.62
+  upstream12           CONDUIT     10.00     0  02:16      4.04    0.64    0.62
+  upstream13           CONDUIT     10.00     0  02:16      4.07    0.64    0.62
+  upstream14           CONDUIT     10.00     0  02:17      4.04    0.64    0.62
+  upstream15           CONDUIT     10.00     0  02:16      4.06    0.64    0.62
+  upstream16           CONDUIT     10.00     0  02:16      4.07    0.64    0.62
+  upstream17           CONDUIT     10.00     0  02:16      4.01    0.64    0.62
+  upstream18           CONDUIT     10.00     0  02:16      4.02    0.64    0.62
+  upstream19           CONDUIT     10.00     0  02:16      4.03    0.64    0.62
+  upstream20           CONDUIT     10.00     0  02:17      4.06    0.64    0.62
+  upstream21           CONDUIT     10.00     0  02:17      4.06    0.64    0.62
+  upstream22           CONDUIT     10.00     0  02:16      4.06    0.64    0.62
+  upstream23           CONDUIT     10.00     0  02:16      4.06    0.64    0.62
+  upstream24           CONDUIT     10.00     0  02:17      4.06    0.64    0.62
+  upstream25           CONDUIT     10.00     0  02:16      4.06    0.64    0.62
+  upstream26           CONDUIT     10.00     0  02:16      4.06    0.64    0.62
+  upstream27           CONDUIT     10.00     0  02:24      4.18    0.64    0.62
+  upstream28           CONDUIT     10.00     0  02:16      4.18    0.64    0.62
+  upstream29           CONDUIT     10.00     0  02:16      4.18    0.64    0.62
+  upstream30           CONDUIT     10.00     0  02:11      3.85    0.64    0.61
+  upstream31           CONDUIT     10.00     0  02:15      3.85    0.64    0.61
+  upstream32           CONDUIT     10.00     0  02:15      3.85    0.64    0.61
+  upstream33           CONDUIT     10.00     0  02:22      3.98    0.64    0.61
+  upstream34           CONDUIT     10.00     0  02:07      3.98    0.64    0.61
+  upstream35           CONDUIT     10.00     0  02:11      3.98    0.64    0.61
+  upstream36           CONDUIT     10.00     0  02:25      3.79    0.64    0.64
+  upstream37           CONDUIT     10.00     0  02:25      3.71    0.64    0.64
+  upstream38           CONDUIT     10.00     0  02:25      3.77    0.64    0.64
+  upstream39           CONDUIT     10.00     0  02:25      3.79    0.64    0.64
+  upstream40           CONDUIT     10.00     0  02:25      3.79    0.64    0.64
+  upstream41           CONDUIT     10.00     0  02:27      3.84    0.64    0.64
+  upstream42           CONDUIT     10.00     0  02:25      3.79    0.64    0.64
+  upstream43           CONDUIT     10.00     0  02:25      3.79    0.64    0.64
+  upstream44           CONDUIT     10.00     0  02:27      3.84    0.64    0.64
+  upstream45           CONDUIT     10.00     0  02:25      3.79    0.64    0.64
+  upstream46           CONDUIT     10.00     0  02:25      3.71    0.64    0.64
+  upstream47           CONDUIT     10.00     0  02:25      3.77    0.64    0.64
+  upstream48           CONDUIT     10.00     0  02:25      3.13    0.64    0.64
+  upstream49           CONDUIT     10.00     0  02:25      3.73    0.64    0.64
+  upstream50           CONDUIT     10.00     0  02:11      3.99    0.64    0.61
+  upstream51           CONDUIT     10.00     0  02:11      4.14    0.64    0.61
+  upstream52           CONDUIT     10.00     0  02:07      4.20    0.64    0.61
+  upstream53           CONDUIT     10.00     0  02:16      4.08    0.64    0.62
+  upstream54           CONDUIT     10.00     0  02:16      4.00    0.64    0.62
+  upstream55           CONDUIT     10.00     0  02:16      4.00    0.64    0.62
+  upstream56           CONDUIT     10.00     0  02:16      4.05    0.64    0.62
+  upstream57           CONDUIT     10.00     0  02:16      4.05    0.64    0.62
+  culvert1             CONDUIT     10.00     0  02:27      3.18    0.48    1.00
+  culvert2             CONDUIT     10.00     0  02:27      3.18    0.48    1.00
+  culvert3             CONDUIT     10.00     0  02:27      3.18    0.48    1.00
+  culvert4             CONDUIT     10.00     0  02:25      3.18    0.48    1.00
+  culvert5             CONDUIT     10.00     0  02:25      3.18    0.48    1.00
+  culvert6             CONDUIT     10.00     0  02:25      3.18    0.48    1.00
+  culvert7             CONDUIT     10.00     0  02:25      3.18    0.48    1.00
+  culvert8             CONDUIT     10.00     0  02:25      3.18    0.48    1.00
+  culvert9             CONDUIT     10.00     0  02:19      2.50    0.38    1.00
+  culvert10            CONDUIT     10.00     0  02:18      2.50    0.38    1.00
+  culvert11            CONDUIT     10.00     0  02:18      2.50    0.38    1.00
+  culvert12            CONDUIT     10.00     0  02:19      2.50    0.38    1.00
+  culvert13            CONDUIT     10.00     0  02:18      2.50    0.38    1.00
+  culvert14            CONDUIT     10.00     0  02:19      2.50    0.38    1.00
+  culvert15            CONDUIT     10.00     0  02:19      2.50    0.38    1.00
+  culvert16            CONDUIT     10.00     0  02:18      2.50    0.38    1.00
+  culvert17            CONDUIT     10.00     0  02:18      2.50    0.38    1.00
+  culvert18            CONDUIT     10.00     0  02:19      2.50    0.38    1.00
+  culvert19            CONDUIT     10.00     0  02:19      2.50    0.38    1.00
+  culvert20            CONDUIT     10.00     0  02:23      2.50    0.38    1.00
+  culvert21            CONDUIT     10.00     0  02:23      2.50    0.38    1.00
+  culvert22            CONDUIT     10.00     0  02:19      2.50    0.38    1.00
+  culvert23            CONDUIT     10.00     0  02:19      2.50    0.38    1.00
+  culvert24            CONDUIT     10.00     0  02:23      2.50    0.38    1.00
+  culvert25            CONDUIT     10.00     0  02:19      2.50    0.38    1.00
+  culvert26            CONDUIT     10.00     0  02:19      2.50    0.38    1.00
+  culvert27            CONDUIT     10.00     0  02:21      2.50    0.38    1.00
+  culvert28            CONDUIT     10.00     0  02:18      2.50    0.38    1.00
+  culvert29            CONDUIT     10.00     0  02:19      2.50    0.38    1.00
+  culvert30            CONDUIT     10.00     0  02:16      1.97    0.26    1.00
+  culvert31            CONDUIT     10.00     0  02:37      1.97    0.26    1.00
+  culvert32            CONDUIT     10.00     0  02:37      1.97    0.26    1.00
+  culvert33            CONDUIT     10.00     0  02:39      1.97    0.26    1.00
+  culvert34            CONDUIT     10.00     0  02:24      1.97    0.26    1.00
+  culvert35            CONDUIT     10.00     0  02:16      1.97    0.26    1.00
+  culvert36            CONDUIT     10.00     0  02:31      3.17    0.43    1.00
+  culvert37            CONDUIT     10.00     0  02:31      3.17    0.43    1.00
+  culvert38            CONDUIT     10.00     0  02:31      3.17    0.43    1.00
+  culvert39            CONDUIT     10.00     0  02:31      3.17    0.43    1.00
+  culvert40            CONDUIT     10.00     0  02:31      3.17    0.43    1.00
+  culvert41            CONDUIT     10.00     0  02:28      3.17    0.43    1.00
+  culvert42            CONDUIT     10.00     0  02:31      3.17    0.43    1.00
+  culvert43            CONDUIT     10.00     0  02:31      3.17    0.43    1.00
+  culvert44            CONDUIT     10.00     0  02:28      3.17    0.43    1.00
+  culvert45            CONDUIT     10.00     0  02:31      3.17    0.43    1.00
+  culvert46            CONDUIT     10.00     0  02:31      3.17    0.43    1.00
+  culvert47            CONDUIT     10.00     0  02:31      3.17    0.43    1.00
+  culvert48            CONDUIT     10.00     0  02:25      3.18    0.48    1.00
+  culvert49            CONDUIT     10.00     0  02:25      3.18    0.48    1.00
+  culvert50            CONDUIT     10.00     0  02:16      1.97    0.26    1.00
+  culvert51            CONDUIT     10.00     0  02:16      1.97    0.26    1.00
+  culvert52            CONDUIT     10.00     0  02:37      1.97    0.26    1.00
+  culvert53            CONDUIT     10.00     0  02:19      2.50    0.38    1.00
+  culvert54            CONDUIT     10.00     0  02:19      2.50    0.38    1.00
+  culvert55            CONDUIT     10.00     0  02:19      2.50    0.38    1.00
+  culvert56            CONDUIT     10.00     0  02:19      2.50    0.38    1.00
+  culvert57            CONDUIT     10.00     0  02:19      2.50    0.38    1.00
+  downstream1          CONDUIT     10.00     0  02:27      4.14    0.29    0.55
+  downstream2          CONDUIT     10.00     0  02:27      4.14    0.29    0.55
+  downstream3          CONDUIT     10.00     0  02:27      4.14    0.29    0.55
+  downstream4          CONDUIT     10.00     0  02:25      4.14    0.29    0.55
+  downstream5          CONDUIT     10.00     0  02:25      4.14    0.29    0.55
+  downstream6          CONDUIT     10.00     0  02:25      4.14    0.29    0.55
+  downstream7          CONDUIT     10.00     0  02:25      4.14    0.29    0.55
+  downstream8          CONDUIT     10.00     0  02:25      4.14    0.29    0.55
+  downstream9          CONDUIT     10.00     0  02:20      4.14    0.29    0.55
+  downstream10         CONDUIT     10.00     0  02:19      4.14    0.29    0.55
+  downstream11         CONDUIT     10.00     0  02:19      4.14    0.29    0.55
+  downstream12         CONDUIT     10.00     0  02:20      4.14    0.29    0.55
+  downstream13         CONDUIT     10.00     0  02:19      4.14    0.29    0.55
+  downstream14         CONDUIT     10.00     0  02:19      4.14    0.29    0.55
+  downstream15         CONDUIT     10.00     0  02:20      4.14    0.29    0.55
+  downstream16         CONDUIT     10.00     0  02:19      4.14    0.29    0.55
+  downstream17         CONDUIT     10.00     0  02:19      4.14    0.29    0.55
+  downstream18         CONDUIT     10.00     0  02:20      4.14    0.29    0.55
+  downstream19         CONDUIT     10.00     0  02:20      4.14    0.29    0.55
+  downstream20         CONDUIT     10.00     0  02:24      4.14    0.29    0.55
+  downstream21         CONDUIT     10.00     0  02:24      4.14    0.29    0.55
+  downstream22         CONDUIT     10.00     0  02:20      4.14    0.29    0.55
+  downstream23         CONDUIT     10.00     0  02:20      4.14    0.29    0.55
+  downstream24         CONDUIT     10.00     0  02:24      4.14    0.29    0.55
+  downstream25         CONDUIT     10.00     0  02:20      4.14    0.29    0.55
+  downstream26         CONDUIT     10.00     0  02:20      4.14    0.29    0.55
+  downstream27         CONDUIT     10.00     0  02:21      4.14    0.29    0.55
+  downstream28         CONDUIT     10.00     0  02:19      4.14    0.29    0.55
+  downstream29         CONDUIT     10.00     0  02:20      4.14    0.29    0.55
+  downstream30         CONDUIT     10.00     0  02:19      4.14    0.29    0.55
+  downstream31         CONDUIT     10.00     0  02:15      4.14    0.29    0.55
+  downstream32         CONDUIT     10.00     0  02:15      4.14    0.29    0.55
+  downstream33         CONDUIT     10.00     0  02:18      4.14    0.29    0.55
+  downstream34         CONDUIT     10.00     0  02:26      4.14    0.29    0.55
+  downstream35         CONDUIT     10.00     0  02:19      4.14    0.29    0.55
+  downstream36         CONDUIT     10.00     0  02:26      4.14    0.29    0.55
+  downstream37         CONDUIT     10.00     0  02:26      4.14    0.29    0.55
+  downstream38         CONDUIT     10.00     0  02:26      4.14    0.29    0.55
+  downstream39         CONDUIT     10.00     0  02:26      4.14    0.29    0.55
+  downstream40         CONDUIT     10.00     0  02:26      4.14    0.29    0.55
+  downstream41         CONDUIT     10.00     0  02:29      4.14    0.29    0.55
+  downstream42         CONDUIT     10.00     0  02:26      4.14    0.29    0.55
+  downstream43         CONDUIT     10.00     0  02:26      4.14    0.29    0.55
+  downstream44         CONDUIT     10.00     0  02:29      4.14    0.29    0.55
+  downstream45         CONDUIT     10.00     0  02:26      4.14    0.29    0.55
+  downstream46         CONDUIT     10.00     0  02:26      4.14    0.29    0.55
+  downstream47         CONDUIT     10.00     0  02:26      4.14    0.29    0.55
+  downstream48         CONDUIT     10.00     0  02:25      4.14    0.29    0.55
+  downstream49         CONDUIT     10.00     0  02:25      4.14    0.29    0.55
+  downstream50         CONDUIT     10.00     0  02:19      4.14    0.29    0.55
+  downstream51         CONDUIT     10.00     0  02:19      4.14    0.29    0.55
+  downstream52         CONDUIT     10.00     0  02:15      4.14    0.29    0.55
+  downstream53         CONDUIT     10.00     0  02:20      4.14    0.29    0.55
+  downstream54         CONDUIT     10.00     0  02:20      4.14    0.29    0.55
+  downstream55         CONDUIT     10.00     0  02:20      4.14    0.29    0.55
+  downstream56         CONDUIT     10.00     0  02:20      4.14    0.29    0.55
+  downstream57         CONDUIT     10.00     0  02:20      4.14    0.29    0.55
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  upstream1               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream2               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream3               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream4               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream5               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.12  0.00
+  upstream6               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream7               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream8               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream9               1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream10              1.00   0.00  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  upstream11              1.00   0.00  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  upstream12              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream13              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream14              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream15              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream16              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream17              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream18              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream19              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream20              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream21              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream22              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream23              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream24              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream25              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream26              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream27              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream28              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream29              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream30              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream31              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream32              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream33              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream34              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream35              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream36              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream37              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.09  0.00
+  upstream38              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream39              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream40              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream41              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream42              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream43              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream44              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream45              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream46              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.09  0.00
+  upstream47              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream48              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream49              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  upstream50              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream51              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream52              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream53              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream54              1.00   0.00  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  upstream55              1.00   0.00  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  upstream56              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  upstream57              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  culvert1                1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.35
+  culvert2                1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.36
+  culvert3                1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.35
+  culvert4                1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.35
+  culvert5                1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.36
+  culvert6                1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.35
+  culvert7                1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.36
+  culvert8                1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.36
+  culvert9                1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.33
+  culvert10               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.34
+  culvert11               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.34
+  culvert12               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.34
+  culvert13               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.33
+  culvert14               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.34
+  culvert15               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.33
+  culvert16               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.33
+  culvert17               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.34
+  culvert18               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.34
+  culvert19               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.34
+  culvert20               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.33
+  culvert21               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.33
+  culvert22               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.33
+  culvert23               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.33
+  culvert24               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.33
+  culvert25               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.33
+  culvert26               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.33
+  culvert27               1.00   0.00  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.33
+  culvert28               1.00   0.00  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.33
+  culvert29               1.00   0.00  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.33
+  culvert30               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.35
+  culvert31               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.34
+  culvert32               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.34
+  culvert33               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.35
+  culvert34               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.35
+  culvert35               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.35
+  culvert36               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.35
+  culvert37               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.36
+  culvert38               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.35
+  culvert39               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.35
+  culvert40               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.35
+  culvert41               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.34
+  culvert42               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.35
+  culvert43               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.35
+  culvert44               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.34
+  culvert45               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.35
+  culvert46               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.36
+  culvert47               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.35
+  culvert48               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.35
+  culvert49               1.00   0.00  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.34
+  culvert50               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.34
+  culvert51               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.33
+  culvert52               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.33
+  culvert53               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.33
+  culvert54               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.34
+  culvert55               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.34
+  culvert56               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.33
+  culvert57               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.33
+  downstream1             1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream2             1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream3             1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream4             1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream5             1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream6             1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream7             1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream8             1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream9             1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream10            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream11            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream12            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream13            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream14            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream15            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream16            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream17            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream18            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream19            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream20            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream21            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream22            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream23            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream24            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream25            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream26            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream27            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream28            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream29            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream30            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream31            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream32            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream33            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream34            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream35            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream36            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream37            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream38            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream39            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream40            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream41            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream42            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream43            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream44            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream45            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream46            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream47            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream48            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream49            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream50            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream51            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream52            1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  downstream53            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream54            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream55            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream56            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  downstream57            1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  culvert1                    2.20      2.20      2.47      0.01         0.01
+  culvert2                    2.20      2.20      2.47      0.01         0.01
+  culvert3                    2.20      2.20      2.47      0.01         0.01
+  culvert4                    2.20      2.20      2.47      0.01         0.01
+  culvert5                    2.20      2.20      2.47      0.01         0.01
+  culvert6                    2.20      2.20      2.47      0.01         0.01
+  culvert7                    2.20      2.20      2.47      0.01         0.01
+  culvert8                    2.20      2.20      2.47      0.01         0.01
+  culvert9                    2.13      2.13      2.47      0.01         0.01
+  culvert10                   2.13      2.13      2.47      0.01         0.01
+  culvert11                   2.13      2.13      2.47      0.01         0.01
+  culvert12                   2.13      2.13      2.47      0.01         0.01
+  culvert13                   2.13      2.13      2.47      0.01         0.01
+  culvert14                   2.13      2.13      2.47      0.01         0.01
+  culvert15                   2.13      2.13      2.47      0.01         0.01
+  culvert16                   2.13      2.13      2.47      0.01         0.01
+  culvert17                   2.13      2.13      2.47      0.01         0.01
+  culvert18                   2.13      2.13      2.47      0.01         0.01
+  culvert19                   2.13      2.13      2.47      0.01         0.01
+  culvert20                   2.13      2.13      2.47      0.01         0.01
+  culvert21                   2.13      2.13      2.47      0.01         0.01
+  culvert22                   2.13      2.13      2.47      0.01         0.01
+  culvert23                   2.13      2.13      2.47      0.01         0.01
+  culvert24                   2.13      2.13      2.47      0.01         0.01
+  culvert25                   2.13      2.13      2.47      0.01         0.01
+  culvert26                   2.13      2.13      2.47      0.01         0.01
+  culvert27                   2.13      2.13      2.47      0.01         0.01
+  culvert28                   2.13      2.13      2.47      0.01         0.01
+  culvert29                   2.13      2.13      2.47      0.01         0.01
+  culvert30                   2.08      2.08      2.47      0.01         0.01
+  culvert31                   2.08      2.08      2.47      0.01         0.01
+  culvert32                   2.08      2.08      2.47      0.01         0.01
+  culvert33                   2.08      2.08      2.47      0.01         0.01
+  culvert34                   2.08      2.08      2.47      0.01         0.01
+  culvert35                   2.08      2.08      2.47      0.01         0.01
+  culvert36                   2.19      2.19      2.47      0.01         0.01
+  culvert37                   2.19      2.19      2.47      0.01         0.01
+  culvert38                   2.19      2.19      2.47      0.01         0.01
+  culvert39                   2.19      2.19      2.47      0.01         0.01
+  culvert40                   2.19      2.19      2.47      0.01         0.01
+  culvert41                   2.19      2.19      2.47      0.01         0.01
+  culvert42                   2.19      2.19      2.47      0.01         0.01
+  culvert43                   2.19      2.19      2.47      0.01         0.01
+  culvert44                   2.19      2.19      2.47      0.01         0.01
+  culvert45                   2.19      2.19      2.47      0.01         0.01
+  culvert46                   2.19      2.19      2.47      0.01         0.01
+  culvert47                   2.19      2.19      2.47      0.01         0.01
+  culvert48                   2.20      2.20      2.47      0.01         0.01
+  culvert49                   2.20      2.20      2.47      0.01         0.01
+  culvert50                   2.08      2.08      2.47      0.01         0.01
+  culvert51                   2.08      2.08      2.47      0.01         0.01
+  culvert52                   2.08      2.08      2.47      0.01         0.01
+  culvert53                   2.13      2.13      2.47      0.01         0.01
+  culvert54                   2.13      2.13      2.47      0.01         0.01
+  culvert55                   2.13      2.13      2.47      0.01         0.01
+  culvert56                   2.13      2.13      2.47      0.01         0.01
+  culvert57                   2.13      2.13      2.47      0.01         0.01
+  
+
+  Analysis begun on:  Tue Nov 20 16:54:53 2018
+  Analysis ended on:  Tue Nov 20 16:55:04 2018
+  Total elapsed time: 00:00:11

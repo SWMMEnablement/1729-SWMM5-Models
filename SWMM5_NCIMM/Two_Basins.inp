@@ -1,0 +1,697 @@
+[TITLE]
+;;Project Title/Notes
+SCE Site Old Port Road Full Water Balance RUN
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           LPS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        YES
+SKIP_STEADY_STATE    NO
+
+IGNORE_QUALITY       YES
+START_DATE           01/01/1990
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/1990
+REPORT_START_TIME    00:00:00
+END_DATE             12/31/1990
+END_TIME             06:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             00:05:00
+ROUTING_STEP         0:00:05 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     1
+MIN_SURFAREA         1.14
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.0015
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+MONTHLY          6.3    5.7    4.7    4.0    3.1    2.9    3.1    4.1    5.0    5.7    6.1    6.9   
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+Port_Kembla-DES_100yr INTENSITY 0:05     1.0      TIMESERIES RAX36_100yr2hr_87
+Port_Kembla_1990_Most_wet_days VOLUME    24:00    1.0      FILE       "D:\2017\reswmmuserspumpingreusewaterontoasubcatchment\KEMBLA_1990_swmm.txt" 68131      MM   
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+StockPile_3      Port_Kembla_1990_Most_wet_days 1Pa              0.5      95       90       0.5      100                      
+Stockpile_2      Port_Kembla_1990_Most_wet_days 1                0.6      95       90       0.5      0                        
+Drv_WheelWash    Port_Kembla_1990_Most_wet_days 7                0.1      90       40       0.5      0                        
+StockPile_1      Port_Kembla_1990_Most_wet_days 2                0.43     90       40       0.5      0                        
+CuldeSac         Port_Kembla_1990_Most_wet_days 1Pb              0.48     95       20       0.5      0                        
+Drv_WeighBridge  Port_Kembla_1990_Most_wet_days 9                0.05     90       25       0.5      0                        
+Driveway_Entry   Port_Kembla_1990_Most_wet_days 3                0.2      95       25       0.5      0                        
+SIte-W_Edge      Port_Kembla_1990_Most_wet_days Old_Port_Rd_pit  0.45     15       250      0.5      0                        
+Mound_S          Port_Kembla_1990_Most_wet_days 3                0.06     10       100      0.5      0                        
+Off_Carpark      Port_Kembla_1990_Most_wet_days Christy_Rd_pit   0.1      85       5        0.5      0                        
+Drv_Weigh_Bridge Port_Kembla_1990_Most_wet_days 12               0.005    90       25       0.5      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+StockPile_3      0.015      0.1        0.05       0.05       25         OUTLET    
+Stockpile_2      0.01       0.1        0.05       0.05       25         OUTLET    
+Drv_WheelWash    0.015      0.1        0.05       0.05       25         OUTLET    
+StockPile_1      0.015      0.1        0.05       0.05       25         OUTLET    
+CuldeSac         0.013      0.1        0.05       0.05       25         OUTLET    
+Drv_WeighBridge  0.013      0.1        0.05       0.05       25         OUTLET    
+Driveway_Entry   0.013      0.1        0.05       0.05       25         OUTLET    
+SIte-W_Edge      0.01       0.1        0.05       0.05       25         OUTLET    
+Mound_S          0.01       0.1        0.05       0.05       25         OUTLET    
+Off_Carpark      0.01       0.1        0.05       0.05       25         OUTLET    
+Drv_Weigh_Bridge 0.01       0.1        0.05       0.05       25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+StockPile_3      3.0        0.5        4          7          0         
+Stockpile_2      3.0        0.5        4          7          0         
+Drv_WheelWash    3.0        0.5        4          7          0         
+StockPile_1      3.0        0.5        4          7          0         
+CuldeSac         3.0        0.5        4          7          0         
+Drv_WeighBridge  3.0        0.5        4          7          0         
+Driveway_Entry   3.0        0.5        4          7          0         
+SIte-W_Edge      3.0        0.5        4          7          0         
+Mound_S          3.0        0.5        4          7          0         
+Off_Carpark      3.0        0.5        4          7          0         
+Drv_Weigh_Bridge 3.0        0.5        4          7          0         
+
+[LID_CONTROLS]
+;;Name           Type/Layer Parameters
+;;-------------- ---------- ----------
+BioFiltrationTank200 BC
+BioFiltrationTank200 SURFACE    0.0        0.0        0.1        1.0        5         
+BioFiltrationTank200 SOIL       500        0.5        0.2        0.1        0.5        10.0       3.5       
+BioFiltrationTank200 STORAGE    150        0.75       0.5        0         
+BioFiltrationTank200 DRAIN      0          0.5        6          6         
+
+[LID_USAGE]
+;;Subcatchment   LID Process      Number  Area       Width      InitSat    FromImp    ToPerv     RptFile                  DrainTo         
+;;-------------- ---------------- ------- ---------- ---------- ---------- ---------- ---------- ------------------------ ----------------
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+1                5.1        1          0          0          0         
+2                4.4        1          0          0          0         
+3                4.1        0.5        0          0.5        1000      
+1Pa              5.1        1          0          0          0         
+1Pb              4.7        1          0          0          0         
+1Pc              4.5        1          0          0          0         
+7                4.8        1          0          0          0         
+9                4.6        1          0          0          0         
+10               4.6        1          0          0          0         
+12               3.3        1.5        0.5        0          0         
+13               3.05       1.5        0          0          0         
+Old_Port_Rd_pit  1.82       1.6        0          0.5        100       
+Christy_Rd_pit   3          1.37       0          0.5        500       
+SINK             1.7        2.8        0          0.5        1000      
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+OUTLET           1.5        FREE                        NO                       
+;Re-Use Sprinklers Routed to Stockpile
+Pump_Outfall_2   0          FREE                        NO       Stockpile_2     
+;Re-Use Sprinklers Routed to Stockpile
+Pump_Outfall1    0          FREE                        NO       Stockpile_3     
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+FF1              3.15     2          0.6        TABULAR    40mx5mFFTANK                 0        0       
+FF2              3        2.1        0.6        TABULAR    40mx5mFFTANK                 0        0       
+FF3              3.8      1.2        0.8        TABULAR    20mx5mTank                   0        0       
+BF1              3.15     2          0.6        TABULAR    40mx5m_BioFilt               0        0       
+WT1              4        4          0          TABULAR    ReUse_StorageTank            0        0       
+WT2              4        2.5        0          TABULAR    ReUse_StorageTank            0        0       
+BF2              3        2          0.6        TABULAR    40mx5m_BioFilt               0        0       
+OF1              3.15     2          0.1        TABULAR    BioF_PumpPit                 0        0       
+BF3              3.8      1.5        0.6        TABULAR    27mx5mTank                   0        0       
+OF3              3.8      2          0          TABULAR    BioF_PumpPit                 0        0       
+OF2              3        2          0          TABULAR    BioF_PumpPit                 0        0       
+PW1              3.15     2          0.6        TABULAR    BioF_PumpPit                 0        0       
+PW2              3        2          0          TABULAR    BioF_PumpPit                 0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+12               Old_Port_Rd_pit  SINK             50         0.012      0          0          0          0         
+18               OF1              13               35         0.01       0          0          0          0         
+1DN1             1Pa              1Pb              75         0.015      0          0          0          0         
+1DN2             1Pb              1Pc              57         0.015      0          0          0          0         
+21               12               Christy_Rd_pit   10         0.015      0          0          0          0         
+22               Christy_Rd_pit   SINK             150        0.013      0          0          0          0         
+23               OF2              Old_Port_Rd_pit  10         0.012      0          0.05       0          0         
+25               13               Old_Port_Rd_pit  120        0.012      0          0          0          0         
+26               13               Old_Port_Rd_pit  125        .03        1.4        1.6        0          0         
+27               Old_Port_Rd_pit  SINK             25         0.020      1.85       2.8        0          0         
+DE1              1                2                120        0.015      0          0          0          0         
+DE2              2                3                70         0.015      0          0          0          0         
+DNE1             7                9                50         0.015      0          0          0          0         
+DSE1             10               12               100        0.015      0          1          0          0         
+OFlow_2          3                SINK             25         0.02       0.6        0          0          0         
+OFlow_3          9                Christy_Rd_pit   200        0.025      0.4        0          0          0         
+OFLow1           1Pc              13               100        0.02       0.4        0          0          0         
+TotalSiteOUtflow SINK             OUTLET           50         0.013      0          0          0          0         
+UF1a             FF1              BF1              0.3        0.013      0.6        0.595      0          0         
+UF2a             FF2              BF2              0.3        0.015      0.6        0.597      0          0         
+
+[PUMPS]
+;;Name           From Node        To Node          Pump Curve       Status   Sartup Shutoff 
+;;-------------- ---------------- ---------------- ---------------- ------ -------- --------
+P1               PW1              WT1              Pump_2m_5l/s     OFF      1.5      0.6     
+P2               PW2              WT2              Pump_2m_5l/s     OFF      1.5      0.6     
+;Pumps from Re-Use tanks to stockpile sprinklers
+P1reuse          WT1              Pump_Outfall1    Pump_2m_10ls     ON       0.6      0.1     
+;Pumps from Re-Use tanks to stockpile sprinklers
+P2reuse          WT2              Pump_Outfall_2   Pump_2m_10ls     ON       0.6      0.1     
+
+[ORIFICES]
+;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime 
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- ----------
+UF1b             BF1              PW1              BOTTOM       0          0.65       NO       0         
+UF2b             BF2              PW2              BOTTOM       0          0.05       NO       0         
+UF3a             FF3              BF3              SIDE         0.5        0.65       NO       0         
+UF3b             BF3              OF3              BOTTOM       0          0.65       NO       0         
+
+[WEIRS]
+;;Name           From Node        To Node          Type         CrestHt    Qcoeff     Gated    EndCon   EndCoeff   Surcharge  RoadWidth  RoadSurf  
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- -------- ---------- ---------- ---------- ----------
+OF1a             FF1              BF1              TRANSVERSE   0          1.7        NO       0        0          YES       
+OF1b             BF1              OF1              TRANSVERSE   1.35       1.7        YES      0        0          YES       
+;This is the inlet into First Flush Tank 2
+IF2              3                FF2              TRANSVERSE   0          1.7        NO       0        0          YES       
+OF2a             FF2              BF2              TRANSVERSE   1.4        1.7        NO       0        0          YES       
+OF2b             BF2              OF2              TRANSVERSE   1.6        1.7        NO       0        0          YES       
+IF3              9                FF3              TRANSVERSE   0          1.7        NO       0        0          YES       
+OF3a             FF3              BF3              TRANSVERSE   0.8        1.7        NO       0        0          YES       
+OF3b             BF3              OF3              TRANSVERSE   0.8        1.7        NO       0        0          YES       
+IF1              1Pc              FF1              TRANSVERSE   0          1.7        NO       0        0          YES       
+30               OF3              10               TRANSVERSE   0.8        1.7        NO       0        0          YES       
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+12               CIRCULAR     1                0          0          0          1                    
+18               CIRCULAR     0.225            0          0          0          1                    
+1DN1             TRIANGULAR   0.5              5          0          0          1                    
+1DN2             TRIANGULAR   0.5              8          0          0          1                    
+21               CIRCULAR     0.5              0          0          0          1                    
+22               CIRCULAR     0.6              0          0          0          1                    
+23               CIRCULAR     0.225            0          0          0          1                    
+25               CIRCULAR     .375             0          0          0          1                    
+26               TRAPEZOIDAL  1                6          6          6          1                    
+27               TRAPEZOIDAL  1                6          6          6          1                    
+DE1              TRIANGULAR   0.5              10         0          0          1                    
+DE2              TRIANGULAR   0.5              12         0          0          1                    
+DNE1             TRIANGULAR   0.5              2          0          0          1                    
+DSE1             TRIANGULAR   0.5              2          0          0          1                    
+OFlow_2          TRAPEZOIDAL  1                4          4          4          1                    
+OFlow_3          TRAPEZOIDAL  1                3          4          4          1                    
+OFLow1           TRAPEZOIDAL  1                3          4          4          1                    
+TotalSiteOUtflow CIRCULAR     1                0          0          0          1                    
+UF1a             CIRCULAR     0.15             0          0          0          6                    
+UF2a             CIRCULAR     0.15             0          0          0          6                    
+UF1b             RECT_CLOSED  0.1              1          0          0
+UF2b             RECT_CLOSED  0.1              1          0          0
+UF3a             RECT_CLOSED  0.1              1          0          0
+UF3b             CIRCULAR     0.2              0          0          0
+OF1a             RECT_OPEN    1.35             1          0          0         
+OF1b             RECT_OPEN    1                1          0          0         
+IF2              RECT_OPEN    1                0.8        0          0         
+OF2a             RECT_OPEN    1                2          0          0         
+OF2b             RECT_OPEN    0.5              0.8        0          0         
+IF3              RECT_OPEN    0.5              0.45       0          0         
+OF3a             RECT_OPEN    0.5              1          0          0         
+OF3b             RECT_OPEN    1                0.45       0          0         
+IF1              RECT_OPEN    1                0.8        0          0         
+30               RECT_OPEN    1                0.6        0          0         
+
+[CONTROLS]
+; Pump station 1 operation
+
+RULE R1A
+IF NODE WT1 DEPTH > 1.95
+THEN PUMP P1 STATUS = OFF
+
+RULE R1B
+IF NODE WT1 DEPTH < 1.90
+AND NODE PW1 DEPTH > 0.5
+THEN PUMP P1 STATUS = ON
+
+; Pump Station 1 Reuse
+RULE RPreuse1On
+IF NODE WT1 DEPTH > 0.5
+AND LINK DNE1 FLOW = 0
+THEN PUMP P1reuse STATUS = ON
+
+RULE RPreuse1Off
+IF LINK DNE1 FLOW > 0.1
+THEN PUMP P1reuse STATUS = OFF
+
+
+; Pump station 2 operation
+
+RULE R2A
+IF NODE WT2 DEPTH > 1.95
+THEN PUMP P2 STATUS = OFF
+
+RULE R2B
+IF NODE WT2 DEPTH < 1.90
+AND NODE PW2 DEPTH > 0.5
+THEN PUMP P2 STATUS = ON
+
+; Pump Station 2 Reuse
+RULE RPreuse2On
+IF NODE WT2 DEPTH > 0.5
+AND LINK DSE1 FLOW = 0
+THEN PUMP P2reuse STATUS = ON
+
+RULE RPreuse2Off
+IF LINK DSE1 FLOW > 0.1
+THEN PUMP P2reuse STATUS = OFF
+
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+1                FLOW             ""               FLOW     1.0      1.0      0       
+1Pa              FLOW             ""               FLOW     1.0      1.0      0       
+7                FLOW             ""               FLOW     1.0      1.0      0       
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+;Pump from Biofilter Pump Well to Water Storage
+Pump_2m_10ls     Pump4      0.1        0         
+Pump_2m_10ls                0.6        3         
+Pump_2m_10ls                0.7        5         
+Pump_2m_10ls                1.0        8         
+Pump_2m_10ls                1.5        9         
+Pump_2m_10ls                2          10        
+;
+Pump_2m_5l/s     Pump4      0.6        0         
+Pump_2m_5l/s                1          5         
+Pump_2m_5l/s                1.5        5         
+Pump_2m_5l/s                2          5         
+Pump_2m_5l/s                2.5        6         
+;
+;FirstFlush Tank
+40mx5mFFTANK     Storage    0          200       
+40mx5mFFTANK                0.6        200       
+40mx5mFFTANK                1.35       200       
+40mx5mFFTANK                2.1        300       
+;
+;Biofilter Pump Pit
+BioF_PumpPit     Storage    0          1         
+BioF_PumpPit                .6         1         
+BioF_PumpPit                2          1         
+BioF_PumpPit                3          10        
+;
+;Basin 3 First Flush
+20mx5mTank       Storage    0          100       
+20mx5mTank                  0.8        100       
+20mx5mTank                  1.2        100       
+20mx5mTank                  1.5        150       
+;
+;BioFilter 3
+27mx5mTank       Storage    0          45        
+27mx5mTank                  0.75       45        
+27mx5mTank                  0.8        135       
+27mx5mTank                  1.2        135       
+;
+;100m2 Tank 200m3
+ReUse_StorageTank Storage    0          100       
+ReUse_StorageTank            1          100       
+ReUse_StorageTank            1.5        100       
+ReUse_StorageTank            2.0        100       
+ReUse_StorageTank            2.5        100       
+;
+;33% Voids to 0.75
+40mx5m_BioFilt   Storage    0          67        
+40mx5m_BioFilt              0.75       67        
+40mx5m_BioFilt              0.8        200       
+40mx5m_BioFilt              1          200       
+40mx5m_BioFilt              2          200       
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+;1987 100yr 2hr Intensities
+RAX36_100yr2hr_87            0:00       0.000     
+RAX36_100yr2hr_87            0:05       38.422    
+RAX36_100yr2hr_87            0:10       83.247    
+RAX36_100yr2hr_87            0:15       52.830    
+RAX36_100yr2hr_87            0:20       78.444    
+RAX36_100yr2hr_87            0:25       145.682   
+RAX36_100yr2hr_87            0:30       83.247    
+RAX36_100yr2hr_87            0:35       267.350   
+RAX36_100yr2hr_87            0:40       190.507   
+RAX36_100yr2hr_87            0:45       84.848    
+RAX36_100yr2hr_87            0:50       52.830    
+RAX36_100yr2hr_87            0:55       54.431    
+RAX36_100yr2hr_87            1:00       68.839    
+RAX36_100yr2hr_87            1:05       68.839    
+RAX36_100yr2hr_87            1:10       38.422    
+RAX36_100yr2hr_87            1:15       38.422    
+RAX36_100yr2hr_87            1:20       54.431    
+RAX36_100yr2hr_87            1:25       38.422    
+RAX36_100yr2hr_87            1:30       19.211    
+RAX36_100yr2hr_87            1:35       19.211    
+RAX36_100yr2hr_87            1:40       40.022    
+RAX36_100yr2hr_87            1:45       19.211    
+RAX36_100yr2hr_87            1:50       20.812    
+RAX36_100yr2hr_87            1:55       20.812    
+RAX36_100yr2hr_87            2:00       22.413    
+;
+;Port Kembla Gauge_100yr_25min
+RAX36_100yr_25min            0:00       0.000     
+RAX36_100yr_25min            0:05       133.268   
+RAX36_100yr_25min            0:10       192.498   
+RAX36_100yr_25min            0:15       259.132   
+RAX36_100yr_25min            0:20       81.441    
+RAX36_100yr_25min            0:25       74.038    
+RAX36_100yr_25min            0:30       0.000     
+;
+RAX36_100yr_4.5hr_87            0:00       0.000     
+RAX36_100yr_4.5hr_87            0:15       12.089    
+RAX36_100yr_4.5hr_87            0:30       40.799    
+RAX36_100yr_4.5hr_87            0:45       74.043    
+RAX36_100yr_4.5hr_87            1:00       57.421    
+RAX36_100yr_4.5hr_87            1:15       134.486   
+RAX36_100yr_4.5hr_87            1:30       97.465    
+RAX36_100yr_4.5hr_87            1:45       35.510    
+RAX36_100yr_4.5hr_87            2:00       25.688    
+RAX36_100yr_4.5hr_87            2:15       51.377    
+RAX36_100yr_4.5hr_87            2:30       42.310    
+RAX36_100yr_4.5hr_87            2:45       33.999    
+RAX36_100yr_4.5hr_87            3:00       27.955    
+RAX36_100yr_4.5hr_87            3:15       28.711    
+RAX36_100yr_4.5hr_87            3:30       20.400    
+RAX36_100yr_4.5hr_87            3:45       28.711    
+RAX36_100yr_4.5hr_87            4:00       20.400    
+RAX36_100yr_4.5hr_87            4:15       12.089    
+RAX36_100yr_4.5hr_87            4:30       12.089    
+RAX36_100yr_4.5hr_87            4:45       0.000     
+;
+;5 Year 2 hour 1987 Design IFD
+RAX36_005yr_2hr_87            0:00       0.000     
+RAX36_005yr_2hr_87            0:05       20.441    
+RAX36_005yr_2hr_87            0:10       49.244    
+RAX36_005yr_2hr_87            0:15       28.803    
+RAX36_005yr_2hr_87            0:20       45.527    
+RAX36_005yr_2hr_87            0:25       89.196    
+RAX36_005yr_2hr_87            0:30       48.314    
+RAX36_005yr_2hr_87            0:35       167.242   
+RAX36_005yr_2hr_87            0:40       115.211   
+RAX36_005yr_2hr_87            0:45       52.031    
+RAX36_005yr_2hr_87            0:50       28.803    
+RAX36_005yr_2hr_87            0:55       30.661    
+RAX36_005yr_2hr_87            1:00       39.023    
+RAX36_005yr_2hr_87            1:05       39.952    
+RAX36_005yr_2hr_87            1:10       19.512    
+RAX36_005yr_2hr_87            1:15       20.441    
+RAX36_005yr_2hr_87            1:20       31.590    
+RAX36_005yr_2hr_87            1:25       17.653    
+RAX36_005yr_2hr_87            1:30       11.149    
+RAX36_005yr_2hr_87            1:35       9.291     
+RAX36_005yr_2hr_87            1:40       21.370    
+RAX36_005yr_2hr_87            1:45       8.362     
+RAX36_005yr_2hr_87            1:50       12.079    
+RAX36_005yr_2hr_87            1:55       10.220    
+RAX36_005yr_2hr_87            2:00       13.008    
+RAX36_005yr_2hr_87            2:05       0         
+;
+RAX36_020yr2hr_1987            0:00       0.000     
+RAX36_020yr2hr_1987            0:05       26.830    
+RAX36_020yr2hr_1987            0:10       64.635    
+RAX36_020yr2hr_1987            0:15       37.806    
+RAX36_020yr2hr_1987            0:20       59.757    
+RAX36_020yr2hr_1987            0:25       117.075   
+RAX36_020yr2hr_1987            0:30       63.416    
+RAX36_020yr2hr_1987            0:35       219.516   
+RAX36_020yr2hr_1987            0:40       151.222   
+RAX36_020yr2hr_1987            0:45       68.294    
+RAX36_020yr2hr_1987            0:50       37.806    
+RAX36_020yr2hr_1987            0:55       40.245    
+RAX36_020yr2hr_1987            1:00       51.220    
+RAX36_020yr2hr_1987            1:05       52.440    
+RAX36_020yr2hr_1987            1:10       25.610    
+RAX36_020yr2hr_1987            1:15       26.830    
+RAX36_020yr2hr_1987            1:20       41.464    
+RAX36_020yr2hr_1987            1:25       23.171    
+RAX36_020yr2hr_1987            1:30       14.634    
+RAX36_020yr2hr_1987            1:35       12.195    
+RAX36_020yr2hr_1987            1:40       28.049    
+RAX36_020yr2hr_1987            1:45       10.976    
+RAX36_020yr2hr_1987            1:50       15.854    
+RAX36_020yr2hr_1987            1:55       13.415    
+RAX36_020yr2hr_1987            2:00       17.073    
+RAX36_020yr2hr_1987            2:05       0         
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   YES
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 306776.701 6183745.066 307095.301 6183968.466
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                306977.133         6183936.588       
+2                307039.089         6183848.411       
+3                306988.188         6183802.394       
+1Pa              306973.534         6183937.617       
+1Pb              306898.725         6183940.959       
+1Pc              306850.394         6183911.909       
+7                306950.140         6183950.214       
+9                307011.582         6183940.188       
+10               307042.431         6183902.397       
+12               307058.113         6183832.215       
+13               306872.246         6183859.465       
+Old_Port_Rd_pit  306951.169         6183763.833       
+Christy_Rd_pit   307061.969         6183818.076       
+SINK             306992.044         6183751.750       
+OUTLET           307018.523         6183749.436       
+Pump_Outfall_2   306926.746         6183857.152       
+Pump_Outfall1    306906.694         6183894.685       
+FF1              306843.196         6183915.251       
+FF2              306982.789         6183796.738       
+FF3              307015.952         6183932.732       
+BF1              306854.494         6183891.815       
+WT1              306870.189         6183882.345       
+WT2              306980.732         6183778.486       
+BF2              306963.856         6183773.165       
+OF1              306855.810         6183883.114       
+BF3              307021.865         6183924.763       
+OF3              307038.575         6183903.940       
+OF2              306958.643         6183770.795       
+PW1              306865.118         6183893.029       
+PW2              306972.624         6183777.351       
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1DN1             306900.010         6183941.473       
+26               306877.130         6183833.501       
+26               306903.352         6183803.423       
+26               306926.232         6183776.686       
+26               306938.315         6183765.632       
+27               306951.169         6183755.349       
+27               306955.282         6183748.922       
+27               306964.537         6183747.380       
+27               306978.933         6183747.380       
+DE1              306992.815         6183928.876       
+DE1              307005.412         6183915.765       
+DE1              307027.006         6183889.543       
+DE1              307037.289         6183875.404       
+DE1              307040.888         6183863.321       
+DE1              307041.146         6183855.352       
+DE2              307033.947         6183839.413       
+DE2              307021.094         6183828.616       
+DE2              307003.098         6183813.963       
+DNE1             306967.621         6183949.956       
+DNE1             306993.072         6183949.185       
+DNE1             307000.013         6183948.414       
+DNE1             307003.869         6183945.843       
+DNE1             307006.183         6183944.301       
+DSE1             307053.485         6183882.602       
+DSE1             307055.028         6183877.975       
+DSE1             307054.771         6183872.062       
+DSE1             307053.999         6183864.350       
+DSE1             307053.228         6183848.411       
+DSE1             307055.028         6183842.241       
+DSE1             307055.799         6183838.385       
+OFlow_2          306995.129         6183791.340       
+OFlow_2          306994.872         6183779.514       
+OFlow_2          306995.129         6183768.203       
+OFlow_2          306993.072         6183759.205       
+OFlow_3          307028.806         6183943.530       
+OFlow_3          307044.488         6183928.619       
+OFlow_3          307060.940         6183900.083       
+OFlow_3          307070.452         6183857.923       
+OFlow_3          307070.452         6183840.699       
+OFLow1           306849.623         6183919.364       
+OFLow1           306844.739         6183922.192       
+OFLow1           306837.540         6183926.048       
+OFLow1           306830.599         6183923.735       
+OFLow1           306828.029         6183918.079       
+OFLow1           306830.085         6183899.312       
+OFLow1           306839.083         6183874.376       
+OFLow1           306851.166         6183858.951       
+OFLow1           306862.734         6183855.095       
+OF1a             306838.003         6183910.431       
+OF1a             306845.186         6183900.212       
+OF1b             306855.708         6183889.184       
+OF1b             306854.090         6183886.351       
+OF2a             306979.811         6183797.809       
+OF2a             306973.414         6183792.832       
+OF2a             306961.881         6183781.932       
+OF2b             306961.329         6183776.877       
+OF2b             306958.169         6183775.060       
+OF3a             307021.865         6183933.761       
+OF3a             307024.693         6183930.933       
+OF3b             307032.405         6183922.963       
+OF3b             307037.032         6183918.336       
+OF3b             307040.117         6183911.909       
+OF3b             307039.603         6183903.940       
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+StockPile_3      306968.907         6183925.020       
+StockPile_3      306968.907         6183925.020       
+StockPile_3      306969.164         6183925.277       
+StockPile_3      306960.680         6183934.275       
+StockPile_3      306948.084         6183936.846       
+StockPile_3      306934.716         6183928.619       
+StockPile_3      306917.234         6183920.136       
+StockPile_3      306893.326         6183905.739       
+StockPile_3      306877.387         6183886.715       
+StockPile_3      306883.814         6183874.633       
+StockPile_3      306894.869         6183865.635       
+StockPile_3      306905.409         6183873.862       
+StockPile_3      306933.430         6183895.713       
+StockPile_3      306953.225         6183913.452       
+StockPile_3      306969.935         6183926.048       
+Stockpile_2      306900.010         6183865.378       
+Stockpile_2      306978.933         6183928.362       
+Stockpile_2      307007.211         6183894.428       
+Stockpile_2      306919.034         6183823.989       
+Stockpile_2      306892.555         6183859.722       
+Drv_WheelWash    306966.336         6183947.129       
+Drv_WheelWash    306967.107         6183939.673       
+Drv_WheelWash    306901.553         6183941.987       
+Drv_WheelWash    306899.753         6183949.699       
+StockPile_1      306949.112         6183788.512       
+StockPile_1      306983.560         6183815.248       
+StockPile_1      307036.518         6183856.380       
+StockPile_1      307008.240         6183890.315       
+StockPile_1      306922.119         6183822.446       
+CuldeSac         306895.640         6183947.643       
+CuldeSac         306894.869         6183941.216       
+CuldeSac         306874.817         6183930.676       
+CuldeSac         306864.534         6183923.220       
+CuldeSac         306854.250         6183919.621       
+CuldeSac         306843.967         6183926.305       
+CuldeSac         306841.397         6183944.815       
+CuldeSac         306857.592         6183951.499       
+CuldeSac         306889.213         6183948.671       
+Drv_WeighBridge  306980.475         6183937.874       
+Drv_WeighBridge  306986.131         6183936.846       
+Drv_WeighBridge  307000.527         6183925.791       
+Drv_WeighBridge  307008.754         6183936.331       
+Drv_WeighBridge  306994.872         6183945.329       
+Drv_WeighBridge  306978.419         6183945.843       
+Driveway_Entry   307038.061         6183840.185       
+Driveway_Entry   307028.292         6183830.930       
+Driveway_Entry   307000.013         6183808.050       
+Driveway_Entry   306993.329         6183799.052       
+Driveway_Entry   306996.157         6183794.682       
+Driveway_Entry   307002.841         6183796.224       
+Driveway_Entry   307008.497         6183803.680       
+Driveway_Entry   307022.636         6183817.305       
+Driveway_Entry   307040.888         6183830.930       
+Driveway_Entry   307047.315         6183828.102       
+Driveway_Entry   307053.485         6183836.843       
+Driveway_Entry   307042.431         6183846.611       
+SIte-W_Edge      306867.618         6183872.576       
+SIte-W_Edge      306888.185         6183844.041       
+SIte-W_Edge      306932.659         6183791.597       
+SIte-W_Edge      306951.426         6183759.205       
+SIte-W_Edge      306955.796         6183753.035       
+SIte-W_Edge      306963.251         6183750.979       
+SIte-W_Edge      306984.331         6183763.576       
+SIte-W_Edge      306978.162         6183773.087       
+SIte-W_Edge      306973.534         6183773.344       
+SIte-W_Edge      306962.480         6183769.231       
+SIte-W_Edge      306955.796         6183774.887       
+SIte-W_Edge      306948.598         6183787.741       
+SIte-W_Edge      306918.006         6183823.732       
+SIte-W_Edge      306877.130         6183879.260       
+Mound_S          306955.282         6183779.771       
+Mound_S          307008.240         6183820.647       
+Mound_S          307034.976         6183841.470       
+Mound_S          307037.289         6183848.411       
+Mound_S          307033.947         6183852.781       
+Mound_S          307031.891         6183852.267       
+Mound_S          306951.169         6183787.998       
+Off_Carpark      307032.919         6183822.703       
+Off_Carpark      307015.952         6183808.564       
+Off_Carpark      307004.641         6183796.481       
+Off_Carpark      307005.155         6183785.427       
+Off_Carpark      307051.429         6183822.189       
+Off_Carpark      307042.688         6183828.873       
+Drv_Weigh_Bridge 307003.612         6183923.478       
+Drv_Weigh_Bridge 307012.096         6183929.647       
+Drv_Weigh_Bridge 307039.860         6183898.284       
+Drv_Weigh_Bridge 307049.372         6183881.574       
+Drv_Weigh_Bridge 307052.714         6183863.836       
+Drv_Weigh_Bridge 307050.657         6183841.727       
+Drv_Weigh_Bridge 307043.459         6183848.154       
+Drv_Weigh_Bridge 307044.488         6183861.522       
+Drv_Weigh_Bridge 307041.660         6183874.119       
+Drv_Weigh_Bridge 307030.605         6183890.572       
+Drv_Weigh_Bridge 307003.612         6183924.506       
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Port_Kembla-DES_100yr 306806.691         6183947.386       
+Port_Kembla_1990_Most_wet_days 306795.380         6183923.220       
+
+[LABELS]
+;;X-Coord          Y-Coord            Label           
+306853.179         6183907.497        "BASIN 1" "" "Arial" 20 1 1
+306982.018         6183772.573        "BASIN 2" "" "Arial" 20 1 1
+

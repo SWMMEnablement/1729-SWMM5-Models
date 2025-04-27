@@ -1,0 +1,136 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           LPS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           02/04/2012
+START_TIME           00:00:00
+REPORT_START_DATE    02/04/2012
+REPORT_START_TIME    00:00:00
+END_DATE             02/05/2012
+END_TIME             06:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:10
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:10 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+DWF_IN           1000       10         0          0          0         
+Downstream       999.5      0          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+BC               998        FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+STORAGE_POND     999      21         0          FUNCTIONAL 1         0         0        0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+LINK_IN          DWF_IN           STORAGE_POND     100        0.01       0          0          0          0         
+OUT_LINK         Downstream       BC               100        0.01       0          0          0          0         
+
+[PUMPS]
+;;Name           From Node        To Node          Pump Curve       Status   Sartup Shutoff 
+;;-------------- ---------------- ---------------- ---------------- ------ -------- --------
+Pump             STORAGE_POND     Downstream       DepthCurve       ON       1        .9      
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+LINK_IN          CIRCULAR     2                0          0          0          1                    
+OUT_LINK         CIRCULAR     .75              0          0          0          1                    
+
+[DWF]
+;;Node           Constituent      Baseline   Patterns  
+;;-------------- ---------------- ---------- ----------
+DWF_IN           FLOW             500        "ON_OFF"
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+Delay            Control    0          0         
+Delay                       100        0         
+Delay                       250        .10       
+Delay                       500        .25       
+Delay                       1000       1         
+;
+DepthCurve       Pump3      0          2000      
+DepthCurve                  1          1000      
+DepthCurve                  1.75       400       
+DepthCurve                  2          300       
+DepthCurve                  3          200       
+DepthCurve                  4          100       
+DepthCurve                  4.01       50        
+DepthCurve                  11         0         
+
+[PATTERNS]
+;;Name           Type       Multipliers
+;;-------------- ---------- -----------
+ON_OFF           HOURLY     1.0   1.0   0     0     1.0   1.0  
+ON_OFF                      0     0     1.0   1.0   0     0    
+ON_OFF                      1.0   1.0   0     0     1.0   1.0  
+ON_OFF                      0     0     1.0   1.0   0     0    
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   YES
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 2273.370 5026.087 9530.978 7082.609
+Units      Meters
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+DWF_IN           2603.261           6989.130          
+Downstream       6733.696           5771.739          
+BC               9201.087           5119.565          
+STORAGE_POND     4538.043           6380.435          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

@@ -1,0 +1,169 @@
+[TITLE]
+;;Project Title/Notes
+Imported Network from SWMM4 to Test all Outfall Types in SWMM5
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/1988
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/1988
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/1988
+END_TIME             12:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:01:00 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.566
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.1
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+Inflow_Node      190.00     10.00      1.00       0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+;  *     FREE OUTFALL NODES *    Free Outfall node   Boundary condition #
+Free_Outfall     185.0      FREE                        NO                       
+Fixed_Outfall    185.0      FIXED      186              NO                       
+Tidal            185.0      TIDAL      TIDALtableat6    NO                       
+Normal_Outfall   185.0      NORMAL                      NO                       
+TimeSeries_Outfall 185.0      TIMESERIES Boundaryat7      NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+;   *   CONDUIT DATA *   NCOND NJ1  NJ2   QO  NKLASS AFULL DEEP WIDE LEN   ZP1  ZP2  ROUGH STHETA SPHI
+1000             Inflow_Node      Free_Outfall     1000.0     0.03       0.0        0.0        0.0        0         
+2000             Inflow_Node      Fixed_Outfall    1000.0     0.03       0.0        0.0        0.0        0         
+4000             Inflow_Node      Tidal            1000.0     0.03       0.0        0.0        0.0        0         
+6000             Inflow_Node      Normal_Outfall   1000.0     0.03       0.0        0.0        0.0        0         
+7000             Inflow_Node      TimeSeries_Outfall 1000.0     0.03       0.0        0.0        0.0        0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1000             CIRCULAR     6.0              0.0        0.0        0.0        1.0                  
+2000             CIRCULAR     6.0              0.0        0.0        0.0        1.0                  
+4000             CIRCULAR     6.0              0.0        0.0        0.0        1.0                  
+6000             CIRCULAR     6.0              0.0        0.0        0.0        1.0                  
+7000             CIRCULAR     6.0              0.0        0.0        0.0        1.0                  
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+Inflow_Node      FLOW             INFLOWat100      FLOW     1.0      1.0              
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+TIDALtableat4    TIDAL      0.0        188.0     
+TIDALtableat4               3.0        187.0     
+TIDALtableat4               6.0        186.0     
+TIDALtableat4               9.0        187.0     
+TIDALtableat4               12.0       188.0     
+;
+TIDALtableat5    TIDAL      0.0        188.0     
+TIDALtableat5               3.0        187.0     
+TIDALtableat5               6.0        186.0     
+TIDALtableat5               9.0        187.0     
+;
+TIDALtableat6    TIDAL      0.0        188.0     
+TIDALtableat6               1.5        188.0     
+TIDALtableat6               2.25       187.8535  
+TIDALtableat6               3.0        187.0     
+TIDALtableat6               3.75       187.1465  
+TIDALtableat6               4.5        187.0     
+TIDALtableat6               5.25       186.8535  
+TIDALtableat6               6.0        186.0     
+TIDALtableat6               6.75       186.1465  
+TIDALtableat6               9.0        187.0     
+TIDALtableat6               9.75       186.8535  
+TIDALtableat6               10.875     187.1465  
+TIDALtableat6               11.25      187.5     
+TIDALtableat6               11.625     187.8535  
+TIDALtableat6               12.0       188.0     
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+INFLOWat100      01/01/1988 00:00      0.00000   
+INFLOWat100                 01:00      25.00000  
+INFLOWat100                 11:00      25.00000  
+INFLOWat100                 12:00      0.00000   
+;
+Boundaryat7      01/01/1988 00:00      188.00000 
+Boundaryat7                 03:00      187.00000 
+Boundaryat7                 06:00      186.00000 
+Boundaryat7                 09:00      187.00000 
+Boundaryat7                 12:00      188.00000 
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+Node       Inflow_Node      100             
+Node       Free_Outfall     1               
+Node       Fixed_Outfall    2               
+Node       Tidal            4               
+Node       Normal_Outfall   6               
+Node       TimeSeries_Outfall 7               
+Link       1000             1000            
+Link       2000             2000            
+Link       4000             4000            
+Link       6000             6000            
+Link       7000             7000            
+
+[MAP]
+DIMENSIONS 675.839 722.603 1147.109 1013.209
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Inflow_Node      1000.000           1000.000          
+Free_Outfall     1125.688           780.488           
+Fixed_Outfall    824.425            772.036           
+Tidal            697.261            979.960           
+Normal_Outfall   1009.771           735.812           
+TimeSeries_Outfall 700.000            900.000           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

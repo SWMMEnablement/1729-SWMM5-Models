@@ -1,0 +1,356 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           LPS
+INFILTRATION         MODIFIED_GREEN_AMPT
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/06/2015
+START_TIME           00:00:00
+REPORT_START_DATE    01/06/2015
+REPORT_START_TIME    00:00:00
+END_DATE             01/07/2015
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  D-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         1.14
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.0015
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+SJT-VFX          INTENSITY 1:00     1.0      TIMESERIES MyStorm         
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+SB1              SJT-VFX          J1               0.1237   0        32       1.2      0                        
+SB2              SJT-VFX          J20              0.0218   0        6.6      1        0                        
+SB3              SJT-VFX          J3               0.0112   100      6.1      27       0                        
+SB4              SJT-VFX          J31              0.0043   100      5.6      27       0                        
+SB5              SJT-VFX          J23              0.0144   100      7.8      1        0                        
+SB6              SJT-VFX          J6               0.0042   100      5.5      27       0                        
+SB7              SJT-VFX          J7               0.0019   100      2.1      27       0                        
+SB8              SJT-VFX          J8               0.0007   100      1.2      27       0                        
+SB9              SJT-VFX          J9               0.0215   100      9.2      1        0                        
+SB10             SJT-VFX          J10              0.0067   100      5        1        0                        
+SB11             SJT-VFX          J11              0.0040   100      2.5      27       0                        
+SB12             SJT-VFX          J12              0.0066   100      3.9      1        0                        
+SB13             SJT-VFX          J13              0.0085   100      5        1        0                        
+SB14             SJT-VFX          J14              0.0009   100      1.6      27       0                        
+SB15             SJT-VFX          J15              0.0106   100      4.8      27       0                        
+SB16             SJT-VFX          J16              0.0792   0        13.9     1        0                        
+SB17             SJT-VFX          J17              0.0209   100      4.8      1        0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+SB1              0          0.030      0          5.08       0          OUTLET    
+SB2              0          0.030      2.54       5.08       0          OUTLET    
+SB3              0.012      0          0          0          100        OUTLET    
+SB4              0.012      0          0          0          100        OUTLET    
+SB5              0.013      0          0          0          100        OUTLET    
+SB6              0.012      0          0          0          100        OUTLET    
+SB7              0.012      0          0          0          100        OUTLET    
+SB8              0.012      0          0          0          100        OUTLET    
+SB9              0.012      0          0          0          100        OUTLET    
+SB10             0.012      0          0          0          100        OUTLET    
+SB11             0.012      0          0          0          100        OUTLET    
+SB12             0.012      0          0          0          0          OUTLET    
+SB13             0.012      0          0          0          100        OUTLET    
+SB14             0.012      0          0          0          100        OUTLET    
+SB15             0.012      0          0          0          100        OUTLET    
+SB16             0          0.030      0          5.08       0          OUTLET    
+SB17             0.012      0          0          0          100        OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Suction    Ksat       IMD       
+;;-------------- ---------- ---------- ----------
+SB1              83         0.5        7         
+SB2              83         0.5        7         
+SB3              100        0.5        0         
+SB4              100        0.5        0         
+SB5              100        0.5        0         
+SB6              100        0.5        0         
+SB7              100        0.5        0         
+SB8              100        0.5        0         
+SB9              100        0.5        0         
+SB10             100        0.5        0         
+SB11             100        0.5        0         
+SB12             100        0.5        0         
+SB13             100        0.5        0         
+SB14             100        0.5        0         
+SB15             100        0.5        0         
+SB16             83         0.5        7         
+SB17             100        0.5        0         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+J1               49         0          0          0          500       
+J2               48.5       0          0          0          500       
+J3               51         0          0          0          500       
+J4               48.25      0.15       0          0          500       
+J6               51         0          0          0          500       
+J7               51         0          0          0          500       
+J8               51         0          0          0          500       
+J9               48         14         0          0          500       
+J10              47.9       0          0          0          500       
+J11              51         0          0          0          500       
+J12              47.9       0          0          0          500       
+J13              47.8       0          0          0          500       
+J14              51         0          0          0          500       
+J15              51         0          0          0          500       
+J16              47.7       0          0          0          500       
+J17              47.5       0          0          0          500       
+J18              48         0          0          0          500       
+J19              48.6       0          0          0          500       
+J20              48.3       0          0          0          500       
+J21              48.3       0.15       0          0          500       
+J22              48.3       0.15       0          0          500       
+J23              48.2       0.15       0          0          500       
+J24              48.3       0.15       0          0          500       
+J25              48.2       0.15       0          0          500       
+J26              47.8       0.15       0          0          500       
+J27              48.15      0.15       0          0          500       
+J28              48.0       0.15       0          0          500       
+J29              47.6       0.15       0          0          500       
+J30              47.75      0.15       0          0          500       
+J31              51         0          0          0          500       
+J32              47.3       0          0          0          500       
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+;Exutório superficial
+ESup             47.2       FREE                        NO                       
+;Exutório subterrâneo
+ESub             47         FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+SU1              35       13         12         FUNCTIONAL 1000      0         0        500      0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+Sol1             J1               J2               40.66      0.03       0          0          0          0         
+Sol7             J6               J27              2.87       0.013      0          2.85       0          0         
+Sol8             J7               J28              3.88       0.013      0          3          0          0         
+Sol9             J8               J26              2.93       0.013      0          3.2        0          0         
+Sol26            J11              J12              65         0.013      0          3.1        0          0         
+Sol27            J12              J13              4.96       0.013      0          0          0          0         
+Sol28            J13              J17              30.69      0.013      0          0          0          0         
+Sol29            J14              J16              2          0.013      0          3.3        0          0         
+Sol31            J15              J16              2          0.013      0          3.3        0          0         
+Sol32            J16              J17              12.83      0.013      0          0          0          0         
+Sol33            J17              J32              20.60      0.013      0          0          0          0         
+Sol35            J18              J10              8.13       0.012      0          0          0          0         
+Sol36            J10              J13              13.78      0.013      0          0          0          0         
+Sol37            J19              J20              32.30      0.030      0          0          0          0         
+Sol38            J2               J20              3.40       0.030      0          0          0          0         
+Sol39            J20              J18              3.26       0.013      0          0          0          0         
+Sol40            J3               J21              9.76       0.013      0          2.7        0          0         
+Sol42            J3               J22              10.08      0.013      0          2.7        0          0         
+Sol43            J21              J24              9.10       0.013      0          0          0          0         
+Sol44            J3               J24              3.86       0.013      0          2.7        0          0         
+Sol46            J22              J24              9.05       0.013      0          0          0          0         
+Sol47            J22              J4               3.83       0.013      0          0          0          0         
+Sol48            J4               J25              3.56       0.013      0          0          0          0         
+Sol51            J21              J23              7.76       0.013      0          0          0          0         
+Sol52            J25              J27              4.50       0.013      0          0          0          0         
+Sol53            J27              J28              5.37       0.013      0          0          0          0         
+Sol54            J28              J26              6.81       0.013      0          0          0          0         
+Sol55            J23              J30              19.72      0.013      0          0          0          0         
+Sol56            J30              J29              12.63      0.013      0          0          0          0         
+Sol57            J26              J29              8.75       0.013      0          0          0          0         
+Sol58            J31              J4               3.09       0.013      0          2.75       0          0         
+Sol59            J29              ESub             65.48      0.013      0          0          0          0         
+Sol60            J32              ESup             3.99       0.013      0          0          0          0         
+Sol61            J16              J32              27.36      0.013      0          0          0          0         
+Sol10            J9               J10              13.98      0.013      0          0          0          0         
+Sol62            J23              SU1              5.64       0.013      0          12.75      0          0         
+Sol63            J25              SU1              12.47      0.013      0          12.75      0          0         
+
+[ORIFICES]
+;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime 
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- ----------
+Orifício         SU1              J9               SIDE         12         0.65       NO       0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+Sol1             RECT_OPEN    0.5              32         0          0          1                    
+Sol7             RECT_OPEN    0.5              2          0          0          1                    
+Sol8             RECT_OPEN    0.5              2          0          0          1                    
+Sol9             RECT_OPEN    0.5              2          0          0          1                    
+Sol26            RECT_OPEN    0.5              2          0          0          1                    
+Sol27            CIRCULAR     0.5              0          0          0          1                    
+Sol28            CIRCULAR     0.5              0          0          0          1                    
+Sol29            RECT_OPEN    0.5              2          0          0          1                    
+Sol31            RECT_OPEN    0.5              2          0          0          1                    
+Sol32            CIRCULAR     0.5              0          0          0          1                    
+Sol33            CIRCULAR     0.5              0          0          0          1                    
+Sol35            CIRCULAR     0.5              0          0          0          1                    
+Sol36            CIRCULAR     0.5              0          0          0          1                    
+Sol37            RECT_OPEN    0.2              6.6        0          0          1                    
+Sol38            CIRCULAR     0.5              0          0          0          1                    
+Sol39            CIRCULAR     0.5              0          0          0          1                    
+Sol40            RECT_OPEN    0.5              2          0          0          1                    
+Sol42            RECT_OPEN    0.5              2          0          0          1                    
+Sol43            RECT_OPEN    0.15             0.15       0          0          1                    
+Sol44            RECT_OPEN    0.5              1          0          0          1                    
+Sol46            RECT_OPEN    0.15             0.15       0          0          1                    
+Sol47            RECT_OPEN    0.15             0.15       0          0          1                    
+Sol48            RECT_OPEN    0.15             0.15       0          0          1                    
+Sol51            RECT_OPEN    0.15             0.15       0          0          1                    
+Sol52            RECT_OPEN    0.15             0.15       0          0          1                    
+Sol53            RECT_OPEN    0.15             0.15       0          0          1                    
+Sol54            RECT_OPEN    0.15             0.15       0          0          1                    
+Sol55            RECT_OPEN    0.15             0.15       0          0          1                    
+Sol56            RECT_OPEN    0.15             0.15       0          0          1                    
+Sol57            RECT_OPEN    0.15             0.15       0          0          1                    
+Sol58            RECT_OPEN    0.5              2          0          0          1                    
+Sol59            RECT_OPEN    0.15             0.15       0          0          1                    
+Sol60            CIRCULAR     0.5              0          0          0          1                    
+Sol61            CIRCULAR     0.5              0          0          0          1                    
+Sol10            CIRCULAR     0.5              0          0          0          1                    
+Sol62            RECT_OPEN    0.15             0.15       0          0          1                    
+Sol63            RECT_OPEN    0.15             0.15       0          0          1                    
+Orifício         CIRCULAR     0.10             0          0          0
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+Poço             Storage    0          0.785     
+Poço                        13         0.785     
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+MyStorm                     0          6         
+MyStorm                     1          5         
+MyStorm                     2          4         
+MyStorm                     3          3         
+MyStorm                     4          2         
+MyStorm                     5          1         
+MyStorm                     6          0         
+MyStorm                     7          1         
+MyStorm                     8          2         
+MyStorm                     9          3         
+MyStorm                     10         4         
+MyStorm                     11         5         
+MyStorm                     12         6         
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -44469.673 -68319.493 -44338.988 -68248.916
+Units      Meters
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+J1               -44463.733         -68272.548        
+J2               -44425.381         -68286.058        
+J3               -44400.417         -68262.475        
+J4               -44394.065         -68272.843        
+J6               -44393.773         -68279.779        
+J7               -44398.758         -68281.612        
+J8               -44400.976         -68284.750        
+J9               -44407.949         -68277.487        
+J10              -44411.442         -68291.022        
+J11              -44396.264         -68287.333        
+J12              -44395.824         -68291.148        
+J13              -44398.373         -68295.403        
+J14              -44389.369         -68265.327        
+J15              -44387.168         -68283.079        
+J16              -44369.184         -68292.874        
+J17              -44369.460         -68305.698        
+J18              -44419.135         -68288.382        
+J19              -44412.452         -68256.422        
+J20              -44422.185         -68287.220        
+J21              -44410.128         -68263.497        
+J22              -44392.897         -68269.192        
+J23              -44412.537         -68270.871        
+J24              -44401.439         -68266.198        
+J25              -44395.233         -68276.201        
+J26              -44403.776         -68285.620        
+J27              -44396.548         -68280.509        
+J28              -44401.731         -68279.122        
+J29              -44406.477         -68293.943        
+J30              -44418.378         -68289.708        
+J31              -44391.097         -68273.710        
+J32              -44349.966         -68312.342        
+ESup             -44346.170         -68313.583        
+ESub             -44344.928         -68316.285        
+SU1              -44407.176         -68272.620        
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Sol29            -44370.993         -68271.820        
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+SB1              -44447.318         -68265.865        
+SB2              -44420.297         -68275.889        
+SB3              -44401.692         -68252.124        
+SB4              -44388.627         -68274.000        
+SB5              -44407.645         -68267.659        
+SB6              -44390.689         -68280.878        
+SB7              -44397.199         -68283.588        
+SB8              -44401.266         -68282.717        
+SB9              -44405.327         -68275.948        
+SB10             -44421.791         -68294.962        
+SB11             -44393.037         -68288.214        
+SB12             -44389.516         -68292.468        
+SB13             -44404.626         -68302.444        
+SB14             -44387.608         -68254.911        
+SB15             -44383.794         -68276.624        
+SB16             -44366.336         -68281.905        
+SB17             -44377.192         -68311.393        
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+SJT-VFX          -44425.987         -68261.195        
+

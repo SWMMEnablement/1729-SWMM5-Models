@@ -1,0 +1,512 @@
+[TITLE]
+;;Project Title/Notes
+  Input and Output FilesSW 1 0 20
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           02/22/2002
+START_TIME           00:00:00
+REPORT_START_DATE    02/22/2002
+REPORT_START_TIME    00:00:00
+END_DATE             02/22/2002
+END_TIME             01:20:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:01:00
+WET_STEP             00:15:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  SLOPE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     10
+MIN_SURFAREA         10.0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+;                                             1st network with no surcharge
+Inflow           10.00      10.00      .00        0          0         
+;                                             2nd network with surcharge
+Inflowa          10.00      10.00      .00        0          0         
+;                                            3rd network with adverse slopes
+Inflowb          10.00      10.00      .00        0          0         
+mid1             10.00      10.00      .00        0          0         
+mid10            10.00      10.00      .00        0          0         
+mid10a           10.00      10.00      .00        0          0         
+mid10b           10.10      9.90       .00        0          0         
+mid11            10.00      10.00      .00        0          0         
+mid11a           10.00      10.00      .00        0          0         
+mid11b           10.11      9.89       .00        0          0         
+mid12            10.00      10.00      .00        0          0         
+mid12a           10.00      10.00      .00        0          0         
+mid12b           10.12      9.88       .00        0          0         
+mid13            10.00      10.00      .00        0          0         
+mid13a           10.00      10.00      .00        0          0         
+mid13b           10.13      9.87       .00        0          0         
+mid14            10.00      10.00      .00        0          0         
+mid14a           10.00      10.00      .00        0          0         
+mid14b           10.14      9.86       .00        0          0         
+mid15            10.00      10.00      .00        0          0         
+mid15a           10.00      10.00      .00        0          0         
+mid15b           10.15      9.85       .00        0          0         
+mid16            10.00      10.00      .00        0          0         
+mid16a           10.00      10.00      .00        0          0         
+mid16b           10.16      9.84       .00        0          0         
+mid17            10.00      10.00      .00        0          0         
+mid17a           10.00      10.00      .00        0          0         
+mid17b           10.17      9.83       .00        0          0         
+mid18            10.00      10.00      .00        0          0         
+mid18a           10.00      10.00      .00        0          0         
+mid18b           10.18      9.82       .00        0          0         
+mid19            10.00      10.00      .00        0          0         
+mid19a           10.00      10.00      .00        0          0         
+mid19b           10.19      9.81       .00        0          0         
+mid1a            10.00      10.00      .00        0          0         
+mid1b            10.01      9.99       .00        0          0         
+mid2             10.00      10.00      .00        0          0         
+mid20            10.00      10.00      .00        0          0         
+mid20a           10.00      10.00      .00        0          0         
+mid20b           10.20      9.80       .00        0          0         
+mid2a            10.00      10.00      .00        0          0         
+mid2b            10.02      9.98       .00        0          0         
+mid3             10.00      10.00      .00        0          0         
+mid3a            10.00      10.00      .00        0          0         
+mid3b            10.03      9.97       .00        0          0         
+mid4             10.00      10.00      .00        0          0         
+mid4a            10.00      10.00      .00        0          0         
+mid4b            10.04      9.96       .00        0          0         
+mid5             10.00      10.00      .00        0          0         
+mid5a            10.00      10.00      .00        0          0         
+mid5b            10.05      9.95       .00        0          0         
+mid6             10.00      10.00      .00        0          0         
+mid6a            10.00      10.00      .00        0          0         
+mid6b            10.06      9.94       .00        0          0         
+mid7             10.00      10.00      .00        0          0         
+mid7a            10.00      10.00      .00        0          0         
+mid7b            10.07      9.93       .00        0          0         
+mid8             10.00      10.00      .00        0          0         
+mid8a            10.00      10.00      .00        0          0         
+mid8b            10.08      9.92       .00        0          0         
+mid9             10.00      10.00      .00        0          0         
+mid9a            10.00      10.00      .00        0          0         
+mid9b            10.09      9.91       .00        0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+;                                        *   Extran outfall nodes I1 - free I2 - gates
+Outlet           10.0       FREE                        NO                       
+Outleta          10.0       FREE                        NO                       
+Outletb          10.21      FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+;                                            NCOND          NJ1          NJ2       QO  NKLASS    AFULL       DEEP       WIDE      LEN          ZP1        ZP2     ROUGH    STHETA      SPHI      ENTK     EXITK    OTHERK   C1 Flags
+pipe1            Inflow           mid1             10.0       0.011      0.0        0.0        0.0        0         
+pipe2            mid1             mid2             10.0       0.011      0.0        0.0        0.0        0         
+pipe3            mid2             mid3             10.0       0.011      0.0        0.0        0.0        0         
+pipe4            mid3             mid4             10.0       0.011      0.0        0.0        0.0        0         
+pipe5            mid4             mid5             10.0       0.011      0.0        0.0        0.0        0         
+pipe6            mid5             mid6             10.0       0.011      0.0        0.0        0.0        0         
+pipe7            mid6             mid7             10.0       0.011      0.0        0.0        0.0        0         
+pipe8            mid7             mid8             10.0       0.011      0.0        0.0        0.0        0         
+pipe9            mid8             mid9             10.0       0.011      0.0        0.0        0.0        0         
+pip10            mid9             mid10            10.0       0.011      0.0        0.0        0.0        0         
+pip11            mid10            mid11            10.0       0.011      0.0        0.0        0.0        0         
+pip12            mid11            mid12            10.0       0.011      0.0        0.0        0.0        0         
+pip13            mid12            mid13            10.0       0.011      0.0        0.0        0.0        0         
+pip14            mid13            mid14            10.0       0.011      0.0        0.0        0.0        0         
+pip15            mid14            mid15            10.0       0.011      0.0        0.0        0.0        0         
+pip16            mid15            mid16            10.0       0.011      0.0        0.0        0.0        0         
+pip17            mid16            mid17            10.0       0.011      0.0        0.0        0.0        0         
+pip18            mid17            mid18            10.0       0.011      0.0        0.0        0.0        0         
+pip19            mid18            mid19            10.0       0.011      0.0        0.0        0.0        0         
+pip20            mid19            mid20            10.0       0.011      0.0        0.0        0.0        0         
+outlet           mid20            Outlet           10.0       0.011      0.0        0.0        0.0        0         
+;                                            2nd network
+pipe1a           Inflowa          mid1a            10.0       0.011      0.0        0.0        0.0        0         
+pipe2a           mid1a            mid2a            10.0       0.011      0.0        0.0        0.0        0         
+pipe3a           mid2a            mid3a            10.0       0.011      0.0        0.0        0.0        0         
+pipe4a           mid3a            mid4a            10.0       0.011      0.0        0.0        0.0        0         
+pipe5a           mid4a            mid5a            10.0       0.011      0.0        0.0        0.0        0         
+pipe6a           mid5a            mid6a            10.0       0.011      0.0        0.0        0.0        0         
+pipe7a           mid6a            mid7a            10.0       0.011      0.0        0.0        0.0        0         
+pipe8a           mid7a            mid8a            10.0       0.011      0.0        0.0        0.0        0         
+pipe9a           mid8a            mid9a            10.0       0.011      0.0        0.0        0.0        0         
+pip10a           mid9a            mid10a           10.0       0.011      0.0        0.0        0.0        0         
+pip11a           mid10a           mid11a           10.0       0.011      0.0        0.0        0.0        0         
+pip12a           mid11a           mid12a           10.0       0.011      0.0        0.0        0.0        0         
+pip13a           mid12a           mid13a           10.0       0.011      0.0        0.0        0.0        0         
+pip14a           mid13a           mid14a           10.0       0.011      0.0        0.0        0.0        0         
+pip15a           mid14a           mid15a           10.0       0.011      0.0        0.0        0.0        0         
+pip16a           mid15a           mid16a           10.0       0.011      0.0        0.0        0.0        0         
+pip17a           mid16a           mid17a           10.0       0.011      0.0        0.0        0.0        0         
+pip18a           mid17a           mid18a           10.0       0.011      0.0        0.0        0.0        0         
+pip19a           mid18a           mid19a           10.0       0.011      0.0        0.0        0.0        0         
+pip20a           mid19a           mid20a           10.0       0.011      0.0        0.0        0.0        0         
+outleta          mid20a           Outleta          10.0       0.011      0.0        0.0        0.0        0         
+;                                            3rd network
+pipe1b           Inflowb          mid1b            10.0       0.011      0.0        0.0        0.0        0         
+pipe2b           mid1b            mid2b            10.0       0.011      0.0        0.0        0.0        0         
+pipe3b           mid2b            mid3b            10.0       0.011      0.0        0.0        0.0        0         
+pipe4b           mid3b            mid4b            10.0       0.011      0.0        0.0        0.0        0         
+pipe5b           mid4b            mid5b            10.0       0.011      0.0        0.0        0.0        0         
+pipe6b           mid5b            mid6b            10.0       0.011      0.0        0.0        0.0        0         
+pipe7b           mid6b            mid7b            10.0       0.011      0.0        0.0        0.0        0         
+pipe8b           mid7b            mid8b            10.0       0.011      0.0        0.0        0.0        0         
+pipe9b           mid8b            mid9b            10.0       0.011      0.0        0.0        0.0        0         
+pip10b           mid9b            mid10b           10.0       0.011      0.0        0.0        0.0        0         
+pip11b           mid10b           mid11b           10.0       0.011      0.0        0.0        0.0        0         
+pip12b           mid11b           mid12b           10.0       0.011      0.0        0.0        0.0        0         
+pip13b           mid12b           mid13b           10.0       0.011      0.0        0.0        0.0        0         
+pip14b           mid13b           mid14b           10.0       0.011      0.0        0.0        0.0        0         
+pip15b           mid14b           mid15b           10.0       0.011      0.0        0.0        0.0        0         
+pip16b           mid15b           mid16b           10.0       0.011      0.0        0.0        0.0        0         
+pip17b           mid16b           mid17b           10.0       0.011      0.0        0.0        0.0        0         
+pip18b           mid17b           mid18b           10.0       0.011      0.0        0.0        0.0        0         
+pip19b           mid18b           mid19b           10.0       0.011      0.0        0.0        0.0        0         
+pip20b           mid19b           mid20b           10.0       0.011      0.0        0.0        0.0        0         
+outletb          mid20b           Outletb          10.0       0.011      0.0        0.0        0.0        0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+pipe1            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe2            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe3            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe4            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe5            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe6            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe7            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe8            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe9            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip10            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip11            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip12            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip13            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip14            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip15            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip16            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip17            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip18            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip19            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip20            CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+outlet           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe1a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe2a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe3a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe4a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe5a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe6a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe7a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe8a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe9a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip10a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip11a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip12a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip13a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip14a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip15a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip16a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip17a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip18a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip19a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip20a           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+outleta          CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe1b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe2b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe3b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe4b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe5b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe6b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe7b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe8b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pipe9b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip10b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip11b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip12b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip13b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip14b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip15b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip16b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip17b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip18b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip19b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+pip20b           CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+outletb          CIRCULAR     4.0              0.0        0.0        0.0        1.0                  
+
+[POLLUTANTS]
+;;Name           Units  Crain      Cgw        Crdii      Kdecay     SnowOnly   Co-Pollutant     Co-Frac    Cdwf       Cinit     
+;;-------------- ------ ---------- ---------- ---------- ---------- ---------- ---------------- ---------- ---------- ----------
+nda              MG/L   0.0        0.0        0.0        0.0        NO         *                0.0        0          0         
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+Inflow           FLOW             INFLOW@Inflow    FLOW     1.0      1.0              
+Inflowa          FLOW             INFLOW@Inflowa   FLOW     1.0      1.0              
+Inflowb          FLOW             INFLOW@Inflowb   FLOW     1.0      1.0              
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+INFLOW@Inflow    02/22/2002 00:00      0.00000   
+INFLOW@Inflow               00:15      2.00000   
+INFLOW@Inflow               08:00      2.00000   
+INFLOW@Inflow               08:15      0.00000   
+INFLOW@Inflow    02/23/2002 00:00      0.00000   
+;
+INFLOW@Inflowa   02/22/2002 00:00      0.00000   
+INFLOW@Inflowa              00:15      20.00000  
+INFLOW@Inflowa              08:00      20.00000  
+INFLOW@Inflowa              08:15      0.00000   
+INFLOW@Inflowa   02/23/2002 00:00      0.00000   
+;
+INFLOW@Inflowb   02/22/2002 00:00      0.00000   
+INFLOW@Inflowb              00:15      20.00000  
+INFLOW@Inflowb              08:00      20.00000  
+INFLOW@Inflowb              08:15      0.00000   
+INFLOW@Inflowb   02/23/2002 00:00      0.00000   
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+Node       Inflow           Inflow          
+Node       Inflowa          Inflowa         
+Node       Inflowb          Inflowb         
+Node       mid1             mid1            
+Node       mid10            mid10           
+Node       mid10a           mid10a          
+Node       mid10b           mid10b          
+Node       mid11            mid11           
+Node       mid11a           mid11a          
+Node       mid11b           mid11b          
+Node       mid12            mid12           
+Node       mid12a           mid12a          
+Node       mid12b           mid12b          
+Node       mid13            mid13           
+Node       mid13a           mid13a          
+Node       mid13b           mid13b          
+Node       mid14            mid14           
+Node       mid14a           mid14a          
+Node       mid14b           mid14b          
+Node       mid15            mid15           
+Node       mid15a           mid15a          
+Node       mid15b           mid15b          
+Node       mid16            mid16           
+Node       mid16a           mid16a          
+Node       mid16b           mid16b          
+Node       mid17            mid17           
+Node       mid17a           mid17a          
+Node       mid17b           mid17b          
+Node       mid18            mid18           
+Node       mid18a           mid18a          
+Node       mid18b           mid18b          
+Node       mid19            mid19           
+Node       mid19a           mid19a          
+Node       mid19b           mid19b          
+Node       mid1a            mid1a           
+Node       mid1b            mid1b           
+Node       mid2             mid2            
+Node       mid20            mid20           
+Node       mid20a           mid20a          
+Node       mid20b           mid20b          
+Node       mid2a            mid2a           
+Node       mid2b            mid2b           
+Node       mid3             mid3            
+Node       mid3a            mid3a           
+Node       mid3b            mid3b           
+Node       mid4             mid4            
+Node       mid4a            mid4a           
+Node       mid4b            mid4b           
+Node       mid5             mid5            
+Node       mid5a            mid5a           
+Node       mid5b            mid5b           
+Node       mid6             mid6            
+Node       mid6a            mid6a           
+Node       mid6b            mid6b           
+Node       mid7             mid7            
+Node       mid7a            mid7a           
+Node       mid7b            mid7b           
+Node       mid8             mid8            
+Node       mid8a            mid8a           
+Node       mid8b            mid8b           
+Node       mid9             mid9            
+Node       mid9a            mid9a           
+Node       mid9b            mid9b           
+Node       Outlet           Outlet          
+Node       Outleta          Outleta         
+Node       Outletb          Outletb         
+Link       pipe1            pipe1           
+Link       pipe2            pipe2           
+Link       pipe3            pipe3           
+Link       pipe4            pipe4           
+Link       pipe5            pipe5           
+Link       pipe6            pipe6           
+Link       pipe7            pipe7           
+Link       pipe8            pipe8           
+Link       pipe9            pipe9           
+Link       pip10            pip10           
+Link       pip11            pip11           
+Link       pip12            pip12           
+Link       pip13            pip13           
+Link       pip14            pip14           
+Link       pip15            pip15           
+Link       pip16            pip16           
+Link       pip17            pip17           
+Link       pip18            pip18           
+Link       pip19            pip19           
+Link       pip20            pip20           
+Link       outlet           outlet          
+Link       pipe1a           pipe1a          
+Link       pipe2a           pipe2a          
+Link       pipe3a           pipe3a          
+Link       pipe4a           pipe4a          
+Link       pipe5a           pipe5a          
+Link       pipe6a           pipe6a          
+Link       pipe7a           pipe7a          
+Link       pipe8a           pipe8a          
+Link       pipe9a           pipe9a          
+Link       pip10a           pip10a          
+Link       pip11a           pip11a          
+Link       pip12a           pip12a          
+Link       pip13a           pip13a          
+Link       pip14a           pip14a          
+Link       pip15a           pip15a          
+Link       pip16a           pip16a          
+Link       pip17a           pip17a          
+Link       pip18a           pip18a          
+Link       pip19a           pip19a          
+Link       pip20a           pip20a          
+Link       outleta          outleta         
+Link       pipe1b           pipe1b          
+Link       pipe2b           pipe2b          
+Link       pipe3b           pipe3b          
+Link       pipe4b           pipe4b          
+Link       pipe5b           pipe5b          
+Link       pipe6b           pipe6b          
+Link       pipe7b           pipe7b          
+Link       pipe8b           pipe8b          
+Link       pipe9b           pipe9b          
+Link       pip10b           pip10b          
+Link       pip11b           pip11b          
+Link       pip12b           pip12b          
+Link       pip13b           pip13b          
+Link       pip14b           pip14b          
+Link       pip15b           pip15b          
+Link       pip16b           pip16b          
+Link       pip17b           pip17b          
+Link       pip18b           pip18b          
+Link       pip19b           pip19b          
+Link       pip20b           pip20b          
+Link       outletb          outletb         
+
+[MAP]
+DIMENSIONS 29.500 19.500 260.500 470.500
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Inflow           40.000             40.000            
+Inflowa          40.000             140.000           
+Inflowb          40.000             240.000           
+mid1             50.000             50.000            
+mid10            140.000            140.000           
+mid10a           140.000            240.000           
+mid10b           140.000            340.000           
+mid11            150.000            150.000           
+mid11a           150.000            250.000           
+mid11b           150.000            350.000           
+mid12            160.000            160.000           
+mid12a           160.000            260.000           
+mid12b           160.000            360.000           
+mid13            170.000            170.000           
+mid13a           170.000            270.000           
+mid13b           170.000            370.000           
+mid14            180.000            180.000           
+mid14a           180.000            280.000           
+mid14b           180.000            380.000           
+mid15            190.000            190.000           
+mid15a           190.000            290.000           
+mid15b           190.000            390.000           
+mid16            200.000            200.000           
+mid16a           200.000            300.000           
+mid16b           200.000            400.000           
+mid17            210.000            210.000           
+mid17a           210.000            310.000           
+mid17b           210.000            410.000           
+mid18            220.000            220.000           
+mid18a           220.000            320.000           
+mid18b           220.000            420.000           
+mid19            230.000            230.000           
+mid19a           230.000            330.000           
+mid19b           230.000            430.000           
+mid1a            50.000             150.000           
+mid1b            50.000             250.000           
+mid2             60.000             60.000            
+mid20            240.000            240.000           
+mid20a           240.000            340.000           
+mid20b           240.000            440.000           
+mid2a            60.000             160.000           
+mid2b            60.000             260.000           
+mid3             70.000             70.000            
+mid3a            70.000             170.000           
+mid3b            70.000             270.000           
+mid4             80.000             80.000            
+mid4a            80.000             180.000           
+mid4b            80.000             280.000           
+mid5             90.000             90.000            
+mid5a            90.000             190.000           
+mid5b            90.000             290.000           
+mid6             100.000            100.000           
+mid6a            100.000            200.000           
+mid6b            100.000            300.000           
+mid7             110.000            110.000           
+mid7a            110.000            210.000           
+mid7b            110.000            310.000           
+mid8             120.000            120.000           
+mid8a            120.000            220.000           
+mid8b            120.000            320.000           
+mid9             130.000            130.000           
+mid9a            130.000            230.000           
+mid9b            130.000            330.000           
+Outlet           250.000            250.000           
+Outleta          250.000            350.000           
+Outletb          250.000            450.000           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

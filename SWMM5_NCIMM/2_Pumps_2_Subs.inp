@@ -1,0 +1,643 @@
+[TITLE]
+;;Project Title/Notes
+Inkster L-49 Sewer Separation
+Existing Combined Sewer
+Stantec Alternative 2
+New Gravity Sewer and Regulator
+November, 2008
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           09/12/2008
+START_TIME           00:00:00
+REPORT_START_DATE    09/12/2008
+REPORT_START_TIME    00:00:00
+END_DATE             09/15/2008
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:05:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  SLOPE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.50
+LENGTHENING_STEP     10
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+RainGage         VOLUME    0:05     1.0      FILE       "C:\Temp\Final Model\Raingaugefinal.dat" STA01      IN   
+AnalysisEvent    INTENSITY 1:00     1.0      TIMESERIES 25Yr24Hr        
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+Westland         AnalysisEvent    601              100      10       3000     1        0                        
+3                AnalysisEvent    1315             .5       37       442      1        0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+Westland         .01        0.1        0          0          0          OUTLET    
+3                .01        0.1        .06        .06        25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+Westland         3          .22        4          7          0         
+3                3.67       .22        4.68       7          0         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+1310             634.4      9.2        0          0          0         
+1315             635.4      7.3        0          0          0         
+1320             635.9      7.4        0          0          0         
+1325             638.6      8.6        0          0          0         
+1330             639        6.9        0          0          0         
+1335             640.1      7.8        0          0          0         
+1340             637.5      3.8        0          0          0         
+1345             638.1      3.5        0          0          0         
+1350             638.5      3.9        0          0          0         
+1355             639.4      4.6        0          0          0         
+1305             633.9      9.8        0          0          0         
+1600             632.4      12.6       0          0          0         
+13000            620.79     25.21      0          0          0         
+1200             622.23     24.77      0          0          0         
+800              626.25     21.3       0          0          0         
+700              627.4      21.6       0          0          0         
+400              630.9      19.1       0          0          0         
+500              632.4      17.6       0          0          0         
+600              633.7      16.3       0          0          0         
+300              633.1      16.9       0          0          0         
+1400             630.7      15.3       0          0          0         
+1000             630.1      17.9       0          0          0         
+900              630.6      17.4       0          0          0         
+1100             630.3      17.7       0          0          0         
+200              633.4      16.6       0          0          0         
+31               625.42     14.8       0          0          0         
+32               629.6      10.4       0          0          0         
+33               627.6      12.16      0          0          0         
+34               628.36     12.34      0          0          0         
+35               629.16     12.44      0          0          0         
+36               629.76     13.7       0          0          0         
+37               631.98     10.9       0          0          0         
+38               635.2      4.8        0          0          0         
+39               637.3      12.7       0          0          0         
+40               639.6      10.4       0          0          0         
+41               633.9      6.1        0          0          0         
+42               635.5      9.5        0          0          0         
+43               638.1      6.9        0          0          0         
+44               640.3      4.7        0          0          0         
+45               637.2      7.8        0          0          0         
+46               635.2      4.8        0          0          0         
+47               632.1      7.9        0          0          0         
+48               634.4      5.6        0          0          0         
+49               629.1      10.9       0          0          0         
+50               629.9      10.1       0          0          0         
+51               631.6      8.4        0          0          0         
+52               630.12     12.7       0          0          0         
+53               631.5      8.5        0          0          0         
+54               622.41     15.7       0          0          0         
+55               622.31     15.8       0          0          0         
+56               622.88     15.55      0          0          0         
+57               626.3      14.7       0          0          0         
+58               634        16         0          0          0         
+59               618.6      26.4       0          0          0         
+60               621.49     15.2       0          0          0         
+62               625.74     17.26      0          0          0         
+63               630.42     12.6       0          0          0         
+64               626.33     16.67      0          0          0         
+65               626.58     16.42      0          0          0         
+66               621.45     14         0          0          0         
+67               620.78     13.6       0          0          0         
+68               620.54     13.2       0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+1300             633.8      FREE                        NO                       
+3001             620.06     FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+100              627.47   10         0          TABULAR    BurtonPSWetWell              0        0       
+1500             618.5    26.5       0          TABULAR    AndoverPSWetWell             0        0       
+601              623.6    26.2       2          TABULAR    Westlandstorage              0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1310             1310             1305             357        .013       0          0          0          0         
+1315             1315             1310             140        .013       0          .4         0          0         
+1320             1320             1315             180        .013       0          .1         0          0         
+1325             1325             1320             512        .013       0          .4         0          0         
+1330             1330             1325             140        .013       0          .1         0          0         
+1335             1335             1330             252        .013       0          .1         0          0         
+1340             1340             1320             420        .013       0          .6         0          0         
+1345             1345             1340             91         .013       0          .2         0          0         
+1350             1350             1345             168        .013       0          0          0          0         
+1355             1355             1350             224        .013       0          .3         0          0         
+1304             1305             1300             100        0.013      .8         0          0          0         
+1305             1305             53               171        .013       0          2          0          0         
+12               600              500              370        .013       0          0          0          0         
+13               500              400              220        .013       0          0          0          0         
+14               400              700              450        .013       0          2.1        0          0         
+15               200              300              100        .013       0          .2         0          0         
+16               300              400              330        .013       0          0          0          0         
+17               1100             1000             170        .013       0          0          0          0         
+18               900              1000             230        .013       0          0          0          0         
+19               1000             800              510        .013       0          0          0          0         
+20               700              800              120        .013       0          0          0          0         
+21               800              1200             470        .013       0          2.67       0          0         
+22               1200             13000            720        .013       2.67       .81        0          0         
+23               1400             13000            210        .013       0          8.71       0          0         
+24               13000            59               100        .013       .81        3          0          0         
+25               1600             51               456        .013       0          0          0          0         
+27               1200             13000            860        .013       0          0          0          0         
+28               13000            59               135        .013       0          2.13       0          0         
+29               40               39               776        .013       0          0          0          0         
+30               39               37               1231       .013       0          0          0          0         
+31               37               36               190        .013       0          0          0          0         
+32               38               37               758        .013       0          0          0          0         
+33               44               43               495        .013       0          0          0          0         
+34               43               42               270        .013       0          0          0          0         
+35               45               42               726        .013       0          0          0          0         
+36               46               41               575        .013       0          0          0          0         
+37               42               41               350        .013       0          0          0          0         
+39               36               35               310        .013       0          0          0          0         
+40               35               34               200        .013       0          0          0          0         
+41               34               33               386        .013       0          0          0          0         
+42               33               31               461        .013       0          0          0          0         
+44               54               60               315        .013       0          0          0          0         
+45               32               57               455        .013       0          .1         0          0         
+46               48               47               669        .013       0          0          0          0         
+47               47               35               748        .013       0          2          0          0         
+48               49               57               925        .013       0          .2         0          0         
+49               50               49               286        .013       0          0          0          0         
+50               51               50               307        .013       0          0          0          0         
+51               41               63               171        .013       0          .68        0          0         
+52               52               36               160        .013       0          0          0          0         
+53               53               52               590        .013       0          0          0          0         
+54               31               56               333        0.013      0          0          0          0         
+55               56               55               111        0.013      0          0          0          0         
+56               55               54               222        0.013      0          .1         0          0         
+57               57               31               20         0.013      0          0          0          0         
+58               58               1200             600        0.013      0          0          0          0         
+59               59               1500             30         0.013      0          0          0          0         
+65               100              800              1500       0.013      0          0          0          0         
+68               62               31               650        0.013      0          0          0          0         
+70               64               62               1182       0.013      0          .5         0          0         
+71               52               63               141        0.013      0          0          0          0         
+72               65               64               144        0.013      0          0          0          0         
+73               63               65               65         0.013      .3         0          0          0         
+74               60               66               105        0.013      0          0          0          0         
+75               66               67               350        0.013      0          0          0          0         
+76               68               3001             144        0.013      0          0          0          0         
+
+[PUMPS]
+;;Name           From Node        To Node          Pump Curve       Status   Sartup Shutoff 
+;;-------------- ---------------- ---------------- ---------------- ------ -------- --------
+4                601              58               Westland         ON       0        0       
+5                1500             1600             AndoverPS        ON       0        0       
+
+[ORIFICES]
+;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime 
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- ----------
+64               67               68               SIDE         0          0.65       NO       0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1310             CIRCULAR     2.5              0          0          0          1                    
+1315             CIRCULAR     2.5              0          0          0          1                    
+1320             CIRCULAR     2.5              0          0          0          1                    
+1325             CIRCULAR     1.5              0          0          0          1                    
+1330             CIRCULAR     1.25             0          0          0          1                    
+1335             CIRCULAR     1.25             0          0          0          1                    
+1340             CIRCULAR     2.0              0          0          0          1                    
+1345             CIRCULAR     2.0              0          0          0          1                    
+1350             CIRCULAR     1.75             0          0          0          1                    
+1355             CIRCULAR     1.5              0          0          0          1                    
+1304             CIRCULAR     2.5              0          0          0          1                    
+1305             CIRCULAR     1.25             0          0          0          1                    
+12               CIRCULAR     .8333            0          0          0          1                    
+13               CIRCULAR     .8333            0          0          0          1                    
+14               CIRCULAR     1                0          0          0          1                    
+15               CIRCULAR     .833             0          0          0          1                    
+16               CIRCULAR     .833             0          0          0          1                    
+17               CIRCULAR     .833             0          0          0          1                    
+18               CIRCULAR     .833             0          0          0          1                    
+19               CIRCULAR     .833             0          0          0          1                    
+20               CIRCULAR     1                0          0          0          1                    
+21               CIRCULAR     .833             0          0          0          1                    
+22               CIRCULAR     .8333            0          0          0          1                    
+23               CIRCULAR     .833             0          0          0          1                    
+24               CIRCULAR     .833             0          0          0          1                    
+25               CIRCULAR     1                0          0          0          1                    
+27               CIRCULAR     1.5              0          0          0          1                    
+28               CIRCULAR     1.5              0          0          0          1                    
+29               CIRCULAR     .833             0          0          0          1                    
+30               CIRCULAR     .833             0          0          0          1                    
+31               CIRCULAR     .833             0          0          0          1                    
+32               CIRCULAR     .833             0          0          0          1                    
+33               CIRCULAR     .833             0          0          0          1                    
+34               CIRCULAR     .833             0          0          0          1                    
+35               CIRCULAR     .833             0          0          0          1                    
+36               CIRCULAR     .833             0          0          0          1                    
+37               CIRCULAR     .833             0          0          0          1                    
+39               CIRCULAR     1                0          0          0          1                    
+40               CIRCULAR     1                0          0          0          1                    
+41               CIRCULAR     1                0          0          0          1                    
+42               CIRCULAR     1                0          0          0          1                    
+44               CIRCULAR     2                0          0          0          1                    
+45               CIRCULAR     .833             0          0          0          1                    
+46               CIRCULAR     .833             0          0          0          1                    
+47               CIRCULAR     1                0          0          0          1                    
+48               CIRCULAR     1                0          0          0          1                    
+49               CIRCULAR     1                0          0          0          1                    
+50               CIRCULAR     1                0          0          0          1                    
+51               CIRCULAR     .833             0          0          0          1                    
+52               CIRCULAR     1                0          0          0          1                    
+53               CIRCULAR     1                0          0          0          1                    
+54               CIRCULAR     2                0          0          0          1                    
+55               CIRCULAR     2                0          0          0          1                    
+56               CIRCULAR     2                0          0          0          1                    
+57               CIRCULAR     1                0          0          0          1                    
+58               CIRCULAR     1                0          0          0          1                    
+59               CIRCULAR     1.5              0          0          0          1                    
+65               CIRCULAR     2                0          0          0          1                    
+68               CIRCULAR     4                0          0          0          1                    
+70               CIRCULAR     4                0          0          0          1                    
+71               CIRCULAR     2                0          0          0          1                    
+72               CIRCULAR     3.5              0          0          0          1                    
+73               CIRCULAR     2                0          0          0          1                    
+74               CIRCULAR     2                0          0          0          1                    
+75               CIRCULAR     2                0          0          0          1                    
+76               CIRCULAR     2                0          0          0          1                    
+64               CIRCULAR     .63              0          0          0
+
+[LOSSES]
+;;Link           Kentry     Kexit      Kavg       Flap Gate  Seepage   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+44               .5         1          0          NO         0         
+
+[DWF]
+;;Node           Constituent      Baseline   Patterns  
+;;-------------- ---------------- ---------- ----------
+1315             FLOW             .002      
+1320             FLOW             .010      
+1330             FLOW             .006      
+1335             FLOW             .011      
+1340             FLOW             .003      
+1345             FLOW             .012      
+1355             FLOW             .006      
+1200             FLOW             .02       
+500              FLOW             .007      
+600              FLOW             .014      
+300              FLOW             .002      
+1400             FLOW             .006      
+1000             FLOW             .006      
+1100             FLOW             .003      
+200              FLOW             .022      
+31               FLOW             .0029     
+32               FLOW             .016      
+33               FLOW             .0064     
+34               FLOW             .0068     
+38               FLOW             .0096     
+39               FLOW             .0084     
+40               FLOW             .0096     
+44               FLOW             .0084     
+45               FLOW             .0125     
+46               FLOW             .0129     
+48               FLOW             .0175     
+49               FLOW             .0094     
+50               FLOW             .0135     
+51               FLOW             .0095     
+53               FLOW             .017      
+100              FLOW             .025      
+
+[HYDROGRAPHS]
+;;Hydrograph     Rain Gage/Month  Response R        T        K        Dmax     Drecov   Dinit   
+;;-------------- ---------------- -------- -------- -------- -------- -------- -------- --------
+RDII1            AnalysisEvent   
+RDII1            All              Short    0        .5       1        0        0        0       
+RDII1            All              Medium   0        1.5      2        0        0        0       
+RDII1            All              Long     0        1.5      2        0        0        0       
+RDII1backup      AnalysisEvent   
+RDII1backup      All              Short    .0416    .75      1.33     0        0        0       
+RDII1backup      All              Medium   0        .75      1.33     0        0        0       
+RDII1backup      All              Long     .0124    1.25     3.2      0        0        0       
+L-49Area         AnalysisEvent   
+L-49Area         All              Short    .01      .75      1.33     0        0        0       
+L-49Area         All              Medium   .005     .75      1.33     0        0        0       
+L-49Area         All              Long     .01      1.25     3.2      0        0        0       
+RDIIwestside     AnalysisEvent   
+RDIIwestside     All              Short    .035     .5       1        0        0        0       
+RDIIwestside     All              Medium   .01      1.5      2        0        0        0       
+RDIIwestside     All              Long     0        1.5      2        0        0        0       
+Westland         AnalysisEvent   
+Westland         All              Short    1        .75      2        0        0        0       
+Westland         All              Medium   0        1        2        0        0        0       
+Westland         All              Long     0        5        2        0        0        0       
+Andover          AnalysisEvent   
+Andover          All              Short    .05      7        .05      0        0        0       
+Andover          All              Medium   0        0        0        0        0        0       
+Andover          All              Long     0        0        0        0        0        0       
+BurtonPS         AnalysisEvent   
+
+
+[RDII]
+;;Node           Unit Hydrograph  Sewer Area
+;;-------------- ---------------- ----------
+1315             L-49Area         1.01      
+1320             L-49Area         4.31      
+1330             L-49Area         2.59      
+1335             L-49Area         4.85      
+1340             L-49Area         1.37      
+1355             L-49Area         7.52      
+1200             Andover          7.79      
+500              Andover          4.04      
+600              Andover          8.26      
+300              Andover          1.07      
+1400             Andover          3.42      
+1000             Andover          3.23      
+900              Andover          0.22      
+1100             Andover          1.62      
+31               RDII1            1.7       
+32               RDII1            9.2       
+33               RDIIwestside     3.7       
+34               RDIIwestside     3.9       
+38               RDIIwestside     5.5       
+39               RDIIwestside     4.8       
+40               RDIIwestside     5.5       
+44               RDIIwestside     4.8       
+45               RDIIwestside     7.2       
+46               RDIIwestside     7.3       
+48               RDIIwestside     10        
+49               RDII1            5.3       
+50               RDII1            7.7       
+51               RDII1            5.4       
+53               RDIIwestside     9.7       
+100              BurtonPS         12.3      
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+AndoverPS        Pump2      0          0         
+AndoverPS                   .5         .949      
+AndoverPS                   .51        .949      
+AndoverPS                   10         .949      
+AndoverPS                   10.1       1.898     
+AndoverPS                   26         1.898     
+;
+BurtonPS         Pump4      0          0         
+BurtonPS                    .5         0         
+BurtonPS                    3          0         
+BurtonPS                    3.01       .3        
+BurtonPS                    4          .3        
+BurtonPS                    4.01       .6        
+BurtonPS                    10         .6        
+;
+Westland         Pump2      0          0         
+Westland                    2          0         
+Westland                    2.1        .8        
+Westland                    3          .8        
+Westland                    3.1        .8        
+Westland                    23         .8        
+;
+BurtonPSWetWell  Storage    0          200       
+BurtonPSWetWell             26.7       200       
+;
+AndoverPSWetWell Storage    0          600       
+AndoverPSWetWell            26.5       600       
+;
+Westlandstorage  Storage    0          200       
+Westlandstorage             26         200       
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+;1 Year, 1 Hour Non-Uniform Hyetograph Using a 15-Min Duration
+1Yr1Hr           9/12/08    0:15       .138      
+1Yr1Hr                      0:30       .625      
+1Yr1Hr                      0:45       .175      
+1Yr1Hr                      1:0        .063      
+1Yr1Hr                      1:25       0         
+;
+;10 Year, 24 Hour SCS Type II Rainfall Distribution
+10Yr24Hr         09/12/2008 0:00       0         
+10Yr24Hr                    1:00       0.0367    
+10Yr24Hr                    2:00       0.04      
+10Yr24Hr                    3:00       0.04      
+10Yr24Hr                    4:00       0.0433    
+10Yr24Hr                    5:00       0.0532    
+10Yr24Hr                    6:00       0.0532    
+10Yr24Hr                    7:00       0.0668    
+10Yr24Hr                    8:00       0.0668    
+10Yr24Hr                    9:00       0.0899    
+10Yr24Hr                    10:00      0.1132    
+10Yr24Hr                    11:00      0.1831    
+10Yr24Hr                    12:00      1.4219    
+10Yr24Hr                    13:00      0.3762    
+10Yr24Hr                    14:00      0.1631    
+10Yr24Hr                    15:00      0.1032    
+10Yr24Hr                    16:00      0.0833    
+10Yr24Hr                    17:00      0.0733    
+10Yr24Hr                    18:00      0.0632    
+10Yr24Hr                    19:00      0.0532    
+10Yr24Hr                    20:00      0.0499    
+10Yr24Hr                    21:00      0.04      
+10Yr24Hr                    22:00      0.04      
+10Yr24Hr                    23:00      0.04      
+10Yr24Hr         09/13/2008 0:00       0.0367    
+;
+;25 Year, 24 Hour SCS Type II Design Storm
+25Yr24Hr         9/12/2008  0:0        0.0312    
+25Yr24Hr                    1:0        0.0468    
+25Yr24Hr                    2:0        0.0468    
+25Yr24Hr                    3:0        0.0468    
+25Yr24Hr                    4:0        0.0624    
+25Yr24Hr                    5:0        0.0624    
+25Yr24Hr                    6:0        0.0741    
+25Yr24Hr                    7:0        0.078     
+25Yr24Hr                    8:0        0.0975    
+25Yr24Hr                    9:0        0.1248    
+25Yr24Hr                    10:0       0.1794    
+25Yr24Hr                    11:00      0.6591    
+25Yr24Hr                    12:00      1.4469    
+25Yr24Hr                    13:00      0.2223    
+25Yr24Hr                    14:00      0.1326    
+25Yr24Hr                    15:00      0.1014    
+25Yr24Hr                    16:00      0.0897    
+25Yr24Hr                    17:00      0.078     
+25Yr24Hr                    18:00      0.0624    
+25Yr24Hr                    19:00      0.0624    
+25Yr24Hr                    20:00      0.0468    
+25Yr24Hr                    21:00      0.0468    
+25Yr24Hr                    22:00      0.0468    
+25Yr24Hr                    23:00      0.0468    
+25Yr24Hr         9/13/2008  0:00       0.0078    
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -821.260 0.000 10821.260 10000.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1310             4832.820           3699.550          
+1315             4639.290           3706.990          
+1320             4383.930           3687.850          
+1325             3486.160           3661.950          
+1330             3468.900           3989.980          
+1335             2929.380           3976.980          
+1340             4392.570           2962.730          
+1345             4176.750           2928.200          
+1350             3917.780           2893.670          
+1355             3313.510           2893.670          
+1305             4859.040           4337.585          
+1600             6758.610           4483.000          
+13000            6792.930           4032.880          
+1200             6783.120           3022.640          
+800              5929.810           3022.640          
+700              5906.090           2786.060          
+400              5959.230           2198.750          
+500              6390.790           2237.980          
+600              6969.480           2228.180          
+300              5370.740           2159.520          
+1400             6528.110           4023.080          
+1000             5262.850           3012.830          
+900              5253.040           3444.390          
+1100             5262.850           2738.200          
+200              5137.040           2174.000          
+31               5862.530           7068.470          
+32               6510.940           5906.380          
+33               5146.750           6689.530          
+34               5138.330           6319.010          
+35               5315.160           5830.590          
+36               4877.280           5653.750          
+37               4802.797           5812.228          
+38               4809.910           6815.840          
+39               2898.360           5788.490          
+40               2889.940           4820.080          
+41               4287.810           5443.230          
+42               3698.350           5451.650          
+43               3252.040           5476.910          
+44               3218.350           4356.930          
+45               3689.930           4087.460          
+46               4321.500           4112.720          
+47               5407.790           5005.340          
+48               5416.220           3977.990          
+49               6190.320           4860.740          
+50               6494.090           4845.350          
+51               6502.520           4483.250          
+52               4970.789           5445.599          
+53               4994.785           4341.784          
+54               5900.815           8393.049          
+55               5900.815           7818.471          
+56               5867.016           7551.461          
+57               5955.680           7066.550          
+58               7137.363           2318.681          
+59               6803.860           4305.450          
+60               5981.931           8825.672          
+62               4788.291           7079.087          
+63               4770.504           5436.243          
+64               4772.937           5848.045          
+65               4772.937           5762.549          
+66               5823.078           8818.913          
+67               5850.117           9488.127          
+68               5981.931           9552.345          
+1300             4481.490           5030.610          
+3001             5981.931           9775.416          
+100              4883.720           2176.080          
+1500             6799.060           4394.290          
+601              7126.374           2010.989          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+27               6845.830           3072.420          
+27               6841.880           3975.310          
+28               6861.600           4089.650          
+28               6857.660           4294.670          
+42               5197.270           7060.050          
+45               6468.830           7026.370          
+48               6168.340           6911.940          
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+Westland         7234.870           1646.090          
+Westland         7242.900           1293.230          
+Westland         6833.820           1194.490          
+Westland         6273.100           1511.880          
+Westland         6816.860           1924.760          
+Westland         7245.590           1635.370          
+3                4781.438           3766.520          
+3                4786.794           4368.669          
+3                4925.521           4361.368          
+3                4918.900           3746.883          
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+RainGage         4354.290           9234.290          
+
+
+[PROFILES]
+;;Name           Links     
+;;-------------- ----------
+"Pierce Street   " 1335 1330 1325 1320 1315
+"Pierce Street   " 1310
+"Pine Street     " 1355 1350 1345 1340 1320
+"Pine Street     " 1315 1310
+"Pine to Andover " 1355 1350 1345 1340 1320
+"Pine to Andover " 1315 1310 1305
+"Burton PS to Mich Ave." 1 15 16 14 20
+"Burton PS to Mich Ave." 21 22 24 2 25
+"Burton PS to Mich Ave." 50 49 48 44
+"L-49 to Mich Ave." 1355 1350 1345 1340 1320
+"L-49 to Mich Ave." 1315 1310 1305 53 52
+"L-49 to Mich Ave." 39 40 41 42 54
+"L-49 to Mich Ave." 55 56 44
+"Storage Outlet Profile" 52 71 73 72 70
+"Storage Outlet Profile" 68 54 55 56 44
+"Storage Outlet Profile" 64

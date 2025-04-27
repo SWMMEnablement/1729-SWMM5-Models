@@ -1,0 +1,218 @@
+[TITLE]
+
+[OPTIONS]
+FLOW_UNITS          	CFS
+INFILTRATION        	HORTON
+FLOW_ROUTING        	DYNWAVE
+START_DATE          	03/06/2014
+START_TIME          	00:00:00
+REPORT_START_DATE   	03/06/2014
+REPORT_START_TIME   	00:00:00
+END_DATE            	03/07/2014
+END_TIME            	00:00:00
+SWEEP_START         	01/01
+SWEEP_END           	12/31
+DRY_DAYS            	0
+REPORT_STEP         	00:30:00
+WET_STEP            	00:05:00
+DRY_STEP            	01:00:00
+ROUTING_STEP        	0:00:10 
+ALLOW_PONDING       	YES
+INERTIAL_DAMPING    	NONE
+VARIABLE_STEP       	0.75
+LENGTHENING_STEP    	0
+MIN_SURFAREA        	0
+NORMAL_FLOW_LIMITED 	BOTH
+SKIP_STEADY_STATE   	NO
+FORCE_MAIN_EQUATION 	H-W
+LINK_OFFSETS        	ELEVATION
+MIN_SLOPE           	0
+
+[EVAPORATION]
+;;Type      	Parameters
+;;----------	----------
+CONSTANT    	0.0
+DRY_ONLY     NO
+
+[RAINGAGES]
+;;              	Rain     	Time  	Snow  	Data      
+;;Name          	Type     	Intrvl	Catch 	Source    
+;;--------------	---------	------	------	----------
+3               	INTENSITY	0:30  	1.0   	TIMESERIES	25yrStorm       
+
+[SUBCATCHMENTS]
+;;              	                	                	Total   	Pcnt.   	        	Pcnt.   	Curb    	Snow    
+;;Name          	Raingage        	Outlet          	Area    	Imperv  	Width   	Slope   	Length  	Pack    
+;;--------------	----------------	----------------	--------	--------	--------	--------	--------	--------
+5               	3               	2               	.25     	.33     	70      	0.5     	0       	                
+
+[SUBAREAS]
+;;Subcatchment  	N-Imperv  	N-Perv    	S-Imperv  	S-Perv    	PctZero   	RouteTo   	PctRouted 
+;;--------------	----------	----------	----------	----------	----------	----------	----------
+5               	1         	.6        	0         	0         	25        	IMPERVIOUS	100       
+
+[INFILTRATION]
+;;Subcatchment  	MaxRate   	MinRate   	Decay     	DryTime   	MaxInfil  
+;;--------------	----------	----------	----------	----------	----------
+5               	1         	.1        	1         	0         	0         
+
+[JUNCTIONS]
+;;              	Invert    	Max.      	Init.     	Surcharge 	Ponded    
+;;Name          	Elev.     	Depth     	Depth     	Depth     	Area      
+;;--------------	----------	----------	----------	----------	----------
+1               	-.75      	4.25      	1.75      	0         	0         
+3               	-1.4      	4.9       	2.4       	0         	0         
+2               	-1.0      	4.5       	2         	0         	0         
+
+[OUTFALLS]
+;;              	Invert    	Outfall   	Stage/Table     	Tide
+;;Name          	Elev.     	Type      	Time Series     	Gate
+;;--------------	----------	----------	----------------	----
+4               	-1.5      	TIMESERIES	OutfallTailwater	NO
+
+[CONDUITS]
+;;              	Inlet           	Outlet          	          	Manning   	Inlet     	Outlet    	Init.     	Max.      
+;;Name          	Node            	Node            	Length    	N         	Offset    	Offset    	Flow      	Flow      
+;;--------------	----------------	----------------	----------	----------	----------	----------	----------	----------
+UpstreamDitch   	1               	2               	139       	.045      	*         	*         	0         	0         
+Culvert         	2               	3               	20        	.025      	-1        	-1.4      	0         	0         
+DownstreamDitch 	3               	4               	105       	.045      	*         	*         	0         	0         
+
+[XSECTIONS]
+;;Link          	Shape       	Geom1           	Geom2     	Geom3     	Geom4     	Barrels   
+;;--------------	------------	----------------	----------	----------	----------	----------
+UpstreamDitch   	IRREGULAR   	UpstreamChannel 	0         	0         	0         	1         	          
+Culvert         	FILLED_CIRCULAR	4               	1.5       	0         	0         	2         	6         
+DownstreamDitch 	IRREGULAR   	Downstream      	0         	0         	0         	1         	          
+
+[TRANSECTS]
+
+NC	.045    	.045    	.045    
+X1	UpstreamChannel  	4       	0.0     	30      	0.0     	0.0     	0.0     	0.0     	0.0     
+GR	3.5     	0       	0       	10      	0       	20      	3.5     	30      
+
+NC	.045    	.045    	.045    
+X1	Downstream       	7       	0       	48      	0.0     	0.0     	0.0     	0.0     	0.0     
+GR	3       	0       	1.5     	6       	0       	14      	0       	18      	1.5     	28      
+GR	-1.5    	36      	3.67    	48      
+
+[LOSSES]
+;;Link          	Inlet     	Outlet    	Average   	Flap Gate 
+;;--------------	----------	----------	----------	----------
+Culvert         	.9        	1         	0         	NO
+
+[INFLOWS]
+;;              	                	                	Param   	Units   	Scale   	Baseline	Baseline
+;;Node          	Parameter       	Time Series     	Type    	Factor  	Factor  	Value   	Pattern
+;;--------------	----------------	----------------	--------	--------	--------	--------	--------
+1               	FLOW            	""              	FLOW    	1.0     	1       	1       	Hourly  
+
+[TIMESERIES]
+;;Name          	Date      	Time      	Value     
+;;--------------	----------	----------	----------
+;Tailwater
+OutfallTailwater	3/6/2014  	0         	1         
+OutfallTailwater	3/6/2014  	23:59     	3         
+OutfallTailwater	3/7/2014  	23:59     	1         
+
+25yrStorm       	3/6/2014  	0:00      	0         
+25yrStorm       	3/6/2014  	0:30      	0.0504    
+25yrStorm       	3/6/2014  	1:00      	0.0504    
+25yrStorm       	3/6/2014  	1:30      	0.0588    
+25yrStorm       	3/6/2014  	2:00      	0.0504    
+25yrStorm       	3/6/2014  	2:30      	0.0588    
+25yrStorm       	3/6/2014  	3:00      	0.0588    
+25yrStorm       	3/6/2014  	3:30      	0.0672    
+25yrStorm       	3/6/2014  	4:00      	0.0588    
+25yrStorm       	3/6/2014  	4:30      	0.0672    
+25yrStorm       	3/6/2014  	5:00      	0.0756    
+25yrStorm       	3/6/2014  	5:30      	0.0756    
+25yrStorm       	3/6/2014  	6:00      	0.0756    
+25yrStorm       	3/6/2014  	6:30      	0.084     
+25yrStorm       	3/6/2014  	7:00      	0.0924    
+25yrStorm       	3/6/2014  	7:30      	0.1008    
+25yrStorm       	3/6/2014  	8:00      	0.1008    
+25yrStorm       	3/6/2014  	8:30      	0.1176    
+25yrStorm       	3/6/2014  	9:00      	0.1344    
+25yrStorm       	3/6/2014  	9:30      	0.1428    
+25yrStorm       	3/6/2014  	10:00     	0.168     
+25yrStorm       	3/6/2014  	10:30     	0.21      
+25yrStorm       	3/6/2014  	11:00     	0.2688    
+25yrStorm       	3/6/2014  	11:30     	0.42      
+25yrStorm       	3/6/2014  	12:00     	2.5116    
+25yrStorm       	3/6/2014  	12:30     	0.9408    
+25yrStorm       	3/6/2014  	13:00     	0.3192    
+25yrStorm       	3/6/2014  	13:30     	0.2352    
+25yrStorm       	3/6/2014  	14:00     	0.1848    
+25yrStorm       	3/6/2014  	14:30     	0.1596    
+25yrStorm       	3/6/2014  	15:00     	0.1344    
+25yrStorm       	3/6/2014  	15:30     	0.126     
+25yrStorm       	3/6/2014  	16:00     	0.1092    
+25yrStorm       	3/6/2014  	16:30     	0.1008    
+25yrStorm       	3/6/2014  	17:00     	0.0924    
+25yrStorm       	3/6/2014  	17:30     	0.0924    
+25yrStorm       	3/6/2014  	18:00     	0.0756    
+25yrStorm       	3/6/2014  	18:30     	0.084     
+25yrStorm       	3/6/2014  	19:00     	0.0672    
+25yrStorm       	3/6/2014  	19:30     	0.0756    
+25yrStorm       	3/6/2014  	20:00     	0.0672    
+25yrStorm       	3/6/2014  	20:30     	0.0588    
+25yrStorm       	3/6/2014  	21:00     	0.0588    
+25yrStorm       	3/6/2014  	21:30     	0.0588    
+25yrStorm       	3/6/2014  	22:00     	0.0588    
+25yrStorm       	3/6/2014  	22:30     	0.0588    
+25yrStorm       	3/6/2014  	23:00     	0.0504    
+25yrStorm       	3/6/2014  	23:30     	0.0504    
+25yrStorm       	3/6/2014  	24:00     	0.042     
+
+[PATTERNS]
+;;Name          	Type      	Multipliers
+;;--------------	----------	-----------
+;Control Structure Inflow
+Hourly          	HOURLY    	.65  	.64  	.65  	.68  	.71  	.76  
+Hourly          	          	.81  	.87  	.99  	2.24 	4.62 	9.78 
+Hourly          	          	61.23	57.23	48.92	43.52	48.92	35.45
+Hourly          	          	31.81	29.91	25.02	21.84	19.09	16.75
+
+ExistingCondition	MONTHLY   	1.0  	1.0  	1.0  	1.0  	1.0  	1.0  
+ExistingCondition	          	1.0  	1.0  	1.0  	1.0  	1.0  	1.0  
+
+[REPORT]
+INPUT     	NO
+CONTROLS  	NO
+SUBCATCHMENTS	ALL
+NODES	ALL
+LINKS	ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS	0.000	0.000	10000.000	10000.000
+Units     	None
+
+[COORDINATES]
+;;Node          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+1               	-1104.651         	8279.070          
+3               	-1093.023         	6000.000          
+2               	-1093.023         	6883.721          
+4               	-1069.767         	4465.116          
+
+[VERTICES]
+;;Link          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+
+[Polygons]
+;;Subcatchment  	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+5               	-1334.710         	8393.513          
+5               	-1422.429         	6639.127          
+5               	-797.429          	6672.022          
+5               	-808.394          	8426.408          
+5               	-1334.710         	8415.443          
+
+[SYMBOLS]
+;;Gage          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+3               	-1127.907         	7825.581          
+

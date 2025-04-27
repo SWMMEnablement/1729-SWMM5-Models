@@ -1,0 +1,225 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           11/13/2015
+START_TIME           00:00:00
+REPORT_START_DATE    11/13/2015
+REPORT_START_TIME    00:00:00
+END_DATE             11/13/2015
+END_TIME             06:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+1                INTENSITY 0:10     1.0      TIMESERIES Rainfall        
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+PL5              1                2                5        25       500      0.5      0                        
+PL4              1                3                5        25       500      0.5      0                        
+PL3              1                4                5        25       500      0.5      0                        
+PL2              1                5                5        25       500      0.5      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+PL5              0.01       0.1        0.05       0.05       25         OUTLET    
+PL4              0.01       0.1        0.05       0.05       25         OUTLET    
+PL3              0.01       0.1        0.05       0.05       25         OUTLET    
+PL2              0.01       0.1        0.05       0.05       25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+PL5              3.0        0.5        4          7          0         
+PL4              3.0        0.5        4          7          0         
+PL3              3.0        0.5        4          7          0         
+PL2              3.0        0.5        4          7          0         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+2                0          0          0          0          0         
+3                0          0          0          0          0         
+4                0          0          0          0          0         
+5                0          0          0          0          0         
+Manhole          0          0          0          0          0         
+6                0          0          0          0          0         
+7                0          0          0          0          0         
+8                0          0          0          0          0         
+9                0          0          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+1                0          FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+DetentionPond    90.95    94.25      0          FUNCTIONAL 1000      0         0        0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1                5                4                400        0.01       0          0          0          0         
+3                4                6                400        0.01       0          0          0          0         
+4                Manhole          2                400        0.01       0          0          0          0         
+5                3                DetentionPond    400        0.01       0          0          0          0         
+6                3                9                400        0.01       0          0          0          0         
+7                2                8                400        0.01       0          0          0          0         
+8                6                9                400        0.01       0          0          0          0         
+9                9                8                400        0.01       0          0          0          0         
+10               8                1                400        0.01       0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                CIRCULAR     1                0          0          0          1                    
+3                CIRCULAR     1                0          0          0          1                    
+4                CIRCULAR     1                0          0          0          1                    
+5                CIRCULAR     1                0          0          0          1                    
+6                CIRCULAR     1                0          0          0          1                    
+7                CIRCULAR     1                0          0          0          1                    
+8                CIRCULAR     1                0          0          0          1                    
+9                CIRCULAR     1                0          0          0          1                    
+10               CIRCULAR     1                0          0          0          1                    
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+Rainfall                    0:00       0         
+Rainfall                    0:10       0.08      
+Rainfall                    0:20       0.16      
+Rainfall                    0:30       0.23      
+Rainfall                    0:40       0.1       
+Rainfall                    0:50       0.19      
+Rainfall                    1:00       0.27      
+Rainfall                    1:10       0.15      
+Rainfall                    1:20       0.46      
+Rainfall                    1:30       0.12      
+Rainfall                    1:40       0.09      
+Rainfall                    1:50       0.13      
+Rainfall                    2:00       0.1       
+Rainfall                    2:10       0.15      
+Rainfall                    2:20       0.08      
+Rainfall                    2:30       0.07      
+Rainfall                    2:40       0.15      
+Rainfall                    2:50       0.28      
+Rainfall                    3:00       0.12      
+Rainfall                    3:10       0.06      
+Rainfall                    3:20       0.04      
+Rainfall                    3:30       0         
+Rainfall                    3:40       0.47      
+Rainfall                    3:50       0.15      
+Rainfall                    4:00       0.43      
+Rainfall                    4:10       0.38      
+Rainfall                    4:20       0.11      
+Rainfall                    4:30       0.1       
+Rainfall                    4:40       0.1       
+Rainfall                    4:50       0.06      
+Rainfall                    5:00       0.04      
+Rainfall                    5:10       0         
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -524.865 2024.141 6844.964 10113.910
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+2                2938.931           8167.939          
+3                2938.931           6513.995          
+4                2913.486           4503.817          
+5                2913.486           2849.873          
+Manhole          216.285            9058.524          
+6                5456.853           4492.386          
+7                2969.543           9035.533          
+8                5456.853           8172.589          
+9                5456.853           6522.843          
+1                5456.853           9746.193          
+DetentionPond    -189.873           5253.165          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+4                2969.543           9060.914          
+5                2893.401           5431.472          
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+PL5              727.848            8565.401          
+PL5              2958.861           8565.401          
+PL5              2958.861           7536.920          
+PL5              727.848            7536.920          
+PL5              727.848            8581.224          
+PL5              727.848            8581.224          
+PL4              727.848            7088.608          
+PL4              2981.013           7088.608          
+PL4              2974.684           6028.481          
+PL4              734.177            6028.481          
+PL4              734.177            7088.608          
+PL3              712.025            4920.886          
+PL3              2946.203           4920.886          
+PL3              2943.038           3955.696          
+PL3              712.025            3955.696          
+PL3              712.025            4462.025          
+PL2              755.145            3443.180          
+PL2              2913.486           3435.115          
+PL2              2913.486           2391.858          
+PL2              770.968            2398.876          
+PL2              770.968            3443.180          
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                1737.523           8841.362          
+

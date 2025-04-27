@@ -1,0 +1,194 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         KINWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/07/2019
+START_TIME           00:00:00
+REPORT_START_DATE    01/07/2019
+REPORT_START_TIME    00:00:00
+END_DATE             01/07/2019
+END_TIME             06:00:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+1                100        4          0          0          0         
+2                0          0          0          0          0         
+3                0          0          0          0          0         
+4                0          0          0          0          0         
+5                0          0          0          0          0         
+6                0          0          0          0          0         
+7                0          0          0          0          0         
+8                0          0          0          0          0         
+9                0          0          0          0          0         
+10               0          0          0          0          0         
+11               0          0          0          0          0         
+12               0          0          0          0          0         
+13               0          0          0          0          0         
+14               0          0          0          0          0         
+15               0          0          0          0          0         
+16               0          0          0          0          0         
+17               0          0          0          0          0         
+18               0          0          0          0          0         
+19               0          0          0          0          0         
+20               0          0          0          0          0         
+21               0          0          0          0          0         
+22               0          0          0          0          0         
+23               0          0          0          0          0         
+24               0          0          0          0          0         
+25               0          0          0          0          0         
+26               0          0          0          0          0         
+27               0          0          0          0          0         
+28               0          0          0          0          0         
+29               0          0          0          0          0         
+30               0          0          0          0          0         
+31               0          0          0          0          0         
+32               0          0          0          0          0         
+33               0          0          0          0          0         
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1                1                2                400        0.01       0          0          0          0         
+2                2                3                400        0.01       0          0          0          0         
+3                3                4                400        0.01       0          0          0          0         
+4                4                5                400        0.01       0          0          0          0         
+5                5                6                400        0.01       0          0          0          0         
+6                6                7                400        0.01       0          0          0          0         
+8                10               9                400        0.01       0          0          0          0         
+9                9                8                400        0.01       0          0          0          0         
+10               8                11               400        0.01       0          0          0          0         
+11               11               9                400        0.01       0          0          0          0         
+12               11               12               400        0.01       0          0          0          0         
+13               13               14               400        0.01       0          0          0          0         
+14               15               14               400        0.01       0          0          0          0         
+15               14               16               400        0.01       0          0          0          0         
+16               16               17               400        0.01       0          0          0          0         
+17               18               19               400        0.01       0          0          0          0         
+18               19               20               400        0.01       0          0          0          0         
+19               20               22               400        0.01       0          0          0          0         
+20               22               23               400        0.01       0          0          0          0         
+21               20               21               400        0.01       0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                CIRCULAR     1                0          0          0          1                    
+2                CIRCULAR     1                0          0          0          1                    
+3                CIRCULAR     1                0          0          0          1                    
+4                CIRCULAR     1                0          0          0          1                    
+5                CIRCULAR     1                0          0          0          1                    
+6                CIRCULAR     1                0          0          0          1                    
+8                CIRCULAR     1                0          0          0          1                    
+9                CIRCULAR     1                0          0          0          1                    
+10               CIRCULAR     1                0          0          0          1                    
+11               CIRCULAR     1                0          0          0          1                    
+12               CIRCULAR     1                0          0          0          1                    
+13               CIRCULAR     1                0          0          0          1                    
+14               CIRCULAR     1                0          0          0          1                    
+15               CIRCULAR     1                0          0          0          1                    
+16               CIRCULAR     1                0          0          0          1                    
+17               CIRCULAR     1                0          0          0          1                    
+18               CIRCULAR     1                0          0          0          1                    
+19               CIRCULAR     1                0          0          0          1                    
+20               CIRCULAR     1                0          0          0          1                    
+21               CIRCULAR     1                0          0          0          1                    
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+1                FLOW             ""               FLOW     1.0      1.0      1       
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 0.000 0.000 10000.000 10000.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                -1332.180          8662.053          
+2                -605.536           7427.912          
+3                363.322            6216.840          
+4                1239.908           7797.001          
+5                2185.698           6286.044          
+6                3177.624           7785.467          
+7                3846.597           9215.686          
+8                5242.215           9181.084          
+9                4550.173           7358.708          
+10               3869.666           5732.411          
+11               7260.669           7289.504          
+12               8321.799           5870.819          
+13               9417.532           9250.288          
+14               11113.033          9238.754          
+15               12773.933          9319.493          
+16               11136.101          7716.263          
+17               11228.374          5893.887          
+18               1712.803           4809.689          
+19               -617.070           4740.484          
+20               -709.343           3125.721          
+21               1920.415           3194.925          
+22               -640.138           1326.413          
+23               2151.096           1303.345          
+24               4342.561           1361.015          
+25               4284.890           3552.480          
+26               4134.948           4878.893          
+27               5980.392           4544.406          
+28               6464.821           3667.820          
+29               5542.099           3160.323          
+30               4365.629           3483.276          
+31               5299.885           2272.203          
+32               6245.675           1637.832          
+33               7099.193           1153.403          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+6                3835.063           9123.414          
+6                3835.063           9123.414          
+6                3835.063           9123.414          
+

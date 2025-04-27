@@ -1,0 +1,194 @@
+[TITLE]
+;;Project Title/Notes
+ Wiltse Flats Stormwater Analysis
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           08/02/1999
+START_TIME           13:00:00
+REPORT_START_DATE    08/02/1999
+REPORT_START_TIME    13:00:00
+END_DATE             08/02/1999
+END_TIME             23:00:00
+SWEEP_START          1/1
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:15
+WET_STEP             00:01:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:15 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  FROUDE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+Penticton~10yr   INTENSITY 0.08333  1.0      TIMESERIES RN#1            
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+19#1             Penticton~10yr   19               68.633   27       377      13       0                        
+18#1             Penticton~10yr   18               91.386   27       363      8.74     0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+19#1             0.014      0.3        1.5        5          0          OUTLET    
+18#1             0.014      0.3        1.5        5          0          OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+19#1             5          2          3.6        0          0         
+18#1             5          2          3.6        0          0         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+19               417.9      2          0          0          0         
+17               417.8      1.6        0          0          0         
+16               417.69     4.31       0          0          0         
+15               417.6      5.85       0          0          0         
+18               417.66     5.94       0          0          0         
+14               417.5      6.3        0          0          0         
+13               417.3      2          0          0          0         
+12               408.4      1.8        0          0          0         
+11               401.8      2.3        0          0          0         
+10               399.3      1.9        0          0          0         
+9                398.9      3.1        0          0          0         
+8                398.85     1.15       0          0          0         
+7                398.57     2.93       0          0          0         
+6                398.425    2.775      0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+Outfall          398        FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+24               19               17               20         0.013      0          0          0          0         
+22               17               16               61         0.013      0          0          0          0         
+28               16               15               52.5       0.013      0          0          0          0         
+30               18               15               12.5       0.013      0          0          0          0         
+51               15               14               125.96     0.013      0          0          0          0         
+54               14               13               115        0.013      0          0          0          0         
+56               13               12               153        0.013      0          0          0          0         
+58               12               11               134.5      0.013      0          0.6        0          0         
+62               11               10               89.277     0.013      0          0.1        0          0         
+63               10               9                81.5       0.013      0          0          0          0         
+64               9                8                131        0.013      0          0          0          0         
+69               6                Outfall          12         0.013      0          0.4        0          0         
+71               7                6                70.79      0.013      0          0          0          0         
+72               8                7                106.78     0.013      0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+24               CIRCULAR     0.45             0.0001     0          0          1                    
+22               CIRCULAR     0.75             0.0001     0          0          1                    
+28               CIRCULAR     0.75             0.0001     0          0          1                    
+30               CIRCULAR     0.6              0.0001     0          0          1                    
+51               CIRCULAR     0.75             0.0001     0          0          1                    
+54               CIRCULAR     0.75             0.0001     0          0          1                    
+56               CIRCULAR     0.6              0.0001     0          0          1                    
+58               CIRCULAR     0.6              0.0001     0          0          1                    
+62               CIRCULAR     0.6              0.0001     0          0          1                    
+63               CIRCULAR     0.6              0.0001     0          0          1                    
+64               CIRCULAR     0.75             0.0001     0          0          1                    
+69               CIRCULAR     0.75             0.0001     0          0          1                    
+71               CIRCULAR     0.75             0.0001     0          0          1                    
+72               CIRCULAR     0.75             0.0001     0          0          1                    
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+RN#1                        0.00000    0         
+RN#1                        0.08333    0.895     
+RN#1                        0.16667    2.685     
+RN#1                        0.25000    9.265     
+RN#1                        0.33333    36.685    
+RN#1                        0.41667    15.21     
+RN#1                        0.50000    9.225     
+RN#1                        0.58333    5.375     
+RN#1                        0.66667    3.575     
+RN#1                        0.75000    2.685     
+RN#1                        0.83333    1.79      
+RN#1                        0.91667    1.21      
+RN#1                        1.00000    0.895     
+RN#1                        1.08333    0         
+
+[REPORT]
+;;Reporting Options
+INPUT      YES
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 313719.574 5482878.099 313999.627 5483991.901
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+19               313738.897         5482928.726       
+17               313732.779         5482934.599       
+16               313732.304         5482997.866       
+15               313734.258         5483046.707       
+18               313748.016         5483049.838       
+14               313771.659         5483161.984       
+13               313869.747         5483244.206       
+12               313946.135         5483367.088       
+11               313986.897         5483509.193       
+10               313961.038         5483570.206       
+9                313924.554         5483654.664       
+8                313847.243         5483758.523       
+7                313852.906         5483859.570       
+6                313857.680         5483935.339       
+Outfall          313875.016         5483970.062       
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+19#1             313485.764         5483034.827       
+18#1             313863.454         5483073.367       
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

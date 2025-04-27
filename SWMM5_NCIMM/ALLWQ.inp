@@ -1,0 +1,1438 @@
+[TITLE]
+
+[OPTIONS]
+FLOW_UNITS          	CMS
+INFILTRATION        	HORTON
+FLOW_ROUTING        	DYNWAVE
+START_DATE          	01/01/2013
+START_TIME          	00:00:00
+REPORT_START_DATE   	01/01/2013
+REPORT_START_TIME   	00:00:00
+END_DATE            	11/12/2013
+END_TIME            	00:00:00
+SWEEP_START         	1/1
+SWEEP_END           	12/31
+DRY_DAYS            	5
+REPORT_STEP         	24:00:00
+WET_STEP            	0:01:00
+DRY_STEP            	1:00:00
+ROUTING_STEP        	0:01:00 
+ALLOW_PONDING       	NO
+INERTIAL_DAMPING    	PARTIAL
+VARIABLE_STEP       	0.75
+LENGTHENING_STEP    	0
+MIN_SURFAREA        	100
+NORMAL_FLOW_LIMITED 	BOTH
+SKIP_STEADY_STATE   	NO
+FORCE_MAIN_EQUATION 	H-W
+LINK_OFFSETS        	ELEVATION
+MIN_SLOPE           	0
+
+[EVAPORATION]
+;;Type      	Parameters
+;;----------	----------
+CONSTANT    	0
+DRY_ONLY     NO
+
+[RAINGAGES]
+;;              	Rain     	Time  	Snow  	Data      
+;;Name          	Type     	Intrvl	Catch 	Source    
+;;--------------	---------	------	------	----------
+AHD_RF          	INTENSITY	24:00:00	1     	TIMESERIES	RF              
+
+[SUBCATCHMENTS]
+;;              	                	                	Total   	Pcnt.   	        	Pcnt.   	Curb    	Snow    
+;;Name          	Raingage        	Outlet          	Area    	Imperv  	Width   	Slope   	Length  	Pack    
+;;--------------	----------------	----------------	--------	--------	--------	--------	--------	--------
+Thaltej         	AHD_RF          	Thaltej_Lake    	453.59  	66.51   	2000    	0.5     	0       	                
+Bodakdev        	AHD_RF          	Bodakdev_Lake   	658.09  	58.47   	1800    	0.5     	0       	                
+Memnagar        	AHD_RF          	Memnagar_Lake   	134.6   	88.78   	1500    	0.5     	0       	                
+Vastrapur       	AHD_RF          	Vastrapur_Lake  	115.27  	84.37   	1200    	0.5     	0       	                
+Prahladnagar    	AHD_RF          	Prahladnagar_Lake	802.81  	79.63   	2000    	0.5     	0       	                
+Makarba         	AHD_RF          	Sarkhej_Lake    	174.88  	61.75   	800     	0.5     	0       	                
+
+[SUBAREAS]
+;;Subcatchment  	N-Imperv  	N-Perv    	S-Imperv  	S-Perv    	PctZero   	RouteTo   	PctRouted 
+;;--------------	----------	----------	----------	----------	----------	----------	----------
+Thaltej         	0.013     	0.05      	0.05      	0.05      	25        	OUTLET    
+Bodakdev        	0.013     	0.05      	0.05      	0.05      	25        	OUTLET    
+Memnagar        	0.013     	0.05      	0.05      	0.05      	25        	OUTLET    
+Vastrapur       	0.013     	0.05      	0.05      	0.05      	25        	OUTLET    
+Prahladnagar    	0.013     	0.05      	0.05      	0.05      	25        	OUTLET    
+Makarba         	0.013     	0.05      	0.05      	0.05      	25        	OUTLET    
+
+[INFILTRATION]
+;;Subcatchment  	MaxRate   	MinRate   	Decay     	DryTime   	MaxInfil  
+;;--------------	----------	----------	----------	----------	----------
+Thaltej         	3         	0.5       	4         	7         	0         
+Bodakdev        	3         	0.5       	4         	7         	0         
+Memnagar        	3         	0.5       	4         	7         	0         
+Vastrapur       	3         	0.5       	4         	7         	0         
+Prahladnagar    	3         	0.5       	4         	7         	0         
+Makarba         	3         	0.5       	4         	7         	0         
+
+[OUTFALLS]
+;;              	Invert    	Outfall   	Stage/Table     	Tide
+;;Name          	Elev.     	Type      	Time Series     	Gate
+;;--------------	----------	----------	----------------	----
+26              	35.535    	FREE      	                	NO
+
+[STORAGE]
+;;              	Invert  	Max.    	Init.   	Storage   	Curve   	        	        	Ponded  	Evap.   
+;;Name          	Elev.   	Depth   	Depth   	Curve     	Params  	        	        	Area    	Frac.   	Infiltration Parameters
+;;--------------	--------	--------	--------	----------	--------	--------	--------	--------	--------	-----------------------
+Thaltej_Lake    	46.6    	4       	0       	FUNCTIONAL	1000    	0       	0       	0       	1       
+Memnagar_Lake   	46.36   	3       	0       	FUNCTIONAL	1000    	0       	0       	0       	1       
+Vastrapur_Lake  	45.989  	4       	0       	FUNCTIONAL	1000    	0       	0       	0       	1       
+Bodakdev_Lake   	44.657  	1       	0       	FUNCTIONAL	1000    	0       	0       	0       	1       
+Prahladnagar_Lake	38.91   	3       	0       	TABULAR   	aa              		        	0       	1       
+Sarkhej_Lake    	37.43   	2.5     	0       	FUNCTIONAL	1000    	0       	0       	0       	1       
+
+[CONDUITS]
+;;              	Inlet           	Outlet          	          	Manning   	Inlet     	Outlet    	Init.     	Max.      
+;;Name          	Node            	Node            	Length    	N         	Offset    	Offset    	Flow      	Flow      
+;;--------------	----------------	----------------	----------	----------	----------	----------	----------	----------
+48              	Thaltej_Lake    	Memnagar_Lake   	400       	0.01      	46.6      	46.36     	0         	0         
+49              	Memnagar_Lake   	Vastrapur_Lake  	400       	0.01      	46.36     	46.36     	0         	0         
+50              	Vastrapur_Lake  	Bodakdev_Lake   	400       	0.01      	45.98     	45.98     	0         	0         
+51              	Bodakdev_Lake   	Prahladnagar_Lake	400       	0.01      	44.657    	44.657    	0         	0         
+52              	Prahladnagar_Lake	Sarkhej_Lake    	400       	0.01      	38.91     	38.91     	0         	0         
+53              	Sarkhej_Lake    	26              	400       	0.01      	37.43     	36.25     	0         	0         
+
+[XSECTIONS]
+;;Link          	Shape       	Geom1           	Geom2     	Geom3     	Geom4     	Barrels   
+;;--------------	------------	----------------	----------	----------	----------	----------
+48              	CIRCULAR    	1.2             	0         	0         	0         	1         	          
+49              	CIRCULAR    	1.2             	0         	0         	0         	1         	          
+50              	CIRCULAR    	1.8             	0         	0         	0         	1         	          
+51              	CIRCULAR    	1.8             	0         	0         	0         	1         	          
+52              	CIRCULAR    	2               	0         	0         	0         	1         	          
+53              	CIRCULAR    	2               	0         	0         	0         	1         	          
+
+[LOSSES]
+;;Link          	Inlet     	Outlet    	Average   	Flap Gate 
+;;--------------	----------	----------	----------	----------
+
+[POLLUTANTS]
+;;              	Mass  	Rain      	GW        	I&I       	Decay     	Snow 	Co-Pollut.      	Co-Pollut.	DWF       
+;;Name          	Units 	Concen.   	Concen.   	Concen.   	Coeff.    	Only 	Name            	Fraction  	Concen.   
+;;--------------	------	----------	----------	----------	----------	-----	----------------	----------	----------
+AmmonicalNitrogenNH3-N	MG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+BiochemicalOxygenDemand(BOD)	MG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+CalciumHardness 	MG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+ChemicaOxygenDemandCOD	MG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+ChorideasCL     	MG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+Colour          	uG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+Conductivity    	MG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+DissolvedPhosporus	mg/l  	1         	0         	0         	0         	NO   	*               	0         	0         
+FecalColiform   	UG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+FlavourThresholdTest	uG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+MagnesiumHardness	MG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+Odor            	uG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+Oil&Grease      	MG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+pH              	MG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+Sulfide         	MG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+TotalColiform   	#/L   	1         	0         	0         	0         	NO   	*               	0         	0         
+TotalDissolvedSolids	MG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+TotalHardness   	MG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+TotalNitrogen   	mg/l  	1         	0         	0         	0         	NO   	*               	0         	0         
+TotalPhosporus  	MG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+TotalSolids     	MG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+TotalSuspendedSolids(TSS)	MG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+Turbidity       	MG/L  	1         	0         	0         	0         	NO   	*               	0         	0         
+
+[LANDUSES]
+;;              	Cleaning  	Fraction  	Last      
+;;Name          	Interval  	Available 	Cleaned   
+;;--------------	----------	----------	----------
+Residential     	1         	0         	0         
+Commercial      	1         	0         	0         
+MixedUse        	1         	0         	0         
+
+[COVERAGES]
+;;Subcatchment  	Land Use        	Percent   
+;;--------------	----------------	----------
+Thaltej         	Residential     	39.23     
+Thaltej         	Commercial      	3.23      
+Thaltej         	MixedUse        	9.35      
+Bodakdev        	Residential     	29.29     
+Bodakdev        	Commercial      	6.88      
+Bodakdev        	MixedUse        	5.67      
+Memnagar        	Residential     	53.77     
+Memnagar        	Commercial      	1.99      
+Memnagar        	MixedUse        	18.41     
+Vastrapur       	Residential     	49.85     
+Vastrapur       	Commercial      	5.51      
+Vastrapur       	MixedUse        	13.2      
+Prahladnagar    	Residential     	42.92     
+Prahladnagar    	Commercial      	4.96      
+Prahladnagar    	MixedUse        	15.7      
+Makarba         	Residential     	26.66     
+Makarba         	Commercial      	1.61      
+Makarba         	MixedUse        	8.7       
+
+[LOADINGS]
+;;Subcatchment  	Pollutant       	Loading   
+;;--------------	----------------	----------
+
+[BUILDUP]
+;;LandUse       	Pollutant       	Function  	Coeff1    	Coeff2    	Coeff3    	Normalizer
+;;--------------	----------------	----------	----------	----------	----------	----------
+Residential     	Colour          	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	Odor            	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	FlavourThresholdTest	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	Conductivity    	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	TotalSolids     	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	TotalDissolvedSolids	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	TotalSuspendedSolids(TSS)	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	ChorideasCL     	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	Oil&Grease      	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	                	          	          	          	          	          
+Residential     	TotalHardness   	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	CalciumHardness 	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	MagnesiumHardness	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	Sulfide         	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	pH              	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	AmmonicalNitrogenNH3-N	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	ChemicaOxygenDemandCOD	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	BiochemicalOxygenDemand(BOD)	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	TotalColiform   	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	FecalColiform   	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	TotalPhosporus  	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	DissolvedPhosporus	NONE      	0.15      	0.5       	0         	AREA      
+Residential     	TotalNitrogen   	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	Colour          	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	Odor            	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	FlavourThresholdTest	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	Conductivity    	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	TotalSolids     	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	TotalDissolvedSolids	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	TotalSuspendedSolids(TSS)	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	ChorideasCL     	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	Oil&Grease      	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	                	          	          	          	          	          
+Commercial      	TotalHardness   	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	CalciumHardness 	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	MagnesiumHardness	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	Sulfide         	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	pH              	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	AmmonicalNitrogenNH3-N	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	ChemicaOxygenDemandCOD	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	BiochemicalOxygenDemand(BOD)	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	TotalColiform   	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	FecalColiform   	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	TotalPhosporus  	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	DissolvedPhosporus	NONE      	0.15      	0.5       	0         	AREA      
+Commercial      	TotalNitrogen   	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	Colour          	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	Odor            	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	FlavourThresholdTest	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	Conductivity    	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	TotalSolids     	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	TotalDissolvedSolids	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	TotalSuspendedSolids(TSS)	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	ChorideasCL     	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	Oil&Grease      	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	                	          	          	          	          	          
+MixedUse        	TotalHardness   	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	CalciumHardness 	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	MagnesiumHardness	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	Sulfide         	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	pH              	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	AmmonicalNitrogenNH3-N	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	ChemicaOxygenDemandCOD	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	BiochemicalOxygenDemand(BOD)	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	TotalColiform   	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	FecalColiform   	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	TotalPhosporus  	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	DissolvedPhosporus	NONE      	0.15      	0.5       	0         	AREA      
+MixedUse        	TotalNitrogen   	NONE      	0.15      	0.5       	0         	AREA      
+
+[WASHOFF]
+;;              	                	          	          	          	Cleaning  	BMP       
+;;Land Use      	Pollutant       	Function  	Coeff1    	Coeff2    	Effic.    	Effic.    
+;;--------------	----------------	----------	----------	----------	----------	----------
+Residential     	Colour          	EMC       	1         	0         	0         	0         
+Residential     	Odor            	EMC       	1         	0         	0         	0         
+Residential     	FlavourThresholdTest	EMC       	1         	0         	0         	0         
+Residential     	Conductivity    	EMC       	1         	0         	0         	0         
+Residential     	TotalSolids     	EMC       	1         	0         	0         	0         
+Residential     	TotalDissolvedSolids	EMC       	1         	0         	0         	0         
+Residential     	TotalSuspendedSolids(TSS)	EMC       	1         	0         	0         	0         
+Residential     	ChorideasCL     	EMC       	1         	0         	0         	0         
+Residential     	Oil&Grease      	EMC       	1         	0         	0         	0         
+Residential     	                	          	          	          	          	          
+Residential     	TotalHardness   	EMC       	1         	0         	0         	0         
+Residential     	CalciumHardness 	EMC       	1         	0         	0         	0         
+Residential     	MagnesiumHardness	EMC       	1         	0         	0         	0         
+Residential     	Sulfide         	EMC       	1         	0         	0         	0         
+Residential     	pH              	EMC       	1         	0         	0         	0         
+Residential     	AmmonicalNitrogenNH3-N	EMC       	1         	0         	0         	0         
+Residential     	ChemicaOxygenDemandCOD	EMC       	1         	0         	0         	0         
+Residential     	BiochemicalOxygenDemand(BOD)	EMC       	1         	0         	0         	0         
+Residential     	TotalColiform   	EMC       	1         	0         	0         	0         
+Residential     	FecalColiform   	EMC       	1         	0         	0         	0         
+Residential     	TotalPhosporus  	EMC       	1         	0         	0         	0         
+Residential     	DissolvedPhosporus	EMC       	1         	0         	0         	0         
+Residential     	TotalNitrogen   	EMC       	1         	0         	0         	0         
+Commercial      	Colour          	EMC       	1         	0         	0         	0         
+Commercial      	Odor            	EMC       	1         	0         	0         	0         
+Commercial      	FlavourThresholdTest	EMC       	1         	0         	0         	0         
+Commercial      	Conductivity    	EMC       	1         	0         	0         	0         
+Commercial      	TotalSolids     	EMC       	1         	0         	0         	0         
+Commercial      	TotalDissolvedSolids	EMC       	1         	0         	0         	0         
+Commercial      	TotalSuspendedSolids(TSS)	EMC       	1         	0         	0         	0         
+Commercial      	ChorideasCL     	EMC       	1         	0         	0         	0         
+Commercial      	Oil&Grease      	EMC       	1         	0         	0         	0         
+Commercial      	                	          	          	          	          	          
+Commercial      	TotalHardness   	EMC       	1         	0         	0         	0         
+Commercial      	CalciumHardness 	EMC       	1         	0         	0         	0         
+Commercial      	MagnesiumHardness	EMC       	1         	0         	0         	0         
+Commercial      	Sulfide         	EMC       	1         	0         	0         	0         
+Commercial      	pH              	EMC       	1         	0         	0         	0         
+Commercial      	AmmonicalNitrogenNH3-N	EMC       	1         	0         	0         	0         
+Commercial      	ChemicaOxygenDemandCOD	EMC       	1         	0         	0         	0         
+Commercial      	BiochemicalOxygenDemand(BOD)	EMC       	1         	0         	0         	0         
+Commercial      	TotalColiform   	EMC       	1         	0         	0         	0         
+Commercial      	FecalColiform   	EMC       	1         	0         	0         	0         
+Commercial      	TotalPhosporus  	EMC       	1         	0         	0         	0         
+Commercial      	DissolvedPhosporus	EMC       	1         	0         	0         	0         
+Commercial      	TotalNitrogen   	EMC       	1         	0         	0         	0         
+MixedUse        	Colour          	EMC       	1         	0         	0         	0         
+MixedUse        	Odor            	EMC       	1         	0         	0         	0         
+MixedUse        	FlavourThresholdTest	EMC       	1         	0         	0         	0         
+MixedUse        	Conductivity    	EMC       	1         	0         	0         	0         
+MixedUse        	TotalSolids     	EMC       	1         	0         	0         	0         
+MixedUse        	TotalDissolvedSolids	EMC       	1         	0         	0         	0         
+MixedUse        	TotalSuspendedSolids(TSS)	EMC       	1         	0         	0         	0         
+MixedUse        	ChorideasCL     	EMC       	1         	0         	0         	0         
+MixedUse        	Oil&Grease      	EMC       	1         	0         	0         	0         
+MixedUse        	                	          	          	          	          	          
+MixedUse        	TotalHardness   	EMC       	1         	0         	0         	0         
+MixedUse        	CalciumHardness 	EMC       	1         	0         	0         	0         
+MixedUse        	MagnesiumHardness	EMC       	1         	0         	0         	0         
+MixedUse        	Sulfide         	EMC       	1         	0         	0         	0         
+MixedUse        	pH              	EMC       	1         	0         	0         	0         
+MixedUse        	AmmonicalNitrogenNH3-N	EMC       	1         	0         	0         	0         
+MixedUse        	ChemicaOxygenDemandCOD	EMC       	1         	0         	0         	0         
+MixedUse        	BiochemicalOxygenDemand(BOD)	EMC       	1         	0         	0         	0         
+MixedUse        	TotalColiform   	EMC       	1         	0         	0         	0         
+MixedUse        	FecalColiform   	EMC       	1         	0         	0         	0         
+MixedUse        	TotalPhosporus  	EMC       	1         	0         	0         	0         
+MixedUse        	DissolvedPhosporus	EMC       	1         	0         	0         	0         
+MixedUse        	TotalNitrogen   	EMC       	1         	0         	0         	0         
+
+[CURVES]
+;;Name          	Type      	X-Value   	Y-Value   
+;;--------------	----------	----------	----------
+aa              	Storage   	38.91     	18568     
+aa              	          	45        	22803     
+
+[TIMESERIES]
+;;Name          	Date      	Time      	Value     
+;;--------------	----------	----------	----------
+AHMD_2013       	1/1/2013  	0         	0         
+AHMD_2013       	1/2/2013  	24        	0         
+AHMD_2013       	1/3/2013  	48        	0         
+AHMD_2013       	1/4/2013  	72        	0         
+AHMD_2013       	1/5/2013  	96        	0         
+AHMD_2013       	1/6/2013  	120       	0         
+AHMD_2013       	1/7/2013  	144       	0         
+AHMD_2013       	1/8/2013  	168       	0         
+AHMD_2013       	1/9/2013  	192       	0         
+AHMD_2013       	1/10/2013 	216       	0         
+AHMD_2013       	1/11/2013 	240       	0         
+AHMD_2013       	1/12/2013 	264       	0         
+AHMD_2013       	1/13/2013 	288       	0         
+AHMD_2013       	1/14/2013 	312       	0         
+AHMD_2013       	1/15/2013 	336       	0         
+AHMD_2013       	1/16/2013 	360       	0         
+AHMD_2013       	1/17/2013 	384       	0         
+AHMD_2013       	1/18/2013 	408       	0         
+AHMD_2013       	1/19/2013 	432       	0         
+AHMD_2013       	1/20/2013 	456       	0         
+AHMD_2013       	1/21/2013 	480       	0         
+AHMD_2013       	1/22/2013 	504       	0         
+AHMD_2013       	1/23/2013 	528       	0         
+AHMD_2013       	1/24/2013 	552       	0         
+AHMD_2013       	1/25/2013 	576       	0         
+AHMD_2013       	1/26/2013 	600       	0         
+AHMD_2013       	1/27/2013 	624       	0         
+AHMD_2013       	1/28/2013 	648       	0         
+AHMD_2013       	1/29/2013 	672       	0         
+AHMD_2013       	1/30/2013 	696       	0         
+AHMD_2013       	1/31/2013 	720       	0         
+AHMD_2013       	2/1/2013  	744       	0         
+AHMD_2013       	2/2/2013  	768       	0         
+AHMD_2013       	2/3/2013  	792       	0         
+AHMD_2013       	2/4/2013  	816       	0         
+AHMD_2013       	2/5/2013  	840       	0         
+AHMD_2013       	2/6/2013  	864       	0         
+AHMD_2013       	2/7/2013  	888       	0         
+AHMD_2013       	2/8/2013  	912       	0         
+AHMD_2013       	2/9/2013  	936       	0         
+AHMD_2013       	2/10/2013 	960       	0         
+AHMD_2013       	2/11/2013 	984       	0         
+AHMD_2013       	2/12/2013 	1008      	0         
+AHMD_2013       	2/13/2013 	1032      	0         
+AHMD_2013       	2/14/2013 	1056      	0         
+AHMD_2013       	2/15/2013 	1080      	0         
+AHMD_2013       	2/16/2013 	1104      	0         
+AHMD_2013       	2/17/2013 	1128      	0         
+AHMD_2013       	2/18/2013 	1152      	0         
+AHMD_2013       	2/19/2013 	1176      	0         
+AHMD_2013       	2/20/2013 	1200      	0         
+AHMD_2013       	2/21/2013 	1224      	0         
+AHMD_2013       	2/22/2013 	1248      	0         
+AHMD_2013       	2/23/2013 	1272      	0         
+AHMD_2013       	2/24/2013 	1296      	0         
+AHMD_2013       	2/25/2013 	1320      	0         
+AHMD_2013       	2/26/2013 	1344      	0         
+AHMD_2013       	2/27/2013 	1368      	0         
+AHMD_2013       	2/28/2013 	1392      	0         
+AHMD_2013       	3/1/2013  	1416      	0         
+AHMD_2013       	3/2/2013  	1440      	0         
+AHMD_2013       	3/3/2013  	1464      	0         
+AHMD_2013       	3/4/2013  	1488      	0         
+AHMD_2013       	3/5/2013  	1512      	0         
+AHMD_2013       	3/6/2013  	1536      	0         
+AHMD_2013       	3/7/2013  	1560      	0         
+AHMD_2013       	3/8/2013  	1584      	0         
+AHMD_2013       	3/9/2013  	1608      	0         
+AHMD_2013       	3/10/2013 	1632      	0         
+AHMD_2013       	3/11/2013 	1656      	0         
+AHMD_2013       	3/12/2013 	1680      	0         
+AHMD_2013       	3/13/2013 	1704      	0         
+AHMD_2013       	3/14/2013 	1728      	0         
+AHMD_2013       	3/15/2013 	1752      	0         
+AHMD_2013       	3/16/2013 	1776      	0         
+AHMD_2013       	3/17/2013 	1800      	0         
+AHMD_2013       	3/18/2013 	1824      	0         
+AHMD_2013       	3/19/2013 	1848      	0         
+AHMD_2013       	3/20/2013 	1872      	0         
+AHMD_2013       	3/21/2013 	1896      	0         
+AHMD_2013       	3/22/2013 	1920      	0         
+AHMD_2013       	3/23/2013 	1944      	0         
+AHMD_2013       	3/24/2013 	1968      	0         
+AHMD_2013       	3/25/2013 	1992      	0         
+AHMD_2013       	3/26/2013 	2016      	0         
+AHMD_2013       	3/27/2013 	2040      	0         
+AHMD_2013       	3/28/2013 	2064      	0         
+AHMD_2013       	3/29/2013 	2088      	0         
+AHMD_2013       	3/30/2013 	2112      	0         
+AHMD_2013       	3/31/2013 	2136      	0         
+AHMD_2013       	4/1/2013  	2160      	0         
+AHMD_2013       	4/2/2013  	2184      	0         
+AHMD_2013       	4/3/2013  	2208      	0         
+AHMD_2013       	4/4/2013  	2232      	0         
+AHMD_2013       	4/5/2013  	2256      	0         
+AHMD_2013       	4/6/2013  	2280      	0         
+AHMD_2013       	4/7/2013  	2304      	0         
+AHMD_2013       	4/8/2013  	2328      	0         
+AHMD_2013       	4/9/2013  	2352      	0         
+AHMD_2013       	4/10/2013 	2376      	0.1       
+AHMD_2013       	4/11/2013 	2400      	0         
+AHMD_2013       	4/12/2013 	2424      	0         
+AHMD_2013       	4/13/2013 	2448      	0         
+AHMD_2013       	4/14/2013 	2472      	0         
+AHMD_2013       	4/15/2013 	2496      	0         
+AHMD_2013       	4/16/2013 	2520      	0         
+AHMD_2013       	4/17/2013 	2544      	0         
+AHMD_2013       	4/18/2013 	2568      	0         
+AHMD_2013       	4/19/2013 	2592      	5         
+AHMD_2013       	4/20/2013 	2616      	0.1       
+AHMD_2013       	4/21/2013 	2640      	0.1       
+AHMD_2013       	4/22/2013 	2664      	0         
+AHMD_2013       	4/23/2013 	2688      	0.4       
+AHMD_2013       	4/24/2013 	2712      	0         
+AHMD_2013       	4/25/2013 	2736      	0         
+AHMD_2013       	4/26/2013 	2760      	0         
+AHMD_2013       	4/27/2013 	2784      	0         
+AHMD_2013       	4/28/2013 	2808      	0         
+AHMD_2013       	4/29/2013 	2832      	0         
+AHMD_2013       	4/30/2013 	2856      	0         
+AHMD_2013       	5/1/2013  	2880      	0         
+AHMD_2013       	5/2/2013  	2904      	0         
+AHMD_2013       	5/3/2013  	2928      	0         
+AHMD_2013       	5/4/2013  	2952      	0         
+AHMD_2013       	5/5/2013  	2976      	0         
+AHMD_2013       	5/6/2013  	3000      	0         
+AHMD_2013       	5/7/2013  	3024      	0         
+AHMD_2013       	5/8/2013  	3048      	0         
+AHMD_2013       	5/9/2013  	3072      	0         
+AHMD_2013       	5/10/2013 	3096      	0         
+AHMD_2013       	5/11/2013 	3120      	0         
+AHMD_2013       	5/12/2013 	3144      	0         
+AHMD_2013       	5/13/2013 	3168      	0         
+AHMD_2013       	5/14/2013 	3192      	0         
+AHMD_2013       	5/15/2013 	3216      	0         
+AHMD_2013       	5/16/2013 	3240      	0         
+AHMD_2013       	5/17/2013 	3264      	0         
+AHMD_2013       	5/18/2013 	3288      	0         
+AHMD_2013       	5/19/2013 	3312      	0         
+AHMD_2013       	5/20/2013 	3336      	0         
+AHMD_2013       	5/21/2013 	3360      	0         
+AHMD_2013       	5/22/2013 	3384      	0         
+AHMD_2013       	5/23/2013 	3408      	0         
+AHMD_2013       	5/24/2013 	3432      	0         
+AHMD_2013       	5/25/2013 	3456      	0         
+AHMD_2013       	5/26/2013 	3480      	0         
+AHMD_2013       	5/27/2013 	3504      	0         
+AHMD_2013       	5/28/2013 	3528      	0         
+AHMD_2013       	5/29/2013 	3552      	0         
+AHMD_2013       	5/30/2013 	3576      	0         
+AHMD_2013       	5/31/2013 	3600      	0         
+AHMD_2013       	6/1/2013  	3624      	0         
+AHMD_2013       	6/2/2013  	3648      	0         
+AHMD_2013       	6/3/2013  	3672      	0         
+AHMD_2013       	6/4/2013  	3696      	0         
+AHMD_2013       	6/5/2013  	3720      	10.6      
+AHMD_2013       	6/6/2013  	3744      	0         
+AHMD_2013       	6/7/2013  	3768      	0         
+AHMD_2013       	6/8/2013  	3792      	1.8       
+AHMD_2013       	6/9/2013  	3816      	0         
+AHMD_2013       	6/10/2013 	3840      	0         
+AHMD_2013       	6/11/2013 	3864      	4.1       
+AHMD_2013       	6/12/2013 	3888      	0.4       
+AHMD_2013       	6/13/2013 	3912      	0.8       
+AHMD_2013       	6/14/2013 	3936      	0         
+AHMD_2013       	6/15/2013 	3960      	24.3      
+AHMD_2013       	6/16/2013 	3984      	3.6       
+AHMD_2013       	6/17/2013 	4008      	60.5      
+AHMD_2013       	6/18/2013 	4032      	1.4       
+AHMD_2013       	6/19/2013 	4056      	0         
+AHMD_2013       	6/20/2013 	4080      	0         
+AHMD_2013       	6/21/2013 	4104      	0         
+AHMD_2013       	6/22/2013 	4128      	0         
+AHMD_2013       	6/23/2013 	4152      	0         
+AHMD_2013       	6/24/2013 	4176      	0         
+AHMD_2013       	6/25/2013 	4200      	0         
+AHMD_2013       	6/26/2013 	4224      	0         
+AHMD_2013       	6/27/2013 	4248      	0         
+AHMD_2013       	6/28/2013 	4272      	0         
+AHMD_2013       	6/29/2013 	4296      	0         
+AHMD_2013       	6/30/2013 	4320      	0         
+AHMD_2013       	7/1/2013  	4344      	0         
+AHMD_2013       	7/2/2013  	4368      	0         
+AHMD_2013       	7/3/2013  	4392      	0         
+AHMD_2013       	7/4/2013  	4416      	0         
+AHMD_2013       	7/5/2013  	4440      	131.7     
+AHMD_2013       	7/6/2013  	4464      	0.3       
+AHMD_2013       	7/7/2013  	4488      	12.6      
+AHMD_2013       	7/8/2013  	4512      	0         
+AHMD_2013       	7/10/2013 	4560      	2.5       
+AHMD_2013       	7/11/2013 	4584      	13.1      
+AHMD_2013       	7/12/2013 	4608      	0.7       
+AHMD_2013       	7/13/2013 	4632      	29.2      
+AHMD_2013       	7/14/2013 	4656      	52.5      
+AHMD_2013       	7/15/2013 	4680      	1.2       
+AHMD_2013       	7/16/2013 	4704      	0         
+AHMD_2013       	7/17/2013 	4728      	0         
+AHMD_2013       	7/18/2013 	4752      	1.1       
+AHMD_2013       	7/19/2013 	4776      	0.7       
+AHMD_2013       	7/20/2013 	4800      	1.4       
+AHMD_2013       	7/21/2013 	4824      	0         
+AHMD_2013       	7/22/2013 	4848      	0         
+AHMD_2013       	7/23/2013 	4872      	30.2      
+AHMD_2013       	7/24/2013 	4896      	1.3       
+AHMD_2013       	7/25/2013 	4920      	40.3      
+AHMD_2013       	7/26/2013 	4944      	0.9       
+AHMD_2013       	7/27/2013 	4968      	41.6      
+AHMD_2013       	7/28/2013 	4992      	0         
+AHMD_2013       	7/29/2013 	5016      	43.8      
+AHMD_2013       	7/30/2013 	5040      	7.3       
+AHMD_2013       	7/31/2013 	5064      	0.4       
+AHMD_2013       	8/1/2013  	5088      	0         
+AHMD_2013       	8/2/2013  	5112      	25.6      
+AHMD_2013       	8/3/2013  	5136      	70.3      
+AHMD_2013       	8/4/2013  	5160      	1.4       
+AHMD_2013       	8/5/2013  	5184      	0         
+AHMD_2013       	8/6/2013  	5208      	0         
+AHMD_2013       	8/7/2013  	5232      	0         
+AHMD_2013       	8/8/2013  	5256      	0.2       
+AHMD_2013       	8/9/2013  	5280      	4.8       
+AHMD_2013       	8/10/2013 	5304      	0.8       
+AHMD_2013       	8/11/2013 	5328      	16.1      
+AHMD_2013       	8/12/2013 	5352      	1.1       
+AHMD_2013       	8/13/2013 	5376      	6.4       
+AHMD_2013       	8/14/2013 	5400      	9.7       
+AHMD_2013       	8/15/2013 	5424      	19.7      
+AHMD_2013       	8/16/2013 	5448      	2.7       
+AHMD_2013       	8/17/2013 	5472      	4         
+AHMD_2013       	8/18/2013 	5496      	1.1       
+AHMD_2013       	8/19/2013 	5520      	0         
+AHMD_2013       	8/20/2013 	5544      	0         
+AHMD_2013       	8/21/2013 	5568      	0         
+AHMD_2013       	8/22/2013 	5592      	0         
+AHMD_2013       	8/23/2013 	5616      	0         
+AHMD_2013       	8/24/2013 	5640      	6.8       
+AHMD_2013       	8/25/2013 	5664      	2.6       
+AHMD_2013       	8/26/2013 	5688      	0         
+AHMD_2013       	8/27/2013 	5712      	0         
+AHMD_2013       	8/28/2013 	5736      	0         
+AHMD_2013       	8/29/2013 	5760      	0.2       
+AHMD_2013       	8/30/2013 	5784      	0         
+AHMD_2013       	8/31/2013 	5808      	0         
+AHMD_2013       	9/1/2013  	5832      	0         
+AHMD_2013       	9/2/2013  	5856      	0         
+AHMD_2013       	9/3/2013  	5880      	0         
+AHMD_2013       	9/4/2013  	5904      	0         
+AHMD_2013       	9/5/2013  	5928      	0         
+AHMD_2013       	9/6/2013  	5952      	0         
+AHMD_2013       	9/7/2013  	5976      	8.5       
+AHMD_2013       	9/8/2013  	6000      	14.3      
+AHMD_2013       	9/9/2013  	6024      	0         
+AHMD_2013       	9/10/2013 	6048      	0         
+AHMD_2013       	9/11/2013 	6072      	0         
+AHMD_2013       	9/12/2013 	6096      	0         
+AHMD_2013       	9/13/2013 	6120      	0         
+AHMD_2013       	9/14/2013 	6144      	0         
+AHMD_2013       	9/15/2013 	6168      	0         
+AHMD_2013       	9/16/2013 	6192      	0         
+AHMD_2013       	9/17/2013 	6216      	0         
+AHMD_2013       	9/18/2013 	6240      	0         
+AHMD_2013       	9/19/2013 	6264      	0         
+AHMD_2013       	9/20/2013 	6288      	0         
+AHMD_2013       	9/21/2013 	6312      	0         
+AHMD_2013       	9/22/2013 	6336      	3.5       
+AHMD_2013       	9/23/2013 	6360      	19        
+AHMD_2013       	9/24/2013 	6384      	26.7      
+AHMD_2013       	9/25/2013 	6408      	80.8      
+AHMD_2013       	9/26/2013 	6432      	32.9      
+AHMD_2013       	9/27/2013 	6456      	2.2       
+AHMD_2013       	9/28/2013 	6480      	1.5       
+AHMD_2013       	9/29/2013 	6504      	4.1       
+AHMD_2013       	9/30/2013 	6528      	0         
+AHMD_2013       	10/1/2013 	6552      	21.9      
+AHMD_2013       	10/2/2013 	6576      	0         
+AHMD_2013       	10/3/2013 	6600      	2.4       
+AHMD_2013       	10/4/2013 	6624      	0         
+AHMD_2013       	10/5/2013 	6648      	0         
+AHMD_2013       	10/6/2013 	6672      	0.4       
+AHMD_2013       	10/7/2013 	6696      	0.6       
+AHMD_2013       	10/8/2013 	6720      	0         
+AHMD_2013       	10/10/2013	6768      	3.9       
+AHMD_2013       	10/11/2013	6792      	0         
+AHMD_2013       	10/12/2013	6816      	0         
+AHMD_2013       	10/13/2013	6840      	0         
+AHMD_2013       	10/14/2013	6864      	0         
+AHMD_2013       	10/15/2013	6888      	0         
+AHMD_2013       	10/16/2013	6912      	0         
+AHMD_2013       	10/17/2013	6936      	0         
+AHMD_2013       	10/18/2013	6960      	0         
+AHMD_2013       	10/19/2013	6984      	0         
+AHMD_2013       	10/20/2013	7008      	0         
+AHMD_2013       	10/21/2013	7032      	14.6      
+AHMD_2013       	10/22/2013	7056      	62.5      
+AHMD_2013       	10/23/2013	7080      	0         
+AHMD_2013       	10/24/2013	7104      	0         
+AHMD_2013       	10/25/2013	7128      	0         
+AHMD_2013       	10/26/2013	7152      	0         
+AHMD_2013       	10/27/2013	7176      	0         
+AHMD_2013       	10/28/2013	7200      	0         
+AHMD_2013       	10/29/2013	7224      	0         
+AHMD_2013       	10/30/2013	7248      	0         
+AHMD_2013       	10/31/2013	7272      	0         
+AHMD_2013       	11/1/2013 	7296      	0         
+AHMD_2013       	11/2/2013 	7320      	0         
+AHMD_2013       	11/3/2013 	7344      	0         
+AHMD_2013       	11/4/2013 	7368      	0         
+AHMD_2013       	11/5/2013 	7392      	0         
+AHMD_2013       	11/6/2013 	7416      	0         
+AHMD_2013       	11/7/2013 	7440      	0         
+AHMD_2013       	11/8/2013 	7464      	0         
+AHMD_2013       	11/9/2013 	7488      	0         
+AHMD_2013       	11/10/2013	7512      	0         
+AHMD_2013       	11/11/2013	7536      	0         
+AHMD_2013       	11/12/2013	7560      	0         
+AHMD_2013       	11/13/2013	7584      	0         
+AHMD_2013       	11/14/2013	7608      	0         
+AHMD_2013       	11/15/2013	7632      	0         
+AHMD_2013       	11/16/2013	7656      	0         
+AHMD_2013       	11/17/2013	7680      	0         
+AHMD_2013       	11/18/2013	7704      	0         
+AHMD_2013       	11/19/2013	7728      	0         
+AHMD_2013       	11/20/2013	7752      	0         
+AHMD_2013       	11/21/2013	7776      	0         
+AHMD_2013       	11/22/2013	7800      	0         
+AHMD_2013       	11/23/2013	7824      	0         
+AHMD_2013       	11/24/2013	7848      	0         
+AHMD_2013       	11/25/2013	7872      	0         
+AHMD_2013       	11/26/2013	7896      	0         
+AHMD_2013       	11/27/2013	7920      	0         
+AHMD_2013       	11/28/2013	7944      	0         
+AHMD_2013       	11/29/2013	7968      	0         
+AHMD_2013       	11/30/2013	7992      	0         
+AHMD_2013       	12/1/2013 	8016      	0         
+AHMD_2013       	12/2/2013 	8040      	0         
+AHMD_2013       	12/3/2013 	8064      	0         
+AHMD_2013       	12/4/2013 	8088      	0         
+AHMD_2013       	12/5/2013 	8112      	0         
+AHMD_2013       	12/6/2013 	8136      	0         
+AHMD_2013       	12/7/2013 	8160      	0         
+AHMD_2013       	12/8/2013 	8184      	0         
+AHMD_2013       	12/9/2013 	8208      	0         
+AHMD_2013       	12/10/2013	8232      	0         
+AHMD_2013       	12/11/2013	8256      	0         
+AHMD_2013       	12/12/2013	8280      	0         
+AHMD_2013       	12/13/2013	8304      	0         
+AHMD_2013       	12/14/2013	8328      	0         
+AHMD_2013       	12/15/2013	8352      	0         
+AHMD_2013       	12/16/2013	8376      	0         
+AHMD_2013       	12/17/2013	8400      	0         
+AHMD_2013       	12/18/2013	8424      	0         
+AHMD_2013       	12/19/2013	8448      	0         
+AHMD_2013       	12/20/2013	8472      	0         
+AHMD_2013       	12/21/2013	8496      	0         
+AHMD_2013       	12/22/2013	8520      	0         
+AHMD_2013       	12/23/2013	8544      	0         
+AHMD_2013       	12/24/2013	8568      	0         
+AHMD_2013       	12/25/2013	8592      	0         
+AHMD_2013       	12/26/2013	8616      	0         
+AHMD_2013       	12/27/2013	8640      	0         
+AHMD_2013       	12/28/2013	8664      	0         
+AHMD_2013       	12/29/2013	8688      	0         
+AHMD_2013       	12/30/2013	8712      	0         
+AHMD_2013       	12/31/2013	8736      	0         
+
+RF              	          	0         	0         
+RF              	          	24        	0         
+RF              	          	48        	0         
+RF              	          	72        	0         
+RF              	          	96        	0         
+RF              	          	120       	0         
+RF              	          	144       	0         
+RF              	          	168       	0         
+RF              	          	192       	0         
+RF              	          	216       	0         
+RF              	          	240       	0         
+RF              	          	264       	0         
+RF              	          	288       	0         
+RF              	          	312       	0         
+RF              	          	336       	0         
+RF              	          	360       	0         
+RF              	          	384       	0         
+RF              	          	408       	0         
+RF              	          	432       	0         
+RF              	          	456       	0         
+RF              	          	480       	0         
+RF              	          	504       	0         
+RF              	          	528       	0         
+RF              	          	552       	0         
+RF              	          	576       	0         
+RF              	          	600       	0         
+RF              	          	624       	0         
+RF              	          	648       	0         
+RF              	          	672       	0         
+RF              	          	696       	0         
+RF              	          	720       	0         
+RF              	          	744       	0         
+RF              	          	768       	0         
+RF              	          	792       	0         
+RF              	          	816       	0         
+RF              	          	840       	0         
+RF              	          	864       	0         
+RF              	          	888       	0         
+RF              	          	912       	0         
+RF              	          	936       	0         
+RF              	          	960       	0         
+RF              	          	984       	0         
+RF              	          	1008      	0         
+RF              	          	1032      	0         
+RF              	          	1056      	0         
+RF              	          	1080      	0         
+RF              	          	1104      	0         
+RF              	          	1128      	0         
+RF              	          	1152      	0         
+RF              	          	1176      	0         
+RF              	          	1200      	0         
+RF              	          	1224      	0         
+RF              	          	1248      	0         
+RF              	          	1272      	0         
+RF              	          	1296      	0         
+RF              	          	1320      	0         
+RF              	          	1344      	0         
+RF              	          	1368      	0         
+RF              	          	1392      	0         
+RF              	          	1416      	0         
+RF              	          	1440      	0         
+RF              	          	1464      	0         
+RF              	          	1488      	0         
+RF              	          	1512      	0         
+RF              	          	1536      	0         
+RF              	          	1560      	0         
+RF              	          	1584      	0         
+RF              	          	1608      	0         
+RF              	          	1632      	0         
+RF              	          	1656      	0         
+RF              	          	1680      	0         
+RF              	          	1704      	0         
+RF              	          	1728      	0         
+RF              	          	1752      	0         
+RF              	          	1776      	0         
+RF              	          	1800      	0         
+RF              	          	1824      	0         
+RF              	          	1848      	0         
+RF              	          	1872      	0         
+RF              	          	1896      	0         
+RF              	          	1920      	0         
+RF              	          	1944      	0         
+RF              	          	1968      	0         
+RF              	          	1992      	0         
+RF              	          	2016      	0         
+RF              	          	2040      	0         
+RF              	          	2064      	0         
+RF              	          	2088      	0         
+RF              	          	2112      	0         
+RF              	          	2136      	0         
+RF              	          	2160      	0         
+RF              	          	2184      	0         
+RF              	          	2208      	0         
+RF              	          	2232      	0         
+RF              	          	2256      	0         
+RF              	          	2280      	0         
+RF              	          	2304      	0         
+RF              	          	2328      	0         
+RF              	          	2352      	0         
+RF              	          	2376      	0.004166667
+RF              	          	2400      	0         
+RF              	          	2424      	0         
+RF              	          	2448      	0         
+RF              	          	2472      	0         
+RF              	          	2496      	0         
+RF              	          	2520      	0         
+RF              	          	2544      	0         
+RF              	          	2568      	0         
+RF              	          	2592      	0.208333333
+RF              	          	2616      	0.004166667
+RF              	          	2640      	0.004166667
+RF              	          	2664      	0         
+RF              	          	2688      	0.016666667
+RF              	          	2712      	0         
+RF              	          	2736      	0         
+RF              	          	2760      	0         
+RF              	          	2784      	0         
+RF              	          	2808      	0         
+RF              	          	2832      	0         
+RF              	          	2856      	0         
+RF              	          	2880      	0         
+RF              	          	2904      	0         
+RF              	          	2928      	0         
+RF              	          	2952      	0         
+RF              	          	2976      	0         
+RF              	          	3000      	0         
+RF              	          	3024      	0         
+RF              	          	3048      	0         
+RF              	          	3072      	0         
+RF              	          	3096      	0         
+RF              	          	3120      	0         
+RF              	          	3144      	0         
+RF              	          	3168      	0         
+RF              	          	3192      	0         
+RF              	          	3216      	0         
+RF              	          	3240      	0         
+RF              	          	3264      	0         
+RF              	          	3288      	0         
+RF              	          	3312      	0         
+RF              	          	3336      	0         
+RF              	          	3360      	0         
+RF              	          	3384      	0         
+RF              	          	3408      	0         
+RF              	          	3432      	0         
+RF              	          	3456      	0         
+RF              	          	3480      	0         
+RF              	          	3504      	0         
+RF              	          	3528      	0         
+RF              	          	3552      	0         
+RF              	          	3576      	0         
+RF              	          	3600      	0         
+RF              	          	3624      	0         
+RF              	          	3648      	0         
+RF              	          	3672      	0         
+RF              	          	3696      	0         
+RF              	          	3720      	0.441666667
+RF              	          	3744      	0         
+RF              	          	3768      	0         
+RF              	          	3792      	0.075     
+RF              	          	3816      	0         
+RF              	          	3840      	0         
+RF              	          	3864      	0.170833333
+RF              	          	3888      	0.016666667
+RF              	          	3912      	0.033333333
+RF              	          	3936      	0         
+RF              	          	3960      	1.0125    
+RF              	          	3984      	0.15      
+RF              	          	4008      	2.520833333
+RF              	          	4032      	0.058333333
+RF              	          	4056      	0         
+RF              	          	4080      	0         
+RF              	          	4104      	0         
+RF              	          	4128      	0         
+RF              	          	4152      	0         
+RF              	          	4176      	0         
+RF              	          	4200      	0         
+RF              	          	4224      	0         
+RF              	          	4248      	0         
+RF              	          	4272      	0         
+RF              	          	4296      	0         
+RF              	          	4320      	0         
+RF              	          	4344      	0         
+RF              	          	4368      	0         
+RF              	          	4392      	0         
+RF              	          	4416      	0         
+RF              	          	4440      	5.4875    
+RF              	          	4464      	0.0125    
+RF              	          	4488      	0.525     
+RF              	          	4512      	0         
+RF              	          	4536      	0         
+RF              	          	4560      	0.104166667
+RF              	          	4584      	0.545833333
+RF              	          	4608      	0.029166667
+RF              	          	4632      	1.216666667
+RF              	          	4656      	2.1875    
+RF              	          	4680      	0.05      
+RF              	          	4704      	0         
+RF              	          	4728      	0         
+RF              	          	4752      	0.045833333
+RF              	          	4776      	0.029166667
+RF              	          	4800      	0.058333333
+RF              	          	4824      	0         
+RF              	          	4848      	0         
+RF              	          	4872      	1.258333333
+RF              	          	4896      	0.054166667
+RF              	          	4920      	1.679166667
+RF              	          	4944      	0.0375    
+RF              	          	4968      	1.733333333
+RF              	          	4992      	0         
+RF              	          	5016      	1.825     
+RF              	          	5040      	0.304166667
+RF              	          	5064      	0.016666667
+RF              	          	5088      	0         
+RF              	          	5112      	1.066666667
+RF              	          	5136      	2.929166667
+RF              	          	5160      	0.058333333
+RF              	          	5184      	0         
+RF              	          	5208      	0         
+RF              	          	5232      	0         
+RF              	          	5256      	0.008333333
+RF              	          	5280      	0.2       
+RF              	          	5304      	0.033333333
+RF              	          	5328      	0.670833333
+RF              	          	5352      	0.045833333
+RF              	          	5376      	0.266666667
+RF              	          	5400      	0.404166667
+RF              	          	5424      	0.820833333
+RF              	          	5448      	0.1125    
+RF              	          	5472      	0.166666667
+RF              	          	5496      	0.045833333
+RF              	          	5520      	0         
+RF              	          	5544      	0         
+RF              	          	5568      	0         
+RF              	          	5592      	0         
+RF              	          	5616      	0         
+RF              	          	5640      	0.283333333
+RF              	          	5664      	0.108333333
+RF              	          	5688      	0         
+RF              	          	5712      	0         
+RF              	          	5736      	0         
+RF              	          	5760      	0.008333333
+RF              	          	5784      	0         
+RF              	          	5808      	0         
+RF              	          	5832      	0         
+RF              	          	5856      	0         
+RF              	          	5880      	0         
+RF              	          	5904      	0         
+RF              	          	5928      	0         
+RF              	          	5952      	0         
+RF              	          	5976      	0.354166667
+RF              	          	6000      	0.595833333
+RF              	          	6024      	0         
+RF              	          	6048      	0         
+RF              	          	6072      	0         
+RF              	          	6096      	0         
+RF              	          	6120      	0         
+RF              	          	6144      	0         
+RF              	          	6168      	0         
+RF              	          	6192      	0         
+RF              	          	6216      	0         
+RF              	          	6240      	0         
+RF              	          	6264      	0         
+RF              	          	6288      	0         
+RF              	          	6312      	0         
+RF              	          	6336      	0.145833333
+RF              	          	6360      	0.791666667
+RF              	          	6384      	1.1125    
+RF              	          	6408      	3.366666667
+RF              	          	6432      	1.370833333
+RF              	          	6456      	0.091666667
+RF              	          	6480      	0.0625    
+RF              	          	6504      	0.170833333
+RF              	          	6528      	0         
+RF              	          	6552      	0.9125    
+RF              	          	6576      	0         
+RF              	          	6600      	0.1       
+RF              	          	6624      	0         
+RF              	          	6648      	0         
+RF              	          	6672      	0.016666667
+RF              	          	6696      	0.025     
+RF              	          	6720      	0         
+RF              	          	6744      	0         
+RF              	          	6768      	0.1625    
+RF              	          	6792      	0         
+RF              	          	6816      	0         
+RF              	          	6840      	0         
+RF              	          	6864      	0         
+RF              	          	6888      	0         
+RF              	          	6912      	0         
+RF              	          	6936      	0         
+RF              	          	6960      	0         
+RF              	          	6984      	0         
+RF              	          	7008      	0         
+RF              	          	7032      	0.608333333
+RF              	          	7056      	2.604166667
+RF              	          	7080      	0         
+RF              	          	7104      	0         
+RF              	          	7128      	0         
+RF              	          	7152      	0         
+RF              	          	7176      	0         
+RF              	          	7200      	0         
+RF              	          	7224      	0         
+RF              	          	7248      	0         
+RF              	          	7272      	0         
+RF              	          	7296      	0         
+RF              	          	7320      	0         
+RF              	          	7344      	0         
+RF              	          	7368      	0         
+RF              	          	7392      	0         
+RF              	          	7416      	0         
+RF              	          	7440      	0         
+RF              	          	7464      	0         
+RF              	          	7488      	0         
+RF              	          	7512      	0         
+RF              	          	7536      	0         
+RF              	          	7560      	0         
+RF              	          	7584      	0         
+RF              	          	7608      	0         
+RF              	          	7632      	0         
+RF              	          	7656      	0         
+RF              	          	7680      	0         
+RF              	          	7704      	0         
+RF              	          	7728      	0         
+RF              	          	7752      	0         
+RF              	          	7776      	0         
+RF              	          	7800      	0         
+RF              	          	7824      	0         
+RF              	          	7848      	0         
+RF              	          	7872      	0         
+RF              	          	7896      	0         
+RF              	          	7920      	0         
+RF              	          	7944      	0         
+RF              	          	7968      	0         
+RF              	          	7992      	0         
+RF              	          	8016      	0         
+RF              	          	8040      	0         
+RF              	          	8064      	0         
+RF              	          	8088      	0         
+RF              	          	8112      	0         
+RF              	          	8136      	0         
+RF              	          	8160      	0         
+RF              	          	8184      	0         
+RF              	          	8208      	0         
+RF              	          	8232      	0         
+RF              	          	8256      	0         
+RF              	          	8280      	0         
+RF              	          	8304      	0         
+RF              	          	8328      	0         
+RF              	          	8352      	0         
+RF              	          	8376      	0         
+RF              	          	8400      	0         
+RF              	          	8424      	0         
+RF              	          	8448      	0         
+RF              	          	8472      	0         
+RF              	          	8496      	0         
+RF              	          	8520      	0         
+RF              	          	8544      	0         
+RF              	          	8568      	0         
+RF              	          	8592      	0         
+RF              	          	8616      	0         
+RF              	          	8640      	0         
+RF              	          	8664      	0         
+RF              	          	8688      	0         
+RF              	          	8712      	0         
+RF              	          	8736      	0         
+
+[PATTERNS]
+;;Name          	Type      	Multipliers
+;;--------------	----------	-----------
+RF              	DAILY     	1    	1    	1    	1    	1    	1    	1    
+
+s               	MONTHLY   	1    	1    	1    	1    	1    	1    
+s               	          	1    	1    	1    	20   	1    	1    
+
+[REPORT]
+INPUT     	NO
+CONTROLS  	NO
+SUBCATCHMENTS	ALL
+NODES	ALL
+LINKS	ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS	-2066.862	0.000	12066.862	10000.000
+Units     	None
+
+[COORDINATES]
+;;Node          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+26              	4537.442          	-190.931          
+Thaltej_Lake    	3089.314          	8071.383          
+Memnagar_Lake   	6497.869          	7841.593          
+Vastrapur_Lake  	5010.615          	6507.533          
+Bodakdev_Lake   	2457.391          	5716.033          
+Prahladnagar_Lake	2425.476          	2339.394          
+Sarkhej_Lake    	2157.387          	1145.762          
+
+[VERTICES]
+;;Link          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+49              	4961.453          	6451.919          
+
+[Polygons]
+;;Subcatchment  	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+Thaltej         	2031.959          	6909.642          
+Thaltej         	2287.274          	6938.011          
+Thaltej         	2304.295          	7074.179          
+Thaltej         	2389.400          	7113.894          
+Thaltej         	2372.379          	7238.715          
+Thaltej         	2400.748          	7352.188          
+Thaltej         	2644.715          	7448.641          
+Thaltej         	2865.988          	7454.314          
+Thaltej         	3002.156          	7403.251          
+Thaltej         	3058.893          	7562.114          
+Thaltej         	2775.210          	7692.608          
+Thaltej         	2814.925          	7930.902          
+Thaltej         	3456.049          	7874.166          
+Thaltej         	3478.744          	7726.650          
+Thaltej         	3359.597          	7726.650          
+Thaltej         	3217.755          	7630.198          
+Thaltej         	3223.429          	7601.830          
+Thaltej         	3268.818          	7567.788          
+Thaltej         	3575.196          	7630.198          
+Thaltej         	3671.649          	7573.461          
+Thaltej         	3694.343          	7425.946          
+Thaltej         	3824.838          	7301.125          
+Thaltej         	4012.069          	7318.146          
+Thaltej         	4227.668          	7431.620          
+Thaltej         	4380.857          	7732.324          
+Thaltej         	4863.118          	7624.524          
+Thaltej         	5095.739          	7471.335          
+Thaltej         	5243.254          	7448.641          
+Thaltej         	5214.886          	7698.282          
+Thaltej         	5107.086          	7811.755          
+Thaltej         	5073.044          	8220.259          
+Thaltej         	5118.433          	8379.122          
+Thaltej         	5044.676          	8600.395          
+Thaltej         	5073.044          	8855.710          
+Thaltej         	4965.244          	8878.404          
+Thaltej         	4959.571          	8781.952          
+Thaltej         	4738.298          	8730.889          
+Thaltej         	4715.603          	8912.446          
+Thaltej         	4454.615          	8833.015          
+Thaltej         	4397.878          	8810.320          
+Thaltej         	4023.416          	8674.152          
+Thaltej         	3909.943          	8640.110          
+Thaltej         	4239.015          	9859.948          
+Thaltej         	2877.336          	9190.456          
+Thaltej         	2712.799          	8396.143          
+Thaltej         	2605.000          	8407.490          
+Thaltej         	2553.937          	8452.879          
+Thaltej         	2224.864          	8356.427          
+Thaltej         	1390.835          	8452.879          
+Thaltej         	556.806           	8089.765          
+Thaltej         	562.480           	7811.755          
+Thaltej         	624.890           	7800.408          
+Thaltej         	647.585           	7573.461          
+Thaltej         	2224.864          	7408.925          
+Bodakdev        	5084.391          	7471.335          
+Bodakdev        	4857.445          	7613.177          
+Bodakdev        	4392.204          	7715.303          
+Bodakdev        	4239.015          	7442.967          
+Bodakdev        	4000.721          	7312.473          
+Bodakdev        	3813.490          	7301.125          
+Bodakdev        	3683.883          	7422.671          
+Bodakdev        	3660.616          	7565.853          
+Bodakdev        	3576.496          	7619.547          
+Bodakdev        	3270.443          	7556.904          
+Bodakdev        	3220.329          	7594.490          
+Bodakdev        	3211.380          	7621.337          
+Bodakdev        	3064.566          	7550.767          
+Bodakdev        	3009.135          	7388.665          
+Bodakdev        	2860.583          	7445.938          
+Bodakdev        	2642.229          	7436.989          
+Bodakdev        	2407.768          	7345.710          
+Bodakdev        	2380.921          	7234.743          
+Bodakdev        	2402.398          	7107.669          
+Bodakdev        	2312.909          	7068.294          
+Bodakdev        	2292.948          	6932.337          
+Bodakdev        	2031.959          	6903.969          
+Bodakdev        	1691.539          	6807.516          
+Bodakdev        	1373.814          	6705.390          
+Bodakdev        	1027.721          	6546.528          
+Bodakdev        	976.658           	6364.971          
+Bodakdev        	789.427           	6410.360          
+Bodakdev        	607.869           	6416.033          
+Bodakdev        	534.112           	6370.644          
+Bodakdev        	522.764           	6279.866          
+Bodakdev        	505.743           	6143.698          
+Bodakdev        	454.680           	6081.287          
+Bodakdev        	454.680           	5984.835          
+Bodakdev        	477.375           	5871.362          
+Bodakdev        	500.070           	5752.215          
+Bodakdev        	454.680           	5616.047          
+Bodakdev        	517.091           	5281.300          
+Bodakdev        	562.480           	5286.974          
+Bodakdev        	636.238           	5298.321          
+Bodakdev        	653.259           	5207.543          
+Bodakdev        	653.259           	5014.638          
+Bodakdev        	687.301           	5008.964          
+Bodakdev        	687.301           	4901.165          
+Bodakdev        	766.732           	4878.470          
+Bodakdev        	755.385           	4770.671          
+Bodakdev        	2219.190          	4606.134          
+Bodakdev        	2457.484          	4634.503          
+Bodakdev        	2792.231          	5718.173          
+Bodakdev        	2962.441          	5706.825          
+Bodakdev        	3109.956          	5712.499          
+Bodakdev        	3342.576          	5735.194          
+Bodakdev        	3569.523          	5837.320          
+Bodakdev        	3717.038          	5854.341          
+Bodakdev        	4221.994          	5882.709          
+Bodakdev        	4216.321          	6030.224          
+Bodakdev        	4346.815          	6336.602          
+Bodakdev        	4568.088          	6421.707          
+Bodakdev        	4602.130          	6364.971          
+Bodakdev        	4874.466          	6393.339          
+Bodakdev        	4880.139          	6461.423          
+Bodakdev        	4885.813          	6569.222          
+Bodakdev        	4925.529          	6677.022          
+Bodakdev        	4902.834          	6739.432          
+Bodakdev        	5237.580          	7437.293          
+Memnagar        	5056.520          	8866.935          
+Memnagar        	5064.246          	8964.787          
+Memnagar        	5241.925          	8939.036          
+Memnagar        	5259.950          	9072.940          
+Memnagar        	5231.625          	9160.492          
+Memnagar        	5254.800          	9209.418          
+Memnagar        	5290.851          	9286.670          
+Memnagar        	5517.457          	9129.591          
+Memnagar        	5625.610          	9121.866          
+Memnagar        	5867.666          	8995.688          
+Memnagar        	5836.765          	8825.734          
+Memnagar        	5847.065          	8617.153          
+Memnagar        	5826.465          	8609.428          
+Memnagar        	5906.292          	8393.123          
+Memnagar        	6017.020          	8189.692          
+Memnagar        	6037.620          	8166.517          
+Memnagar        	6099.422          	8145.916          
+Memnagar        	6354.353          	8161.367          
+Memnagar        	6434.180          	8117.591          
+Memnagar        	6475.381          	8127.891          
+Memnagar        	6635.035          	8063.514          
+Memnagar        	6738.038          	8096.990          
+Memnagar        	6748.338          	8148.491          
+Memnagar        	6895.117          	8181.967          
+Memnagar        	7008.420          	8148.491          
+Memnagar        	7023.870          	8076.390          
+Memnagar        	6913.142          	8050.639          
+Memnagar        	6915.717          	8040.339          
+Memnagar        	6859.066          	8024.888          
+Memnagar        	6851.341          	8071.239          
+Memnagar        	6815.290          	8066.089          
+Memnagar        	6812.715          	8045.489          
+Memnagar        	6743.188          	8027.463          
+Memnagar        	6735.463          	8019.738          
+Memnagar        	6774.089          	7978.537          
+Memnagar        	6763.788          	7903.860          
+Memnagar        	6802.414          	7860.084          
+Memnagar        	6851.341          	7862.659          
+Memnagar        	6851.341          	7821.458          
+Memnagar        	6709.712          	7818.883          
+Memnagar        	6696.837          	7793.132          
+Memnagar        	6495.982          	7746.781          
+Memnagar        	6403.279          	7669.529          
+Memnagar        	6405.854          	7618.028          
+Memnagar        	6328.602          	7576.827          
+Memnagar        	6331.177          	7548.501          
+Memnagar        	6300.277          	7543.351          
+Memnagar        	6289.976          	7556.227          
+Memnagar        	6269.376          	7558.802          
+Memnagar        	6246.200          	7587.127          
+Memnagar        	6251.350          	7731.331          
+Memnagar        	6264.226          	7775.107          
+Memnagar        	6158.648          	7836.909          
+Memnagar        	6083.971          	7865.234          
+Memnagar        	6053.070          	7960.512          
+Memnagar        	6076.246          	7983.687          
+Memnagar        	6017.020          	8012.013          
+Memnagar        	5970.668          	7988.837          
+Memnagar        	5929.467          	7996.563          
+Memnagar        	5885.691          	7927.036          
+Memnagar        	5883.116          	7883.260          
+Memnagar        	5890.841          	7777.682          
+Memnagar        	5844.490          	7718.456          
+Memnagar        	6109.722          	7623.178          
+Memnagar        	6130.322          	7522.751          
+Memnagar        	6107.147          	7442.924          
+Memnagar        	5908.867          	7440.349          
+Memnagar        	5514.882          	7430.048          
+Memnagar        	5252.225          	7450.649          
+Memnagar        	5216.174          	7700.430          
+Memnagar        	5108.022          	7811.158          
+Memnagar        	5069.396          	8212.868          
+Memnagar        	5126.047          	8377.672          
+Memnagar        	5041.070          	8604.278          
+Memnagar        	5077.121          	8856.634          
+Vastrapur       	4253.100          	5751.106          
+Vastrapur       	4430.780          	5694.455          
+Vastrapur       	4680.561          	5632.653          
+Vastrapur       	4837.640          	5501.325          
+Vastrapur       	4938.067          	5375.147          
+Vastrapur       	5064.246          	5555.401          
+Vastrapur       	5136.347          	5727.930          
+Vastrapur       	5211.024          	5748.531          
+Vastrapur       	5216.174          	5812.908          
+Vastrapur       	5229.050          	5820.633          
+Vastrapur       	5262.526          	5887.584          
+Vastrapur       	5311.452          	5939.086          
+Vastrapur       	5357.803          	6072.989          
+Vastrapur       	5316.602          	6072.989          
+Vastrapur       	5373.253          	6206.893          
+Vastrapur       	5386.129          	6260.969          
+Vastrapur       	5283.126          	6361.396          
+Vastrapur       	5301.152          	6381.997          
+Vastrapur       	5380.979          	6381.997          
+Vastrapur       	5401.579          	6485.000          
+Vastrapur       	5450.505          	6495.300          
+Vastrapur       	5442.780          	6567.402          
+Vastrapur       	5532.907          	6631.778          
+Vastrapur       	5514.882          	6639.503          
+Vastrapur       	5566.383          	6711.605          
+Vastrapur       	5550.933          	6804.308          
+Vastrapur       	5592.134          	6817.183          
+Vastrapur       	5561.233          	6871.259          
+Vastrapur       	5605.009          	7005.163          
+Vastrapur       	5764.663          	7108.165          
+Vastrapur       	5746.638          	7198.292          
+Vastrapur       	5919.167          	7324.471          
+Vastrapur       	5906.292          	7430.048          
+Vastrapur       	5870.241          	7427.473          
+Vastrapur       	5468.531          	7419.748          
+Vastrapur       	5252.225          	7448.074          
+Vastrapur       	4912.317          	6734.781          
+Vastrapur       	4938.067          	6675.554          
+Vastrapur       	4896.866          	6554.526          
+Vastrapur       	4883.991          	6394.872          
+Vastrapur       	4876.266          	6384.572          
+Vastrapur       	4595.584          	6358.821          
+Vastrapur       	4559.533          	6407.748          
+Vastrapur       	4348.377          	6317.620          
+Vastrapur       	4224.774          	6026.638          
+Vastrapur       	4235.075          	5885.009          
+Prahladnagar    	2805.327          	5702.479          
+Prahladnagar    	3033.591          	5686.175          
+Prahladnagar    	3347.455          	5714.708          
+Prahladnagar    	3571.643          	5824.764          
+Prahladnagar    	4219.750          	5865.525          
+Prahladnagar    	4248.283          	5722.860          
+Prahladnagar    	4676.278          	5608.728          
+Prahladnagar    	4835.248          	5482.367          
+Prahladnagar    	4929.000          	5364.159          
+Prahladnagar    	5083.893          	5245.951          
+Prahladnagar    	5083.893          	5245.951          
+Prahladnagar    	5145.035          	5217.418          
+Prahladnagar    	5198.025          	5091.057          
+Prahladnagar    	5356.995          	4850.565          
+Prahladnagar    	5422.213          	4805.727          
+Prahladnagar    	5442.594          	4728.280          
+Prahladnagar    	5621.945          	4634.529          
+Prahladnagar    	5899.123          	4039.411          
+Prahladnagar    	5911.351          	3733.700          
+Prahladnagar    	5784.990          	3697.015          
+Prahladnagar    	5784.990          	3558.426          
+Prahladnagar    	5748.305          	3542.121          
+Prahladnagar    	5748.305          	3452.446          
+Prahladnagar    	5723.848          	3427.989          
+Prahladnagar    	5719.772          	3350.543          
+Prahladnagar    	5687.163          	3338.314          
+Prahladnagar    	5683.087          	3273.096          
+Prahladnagar    	5638.249          	3207.877          
+Prahladnagar    	5650.478          	2975.537          
+Prahladnagar    	3384.140          	2706.511          
+Prahladnagar    	3155.876          	2580.151          
+Prahladnagar    	2585.215          	2111.394          
+Prahladnagar    	2519.997          	2233.678          
+Prahladnagar    	2275.428          	2225.526          
+Prahladnagar    	2275.428          	2139.927          
+Prahladnagar    	2063.468          	2119.546          
+Prahladnagar    	2043.087          	2217.374          
+Prahladnagar    	1957.488          	2201.069          
+Prahladnagar    	1920.803          	2392.648          
+Prahladnagar    	1953.412          	2421.181          
+Prahladnagar    	1961.565          	2576.075          
+Prahladnagar    	2022.707          	2596.455          
+Prahladnagar    	2018.631          	2735.044          
+Prahladnagar    	1961.565          	2722.816          
+Prahladnagar    	2528.149          	4626.377          
+Prahladnagar    	2467.007          	4638.605          
+Makarba         	2012.628          	2727.752          
+Makarba         	2017.593          	2598.649          
+Makarba         	1958.007          	2579.780          
+Makarba         	1950.062          	2424.857          
+Makarba         	1913.318          	2393.078          
+Makarba         	1954.035          	2194.458          
+Makarba         	2039.441          	2211.341          
+Makarba         	2059.303          	2114.017          
+Makarba         	2281.757          	2134.872          
+Makarba         	2282.750          	2219.286          
+Makarba         	2516.128          	2228.224          
+Makarba         	2585.215          	2099.165          
+Makarba         	2621.900          	1960.576          
+Makarba         	2793.099          	1964.653          
+Makarba         	2809.403          	1870.901          
+Makarba         	3151.799          	1874.977          
+Makarba         	3208.866          	1650.789          
+Makarba         	3392.292          	1328.774          
+Makarba         	3486.044          	749.961           
+Makarba         	3424.901          	652.133           
+Makarba         	3486.044          	497.240           
+Makarba         	2723.804          	326.041           
+Makarba         	2858.317          	472.783           
+Makarba         	2960.221          	839.636           
+Makarba         	2939.840          	1324.697          
+Makarba         	2772.718          	1312.469          
+Makarba         	2768.642          	1328.774          
+Makarba         	2719.728          	1328.774          
+Makarba         	2670.814          	1614.104          
+Makarba         	2499.616          	1601.875          
+Makarba         	2503.692          	1467.363          
+Makarba         	2340.646          	1414.373          
+Makarba         	2332.494          	933.387           
+Makarba         	2405.865          	933.387           
+Makarba         	2426.245          	892.626           
+Makarba         	2503.692          	904.854           
+Makarba         	2499.616          	631.752           
+Makarba         	2075.697          	643.981           
+Makarba         	1863.737          	729.580           
+Makarba         	1806.671          	391.260           
+Makarba         	1737.376          	293.432           
+Makarba         	1541.721          	374.955           
+Makarba         	1586.559          	1051.596          
+Makarba         	1500.960          	1100.509          
+Makarba         	1962.973          	2717.821          
+
+[SYMBOLS]
+;;Gage          	X-Coord           	Y-Coord           
+;;--------------	------------------	------------------
+

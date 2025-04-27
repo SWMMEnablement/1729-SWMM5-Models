@@ -1,0 +1,145 @@
+[TITLE]
+;;Project Title/Notes
+            EXTRAN SAMPLE FILE
+            Sideflow Weir & Detention Pond
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           06/04/1979
+START_TIME           00:00:00
+REPORT_START_DATE    06/04/1979
+REPORT_START_TIME    00:00:00
+END_DATE             06/04/1979
+END_TIME             12:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:05:00
+WET_STEP             00:15:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:05:00 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  SLOPE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.00
+LENGTHENING_STEP     0
+MIN_SURFAREA         1.14
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.0015
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+; *---------------------------------------- *    JUN GRELEV    Z      QINST    Y       X    Z
+1                96.00      4.00       .00        0          0         
+2                96.00      3.80       .00        0          0         
+3                94.80      3.30       .00        0          0         
+4                93.90      3.80       .00        0          0         
+5                94.00      3.90       .00        0          0         
+6                93.20      3.40       .00        0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+7                92.84      FREE                        NO                       
+600              92.2       FREE                        NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+300              93.8     4.3        0.0        FUNCTIONAL 5000.0    0         0        0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+; *  above writes every 2 minutes when flows are greater than 0 cms * -------------------------------------------------------------------- *  NCOND  NJ1  NJ2  Q0 NKLASS AFULL  DEEP WIDE LEN   ZP1  ZP2  ROUGH STHETA SPHI
+13               1                3                800.0      0.014      0.0        0.48       2          0         
+23               2                3                1400.0     0.014      0.0        0.08       0.0        0         
+34               3                4                1200.0     0.014      0.0        0.06       0.0        0         
+46               4                6                1000.0     0.014      0.0        0.0        0.0        0         
+56               5                6                800.0      0.014      0.0        0.08       0.0        0         
+67               6                7                600.0      0.014      0.0        0.0        0.0        0         
+131              300              6                1500.0     0.014      0.0        0.4        0.0        0         
+130              3                300              200.0      0.014      0.4        1.0        0.0        0         
+
+[WEIRS]
+;;Name           From Node        To Node          Type         CrestHt    Qcoeff     Gated    EndCon   EndCoeff   Surcharge  RoadWidth  RoadSurf  
+;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- -------- ---------- ---------- ---------- ----------
+; *--------------------------- * NJUNC(1) NJUNC(2)  KWEIR YCREST   YTOP    WLEN    COEF
+WEIR@6-600       6                600              SIDEFLOW     0.65       1.84       NO       0        0          YES       
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+13               CIRCULAR     1.2              0.0        0.0        0.0        1                    
+23               CIRCULAR     1.6              0.0        0.0        0.0        1                    
+34               CIRCULAR     1.0              0.0        0.0        0.0        1                    
+46               CIRCULAR     1.6              0.0        0.0        0.0        1                    
+56               CIRCULAR     1.6              0.0        0.0        0.0        1                    
+67               CIRCULAR     1.6              0.0        0.0        0.0        1                    
+131              CIRCULAR     1.0              0.0        0.0        0.0        1                    
+130              RECT_CLOSED  1.8              2.0        0.0        0.0        1                    
+WEIR@6-600       RECT_OPEN    2.15             2.5        0          0         
+
+[LOSSES]
+;;Link           Kentry     Kexit      Kavg       Flap Gate  Seepage   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+13               0          0          1          NO         0         
+
+[DWF]
+;;Node           Constituent      Baseline   Patterns  
+;;-------------- ---------------- ---------- ----------
+1                FLOW             1          "" "" "" "" "" ""
+2                FLOW             2          "" "" "" "" "" ""
+5                FLOW             1          "" "" "" "" "" ""
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 61.750 5.500 133.250 104.500
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                75.000             100.000           
+2                120.000            100.000           
+3                90.000             70.000            
+4                90.000             50.000            
+5                130.000            40.000            
+6                90.000             20.000            
+7                90.000             10.000            
+600              95.000             15.000            
+300              65.000             40.000            
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
