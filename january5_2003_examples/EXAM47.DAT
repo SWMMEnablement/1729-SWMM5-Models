@@ -1,0 +1,76 @@
+*    Input and Output Files
+SW 1, 0, 20
+*    Scratch Files
+MM 8, 1,2,3,10,11,12,13,14,
+@   20  'C:\swmm_crada_files\OUTPUT.MST'
+*
+#   PLOT_ALL_NODES
+#   PLOT_ALL_CONDUITS
+#   SWMM5_IMPLICIT
+#   USE_INPUT_LENGTHS
+*
+$ANUM
+$EXTRAN
+A1  'EXTRAN USER''S MANUAL EXAMPLE PROBLEM 47.'
+A1  'UPSTREAM NODE WITH TIME HISTORY INPUT OF STAGE.'
+*
+*  ISOL  KSUPER
+B0  1      0
+*   NTCYC DELT  TZERO NSTART INTER JNTER REDO
+B1   720   60.0  0.0    1     -1    12     0
+*   METRIC NEQUAL  AMEN ITMAX SURTOL
+B2     0     0      0.0  10    0.75  .10  1.0
+* NHPRT NQPRT NPLT LPLT NJSW
+B3   3    1    2    1   0
+*   PRINT HEADS
+B4  'Upstream'  'Middle' 'Downstream'
+*   PRINT FLOWS
+B5   'Channel1' 'Channel2'
+*   PLOT HEADS
+B6  'Upstream' 'Middle' 'Downstream'
+*   PLOT Flows
+B7   'Channel1'
+*   CONDUIT DATA
+*       NCOND      NJ1        NJ2        QO  NKLASS AFULL DEEP WIDE LEN   ZP1  ZP2  ROUGH STHETA SPHI
+C1   'Trib1'    'Node1'    'Middle'       0.0    1    0.0  6.0  0.0 1000.  0.0  0.0  0.030 0.0    0.0
+C1   'Channel1' 'Upstream' 'Middle'       0.0    1    0.0  6.0  0.0 1000.  0.0  0.0  0.030 0.0    0.0
+C1   'Channel2' 'Middle'   'Downstream'   0.0    1    0.0  6.0  0.0 1000.  0.0  0.0  0.030 0.0    0.0
+*    JUNCTION DATA
+*      Junction      GRELEV      Z  QINST  Y
+D1   'Node1'          200.0  189.0    0.0 1.0  1000 2000
+D1   'Upstream'       200.0  189.0    0.0 1.0  1000 3000
+D1   'Middle'         200.0  187.0    0.0 1.0  1000 4000
+D1   'Downstream'     200.0  180.0    0.0 1.0  1000 5000
+*     FREE OUTFALL NODES
+*       Free Outfall node   Boundary condtion #
+I1           'Downstream'           1
+I1           'Upstream'             2
+I1           'Node1'                3
+* ========================================================================
+*     First boundary condition (no water surface elevation).
+*     Ntide(1)
+J1      1
+* ========================================================================
+*     Second boundary condition (Read time and stage history on J4 lines)
+*     This boundary condition does not generate tidal coefficients
+*     Ntide(2)
+J1    5
+*     No J2 data line is input into the program for NTIDE = 5.
+*
+*      KO   NI   NCHTID  - KO parameter is not used for NTIDE = 5.
+J3      0    5        1   0.05
+*    TIME STAGE TIME  STAGE  TIME  STAGE  TIME  STAGE TIME  STAGE
+J4   0.0  192.0  3.0  191.0   6.0  190.0   9.0  191.0 12.0  192.0
+* ========================================================================
+*     Third boundary condition (Read time and stage history on J4 lines)
+*     This boundary condition does not generate tidal coefficients
+*     Ntide(2)
+J1    5
+*     No J2 data line is input into the program for NTIDE = 5.
+*
+*      KO   NI   NCHTID  - KO parameter is not used for NTIDE = 5.
+J3      0    5        1    0.05
+*    TIME STAGE TIME  STAGE  TIME  STAGE  TIME  STAGE TIME  STAGE
+J4   0.0  192.0  3.0  191.0   6.0  190.0   9.0  191.0 12.0  192.0
+* ========================================================================
+$ENDPROGRAM

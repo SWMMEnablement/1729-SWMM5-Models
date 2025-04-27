@@ -1,0 +1,33 @@
+SW  1  0  9 0  0
+MM  3  10 11 12
+@  9  'TRANS40.INT'  
+*     Alphanumeric input of element names
+$ANUM
+$TRANSPORT
+A1  'TRANSPORT USERS MANUAL EXAMPLE PROBLEM 40'
+A1  'ONE PIPE SYSTEM WITH SMALL SLOPE AND SURCHARGE'
+*   NDT  NINPUT NNYN NNPE NOUTS NPRINT NPOLL NITER IDATEZ METRIC INTPRT
+B1  180   1     2     2    2      1     0      9    880310  0      2
+*    DT    EPSIL  DWDAYS  TZERO  GNU  TRIBA 
+B2   60.0  0.0001  0.0     0.0   0.0  1000.0 
+*  NCNTRL  NINFIL  NFILTH  NDESN
+B3   1      0       0       0
+*   FLOW ROUTING FOR NEW SHAPES
+*   NKLASS KPRINT
+C1    0      0
+*   SEWER ELEMENT DATA
+*       NOE       NUE(1)   NUE(2) NUE(3) NTYPE DIST GEOM1 SLOPE ROUGH GEOM2 BARREL GEOM3 KGEOM
+E1  'Node1000'     ' '       ' '    ' '    19   0.0   0     0     0     0     0      0     ' '
+E1  'Chan2000'  'Node1000'   ' '    ' '     1  1000. 5.0  0.05  0.02    0     1      0     ' '
+E1  'Node3000'  'Chan2000'   ' '    ' '    19   0.0   0     0     0     0     0      0     ' '
+H1  'Node1000'  'Node3000'
+I1  'Node1000'
+J1  'Node1000'  'Node3000'
+J2  'Node1000'  'Node3000'
+*  LINE HYDROGRAPH INPUT
+*  TIME IN HOURS   FLOW
+R1  0.0             1.0
+R1  1.0            75.0
+R1  2.0             1.0
+R1  3.0             1.0
+$ENDPROGRAM

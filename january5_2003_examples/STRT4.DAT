@@ -1,0 +1,83 @@
+SW   0    0                                                                       
+MM   0    0    0                                                                  
+*  STORAGE/TREATMENT BLOCK EXAMPLE WITH LINE J1 INPUT
+*  NON DETENTION UNIT MODELING
+$STORAGE                                                                         
+A1 ' PLUG FLOW DETENTION TANK FOR COMBINED SEWER OVERFLOW     '            
+A1 ' HUMBOLDT AVENUE FACILTY, MILWAUKEE, WISCONSIN   '
+*  NOTAPE  JNS  NDT  DS    NU    NP      ICOST  METRIC  SAREA
+B1   1      1   217  3600   1    1           0    0      570.0
+*   IDATE     TIME         ISUM      IDET       NPR
+C1  720912     0.00         0         10         1                              
+*   ISTART(1) IEND(1)
+C2  720912    720925                                                            
+*  EVAPORATION DATA
+D1  0 0 0 0 0 0 0 0 0 0 0 0                                                                              
+*  IPOLL NDIM  IPART   PNAME     PUNIT   
+E1   0     0    0    'SUS.SDS.' ' MG/L '                                                        
+* 
+*    NON DETENTION EXAMPLE --> ELIMINATES H1-H8 DATA GROUPS
+*
+F1  'NON-DETENTION TANK'                                                              
+*      IDENT   QMAX     RESIDUAL FLOW   IDIREC(1) IDIREC(2) IDIREC(3)
+F2       0       380       0.10            100         100       200                    
+*      RMX
+G1     1.0                                                                       
+*    REMOVAL EQUATION VARIABLES
+G2     0  0  1  0 0 0 0 0 0 0 0                                                  
+*    EQUATION 7-1 COEFFICIENTS
+G3    0 0 -0.00003 0 0 0 0 0 0 0 0 0.65 -0.65 0.0 0.0 1.0
+*   TCAR  = TIME IN HOURS
+*   QCAR  = INSTANTANEOUS FLOW IN CFS AT TCAR
+*   PCAR1 = INSTANTANEOUS SUSPENDED SOLIDS CONCENTRATION AT TCAR
+*   TCAR    QCAR     PCAR(1)
+J1   1.0    65.8      300.                                                            
+J1   2.0    77.1      220.                                                            
+J1   3.0     6.6      225.                                                            
+J1   4.0     0.1        0.                                                            
+J1   5.0     7.2      110.                                                            
+J1   6.0     0.8      140.                                                            
+J1   7.0    15.2      200.                                                            
+J1   8.0     2.8      300.                                                            
+J1   9.0     0.2      300.                                                            
+J1  10.0     0.0      0.0
+J1  112.0    0.0      0.0
+J1  113.0   11.0      300.                                                            
+J1  114.0    2.2      200.                                                            
+J1  115.0    1.1      100.                                                            
+J1  116.0    5.4       70.                                                            
+J1  117.0    4.4       75.                                                            
+J1  118.0    1.1       80.                                                            
+J1  119.0    1.1       85.                                                            
+J1  120.0    0.4      130.                                                            
+J1  121.0  139.3      230.                                                            
+J1  122.0  109.1      180.                                                            
+J1  123.0   32.8      125.                                                            
+J1  124.0   12.7      120.                                                            
+J1  125.0   12.7      110.                                                            
+J1  126.0    4.1      100.                                                            
+J1  127.0    0.0      0.0
+J1  151.0    0.0      0.0
+J1  152.0    7.7      180.                                                            
+J1  153.0    4.4      160.                                                            
+J1  154.0    7.4      115.                                                            
+J1  155.0    4.9      105.                                                            
+J1  156.0    1.7       95.                                                            
+J1  157.0    0.4       85.                                                            
+J1  158.0    0.0       0.0
+J1  185.0    0.0       0.0
+J1  186.0   94.0      180.                                                            
+J1  187.0   42.4      120.                                                            
+J1  188.0    8.9       60.                                                            
+J1  189.0   15.4       60.                                                            
+J1  190.0   41.8      100.                                                            
+J1  191.0   24.4      100.                                                            
+J1  192.0   27.1      100.                                                            
+J1  193.0   13.0      100.                                                            
+J1  194.0    8.2      100.                                                            
+J1  195.0    8.2      100.                                                            
+J1  196.0    8.2      100.                                                            
+J1  197.0    8.2      100.                                                            
+J1  198.0    0.0       0.0                                                                             
+J1  250.0    0.0       0.0                                                                             
+$ENDPROGRAM                                                                      
