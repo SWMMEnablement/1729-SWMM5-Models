@@ -1,0 +1,235 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+   RUNOFF EXAMPLE 7  PARABOLIC CHANNELS  GROUNDWATER 
+   LAKE MODELED AS WIDE PARABOLIC CHANNEL WITH OUTLET WEIR 
+  WARNING 09: time series interval greater than recording interval for Rain Gage GAGE1
+  WARNING 02: maximum depth increased for Node GWFlowNode
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ YES
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Infiltration Method ...... GREEN_AMPT
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 01/01/1966 00:00:00
+  Ending Date .............. 01/08/1966 00:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:15:00
+  Wet Time Step ............ 00:15:00
+  Dry Time Step ............ 00:15:00
+  Routing Time Step ........ 300.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Total Precipitation ......       450.000         6.000
+  Evaporation Loss .........         7.047         0.094
+  Infiltration Loss ........       356.768         4.757
+  Surface Runoff ...........        87.753         1.170
+  Final Storage ............         0.000         0.000
+  Continuity Error (%) .....        -0.348
+  
+  
+  **************************        Volume         Depth
+  Groundwater Continuity         acre-feet        inches
+  **************************     ---------       -------
+  Initial Storage ..........      6133.500        81.780
+  Infiltration .............       356.768         4.757
+  Upper Zone ET ............        14.357         0.191
+  Lower Zone ET ............         2.571         0.034
+  Deep Percolation .........         9.226         0.123
+  Groundwater Flow .........        53.739         0.717
+  Final Storage ............      6410.374        85.472
+  Continuity Error (%) .....         0.000
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......        87.787        28.607
+  Groundwater Inflow .......        53.718        17.505
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........       140.037        45.633
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.239         0.078
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.823         0.268
+  Continuity Error (%) .....         0.286
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  Link 2 (1.93%)
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Convergence obtained at all time steps.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :    47.17 sec
+  Average Time Step           :   298.96 sec
+  Maximum Time Step           :   300.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     2.07
+  % of Steps Not Converging   :     0.05
+  Time Step Frequencies       :
+     300.000 - 83.462 sec      :    99.95 %
+     83.462 - 23.220 sec      :     0.05 %
+     23.220 -  6.460 sec      :     0.00 %
+      6.460 -  1.797 sec      :     0.00 %
+      1.797 -  0.500 sec      :     0.00 %
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in         in         in    10^6 gal      CFS
+  ------------------------------------------------------------------------------------------------------------------------------
+  FixedGWDepth               6.00       0.00       0.13       4.79       1.09       0.00       1.09        8.85    31.58   0.181
+  ThresholdGWElev            6.00       0.00       0.03       4.69       1.23       0.11       1.34       10.89   218.71   0.223
+  NodeGWDepth                6.00       0.00       0.13       4.79       1.09       0.00       1.09        8.85    31.58   0.181
+  
+  
+  *******************
+  Groundwater Summary
+  *******************
+  
+  -----------------------------------------------------------------------------------------------------
+                                            Total    Total  Maximum  Average  Average    Final    Final
+                          Total    Total    Lower  Lateral  Lateral    Upper    Water    Upper    Water
+                          Infil     Evap  Seepage  Outflow  Outflow   Moist.    Table   Moist.    Table
+  Subcatchment               in       in       in       in      CFS                ft                ft
+  -----------------------------------------------------------------------------------------------------
+  FixedGWDepth             4.79     0.23     0.12     0.40     0.77     0.30     7.41     0.30     7.30
+  ThresholdGWElev          4.69     0.22     0.12     1.35   -13.07     0.30     7.14     0.30     6.76
+  NodeGWDepth              4.79     0.23     0.12     0.40    -1.31     0.30     7.42     0.30     7.30
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  GWFlowNode           JUNCTION     2.03     8.20    11.20     0  02:57        8.02
+  Node2                JUNCTION     0.32     1.30     3.30     0  03:01        1.30
+  Outfall              OUTFALL      0.12     0.64     0.64     0  03:01        0.64
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  GWFlowNode           JUNCTION    269.03   269.03     0  02:49        46.1        46.1       0.586
+  Node2                JUNCTION      0.00   213.20     0  02:57           0        45.8       0.288
+  Outfall              OUTFALL       0.00   199.96     0  03:01           0        45.6       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  No nodes were surcharged.
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  Outfall               99.95     10.46    199.96      45.630
+  -----------------------------------------------------------
+  System                99.95     10.46    199.96      45.630
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  1                    CONDUIT    213.20     0  02:57      4.90    0.56    0.47
+  2                    CONDUIT    199.96     0  03:01      1.98    0.01    0.10
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  1                       1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  2                       1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  No conduits were surcharged.
+  
+
+  Analysis begun on:  Tue Aug  5 10:55:14 2025
+  Analysis ended on:  Tue Aug  5 10:55:14 2025
+  Total elapsed time: < 1 sec

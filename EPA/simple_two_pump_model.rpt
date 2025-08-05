@@ -1,0 +1,240 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... YES
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 07/20/2008 00:00:00
+  Ending Date .............. 08/10/2008 23:00:00
+  Antecedent Dry Days ...... 5.0
+  Report Time Step ......... 00:01:00
+  Routing Time Step ........ 30.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 4
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  **********************           Volume        Volume
+  Rainfall Dependent I/I        acre-feet      10^6 gal
+  **********************        ---------     ---------
+  Sewershed Rainfall ......        23.149         7.544
+  RDII Produced ...........         0.212         0.069
+  RDII Ratio ..............         0.009
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.000         0.000
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.212         0.069
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         0.010         0.003
+  Flooding Loss ............         0.174         0.057
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.024         0.008
+  Continuity Error (%) .....         1.822
+  
+  
+  *************************
+  Highest Continuity Errors
+  *************************
+  Node WW (7.60%)
+  Node FM-MH1 (3.07%)
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  None
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Node 047-OF (0.02%)
+  Node FM-MH1 (0.01%)
+  Node WW (0.01%)
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     5.51 sec
+  Average Time Step           :    30.00 sec
+  Maximum Time Step           :    30.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     2.00
+  % of Steps Not Converging   :     0.02
+  Time Step Frequencies       :
+     30.000 -  3.817 sec      :   100.00 %
+      3.817 -  0.486 sec      :     0.00 %
+      0.486 -  0.062 sec      :     0.00 %
+      0.062 -  0.008 sec      :     0.00 %
+      0.008 -  0.001 sec      :     0.00 %
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  FM-MH1               JUNCTION     5.67    15.40   109.90     3  18:30       15.40
+  MH-1                 JUNCTION     0.00     0.09   102.24     3  18:31        0.08
+  047-OF               OUTFALL      0.00     0.19   107.86     3  18:30        0.19
+  WW                   STORAGE      2.57     6.54   101.04     3  18:29        6.50
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  FM-MH1               JUNCTION      0.00     3.00     3  18:30           0      0.0619       3.166
+  MH-1                 JUNCTION      0.41     0.41     3  18:30      0.0692      0.0692      -0.034
+  047-OF               OUTFALL       0.00     0.17     3  18:30           0     0.00332       0.000
+  WW                   STORAGE       0.00     0.41     3  18:31           0      0.0693       8.223
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  Surcharging occurs when water rises above the top of the highest conduit.
+  ---------------------------------------------------------------------
+                                               Max. Height   Min. Depth
+                                   Hours       Above Crown    Below Rim
+  Node                 Type      Surcharged           Feet         Feet
+  ---------------------------------------------------------------------
+  FM-MH1               JUNCTION      436.50         14.733        0.000
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  Flooding refers to all water that overflows a node, whether it ponds or not.
+  --------------------------------------------------------------------------
+                                                             Total   Maximum
+                                 Maximum   Time of Max       Flood    Ponded
+                        Hours       Rate    Occurrence      Volume     Depth
+  Node                 Flooded       CFS   days hr:min    10^6 gal      Feet
+  --------------------------------------------------------------------------
+  FM-MH1                  0.77      2.89      3  19:39       0.057     0.000
+  
+  
+  **********************
+  Storage Volume Summary
+  **********************
+  
+  ------------------------------------------------------------------------------------------------
+                         Average    Avg   Evap  Exfil     Maximum    Max    Time of Max    Maximum
+                          Volume   Pcnt   Pcnt   Pcnt      Volume   Pcnt     Occurrence    Outflow
+  Storage Unit          1000 ft³   Full   Loss   Loss    1000 ft³   Full    days hr:min        CFS
+  ------------------------------------------------------------------------------------------------
+  WW                       0.266   16.7    0.0    0.0       0.677   42.4       3  18:29       3.00
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  047-OF                 0.15      0.15      0.17       0.003
+  -----------------------------------------------------------
+  System                 0.15      0.15      0.17       0.003
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  CDT-11               CONDUIT      0.17     3  18:30      0.73    0.28    0.64
+  INFLOW_P1            CONDUIT      0.41     3  18:31      2.87    0.01    0.54
+  P-1                  PUMP         3.00     3  18:30              0.07
+  P-2                  PUMP         0.00     0  00:00              0.00
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  CDT-11                  1.00   0.17  0.83  0.00  0.00  0.00  0.00  0.00  0.83  0.00
+  INFLOW_P1              28.05   0.17  0.74  0.00  0.10  0.00  0.00  0.00  0.83  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  CDT-11                      0.01      0.01    436.50      0.01         0.01
+  INFLOW_P1                   0.01      0.01    438.05      0.01         0.01
+  
+  
+  ***************
+  Pumping Summary
+  ***************
+  
+  ---------------------------------------------------------------------------------------------------------
+                                                  Min       Avg       Max     Total     Power    % Time Off
+                        Percent   Number of      Flow      Flow      Flow    Volume     Usage    Pump Curve
+  Pump                 Utilized   Start-Ups       CFS       CFS       CFS  10^6 gal     Kw-hr    Low   High
+  ---------------------------------------------------------------------------------------------------------
+  P-1                      0.15           6      0.00      3.00      3.00     0.062      2.22    0.0  100.0
+  P-2                      0.00           0      0.00      0.00      0.00     0.000      0.00    0.0    0.0
+  
+
+  Analysis begun on:  Tue Aug  5 09:51:24 2025
+  Analysis ended on:  Tue Aug  5 09:51:24 2025
+  Total elapsed time: < 1 sec

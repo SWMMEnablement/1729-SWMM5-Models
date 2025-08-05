@@ -1,0 +1,154 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  Scenario Run :  BASE 
+  Madison Wisconsin Rain Gardens - Average Values 
+  2011 Green Infrastructure Effectiveness R&D Project 
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 2
+  Number of subcatchments ... 8
+  Number of nodes ........... 4
+  Number of links ........... 0
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ****************
+  Raingage Summary
+  ****************
+                                                      Data       Recording
+  Name                 Data Source                    Type       Interval 
+  ------------------------------------------------------------------------
+  RG_CLAY              RAIN1                          VOLUME      60 min.
+  RG_SAND              RAIN1                          VOLUME      60 min.
+  
+  
+  ********************
+  Subcatchment Summary
+  ********************
+  Name                       Area     Width   %Imperv    %Slope Rain Gage            Outlet              
+  -----------------------------------------------------------------------------------------------------------
+  PRARIE_CLAY_LID            0.01     20.07      0.00    0.0000 RG_CLAY              PRARIE_CLAY_OUTLET  
+  PRARIE_CLAY_ROOF           0.01     22.65    100.00    0.0100 RG_CLAY              PRARIE_CLAY_LID     
+  PRARIE_SAND_LID            0.00     10.00      0.00    0.0000 RG_SAND              PRARIE_SAND_OUTLET  
+  PRARIE_SAND_ROOF           0.01     39.24    100.00   15.0000 RG_SAND              PRARIE_SAND_LID     
+  TURF_CLAY_LID              0.01     18.81      0.00    0.0000 RG_CLAY              TURF_CLAY_OUTLET    
+  TURF_CLAY_ROOF             0.01     22.65    100.00    0.0100 RG_CLAY              TURF_CLAY_LID       
+  TURF_SAND_LID              0.00     10.00      0.00    0.0000 RG_SAND              TURF_SAND_OUTLET    
+  TURF_SAND_ROOF             0.04     39.24    100.00   15.0000 RG_SAND              TURF_SAND_LID       
+
+
+  *******************
+  LID Control Summary
+  *******************
+                                   No. of        Unit        Unit      % Area    % Imperv      % Perv
+  Subcatchment     LID Control      Units        Area       Width     Covered     Treated     Treated
+  ---------------------------------------------------------------------------------------------------
+  PRARIE_CLAY_LID  PRARIE_CLAY          1      402.99       20.07       99.99        0.00        0.00
+  PRARIE_SAND_LID  PRARIE_SAND          1       99.98        0.00       99.96        0.00        0.00
+  TURF_CLAY_LID    TURF_CLAY            1      353.99       18.81       99.99        0.00        0.00
+  TURF_SAND_LID    TURF_SAND            1       99.99        0.00       99.97        0.00        0.00
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  PRARIE_CLAY_OUTLET   OUTFALL               0.00      0.00       0.0
+  PRARIE_SAND_OUTLET   OUTFALL               0.00      0.00       0.0
+  TURF_CLAY_OUTLET     OUTFALL               0.00      0.00       0.0
+  TURF_SAND_OUTLET     OUTFALL               0.00      0.00       0.0
+  
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... NO
+    Water Quality .......... NO
+  Infiltration Method ...... HORTON
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 05/01/2004 00:00:00
+  Ending Date .............. 05/11/2004 23:59:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:05:00
+  Wet Time Step ............ 00:01:00
+  Dry Time Step ............ 00:01:00
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Initial LID Storage ......         0.002         0.200
+  Total Precipitation ......         0.054         7.000
+  Evaporation Loss .........         0.002         0.284
+  Infiltration Loss ........         0.020         2.589
+  Surface Runoff ...........         0.032         4.139
+  Final Storage ............         0.002         0.200
+  Continuity Error (%) .....        -0.159
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.032         0.010
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         0.032         0.010
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.000         0.000
+  Continuity Error (%) .....         0.000
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in         in         in    10^6 gal      CFS
+  ------------------------------------------------------------------------------------------------------------------------------
+  PRARIE_CLAY_LID            7.00       8.75       0.43       6.92       0.00       0.00       8.43        0.00     0.01   0.535
+  PRARIE_CLAY_ROOF           7.00       0.00       0.13       0.00       6.88       0.00       6.88        0.00     0.01   0.982
+  PRARIE_SAND_LID            7.00      35.51       0.62      25.55       0.00       0.00      16.46        0.00     0.01   0.387
+  PRARIE_SAND_ROOF           7.00       0.00       0.10       0.00       6.91       0.00       6.91        0.00     0.01   0.987
+  TURF_CLAY_LID              7.00       9.96       1.48       6.78       0.00       0.00       8.71        0.00     0.01   0.514
+  TURF_CLAY_ROOF             7.00       0.00       0.13       0.00       6.88       0.00       6.88        0.00     0.01   0.982
+  TURF_SAND_LID              7.00     106.25       0.39      27.12       0.00       0.00      85.76        0.01     0.03   0.757
+  TURF_SAND_ROOF             7.00       0.00       0.11       0.00       6.90       0.00       6.90        0.01     0.04   0.986
+  
+
+  ***********************
+  LID Performance Summary
+  ***********************
+
+  --------------------------------------------------------------------------------------------------------------------
+                                         Total      Evap     Infil   Surface    Drain    Initial     Final  Continuity
+                                        Inflow      Loss      Loss   Outflow   Outflow   Storage   Storage       Error
+  Subcatchment      LID Control             in        in        in        in        in        in        in           %
+  --------------------------------------------------------------------------------------------------------------------
+  PRARIE_CLAY_LID   PRARIE_CLAY          15.75      0.43      6.92      8.44      0.00      0.95      0.95       -0.17
+  PRARIE_SAND_LID   PRARIE_SAND          42.51      0.62     25.55     16.47      0.00      1.20      1.20       -0.32
+  TURF_CLAY_LID     TURF_CLAY            16.96      1.48      6.78      8.71      0.00      0.70      0.70       -0.03
+  TURF_SAND_LID     TURF_SAND           113.25      0.39     27.13     85.79      0.00      0.55      0.55       -0.05
+
+  Analysis begun on:  Tue Aug  5 11:09:45 2025
+  Analysis ended on:  Tue Aug  5 11:09:45 2025
+  Total elapsed time: < 1 sec

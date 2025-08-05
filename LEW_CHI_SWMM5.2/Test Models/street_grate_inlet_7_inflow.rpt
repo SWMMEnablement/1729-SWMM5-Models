@@ -1,0 +1,305 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  HEC-22 example 4-7. 
+  For inflow of 2.3 cfs 
+  captured flow should 
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 0
+  Number of subcatchments ... 0
+  Number of nodes ........... 7
+  Number of links ........... 5
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  1                    JUNCTION            100.00      0.50       0.0    Yes
+  2                    JUNCTION             96.00      0.50       0.0
+  3                    JUNCTION             92.00      0.50       0.0
+  4                    JUNCTION              2.00      2.00       0.0
+  5                    JUNCTION              1.00      2.00       0.0
+  6                    OUTFALL               0.00      2.00       0.0
+  7                    OUTFALL              88.00      0.50       0.0
+  
+  
+  ************
+  Link Summary
+  ************
+  Name             From Node        To Node          Type            Length    %Slope Roughness
+  ---------------------------------------------------------------------------------------------
+  1                1                2                CONDUIT          400.0    1.0001    0.0160
+  2                2                3                CONDUIT          400.0    1.0001    0.0160
+  4                4                5                CONDUIT          400.0    0.2500    0.0100
+  5                5                6                CONDUIT          400.0    0.2500    0.0100
+  6                3                7                CONDUIT          400.0    1.0001    0.0160
+  
+  
+  *********************
+  Cross Section Summary
+  *********************
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  1                Street1              0.50     6.00     0.29    20.00        1    24.50
+  2                Street1              0.50     6.00     0.29    20.00        1    24.50
+  4                CIRCULAR             2.00     3.14     0.50     2.00        1    14.70
+  5                CIRCULAR             2.00     3.14     0.50     2.00        1    14.70
+  6                Street1              0.50     6.00     0.29    20.00        1    24.50
+  
+  
+  **************
+  Street Summary
+  **************
+
+  Street Street1
+  Area:  
+              0.0004     0.0017     0.0037     0.0067     0.0104 
+              0.0150     0.0204     0.0267     0.0337     0.0417 
+              0.0504     0.0600     0.0704     0.0817     0.0937 
+              0.1067     0.1204     0.1350     0.1504     0.1667 
+              0.1837     0.2017     0.2204     0.2400     0.2604 
+              0.2817     0.3037     0.3267     0.3504     0.3750 
+              0.4004     0.4267     0.4537     0.4817     0.5104 
+              0.5400     0.5704     0.6017     0.6338     0.6667 
+              0.7000     0.7333     0.7667     0.8000     0.8333 
+              0.8667     0.9000     0.9333     0.9667     1.0000 
+  Hrad:  
+              0.0167     0.0335     0.0502     0.0670     0.0837 
+              0.1005     0.1172     0.1340     0.1507     0.1675 
+              0.1842     0.2010     0.2177     0.2345     0.2512 
+              0.2680     0.2847     0.3015     0.3182     0.3350 
+              0.3517     0.3685     0.3852     0.4020     0.4187 
+              0.4355     0.4522     0.4690     0.4857     0.5025 
+              0.5192     0.5359     0.5527     0.5694     0.5862 
+              0.6029     0.6197     0.6364     0.6532     0.6699 
+              0.7031     0.7362     0.7693     0.8023     0.8354 
+              0.8684     0.9013     0.9342     0.9671     1.0000 
+  Width: 
+              0.0250     0.0500     0.0750     0.1000     0.1250 
+              0.1500     0.1750     0.2000     0.2250     0.2500 
+              0.2750     0.3000     0.3250     0.3500     0.3750 
+              0.4000     0.4250     0.4500     0.4750     0.5000 
+              0.5250     0.5500     0.5750     0.6000     0.6250 
+              0.6500     0.6750     0.7000     0.7250     0.7500 
+              0.7750     0.8000     0.8250     0.8500     0.8750 
+              0.9000     0.9250     0.9500     0.9750     1.0000 
+              1.0000     1.0000     1.0000     1.0000     1.0000 
+              1.0000     1.0000     1.0000     1.0000     1.0000 
+  
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ NO
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 07/27/2020 00:00:00
+  Ending Date .............. 07/27/2020 05:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:01:00
+  Routing Time Step ........ 30.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.000         0.000
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         4.495         1.465
+  External Outflow .........         4.371         1.424
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.152         0.050
+  Continuity Error (%) .....        -0.617
+  
+  
+  *************************
+  Highest Continuity Errors
+  *************************
+  Node 2 (1.09%)
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  None
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Convergence obtained at all time steps.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     9.37 sec
+  Average Time Step           :    29.90 sec
+  Maximum Time Step           :    30.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     2.01
+  % of Steps Not Converging   :     0.00
+  Time Step Frequencies       :
+     30.000 - 13.228 sec      :    99.83 %
+     13.228 -  5.833 sec      :     0.17 %
+      5.833 -  2.572 sec      :     0.00 %
+      2.572 -  1.134 sec      :     0.00 %
+      1.134 -  0.500 sec      :     0.00 %
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  1                    JUNCTION     0.36     0.47   100.47     0  04:31        0.47
+  2                    JUNCTION     0.36     0.47    96.47     0  04:34        0.47
+  3                    JUNCTION     0.30     0.42    92.42     0  04:38        0.42
+  4                    JUNCTION     0.00     0.00     2.00     0  00:00        0.00
+  5                    JUNCTION     0.63     0.87     1.87     0  04:35        0.87
+  6                    OUTFALL      0.61     0.85     0.85     0  04:36        0.85
+  7                    OUTFALL      0.30     0.42    88.42     0  04:38        0.42
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  1                    JUNCTION     20.00    20.00     0  04:30        1.46        1.46       0.491
+  2                    JUNCTION      0.00    20.13     0  04:32           0        1.46       1.103
+  3                    JUNCTION     -5.76    20.01     0  04:35      -0.453        1.44       0.971
+  4                    JUNCTION      0.00     0.00     0  00:00           0           0       0.000 gal
+  5                    JUNCTION      5.76     5.76     0  04:36       0.453       0.453       0.792
+  6                    OUTFALL       0.00     5.77     0  04:36           0        0.45       0.000
+  7                    OUTFALL       0.00    14.25     0  04:38           0       0.975       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  No nodes were surcharged.
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  6                     99.00      3.37      5.77       0.450
+  7                     98.17      7.36     14.25       0.975
+  -----------------------------------------------------------
+  System                98.59     10.73     20.01       1.424
+  
+  
+  *******************
+  Street Flow Summary
+  *******************
+  
+  ---------------------------------------------------------------------------------------------------------------------------------------
+                                                                                        Peak     Avg.   Bypass     Back     Peak     Peak
+                        Peak   Maximum   Maximum                                        Flow     Flow     Flow     Flow  Capture   Bypass
+                        Flow    Spread     Depth  Inlet             Inlet     Inlet  Capture  Capture     Freq     Freq  / Inlet     Flow
+  Street Conduit         CFS        ft        ft  Design            Location  Count     Pcnt     Pcnt     Pcnt     Pcnt      CFS      CFS
+  ---------------------------------------------------------------------------------------------------------------------------------------
+  1                   20.132    20.000     0.469
+  2                   20.013    20.000     0.445  CurvedVaneGrate   ON-GRADE      1    28.77    37.01    99.17     0.00     5.76    14.25
+  6                   14.247    20.000     0.416
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  1                    CONDUIT     20.13     0  04:32      3.77    0.82    0.94
+  2                    CONDUIT     20.01     0  04:35      4.09    0.82    0.89
+  4                    CONDUIT      0.00     0  00:00      0.00    0.00    0.22
+  5                    CONDUIT      5.77     0  04:36      4.47    0.39    0.43
+  6                    CONDUIT     14.25     0  04:38      3.29    0.58    0.83
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  1                       1.00   0.00  0.00  0.00  0.03  0.97  0.00  0.00  0.94  0.00
+  2                       1.00   0.00  0.00  0.00  0.01  0.99  0.00  0.00  0.00  0.00
+  4                       1.00   0.00  1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  5                       1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  6                       1.00   0.00  0.00  0.00  0.07  0.93  0.00  0.00  0.00  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  No conduits were surcharged.
+  
+
+  Analysis begun on:  Tue Aug  5 11:09:40 2025
+  Analysis ended on:  Tue Aug  5 11:09:40 2025
+  Total elapsed time: < 1 sec

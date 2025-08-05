@@ -1,0 +1,291 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  WARNING 04: minimum elevation drop used for Conduit flat1
+  WARNING 04: minimum elevation drop used for Conduit flat2
+  WARNING 04: minimum elevation drop used for Conduit flat3
+  WARNING 04: minimum elevation drop used for Conduit flat4
+  WARNING 04: minimum elevation drop used for Conduit flat5
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 0
+  Number of subcatchments ... 0
+  Number of nodes ........... 11
+  Number of links ........... 10
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  Inflow               JUNCTION            105.00     10.00       0.0    Yes
+  mid1                 JUNCTION            104.00     10.00       0.0
+  mid2                 JUNCTION            103.00     10.00       0.0
+  mid3                 JUNCTION            102.00     10.00       0.0
+  mid4                 JUNCTION            101.00     10.00       0.0
+  mid5                 JUNCTION            100.00     10.00       0.0
+  mid6                 JUNCTION            100.00     10.00       0.0
+  mid7                 JUNCTION            100.00     10.00       0.0
+  mid8                 JUNCTION            100.00     10.00       0.0
+  mid9                 JUNCTION            100.00     10.00       0.0
+  outfall              OUTFALL             100.00      4.00       0.0
+  
+  
+  ************
+  Link Summary
+  ************
+  Name             From Node        To Node          Type            Length    %Slope Roughness
+  ---------------------------------------------------------------------------------------------
+  steep1           Inflow           mid1             CONDUIT          100.0    1.0001    0.0120
+  steep2           mid1             mid2             CONDUIT          100.0    1.0001    0.0120
+  steep3           mid2             mid3             CONDUIT          100.0    1.0001    0.0120
+  steep4           mid3             mid4             CONDUIT          100.0    1.0001    0.0120
+  steep5           mid4             mid5             CONDUIT          100.0    1.0001    0.0120
+  flat1            mid5             mid6             CONDUIT          100.0    0.0010    0.0120
+  flat2            mid6             mid7             CONDUIT          100.0    0.0010    0.0120
+  flat3            mid7             mid8             CONDUIT          100.0    0.0010    0.0120
+  flat4            mid8             mid9             CONDUIT          100.0    0.0010    0.0120
+  flat5            mid9             outfall          CONDUIT          100.0    0.0010    0.0120
+  
+  
+  *********************
+  Cross Section Summary
+  *********************
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  steep1           RECT_OPEN            4.00     8.00     0.80     2.00        1    85.38
+  steep2           RECT_OPEN            4.00     8.00     0.80     2.00        1    85.38
+  steep3           RECT_OPEN            4.00     8.00     0.80     2.00        1    85.38
+  steep4           RECT_OPEN            4.00     8.00     0.80     2.00        1    85.38
+  steep5           RECT_OPEN            4.00     8.00     0.80     2.00        1    85.38
+  flat1            RECT_OPEN            4.00     8.00     0.80     2.00        1     2.70
+  flat2            RECT_OPEN            4.00     8.00     0.80     2.00        1     2.70
+  flat3            RECT_OPEN            4.00     8.00     0.80     2.00        1     2.70
+  flat4            RECT_OPEN            4.00     8.00     0.80     2.00        1     2.70
+  flat5            RECT_OPEN            4.00     8.00     0.80     2.00        1     2.70
+  
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ NO
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 04/11/2009 00:00:00
+  Ending Date .............. 04/11/2009 02:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:05:00
+  Routing Time Step ........ 10.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  *********************
+  Control Actions Taken
+  *********************
+
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.000         0.000
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         1.238         0.404
+  External Outflow .........         1.186         0.386
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.055         0.018
+  Continuity Error (%) .....        -0.179
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  Link steep1 (97.52%)
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Convergence obtained at all time steps.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     0.56 sec
+  Average Time Step           :     4.82 sec
+  Maximum Time Step           :    10.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     2.00
+  % of Steps Not Converging   :     0.00
+  Time Step Frequencies       :
+     10.000 -  5.493 sec      :    15.34 %
+      5.493 -  3.017 sec      :    84.39 %
+      3.017 -  1.657 sec      :     0.13 %
+      1.657 -  0.910 sec      :     0.07 %
+      0.910 -  0.500 sec      :     0.07 %
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  Inflow               JUNCTION     0.61     0.72   105.72     0  01:00        0.72
+  mid1                 JUNCTION     0.61     0.72   104.72     0  01:00        0.72
+  mid2                 JUNCTION     0.61     0.72   103.72     0  01:00        0.72
+  mid3                 JUNCTION     0.61     0.73   102.73     0  01:00        0.72
+  mid4                 JUNCTION     0.63     0.77   101.77     0  01:56        0.77
+  mid5                 JUNCTION     1.60     1.89   101.89     0  01:55        1.89
+  mid6                 JUNCTION     1.51     1.79   101.79     0  01:51        1.79
+  mid7                 JUNCTION     1.41     1.67   101.67     0  01:57        1.67
+  mid8                 JUNCTION     1.28     1.52   101.52     0  01:52        1.52
+  mid9                 JUNCTION     1.08     1.29   101.29     0  01:44        1.29
+  outfall              OUTFALL      0.76     0.92   100.92     0  01:56        0.92
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  Inflow               JUNCTION     10.00    10.00     0  01:00       0.403       0.403       0.128
+  mid1                 JUNCTION      0.00    10.01     0  01:00           0       0.403       0.269
+  mid2                 JUNCTION      0.00    10.01     0  01:00           0       0.402       0.269
+  mid3                 JUNCTION      0.00    10.02     0  01:00           0       0.401       0.271
+  mid4                 JUNCTION      0.00    10.02     0  01:01           0         0.4       0.279
+  mid5                 JUNCTION      0.00    10.00     0  01:01           0       0.399       0.709
+  mid6                 JUNCTION      0.00    10.00     0  01:59           0       0.396       0.681
+  mid7                 JUNCTION      0.00    10.00     0  01:57           0       0.393       0.640
+  mid8                 JUNCTION      0.00    10.00     0  01:49           0       0.391       0.586
+  mid9                 JUNCTION      0.00    10.00     0  01:43           0       0.388       0.506
+  outfall              OUTFALL       0.00    10.00     0  01:56           0       0.386       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  No nodes were surcharged.
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  outfall               95.45      8.21     10.00       0.386
+  -----------------------------------------------------------
+  System                95.45      8.21     10.00       0.386
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  steep1               CONDUIT     10.01     0  01:00      6.93    0.12    0.18
+  steep2               CONDUIT     10.01     0  01:00      6.93    0.12    0.18
+  steep3               CONDUIT     10.02     0  01:00      6.92    0.12    0.18
+  steep4               CONDUIT     10.02     0  01:01      6.83    0.12    0.19
+  steep5               CONDUIT     10.00     0  01:01      3.80    0.12    0.33
+  flat1                CONDUIT     10.00     0  01:59      2.73    3.70    0.46
+  flat2                CONDUIT     10.00     0  01:57      2.89    3.70    0.43
+  flat3                CONDUIT     10.00     0  01:49      3.14    3.70    0.40
+  flat4                CONDUIT     10.00     0  01:43      3.56    3.70    0.35
+  flat5                CONDUIT     10.00     0  01:56      4.53    3.70    0.28
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  steep1                  1.00   0.00  0.00  0.00  0.01  0.99  0.00  0.00  0.00  0.00
+  steep2                  1.00   0.00  0.00  0.00  0.01  0.99  0.00  0.00  0.00  0.00
+  steep3                  1.00   0.01  0.00  0.00  0.01  0.98  0.00  0.00  0.00  0.00
+  steep4                  1.00   0.01  0.00  0.00  0.01  0.98  0.00  0.00  0.00  0.00
+  steep5                  1.00   0.02  0.00  0.00  0.96  0.02  0.00  0.00  0.43  0.00
+  flat1                   1.00   0.03  0.00  0.00  0.97  0.00  0.00  0.00  0.00  0.00
+  flat2                   1.00   0.04  0.00  0.00  0.96  0.00  0.00  0.00  0.00  0.00
+  flat3                   1.00   0.05  0.00  0.00  0.95  0.00  0.00  0.00  0.00  0.00
+  flat4                   1.00   0.06  0.00  0.00  0.94  0.00  0.00  0.00  0.00  0.00
+  flat5                   1.00   0.07  0.00  0.00  0.93  0.00  0.00  0.00  0.00  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  flat1                       0.01      0.01      0.01      1.70         0.01
+  flat2                       0.01      0.01      0.01      1.69         0.01
+  flat3                       0.01      0.01      0.01      1.68         0.01
+  flat4                       0.01      0.01      0.01      1.67         0.01
+  flat5                       0.01      0.01      0.01      1.66         0.01
+  
+
+  Analysis begun on:  Tue Aug  5 10:06:32 2025
+  Analysis ended on:  Tue Aug  5 10:06:32 2025
+  Total elapsed time: < 1 sec

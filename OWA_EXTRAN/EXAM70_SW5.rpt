@@ -1,0 +1,82 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  'EXTRAN USER''S MANUAL EXAMPLE PROBLEM 70 - ISOL = 0 SOLUTION ' ;'CIRCULAR PIPE COMPARISON WITH RUNOFF AND TRANSPORT BLOCKS' ; 
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 0
+  Number of subcatchments ... 0
+  Number of nodes ........... 4
+  Number of links ........... 3
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  101                  OUTFALL              88.82      6.00       0.0
+  401                  OUTFALL              90.00      6.00       0.0
+  301                  OUTFALL              89.61      6.00       0.0
+  201                  OUTFALL              89.22      6.00       0.0
+  
+  
+  ************
+  Link Summary
+  ************
+  Name             From Node        To Node          Type            Length    %Slope Roughness
+  ---------------------------------------------------------------------------------------------
+  10               401              301              CONDUIT          560.0    0.0696    0.0100
+  20               301              201              CONDUIT          560.0    0.0696    0.0100
+  30               201              101              CONDUIT          560.0    0.0707    0.0100
+  
+  
+  *********************
+  Cross Section Summary
+  *********************
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  10               CIRCULAR             6.00    28.27     1.50     6.00        1   145.29
+  20               CIRCULAR             6.00    28.27     1.50     6.00        1   145.29
+  30               CIRCULAR             6.00    28.27     1.50     6.00        1   146.41
+  
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ NO
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 01/01/1988 00:00:00
+  Ending Date .............. 01/01/1988 03:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:15:00
+  Routing Time Step ........ 10.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  ERROR 141: Outfall 301 has more than 1 inlet link or an outlet link.
+  
+  ERROR 141: Outfall 201 has more than 1 inlet link or an outlet link.
+
+  Analysis begun on:  Tue Aug  5 11:56:34 2025
+  Analysis ended on:  Tue Aug  5 11:56:34 2025
+  Total elapsed time: < 1 sec

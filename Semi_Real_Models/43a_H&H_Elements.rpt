@@ -1,0 +1,335 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... YES
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ YES
+    Water Quality .......... NO
+  Infiltration Method ...... HORTON
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 12/16/2018 00:00:00
+  Ending Date .............. 12/18/2018 00:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:15:00
+  Wet Time Step ............ 00:05:00
+  Dry Time Step ............ 01:00:00
+  Routing Time Step ........ 30.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  **********************           Volume        Volume
+  Rainfall Dependent I/I        acre-feet      10^6 gal
+  **********************        ---------     ---------
+  Sewershed Rainfall ......       143.613        46.798
+  RDII Produced ...........        22.386         7.295
+  RDII Ratio ..............         0.156
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Total Precipitation ......        17.250        23.000
+  Evaporation Loss .........         0.000         0.000
+  Infiltration Loss ........         0.000         0.000
+  Surface Runoff ...........        17.250        23.000
+  Final Storage ............         0.000         0.000
+  Continuity Error (%) .....         0.000
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......      3014.761       982.405
+  Wet Weather Inflow .......        17.203         5.606
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............        22.293         7.264
+  External Inflow ..........         0.000         0.000
+  External Outflow .........        26.391         8.600
+  Flooding Loss ............      3027.679       986.615
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.139         0.045
+  Continuity Error (%) .....         0.002
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  Link SA30AEAO0.1 (77.69%)
+  Link SA30AEBC1.1 (8.81%)
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  Link SA30AEBC1.1 (3)
+  Link SA30AEAO0.1 (1)
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Node SA30ADBL0 (4.08%)
+  Node SA30AEAD0 (2.67%)
+  Node SA30AEBC1 (2.60%)
+  Node SA30ADBZ0 (2.49%)
+  Node SA30AEBC0 (2.45%)
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     0.19 sec
+  Average Time Step           :    11.58 sec
+  Maximum Time Step           :    30.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     2.53
+  % of Steps Not Converging   :     4.08
+  Time Step Frequencies       :
+     30.000 - 13.228 sec      :    13.35 %
+     13.228 -  5.833 sec      :    79.69 %
+      5.833 -  2.572 sec      :     3.10 %
+      2.572 -  1.134 sec      :     2.61 %
+      1.134 -  0.500 sec      :     1.25 %
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in         in         in    10^6 gal      CFS
+  ------------------------------------------------------------------------------------------------------------------------------
+  MM-10-7                   23.00       0.00       0.00       0.00       0.00      23.00      23.00        0.62     2.02   1.000
+  MM-10-8                   23.00       0.00       0.00       0.00       0.00      23.00      23.00        0.62     2.02   1.000
+  MM-10-3                   23.00       0.00       0.00       0.00       0.00      23.00      23.00        0.62     2.02   1.000
+  MM-10-2                   23.00       0.00       0.00       0.00       0.00      23.00      23.00        0.62     2.02   1.000
+  MM-24-1                   23.00       0.00       0.00       0.00       0.00      23.00      23.00        0.62     2.02   1.000
+  MP-18                     23.00       0.00       0.00       0.00       0.00      23.00      23.00        0.62     2.02   1.000
+  MP-20                     23.00       0.00       0.00       0.00       0.00      23.00      23.00        0.62     2.02   1.000
+  MP-16                     23.00       0.00       0.00       0.00       0.00      23.00      23.00        0.62     2.02   1.000
+  MP-19                     23.00       0.00       0.00       0.00       0.00      23.00      23.00        0.62     2.02   1.000
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  SA30ADBO0            JUNCTION     0.71     1.06   941.48     0  02:11        1.06
+  SA30ADBQ0            JUNCTION     2.23     7.75   953.18     0  01:08        6.80
+  SA30ADBZ0            JUNCTION     2.38    12.41   982.05     1  15:03       12.36
+  SA30AEAA3            JUNCTION     1.34    10.09   985.22     0  02:02       10.09
+  SA30AEAD0            JUNCTION     1.85    15.09   991.90     0  20:05       15.01
+  SA30AEAO0            JUNCTION     2.17    11.30   983.00     1  14:06       11.27
+  SA30AEAS0            JUNCTION    11.65    11.65   990.55     0  00:01       11.65
+  SA30AEBC0            JUNCTION     1.25    10.87   993.26     0  02:05       10.77
+  SA30AEBC1            JUNCTION     1.49    11.53   993.83     0  02:05       11.38
+  SA30AEBF0            JUNCTION     0.00     0.00   994.19     0  00:00        0.00
+  SA30AECB0            JUNCTION     9.10     9.10   992.71     0  00:00        9.10
+  SA30AECL0            JUNCTION    15.27    15.27   992.48     0  00:00       15.27
+  SA30AECL5            JUNCTION    15.90    15.90   991.01     0  00:00       15.90
+  SA30AEEN0            JUNCTION     0.44     7.98   998.30     0  02:04        7.98
+  SA30AEFA0            JUNCTION     1.70     9.66   993.60     0  01:04        9.66
+  SA30AEFB0            JUNCTION     2.16    12.25  1003.86     0  01:04       12.25
+  SA30AEHA5            JUNCTION     0.00     0.00   995.45     0  00:00        0.00
+  SA30ADBL0            OUTFALL      0.72     1.18   925.13     0  02:11        1.18
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  SA30ADBO0            JUNCTION      2.02     9.92     0  02:09       0.623         8.6       0.059
+  SA30ADBQ0            JUNCTION      0.00     7.90     0  02:11           0        7.99       0.141
+  SA30ADBZ0            JUNCTION      0.00     9.68     0  01:09           0           8       0.131
+  SA30AEAA3            JUNCTION      0.00     3.86     0  02:06           0        1.55       0.110
+  SA30AEAD0            JUNCTION      2.02     3.92     0  01:06       0.623        1.55       0.216
+  SA30AEAO0            JUNCTION      0.00     6.27     0  01:09           0        6.61       0.073
+  SA30AEAS0            JUNCTION      0.00     3.71     0  00:00           0        1.96       0.052
+  SA30AEBC0            JUNCTION      0.00     2.97     0  19:05           0       0.929       0.015
+  SA30AEBC1            JUNCTION      2.02     2.97     0  19:05       0.623       0.958       0.018
+  SA30AEBF0            JUNCTION      0.00     0.00     0  00:00           0           0       0.000 gal
+  SA30AECB0            JUNCTION    251.89   251.89     1  15:01         322         322       0.002
+  SA30AECL0            JUNCTION    359.16   359.16     1  15:01         460         460       0.002
+  SA30AECL5            JUNCTION    163.87   165.31     1  05:56         209         211       0.002
+  SA30AEEN0            JUNCTION      2.02     2.02     0  02:05       0.623       0.623       0.059
+  SA30AEFA0            JUNCTION      0.00     2.10     0  02:06           0       0.889       0.010
+  SA30AEFB0            JUNCTION      4.03     4.03     0  02:05        1.25        1.25      -0.021
+  SA30AEHA5            JUNCTION      0.00     0.00     0  00:00           0           0       0.000 gal
+  SA30ADBL0            OUTFALL       0.00     9.92     0  02:11           0         8.6       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  Surcharging occurs when water rises above the top of the highest conduit.
+  ---------------------------------------------------------------------
+                                               Max. Height   Min. Depth
+                                   Hours       Above Crown    Below Rim
+  Node                 Type      Surcharged           Feet         Feet
+  ---------------------------------------------------------------------
+  SA30ADBQ0            JUNCTION       46.86          6.503       10.297
+  SA30ADBZ0            JUNCTION       17.43         11.161        1.999
+  SA30AEAA3            JUNCTION       16.62          9.090        0.000
+  SA30AEAD0            JUNCTION       16.94         14.088        2.082
+  SA30AEAO0            JUNCTION       17.09         10.046        2.604
+  SA30AEAS0            JUNCTION       47.99         10.983        0.000
+  SA30AEBC0            JUNCTION       16.72          9.874        1.396
+  SA30AEBC1            JUNCTION       17.16         10.859        1.314
+  SA30AECB0            JUNCTION       48.00          8.433        0.000
+  SA30AECL0            JUNCTION       48.00         14.436        0.000
+  SA30AECL5            JUNCTION       48.00         15.054        0.000
+  SA30AEEN0            JUNCTION        6.16          7.313        0.000
+  SA30AEFA0            JUNCTION       17.05          8.993        0.000
+  SA30AEFB0            JUNCTION       16.86         11.583        0.000
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  Flooding refers to all water that overflows a node, whether it ponds or not.
+  --------------------------------------------------------------------------
+                                                             Total   Maximum
+                                 Maximum   Time of Max       Flood    Ponded
+                        Hours       Rate    Occurrence      Volume     Depth
+  Node                 Flooded       CFS   days hr:min    10^6 gal      Feet
+  --------------------------------------------------------------------------
+  SA30AEAA3               6.34      0.97      1  14:06       0.151     0.000
+  SA30AEAS0              47.99      3.20      0  00:01       1.954     0.000
+  SA30AECB0              48.00    251.20      1  15:01     321.361     0.000
+  SA30AECL0              48.00    356.87      1  15:01     457.330     0.000
+  SA30AECL5              48.00    161.83      1  14:56     204.752     0.000
+  SA30AEEN0               5.86      0.50      1  14:06       0.076     0.000
+  SA30AEFA0              16.38      2.10      0  02:07       0.554     0.000
+  SA30AEFB0              16.56      2.16      0  02:05       0.386     0.000
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  SA30ADBL0             99.87      5.92      9.92       8.599
+  -----------------------------------------------------------
+  System                99.87      5.92      9.92       8.599
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  SA30ADBO0.1          CONDUIT      9.92     0  02:11      8.94    1.03    0.90
+  SA30ADBQ0.1          CONDUIT      7.91     0  02:09      6.84    1.45    0.93
+  SA30ADBZ0.1          CONDUIT      7.90     0  02:11      7.40    1.12    1.00
+  SA30AEAA3.1          CONDUIT      3.41     0  01:09      4.69    0.90    1.00
+  SA30AEAD0.1          CONDUIT      3.86     0  02:06      5.49    1.99    1.00
+  SA30AEAO0.1          CONDUIT      6.27     0  01:09      8.98    0.86    1.00
+  SA30AEAS0.1          CONDUIT      2.13     0  00:00      6.79    2.74    1.00
+  SA30AEBC0.1          CONDUIT      2.91     0  01:06      4.86    0.78    1.00
+  SA30AEBC1.1          CONDUIT      2.97     0  19:05     10.02    3.91    1.00
+  SA30AEBF0.1          CONDUIT      0.00     0  00:00      0.00    0.00    0.50
+  SA30AECB0.1          CONDUIT      1.58     0  00:00      5.75    1.57    1.00
+  SA30AECL0.1          CONDUIT      1.44     0  01:05      2.64    0.84    1.00
+  SA30AECL5.1          CONDUIT      5.34     1  22:03     11.84    2.35    1.00
+  SA30AEEN0.1          CONDUIT      1.52     1  14:04      4.36    0.91    1.00
+  SA30AEFA0.1          CONDUIT      1.96     0  19:05      5.61    2.28    1.00
+  SA30AEFB0.1          CONDUIT      1.96     0  01:05      5.61    1.21    1.00
+  SA30AEHA5.1          CONDUIT      0.00     0  00:00      0.00    0.00    0.00
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  SA30ADBO0.1             1.00   0.00  0.00  0.00  0.00  1.00  0.00  0.00  0.18  0.00
+  SA30ADBQ0.1             1.00   0.00  0.00  0.00  0.73  0.27  0.00  0.00  0.00  0.00
+  SA30ADBZ0.1             1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.63  0.00
+  SA30AEAA3.1             1.00   0.00  0.02  0.00  0.98  0.00  0.00  0.00  0.62  0.00
+  SA30AEAD0.1             1.00   0.02  0.00  0.00  0.97  0.01  0.00  0.00  0.21  0.00
+  SA30AEAO0.1             1.00   0.00  0.00  0.00  0.37  0.63  0.00  0.00  0.63  0.00
+  SA30AEAS0.1             1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  SA30AEBC0.1             1.00   0.02  0.00  0.00  0.98  0.00  0.00  0.00  0.62  0.00
+  SA30AEBC1.1             1.74   0.02  0.00  0.00  0.97  0.00  0.00  0.00  0.00  0.00
+  SA30AEBF0.1             1.00   0.02  0.98  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  SA30AECB0.1             1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  SA30AECL0.1             1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  SA30AECL5.1             1.00   0.00  0.00  0.00  0.38  0.62  0.00  0.00  0.00  0.00
+  SA30AEEN0.1             1.00   0.00  0.02  0.00  0.98  0.00  0.00  0.00  0.65  0.00
+  SA30AEFA0.1             1.00   0.02  0.19  0.00  0.79  0.00  0.00  0.00  0.62  0.00
+  SA30AEFB0.1             1.00   0.21  0.31  0.00  0.47  0.01  0.00  0.00  0.62  0.00
+  SA30AEHA5.1             1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  SA30ADBO0.1                 0.01      0.01      0.01      5.71         0.01
+  SA30ADBQ0.1                 0.01     46.86      0.01     18.60         0.01
+  SA30ADBZ0.1                17.43     17.43     46.86     16.60        16.59
+  SA30AEAA3.1                16.62     16.62     17.79      0.01         0.01
+  SA30AEAD0.1                16.61     16.94     16.62     17.03        16.58
+  SA30AEAO0.1                17.08     17.08     17.43      0.01         0.01
+  SA30AEAS0.1                47.99     47.99     48.00     48.00         0.01
+  SA30AEBC0.1                16.72     16.72     16.94      0.01         0.01
+  SA30AEBC1.1                16.86     16.86     17.16     17.18         0.01
+  SA30AECB0.1                47.99     48.00     47.99      0.02         0.01
+  SA30AECL0.1                48.00     48.00     48.00      0.01         0.01
+  SA30AECL5.1                17.95     48.00     17.95     48.00        17.95
+  SA30AEEN0.1                 6.04      6.04     47.00      0.01         0.01
+  SA30AEFA0.1                17.00     17.00     17.16     10.75        10.73
+  SA30AEFB0.1                16.84     16.84     17.00     16.65        16.61
+  
+
+  Analysis begun on:  Tue Aug  5 12:34:33 2025
+  Analysis ended on:  Tue Aug  5 12:34:34 2025
+  Total elapsed time: 00:00:01

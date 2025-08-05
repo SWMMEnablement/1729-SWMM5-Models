@@ -1,0 +1,158 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  Test of named variables and 
+  math expressions in control 
+  rules. 
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ NO
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Flow Routing Method ...... STEADY
+  Starting Date ............ 01/16/2021 00:00:00
+  Ending Date .............. 01/16/2021 03:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:05:00
+  Routing Time Step ........ 30.00 sec
+  
+  
+  *********************
+  Control Actions Taken
+  *********************
+   01/16/2021: 00:00:00 Link 3 setting changed to   0.50 by Control 1
+   01/16/2021: 00:30:00 Link 3 setting changed to   1.00 by Control 1
+   01/16/2021: 02:00:00 Link 3 setting changed to   0.50 by Control 1
+
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.000         0.000
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.185         0.060
+  External Outflow .........         0.075         0.025
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.110         0.036
+  Continuity Error (%) .....        -0.179
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :    30.00 sec
+  Average Time Step           :    30.00 sec
+  Maximum Time Step           :    30.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     1.00
+  % of Steps Not Converging   :     0.00
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  1                    JUNCTION     0.20     0.30     2.30     0  03:00        0.30
+  2                    JUNCTION     0.17     0.25     1.25     0  03:00        0.25
+  4                    OUTFALL      0.00     0.00     0.00     0  00:00        0.00
+  3                    STORAGE      0.19     0.48     0.48     0  03:00        0.48
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  1                    JUNCTION      1.00     1.00     0  03:00      0.0402      0.0402       0.000
+  2                    JUNCTION      0.50     0.50     0  03:00      0.0201      0.0201       0.000
+  4                    OUTFALL       0.00     0.96     0  03:00           0      0.0246       0.000
+  3                    STORAGE       0.00     1.50     0  03:00           0      0.0603      -0.178
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  **********************
+  Storage Volume Summary
+  **********************
+  
+  ------------------------------------------------------------------------------------------------
+                         Average    Avg   Evap  Exfil     Maximum    Max    Time of Max    Maximum
+                          Volume   Pcnt   Pcnt   Pcnt      Volume   Pcnt     Occurrence    Outflow
+  Storage Unit          1000 ft³   Full   Loss   Loss    1000 ft³   Full    days hr:min        CFS
+  ------------------------------------------------------------------------------------------------
+  3                        1.935    3.9    0.0    0.0       4.786    9.6       0  03:00       0.96
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  4                     91.94      0.33      0.96       0.025
+  -----------------------------------------------------------
+  System                91.94      0.33      0.96       0.025
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  1                    CONDUIT      1.00     0  03:00      3.42    0.05    0.15
+  2                    CONDUIT      0.50     0  03:00      2.18    0.03    0.13
+  3                    ORIFICE      0.96     0  03:00                      0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  No conduits were surcharged.
+  
+
+  Analysis begun on:  Tue Aug  5 11:09:40 2025
+  Analysis ended on:  Tue Aug  5 11:09:40 2025
+  Total elapsed time: < 1 sec

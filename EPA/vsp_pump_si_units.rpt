@@ -1,0 +1,318 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 0
+  Number of subcatchments ... 0
+  Number of nodes ........... 8
+  Number of links ........... 7
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  FIT1                 JUNCTION              0.00      0.10       0.0
+  FIT2                 JUNCTION              6.00      0.10       0.0
+  JCT-10               JUNCTION              5.00      0.10       0.0
+  JCT-12               JUNCTION             10.00      0.10       0.0
+  JCT-14               JUNCTION             11.20      1.30       0.0
+  MANHOLE              JUNCTION              6.20      2.00       0.0
+  OFALL                OUTFALL               4.00      0.28       0.0
+  WW                   STORAGE              -5.00      5.00       0.0    Yes
+  
+  
+  ************
+  Link Summary
+  ************
+  Name             From Node        To Node          Type            Length    %Slope Roughness
+  ---------------------------------------------------------------------------------------------
+  FM1              FIT1             FIT2             CONDUIT           70.7   -8.5153    0.0100
+  FM2              FIT2             JCT-10           CONDUIT           99.4    1.0062    0.0100
+  FM3              JCT-10           JCT-12           CONDUIT           80.5   -6.2252    0.0100
+  GRAVITY          JCT-12           JCT-14           CONDUIT           17.8   -9.6083    0.0100
+  GRAVITY2         JCT-14           MANHOLE          CONDUIT           44.2   11.3830    0.0100
+  GRAVITY3         MANHOLE          OFALL            CONDUIT           26.4    8.3553    0.0100
+  VSD              WW               FIT1             TYPE3 PUMP  
+  
+  
+  *********************
+  Cross Section Summary
+  *********************
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  FM1              FORCE_MAIN           0.10     0.01     0.03     0.10        1    22.89
+  FM2              FORCE_MAIN           0.10     0.01     0.03     0.10        1     7.22
+  FM3              FORCE_MAIN           0.10     0.01     0.03     0.10        1    19.32
+  GRAVITY          CIRCULAR             0.10     0.01     0.03     0.10        1    20.82
+  GRAVITY2         CIRCULAR             0.25     0.05     0.06     0.25        1   260.84
+  GRAVITY3         CIRCULAR             0.28     0.06     0.07     0.28        1   316.94
+  
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... LPS
+  Process Models:
+    Rainfall/Runoff ........ NO
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 05/31/2016 00:00:00
+  Ending Date .............. 06/02/2016 10:00:00
+  Antecedent Dry Days ...... 5.0
+  Report Time Step ......... 00:00:05
+  Routing Time Step ........ 5.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 20
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 m
+  
+  
+  *********************
+  Control Actions Taken
+  *********************
+
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        hectare-m      10^6 ltr
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.081         0.814
+  Wet Weather Inflow .......         0.000         0.000
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         0.102         1.021
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.000         0.002
+  Continuity Error (%) .....       -25.743
+  
+  
+  *************************
+  Highest Continuity Errors
+  *************************
+  Node FIT1 (-92.18%)
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  Link GRAVITY (90.51%)
+  Link GRAVITY3 (7.37%)
+  Link GRAVITY2 (1.24%)
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  Link GRAVITY (10)
+  Link FM2 (7)
+  Link FM1 (6)
+  Link FM3 (6)
+  Link GRAVITY2 (6)
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Node OFALL (44.50%)
+  Node FIT2 (41.14%)
+  Node FIT1 (41.09%)
+  Node JCT-10 (41.05%)
+  Node JCT-12 (27.19%)
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     0.88 sec
+  Average Time Step           :     2.11 sec
+  Maximum Time Step           :     5.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :    13.30
+  % of Steps Not Converging   :    44.50
+  Time Step Frequencies       :
+      5.000 -  2.287 sec      :    34.13 %
+      2.287 -  1.046 sec      :    65.86 %
+      1.046 -  0.478 sec      :     0.00 %
+      0.478 -  0.219 sec      :     0.00 %
+      0.219 -  0.100 sec      :     0.00 %
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type       Meters   Meters   Meters  days hr:min      Meters
+  ---------------------------------------------------------------------------------
+  FIT1                 JUNCTION    12.84    25.10    25.10     0  18:53       24.40
+  FIT2                 JUNCTION     8.68    13.58    19.58     0  17:12       13.45
+  JCT-10               JUNCTION     8.14    10.32    15.32     1  21:14       10.29
+  JCT-12               JUNCTION     2.11     2.63    12.63     1  21:34        2.62
+  JCT-14               JUNCTION     0.03     0.04    11.24     0  18:17        0.04
+  MANHOLE              JUNCTION     0.03     0.04     6.24     0  18:18        0.04
+  OFALL                OUTFALL      0.03     0.04     4.04     0  18:18        0.04
+  WW                   STORAGE      3.08     3.29    -1.71     0  18:16        3.29
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           LPS      LPS  days hr:min    10^6 ltr    10^6 ltr     Percent
+  -------------------------------------------------------------------------------------------------
+  FIT1                 JUNCTION      0.00    30.10     1  15:38           0       0.587     -47.964
+  FIT2                 JUNCTION      0.00    15.02     0  18:27           0        1.13      10.678
+  JCT-10               JUNCTION      0.00    12.31     0  18:17           0        1.02      -0.419
+  JCT-12               JUNCTION      0.00    12.45     0  18:17           0        1.02      -0.053
+  JCT-14               JUNCTION      0.00    12.43     0  18:17           0        1.02       0.088
+  MANHOLE              JUNCTION      0.00    12.43     0  18:17           0        1.02       0.165
+  OFALL                OUTFALL       0.00    12.42     0  18:18           0        1.02       0.000
+  WW                   STORAGE       7.00     7.00     0  18:00       0.814       0.814      38.697
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  Surcharging occurs when water rises above the top of the highest conduit.
+  ---------------------------------------------------------------------
+                                               Max. Height   Min. Depth
+                                   Hours       Above Crown    Below Rim
+  Node                 Type      Surcharged         Meters       Meters
+  ---------------------------------------------------------------------
+  FIT1                 JUNCTION       57.44         25.000        0.000
+  FIT2                 JUNCTION       57.05         13.479        0.000
+  JCT-10               JUNCTION       57.19         10.224        0.000
+  JCT-12               JUNCTION       56.93          2.532        0.000
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  Flooding refers to all water that overflows a node, whether it ponds or not.
+  --------------------------------------------------------------------------
+                                                             Total   Maximum
+                                 Maximum   Time of Max       Flood    Ponded
+                        Hours       Rate    Occurrence      Volume     Depth
+  Node                 Flooded       LPS   days hr:min    10^6 ltr    Meters
+  --------------------------------------------------------------------------
+  FIT1                    0.01     22.25      1  18:05       0.000    25.000
+  
+  
+  **********************
+  Storage Volume Summary
+  **********************
+  
+  ------------------------------------------------------------------------------------------------
+                         Average    Avg   Evap  Exfil     Maximum    Max    Time of Max    Maximum
+                          Volume   Pcnt   Pcnt   Pcnt      Volume   Pcnt     Occurrence    Outflow
+  Storage Unit           1000 m³   Full   Loss   Loss     1000 m³   Full    days hr:min        LPS
+  ------------------------------------------------------------------------------------------------
+  WW                       0.000    0.0    0.0    0.0       0.000    0.0       0  00:00      30.10
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       LPS       LPS    10^6 ltr
+  -----------------------------------------------------------
+  OFALL                 99.19      6.47     12.42       1.021
+  -----------------------------------------------------------
+  System                99.19      6.47     12.42       1.021
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          LPS  days hr:min     m/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  FM1                  CONDUIT     15.02     0  18:27      1.91    0.66    1.00
+  FM2                  CONDUIT     12.31     0  18:17      1.57    1.70    1.00
+  FM3                  CONDUIT     12.45     0  18:17      1.59    0.64    1.00
+  GRAVITY              CONDUIT     12.43     0  18:17      1.90    0.60    0.78
+  GRAVITY2             CONDUIT     12.43     0  18:17      2.96    0.05    0.15
+  GRAVITY3             CONDUIT     12.42     0  18:18      2.40    0.04    0.14
+  VSD                  PUMP        30.10     1  15:38              4.18
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  FM1                     1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  FM2                     1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  FM3                     1.00   0.01  0.01  0.00  0.98  0.00  0.00  0.00  0.00  0.00
+  GRAVITY                 1.02   0.02  0.11  0.00  0.00  0.00  0.87  0.00  0.00  0.00
+  GRAVITY2                1.00   0.02  0.00  0.00  0.00  0.98  0.00  0.00  0.59  0.00
+  GRAVITY3                1.26   0.02  0.00  0.00  0.00  0.98  0.00  0.00  0.23  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  FM1                        57.05     57.05     57.43      0.01        10.23
+  FM2                        57.05     57.05     57.19     13.90        17.11
+  FM3                        56.93     56.93     57.04      0.01         0.01
+  GRAVITY                     0.01      0.01     56.93      0.01         0.01
+  
+  
+  ***************
+  Pumping Summary
+  ***************
+  
+  ---------------------------------------------------------------------------------------------------------
+                                                  Min       Avg       Max     Total     Power    % Time Off
+                        Percent   Number of      Flow      Flow      Flow    Volume     Usage    Pump Curve
+  Pump                 Utilized   Start-Ups       LPS       LPS       LPS  10^6 ltr     Kw-hr    Low   High
+  ---------------------------------------------------------------------------------------------------------
+  VSD                     90.35        2001      0.00      3.12     30.10     0.590     25.01    0.0   20.5
+  
+
+  Analysis begun on:  Tue Aug  5 09:52:39 2025
+  Analysis ended on:  Tue Aug  5 09:52:44 2025
+  Total elapsed time: 00:00:05

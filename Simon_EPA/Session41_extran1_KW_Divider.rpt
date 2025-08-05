@@ -1,0 +1,169 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  Example 1 of Extran Manual 
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ NO
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Flow Routing Method ...... STEADY
+  Starting Date ............ 01/01/2002 00:00:00
+  Ending Date .............. 01/01/2002 08:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:15:00
+  Routing Time Step ........ 20.00 sec
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.000         0.000
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........        33.470        10.907
+  External Outflow .........        14.141         4.608
+  Flooding Loss ............        19.329         6.298
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.000         0.000
+  Continuity Error (%) .....         0.000
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :    20.00 sec
+  Average Time Step           :    20.00 sec
+  Maximum Time Step           :    20.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     1.00
+  % of Steps Not Converging   :     0.00
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  80408                JUNCTION     0.87     2.26   126.86     0  00:15        2.26
+  80608                JUNCTION     1.08     2.82   121.12     0  00:15        2.82
+  81009                JUNCTION     1.01     2.62   130.82     0  00:15        2.62
+  81309                JUNCTION     1.07     2.80   120.30     0  00:15        2.80
+  82309                JUNCTION    17.42    42.70   155.00     0  00:08       42.70
+  10309                JUNCTION     0.86     2.20   103.80     0  00:15        2.20
+  15009                JUNCTION     1.07     2.80   114.30     0  00:15        2.80
+  16009                JUNCTION     0.94     2.44   104.44     0  00:15        2.44
+  10208                OUTFALL      0.79     2.02    91.92     0  00:15        2.02
+  16109                DIVIDER      9.51    22.20   125.00     0  00:01       22.20
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  80408                JUNCTION     45.00    45.00     0  00:15        3.64        3.64       0.000
+  80608                JUNCTION      0.00    45.00     0  00:15           0        3.64       0.000
+  81009                JUNCTION     50.00    50.00     0  00:15        4.04        4.04       0.000
+  81309                JUNCTION      0.00    50.00     0  00:15           0        4.04       0.000
+  82309                JUNCTION     40.00    85.00     0  00:15        3.23        6.87      -0.000
+  10309                JUNCTION      0.00    56.54     0  00:15           0        4.61       0.000
+  15009                JUNCTION      0.00    50.00     0  00:15           0        4.04       0.000
+  16009                JUNCTION      0.00    54.00     0  00:15           0        4.39       0.000
+  10208                OUTFALL       0.00    56.54     0  00:15           0        4.61       0.000
+  16109                DIVIDER       0.00    43.41     0  00:08           0        3.65       0.000
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  Flooding refers to all water that overflows a node, whether it ponds or not.
+  --------------------------------------------------------------------------
+                                                             Total   Maximum
+                                 Maximum   Time of Max       Flood    Ponded
+                        Hours       Rate    Occurrence      Volume    Volume
+  Node                 Flooded       CFS   days hr:min    10^6 gal  1000 ft³
+  --------------------------------------------------------------------------
+  82309                   3.00     41.59      0  00:15       3.217     0.000
+  16109                   3.21     36.87      0  00:08       3.081     0.000
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  10208                 40.56     52.74     56.54       4.608
+  -----------------------------------------------------------
+  System                40.56     52.74     56.54       4.608
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  8040                 CONDUIT     45.00     0  00:15      6.15    0.61    0.56
+  8060                 CONDUIT     45.00     0  00:15      4.75    0.84    0.71
+  8100                 CONDUIT     50.00     0  00:15      5.20    0.64    0.58
+  8130                 CONDUIT     50.00     0  00:15      4.81    0.71    0.62
+  1030                 CONDUIT     56.54     0  00:15      4.61    0.02    0.22
+  1570                 CONDUIT     50.00     0  00:15      4.93    0.40    0.44
+  1600                 CONDUIT      4.00     0  00:01      3.03    0.02    0.09
+  1630                 CONDUIT     54.00     0  00:15      3.72    0.02    0.24
+  1602                 CONDUIT     43.41     0  00:08      2.52    1.00    1.00
+  Divert               CONDUIT      2.54     0  00:01      3.44    1.00    1.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  1602                        3.00      3.00      3.00      3.00         3.00
+  Divert                      3.21      3.21      3.21      3.21         3.21
+  
+
+  Analysis begun on:  Tue Aug  5 12:57:45 2025
+  Analysis ended on:  Tue Aug  5 12:57:45 2025
+  Total elapsed time: < 1 sec

@@ -1,0 +1,186 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+   SW 1 0 9A1 'BROWARD COUNTY Multi FAMILY SITE - Runoff example # 44'A2 'RUNO 
+   FF MODELING OF HDR STORM USGS STORM # 3 May 5 1977'RUNOFFMODELINGOFHDRSTORM 
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 1
+  Number of subcatchments ... 4
+  Number of nodes ........... 4
+  Number of links ........... 0
+  Number of pollutants ...... 5
+  Number of land uses ....... 1
+  
+  
+  *****************
+  Pollutant Summary
+  *****************
+                               Ppt.      GW         Kdecay
+  Name                 Units   Concen.   Concen.    1/days    CoPollutant
+  -----------------------------------------------------------------------
+  COD                   MG/L      5.00      0.00      0.00
+  TOT.SOL               MG/L      5.00      0.00      0.00
+  TOT.NIT               MG/L      0.30      0.00      0.00
+  TSS                   MG/L      5.00      0.00      0.00
+  O-PO4-P               MG/L      0.00      0.00      0.00
+  
+  
+  ***************
+  Landuse Summary
+  ***************
+                         Sweeping   Maximum      Last
+  Name                   Interval   Removal     Swept
+  ---------------------------------------------------
+  HOUSING                    0.00      0.00      0.00
+  
+  
+  ****************
+  Raingage Summary
+  ****************
+                                                      Data       Recording
+  Name                 Data Source                    Type       Interval 
+  ------------------------------------------------------------------------
+  GAGE1                RainSeries1                    INTENSITY    5 min.
+  
+  
+  ********************
+  Subcatchment Summary
+  ********************
+  Name                       Area     Width   %Imperv    %Slope Rain Gage            Outlet              
+  -----------------------------------------------------------------------------------------------------------
+  CA-1                       5.00    600.00     39.00    2.7000 GAGE1                P001                
+  CA-7                       1.60    200.00     48.60    2.7000 GAGE1                P005                
+  CA-8                       4.57    500.00     46.70    2.7000 GAGE1                P009                
+  CA-11                      3.58    600.00     47.00    2.7000 GAGE1                P011                
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  P001                 OUTFALL               0.00      0.00       0.0
+  P005                 OUTFALL               0.00      0.00       0.0
+  P009                 OUTFALL               0.00      0.00       0.0
+  P011                 OUTFALL               0.00      0.00       0.0
+  
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... NO
+    Water Quality .......... YES
+  Infiltration Method ...... GREEN_AMPT
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 05/11/1977 04:40:00
+  Ending Date .............. 05/11/1977 06:40:00
+  Antecedent Dry Days ...... 7.0
+  Report Time Step ......... 00:15:00
+  Wet Time Step ............ 00:05:00
+  Dry Time Step ............ 23:00:00
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Total Precipitation ......         1.437         1.170
+  Evaporation Loss .........         0.015         0.012
+  Infiltration Loss ........         0.619         0.504
+  Surface Runoff ...........         0.812         0.661
+  Final Storage ............         0.023         0.019
+  Continuity Error (%) .....        -2.214
+  
+  
+  **************************           COD       TOT.SOL       TOT.NIT           TSS       O-PO4-P
+  Runoff Quality Continuity            lbs           lbs           lbs           lbs           lbs
+  **************************    ----------    ----------    ----------    ----------    ----------
+  Initial Buildup ..........      5056.849     13379.165       125.370     13379.165       103.603
+  Surface Buildup ..........        18.125         0.000         0.565         0.000         0.441
+  Wet Deposition ...........        19.531        19.531         1.172        19.531         0.008
+  Sweeping Removal .........         0.000         0.000         0.000         0.000         0.000
+  Infiltration Loss ........         8.405         8.405         0.504         8.405         0.003
+  BMP Removal ..............         0.000         0.000         0.000         0.000         0.000
+  Surface Runoff ...........      4319.497     13390.198        43.429     13390.198        63.149
+  Remaining Buildup ........       766.827         0.316        83.187         0.316        40.900
+  Continuity Error (%) .....        -0.004        -0.002        -0.011        -0.002         0.000
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.812         0.265
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         0.812         0.265
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.000         0.000
+  Continuity Error (%) .....         0.000
+  
+  
+  **************************           COD       TOT.SOL       TOT.NIT           TSS       O-PO4-P
+  Quality Routing Continuity           lbs           lbs           lbs           lbs           lbs
+  **************************    ----------    ----------    ----------    ----------    ----------
+  Dry Weather Inflow .......         0.000         0.000         0.000         0.000         0.000
+  Wet Weather Inflow .......      4319.497     13390.198        43.429     13390.198        63.149
+  Groundwater Inflow .......         0.000         0.000         0.000         0.000         0.000
+  RDII Inflow ..............         0.000         0.000         0.000         0.000         0.000
+  External Inflow ..........         0.000         0.000         0.000         0.000         0.000
+  External Outflow .........      4319.497     13390.198        43.429     13390.198        63.149
+  Flooding Loss ............         0.000         0.000         0.000         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000         0.000         0.000         0.000
+  Mass Reacted .............         0.000         0.000         0.000         0.000         0.000
+  Initial Stored Mass ......         0.000         0.000         0.000         0.000         0.000
+  Final Stored Mass ........         0.000         0.000         0.000         0.000         0.000
+  Continuity Error (%) .....         0.000         0.000         0.000         0.000         0.000
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in         in         in    10^6 gal      CFS
+  ------------------------------------------------------------------------------------------------------------------------------
+  CA-1                       1.17       0.00       0.01       0.56       0.45       0.15       0.60        0.08    10.49   0.514
+  CA-7                       1.17       0.00       0.01       0.46       0.56       0.14       0.70        0.03     4.10   0.601
+  CA-8                       1.17       0.00       0.01       0.49       0.54       0.13       0.67        0.08    11.12   0.576
+  CA-11                      1.17       0.00       0.01       0.46       0.55       0.16       0.71        0.07     9.18   0.606
+  
+  
+  ****************************
+  Subcatchment Washoff Summary
+  ****************************
+  
+  ------------------------------------------------------------------------------------------
+                                 COD       TOT.SOL       TOT.NIT           TSS       O-PO4-P
+  Subcatchment                   lbs           lbs           lbs           lbs           lbs
+  ------------------------------------------------------------------------------------------
+  CA-1                      1366.951      4539.961        12.818      4539.961        18.914
+  CA-7                       489.878      1452.353         5.137      1452.353         7.405
+  CA-8                      1359.914      4146.185        13.786      4146.185        20.045
+  CA-11                     1102.753      3251.698        11.688      3251.698        16.785
+  ------------------------------------------------------------------------------------------
+  System                    4319.497     13390.198        43.429     13390.198        63.149
+  
+
+  Analysis begun on:  Tue Aug  5 10:56:33 2025
+  Analysis ended on:  Tue Aug  5 10:56:33 2025
+  Total elapsed time: < 1 sec

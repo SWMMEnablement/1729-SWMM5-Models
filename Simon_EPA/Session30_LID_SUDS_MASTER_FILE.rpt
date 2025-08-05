@@ -1,0 +1,361 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  WARNING 04: minimum elevation drop used for Conduit DUOGWOUT.1
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 1
+  Number of subcatchments ... 7
+  Number of nodes ........... 10
+  Number of links ........... 9
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ****************
+  Raingage Summary
+  ****************
+                                                      Data       Recording
+  Name                 Data Source                    Type       Interval 
+  ------------------------------------------------------------------------
+  1                    SCS2                           INTENSITY   30 min.
+  
+  
+  ********************
+  Subcatchment Summary
+  ********************
+  Name                       Area     Width   %Imperv    %Slope Rain Gage            Outlet              
+  -----------------------------------------------------------------------------------------------------------
+  BIOCELL                    1.00    162.00     50.00    2.0000 1                    BIOCELLOUT          
+  CISTERN                    1.00    162.00     50.00    2.0000 1                    CISTERNOUT          
+  GREENROOFS                 1.00    162.00     50.00    2.0000 1                    GREENROOFSOUT       
+  PAVEMENT                   1.00    162.00     50.00    2.0000 1                    PAVEMENTOUT         
+  RAINGARDENS                1.00    162.00     50.00    2.0000 1                    RGARDENOUT          
+  SWALE                      1.00    162.00     50.00    2.0000 1                    SWALEOUT            
+  TRENCH                     1.00    162.00     50.00    2.0000 1                    TRENCHOUT           
+
+
+  *******************
+  LID Control Summary
+  *******************
+                                   No. of        Unit        Unit      % Area    % Imperv      % Perv
+  Subcatchment     LID Control      Units        Area       Width     Covered     Treated     Treated
+  ---------------------------------------------------------------------------------------------------
+  BIOCELL          BIO-RETENTIONCELL    10     1089.00      100.00       25.00       50.00        0.00
+  CISTERN          CISTERN             10     1089.00      100.00       25.00       50.00        0.00
+  GREENROOFS       GREENROOFS          10     1089.00      100.00       25.00        0.00        0.00
+  PAVEMENT         PAVEMENT            10     1089.00      100.00       25.00       50.00        0.00
+  RAINGARDENS      RAINGARDEN          10     1089.00      100.00       25.00       50.00        0.00
+  SWALE            SWALE               10     1089.00      100.00       25.00       50.00        0.00
+  TRENCH           TRENCH              10     1089.00      100.00       25.00       50.00        0.00
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  BIOCELLOUT           JUNCTION            802.85     10.05    6458.3
+  CISTERNOUT           JUNCTION            802.85     10.05    6458.3
+  GREENROOFSOUT        JUNCTION            802.85     10.05    6458.3
+  GWOUT                JUNCTION            802.85     10.05    6458.3
+  IMP&PERV             JUNCTION            802.85     10.05       0.0
+  PAVEMENTOUT          JUNCTION            802.85     10.05    6458.3
+  RGARDENOUT           JUNCTION            802.85     10.05    6458.3
+  SWALEOUT             JUNCTION            802.85     10.05    6458.3
+  TRENCHOUT            JUNCTION            802.85     10.05    6458.3
+  OUTFALL              OUTFALL             802.36      1.55       0.0
+  
+  
+  ************
+  Link Summary
+  ************
+  Name             From Node        To Node          Type            Length    %Slope Roughness
+  ---------------------------------------------------------------------------------------------
+  CDT-11           SWALEOUT         IMP&PERV         CONDUIT           16.1    0.0065    0.0130
+  CDT-13           BIOCELLOUT       IMP&PERV         CONDUIT           16.1    0.0065    0.0130
+  DUOGWOUT.1       RGARDENOUT       IMP&PERV         CONDUIT           37.2    0.0027    0.0130
+  GAIMPTOPERV.1    CISTERNOUT       IMP&PERV         CONDUIT           35.6    0.0030    0.0130
+  GAPERVTOIMP.1    TRENCHOUT        IMP&PERV         CONDUIT           16.1    0.0065    0.0130
+  GWOUT.1          GWOUT            IMP&PERV         CONDUIT           44.4    0.0024    0.0130
+  HORTONIMPTOPERV.1 PAVEMENTOUT      IMP&PERV         CONDUIT           34.7    0.0030    0.0130
+  HORTONPERVTOIMP.1 GREENROOFSOUT    IMP&PERV         CONDUIT           26.2    0.0040    0.0130
+  IMP&PERV.1       IMP&PERV         OUTFALL          CONDUIT          247.0    0.1781    0.0130
+  
+  
+  *********************
+  Cross Section Summary
+  *********************
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  CDT-11           CIRCULAR             1.50     1.77     0.38     1.50        1     0.85
+  CDT-13           CIRCULAR             1.50     1.77     0.38     1.50        1     0.85
+  DUOGWOUT.1       CIRCULAR             1.50     1.77     0.38     1.50        1     0.54
+  GAIMPTOPERV.1    CIRCULAR             1.50     1.77     0.38     1.50        1     0.57
+  GAPERVTOIMP.1    CIRCULAR             1.50     1.77     0.38     1.50        1     0.85
+  GWOUT.1          CIRCULAR             1.50     1.77     0.38     1.50        1     0.51
+  HORTONIMPTOPERV.1 CIRCULAR             1.50     1.77     0.38     1.50        1     0.58
+  HORTONPERVTOIMP.1 CIRCULAR             1.50     1.77     0.38     1.50        1     0.66
+  IMP&PERV.1       CIRCULAR             1.50     1.77     0.38     1.50        1     4.43
+  
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Infiltration Method ...... GREEN_AMPT
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 04/07/2016 00:00:00
+  Ending Date .............. 04/07/2016 23:50:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:15:00
+  Wet Time Step ............ 00:05:00
+  Dry Time Step ............ 01:00:00
+  Routing Time Step ........ 30.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Initial LID Storage ......         0.062         0.107
+  Total Precipitation ......         2.909         4.987
+  Evaporation Loss .........         0.024         0.041
+  Infiltration Loss ........         2.177         3.732
+  Surface Runoff ...........         0.638         1.093
+  Final Storage ............         0.137         0.235
+  Continuity Error (%) .....        -0.144
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.637         0.208
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         0.636         0.207
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.001         0.000
+  Continuity Error (%) .....        -0.007
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  Link CDT-11 (89.77%)
+  Link CDT-13 (9.58%)
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Convergence obtained at all time steps.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     1.82 sec
+  Average Time Step           :     4.77 sec
+  Maximum Time Step           :    30.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     2.00
+  % of Steps Not Converging   :     0.00
+  Time Step Frequencies       :
+     30.000 - 13.228 sec      :     0.67 %
+     13.228 -  5.833 sec      :     0.82 %
+      5.833 -  2.572 sec      :    93.08 %
+      2.572 -  1.134 sec      :     5.42 %
+      1.134 -  0.500 sec      :     0.00 %
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in         in         in    10^6 gal      CFS
+  ------------------------------------------------------------------------------------------------------------------------------
+  BIOCELL                    4.99       0.00       0.04       3.41       1.80       0.31       1.21        0.03     1.01   0.244
+  CISTERN                    4.99       0.00       0.04       4.02       1.80       0.00       0.90        0.02     0.40   0.181
+  GREENROOFS                 4.99       0.00       0.04       2.76       1.80       0.06       1.86        0.05     1.03   0.374
+  PAVEMENT                   4.99       0.00       0.04       4.02       1.80       0.00       0.90        0.02     0.40   0.181
+  RAINGARDENS                4.99       0.00       0.04       3.96       1.80       0.00       0.90        0.02     0.40   0.181
+  SWALE                      4.99       0.00       0.06       3.94       1.80       0.00       0.97        0.03     0.56   0.194
+  TRENCH                     4.99       0.00       0.04       4.02       1.80       0.00       0.90        0.02     0.40   0.181
+  
+
+  ***********************
+  LID Performance Summary
+  ***********************
+
+  --------------------------------------------------------------------------------------------------------------------
+                                         Total      Evap     Infil   Surface    Drain    Initial     Final  Continuity
+                                        Inflow      Loss      Loss   Outflow   Outflow   Storage   Storage       Error
+  Subcatchment      LID Control             in        in        in        in        in        in        in           %
+  --------------------------------------------------------------------------------------------------------------------
+  BIOCELL           BIO-RETENTIONCELL      8.59      0.00      7.38      0.00      0.00      1.20      2.41       -0.00
+  CISTERN           CISTERN               8.59      0.00      8.59      0.00      0.00      0.00      0.00        0.00
+  GREENROOFS        GREENROOFS            4.99      0.00      0.00      0.00      3.77      1.20      2.42       -0.00
+  PAVEMENT          PAVEMENT              8.59      0.00      8.59      0.00      0.00      0.00      0.00       -0.00
+  RAINGARDENS       RAINGARDEN            8.59      0.00      8.38      0.00      0.00      0.60      0.81       -0.00
+  SWALE             SWALE                 8.59      0.09      8.28      0.26      0.00      0.00      0.00       -0.42
+  TRENCH            TRENCH                8.59      0.00      8.59      0.00      0.00      0.00      0.00        0.00
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  BIOCELLOUT           JUNCTION     0.31     1.13   803.98     0  10:00        1.13
+  CISTERNOUT           JUNCTION     0.31     1.12   803.97     0  10:00        1.12
+  GREENROOFSOUT        JUNCTION     0.31     1.13   803.98     0  10:00        1.13
+  GWOUT                JUNCTION     0.31     1.12   803.98     0  09:59        1.12
+  IMP&PERV             JUNCTION     0.31     1.12   803.97     0  10:00        1.12
+  PAVEMENTOUT          JUNCTION     0.31     1.12   803.97     0  10:00        1.12
+  RGARDENOUT           JUNCTION     0.31     1.12   803.97     0  10:00        1.12
+  SWALEOUT             JUNCTION     0.31     1.12   803.98     0  10:00        1.12
+  TRENCHOUT            JUNCTION     0.31     1.12   803.97     0  10:00        1.12
+  OUTFALL              OUTFALL      0.00     0.00   802.36     0  00:00        0.00
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  BIOCELLOUT           JUNCTION      1.01     1.01     0  10:00       0.033       0.033       0.050
+  CISTERNOUT           JUNCTION      0.40     0.40     0  10:00      0.0245      0.0245       0.080
+  GREENROOFSOUT        JUNCTION      1.03     1.03     0  10:00      0.0506      0.0506       0.033
+  GWOUT                JUNCTION      0.00     0.06     0  09:35           0    0.000366       7.009
+  IMP&PERV             JUNCTION      0.00     4.20     0  09:59           0       0.208       0.118
+  PAVEMENTOUT          JUNCTION      0.40     0.40     0  10:00      0.0245      0.0245       0.078
+  RGARDENOUT           JUNCTION      0.40     0.40     0  10:00      0.0245      0.0245       0.081
+  SWALEOUT             JUNCTION      0.56     0.56     0  10:00      0.0262      0.0262       0.065
+  TRENCHOUT            JUNCTION      0.40     0.40     0  10:00      0.0245      0.0245       0.070
+  OUTFALL              OUTFALL       0.00     4.18     0  10:00           0       0.207       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  No nodes were surcharged.
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  OUTFALL               99.23      0.47      4.18       0.207
+  -----------------------------------------------------------
+  System                99.23      0.47      4.18       0.207
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  CDT-11               CONDUIT      0.56     0  10:00      0.39    0.66    0.75
+  CDT-13               CONDUIT      1.01     0  09:59      0.77    1.19    0.75
+  DUOGWOUT.1           CONDUIT      0.40     0  09:59      0.36    0.73    0.75
+  GAIMPTOPERV.1        CONDUIT      0.40     0  09:59      0.36    0.70    0.75
+  GAPERVTOIMP.1        CONDUIT      0.40     0  09:59      0.38    0.47    0.75
+  GWOUT.1              CONDUIT      0.06     0  09:35      0.31    0.12    0.75
+  HORTONIMPTOPERV.1    CONDUIT      0.40     0  09:59      0.36    0.69    0.75
+  HORTONPERVTOIMP.1    CONDUIT      1.03     0  10:00      0.77    1.55    0.75
+  IMP&PERV.1           CONDUIT      4.18     0  10:00      3.53    0.94    0.64
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  CDT-11                  1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  CDT-13                  1.00   0.01  0.01  0.00  0.98  0.00  0.00  0.00  0.01  0.00
+  DUOGWOUT.1              1.00   0.02  0.00  0.00  0.97  0.00  0.00  0.01  0.00  0.00
+  GAIMPTOPERV.1           1.00   0.01  0.01  0.00  0.98  0.00  0.00  0.00  0.01  0.00
+  GAPERVTOIMP.1           1.00   0.01  0.01  0.00  0.98  0.00  0.00  0.00  0.01  0.00
+  GWOUT.1                 1.00   0.01  0.01  0.00  0.98  0.00  0.00  0.00  0.00  0.00
+  HORTONIMPTOPERV.1       1.00   0.01  0.01  0.00  0.98  0.00  0.00  0.00  0.01  0.00
+  HORTONPERVTOIMP.1       1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.01  0.00
+  IMP&PERV.1              1.00   0.01  0.00  0.00  0.00  0.00  0.00  0.99  0.00  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  CDT-13                      0.01      0.01      0.01      0.38         0.01
+  HORTONPERVTOIMP.1           0.01      0.01      0.01      0.47         0.01
+  
+
+  Analysis begun on:  Tue Aug  5 12:57:11 2025
+  Analysis ended on:  Tue Aug  5 12:57:11 2025
+  Total elapsed time: < 1 sec

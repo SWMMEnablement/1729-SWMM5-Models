@@ -1,0 +1,416 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  WARNING 01: wet weather time step reduced to recording interval for Rain Gage DESIGNSTORM
+  WARNING 04: minimum elevation drop used for Conduit 192ND_STREET
+  WARNING 04: minimum elevation drop used for Conduit CDT-527
+  WARNING 04: minimum elevation drop used for Conduit DUCK_LAKE_TRAIL
+  WARNING 04: minimum elevation drop used for Conduit PURG_L2
+  WARNING 04: minimum elevation drop used for Conduit PURG_L3
+  WARNING 04: minimum elevation drop used for Conduit PURG_L4
+  WARNING 04: minimum elevation drop used for Conduit PURG_OUTLET
+  WARNING 04: minimum elevation drop used for Conduit TARTAN_ROAD
+  WARNING 02: maximum depth increased for Node DS_DELLROAD
+  WARNING 02: maximum depth increased for Node DS_TOWNLINEROAD
+  WARNING 02: maximum depth increased for Node JCT-90
+  WARNING 02: maximum depth increased for Node PURG13A
+  WARNING 02: maximum depth increased for Node PURG13B
+  WARNING 02: maximum depth increased for Node PURG14_C
+  WARNING 02: maximum depth increased for Node PURGATORY_10
+  WARNING 02: maximum depth increased for Node PURGATORY_10_A
+  WARNING 02: maximum depth increased for Node PURGATORY_10_B
+  WARNING 02: maximum depth increased for Node PURGATORY_11
+  WARNING 02: maximum depth increased for Node PURGATORY_11_A
+  WARNING 02: maximum depth increased for Node PURGATORY_11_B
+  WARNING 02: maximum depth increased for Node PURGATORY_5
+  WARNING 02: maximum depth increased for Node PURGATORY_6
+  WARNING 02: maximum depth increased for Node PURGATORY_7
+  WARNING 02: maximum depth increased for Node PURGATORY_8
+  WARNING 02: maximum depth increased for Node PURGATORY_9
+  WARNING 02: maximum depth increased for Node PURG_DS_DUCK
+  WARNING 02: maximum depth increased for Node PURG_US_DELL
+  WARNING 02: maximum depth increased for Node PURG_US_DUCK
+  WARNING 02: maximum depth increased for Node US_TOWNLINE
+  WARNING 02: maximum depth increased for Node US_TOWNLINEROAD
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Infiltration Method ...... HORTON
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 05/01/2003 00:00:00
+  Ending Date .............. 06/01/2003 23:00:00
+  Antecedent Dry Days ...... 5.0
+  Report Time Step ......... 00:15:00
+  Wet Time Step ............ 00:15:00
+  Dry Time Step ............ 23:00:00
+  Routing Time Step ........ 10.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Total Precipitation ......       462.314         5.760
+  Evaporation Loss .........        35.427         0.441
+  Infiltration Loss ........       348.826         4.346
+  Surface Runoff ...........        80.915         1.008
+  Final Storage ............         0.000         0.000
+  Continuity Error (%) .....        -0.617
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......        80.910        26.366
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........        75.077        24.465
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         4.137         1.348
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.001         0.000
+  Final Stored Volume ......         0.530         0.173
+  Continuity Error (%) .....         1.442
+  
+  
+  *************************
+  Highest Continuity Errors
+  *************************
+  Node PURGATORY_7 (-1.51%)
+  Node PURG_US_DELL (1.36%)
+  Node JCT-90 (-1.16%)
+  Node PURGATORY_10_A (1.10%)
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  None
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  Link CDT-519 (5)
+  Link CDT-521 (1)
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Convergence obtained at all time steps.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     0.50 sec
+  Average Time Step           :     9.95 sec
+  Maximum Time Step           :    10.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     2.01
+  % of Steps Not Converging   :     0.00
+  Time Step Frequencies       :
+     10.000 -  5.493 sec      :    99.72 %
+      5.493 -  3.017 sec      :     0.28 %
+      3.017 -  1.657 sec      :     0.00 %
+      1.657 -  0.910 sec      :     0.00 %
+      0.910 -  0.500 sec      :     0.00 %
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in         in         in    10^6 gal      CFS
+  ------------------------------------------------------------------------------------------------------------------------------
+  PURG_1                     5.76       0.00       0.46       4.30       1.03       0.00       1.03        5.16    37.16   0.180
+  PURG_10                    5.76       0.00       0.48       4.23       1.10       0.00       1.10        1.94    13.84   0.190
+  PURG_12                    5.76       0.00       0.51       4.11       1.17       0.00       1.17        2.66    19.12   0.203
+  PURG_2                     5.76       0.00       0.50       4.17       1.13       0.00       1.13        3.95    28.37   0.197
+  PURG_3                     5.76       0.00       0.56       3.96       1.28       0.00       1.28        3.39    24.42   0.221
+  PURG_4                     5.76       0.00       0.45       4.32       1.03       0.00       1.03        2.02    14.42   0.179
+  PURG_5                     5.76       0.00       0.21       5.09       0.49       0.00       0.49        0.75     5.27   0.084
+  PURG_6                     5.76       0.00       0.54       4.04       1.23       0.00       1.23        2.09    14.90   0.213
+  PURG_7                     5.76       0.00       0.20       5.12       0.46       0.00       0.46        0.85     6.05   0.080
+  PURG_8                     5.76       0.00       0.60       3.82       1.39       0.00       1.39        0.56     3.98   0.242
+  PURG_9                     5.76       0.00       0.22       5.06       0.51       0.00       0.51        0.99     7.04   0.088
+  PUR_11                     5.76       0.00       0.55       3.99       1.27       0.00       1.27        2.00    14.32   0.220
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  DS_DELLROAD          JUNCTION     0.13     0.91   880.03    18  14:25        0.91
+  DS_TOWNLINEROAD      JUNCTION     0.40     1.52   865.40    18  19:25        1.52
+  JCT-90               JUNCTION     0.03     0.55   879.55    18  09:44        0.55
+  LL_OUTLET_DS         JUNCTION     0.00     0.00   891.58     0  00:00        0.00
+  LOTUS_OUTLET_50FTDS  JUNCTION     0.00     0.00   889.84     0  00:00        0.00
+  PURG13A              JUNCTION     0.16     1.36   866.83    18  13:02        1.35
+  PURG13B              JUNCTION     0.28     1.42   866.41    18  13:08        1.41
+  PURG13C              JUNCTION     0.54     1.72   866.28    18  19:05        1.72
+  PURG14A              JUNCTION     0.72     2.05   866.26    18  19:16        2.05
+  PURG14B              JUNCTION     0.63     1.95   866.26    18  19:17        1.95
+  PURG14_C             JUNCTION     0.53     1.83   866.25    18  19:18        1.83
+  PURGATORY_1          JUNCTION     0.00     0.00   892.60     0  00:00        0.00
+  PURGATORY_10         JUNCTION     0.74     2.24   875.49    18  13:29        2.24
+  PURGATORY_10_A       JUNCTION     0.69     2.28   874.33    18  13:44        2.28
+  PURGATORY_10_B       JUNCTION     0.80     2.23   873.38    18  14:07        2.22
+  PURGATORY_11         JUNCTION     0.83     2.30   872.80    18  14:17        2.30
+  PURGATORY_11_A       JUNCTION     0.84     2.23   871.83    18  14:53        2.23
+  PURGATORY_11_B       JUNCTION     0.91     2.21   870.83    18  15:30        2.21
+  PURGATORY_12         JUNCTION     0.63     3.01   870.75    18  13:26        3.01
+  PURGATORY_12_A       JUNCTION     0.66     3.33   870.43    18  13:27        3.33
+  PURGATORY_12_B       JUNCTION     0.72     3.40   869.89    18  13:30        3.40
+  PURGATORY_13         JUNCTION     0.87     3.69   869.61    18  13:08        3.68
+  PURGATORY_14         JUNCTION     0.82     2.16   866.26    18  19:15        2.16
+  PURGATORY_2          JUNCTION     0.00     0.00   890.00     0  00:00        0.00
+  PURGATORY_3          JUNCTION     0.00     0.00   886.81     0  00:00        0.00
+  PURGATORY_4          JUNCTION     0.00     0.00   887.09     0  00:00        0.00
+  PURGATORY_5          JUNCTION     0.03     1.37   885.52    18  09:46        1.37
+  PURGATORY_6          JUNCTION     0.06     1.64   885.13    18  09:31        1.63
+  PURGATORY_7          JUNCTION     0.05     1.30   881.45    18  11:33        1.26
+  PURGATORY_8          JUNCTION     0.14     0.93   880.05    18  14:20        0.93
+  PURGATORY_9          JUNCTION     0.01     1.04   884.94    18  09:30        1.03
+  PURGATORY_US_OUTLET  JUNCTION     0.00     0.00   894.00     0  00:00        0.00
+  PURG_CHANNEL1        JUNCTION     0.00     0.00   888.19     0  00:00        0.00
+  PURG_CHANNEL2        JUNCTION     0.01     0.39   882.05    18  11:15        0.39
+  PURG_DS_DUCK         JUNCTION     0.01     0.44   883.93    18  09:50        0.43
+  PURG_DS_TARTAN       JUNCTION     0.00     0.00   887.09     0  00:00        0.00
+  PURG_TARTAN_50FTUS   JUNCTION     0.00     0.00   886.97     0  00:00        0.00
+  PURG_US_DELL         JUNCTION     0.19     1.73   882.05    18  11:13        1.72
+  PURG_US_DUCK         JUNCTION     0.01     1.05   885.52    18  09:45        1.05
+  US_TOWNLINE          JUNCTION     0.44     1.72   866.24    18  19:18        1.72
+  US_TOWNLINEROAD      JUNCTION     0.31     1.46   865.98    18  19:21        1.46
+  PURG_OUTLET          OUTFALL      0.09     0.51   864.39    18  19:25        0.51
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  DS_DELLROAD          JUNCTION      0.00    13.69    18  11:48           0        3.91      -0.036
+  DS_TOWNLINEROAD      JUNCTION      0.00    13.48    18  19:21           0        24.5       0.013
+  JCT-90               JUNCTION      0.00    37.75    18  09:33           0        8.98      -1.142
+  LL_OUTLET_DS         JUNCTION      0.00     0.00     0  00:00           0           0       0.000 gal
+  LOTUS_OUTLET_50FTDS  JUNCTION      0.00     0.00     0  00:00           0           0       0.000 gal
+  PURG13A              JUNCTION     14.32    32.43    18  13:00           2        22.3      -0.006
+  PURG13B              JUNCTION      7.04    36.03    18  13:01       0.992        23.3       0.016
+  PURG13C              JUNCTION      0.00    34.02    18  13:06           0        24.1       0.657
+  PURG14A              JUNCTION     13.84    32.11     7  01:55        1.94        26.1       0.534
+  PURG14B              JUNCTION      0.00    19.67    18  10:20           0        25.2       0.449
+  PURG14_C             JUNCTION      0.00    14.83    18  10:41           0        24.7       0.224
+  PURGATORY_1          JUNCTION      0.00     0.00     0  00:00           0           0       0.000 gal
+  PURGATORY_10         JUNCTION      0.00    24.84    18  09:44           0        8.91      -0.317
+  PURGATORY_10_A       JUNCTION      0.00    16.54    18  13:29           0        8.87       1.108
+  PURGATORY_10_B       JUNCTION      0.00    16.20    18  13:54           0        8.74       0.433
+  PURGATORY_11         JUNCTION      5.27    15.68    18  14:05       0.745        9.43      -0.584
+  PURGATORY_11_A       JUNCTION      0.00    15.63    18  14:32           0        9.46       0.920
+  PURGATORY_11_B       JUNCTION     24.42    24.42    18  09:30        3.39        12.7      -0.400
+  PURGATORY_12         JUNCTION     14.90    22.47    18  09:34        2.09        14.8       0.117
+  PURGATORY_12_A       JUNCTION     19.12    23.51    18  09:30        2.66        17.5      -0.294
+  PURGATORY_12_B       JUNCTION      6.05    19.13    18  09:32       0.854        18.4       0.168
+  PURGATORY_13         JUNCTION     14.42    25.53    18  13:00        2.02        20.3       0.063
+  PURGATORY_14         JUNCTION      3.98    31.19    18  13:11       0.559        25.1       0.348
+  PURGATORY_2          JUNCTION      0.00     0.00     0  00:00           0           0       0.000 gal
+  PURGATORY_3          JUNCTION      0.00     0.00     0  00:00           0           0       0.000 gal
+  PURGATORY_4          JUNCTION      0.00     0.00     0  00:00           0           0       0.000 gal
+  PURGATORY_5          JUNCTION     28.37    28.37    18  09:30        3.95         4.5      -0.040
+  PURGATORY_6          JUNCTION      0.00    14.10    18  09:46           0        3.95       0.025
+  PURGATORY_7          JUNCTION      0.00    18.08    18  11:16           0           4      -1.489
+  PURGATORY_8          JUNCTION      0.00    16.41    18  11:36           0        3.87       0.035
+  PURGATORY_9          JUNCTION     37.16    37.16    18  09:30        5.16        5.16       0.025
+  PURGATORY_US_OUTLET  JUNCTION      0.00     0.00     0  00:00           0           0       0.000 gal
+  PURG_CHANNEL1        JUNCTION      0.00     0.00     0  00:00           0           0       0.000 gal
+  PURG_CHANNEL2        JUNCTION      0.00    16.61    18  10:02           0        3.93       0.012
+  PURG_DS_DUCK         JUNCTION      0.00    14.08    18  09:47           0        3.95      -0.068
+  PURG_DS_TARTAN       JUNCTION      0.00     0.00     0  00:00           0           0       0.000 gal
+  PURG_TARTAN_50FTUS   JUNCTION      0.00     0.00     0  00:00           0           0       0.000 gal
+  PURG_US_DELL         JUNCTION      0.00    29.36    18  10:54           0        4.08       1.381
+  PURG_US_DUCK         JUNCTION      0.00    14.46    18  09:30           0       0.551       0.098
+  US_TOWNLINE          JUNCTION      0.00    13.53    18  19:00           0        24.5       0.038
+  US_TOWNLINEROAD      JUNCTION      0.00    13.48    18  19:16           0        24.5       0.004
+  PURG_OUTLET          OUTFALL       0.00    13.47    18  19:25           0        24.5       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  No nodes were surcharged.
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  PURG_OUTLET           86.02      1.38     13.47      24.463
+  -----------------------------------------------------------
+  System                86.02      1.38     13.47      24.463
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  192ND_STREET         CHANNEL      0.00     0  00:00      0.00    0.00    0.00
+  CDT-503              CHANNEL     15.63    18  14:32      2.56    0.00    0.04
+  CDT-509              CHANNEL      0.00     0  00:00      0.00    0.00    0.00
+  CDT-511              CHANNEL      0.00     0  00:00      0.00    0.00    0.00
+  CDT-513              CHANNEL      0.00     0  00:00      0.00    0.00    0.00
+  CDT-515              CHANNEL      0.00     0  00:00      0.00    0.00    0.01
+  CDT-517              CHANNEL     14.46    18  09:30      1.08    0.00    0.02
+  CDT-519              CHANNEL     16.61    18  10:02      0.44    0.00    0.01
+  CDT-521              CHANNEL     18.18    18  10:54    >50.00    0.00    0.02
+  CDT-523              CHANNEL      6.76    18  14:23      0.18    0.00    0.01
+  CDT-527              CHANNEL     13.48    18  19:16      0.67    0.00    0.02
+  CDT-557              CHANNEL      0.00     0  00:00      0.00    0.00    0.00
+  CDT-559              CHANNEL     15.01    18  10:14      0.41    0.00    0.02
+  CDT-561              CHANNEL     15.14    18  14:07     12.30    0.00    0.04
+  CDT-563              CHANNEL     16.20    18  13:54    >50.00    0.00    0.04
+  CDT-565              CHANNEL     13.79    18  15:05      2.07    0.00    0.04
+  CDT-567              CHANNEL     13.47    18  15:30    >50.00    0.00    0.05
+  CDT-569              CHANNEL     16.74    18  11:20      0.68    0.00    0.06
+  CDT-571              CHANNEL     15.69    18  10:45      0.76    0.00    0.06
+  CDT-579              CHANNEL     31.75    18  13:02      0.56    0.00    0.02
+  CDT-581              CHANNEL     34.02    18  13:06      8.39    0.00    0.03
+  CDT-583              CHANNEL     29.75    18  13:13    >50.00    0.00    0.03
+  CDT-585              CHANNEL     19.67    18  10:20    >50.00    0.00    0.03
+  CDT-587              CHANNEL     14.83    18  10:41      0.17    0.00    0.03
+  CDT-589              CHANNEL     13.53    18  19:00      0.11    0.00    0.02
+  DUCK_LAKE_TRAIL      CHANNEL      0.00     0  00:00      0.00    0.00    0.00
+  LL_OUTLET_STRUCT     CONDUIT      0.00     0  00:00      0.00    0.00    0.00
+  PURG9                CHANNEL     32.11     7  01:55    >50.00    0.00    0.03
+  PURG_13              CHANNEL     23.45    18  13:04      1.41    0.00    0.04
+  PURG_BRANCH_L1       CHANNEL     37.75    18  09:33      1.22    0.00    0.01
+  PURG_DELLROAD_CULVERT CONDUIT     16.41    18  11:36      5.65    0.05    0.18
+  PURG_DUCKLAKE_CULVERT CONDUIT     14.10    18  09:46      4.26    0.13    0.43
+  PURG_L1              CHANNEL      0.00     0  00:00      0.00    0.00    0.00
+  PURG_L2              CHANNEL      0.00     0  00:00      0.00    0.00    0.00
+  PURG_L3              CHANNEL     14.08    18  09:47      1.83    0.00    0.02
+  PURG_L4              CHANNEL     13.69    18  11:48      0.38    0.00    0.01
+  PURG_L5              CHANNEL     24.84    18  09:44      0.57    0.00    0.12
+  PURG_L6              CHANNEL     16.54    18  13:29    >50.00    0.00    0.04
+  PURG_L7              CHANNEL     13.14    18  15:45      0.54    0.00    0.06
+  PURG_OUTLET          CHANNEL     13.47    18  19:25      0.95    0.00    0.01
+  PURG_TARTAN_CULVERT  CONDUIT      0.00     0  00:00      0.00    0.00    0.00
+  PURG_TOWNLINEROAD    CHANNEL     13.48    18  19:21      0.75    0.00    0.02
+  TARTAN_ROAD          CHANNEL      0.00     0  00:00      0.00    0.00    0.00
+  LL_OVERFLOW_OUTLET   WEIR         0.00     0  00:00                      0.00
+  LL_OVERFLOW_OUTLET_2 WEIR         0.00     0  00:00                      0.00
+  LL_OVERFLOW_OUTLET_3 WEIR         0.00     0  00:00                      0.00
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  192ND_STREET            1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  CDT-503                 1.00   0.26  0.00  0.00  0.58  0.17  0.00  0.00  0.42  0.00
+  CDT-509                 2.69   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  CDT-511                 1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  CDT-513                 4.28   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  CDT-515                 1.00   0.44  0.56  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  CDT-517                 3.95   0.44  0.00  0.00  0.56  0.00  0.00  0.00  0.25  0.00
+  CDT-519                 1.00   0.72  0.03  0.00  0.25  0.00  0.00  0.00  0.18  0.00
+  CDT-521                 4.10   0.12  0.00  0.00  0.87  0.01  0.00  0.00  0.08  0.00
+  CDT-523                 1.00   0.18  0.00  0.00  0.82  0.00  0.00  0.00  0.01  0.00
+  CDT-527                 4.08   0.14  0.00  0.00  0.86  0.00  0.00  0.00  0.00  0.00
+  CDT-557                 1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  CDT-559                 1.00   0.12  0.65  0.00  0.23  0.00  0.00  0.00  0.86  0.00
+  CDT-561                 1.00   0.25  0.00  0.00  0.57  0.17  0.00  0.00  0.41  0.00
+  CDT-563                 1.00   0.24  0.00  0.00  0.62  0.13  0.00  0.00  0.41  0.00
+  CDT-565                 1.00   0.25  0.01  0.00  0.58  0.16  0.00  0.00  0.56  0.00
+  CDT-567                 1.00   0.19  0.06  0.00  0.75  0.01  0.00  0.00  0.85  0.00
+  CDT-569                 1.00   0.12  0.05  0.00  0.83  0.00  0.00  0.00  0.66  0.00
+  CDT-571                 1.00   0.17  0.02  0.00  0.81  0.00  0.00  0.00  0.59  0.00
+  CDT-579                 1.00   0.13  0.07  0.00  0.81  0.00  0.00  0.00  0.82  0.00
+  CDT-581                 1.00   0.12  0.01  0.00  0.87  0.00  0.00  0.00  0.68  0.00
+  CDT-583                 1.00   0.12  0.00  0.00  0.78  0.10  0.00  0.00  0.51  0.00
+  CDT-585                 1.00   0.12  0.00  0.00  0.88  0.00  0.00  0.00  0.00  0.00
+  CDT-587                 1.00   0.12  0.01  0.00  0.87  0.00  0.00  0.00  0.00  0.00
+  CDT-589                 1.00   0.13  0.00  0.00  0.86  0.00  0.00  0.00  0.00  0.00
+  DUCK_LAKE_TRAIL         1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  LL_OUTLET_STRUCT        1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  PURG9                   1.00   0.12  0.00  0.00  0.88  0.00  0.00  0.00  0.00  0.00
+  PURG_13                 1.00   0.12  0.00  0.00  0.88  0.00  0.00  0.00  0.00  0.00
+  PURG_BRANCH_L1          1.00   0.30  0.58  0.00  0.12  0.00  0.00  0.00  0.86  0.00
+  PURG_DELLROAD_CULVERT    1.17   0.12  0.01  0.00  0.84  0.02  0.00  0.00  0.85  0.00
+  PURG_DUCKLAKE_CULVERT    1.77   0.45  0.18  0.00  0.36  0.00  0.00  0.00  0.85  0.00
+  PURG_L1                 2.59   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  PURG_L2                 4.29   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  PURG_L3                 3.10   0.45  0.00  0.00  0.55  0.00  0.00  0.00  0.00  0.00
+  PURG_L4                 3.68   0.12  0.00  0.00  0.88  0.00  0.00  0.00  0.00  0.00
+  PURG_L5                 1.00   0.15  0.15  0.00  0.70  0.00  0.00  0.00  0.88  0.00
+  PURG_L6                 1.00   0.15  0.00  0.00  0.68  0.16  0.00  0.00  0.37  0.00
+  PURG_L7                 1.00   0.19  0.00  0.00  0.81  0.00  0.00  0.00  0.75  0.00
+  PURG_OUTLET             4.92   0.14  0.00  0.00  0.86  0.00  0.00  0.00  0.00  0.00
+  PURG_TARTAN_CULVERT     1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  PURG_TOWNLINEROAD       3.04   0.14  0.00  0.00  0.86  0.00  0.00  0.00  0.82  0.00
+  TARTAN_ROAD             1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  No conduits were surcharged.
+  
+
+  Analysis begun on:  Tue Aug  5 12:57:46 2025
+  Analysis ended on:  Tue Aug  5 12:58:09 2025
+  Total elapsed time: 00:00:23

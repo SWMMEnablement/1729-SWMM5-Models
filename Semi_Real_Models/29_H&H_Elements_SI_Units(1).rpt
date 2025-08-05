@@ -1,0 +1,238 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... LPS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Infiltration Method ...... HORTON
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 07/15/2018 00:00:00
+  Ending Date .............. 07/15/2018 01:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:01:00
+  Wet Time Step ............ 00:01:00
+  Dry Time Step ............ 00:01:00
+  Routing Time Step ........ 1.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.001500 m
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     hectare-m            mm
+  **************************     ---------       -------
+  Total Precipitation ......         0.005        74.846
+  Evaporation Loss .........         0.000         0.000
+  Infiltration Loss ........         0.000         4.823
+  Surface Runoff ...........         0.004        67.269
+  Final Storage ............         0.000         3.053
+  Continuity Error (%) .....        -0.400
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        hectare-m      10^6 ltr
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.004         0.041
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         0.004         0.041
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.000         0.000
+  Continuity Error (%) .....         0.000
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  None
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Convergence obtained at all time steps.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     0.50 sec
+  Average Time Step           :     1.00 sec
+  Maximum Time Step           :     1.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     2.00
+  % of Steps Not Converging   :     0.00
+  Time Step Frequencies       :
+      1.000 -  0.871 sec      :    99.97 %
+      0.871 -  0.758 sec      :     0.00 %
+      0.758 -  0.660 sec      :     0.00 %
+      0.660 -  0.574 sec      :     0.00 %
+      0.574 -  0.500 sec      :     0.03 %
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 mm         mm         mm         mm         mm         mm         mm    10^6 ltr      LPS
+  ------------------------------------------------------------------------------------------------------------------------------
+  Roof                      74.85       0.00       0.00       0.00      74.88       0.00      74.88        0.01     6.99   1.000
+  Garage                    74.85       0.00       0.00       0.00      75.16       0.00      75.16        0.00     2.62   1.004
+  Driveway                  74.85       0.00       0.00       0.00      75.12       0.00      75.12        0.00     2.62   1.004
+  BackYard                  74.85       0.00       0.00       6.75       1.50      62.76      64.25        0.02    25.29   0.858
+  FrontYard                 74.85       0.00       0.00       6.55       3.74      60.69      64.43        0.01    11.79   0.861
+  Patio                     74.85       0.00       0.00       0.00      74.60       0.00      74.60        0.00     2.62   0.997
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type       Meters   Meters   Meters  days hr:min      Meters
+  ---------------------------------------------------------------------------------
+  YardFlow             JUNCTION     0.02     0.07    47.67     0  00:20        0.07
+  11                   JUNCTION     0.03     0.10    47.90     0  00:20        0.10
+  12                   JUNCTION     0.01     0.04    49.54     0  00:17        0.04
+  13                   JUNCTION     0.04     0.13    47.83     0  00:20        0.13
+  14                   JUNCTION     0.01     0.02    48.52     0  00:20        0.02
+  15                   JUNCTION     0.04     0.12    47.77     0  00:20        0.12
+  16                   JUNCTION     0.02     0.06    49.31     0  00:16        0.06
+  GutterFlow           JUNCTION     0.00     0.02    49.17     0  00:16        0.02
+  20                   JUNCTION     0.03     0.08    48.08     0  00:20        0.08
+  21                   JUNCTION     0.02     0.07    47.57     0  00:20        0.07
+  TotalFlow            OUTFALL      0.02     0.07    46.07     0  00:20        0.07
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           LPS      LPS  days hr:min    10^6 ltr    10^6 ltr     Percent
+  -------------------------------------------------------------------------------------------------
+  YardFlow             JUNCTION      0.00    44.86     0  00:20           0       0.035       0.018
+  11                   JUNCTION      2.62    27.90     0  00:20     0.00224      0.0215      -0.003
+  12                   JUNCTION      6.99     6.99     0  00:17     0.00599     0.00599       0.006
+  13                   JUNCTION      2.62    30.50     0  00:20     0.00225      0.0238       0.000
+  14                   JUNCTION     11.79    11.79     0  00:20     0.00902     0.00902       0.006
+  15                   JUNCTION      2.62    33.10     0  00:20     0.00225       0.026       0.002
+  16                   JUNCTION      0.00     6.99     0  00:17           0     0.00599       0.016
+  GutterFlow           JUNCTION      0.00     7.00     0  00:16           0     0.00599      -0.190
+  20                   JUNCTION     25.29    25.29     0  00:20      0.0193      0.0193      -0.000
+  21                   JUNCTION      0.00    51.83     0  00:20           0       0.041       0.019
+  TotalFlow            OUTFALL       0.00    51.80     0  00:20           0       0.041       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  No nodes were surcharged.
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       LPS       LPS    10^6 ltr
+  -----------------------------------------------------------
+  TotalFlow             75.83     15.01     51.80       0.041
+  -----------------------------------------------------------
+  System                75.83     15.01     51.80       0.041
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          LPS  days hr:min     m/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  FrontYardQ           CONDUIT     11.78     0  00:20      0.87    0.00    0.05
+  Gutter_Pipe          CONDUIT      7.00     0  00:16      1.88    0.34    0.26
+  9                    CONDUIT      6.99     0  00:16      1.66    0.00    0.04
+  TotalQ               CONDUIT     51.80     0  00:20      2.04    0.01    0.07
+  BackYardQ            CONDUIT     25.29     0  00:20      0.69    0.01    0.09
+  13                   CONDUIT     27.89     0  00:20      0.56    0.02    0.11
+  14                   CONDUIT     30.48     0  00:20      0.54    0.03    0.12
+  15                   CONDUIT     33.08     0  00:20      0.86    0.04    0.10
+  HouseQ               CONDUIT      6.99     0  00:17      1.45    0.16    0.35
+  Yard_Runoff          CONDUIT     44.84     0  00:20      1.78    0.01    0.07
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  FrontYardQ              4.02   0.08  0.21  0.00  0.19  0.51  0.00  0.00  0.91  0.00
+  Gutter_Pipe             1.00   0.09  0.00  0.00  0.03  0.88  0.00  0.00  0.00  0.00
+  9                       5.32   0.09  0.09  0.00  0.51  0.30  0.00  0.00  0.90  0.00
+  TotalQ                  1.90   0.09  0.00  0.00  0.00  0.91  0.00  0.00  0.00  0.00
+  BackYardQ               1.08   0.08  0.09  0.00  0.83  0.00  0.00  0.00  0.92  0.00
+  13                      1.00   0.08  0.00  0.00  0.92  0.00  0.00  0.00  0.92  0.00
+  14                      1.00   0.08  0.00  0.00  0.92  0.00  0.00  0.00  0.74  0.00
+  15                      1.00   0.08  0.00  0.00  0.75  0.16  0.00  0.00  0.00  0.00
+  HouseQ                  1.00   0.08  0.00  0.00  0.46  0.45  0.00  0.00  0.90  0.00
+  Yard_Runoff             1.75   0.09  0.00  0.00  0.17  0.74  0.00  0.00  0.68  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  No conduits were surcharged.
+  
+
+  Analysis begun on:  Tue Aug  5 12:22:42 2025
+  Analysis ended on:  Tue Aug  5 12:22:42 2025
+  Total elapsed time: < 1 sec

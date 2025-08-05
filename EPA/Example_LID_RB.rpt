@@ -1,0 +1,143 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  Scenario Run :  BASE 
+  SWMM Example with LIDs 
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 1
+  Number of subcatchments ... 9
+  Number of nodes ........... 1
+  Number of links ........... 0
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ****************
+  Raingage Summary
+  ****************
+                                                      Data       Recording
+  Name                 Data Source                    Type       Interval 
+  ------------------------------------------------------------------------
+  RAINGAGE             2-YR                           INTENSITY    5 min.
+  
+  
+  ********************
+  Subcatchment Summary
+  ********************
+  Name                       Area     Width   %Imperv    %Slope Rain Gage            Outlet              
+  -----------------------------------------------------------------------------------------------------------
+  S1                         4.55   1587.00     56.80    2.0000 RAINGAGE             SWALE4              
+  S2                         4.74   1653.00     63.00    2.0000 RAINGAGE             O1                  
+  S3                         3.70   1456.00     39.50    3.1000 RAINGAGE             SWALE3              
+  S4                         6.82   2331.00     49.90    3.1000 RAINGAGE             SWALE4              
+  S5                         6.60   1670.00     87.70    2.0000 RAINGAGE             O1                  
+  S6                         2.58    907.00      0.00    3.1000 RAINGAGE             SWALE6              
+  SWALE3                     0.33     50.00      0.00    0.5000 RAINGAGE             SWALE4              
+  SWALE4                     0.50     50.00      0.00    0.5000 RAINGAGE             SWALE6              
+  SWALE6                     0.41     50.00      0.00    0.5000 RAINGAGE             O1                  
+
+
+  *******************
+  LID Control Summary
+  *******************
+                                   No. of        Unit        Unit      % Area    % Imperv      % Perv
+  Subcatchment     LID Control      Units        Area       Width     Covered     Treated     Treated
+  ---------------------------------------------------------------------------------------------------
+  S1               RAINBARRELS         32     6193.69       12.00      100.00       17.00        0.00
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  O1                   OUTFALL            4962.00      0.00       0.0
+  
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... NO
+    Water Quality .......... NO
+  Infiltration Method ...... HORTON
+  Starting Date ............ 01/01/2007 00:00:00
+  Ending Date .............. 01/01/2007 12:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:01:00
+  Wet Time Step ............ 00:05:00
+  Dry Time Step ............ 01:00:00
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Total Precipitation ......         2.465         0.978
+  Evaporation Loss .........         0.076         0.030
+  Infiltration Loss ........         1.342         0.533
+  Surface Runoff ...........         0.686         0.272
+  Final Storage ............         0.371         0.147
+  Continuity Error (%) .....        -0.424
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.686         0.223
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         0.686         0.223
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.000         0.000
+  Continuity Error (%) .....         0.000
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in         in         in    10^6 gal      CFS
+  ------------------------------------------------------------------------------------------------------------------------------
+  S1                         0.98       0.00       0.00       0.00       0.00       0.00       0.00        0.00     0.00   0.000
+  S2                         0.98       0.00       0.04       0.36       0.58       0.00       0.58        0.07     8.44   0.593
+  S3                         0.98       0.00       0.03       0.59       0.36       0.00       0.36        0.04     4.18   0.372
+  S4                         0.98       0.00       0.03       0.49       0.46       0.00       0.46        0.09     9.71   0.470
+  S5                         0.98       0.00       0.06       0.12       0.81       0.00       0.81        0.14    15.77   0.824
+  S6                         0.98       0.00       0.00       0.98       0.00       0.00       0.00        0.00     0.00   0.000
+  SWALE3                     0.98       4.08       0.01       4.04       0.00       1.03       1.03        0.01     0.85   0.203
+  SWALE4                     0.98       6.95       0.01       5.21       0.00       2.73       2.73        0.04     2.34   0.344
+  SWALE6                     0.98       3.33       0.01       3.91       0.00       0.39       0.39        0.00     0.31   0.091
+  
+
+  ***********************
+  LID Performance Summary
+  ***********************
+
+  --------------------------------------------------------------------------------------------------------------------
+                                         Total      Evap     Infil   Surface    Drain    Initial     Final  Continuity
+                                        Inflow      Loss      Loss   Outflow   Outflow   Storage   Storage       Error
+  Subcatchment      LID Control             in        in        in        in        in        in        in           %
+  --------------------------------------------------------------------------------------------------------------------
+  S1                RAINBARRELS           0.98      0.00      0.00      0.00      0.00      0.00      0.98        0.00
+
+  Analysis begun on:  Tue Aug  5 09:27:38 2025
+  Analysis ended on:  Tue Aug  5 09:27:38 2025
+  Total elapsed time: < 1 sec

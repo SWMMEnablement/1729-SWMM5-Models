@@ -1,0 +1,369 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  WARNING 04: minimum elevation drop used for Conduit forcemain
+  WARNING 04: minimum elevation drop used for Conduit force1
+  WARNING 04: minimum elevation drop used for Conduit force3
+  WARNING 04: minimum elevation drop used for Conduit gravity1
+  WARNING 04: minimum elevation drop used for Conduit gravity2
+  WARNING 04: minimum elevation drop used for Conduit gravity3
+  WARNING 04: minimum elevation drop used for Conduit force2
+  WARNING 04: minimum elevation drop used for Conduit force5
+  WARNING 04: minimum elevation drop used for Conduit gravity4
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 0
+  Number of subcatchments ... 0
+  Number of nodes ........... 13
+  Number of links ........... 12
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  Airpark              JUNCTION              0.00    200.00       0.0
+  202                  JUNCTION              0.00    200.00       0.0
+  204                  JUNCTION              0.00    200.00       0.0
+  208                  JUNCTION              0.00      5.00       0.0
+  210                  JUNCTION              0.00      5.00       0.0
+  Airport              JUNCTION              0.00    200.00       0.0
+  Westlake             JUNCTION              0.00    200.00       0.0
+  218                  JUNCTION              0.00      5.00       0.0    Yes
+  222                  JUNCTION              0.00    200.00       0.0    Yes
+  224                  JUNCTION              0.00    200.00       0.0    Yes
+  OUTFALL              OUTFALL               0.00      1.00       0.0
+  206                  STORAGE               0.00    200.00       0.0
+  Uppark               STORAGE               0.00    200.00       0.0    Yes
+  
+  
+  ************
+  Link Summary
+  ************
+  Name             From Node        To Node          Type            Length    %Slope Roughness
+  ---------------------------------------------------------------------------------------------
+  forcemain        Airpark          202              CONDUIT         1714.0    0.0001    0.0140
+  force1           202              204              CONDUIT         4183.0    0.0000    0.0140
+  force3           204              206              CONDUIT         7603.0    0.0000    0.0140
+  gravity1         206              208              CONDUIT         6861.0    0.0000    0.0140
+  gravity2         208              210              CONDUIT         5167.0    0.0000    0.0140
+  gravity3         210              OUTFALL          CONDUIT         1379.0    0.0001    0.0140
+  force2           Airport          204              CONDUIT         1080.0    0.0001    0.0120
+  force5           Westlake         206              CONDUIT          200.0    0.0005    0.0140
+  gravity4         218              208              CONDUIT         2000.0    0.0001    0.0140
+  PUMP             Uppark           Airpark          TYPE1 PUMP  
+  PUMP.1           222              Airport          TYPE1 PUMP  
+  PUMP.2           224              Westlake         TYPE1 PUMP  
+  
+  
+  *********************
+  Cross Section Summary
+  *********************
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  forcemain        FORCE_MAIN           0.75     0.44     0.19     0.75        1     0.01
+  force1           CIRCULAR             0.75     0.44     0.19     0.75        1     0.01
+  force3           CIRCULAR             0.82     0.53     0.21     0.82        1     0.01
+  gravity1         CIRCULAR             1.00     0.79     0.25     1.00        1     0.01
+  gravity2         CIRCULAR             1.00     0.79     0.25     1.00        1     0.01
+  gravity3         CIRCULAR             1.00     0.79     0.25     1.00        1     0.03
+  force2           FORCE_MAIN           0.82     0.53     0.21     0.82        1     0.02
+  force5           CIRCULAR             0.75     0.44     0.19     0.75        1     0.03
+  gravity4         CIRCULAR             1.25     1.23     0.31     1.25        1     0.04
+  
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ NO
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... SLOT
+  Starting Date ............ 01/01/2014 00:00:00
+  Ending Date .............. 01/02/2014 01:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:00:05
+  Routing Time Step ........ 5.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.001000 ft
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.000         0.000
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........      4235.335      1380.147
+  External Outflow .........         1.794         0.585
+  Flooding Loss ............      3980.897      1297.235
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         2.755         0.898
+  Final Stored Volume ......        50.474        16.448
+  Continuity Error (%) .....         4.835
+  
+  
+  *************************
+  Highest Continuity Errors
+  *************************
+  Node 202 (5.21%)
+  Node 204 (2.99%)
+  Node 210 (2.37%)
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  None
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Node OUTFALL (0.09%)
+  Node Westlake (0.03%)
+  Node Airpark (0.03%)
+  Node Airport (0.02%)
+  Node 204 (0.02%)
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     0.04 sec
+  Average Time Step           :     5.00 sec
+  Maximum Time Step           :     5.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     2.03
+  % of Steps Not Converging   :     0.09
+  Time Step Frequencies       :
+      5.000 -  0.910 sec      :    99.94 %
+      0.910 -  0.166 sec      :     0.03 %
+      0.166 -  0.030 sec      :     0.03 %
+      0.030 -  0.005 sec      :     0.00 %
+      0.005 -  0.001 sec      :     0.00 %
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  Airpark              JUNCTION   199.88   200.00   200.00     0  00:00      200.00
+  202                  JUNCTION   198.91   199.92   199.92     1  00:59      199.92
+  204                  JUNCTION   197.29   199.71   199.71     1  00:59      199.71
+  208                  JUNCTION     4.91     5.00     5.00     0  00:31        5.00
+  210                  JUNCTION     1.31     1.36     1.36     0  04:21        1.36
+  Airport              JUNCTION   199.87   200.00   200.00     0  00:00      200.00
+  Westlake             JUNCTION   199.88   200.00   200.00     0  00:00      200.00
+  218                  JUNCTION     5.00     5.00     5.00     0  00:00        5.00
+  222                  JUNCTION     0.00     3.20     3.20     0  00:00        0.33
+  224                  JUNCTION    64.14    64.17    64.17     0  00:00       64.17
+  OUTFALL              OUTFALL      0.38     0.40     0.40     0  04:21        0.40
+  206                  STORAGE    140.94   194.84   194.84     1  00:59      194.84
+  Uppark               STORAGE   4617.55  9119.90  9119.90     1  00:59     9119.50
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  Airpark              JUNCTION      0.00   600.00     0  00:00           0         404       0.006
+  202                  JUNCTION      0.00    20.91     0  00:02           0       0.814       5.497
+  204                  JUNCTION      0.00    36.32     0  00:04           0        3.42       3.080
+  208                  JUNCTION      0.00    12.44     1  00:59           0        6.14       0.734
+  210                  JUNCTION      0.00     1.02     0  00:33           0       0.599       2.427
+  Airport              JUNCTION      0.00   325.00     0  00:00           0         168       0.011
+  Westlake             JUNCTION      0.00   650.00     0  00:00           0         438       0.005
+  218                  JUNCTION    450.00   450.00     0  00:00         303         303       0.006
+  222                  JUNCTION    250.00   250.00     0  00:00         168         168       0.000
+  224                  JUNCTION    650.00   650.00     0  00:00         438         438       0.001
+  OUTFALL              OUTFALL       0.00     0.90     0  04:21           0       0.585       0.000
+  206                  STORAGE       0.00    49.63     0  01:37           0        20.8       0.662
+  Uppark               STORAGE     700.00   700.00     0  00:00         471         472      16.458
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  Surcharging occurs when water rises above the top of the highest conduit.
+  ---------------------------------------------------------------------
+                                               Max. Height   Min. Depth
+                                   Hours       Above Crown    Below Rim
+  Node                 Type      Surcharged           Feet         Feet
+  ---------------------------------------------------------------------
+  Airpark              JUNCTION       25.00        199.250        0.000
+  202                  JUNCTION       24.97        199.174        0.076
+  204                  JUNCTION       24.96        198.882        0.293
+  208                  JUNCTION       24.58          3.750        0.000
+  210                  JUNCTION       23.97          0.358        3.642
+  Airport              JUNCTION       25.00        199.175        0.000
+  Westlake             JUNCTION       25.00        199.250        0.000
+  218                  JUNCTION       25.00          3.750        0.000
+  222                  JUNCTION       25.00          3.200      196.800
+  224                  JUNCTION       25.00         64.172      135.828
+  206                  STORAGE        24.90        193.838        5.162
+  Uppark               STORAGE        25.00       9119.900        0.000
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  Flooding refers to all water that overflows a node, whether it ponds or not.
+  --------------------------------------------------------------------------
+                                                             Total   Maximum
+                                 Maximum   Time of Max       Flood    Ponded
+                        Hours       Rate    Occurrence      Volume     Depth
+  Node                 Flooded       CFS   days hr:min    10^6 gal      Feet
+  --------------------------------------------------------------------------
+  Airpark                25.00    599.52      1  00:59     403.088     0.000
+  208                    24.47     11.53      1  00:59       5.498     0.000
+  Airport                25.00    248.46      1  00:59     165.640     0.000
+  Westlake               25.00    639.29      1  00:59     420.066     0.000
+  218                    25.00    450.00      1  00:59     302.883     0.000
+  
+  
+  **********************
+  Storage Volume Summary
+  **********************
+  
+  ------------------------------------------------------------------------------------------------
+                         Average    Avg   Evap  Exfil     Maximum    Max    Time of Max    Maximum
+                          Volume   Pcnt   Pcnt   Pcnt      Volume   Pcnt     Occurrence    Outflow
+  Storage Unit          1000 ft³   Full   Loss   Loss    1000 ft³   Full    days hr:min        CFS
+  ------------------------------------------------------------------------------------------------
+  206                   1409.446   70.5    0.0    0.0    1948.378   97.4       1  00:59      12.43
+  Uppark                 199.596   99.8    0.0    0.0     200.000  100.0       0  00:13     600.00
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  OUTFALL               98.13      0.88      0.90       0.585
+  -----------------------------------------------------------
+  System                98.13      0.88      0.90       0.585
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  forcemain            CONDUIT     20.91     0  00:02     47.33  1837.80    1.00
+  force1               CONDUIT      5.48     0  00:05     12.40  729.42    1.00
+  force3               CONDUIT      8.00     0  01:22     14.97  1113.98    1.00
+  gravity1             CONDUIT     12.43     1  00:59     15.83  984.46    1.00
+  gravity2             CONDUIT      1.02     0  00:33      1.30   69.99    1.00
+  gravity3             CONDUIT      0.90     0  04:21      1.24   32.04    0.88
+  force2               CONDUIT     32.45     0  00:03    >50.00  1736.41    1.00
+  force5               CONDUIT     41.63     0  01:40    >50.00  1212.09    1.00
+  gravity4             CONDUIT      2.95     0  00:01      2.41   69.64    1.00
+  PUMP                 PUMP       600.00     0  00:00              1.00
+  PUMP.1               PUMP       325.00     0  00:00              0.50
+  PUMP.2               PUMP       650.00     0  00:00              1.00
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  forcemain               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  force1                  1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  force3                  1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  gravity1                1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  gravity2                1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  gravity3                1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  force2                  1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  force5                  1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  gravity4                1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  forcemain                  24.97     25.00     24.97     25.00        25.00
+  force1                     24.96     24.97     24.96     24.99        24.97
+  force3                     24.91     24.96     24.91     24.98        24.95
+  gravity1                   24.62     24.90     24.62     24.96        24.85
+  gravity2                   23.97     24.62     23.97     24.86        24.52
+  gravity3                    0.01     23.97      0.01     24.43         0.01
+  force2                     24.96     25.00     24.96     25.00        25.00
+  force5                     24.92     25.00     24.92     25.00        25.00
+  gravity4                   24.58     25.00     24.58      1.13         0.53
+  
+  
+  ***************
+  Pumping Summary
+  ***************
+  
+  ---------------------------------------------------------------------------------------------------------
+                                                  Min       Avg       Max     Total     Power    % Time Off
+                        Percent   Number of      Flow      Flow      Flow    Volume     Usage    Pump Curve
+  Pump                 Utilized   Start-Ups       CFS       CFS       CFS  10^6 gal     Kw-hr    Low   High
+  ---------------------------------------------------------------------------------------------------------
+  PUMP                   100.00           1      0.00    600.00    600.00   403.916 5610335.55    0.0  100.0
+  PUMP.1                 100.00           1      0.00    250.01    325.00   168.298 105748.55    0.0    0.0
+  PUMP.2                 100.00           1      0.00    649.84    650.00   437.570 186730.79    0.0    0.0
+  
+
+  Analysis begun on:  Tue Aug  5 12:59:25 2025
+  Analysis ended on:  Tue Aug  5 12:59:25 2025
+  Total elapsed time: < 1 sec

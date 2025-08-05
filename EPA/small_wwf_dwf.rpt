@@ -1,0 +1,720 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  WARNING 01: wet weather time step reduced to recording interval for Rain Gage AIRPORT
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 5
+  Number of subcatchments ... 0
+  Number of nodes ........... 67
+  Number of links ........... 66
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ****************
+  Raingage Summary
+  ****************
+                                                      Data       Recording
+  Name                 Data Source                    Type       Interval 
+  ------------------------------------------------------------------------
+  AIRPORT              19-MAR                         VOLUME      15 min.
+  RAINGAGE-1           19-MAR                         VOLUME      15 min.
+  RAINGAGE-2           19-MAR                         VOLUME      15 min.
+  RAINGAGE-3           19-MAR                         VOLUME      15 min.
+  RAINGAGE-4           19-MAR                         VOLUME      15 min.
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  CSMH-A0918           JUNCTION            382.49      9.51       0.0
+  CSMH-A0919           JUNCTION            381.97      8.03       0.0    Yes
+  CSMH-A0920           JUNCTION            381.26      6.74       0.0
+  CSMH-A3531           JUNCTION            407.09     10.91       0.0    Yes
+  CSMH-A4219           JUNCTION            397.74     14.26       0.0    Yes
+  CSMH-A4220           JUNCTION            393.54     12.46       0.0    Yes
+  CSMH-A4221           JUNCTION            393.18     10.82       0.0    Yes
+  CSMH-A4222           JUNCTION            380.40      7.60       0.0
+  CSMH-A4223           JUNCTION            376.03     17.97       0.0
+  CSMH-A4224           JUNCTION            378.80      3.20       0.0
+  CSMH-A8211           JUNCTION            388.82     11.18       0.0    Yes
+  CSMH-A8213           JUNCTION            387.53      8.47       0.0    Yes
+  CSMH-A8214           JUNCTION            364.18     11.82       0.0
+  CSMH-B1768           JUNCTION            362.93      7.07       0.0
+  CSMH-B4715           JUNCTION            406.45      7.55       0.0    Yes
+  CSMH-B4716           JUNCTION            389.69     10.31       0.0    Yes
+  CSMH-B4718           JUNCTION            386.77      9.23       0.0    Yes
+  CSMH-B4719           JUNCTION            386.00      8.00       0.0    Yes
+  CSMH-B4720           JUNCTION            363.16      8.84       0.0
+  CSMH-B4721           JUNCTION            380.01      7.99       0.0
+  CSMH-B4722           JUNCTION            379.26      8.74       0.0
+  CSMH-B4723           JUNCTION            373.65     18.35       0.0
+  CSMH-B47417          JUNCTION            389.35      6.65       0.0    Yes
+  CSMH-C0669           JUNCTION            406.12      3.88       0.0    Yes
+  CSMH-C0670           JUNCTION            403.63      7.82       0.0    Yes
+  CSMH-C0671           JUNCTION            398.33      7.67       0.0    Yes
+  CSMH-C0672           JUNCTION            392.73     11.27       0.0    Yes
+  CSMH-C0673           JUNCTION            386.25      7.75       0.0
+  CSMH-C0674           JUNCTION            384.12      7.88       0.0
+  CSMH-C0675           JUNCTION            374.53     23.47       0.0
+  CSMH-C0676           JUNCTION            374.05     21.95       0.0
+  CSMH-C0677           JUNCTION            373.17     10.83       0.0
+  CSMH-C2522           JUNCTION            360.18      9.82       0.0    Yes
+  CSMH-C2679           JUNCTION            408.06     18.40       0.0    Yes
+  CSMH-S8212           JUNCTION            387.99     10.01       0.0    Yes
+  DC-1                 JUNCTION            485.37     23.86       0.0    Yes
+  DC-10                JUNCTION            465.20     11.55       0.0    Yes
+  DC-11                JUNCTION            460.44     12.90       0.0    Yes
+  DC-12                JUNCTION            449.18      7.87       0.0    Yes
+  DC-13                JUNCTION            447.36      9.52       0.0    Yes
+  DC-14                JUNCTION            445.10     17.46       0.0    Yes
+  DC-15                JUNCTION            440.88      4.73       0.0    Yes
+  DC-16                JUNCTION            438.83      6.12       0.0    Yes
+  DC-17                JUNCTION            435.54      7.25       0.0    Yes
+  DC-18                JUNCTION            432.68      9.45       0.0    Yes
+  DC-19                JUNCTION            430.86     11.89       0.0    Yes
+  DC-2                 JUNCTION            484.87     24.05       0.0    Yes
+  DC-20                JUNCTION            429.66      7.10       0.0    Yes
+  DC-21                JUNCTION            428.80      4.20       0.0    Yes
+  DC-22                JUNCTION            427.16     11.11       0.0    Yes
+  DC-23                JUNCTION            425.74     14.56       0.0    Yes
+  DC-24                JUNCTION            424.10      7.10       0.0    Yes
+  DC-25                JUNCTION            422.08     17.58       0.0    Yes
+  DC-26                JUNCTION            421.15     12.70       0.0    Yes
+  DC-27                JUNCTION            419.93     10.59       0.0    Yes
+  DC-28                JUNCTION            418.26     17.15       0.0    Yes
+  DC-29                JUNCTION            417.65     18.07       0.0    Yes
+  DC-3                 JUNCTION            483.57     22.96       0.0    Yes
+  DC-30                JUNCTION            417.20     15.25       0.0    Yes
+  DC-31                JUNCTION            408.24     14.39       0.0    Yes
+  DC-4                 JUNCTION            482.12     20.97       0.0    Yes
+  DC-5                 JUNCTION            480.11     13.98       0.0    Yes
+  DC-6                 JUNCTION            477.68     10.23       0.0    Yes
+  DC-7                 JUNCTION            473.04      6.95       0.0    Yes
+  DC-8                 JUNCTION            467.34      9.90       0.0    Yes
+  DC-9                 JUNCTION            466.61      9.30       0.0    Yes
+  OFALL-16             OUTFALL             355.00      6.00       0.0
+  
+  
+  ************
+  Link Summary
+  ************
+  Name             From Node        To Node          Type            Length    %Slope Roughness
+  ---------------------------------------------------------------------------------------------
+  CDT-207          DC-1             DC-2             CONDUIT           72.7    0.6331    0.0100
+  CDT-209          DC-2             DC-3             CONDUIT          230.6    0.5203    0.0100
+  CDT-211          DC-3             DC-4             CONDUIT          285.3    0.4733    0.0100
+  CDT-213          DC-4             DC-5             CONDUIT          393.5    0.4879    0.0100
+  CDT-215          DC-5             DC-6             CONDUIT          200.0    1.1253    0.0100
+  CDT-217          DC-6             DC-7             CONDUIT          377.7    1.1623    0.0100
+  CDT-219          DC-7             DC-8             CONDUIT          263.1    2.1289    0.0100
+  CDT-221          DC-8             DC-9             CONDUIT           92.9    0.4952    0.0100
+  CDT-223          DC-9             DC-10            CONDUIT          136.8    1.0158    0.0100
+  CDT-225          DC-10            DC-11            CONDUIT           74.2    6.2911    0.0100
+  CDT-227          DC-11            DC-12            CONDUIT          391.6    2.8512    0.0100
+  CDT-229          DC-12            DC-13            CONDUIT          377.5    0.4450    0.0100
+  CDT-231          DC-13            DC-14            CONDUIT          389.1    0.5552    0.0100
+  CDT-233          DC-14            DC-15            CONDUIT          322.9    1.2481    0.0100
+  CDT-235          DC-15            DC-16            CONDUIT          250.0    0.7520    0.0100
+  CDT-237          DC-16            DC-17            CONDUIT          217.7    1.4747    0.0100
+  CDT-239          DC-17            DC-18            CONDUIT          191.1    1.4967    0.0100
+  CDT-241          DC-18            DC-19            CONDUIT          369.0    0.4688    0.0100
+  CDT-243          DC-19            DC-20            CONDUIT          196.9    0.0508    0.0100
+  CDT-245          DC-20            DC-21            CONDUIT          147.4    0.5155    0.0100
+  CDT-247          DC-21            DC-22            CONDUIT          360.1    0.4277    0.0100
+  CDT-249          DC-22            DC-23            CONDUIT          263.3    0.4595    0.0100
+  CDT-251          DC-23            DC-24            CONDUIT          314.2    0.5156    0.0100
+  CDT-253          DC-24            DC-25            CONDUIT          380.5    0.5099    0.0100
+  CDT-255          DC-25            DC-26            CONDUIT          197.7    0.4552    0.0100
+  CDT-257          DC-26            DC-27            CONDUIT          200.6    0.5633    0.0100
+  CDT-259          DC-27            DC-28            CONDUIT          132.2    1.0967    0.0100
+  CDT-261          DC-28            DC-29            CONDUIT          130.7    0.2218    0.0100
+  CDT-263          DC-29            DC-30            CONDUIT           59.1    0.6767    0.0100
+  CDT-265          DC-30            DC-31            CONDUIT          113.3    7.9166    0.0100
+  CDT-267          DC-31            CSMH-C2679       CONDUIT           40.3    0.4465    0.0100
+  CSGM-A0090       CSMH-C0673       CSMH-B4719       CONDUIT          143.2    0.1745    0.0130
+  CSGM-A0123       CSMH-A4222       CSMH-B4721       CONDUIT          173.9    0.2242    0.0130
+  CSGM-A0153       CSMH-C2522       OFALL-16         CONDUIT           44.6    0.4038    0.0130
+  CSGM-A0652       CSMH-A4219       CSMH-A4220       CONDUIT          174.0    1.3624    0.0130
+  CSGM-A2422       CSMH-B47417      CSMH-A8211       CONDUIT          130.2    0.4071    0.0130
+  CSGM-A4437       CSMH-B4716       CSMH-B47417      CONDUIT          141.5    0.2404    0.0130
+  CSGM-A4438       CSMH-A8213       CSMH-B4718       CONDUIT          274.3    0.2771    0.0130
+  CSGM-A4439       CSMH-A8214       CSMH-B4720       CONDUIT          291.0    0.3505    0.0130
+  CSGM-A4740       CSMH-C0676       CSMH-B4723       CONDUIT          134.6    0.2972    0.0130
+  CSGM-A6387       CSMH-B4718       CSMH-C0673       CONDUIT          208.3    0.2496    0.0130
+  CSGM-A6942       CSMH-A0920       CSMH-A4222       CONDUIT          283.7    0.3031    0.0130
+  CSGM-A7695       CSMH-A4223       CSMH-C0675       CONDUIT          174.5    0.8594    0.0130
+  CSGM-A8656       CSMH-A4220       CSMH-A4221       CONDUIT          142.6    0.2525    0.0130
+  CSGM-A8733       CSMH-C0670       CSMH-C0671       CONDUIT          241.5    1.4205    0.0130
+  CSGM-A9385       CSMH-A0919       CSMH-A0920       CONDUIT          244.0    0.2909    0.0130
+  CSGM-A9921       CSMH-S8212       CSMH-A8213       CONDUIT          144.9    0.3175    0.0130
+  CSGM-B0006       CSMH-B4719       CSMH-C0674       CONDUIT          251.6    0.4611    0.0130
+  CSGM-B1276       CSMH-A4224       CSMH-A4223       CONDUIT          169.8    0.4535    0.0130
+  CSGM-B1369       CSMH-B4723       CSMH-C0677       CONDUIT          229.3    0.2093    0.0130
+  CSGM-B2142       CSMH-B4721       CSMH-B4722       CONDUIT          125.5    0.3745    0.0130
+  CSGM-B4179       CSMH-C0675       CSMH-C0676       CONDUIT           91.1    0.5267    0.0130
+  CSGM-B4180       CSMH-B4720       CSMH-B1768       CONDUIT           92.8    0.2478    0.0130
+  CSGM-B4815       CSMH-C0674       CSMH-A0918       CONDUIT          287.0    0.2579    0.0130
+  CSGM-B4836       CSMH-C0672       CSMH-B4716       CONDUIT          169.6    0.7782    0.0130
+  CSGM-B4890       CSMH-A3531       CSMH-B4715       CONDUIT          187.7    0.3410    0.0130
+  CSGM-B4892       CSMH-C0671       CSMH-A4219       CONDUIT          226.7    0.2602    0.0130
+  CSGM-B5182       CSMH-B1768       CSMH-C2522       CONDUIT          159.2    0.5969    0.0130
+  CSGM-B5517       CSMH-A4221       CSMH-C0672       CONDUIT          182.0    0.2473    0.0130
+  CSGM-B6416       CSMH-C0669       CSMH-C0670       CONDUIT          283.5    0.6068    0.0130
+  CSGM-B6961       CSMH-B4715       CSMH-C0669       CONDUIT          226.3    0.1458    0.0130
+  CSGM-B8811       CSMH-A0918       CSMH-A0919       CONDUIT          369.8    0.1406    0.0130
+  CSGM-B9282       CSMH-A8211       CSMH-S8212       CONDUIT          237.1    0.3500    0.0130
+  CSGM-C0817       CSMH-C0677       CSMH-A8214       CONDUIT          294.5    2.5370    0.0130
+  CSGM-C1381       CSMH-B4722       CSMH-A4224       CONDUIT          213.5    0.1593    0.0130
+  CSGM-C3182       CSMH-C2679       CSMH-A3531       CONDUIT          284.9    0.3895    0.0130
+  
+  
+  *********************
+  Cross Section Summary
+  *********************
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  CDT-207          CIRCULAR             0.67     0.35     0.17     0.67        1     0.81
+  CDT-209          CIRCULAR             0.67     0.35     0.17     0.67        1     0.73
+  CDT-211          CIRCULAR             0.67     0.35     0.17     0.67        1     0.70
+  CDT-213          CIRCULAR             0.67     0.35     0.17     0.67        1     0.71
+  CDT-215          CIRCULAR             0.67     0.35     0.17     0.67        1     1.08
+  CDT-217          CIRCULAR             0.67     0.35     0.17     0.67        1     1.10
+  CDT-219          CIRCULAR             0.67     0.35     0.17     0.67        1     1.48
+  CDT-221          CIRCULAR             0.67     0.35     0.17     0.67        1     0.72
+  CDT-223          CIRCULAR             0.67     0.35     0.17     0.67        1     1.02
+  CDT-225          CIRCULAR             0.67     0.35     0.17     0.67        1     2.55
+  CDT-227          CIRCULAR             0.67     0.35     0.17     0.67        1     1.72
+  CDT-229          CIRCULAR             0.67     0.35     0.17     0.67        1     0.68
+  CDT-231          CIRCULAR             0.67     0.35     0.17     0.67        1     0.76
+  CDT-233          CIRCULAR             0.67     0.35     0.17     0.67        1     1.14
+  CDT-235          CIRCULAR             0.67     0.35     0.17     0.67        1     0.88
+  CDT-237          CIRCULAR             0.67     0.35     0.17     0.67        1     1.23
+  CDT-239          CIRCULAR             0.67     0.35     0.17     0.67        1     1.24
+  CDT-241          CIRCULAR             0.67     0.35     0.17     0.67        1     0.70
+  CDT-243          CIRCULAR             0.67     0.35     0.17     0.67        1     0.23
+  CDT-245          CIRCULAR             0.67     0.35     0.17     0.67        1     0.73
+  CDT-247          CIRCULAR             0.67     0.35     0.17     0.67        1     0.66
+  CDT-249          CIRCULAR             0.67     0.35     0.17     0.67        1     0.69
+  CDT-251          CIRCULAR             0.67     0.35     0.17     0.67        1     0.73
+  CDT-253          CIRCULAR             0.67     0.35     0.17     0.67        1     0.73
+  CDT-255          CIRCULAR             0.67     0.35     0.17     0.67        1     0.69
+  CDT-257          CIRCULAR             0.67     0.35     0.17     0.67        1     0.76
+  CDT-259          CIRCULAR             0.67     0.35     0.17     0.67        1     1.06
+  CDT-261          CIRCULAR             0.67     0.35     0.17     0.67        1     0.48
+  CDT-263          CIRCULAR             0.67     0.35     0.17     0.67        1     0.84
+  CDT-265          CIRCULAR             0.67     0.35     0.17     0.67        1     2.86
+  CDT-267          CIRCULAR             1.00     0.79     0.25     1.00        1     2.00
+  CSGM-A0090       CIRCULAR             1.00     0.79     0.25     1.00        1     0.96
+  CSGM-A0123       CIRCULAR             1.00     0.79     0.25     1.00        1     1.09
+  CSGM-A0153       CIRCULAR             1.00     0.79     0.25     1.00        1     1.46
+  CSGM-A0652       CIRCULAR             1.00     0.79     0.25     1.00        1     2.69
+  CSGM-A2422       CIRCULAR             1.00     0.79     0.25     1.00        1     1.47
+  CSGM-A4437       CIRCULAR             1.00     0.79     0.25     1.00        1     1.13
+  CSGM-A4438       CIRCULAR             1.00     0.79     0.25     1.00        1     1.21
+  CSGM-A4439       CIRCULAR             1.00     0.79     0.25     1.00        1     1.36
+  CSGM-A4740       CIRCULAR             1.00     0.79     0.25     1.00        1     1.26
+  CSGM-A6387       CIRCULAR             1.00     0.79     0.25     1.00        1     1.15
+  CSGM-A6942       CIRCULAR             1.00     0.79     0.25     1.00        1     1.27
+  CSGM-A7695       CIRCULAR             1.00     0.79     0.25     1.00        1     2.13
+  CSGM-A8656       CIRCULAR             1.00     0.79     0.25     1.00        1     1.16
+  CSGM-A8733       CIRCULAR             1.00     0.79     0.25     1.00        1     2.74
+  CSGM-A9385       CIRCULAR             1.00     0.79     0.25     1.00        1     1.24
+  CSGM-A9921       CIRCULAR             1.00     0.79     0.25     1.00        1     1.30
+  CSGM-B0006       CIRCULAR             1.00     0.79     0.25     1.00        1     1.56
+  CSGM-B1276       CIRCULAR             1.00     0.79     0.25     1.00        1     1.55
+  CSGM-B1369       CIRCULAR             1.00     0.79     0.25     1.00        1     1.05
+  CSGM-B2142       CIRCULAR             1.00     0.79     0.25     1.00        1     1.41
+  CSGM-B4179       CIRCULAR             1.00     0.79     0.25     1.00        1     1.67
+  CSGM-B4180       CIRCULAR             1.00     0.79     0.25     1.00        1     1.15
+  CSGM-B4815       CIRCULAR             1.00     0.79     0.25     1.00        1     1.17
+  CSGM-B4836       CIRCULAR             1.00     0.79     0.25     1.00        1     2.03
+  CSGM-B4890       CIRCULAR             1.00     0.79     0.25     1.00        1     1.34
+  CSGM-B4892       CIRCULAR             1.00     0.79     0.25     1.00        1     1.17
+  CSGM-B5182       CIRCULAR             1.00     0.79     0.25     1.00        1     1.78
+  CSGM-B5517       CIRCULAR             1.00     0.79     0.25     1.00        1     1.15
+  CSGM-B6416       CIRCULAR             1.00     0.79     0.25     1.00        1     1.79
+  CSGM-B6961       CIRCULAR             1.00     0.79     0.25     1.00        1     0.88
+  CSGM-B8811       CIRCULAR             1.00     0.79     0.25     1.00        1     0.86
+  CSGM-B9282       CIRCULAR             1.00     0.79     0.25     1.00        1     1.36
+  CSGM-C0817       CIRCULAR             1.00     0.79     0.25     1.00        1     3.67
+  CSGM-C1381       CIRCULAR             1.00     0.79     0.25     1.00        1     0.92
+  CSGM-C3182       CIRCULAR             1.00     0.79     0.25     1.00        1     1.44
+  
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... MGD
+  Process Models:
+    Rainfall/Runoff ........ NO
+    RDII ................... YES
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 03/22/2017 00:00:00
+  Ending Date .............. 03/25/2017 23:00:00
+  Antecedent Dry Days ...... 5.0
+  Report Time Step ......... 00:15:00
+  Routing Time Step ........ 5.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 4
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  *********************
+  Control Actions Taken
+  *********************
+
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         3.675         1.197
+  Wet Weather Inflow .......         0.000         0.000
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         3.656         1.191
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.018         0.006
+  Continuity Error (%) .....         0.014
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  Link CSGM-A0153 (7.91%)
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Node OFALL-16 (0.01%)
+  Node DC-19 (0.01%)
+  Node DC-28 (0.00%)
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     1.01 sec
+  Average Time Step           :     4.94 sec
+  Maximum Time Step           :     5.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     2.00
+  % of Steps Not Converging   :     0.01
+  Time Step Frequencies       :
+      5.000 -  0.910 sec      :   100.00 %
+      0.910 -  0.166 sec      :     0.00 %
+      0.166 -  0.030 sec      :     0.00 %
+      0.030 -  0.005 sec      :     0.00 %
+      0.005 -  0.001 sec      :     0.00 %
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  CSMH-A0918           JUNCTION     0.47     1.34   383.83     2  07:05        1.33
+  CSMH-A0919           JUNCTION     0.35     0.85   382.82     2  07:06        0.85
+  CSMH-A0920           JUNCTION     0.34     0.83   382.09     2  07:08        0.83
+  CSMH-A3531           JUNCTION     0.17     0.61   407.70     2  07:00        0.61
+  CSMH-A4219           JUNCTION     0.15     0.44   398.18     2  07:00        0.44
+  CSMH-A4220           JUNCTION     0.25     0.78   394.32     2  07:00        0.78
+  CSMH-A4221           JUNCTION     0.28     0.79   393.97     2  07:00        0.79
+  CSMH-A4222           JUNCTION     0.38     0.92   381.32     2  07:09        0.92
+  CSMH-A4223           JUNCTION     0.26     0.56   376.59     2  07:12        0.56
+  CSMH-A4224           JUNCTION     0.31     0.70   379.50     2  07:12        0.70
+  CSMH-A8211           JUNCTION     0.29     0.75   389.57     2  07:00        0.75
+  CSMH-A8213           JUNCTION     0.34     1.07   388.60     2  07:00        1.07
+  CSMH-A8214           JUNCTION     0.33     0.77   364.95     2  07:18        0.77
+  CSMH-B1768           JUNCTION     0.28     0.63   363.56     2  07:19        0.63
+  CSMH-B4715           JUNCTION     0.24     0.85   407.30     2  07:00        0.85
+  CSMH-B4716           JUNCTION     0.30     0.81   390.50     2  07:00        0.81
+  CSMH-B4718           JUNCTION     0.36     1.01   387.78     2  07:00        1.01
+  CSMH-B4719           JUNCTION     0.30     0.70   386.70     2  07:01        0.70
+  CSMH-B4720           JUNCTION     0.36     0.81   363.97     2  07:19        0.81
+  CSMH-B4721           JUNCTION     0.32     0.75   380.76     2  07:10        0.75
+  CSMH-B4722           JUNCTION     0.44     1.06   380.32     2  07:11        1.05
+  CSMH-B4723           JUNCTION     0.39     0.97   374.62     2  07:17        0.97
+  CSMH-B47417          JUNCTION     0.27     0.68   390.03     2  07:00        0.68
+  CSMH-C0669           JUNCTION     0.15     0.53   406.65     2  07:00        0.53
+  CSMH-C0670           JUNCTION     0.12     0.42   404.05     2  07:00        0.42
+  CSMH-C0671           JUNCTION     0.21     0.74   399.07     2  07:00        0.74
+  CSMH-C0672           JUNCTION     0.21     0.54   393.27     2  07:00        0.54
+  CSMH-C0673           JUNCTION     0.41     0.95   387.20     2  07:00        0.95
+  CSMH-C0674           JUNCTION     0.38     0.93   385.05     2  07:03        0.93
+  CSMH-C0675           JUNCTION     0.29     0.68   375.21     2  07:15        0.68
+  CSMH-C0676           JUNCTION     0.35     0.92   374.97     2  07:16        0.92
+  CSMH-C0677           JUNCTION     0.19     0.41   373.58     2  07:17        0.41
+  CSMH-C2522           JUNCTION     0.31     0.67   360.85     2  07:19        0.67
+  CSMH-C2679           JUNCTION     0.30     0.72   408.78     2  07:00        0.72
+  CSMH-S8212           JUNCTION     0.31     1.02   389.01     2  07:00        1.02
+  DC-1                 JUNCTION     0.03     0.09   485.46     2  00:07        0.09
+  DC-10                JUNCTION     0.05     0.15   465.35     2  06:58        0.15
+  DC-11                JUNCTION     0.06     0.19   460.63     2  06:58        0.19
+  DC-12                JUNCTION     0.10     0.33   449.51     2  07:00        0.33
+  DC-13                JUNCTION     0.09     0.33   447.69     2  07:00        0.33
+  DC-14                JUNCTION     0.08     0.27   445.37     2  07:00        0.27
+  DC-15                JUNCTION     0.09     0.33   441.21     2  07:00        0.33
+  DC-16                JUNCTION     0.08     0.28   439.11     2  07:00        0.28
+  DC-17                JUNCTION     0.08     0.29   435.83     2  07:00        0.29
+  DC-18                JUNCTION     0.12     0.42   433.10     2  07:00        0.42
+  DC-19                JUNCTION     0.25     0.96   431.82     2  01:00        0.96
+  DC-2                 JUNCTION     0.04     0.13   485.00     2  00:49        0.13
+  DC-20                JUNCTION     0.12     0.44   430.10     2  07:00        0.44
+  DC-21                JUNCTION     0.13     0.50   429.30     2  07:00        0.50
+  DC-22                JUNCTION     0.13     0.50   427.66     2  07:00        0.50
+  DC-23                JUNCTION     0.13     0.49   426.23     2  07:00        0.49
+  DC-24                JUNCTION     0.14     0.52   424.62     2  00:36        0.52
+  DC-25                JUNCTION     0.15     0.57   422.65     2  07:00        0.57
+  DC-26                JUNCTION     0.14     0.53   421.68     2  07:00        0.53
+  DC-27                JUNCTION     0.12     0.42   420.35     2  07:00        0.42
+  DC-28                JUNCTION     0.22     1.04   419.30     2  07:00        1.04
+  DC-29                JUNCTION     0.14     0.54   418.19     2  07:00        0.54
+  DC-3                 JUNCTION     0.05     0.16   483.73     2  00:58        0.16
+  DC-30                JUNCTION     0.07     0.25   417.45     2  07:00        0.25
+  DC-31                JUNCTION     0.14     0.56   408.80     2  07:00        0.56
+  DC-4                 JUNCTION     0.05     0.18   482.30     2  06:53        0.18
+  DC-5                 JUNCTION     0.05     0.16   480.27     2  00:59        0.16
+  DC-6                 JUNCTION     0.05     0.18   477.86     2  06:59        0.18
+  DC-7                 JUNCTION     0.05     0.16   473.20     2  06:59        0.16
+  DC-8                 JUNCTION     0.08     0.26   467.60     2  06:59        0.26
+  DC-9                 JUNCTION     0.22     0.38   466.99     2  06:59        0.38
+  OFALL-16             OUTFALL      0.00     0.00   355.00     0  00:00        0.00
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           MGD      MGD  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  CSMH-A0918           JUNCTION     0.000    1.279     2  07:03           0        1.19       0.028
+  CSMH-A0919           JUNCTION     0.001    1.280     2  07:05     0.00253        1.19       0.033
+  CSMH-A0920           JUNCTION     0.000    1.279     2  07:06           0        1.19       0.027
+  CSMH-A3531           JUNCTION     0.028    0.936     2  07:00      0.0121       0.466       0.000
+  CSMH-A4219           JUNCTION     0.024    1.074     2  07:00      0.0505       0.589       0.007
+  CSMH-A4220           JUNCTION     0.024    1.098     2  07:00      0.0505       0.656       0.004
+  CSMH-A4221           JUNCTION     0.024    1.122     2  07:00      0.0505       0.723       0.013
+  CSMH-A4222           JUNCTION     0.000    1.279     2  07:08           0        1.19       0.027
+  CSMH-A4223           JUNCTION     0.000    1.279     2  07:12           0        1.19       0.006
+  CSMH-A4224           JUNCTION     0.000    1.279     2  07:11           0        1.19       0.015
+  CSMH-A8211           JUNCTION     0.024    1.218     2  07:00      0.0505       0.991       0.017
+  CSMH-A8213           JUNCTION     0.024    1.259     2  07:00      0.0505        1.12       0.022
+  CSMH-A8214           JUNCTION     0.000    1.277     2  07:17           0        1.19       0.014
+  CSMH-B1768           JUNCTION     0.000    1.277     2  07:19           0        1.19       0.017
+  CSMH-B4715           JUNCTION     0.028    0.965     2  07:00      0.0121        0.48      -0.000
+  CSMH-B4716           JUNCTION     0.024    1.170     2  07:00      0.0505       0.857       0.007
+  CSMH-B4718           JUNCTION     0.024    1.282     2  07:00      0.0505        1.19       0.026
+  CSMH-B4719           JUNCTION     0.000    1.281     2  07:00           0        1.19       0.029
+  CSMH-B4720           JUNCTION     0.000    1.277     2  07:18           0        1.19       0.022
+  CSMH-B4721           JUNCTION     0.000    1.279     2  07:09           0        1.19       0.023
+  CSMH-B4722           JUNCTION     0.000    1.279     2  07:09           0        1.19       0.028
+  CSMH-B4723           JUNCTION     0.000    1.278     2  07:15           0        1.19       0.022
+  CSMH-B47417          JUNCTION     0.024    1.194     2  07:00      0.0505       0.924       0.011
+  CSMH-C0669           JUNCTION     0.028    0.993     2  07:00      0.0121       0.494       0.001
+  CSMH-C0670           JUNCTION     0.028    1.022     2  07:00      0.0121       0.508      -0.000
+  CSMH-C0671           JUNCTION     0.028    1.050     2  07:00      0.0121       0.522      -0.001
+  CSMH-C0672           JUNCTION     0.024    1.146     2  07:00      0.0505        0.79       0.015
+  CSMH-C0673           JUNCTION     0.000    1.281     2  07:00           0        1.19       0.023
+  CSMH-C0674           JUNCTION     0.000    1.280     2  07:01           0        1.19       0.033
+  CSMH-C0675           JUNCTION     0.000    1.279     2  07:12           0        1.19       0.011
+  CSMH-C0676           JUNCTION     0.000    1.278     2  07:13           0        1.19       0.012
+  CSMH-C0677           JUNCTION     0.000    1.277     2  07:17           0        1.19       0.021
+  CSMH-C2522           JUNCTION     0.001    1.278     2  07:19     0.00154        1.19       0.004
+  CSMH-C2679           JUNCTION     0.028    0.908     2  07:00      0.0121       0.452       0.002
+  CSMH-S8212           JUNCTION     0.024    1.242     2  06:57      0.0505        1.06       0.018
+  DC-1                 JUNCTION     0.028    0.028     2  00:00      0.0121      0.0141       0.041
+  DC-10                JUNCTION     0.028    0.284     2  07:00      0.0121       0.141      -0.000
+  DC-11                JUNCTION     0.028    0.312     2  06:59      0.0121       0.155       0.029
+  DC-12                JUNCTION     0.028    0.341     2  06:58      0.0121       0.169      -0.012
+  DC-13                JUNCTION     0.028    0.369     2  07:00      0.0121       0.184      -0.000
+  DC-14                JUNCTION     0.028    0.397     2  07:00      0.0121       0.198      -0.000
+  DC-15                JUNCTION     0.028    0.426     2  07:00      0.0121       0.212      -0.000
+  DC-16                JUNCTION     0.028    0.454     2  07:00      0.0121       0.226      -0.000
+  DC-17                JUNCTION     0.028    0.482     2  07:00      0.0121        0.24      -0.001
+  DC-18                JUNCTION     0.028    0.511     2  07:00      0.0121       0.254       0.010
+  DC-19                JUNCTION     0.028    0.539     2  07:00      0.0121       0.268      -0.016
+  DC-2                 JUNCTION     0.028    0.057     2  00:08      0.0121      0.0282      -0.024
+  DC-20                JUNCTION     0.028    0.568     2  07:00      0.0121       0.282       0.000
+  DC-21                JUNCTION     0.028    0.596     2  07:00      0.0121       0.297      -0.000
+  DC-22                JUNCTION     0.028    0.624     2  07:00      0.0121       0.311       0.000
+  DC-23                JUNCTION     0.028    0.653     2  07:00      0.0121       0.325       0.072
+  DC-24                JUNCTION     0.028    0.681     2  07:00      0.0121       0.339      -0.053
+  DC-25                JUNCTION     0.028    0.709     2  07:00      0.0121       0.353      -0.001
+  DC-26                JUNCTION     0.028    0.738     2  07:00      0.0121       0.367       0.000
+  DC-27                JUNCTION     0.028    0.766     2  07:00      0.0121       0.381       0.001
+  DC-28                JUNCTION     0.028    0.795     2  07:00      0.0121       0.395      -0.000
+  DC-29                JUNCTION     0.028    0.823     2  07:00      0.0121       0.409       0.000
+  DC-3                 JUNCTION     0.028    0.085     2  00:43      0.0121      0.0424      -0.001
+  DC-30                JUNCTION     0.028    0.851     2  07:00      0.0121       0.424      -0.000
+  DC-31                JUNCTION     0.028    0.880     2  07:00      0.0121       0.438      -0.001
+  DC-4                 JUNCTION     0.028    0.114     2  00:51      0.0121      0.0565      -0.001
+  DC-5                 JUNCTION     0.028    0.142     2  06:53      0.0121      0.0706      -0.000
+  DC-6                 JUNCTION     0.028    0.170     2  01:00      0.0121      0.0847      -0.000
+  DC-7                 JUNCTION     0.028    0.199     2  06:59      0.0121      0.0988      -0.000
+  DC-8                 JUNCTION     0.028    0.227     2  06:59      0.0121       0.113       0.000
+  DC-9                 JUNCTION     0.028    0.255     2  06:59      0.0121       0.127       0.011
+  OFALL-16             OUTFALL      0.000    1.278     2  07:19           0        1.19       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  Surcharging occurs when water rises above the top of the highest conduit.
+  ---------------------------------------------------------------------
+                                               Max. Height   Min. Depth
+                                   Hours       Above Crown    Below Rim
+  Node                 Type      Surcharged           Feet         Feet
+  ---------------------------------------------------------------------
+  CSMH-A8213           JUNCTION        0.35          0.068        7.402
+  CSMH-B4718           JUNCTION        0.15          0.008        8.222
+  CSMH-S8212           JUNCTION        0.12          0.025        8.985
+  DC-19                JUNCTION        6.74          0.199       10.934
+  DC-28                JUNCTION        6.56          0.151       16.112
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       MGD       MGD    10^6 gal
+  -----------------------------------------------------------
+  OFALL-16             100.00     0.336     1.278       1.191
+  -----------------------------------------------------------
+  System               100.00     0.336     1.278       1.191
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          MGD  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  CDT-207              CONDUIT     0.028     2  00:08      1.69    0.04    0.13
+  CDT-209              CONDUIT     0.057     2  00:43      1.93    0.08    0.19
+  CDT-211              CONDUIT     0.085     2  00:51      2.10    0.12    0.24
+  CDT-213              CONDUIT     0.114     2  06:53      2.31    0.16    0.27
+  CDT-215              CONDUIT     0.142     2  01:00      3.31    0.13    0.24
+  CDT-217              CONDUIT     0.170     2  06:59      3.53    0.16    0.27
+  CDT-219              CONDUIT     0.199     2  06:59      4.57    0.13    0.25
+  CDT-221              CONDUIT     0.227     2  06:59      2.83    0.32    0.39
+  CDT-223              CONDUIT     0.255     2  07:00      3.78    0.25    0.34
+  CDT-225              CONDUIT     0.284     2  06:59      7.45    0.11    0.23
+  CDT-227              CONDUIT     0.312     2  06:58      5.38    0.18    0.32
+  CDT-229              CONDUIT     0.341     2  07:00      3.01    0.50    0.50
+  CDT-231              CONDUIT     0.369     2  07:00      3.34    0.49    0.49
+  CDT-233              CONDUIT     0.397     2  07:00      4.59    0.35    0.41
+  CDT-235              CONDUIT     0.426     2  07:00      3.88    0.48    0.49
+  CDT-237              CONDUIT     0.454     2  07:00      5.05    0.37    0.42
+  CDT-239              CONDUIT     0.482     2  07:00      3.93    0.39    0.53
+  CDT-241              CONDUIT     0.511     2  07:00      2.58    0.73    0.82
+  CDT-243              CONDUIT     0.539     2  07:00      2.71    2.35    0.82
+  CDT-245              CONDUIT     0.568     2  07:00      3.60    0.78    0.66
+  CDT-247              CONDUIT     0.596     2  07:00      3.45    0.90    0.72
+  CDT-249              CONDUIT     0.624     2  07:00      3.56    0.91    0.73
+  CDT-251              CONDUIT     0.653     2  07:00      3.67    0.89    0.74
+  CDT-253              CONDUIT     0.681     2  07:00      3.73    0.94    0.76
+  CDT-255              CONDUIT     0.709     2  07:00      3.66    1.03    0.80
+  CDT-257              CONDUIT     0.738     2  07:00      3.93    0.97    0.78
+  CDT-259              CONDUIT     0.766     2  07:00      4.59    0.72    0.81
+  CDT-261              CONDUIT     0.795     2  07:00      3.73    1.66    0.89
+  CDT-263              CONDUIT     0.823     2  07:00      4.26    0.98    0.80
+  CDT-265              CONDUIT     0.851     2  07:00      6.19    0.30    0.59
+  CDT-267              CONDUIT     0.880     2  07:00      2.58    0.44    0.64
+  CSGM-A0090           CONDUIT     1.281     2  07:00      2.86    1.33    0.83
+  CSGM-A0123           CONDUIT     1.279     2  07:09      2.82    1.17    0.84
+  CSGM-A0153           CONDUIT     1.278     2  07:19      3.76    0.87    0.63
+  CSGM-A0652           CONDUIT     1.074     2  07:00      5.00    0.40    0.44
+  CSGM-A2422           CONDUIT     1.194     2  07:00      3.09    0.81    0.72
+  CSGM-A4437           CONDUIT     1.170     2  07:00      2.87    1.04    0.75
+  CSGM-A4438           CONDUIT     1.260     2  07:08      2.65    1.04    1.00
+  CSGM-A4439           CONDUIT     1.277     2  07:18      2.98    0.94    0.79
+  CSGM-A4740           CONDUIT     1.278     2  07:15      2.68    1.02    0.95
+  CSGM-A6387           CONDUIT     1.281     2  07:00      2.54    1.11    0.98
+  CSGM-A6942           CONDUIT     1.279     2  07:08      2.71    1.01    0.88
+  CSGM-A7695           CONDUIT     1.279     2  07:12      3.93    0.60    0.62
+  CSGM-A8656           CONDUIT     1.098     2  07:00      2.57    0.95    0.78
+  CSGM-A8733           CONDUIT     1.022     2  07:00      5.01    0.37    0.42
+  CSGM-A9385           CONDUIT     1.279     2  07:06      2.82    1.03    0.84
+  CSGM-A9921           CONDUIT     1.236     2  07:01      2.79    0.95    1.00
+  CSGM-B0006           CONDUIT     1.280     2  07:01      3.66    0.82    0.65
+  CSGM-B1276           CONDUIT     1.279     2  07:12      3.67    0.82    0.65
+  CSGM-B1369           CONDUIT     1.277     2  07:17      3.59    1.21    0.69
+  CSGM-B2142           CONDUIT     1.279     2  07:09      3.27    0.91    0.76
+  CSGM-B4179           CONDUIT     1.278     2  07:13      3.10    0.76    0.80
+  CSGM-B4180           CONDUIT     1.277     2  07:19      3.28    1.11    0.72
+  CSGM-B4815           CONDUIT     1.279     2  07:03      3.06    1.09    0.77
+  CSGM-B4836           CONDUIT     1.146     2  07:00      4.12    0.56    0.54
+  CSGM-B4890           CONDUIT     0.936     2  07:00      2.35    0.70    0.73
+  CSGM-B4892           CONDUIT     1.050     2  07:00      3.38    0.89    0.59
+  CSGM-B5182           CONDUIT     1.277     2  07:19      3.91    0.72    0.61
+  CSGM-B5517           CONDUIT     1.122     2  07:00      3.14    0.98    0.66
+  CSGM-B6416           CONDUIT     0.993     2  07:00      3.65    0.55    0.53
+  CSGM-B6961           CONDUIT     0.965     2  07:00      2.58    1.10    0.69
+  CSGM-B8811           CONDUIT     1.279     2  07:05      2.61    1.48    0.92
+  CSGM-B9282           CONDUIT     1.218     2  06:57      2.93    0.89    0.87
+  CSGM-C0817           CONDUIT     1.277     2  07:17      6.57    0.35    0.41
+  CSGM-C1381           CONDUIT     1.279     2  07:11      2.94    1.39    0.80
+  CSGM-C3182           CONDUIT     0.908     2  07:00      2.88    0.63    0.60
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  CDT-207                 1.00   0.00  0.00  0.00  0.00  0.03  0.00  0.97  0.03  0.00
+  CDT-209                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-211                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-213                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-215                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-217                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-219                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-221                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-223                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-225                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-227                 1.00   0.00  0.00  0.00  0.00  0.10  0.00  0.90  0.10  0.00
+  CDT-229                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-231                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-233                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-235                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-237                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-239                 1.00   0.00  0.18  0.00  0.04  0.79  0.00  0.00  1.00  0.00
+  CDT-241                 1.00   0.00  0.00  0.00  0.65  0.02  0.00  0.33  0.66  0.00
+  CDT-243                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-245                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-247                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-249                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-251                 1.00   0.00  0.00  0.00  0.09  0.00  0.00  0.90  0.09  0.00
+  CDT-253                 1.00   0.00  0.00  0.00  0.02  0.00  0.00  0.98  0.00  0.00
+  CDT-255                 1.00   0.00  0.00  0.00  0.02  0.00  0.00  0.98  0.00  0.00
+  CDT-257                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-259                 1.00   0.00  0.00  0.00  0.09  0.00  0.00  0.90  0.10  0.00
+  CDT-261                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-263                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CDT-265                 1.00   0.00  0.00  0.00  0.00  0.79  0.00  0.21  0.79  0.00
+  CDT-267                 1.00   0.00  0.12  0.00  0.88  0.00  0.00  0.00  0.90  0.00
+  CSGM-A0090              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  CSGM-A0123              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  CSGM-A0153              1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CSGM-A0652              1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CSGM-A2422              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00
+  CSGM-A4437              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  CSGM-A4438              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.97  0.00
+  CSGM-A4439              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00
+  CSGM-A4740              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.91  0.00
+  CSGM-A6387              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.91  0.00
+  CSGM-A6942              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.99  0.00
+  CSGM-A7695              1.00   0.00  0.00  0.00  0.03  0.97  0.00  0.00  1.00  0.00
+  CSGM-A8656              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.90  0.00
+  CSGM-A8733              1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CSGM-A9385              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.01  0.00
+  CSGM-A9921              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.91  0.00
+  CSGM-B0006              1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CSGM-B1276              1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CSGM-B1369              1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.00  0.00
+  CSGM-B2142              1.00   0.00  0.00  0.00  0.10  0.00  0.00  0.90  0.00  0.00
+  CSGM-B4179              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.97  0.00
+  CSGM-B4180              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  CSGM-B4815              1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CSGM-B4836              1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CSGM-B4890              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00
+  CSGM-B4892              1.00   0.00  0.09  0.00  0.91  0.00  0.00  0.00  0.21  0.00
+  CSGM-B5182              1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CSGM-B5517              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  CSGM-B6416              1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CSGM-B6961              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.15  0.00
+  CSGM-B8811              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  CSGM-B9282              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00
+  CSGM-C0817              1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CSGM-C1381              1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  CSGM-C3182              1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  CDT-241                     0.01      0.01      6.74      0.01         0.01
+  CDT-243                     0.01      6.83      0.01      7.02         0.01
+  CDT-255                     0.01      0.01      0.01      1.66         0.01
+  CDT-259                     0.01      0.01      6.56      0.01         0.01
+  CDT-261                     0.01      6.74      0.01      6.86         0.01
+  CSGM-A0090                  0.01      0.01      0.01      6.67         0.01
+  CSGM-A0123                  0.01      0.01      0.01      6.53         0.01
+  CSGM-A4437                  0.01      0.01      0.01      0.92         0.01
+  CSGM-A4438                  0.15      0.35      0.15      1.06         0.15
+  CSGM-A4740                  0.01      0.01      0.01      0.80         0.01
+  CSGM-A6387                  0.01      0.15      0.01      2.70         0.01
+  CSGM-A6942                  0.01      0.01      0.01      0.64         0.01
+  CSGM-A9385                  0.01      0.01      0.01      0.97         0.01
+  CSGM-A9921                  0.12      0.12      0.35      0.01         0.01
+  CSGM-B1369                  0.01      0.01      0.01      6.58         0.01
+  CSGM-B4180                  0.01      0.01      0.01      2.77         0.01
+  CSGM-B4815                  0.01      0.01      0.01      2.40         0.01
+  CSGM-B6961                  0.01      0.01      0.01      6.52         0.01
+  CSGM-B8811                  0.01      6.55      0.01      6.77         0.01
+  CSGM-B9282                  0.01      0.01      0.12      0.01         0.01
+  CSGM-C1381                  0.01      1.19      0.01      6.72         0.01
+  
+
+  Analysis begun on:  Tue Aug  5 09:52:28 2025
+  Analysis ended on:  Tue Aug  5 09:52:38 2025
+  Total elapsed time: 00:00:10

@@ -1,0 +1,1815 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 0
+  Number of subcatchments ... 0
+  Number of nodes ........... 61
+  Number of links ........... 59
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  10309                JUNCTION            101.60      9.40       0.0
+  10309A               JUNCTION            101.60      9.40       0.0
+  10309B               JUNCTION            101.60      9.40       0.0
+  10309C               JUNCTION            101.60      9.40       0.0
+  10309D               JUNCTION            101.60      9.40       0.0
+  10309E               JUNCTION            101.60      9.40       0.0
+  15009                JUNCTION            111.50     13.50       0.0    Yes
+  15009A               JUNCTION            111.50     13.50       0.0
+  15009B               JUNCTION            111.50     13.50       0.0
+  15009C               JUNCTION            111.50     13.50       0.0
+  15009D               JUNCTION            111.50     13.50       0.0
+  15009E               JUNCTION            111.50     13.50       0.0
+  16009                JUNCTION            102.00     18.00       0.0
+  16009A               JUNCTION            102.00     18.00       0.0
+  16009B               JUNCTION            102.00     18.00       0.0
+  16009C               JUNCTION            102.00     18.00       0.0
+  16009D               JUNCTION            102.00     18.00       0.0
+  16009E               JUNCTION            102.00     18.00       0.0
+  16109                JUNCTION            102.80     22.20       0.0    Yes
+  16109A               JUNCTION            102.80     22.20       0.0
+  16109B               JUNCTION            102.80     22.20       0.0
+  16109C               JUNCTION            102.80     22.20       0.0
+  16109D               JUNCTION            102.80     22.20       0.0
+  16109E               JUNCTION            102.80     22.20       0.0
+  80408                JUNCTION            124.60     13.40       0.1    Yes
+  80408A               JUNCTION            124.60     13.40       0.0    Yes
+  80408B               JUNCTION            124.60     13.40       0.0    Yes
+  80408C               JUNCTION            124.60     13.40       0.0    Yes
+  80408D               JUNCTION            124.60     13.40       0.0    Yes
+  80408E               JUNCTION            124.60     13.40       0.0    Yes
+  80608                JUNCTION            118.30     16.70       1.0
+  80608A               JUNCTION            118.30     16.70       0.0
+  80608B               JUNCTION            118.30     16.70       0.0
+  80608C               JUNCTION            118.30     16.70       0.0
+  80608D               JUNCTION            118.30     16.70       0.0
+  80608E               JUNCTION            118.30     16.70       0.0
+  81009                JUNCTION            128.20      8.80       0.0    Yes
+  81009A               JUNCTION            128.20      8.80       0.0    Yes
+  81009B               JUNCTION            128.20      8.80       0.0    Yes
+  81009C               JUNCTION            128.20      8.80       0.0    Yes
+  81009D               JUNCTION            128.20      8.80       0.0    Yes
+  81009E               JUNCTION            128.20      8.80       0.0    Yes
+  81309                JUNCTION            117.50     12.50       0.0
+  81309A               JUNCTION            117.50     12.50       0.0
+  81309B               JUNCTION            117.50     12.50       0.0
+  81309C               JUNCTION            117.50     12.50       0.0
+  81309D               JUNCTION            117.50     12.50       0.0
+  81309E               JUNCTION            117.50     12.50       0.0
+  82308D               JUNCTION            112.30     42.70       0.0
+  82309                JUNCTION            112.30     42.70       0.0    Yes
+  82309A               JUNCTION            112.30     42.70       0.0    Yes
+  82309B               JUNCTION            112.30     42.70       0.0    Yes
+  82309C               JUNCTION            112.30     42.70       0.0    Yes
+  10208                OUTFALL              89.90      9.00       0.0
+  10208A               OUTFALL              89.90      9.00       0.0
+  10208B               OUTFALL              89.90      9.00       0.0
+  10208C               OUTFALL              89.90      9.00       0.0
+  10208D               OUTFALL              89.90      9.00       0.0
+  10208E               OUTFALL              89.90      9.00       0.0
+  82309D               STORAGE             112.30     42.70       0.0    Yes
+  82309E               STORAGE             112.30     10.00       0.0    Yes
+  
+  
+  ************
+  Link Summary
+  ************
+  Name             From Node        To Node          Type            Length    %Slope Roughness
+  ---------------------------------------------------------------------------------------------
+  1030             10309            10208            CONDUIT         4500.0    0.2600    0.0160
+  1030A            10309A           10208A           CONDUIT         4500.0    0.2600    0.0160
+  1030B            10309B           10208B           CONDUIT         4500.0    0.2600    0.0160
+  1030C            10309C           10208C           CONDUIT         4500.0    0.2600    0.0160
+  1030D            10309D           10208D           CONDUIT         4500.0    0.2600    0.0160
+  1030E            10309E           10208E           CONDUIT         4500.0    0.2600    0.0160
+  1570             15009            16009            CONDUIT         5000.0    0.1900    0.0154
+  1570A            15009A           16009A           CONDUIT         5000.0    0.1900    0.0154
+  1570B            15009B           16009B           CONDUIT         5000.0    0.1900    0.0154
+  1570C            15009C           16009C           CONDUIT         5000.0    0.1900    0.0154
+  1570D            15009D           16009D           CONDUIT         5000.0    0.1900    0.0154
+  1570E            15009E           16009E           CONDUIT         5000.0    0.1900    0.0154
+  1600             16009            16109            CONDUIT          500.0   -0.1600    0.0150
+  1600A            16009A           16109A           CONDUIT          500.0   -0.1600    0.0150
+  1600B            16009B           16109B           CONDUIT          500.0   -0.1600    0.0150
+  1600C            16009C           16109C           CONDUIT          500.0   -0.1600    0.0150
+  1600D            16009D           16109D           CONDUIT          500.0   -0.1600    0.0150
+  1600E            16009E           16109E           CONDUIT          500.0   -0.1600    0.0150
+  1602             82309            16109            CONDUIT         5000.0    0.1900    0.0340
+  1602A            82309A           16109A           CONDUIT         5000.0    0.1900    0.0340
+  1602B            82309B           16109B           CONDUIT         5000.0    0.1900    0.0340
+  1602C            82309C           16109C           CONDUIT         5000.0    0.1900    0.0340
+  1602D            82309D           16109D           CONDUIT         5000.0    0.1900    0.0340
+  1602E            82309E           16109E           CONDUIT         5000.0    0.1900    0.0340
+  1630             16009            10309            CONDUIT          300.0    0.1333    0.0150
+  1630A            16009A           10309A           CONDUIT          300.0    0.1333    0.0150
+  1630B            16009B           10309B           CONDUIT          300.0    0.1333    0.0150
+  1630C            16009C           10309C           CONDUIT          300.0    0.1333    0.0150
+  1630D            16009D           10309D           CONDUIT          300.0    0.1333    0.0150
+  1630E            16009E           10309E           CONDUIT          300.0    0.1333    0.0150
+  8040             80408            80608            CONDUIT         1800.0    0.3500    0.0150
+  8040A            80408A           80608A           CONDUIT         1800.0    0.3500    0.0150
+  8040B            80408B           80608B           CONDUIT         1800.0    0.3500    0.0150
+  8040C            80408C           80608C           CONDUIT         1800.0    0.3500    0.0150
+  8040D            80408D           80608D           CONDUIT         1800.0    0.3500    0.0150
+  8040E            80408E           80608E           CONDUIT         1800.0    0.3500    0.0150
+  8060             80608            82309            CONDUIT         2075.0    0.1831    0.0150
+  8060A            80608A           82309A           CONDUIT         2075.0    0.1831    0.0150
+  8060B            80608B           82309B           CONDUIT         2075.0    0.1831    0.0150
+  8060C            80608C           82309C           CONDUIT         2075.0    0.1831    0.0150
+  8060D            80608D           82309D           CONDUIT         2075.0    0.1831    0.0150
+  8060E            80608E           82309E           CONDUIT         2075.0    0.1831    0.0150
+  8100             81009            81309            CONDUIT         5100.0    0.2098    0.0150
+  8100A            81009A           81309A           CONDUIT         5100.0    0.2098    0.0150
+  8100B            81009B           81309B           CONDUIT         5100.0    0.2098    0.0150
+  8100C            81009C           81309C           CONDUIT         5100.0    0.2098    0.0150
+  8100D            81009D           81309D           CONDUIT         5100.0    0.2098    0.0150
+  8100E            81009E           81309E           CONDUIT         5100.0    0.2098    0.0150
+  8130             81309            15009            CONDUIT         3500.0    0.1714    0.0150
+  8130A            81309A           15009A           CONDUIT         3500.0    0.1714    0.0150
+  8130B            81309B           15009B           CONDUIT         3500.0    0.1714    0.0150
+  8130C            81309C           15009C           CONDUIT         3500.0    0.1714    0.0150
+  8130D            81309D           15009D           CONDUIT         3500.0    0.1714    0.0150
+  8130E            81309E           15009E           CONDUIT         3500.0    0.1714    0.0150
+  LAG_PUMP         82309E           15009E           TYPE2 PUMP  
+  LEAD_PUMP        82309E           15009E           TYPE2 PUMP  
+  OR1@82309B-15009B 82309B           15009B           ORIFICE     
+  OR1@82309D-82308D 82309D           82308D           ORIFICE     
+  WEIR1@82309C-15009C 82309C           15009C           WEIR        
+  
+  
+  *********************
+  Cross Section Summary
+  *********************
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  1030             TRIANGULAR           9.00   243.00     4.27    54.00        1  3028.41
+  1030A            TRIANGULAR           9.00   243.00     4.27    54.00        1  3028.41
+  1030B            TRIANGULAR           9.00   243.00     4.27    54.00        1  3028.41
+  1030C            TRIANGULAR           9.00   243.00     4.27    54.00        1  3028.41
+  1030D            TRIANGULAR           9.00   243.00     4.27    54.00        1  3028.41
+  1030E            TRIANGULAR           9.00   243.00     4.27    54.00        1  3028.41
+  1570             CIRCULAR             5.50    23.76     1.38     5.50        1   123.56
+  1570A            CIRCULAR             5.50    23.76     1.38     5.50        1   123.56
+  1570B            CIRCULAR             5.50    23.76     1.38     5.50        1   123.56
+  1570C            CIRCULAR             5.50    23.76     1.38     5.50        1   123.56
+  1570D            CIRCULAR             5.50    23.76     1.38     5.50        1   123.56
+  1570E            CIRCULAR             5.50    23.76     1.38     5.50        1   123.56
+  1600             CIRCULAR             6.00    28.27     1.50     6.00        1   146.82
+  1600A            CIRCULAR             6.00    28.27     1.50     6.00        1   146.82
+  1600B            CIRCULAR             6.00    28.27     1.50     6.00        1   146.82
+  1600C            CIRCULAR             6.00    28.27     1.50     6.00        1   146.82
+  1600D            CIRCULAR             6.00    28.27     1.50     6.00        1   146.82
+  1600E            CIRCULAR             6.00    28.27     1.50     6.00        1   146.82
+  1602             CIRCULAR             5.00    19.63     1.25     5.00        1    43.41
+  1602A            CIRCULAR             5.00    19.63     1.25     5.00        1    43.41
+  1602B            CIRCULAR             5.00    19.63     1.25     5.00        1    43.41
+  1602C            CIRCULAR             5.00    19.63     1.25     5.00        1    43.41
+  1602D            CIRCULAR             5.00    19.63     1.25     5.00        1    43.41
+  1602E            CIRCULAR             5.00    19.63     1.25     5.00        1    43.41
+  1630             TRIANGULAR           9.00   243.00     4.27    54.00        1  2313.27
+  1630A            TRIANGULAR           9.00   243.00     4.27    54.00        1  2313.27
+  1630B            TRIANGULAR           9.00   243.00     4.27    54.00        1  2313.27
+  1630C            TRIANGULAR           9.00   243.00     4.27    54.00        1  2313.27
+  1630D            TRIANGULAR           9.00   243.00     4.27    54.00        1  2313.27
+  1630E            TRIANGULAR           9.00   243.00     4.27    54.00        1  2313.27
+  8040             CIRCULAR             4.00    12.57     1.00     4.00        1    73.65
+  8040A            CIRCULAR             4.00    12.57     1.00     4.00        1    73.65
+  8040B            CIRCULAR             4.00    12.57     1.00     4.00        1    73.65
+  8040C            CIRCULAR             4.00    12.57     1.00     4.00        1    73.65
+  8040D            CIRCULAR             4.00    12.57     1.00     4.00        1    73.65
+  8040E            CIRCULAR             4.00    12.57     1.00     4.00        1    73.65
+  8060             CIRCULAR             4.00    12.57     1.00     4.00        1    53.27
+  8060A            CIRCULAR             4.00    12.57     1.00     4.00        1    53.27
+  8060B            CIRCULAR             4.00    12.57     1.00     4.00        1    53.27
+  8060C            CIRCULAR             4.00    12.57     1.00     4.00        1    53.27
+  8060D            CIRCULAR             4.00    12.57     1.00     4.00        1    53.27
+  8060E            CIRCULAR             4.00    12.57     1.00     4.00        1    53.27
+  8100             CIRCULAR             4.50    15.90     1.12     4.50        1    78.06
+  8100A            CIRCULAR             4.50    15.90     1.12     4.50        1    78.06
+  8100B            CIRCULAR             4.50    15.90     1.12     4.50        1    78.06
+  8100C            CIRCULAR             4.50    15.90     1.12     4.50        1    78.06
+  8100D            CIRCULAR             4.50    15.90     1.12     4.50        1    78.06
+  8100E            CIRCULAR             4.50    15.90     1.12     4.50        1    78.06
+  8130             CIRCULAR             4.50    15.90     1.12     4.50        1    70.56
+  8130A            CIRCULAR             4.50    15.90     1.12     4.50        1    70.56
+  8130B            CIRCULAR             4.50    15.90     1.12     4.50        1    70.56
+  8130C            CIRCULAR             4.50    15.90     1.12     4.50        1    70.56
+  8130D            CIRCULAR             4.50    15.90     1.12     4.50        1    70.56
+  8130E            CIRCULAR             4.50    15.90     1.12     4.50        1    70.56
+  
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ NO
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 01/01/1988 00:00:00
+  Ending Date .............. 01/01/1988 08:00:00
+  Antecedent Dry Days ...... 5.0
+  Report Time Step ......... 00:00:10
+  Routing Time Step ........ 10.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  *********************
+  Control Actions Taken
+  *********************
+   01/01/1988: 00:27:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:27:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:28:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:28:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:28:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:28:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:28:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:28:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:29:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:29:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:29:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:29:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:29:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:29:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:30:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:30:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:30:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:30:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:30:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:30:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:31:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:31:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:31:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:31:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:31:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:31:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:32:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:32:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:32:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:32:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:32:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:32:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:33:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:33:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:33:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:33:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:33:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:33:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:34:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:34:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:34:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:34:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:34:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:34:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:35:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:35:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:35:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:35:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:35:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:35:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:36:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:36:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:36:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:36:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:36:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:36:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:37:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:37:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:37:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:37:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:37:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:37:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:38:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:38:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:38:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:38:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:38:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:38:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:39:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:39:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:39:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:39:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:39:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:39:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:40:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:40:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:40:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:40:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:40:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:40:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:41:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:41:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:41:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:41:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:41:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:41:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:42:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:42:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:42:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:42:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:42:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:42:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:43:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:43:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:43:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:43:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:43:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:43:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:44:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:44:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:44:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:44:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:44:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:44:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:45:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:45:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:45:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:45:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:45:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:45:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:46:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:46:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:46:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:46:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:46:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:46:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:47:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:47:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:47:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:47:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:47:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:47:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:48:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:48:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:48:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:48:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:48:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:48:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:49:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:49:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:49:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:49:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:49:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:49:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:50:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:50:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:50:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:50:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:50:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:50:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:51:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:51:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:51:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:51:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:51:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:51:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:52:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:52:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:52:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:52:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:52:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:52:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:53:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:53:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:53:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:53:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:53:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:53:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:54:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:54:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:54:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:54:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:54:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:54:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:55:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:55:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:55:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:55:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:55:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:55:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:56:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:56:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:56:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:56:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:56:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:56:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:57:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:57:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:57:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:57:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:57:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:57:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:58:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:58:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:58:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:58:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:58:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:58:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:59:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:59:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:59:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:59:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 00:59:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 00:59:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:00:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:00:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:00:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:00:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:00:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:00:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:01:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:01:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:01:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:01:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:01:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:01:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:02:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:02:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:02:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:02:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:02:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:02:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:03:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:03:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:03:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:03:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:03:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:03:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:04:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:04:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:04:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:04:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:04:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:04:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:05:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:05:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:05:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:05:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:05:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:05:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:06:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:06:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:06:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:06:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:06:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:06:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:07:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:07:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:07:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:07:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:07:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:07:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:08:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:08:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:08:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:08:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:08:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:08:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:09:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:09:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:09:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:09:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:09:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:09:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:10:11 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:10:11 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:10:31 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:10:31 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:10:51 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:10:51 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:11:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:11:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:11:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:11:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:11:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:11:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:12:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:12:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:12:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:12:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:12:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:12:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:13:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:13:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:13:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:13:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:13:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:13:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:14:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:14:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:14:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:14:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:14:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:14:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:15:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:15:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:15:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:15:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:15:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:15:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:16:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:16:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:16:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:16:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:16:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:16:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:17:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:17:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:17:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:17:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:17:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:17:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:18:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:18:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:18:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:18:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:18:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:18:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:19:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:19:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:19:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:19:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:19:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:19:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:20:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:20:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:20:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:20:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:20:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:20:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:21:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:21:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:21:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:21:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:21:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:21:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:22:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:22:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:22:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:22:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:22:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:22:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:23:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:23:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:23:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:23:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:23:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:23:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:24:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:24:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:24:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:24:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:24:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:24:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:25:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:25:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:25:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:25:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:25:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:25:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:26:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:26:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:26:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:26:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:26:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:26:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:27:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:27:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:27:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:27:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:27:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:27:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:28:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:28:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:28:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:28:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:28:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:28:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:29:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:29:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:29:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:29:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:29:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:29:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:30:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:30:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:30:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:30:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:30:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:30:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:31:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:31:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:31:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:31:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:31:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:31:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:32:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:32:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:32:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:32:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:32:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:32:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:33:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:33:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:33:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:33:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:33:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:33:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:34:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:34:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:34:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:34:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:34:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:34:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:35:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:35:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:35:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:35:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:35:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:35:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:36:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:36:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:36:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:36:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:36:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:36:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:37:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:37:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:37:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:37:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:37:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:37:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:38:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:38:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:38:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:38:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:38:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:38:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:39:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:39:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:39:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:39:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:39:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:39:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:40:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:40:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:40:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:40:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:40:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:40:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:41:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:41:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:41:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:41:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:41:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:41:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:42:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:42:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:42:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:42:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:42:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:42:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:43:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:43:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:43:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:43:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:43:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:43:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:44:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:44:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:44:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:44:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:44:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:44:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:45:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:45:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:45:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:45:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:45:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:45:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:46:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:46:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:46:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:46:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:46:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:46:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:47:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:47:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:47:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:47:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:47:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:47:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:48:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:48:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:48:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:48:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:48:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:48:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:49:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:49:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:49:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:49:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:49:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:49:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:50:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:50:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:50:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:50:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:50:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:50:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:51:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:51:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:51:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:51:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:51:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:51:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:52:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:52:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:52:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:52:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:52:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:52:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:53:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:53:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:53:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:53:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:53:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:53:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:54:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:54:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:54:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:54:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:54:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:54:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:55:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:55:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:55:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:55:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:55:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:55:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:56:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:56:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:56:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:56:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:56:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:56:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:57:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:57:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:57:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:57:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:57:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:57:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:58:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:58:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:58:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:58:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:58:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:58:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:59:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:59:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:59:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:59:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 01:59:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 01:59:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:00:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:00:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:00:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:00:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:00:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:00:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:01:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:01:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:01:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:01:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:01:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:01:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:02:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:02:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:02:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:02:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:02:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:02:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:03:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:03:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:03:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:03:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:03:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:03:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:04:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:04:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:04:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:04:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:04:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:04:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:05:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:05:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:05:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:05:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:05:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:05:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:06:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:06:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:06:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:06:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:06:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:06:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:07:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:07:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:07:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:07:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:07:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:07:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:08:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:08:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:08:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:08:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:08:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:08:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:09:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:09:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:09:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:09:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:09:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:09:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:10:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:10:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:10:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:10:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:10:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:10:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:11:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:11:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:11:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:11:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:11:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:11:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:12:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:12:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:12:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:12:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:12:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:12:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:13:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:13:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:13:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:13:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:13:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:13:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:14:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:14:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:14:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:14:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:14:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:14:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:15:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:15:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:15:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:15:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:15:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:15:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:16:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:16:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:16:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:16:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:16:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:16:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:17:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:17:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:17:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:17:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:17:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:17:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:18:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:18:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:18:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:18:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:18:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:18:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:19:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:19:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:19:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:19:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:19:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:19:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:20:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:20:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:20:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:20:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:20:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:20:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:21:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:21:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:21:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:21:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:21:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:21:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:22:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:22:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:22:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:22:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:22:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:22:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:23:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:23:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:23:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:23:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:23:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:23:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:24:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:24:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:24:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:24:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:24:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:24:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:25:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:25:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:25:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:25:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:25:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:25:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:26:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:26:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:26:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:26:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:26:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:26:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:27:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:27:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:27:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:27:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:27:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:27:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:28:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:28:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:28:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:28:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:28:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:28:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:29:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:29:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:29:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:29:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:29:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:29:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:30:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:30:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:30:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:30:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:30:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:30:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:31:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:31:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:31:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:31:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:31:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:31:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:32:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:32:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:32:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:32:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:32:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:32:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:33:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:33:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:33:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:33:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:33:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:33:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:34:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:34:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:34:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:34:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:34:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:34:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:35:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:35:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:35:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:35:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:35:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:35:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:36:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:36:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:36:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:36:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:36:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:36:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:37:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:37:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:37:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:37:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:37:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:37:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:38:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:38:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:38:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:38:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:38:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:38:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:39:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:39:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:39:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:39:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:39:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:39:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:40:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:40:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:40:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:40:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:40:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:40:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:41:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:41:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:41:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:41:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:41:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:41:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:42:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:42:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:42:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:42:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:42:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:42:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:43:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:43:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:43:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:43:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:43:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:43:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:44:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:44:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:44:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:44:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:44:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:44:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:45:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:45:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:45:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:45:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:45:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:45:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:46:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:46:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:46:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:46:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:46:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:46:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:47:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:47:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:47:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:47:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:47:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:47:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:48:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:48:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:48:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:48:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:48:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:48:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:49:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:49:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:49:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:49:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:49:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:49:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:50:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:50:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:50:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:50:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:50:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:50:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:51:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:51:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:51:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:51:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:51:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:51:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:52:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:52:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:52:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:52:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:52:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:52:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:53:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:53:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:53:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:53:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:53:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:53:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:54:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:54:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:54:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:54:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:54:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:54:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:55:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:55:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:55:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:55:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:55:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:55:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:56:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:56:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:56:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:56:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:56:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:56:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:57:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:57:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:57:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:57:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:57:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:57:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:58:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:58:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:58:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:58:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:58:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:58:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:59:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:59:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:59:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:59:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 02:59:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 02:59:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:00:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:00:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:00:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:00:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:00:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:00:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:01:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:01:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:01:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:01:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:01:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:01:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:02:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:02:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:02:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:02:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:02:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:02:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:03:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:03:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:03:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:03:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:03:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:03:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:04:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:04:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:04:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:04:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:04:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:04:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:05:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:05:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:05:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:05:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:05:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:05:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:06:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:06:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:06:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:06:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:06:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:06:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:07:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:07:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:07:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:07:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:07:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:07:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:08:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:08:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:08:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:08:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:08:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:08:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:09:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:09:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:09:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:09:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:09:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:09:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:10:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:10:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:10:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:10:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:10:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:10:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:11:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:11:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:11:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:11:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:11:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:11:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:12:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:12:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:12:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:12:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:12:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:12:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:13:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:13:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:13:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:13:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:13:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:13:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:14:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:14:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:14:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:14:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:14:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:14:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:15:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:15:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:15:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:15:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:15:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:15:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:16:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:16:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:16:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:16:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:16:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:16:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:17:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:17:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:17:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:17:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:17:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:17:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:18:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:18:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:18:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:18:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:18:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:18:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:19:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:19:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:19:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:19:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:19:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:19:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:20:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:20:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:20:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:20:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:20:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:20:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:21:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:21:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:21:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:21:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:21:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:21:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:22:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:22:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:22:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:22:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:22:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:22:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:23:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:23:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:23:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:23:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:23:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:23:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:24:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:24:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:24:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:24:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:24:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:24:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:25:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:25:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:25:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:25:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:25:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:25:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:26:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:26:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:26:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:26:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:26:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:26:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:27:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:27:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:27:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:27:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:27:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:27:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:28:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:28:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:28:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:28:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:28:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:28:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:29:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:29:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:29:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:29:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:29:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:29:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:30:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:30:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:30:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:30:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:30:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:30:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:31:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:31:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:31:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:31:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:31:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:31:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:32:08 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:32:08 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:32:28 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:32:28 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+   01/01/1988: 03:32:48 Link LEAD_PUMP setting changed to   0.00 by Control RULE-1
+   01/01/1988: 03:32:48 Link LAG_PUMP setting changed to   0.00 by Control RULE-4
+
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.000         0.000
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........       195.241        63.622
+  External Outflow .........       190.852        62.192
+  Flooding Loss ............         3.278         1.068
+  Evaporation Loss .........         0.109         0.035
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         1.569         0.511
+  Final Stored Volume ......         3.850         1.255
+  Continuity Error (%) .....        -0.650
+  
+  
+  *************************
+  Highest Continuity Errors
+  *************************
+  Node 80608B (1.77%)
+  Node 80608D (1.70%)
+  Node 80608E (1.61%)
+  Node 80608 (1.53%)
+  Node 80608A (1.47%)
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  None
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  Link OR1@82309D-82308D (106)
+  Link LEAD_PUMP (58)
+  Link LAG_PUMP (58)
+  Link 8040 (23)
+  Link 8060 (23)
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Node 10208 (12.07%)
+  Node 10208A (12.07%)
+  Node 10208B (12.07%)
+  Node 10208C (12.07%)
+  Node 10208D (12.07%)
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     1.00 sec
+  Average Time Step           :     9.99 sec
+  Maximum Time Step           :    10.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     3.97
+  % of Steps Not Converging   :    12.07
+  Time Step Frequencies       :
+     10.000 -  5.493 sec      :    99.97 %
+      5.493 -  3.017 sec      :     0.00 %
+      3.017 -  1.657 sec      :     0.00 %
+      1.657 -  0.910 sec      :     0.03 %
+      0.910 -  0.500 sec      :     0.00 %
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  10309                JUNCTION     1.51     2.86   104.46     0  01:48        2.86
+  10309A               JUNCTION     1.44     2.70   104.30     0  01:51        2.70
+  10309B               JUNCTION     1.50     2.86   104.46     0  03:03        2.86
+  10309C               JUNCTION     1.50     2.86   104.46     0  02:06        2.86
+  10309D               JUNCTION     1.58     2.75   104.35     0  03:06        2.75
+  10309E               JUNCTION     1.42     2.66   104.26     0  03:06        2.66
+  15009                JUNCTION     1.13     2.45   113.95     0  01:35        2.45
+  15009A               JUNCTION     1.13     2.45   113.95     0  01:35        2.45
+  15009B               JUNCTION     1.66     3.66   115.16     0  03:00        3.66
+  15009C               JUNCTION     1.58     3.71   115.21     0  01:39        3.71
+  15009D               JUNCTION     1.13     2.45   113.95     0  01:35        2.45
+  15009E               JUNCTION     1.24     2.72   114.22     0  02:02        2.72
+  16009                JUNCTION     1.59     3.06   105.06     0  01:41        3.06
+  16009A               JUNCTION     1.55     2.94   104.94     0  01:42        2.94
+  16009B               JUNCTION     1.57     3.05   105.05     0  03:01        3.05
+  16009C               JUNCTION     1.57     3.05   105.05     0  01:57        3.05
+  16009D               JUNCTION     1.67     2.94   104.94     0  03:03        2.94
+  16009E               JUNCTION     1.50     2.84   104.84     0  03:03        2.84
+  16109                JUNCTION     1.47     3.23   106.03     0  01:47        3.23
+  16109A               JUNCTION     1.39     2.96   105.76     0  01:50        2.96
+  16109B               JUNCTION     1.09     2.57   105.37     0  03:00        2.57
+  16109C               JUNCTION     1.20     2.55   105.35     0  02:00        2.55
+  16109D               JUNCTION     1.56     2.96   105.76     0  03:01        2.96
+  16109E               JUNCTION     1.19     2.52   105.32     0  03:02        2.52
+  80408                JUNCTION     7.25    41.37   165.97     0  00:38       41.02
+  80408A               JUNCTION     4.11    13.40   138.00     0  00:37       13.40
+  80408B               JUNCTION     0.90     2.35   126.95     0  00:18        2.35
+  80408C               JUNCTION     0.90     2.35   126.95     0  00:18        2.35
+  80408D               JUNCTION     3.25    12.76   137.36     0  02:12       12.76
+  80408E               JUNCTION     0.61     1.60   126.20     0  00:18        1.60
+  80608                JUNCTION     8.69    43.59   161.89     0  00:38       43.25
+  80608A               JUNCTION     5.55    16.70   135.00     0  00:35       16.70
+  80608B               JUNCTION     1.21     2.99   121.29     0  00:39        2.99
+  80608C               JUNCTION     1.20     2.82   121.12     0  03:00        2.82
+  80608D               JUNCTION     5.05    16.70   135.00     0  02:12       16.70
+  80608E               JUNCTION     1.08     3.29   121.59     0  03:01        3.29
+  81009                JUNCTION     1.11     2.85   131.05     0  00:31        2.85
+  81009A               JUNCTION     1.11     2.85   131.05     0  00:31        2.85
+  81009B               JUNCTION     1.11     2.88   131.08     0  00:33        2.88
+  81009C               JUNCTION     1.11     2.85   131.05     0  00:31        2.85
+  81009D               JUNCTION     1.11     2.85   131.05     0  00:31        2.85
+  81009E               JUNCTION     1.11     2.85   131.05     0  00:31        2.85
+  81309                JUNCTION     1.32     3.10   120.60     0  01:00        3.10
+  81309A               JUNCTION     1.32     3.10   120.60     0  01:00        3.10
+  81309B               JUNCTION     1.23     2.80   120.30     0  01:32        2.80
+  81309C               JUNCTION     1.24     2.80   120.30     0  01:25        2.80
+  81309D               JUNCTION     1.32     3.10   120.60     0  01:00        3.10
+  81309E               JUNCTION     1.28     3.03   120.53     0  00:58        3.03
+  82308D               JUNCTION     7.47    22.12   134.42     0  02:49       21.96
+  82309                JUNCTION    10.38    42.70   155.00     0  00:38       42.70
+  82309A               JUNCTION     7.66    30.38   142.68     0  00:32       29.19
+  82309B               JUNCTION     2.29     6.08   118.38     0  03:00        6.08
+  82309C               JUNCTION     2.48     5.57   117.87     0  00:51        5.57
+  10208                OUTFALL      1.34     2.63    92.53     0  01:48        2.63
+  10208A               OUTFALL      4.50     4.50    94.40     0  00:00        4.50
+  10208B               OUTFALL      1.32     2.63    92.53     0  03:03        2.63
+  10208C               OUTFALL      1.32     2.63    92.53     0  02:06        2.63
+  10208D               OUTFALL      1.40     2.52    92.42     0  03:05        2.52
+  10208E               OUTFALL      1.25     2.43    92.33     0  03:06        2.43
+  82309D               STORAGE      7.46    21.30   133.60     0  02:59       21.30
+  82309E               STORAGE      3.32     8.74   121.04     0  03:00        8.74
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  10309                JUNCTION      0.00   135.42     0  01:40           0        10.9       0.125
+  10309A               JUNCTION      0.00   122.38     0  01:41           0          10       0.601
+  10309B               JUNCTION      0.00   134.95     0  03:01           0        10.9       0.100
+  10309C               JUNCTION      0.00   135.02     0  01:55           0        10.9       0.127
+  10309D               JUNCTION      0.00   121.90     0  03:03           0        10.6       0.135
+  10309E               JUNCTION      0.00   110.70     0  03:04           0        9.06       0.130
+  15009                JUNCTION      0.00    51.01     0  01:13           0        4.05       0.170
+  15009A               JUNCTION      0.00    51.01     0  01:13           0        4.05       0.175
+  15009B               JUNCTION      0.00    88.45     0  03:00           0        7.26      -0.190
+  15009C               JUNCTION      0.00    90.37     0  00:57           0        7.01      -0.008
+  15009D               JUNCTION      0.00    51.00     0  01:13           0        4.05       0.043
+  15009E               JUNCTION      0.00    70.94     0  01:42           0        4.79       0.029
+  16009                JUNCTION      0.00   135.45     0  01:36           0        10.9       0.177
+  16009A               JUNCTION      0.00   122.41     0  01:37           0          10       0.172
+  16009B               JUNCTION      0.00   134.95     0  03:00           0        10.9       0.237
+  16009C               JUNCTION      0.00   135.02     0  01:50           0        10.9       0.231
+  16009D               JUNCTION      0.00   121.91     0  03:01           0        10.7       0.258
+  16009E               JUNCTION      0.00   110.72     0  03:02           0        9.09       0.260
+  16109                JUNCTION      0.00    86.56     0  00:38           0        6.87       0.000
+  16109A               JUNCTION      0.00    71.98     0  01:50           0        6.01       0.000
+  16109B               JUNCTION      0.00    46.52     0  03:00           0        3.64       0.000
+  16109C               JUNCTION      0.00    45.42     0  01:56           0        3.91       0.000
+  16109D               JUNCTION      0.00    71.94     0  03:00           0        6.63       0.000
+  16109E               JUNCTION      0.00    50.75     0  03:00           0        4.32       0.000
+  80408                JUNCTION     45.00    45.00     0  00:15        3.64        3.64      -0.213
+  80408A               JUNCTION     45.00    45.00     0  00:15        3.64        3.64      -0.268
+  80408B               JUNCTION     45.00    45.00     0  00:15        3.64        3.64      -0.178
+  80408C               JUNCTION     45.00    45.00     0  00:15        3.64        3.64      -0.175
+  80408D               JUNCTION     45.00    45.00     0  00:15        3.64        3.64      -0.185
+  80408E               JUNCTION     22.50    22.50     0  00:15        1.82        1.82      -0.329
+  80608                JUNCTION      0.00    46.77     0  00:21           0        3.64       1.556
+  80608A               JUNCTION      0.00    46.77     0  00:21           0        3.64       1.495
+  80608B               JUNCTION      0.00    46.52     0  00:22           0        3.64       1.802
+  80608C               JUNCTION      0.00    46.67     0  00:21           0        3.64       1.472
+  80608D               JUNCTION      0.00    46.52     0  00:22           0        3.64       1.729
+  80608E               JUNCTION      0.00    23.49     0  00:23           0        1.82       1.635
+  81009                JUNCTION     50.00    50.00     0  00:15        4.04        4.04      -0.511
+  81009A               JUNCTION     50.00    50.00     0  00:15        4.04        4.04      -0.511
+  81009B               JUNCTION     50.00    50.00     0  00:15        4.04        4.04      -0.519
+  81009C               JUNCTION     50.00    50.00     0  00:15        4.04        4.04      -0.508
+  81009D               JUNCTION     50.00    50.00     0  00:15        4.04        4.04      -0.511
+  81009E               JUNCTION     50.00    50.00     0  00:15        4.04        4.04      -0.508
+  81309                JUNCTION      0.00    53.78     0  00:40           0        4.06       0.307
+  81309A               JUNCTION      0.00    53.78     0  00:40           0        4.06       0.307
+  81309B               JUNCTION      0.00    52.65     0  00:46           0        4.06       0.586
+  81309C               JUNCTION      0.00    52.67     0  00:41           0        4.06       0.332
+  81309D               JUNCTION      0.00    53.78     0  00:40           0        4.06       0.307
+  81309E               JUNCTION      0.00    53.67     0  00:40           0        4.06       0.324
+  82308D               JUNCTION      0.00     2.12     0  00:12           0     0.00306       0.000
+  82309                JUNCTION     40.00    86.24     0  00:38        3.23        6.82      -0.776
+  82309A               JUNCTION     40.00    83.78     0  00:32        3.23        5.96      -0.890
+  82309B               JUNCTION     40.00    87.10     0  00:46        3.23        6.81      -0.887
+  82309C               JUNCTION     40.00    85.00     0  03:00        3.23        6.82      -0.777
+  10208                OUTFALL       0.00   135.31     0  01:48           0        10.9       0.000
+  10208A               OUTFALL       0.00   122.24     0  01:51           0        9.95       0.000
+  10208B               OUTFALL       0.00   134.89     0  03:03           0        10.9       0.000
+  10208C               OUTFALL       0.00   134.97     0  02:06           0        10.9       0.000
+  10208D               OUTFALL       0.00   121.82     0  03:05           0        10.6       0.000
+  10208E               OUTFALL       0.00   110.62     0  03:06           0        9.05       0.000
+  82309D               STORAGE      40.00    85.95     0  00:49        3.23        6.61      -0.376
+  82309E               STORAGE      40.00    62.50     0  01:05        3.23        5.03      -0.659
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  Surcharging occurs when water rises above the top of the highest conduit.
+  ---------------------------------------------------------------------
+                                               Max. Height   Min. Depth
+                                   Hours       Above Crown    Below Rim
+  Node                 Type      Surcharged           Feet         Feet
+  ---------------------------------------------------------------------
+  80408                JUNCTION        2.45         37.368        0.000
+  80408A               JUNCTION        2.45          9.400        0.000
+  80408D               JUNCTION        2.17          8.758        0.642
+  80608                JUNCTION        2.60         39.589        0.000
+  80608A               JUNCTION        2.60         12.700        0.000
+  80608D               JUNCTION        2.91         12.700        0.000
+  82308D               JUNCTION        4.54         20.120       20.580
+  82309                JUNCTION        2.74         36.500        0.000
+  82309A               JUNCTION        2.74         24.178       12.322
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  Flooding refers to all water that overflows a node, whether it ponds or not.
+  --------------------------------------------------------------------------
+                                                             Total   Maximum
+                                 Maximum   Time of Max       Flood    Ponded
+                        Hours       Rate    Occurrence      Volume     Depth
+  Node                 Flooded       CFS   days hr:min    10^6 gal      Feet
+  --------------------------------------------------------------------------
+  80408A                  0.02     21.70      0  00:37       0.004     0.000
+  80608A                  2.41     24.24      0  00:35       0.859     0.000
+  80608D                  0.86     12.66      0  03:00       0.205     0.000
+  82309                   0.01      2.63      0  00:38       0.000     0.000
+  
+  
+  **********************
+  Storage Volume Summary
+  **********************
+  
+  ------------------------------------------------------------------------------------------------
+                         Average    Avg   Evap  Exfil     Maximum    Max    Time of Max    Maximum
+                          Volume   Pcnt   Pcnt   Pcnt      Volume   Pcnt     Occurrence    Outflow
+  Storage Unit          1000 ft³   Full   Loss   Loss    1000 ft³   Full    days hr:min        CFS
+  ------------------------------------------------------------------------------------------------
+  82309D                   5.967   17.5    0.0    0.0      17.043   49.9       0  02:59      72.00
+  82309E                   0.083   33.2    0.0    0.0       0.219   87.4       0  03:00      70.75
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  10208                 94.41     53.36    135.31      10.859
+  10208A                93.30     49.49    122.24       9.952
+  10208B                96.01     52.47    134.89      10.858
+  10208C                94.41     53.38    134.97      10.861
+  10208D                94.27     52.22    121.82      10.610
+  10208E                94.34     44.49    110.62       9.047
+  -----------------------------------------------------------
+  System                94.46    305.41    759.07      62.187
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  1030                 CONDUIT    135.31     0  01:48      5.98    0.04    0.31
+  1030A                CONDUIT    122.24     0  01:51      3.14    0.04    0.40
+  1030B                CONDUIT    134.89     0  03:03      5.98    0.04    0.30
+  1030C                CONDUIT    134.97     0  02:06      5.98    0.04    0.30
+  1030D                CONDUIT    121.82     0  03:05      5.83    0.04    0.29
+  1030E                CONDUIT    110.62     0  03:06      5.70    0.04    0.28
+  1570                 CONDUIT     50.46     0  01:35      4.34    0.41    0.50
+  1570A                CONDUIT     50.46     0  01:35      4.37    0.41    0.49
+  1570B                CONDUIT     88.44     0  03:00      5.82    0.72    0.61
+  1570C                CONDUIT     89.61     0  01:43      5.85    0.73    0.61
+  1570D                CONDUIT     50.46     0  01:35      4.48    0.41    0.49
+  1570E                CONDUIT     60.46     0  02:02      5.03    0.49    0.50
+  1600                 CONDUIT     85.00     0  01:58      5.95    0.58    0.52
+  1600A                CONDUIT     71.99     0  01:59      5.35    0.49    0.49
+  1600B                CONDUIT     46.51     0  03:01      3.58    0.32    0.47
+  1600C                CONDUIT     45.42     0  02:08      4.87    0.31    0.47
+  1600D                CONDUIT     71.92     0  03:02      5.20    0.49    0.49
+  1600E                CONDUIT     50.71     0  03:03      4.29    0.35    0.45
+  1602                 CONDUIT     86.56     0  00:38      5.61    1.99    0.82
+  1602A                CONDUIT     71.98     0  01:50      4.33    1.66    0.80
+  1602B                CONDUIT     46.52     0  03:00      2.92    1.07    0.76
+  1602C                CONDUIT     45.42     0  01:56      2.87    1.05    0.76
+  1602D                CONDUIT     71.94     0  03:00      4.29    1.66    0.80
+  1602E                CONDUIT     50.75     0  03:00      3.20    1.17    0.75
+  1630                 CONDUIT    135.42     0  01:40      6.02    0.06    0.33
+  1630A                CONDUIT    122.38     0  01:41      7.30    0.05    0.31
+  1630B                CONDUIT    134.95     0  03:01      5.38    0.06    0.33
+  1630C                CONDUIT    135.02     0  01:55      6.06    0.06    0.33
+  1630D                CONDUIT    121.90     0  03:03      5.49    0.05    0.32
+  1630E                CONDUIT    110.70     0  03:04      5.53    0.05    0.31
+  8040                 CONDUIT     46.77     0  00:21      7.11    0.64    1.00
+  8040A                CONDUIT     46.77     0  00:21      7.11    0.64    1.00
+  8040B                CONDUIT     46.52     0  00:22      7.11    0.63    0.66
+  8040C                CONDUIT     46.67     0  00:21      7.11    0.63    0.63
+  8040D                CONDUIT     46.52     0  00:22      7.11    0.63    1.00
+  8040E                CONDUIT     23.49     0  00:23      6.17    0.32    0.60
+  8060                 CONDUIT     46.24     0  00:38      4.74    0.87    1.00
+  8060A                CONDUIT     43.78     0  00:32      4.74    0.82    1.00
+  8060B                CONDUIT     47.10     0  00:46      5.13    0.88    0.84
+  8060C                CONDUIT     45.00     0  03:00      4.80    0.84    0.77
+  8060D                CONDUIT     45.95     0  00:49      4.79    0.86    1.00
+  8060E                CONDUIT     23.98     0  03:10      3.92    0.45    0.91
+  8100                 CONDUIT     53.78     0  00:40      6.47    0.69    0.64
+  8100A                CONDUIT     53.78     0  00:40      6.47    0.69    0.64
+  8100B                CONDUIT     52.65     0  00:46      6.60    0.67    0.60
+  8100C                CONDUIT     52.67     0  00:41      6.47    0.67    0.60
+  8100D                CONDUIT     53.78     0  00:40      6.47    0.69    0.64
+  8100E                CONDUIT     53.67     0  00:40      6.47    0.69    0.63
+  8130                 CONDUIT     51.01     0  01:13      5.56    0.72    0.61
+  8130A                CONDUIT     51.01     0  01:13      5.56    0.72    0.61
+  8130B                CONDUIT     50.00     0  01:32      4.25    0.71    0.72
+  8130C                CONDUIT     50.00     0  01:25      4.99    0.71    0.72
+  8130D                CONDUIT     51.00     0  01:13      5.54    0.72    0.61
+  8130E                CONDUIT     51.06     0  01:11      5.04    0.72    0.62
+  LAG_PUMP             PUMP        10.00     0  01:32              0.50
+  LEAD_PUMP            PUMP        10.00     0  01:32              0.50
+  OR1@82309B-15009B    ORIFICE     38.45     0  03:00                          
+  OR1@82309D-82308D    ORIFICE      4.90     0  04:46                      1.00
+  WEIR1@82309C-15009C  WEIR        40.88     0  00:51                      0.43
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  1030                    1.00   0.03  0.00  0.00  0.97  0.00  0.00  0.00  0.00  0.00
+  1030A                   1.00   0.00  0.05  0.00  0.95  0.00  0.00  0.00  0.95  0.00
+  1030B                   1.00   0.02  0.00  0.00  0.98  0.00  0.00  0.00  0.00  0.00
+  1030C                   1.00   0.03  0.00  0.00  0.97  0.00  0.00  0.00  0.00  0.00
+  1030D                   1.00   0.03  0.00  0.00  0.97  0.00  0.00  0.00  0.00  0.00
+  1030E                   1.00   0.03  0.00  0.00  0.97  0.00  0.00  0.00  0.00  0.00
+  1570                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.95  0.00
+  1570A                   1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.95  0.00
+  1570B                   1.00   0.00  0.00  0.00  0.97  0.02  0.00  0.00  0.57  0.00
+  1570C                   1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.60  0.00
+  1570D                   1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.95  0.00
+  1570E                   1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.94  0.00
+  1600                    1.00   0.00  0.00  0.00  0.97  0.02  0.00  0.00  0.51  0.00
+  1600A                   1.00   0.00  0.00  0.00  0.97  0.02  0.00  0.00  0.52  0.00
+  1600B                   1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.51  0.00
+  1600C                   1.00   0.00  0.00  0.00  0.98  0.02  0.00  0.00  0.50  0.00
+  1600D                   1.00   0.00  0.00  0.00  0.97  0.02  0.00  0.00  0.48  0.00
+  1600E                   1.00   0.00  0.00  0.00  0.98  0.02  0.00  0.00  0.48  0.00
+  1602                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  1602A                   1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  1602B                   1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.55  0.00
+  1602C                   1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  1602D                   1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  1602E                   1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  1630                    1.00   0.00  0.00  0.00  0.96  0.04  0.00  0.00  0.44  0.00
+  1630A                   1.00   0.00  0.00  0.00  0.94  0.06  0.00  0.00  0.44  0.00
+  1630B                   1.00   0.00  0.00  0.00  0.96  0.04  0.00  0.00  0.46  0.00
+  1630C                   1.00   0.00  0.00  0.00  0.96  0.04  0.00  0.00  0.46  0.00
+  1630D                   1.00   0.00  0.00  0.00  0.96  0.04  0.00  0.00  0.38  0.00
+  1630E                   1.00   0.00  0.00  0.00  0.96  0.04  0.00  0.00  0.44  0.00
+  8040                    1.00   0.00  0.00  0.00  0.97  0.03  0.00  0.00  0.63  0.00
+  8040A                   1.00   0.00  0.00  0.00  0.97  0.03  0.00  0.00  0.63  0.00
+  8040B                   1.00   0.00  0.00  0.00  0.97  0.03  0.00  0.00  0.95  0.00
+  8040C                   1.00   0.00  0.00  0.00  0.97  0.03  0.00  0.00  0.95  0.00
+  8040D                   1.00   0.00  0.00  0.00  0.97  0.03  0.00  0.00  0.62  0.00
+  8040E                   1.00   0.00  0.00  0.00  0.96  0.04  0.00  0.00  0.95  0.00
+  8060                    1.00   0.00  0.00  0.00  0.44  0.00  0.00  0.56  0.08  0.00
+  8060A                   1.00   0.00  0.00  0.00  0.44  0.00  0.00  0.56  0.08  0.00
+  8060B                   1.00   0.00  0.00  0.00  0.35  0.00  0.00  0.64  0.32  0.00
+  8060C                   1.00   0.00  0.00  0.00  0.40  0.00  0.00  0.60  0.37  0.00
+  8060D                   1.00   0.00  0.00  0.00  0.53  0.00  0.00  0.47  0.09  0.00
+  8060E                   1.00   0.00  0.00  0.00  0.43  0.00  0.00  0.57  0.14  0.00
+  8100                    1.00   0.00  0.00  0.00  0.97  0.03  0.00  0.00  0.92  0.00
+  8100A                   1.00   0.00  0.00  0.00  0.97  0.03  0.00  0.00  0.92  0.00
+  8100B                   1.00   0.00  0.00  0.00  0.97  0.03  0.00  0.00  0.90  0.00
+  8100C                   1.00   0.00  0.00  0.00  0.97  0.03  0.00  0.00  0.91  0.00
+  8100D                   1.00   0.00  0.00  0.00  0.97  0.03  0.00  0.00  0.92  0.00
+  8100E                   1.00   0.00  0.00  0.00  0.97  0.03  0.00  0.00  0.92  0.00
+  8130                    1.00   0.00  0.00  0.00  0.97  0.03  0.00  0.00  0.59  0.00
+  8130A                   1.00   0.00  0.00  0.00  0.97  0.03  0.00  0.00  0.59  0.00
+  8130B                   1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00
+  8130C                   1.00   0.00  0.00  0.00  0.98  0.02  0.00  0.00  0.91  0.00
+  8130D                   1.00   0.00  0.00  0.00  0.97  0.03  0.00  0.00  0.59  0.00
+  8130E                   1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.60  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  1602                        0.01      2.98      0.01      2.89         0.01
+  1602A                       0.01      2.98      0.01      2.89         0.01
+  1602B                       0.01      2.45      0.01      2.34         0.01
+  1602C                       0.01      2.66      0.01      2.40         0.01
+  1602D                       0.01      3.68      0.01      3.53         0.01
+  1602E                       0.01      2.83      0.01      2.65         0.01
+  8040                        2.45      2.45      2.60      0.01         0.01
+  8040A                       2.45      2.45      2.60      0.01         0.01
+  8040D                       2.17      2.17      2.91      0.01         0.01
+  8060                        2.59      2.59      2.74      0.01         0.01
+  8060A                       2.60      2.60      2.74      0.01         0.01
+  8060D                       2.91      2.91      3.48      0.01         0.01
+  8060E                       0.01      0.01      2.48      0.01         0.01
+  
+  
+  ***************
+  Pumping Summary
+  ***************
+  
+  ---------------------------------------------------------------------------------------------------------
+                                                  Min       Avg       Max     Total     Power    % Time Off
+                        Percent   Number of      Flow      Flow      Flow    Volume     Usage    Pump Curve
+  Pump                 Utilized   Start-Ups       CFS       CFS       CFS  10^6 gal     Kw-hr    Low   High
+  ---------------------------------------------------------------------------------------------------------
+  LAG_PUMP                19.30         556      0.00      7.65     10.00     0.318      6.02    0.0   46.9
+  LEAD_PUMP               29.78         557      0.00      6.59     10.00     0.423      6.72    0.0   65.6
+  
+
+  Analysis begun on:  Tue Aug  5 09:27:35 2025
+  Analysis ended on:  Tue Aug  5 09:27:36 2025
+  Total elapsed time: 00:00:01

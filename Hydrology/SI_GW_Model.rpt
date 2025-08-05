@@ -1,0 +1,294 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  Scenario Run :  SCN-10 
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... LPS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... YES
+    Snowmelt ............... NO
+    Groundwater ............ YES
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Infiltration Method ...... GREEN_AMPT
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 07/15/1977 00:00:00
+  Ending Date .............. 07/17/1977 00:00:00
+  Antecedent Dry Days ...... 7.0
+  Report Time Step ......... 00:10:00
+  Wet Time Step ............ 00:01:00
+  Dry Time Step ............ 00:01:00
+  Routing Time Step ........ 30.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 4
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 m
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     hectare-m            mm
+  **************************     ---------       -------
+  Total Precipitation ......       254.506        41.729
+  Evaporation Loss .........        20.809         3.412
+  Infiltration Loss ........       113.186        18.558
+  Surface Runoff ...........        90.227        14.794
+  Final Storage ............        30.290         4.966
+  Continuity Error (%) .....        -0.002
+  
+  
+  **************************        Volume         Depth
+  Groundwater Continuity         hectare-m            mm
+  **************************     ---------       -------
+  Initial Storage ..........     11667.387      1913.000
+  Infiltration .............       113.186        18.558
+  Upper Zone ET ............         0.651         0.107
+  Lower Zone ET ............         1.191         0.195
+  Deep Percolation .........       653.460       107.142
+  Groundwater Flow .........       -47.946        -7.861
+  Final Storage ............     11173.368      1832.000
+  Continuity Error (%) .....        -0.001
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        hectare-m      10^6 ltr
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......        90.228       902.289
+  Groundwater Inflow .......       -47.950      -479.506
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.035         0.346
+  External Outflow .........         1.068        10.682
+  Flooding Loss ............        38.806       388.063
+  Evaporation Loss .........         0.000         0.004
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         1.594        15.936
+  Continuity Error (%) .....         0.935
+  
+  
+  *************************
+  Highest Continuity Errors
+  *************************
+  Node P005 (21.50%)
+  Node P009 (6.06%)
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  Link P001 (18.82%)
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  Link 1 (54)
+  Link P009 (47)
+  Link P011 (3)
+  Link CDT-11 (2)
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Node OUTLET (2.07%)
+  Node P009 (1.81%)
+  Node FLOWFROMSUB (1.63%)
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     3.55 sec
+  Average Time Step           :    28.13 sec
+  Maximum Time Step           :    30.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     2.06
+  % of Steps Not Converging   :     2.07
+  Time Step Frequencies       :
+     30.000 - 15.195 sec      :    95.02 %
+     15.195 -  7.696 sec      :     4.90 %
+      7.696 -  3.898 sec      :     0.07 %
+      3.898 -  1.974 sec      :     0.02 %
+      1.974 -  1.000 sec      :     0.00 %
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 mm         mm         mm         mm         mm         mm         mm    10^6 ltr      LPS
+  ------------------------------------------------------------------------------------------------------------------------------
+  CA-1                      41.73       0.00       0.91       8.45      16.07      16.31      32.38       10.69  2185.56   0.776
+  CA-11                     41.73       0.00       3.45      18.72      14.07       0.44      14.52      870.95 18822.86   0.348
+  CA-7                      41.73       0.00       1.28       9.67      19.85      10.92      30.77       10.16  1625.73   0.737
+  CA-8                      41.73       0.00       1.11       8.86      19.15      12.62      31.77       10.48  1829.24   0.761
+  
+  
+  *******************
+  Groundwater Summary
+  *******************
+  
+  -----------------------------------------------------------------------------------------------------
+                                            Total    Total  Maximum  Average  Average    Final    Final
+                          Total    Total    Lower  Lateral  Lateral    Upper    Water    Upper    Water
+                          Infil     Evap  Seepage  Outflow  Outflow   Moist.    Table   Moist.    Table
+  Subcatchment               mm       mm       mm       mm      LPS                 m                 m
+  -----------------------------------------------------------------------------------------------------
+  CA-1                     8.45     1.43   265.42     0.00     0.00     0.44     1.15     0.41     1.07
+  CA-11                   18.72     0.29   106.13    -7.28 -9516.92     0.37     4.50     0.37     4.23
+  CA-7                     9.67     0.88   124.57  -118.59 -2209.53     0.34     4.70     0.25     5.00
+  CA-8                     8.86     1.33   114.86   -11.14 -1332.76     0.37     4.36     0.37     4.09
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type       Meters   Meters   Meters  days hr:min      Meters
+  ---------------------------------------------------------------------------------
+  FLOWFROMSUB          JUNCTION     4.94     6.00    11.00     0  08:51        6.00
+  OVERLANDNODE         JUNCTION     0.80     1.00    11.00     0  08:57        1.00
+  P001                 JUNCTION     0.04     0.43     1.53     0  08:56        0.42
+  P009                 JUNCTION     6.16     7.64    11.24     0  08:57        7.52
+  OUTLET               OUTFALL      0.04     0.42     0.42     0  08:56        0.41
+  P005                 STORAGE      8.08     9.66    11.24     0  08:56        9.49
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           LPS      LPS  days hr:min    10^6 ltr    10^6 ltr     Percent
+  -------------------------------------------------------------------------------------------------
+  FLOWFROMSUB          JUNCTION   9474.48  9546.59     0  09:11         435         437       0.401
+  OVERLANDNODE         JUNCTION      0.00   695.66     0  08:56           0       0.709      49.187
+  P001                 JUNCTION   2185.56  2185.56     0  08:55        10.7        10.7      -0.004
+  P009                 JUNCTION   1406.25  1455.30     0  07:39         6.8        17.4       6.448
+  OUTLET               OUTFALL       0.00  2109.99     0  08:56           0        10.7       0.000
+  P005                 STORAGE   -1731.87  6349.20     0  08:51         -29        55.5      27.386
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  Surcharging occurs when water rises above the top of the highest conduit.
+  ---------------------------------------------------------------------
+                                               Max. Height   Min. Depth
+                                   Hours       Above Crown    Below Rim
+  Node                 Type      Surcharged         Meters       Meters
+  ---------------------------------------------------------------------
+  FLOWFROMSUB          JUNCTION       39.91          3.500        0.000
+  OVERLANDNODE         JUNCTION        6.17          0.000        0.000
+  P009                 JUNCTION       40.28          5.386       12.364
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  Flooding refers to all water that overflows a node, whether it ponds or not.
+  --------------------------------------------------------------------------
+                                                             Total   Maximum
+                                 Maximum   Time of Max       Flood    Ponded
+                        Hours       Rate    Occurrence      Volume     Depth
+  Node                 Flooded       LPS   days hr:min    10^6 ltr    Meters
+  --------------------------------------------------------------------------
+  FLOWFROMSUB            39.14   9514.43      0  08:59     387.549     0.000
+  OVERLANDNODE            5.35    678.35      0  08:57       0.451     0.000
+  
+  
+  **********************
+  Storage Volume Summary
+  **********************
+  
+  ------------------------------------------------------------------------------------------------
+                         Average    Avg   Evap  Exfil     Maximum    Max    Time of Max    Maximum
+                          Volume   Pcnt   Pcnt   Pcnt      Volume   Pcnt     Occurrence    Outflow
+  Storage Unit           1000 m³   Full   Loss   Loss     1000 m³   Full    days hr:min        LPS
+  ------------------------------------------------------------------------------------------------
+  P005                     8.077   40.4    0.0    0.0       9.665   48.3       0  08:56    2317.71
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       LPS       LPS    10^6 ltr
+  -----------------------------------------------------------
+  OUTLET                34.61    316.18   2109.99      10.682
+  -----------------------------------------------------------
+  System                34.61    316.18   2109.99      10.682
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          LPS  days hr:min     m/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  CDT-11               CONDUIT    695.66     0  08:56      1.10    0.25    1.00
+  P001                 CONDUIT   2109.99     0  08:56      2.95    0.02    0.11
+  P005                 CONDUIT      0.00     0  00:00      0.00    0.00    0.57
+  P009                 CONDUIT   1342.36     0  09:04      1.64    0.08    1.00
+  P011                 CONDUIT   5152.38     0  08:52      1.05    0.20    1.00
+  1                    WEIR      1135.60     0  08:57                      1.00
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  CDT-11                  1.00   0.00  0.18  0.00  0.82  0.00  0.00  0.00  0.00  0.00
+  P001                    1.00   0.68  0.00  0.00  0.05  0.28  0.00  0.00  0.03  0.00
+  P005                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  P009                    1.00   0.00  0.01  0.00  0.98  0.01  0.00  0.00  0.09  0.00
+  P011                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.16  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  CDT-11                      5.36      5.36     39.25      0.01         0.01
+  P009                       40.28     40.28     42.88      0.01         0.01
+  P011                       39.91     39.91     41.39      0.01         0.01
+  
+
+  Analysis begun on:  Tue Aug  5 10:58:28 2025
+  Analysis ended on:  Tue Aug  5 10:58:28 2025
+  Total elapsed time: < 1 sec

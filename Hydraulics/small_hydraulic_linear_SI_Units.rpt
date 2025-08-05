@@ -1,0 +1,343 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 0
+  Number of subcatchments ... 0
+  Number of nodes ........... 13
+  Number of links ........... 15
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  FOREBAY-01           JUNCTION             44.60      3.50       0.0    Yes
+  Jun1/4(R-S)Down      JUNCTION             37.76      2.13       0.0
+  Jun1/4(R-S)Up        JUNCTION             37.76      2.13       0.0
+  Jun2/4(R-S)Down      JUNCTION             37.76      2.13       0.0
+  Jun2/4(R-S)Up        JUNCTION             37.76      2.13       0.0
+  Jun3/4(R-S)Down      JUNCTION             37.76      2.13       0.0
+  Jun3/4(R-S)Up        JUNCTION             37.76      2.13       0.0
+  Jun4/4(R-S)Down      JUNCTION             37.76      2.13       0.0
+  Jun4/4(R-S)Up        JUNCTION             37.76      2.13       0.0
+  Jun-OC-SlopeChange(18+080)) JUNCTION             43.35      3.50       0.0
+  Railway-Siphon-END   JUNCTION             43.49      3.50       0.0
+  Railway-Siphon-Start JUNCTION             43.77      3.50       0.0
+  Jun-OC-SlopeChange(19+000) OUTFALL              43.29      3.50       0.0
+  
+  
+  ************
+  Link Summary
+  ************
+  Name             From Node        To Node          Type            Length    %Slope Roughness
+  ---------------------------------------------------------------------------------------------
+  OC-(16+420-TO-18+080) Railway-Siphon-END Jun-OC-SlopeChange(18+080)) CONDUIT         1670.5    0.0083    0.0140
+  OC-(18+080-TO-19+000) Jun-OC-SlopeChange(18+080)) Jun-OC-SlopeChange(19+000) CONDUIT          919.9    0.0065    0.0140
+  OC-(6+580-TO-16+144) FOREBAY-01       Railway-Siphon-Start CONDUIT         9563.4    0.0087    0.0180
+  RS(1/4)Base      Jun1/4(R-S)Down  Jun1/4(R-S)Up    CONDUIT           60.0    0.0017    0.0100
+  RS(1/4)D         Railway-Siphon-Start Jun1/4(R-S)Down  CONDUIT          100.0    6.0177    0.0100
+  RS(1/4)Up        Jun1/4(R-S)Up    Railway-Siphon-END CONDUIT          110.1   -5.2100    0.0100
+  RS(2/4)Base      Jun2/4(R-S)Down  Jun2/4(R-S)Up    CONDUIT           60.0    0.0017    0.0100
+  RS(2/4)D         Railway-Siphon-Start Jun2/4(R-S)Down  CONDUIT          100.0    6.0177    0.0100
+  RS(2/4)Up        Jun2/4(R-S)Up    Railway-Siphon-END CONDUIT          110.1   -5.2100    0.0100
+  RS(3/4)Base      Jun3/4(R-S)Down  Jun3/4(R-S)Up    CONDUIT           60.0    0.0017    0.0100
+  RS(3/4)D         Railway-Siphon-Start Jun3/4(R-S)Down  CONDUIT          100.0    6.0177    0.0100
+  RS(3/4)Up        Jun3/4(R-S)Up    Railway-Siphon-END CONDUIT          110.1   -5.2100    0.0100
+  RS(4/4)Base      Jun4/4(R-S)Down  Jun4/4(R-S)Up    CONDUIT           60.0    0.0017    0.0100
+  RS(4/4)D         Railway-Siphon-Start Jun4/4(R-S)Down  CONDUIT          100.0    6.0177    0.0100
+  RS(4/4)Up        Jun4/4(R-S)Up    Railway-Siphon-END CONDUIT          110.1   -5.2100    0.0100
+  
+  
+  *********************
+  Cross Section Summary
+  *********************
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  OC-(16+420-TO-18+080) TRAPEZOIDAL          3.50    31.50     1.87    14.95        1    31.14
+  OC-(18+080-TO-19+000) TRAPEZOIDAL          3.50    32.93     1.91    15.36        1    29.23
+  OC-(6+580-TO-16+144) TRAPEZOIDAL          3.50    30.28     1.83    14.60        1    23.48
+  RS(1/4)Base      CIRCULAR             2.13     3.58     0.53     2.13        1     0.96
+  RS(1/4)D         CIRCULAR             2.13     3.58     0.53     2.13        1    57.72
+  RS(1/4)Up        CIRCULAR             2.13     3.58     0.53     2.13        1    53.71
+  RS(2/4)Base      CIRCULAR             2.13     3.58     0.53     2.13        1     0.96
+  RS(2/4)D         CIRCULAR             2.13     3.58     0.53     2.13        1    57.72
+  RS(2/4)Up        CIRCULAR             2.13     3.58     0.53     2.13        1    53.71
+  RS(3/4)Base      CIRCULAR             2.13     3.58     0.53     2.13        1     0.96
+  RS(3/4)D         CIRCULAR             2.13     3.58     0.53     2.13        1    57.72
+  RS(3/4)Up        CIRCULAR             2.13     3.58     0.53     2.13        1    53.71
+  RS(4/4)Base      CIRCULAR             2.13     3.58     0.53     2.13        1     0.96
+  RS(4/4)D         CIRCULAR             2.13     3.58     0.53     2.13        1    57.72
+  RS(4/4)Up        CIRCULAR             2.13     3.58     0.53     2.13        1    53.71
+  
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CMS
+  Process Models:
+    Rainfall/Runoff ........ NO
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 08/19/2017 00:00:00
+  Ending Date .............. 08/20/2017 08:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:01:00
+  Routing Time Step ........ 5.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.000100 m
+  
+  
+  *********************
+  Control Actions Taken
+  *********************
+
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        hectare-m      10^6 ltr
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.000         0.000
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........       138.225      1382.260
+  External Outflow .........       122.176      1221.770
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.001
+  Final Stored Volume ......        16.485       164.847
+  Continuity Error (%) .....        -0.315
+  
+  
+  *************************
+  Highest Continuity Errors
+  *************************
+  Node Railway-Siphon-Start (4.25%)
+  Node Jun-OC-SlopeChange(18+080)) (1.04%)
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  None
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Node Jun1/4(R-S)Down (1.19%)
+  Node Jun2/4(R-S)Down (1.19%)
+  Node Jun3/4(R-S)Down (1.19%)
+  Node Jun4/4(R-S)Down (1.19%)
+  Node Jun-OC-SlopeChange(19+000) (1.19%)
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     5.00 sec
+  Average Time Step           :     5.00 sec
+  Maximum Time Step           :     5.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     2.42
+  % of Steps Not Converging   :     1.19
+  Time Step Frequencies       :
+      5.000 -  0.910 sec      :   100.00 %
+      0.910 -  0.166 sec      :     0.00 %
+      0.166 -  0.030 sec      :     0.00 %
+      0.030 -  0.005 sec      :     0.00 %
+      0.005 -  0.001 sec      :     0.00 %
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type       Meters   Meters   Meters  days hr:min      Meters
+  ---------------------------------------------------------------------------------
+  FOREBAY-01           JUNCTION     2.61     2.78    47.38     0  04:07        2.78
+  Jun1/4(R-S)Down      JUNCTION     7.31     7.67    45.44     0  08:04        7.67
+  Jun1/4(R-S)Up        JUNCTION     7.30     7.67    45.43     0  08:04        7.67
+  Jun2/4(R-S)Down      JUNCTION     7.31     7.67    45.44     0  08:04        7.67
+  Jun2/4(R-S)Up        JUNCTION     7.30     7.67    45.43     0  08:04        7.67
+  Jun3/4(R-S)Down      JUNCTION     7.31     7.67    45.44     0  08:04        7.67
+  Jun3/4(R-S)Up        JUNCTION     7.30     7.67    45.43     0  08:04        7.67
+  Jun4/4(R-S)Down      JUNCTION     7.31     7.67    45.44     0  08:04        7.67
+  Jun4/4(R-S)Up        JUNCTION     7.30     7.67    45.43     0  08:04        7.67
+  Jun-OC-SlopeChange(18+080)) JUNCTION     1.49     1.65    45.01     0  08:13        1.65
+  Railway-Siphon-END   JUNCTION     1.75     1.92    45.41     0  08:05        1.92
+  Railway-Siphon-Start JUNCTION     1.51     1.67    45.44     0  08:03        1.67
+  Jun-OC-SlopeChange(19+000) OUTFALL      0.82     0.92    44.21     0  08:14        0.92
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CMS      CMS  days hr:min    10^6 ltr    10^6 ltr     Percent
+  -------------------------------------------------------------------------------------------------
+  FOREBAY-01           JUNCTION    12.000   12.000     0  00:00    1.38e+03    1.38e+03       6.094
+  Jun1/4(R-S)Down      JUNCTION     0.000    3.042     0  07:51           0         312       0.098
+  Jun1/4(R-S)Up        JUNCTION     0.000    3.042     0  07:51           0         312       0.103
+  Jun2/4(R-S)Down      JUNCTION     0.000    3.042     0  07:51           0         312       0.098
+  Jun2/4(R-S)Up        JUNCTION     0.000    3.042     0  07:51           0         312       0.103
+  Jun3/4(R-S)Down      JUNCTION     0.000    3.042     0  07:51           0         312       0.098
+  Jun3/4(R-S)Up        JUNCTION     0.000    3.042     0  07:51           0         312       0.103
+  Jun4/4(R-S)Down      JUNCTION     0.000    3.042     0  07:51           0         312       0.098
+  Jun4/4(R-S)Up        JUNCTION     0.000    3.042     0  07:51           0         312       0.103
+  Jun-OC-SlopeChange(18+080)) JUNCTION     0.000   12.165     0  08:02           0    1.23e+03       1.053
+  Railway-Siphon-END   JUNCTION     0.000   12.167     0  07:51           0    1.25e+03       0.839
+  Railway-Siphon-Start JUNCTION     0.000   12.486     0  05:25           0     1.3e+03       4.437
+  Jun-OC-SlopeChange(19+000) OUTFALL      0.000   12.163     0  08:14           0    1.22e+03       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  Surcharging occurs when water rises above the top of the highest conduit.
+  ---------------------------------------------------------------------
+                                               Max. Height   Min. Depth
+                                   Hours       Above Crown    Below Rim
+  Node                 Type      Surcharged         Meters       Meters
+  ---------------------------------------------------------------------
+  Jun1/4(R-S)Down      JUNCTION       30.81          5.541        0.000
+  Jun1/4(R-S)Up        JUNCTION       30.81          5.532        0.000
+  Jun2/4(R-S)Down      JUNCTION       30.81          5.541        0.000
+  Jun2/4(R-S)Up        JUNCTION       30.81          5.532        0.000
+  Jun3/4(R-S)Down      JUNCTION       30.81          5.541        0.000
+  Jun3/4(R-S)Up        JUNCTION       30.81          5.532        0.000
+  Jun4/4(R-S)Down      JUNCTION       30.81          5.541        0.000
+  Jun4/4(R-S)Up        JUNCTION       30.81          5.532        0.000
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CMS       CMS    10^6 ltr
+  -----------------------------------------------------------
+  Jun-OC-SlopeChange(19+000)  95.95    11.054    12.163    1221.765
+  -----------------------------------------------------------
+  System                95.95    11.054    12.163    1221.765
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CMS  days hr:min     m/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  OC-(16+420-TO-18+080) CONDUIT    12.165     0  08:02      1.12    0.39    0.51
+  OC-(18+080-TO-19+000) CONDUIT    12.163     0  08:14      1.67    0.42    0.37
+  OC-(6+580-TO-16+144) CONDUIT    12.486     0  05:25      0.94    0.53    0.62
+  RS(1/4)Base          CONDUIT     3.042     0  07:51      0.85    3.17    1.00
+  RS(1/4)D             CONDUIT     3.042     0  07:51      0.90    0.05    0.89
+  RS(1/4)Up            CONDUIT     3.042     0  07:51      0.87    0.06    0.95
+  RS(2/4)Base          CONDUIT     3.042     0  07:51      0.85    3.17    1.00
+  RS(2/4)D             CONDUIT     3.042     0  07:51      0.90    0.05    0.89
+  RS(2/4)Up            CONDUIT     3.042     0  07:51      0.87    0.06    0.95
+  RS(3/4)Base          CONDUIT     3.042     0  07:51      0.85    3.17    1.00
+  RS(3/4)D             CONDUIT     3.042     0  07:51      0.90    0.05    0.89
+  RS(3/4)Up            CONDUIT     3.042     0  07:51      0.87    0.06    0.95
+  RS(4/4)Base          CONDUIT     3.042     0  07:51      0.85    3.17    1.00
+  RS(4/4)D             CONDUIT     3.042     0  07:51      0.90    0.05    0.89
+  RS(4/4)Up            CONDUIT     3.042     0  07:51      0.87    0.06    0.95
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  OC-(16+420-TO-18+080)    1.00   0.04  0.00  0.00  0.96  0.00  0.00  0.00  0.00  0.00
+  OC-(18+080-TO-19+000)    1.00   0.04  0.00  0.00  0.96  0.00  0.00  0.00  0.00  0.00
+  OC-(6+580-TO-16+144)    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  RS(1/4)Base             1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  RS(1/4)D                1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.04  0.00
+  RS(1/4)Up               1.00   0.00  0.04  0.00  0.96  0.00  0.00  0.00  0.00  0.00
+  RS(2/4)Base             1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  RS(2/4)D                1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.04  0.00
+  RS(2/4)Up               1.00   0.00  0.04  0.00  0.96  0.00  0.00  0.00  0.00  0.00
+  RS(3/4)Base             1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  RS(3/4)D                1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.04  0.00
+  RS(3/4)Up               1.00   0.00  0.04  0.00  0.96  0.00  0.00  0.00  0.00  0.00
+  RS(4/4)Base             1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  RS(4/4)D                1.00   0.00  0.00  0.00  0.99  0.01  0.00  0.00  0.04  0.00
+  RS(4/4)Up               1.00   0.00  0.04  0.00  0.96  0.00  0.00  0.00  0.00  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  RS(1/4)Base                30.81     30.81     30.81     29.55        29.86
+  RS(1/4)D                    0.01      0.01     30.81      0.01         0.01
+  RS(1/4)Up                   0.01      0.01     30.80      0.01         0.01
+  RS(2/4)Base                30.81     30.81     30.81     29.55        29.86
+  RS(2/4)D                    0.01      0.01     30.81      0.01         0.01
+  RS(2/4)Up                   0.01      0.01     30.80      0.01         0.01
+  RS(3/4)Base                30.81     30.81     30.81     29.55        29.86
+  RS(3/4)D                    0.01      0.01     30.81      0.01         0.01
+  RS(3/4)Up                   0.01      0.01     30.80      0.01         0.01
+  RS(4/4)Base                30.81     30.81     30.81     29.55        29.86
+  RS(4/4)D                    0.01      0.01     30.81      0.01         0.01
+  RS(4/4)Up                   0.01      0.01     30.80      0.01         0.01
+  
+
+  Analysis begun on:  Tue Aug  5 10:14:23 2025
+  Analysis ended on:  Tue Aug  5 10:14:24 2025
+  Total elapsed time: 00:00:01

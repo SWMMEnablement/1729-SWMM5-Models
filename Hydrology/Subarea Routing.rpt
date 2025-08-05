@@ -1,0 +1,113 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  Illustration of the difference between OUTLET and PERVIOUS subarea routing options for a simple 1-acre subcatchment subject to 1-inch of rainfall. 
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 1
+  Number of subcatchments ... 3
+  Number of nodes ........... 3
+  Number of links ........... 0
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ****************
+  Raingage Summary
+  ****************
+                                                      Data       Recording
+  Name                 Data Source                    Type       Interval 
+  ------------------------------------------------------------------------
+  UniformRainfall      UniformRainfall                INTENSITY   60 min.
+  
+  
+  ********************
+  Subcatchment Summary
+  ********************
+  Name                       Area     Width   %Imperv    %Slope Rain Gage            Outlet              
+  -----------------------------------------------------------------------------------------------------------
+  SubareaRouting             1.00    100.00     30.00    1.0000 UniformRainfall      Outfall1            
+  DCIA                       1.00    100.00     15.00    1.0000 UniformRainfall      Outfall2            
+  IA                         1.00    100.00     30.00    1.0000 UniformRainfall      Outfall3            
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  Outfall1             OUTFALL             850.00      0.00       0.0
+  Outfall2             OUTFALL             850.00      0.00       0.0
+  Outfall3             OUTFALL             850.00      0.00       0.0
+  
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... NO
+    Water Quality .......... NO
+  Infiltration Method ...... MODIFIED_GREEN_AMPT
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 06/02/2018 00:00:00
+  Ending Date .............. 06/02/2018 03:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:00:01
+  Wet Time Step ............ 00:00:01
+  Dry Time Step ............ 01:00:00
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Total Precipitation ......         0.250         1.000
+  Evaporation Loss .........         0.000         0.000
+  Infiltration Loss ........         0.198         0.791
+  Surface Runoff ...........         0.041         0.166
+  Final Storage ............         0.011         0.043
+  Continuity Error (%) .....         0.000
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.041         0.013
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         0.041         0.013
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.000         0.000
+  Continuity Error (%) .....         0.000
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in         in         in    10^6 gal      CFS
+  ------------------------------------------------------------------------------------------------------------------------------
+  SubareaRouting             1.00       0.00       0.00       0.82       0.25       0.00       0.12        0.00     0.15   0.124
+  DCIA                       1.00       0.00       0.00       0.85       0.12       0.00       0.12        0.00     0.15   0.124
+  IA                         1.00       0.00       0.00       0.70       0.25       0.00       0.25        0.01     0.30   0.248
+  
+
+  Analysis begun on:  Tue Aug  5 10:58:29 2025
+  Analysis ended on:  Tue Aug  5 10:58:29 2025
+  Total elapsed time: < 1 sec

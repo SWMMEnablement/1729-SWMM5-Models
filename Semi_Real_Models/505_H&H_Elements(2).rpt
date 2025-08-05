@@ -1,0 +1,1345 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  WARNING 09: time series interval greater than recording interval for Rain Gage HELENA
+  WARNING 01: wet weather time step reduced to recording interval for Rain Gage HELENA
+  WARNING 03: negative offset ignored for Link WS_CDT113
+  WARNING 04: minimum elevation drop used for Conduit WS_CDT135
+  WARNING 04: minimum elevation drop used for Conduit WS_CDT179
+  WARNING 03: negative offset ignored for Link WS_CDT183
+  WARNING 03: negative offset ignored for Link WS_CDT192
+  WARNING 03: negative offset ignored for Link WS_CDT193
+  WARNING 03: negative offset ignored for Link WS_CDT208
+  WARNING 03: negative offset ignored for Link WS_CDT208
+  WARNING 03: negative offset ignored for Link WS_CDT209
+  WARNING 04: minimum elevation drop used for Conduit WS_CDT327
+  WARNING 04: minimum elevation drop used for Conduit WS_CDT329
+  WARNING 03: negative offset ignored for Link WS_CDT337
+  WARNING 04: minimum elevation drop used for Conduit WS_CDT338
+  WARNING 03: negative offset ignored for Link WS_CDT394
+  WARNING 02: maximum depth increased for Node WS_JCT125
+  WARNING 02: maximum depth increased for Node WS_JCT229
+  WARNING 02: maximum depth increased for Node WS_JCT230
+  WARNING 02: maximum depth increased for Node WS_JCT304
+  WARNING 02: maximum depth increased for Node WS_JCT373
+  WARNING 02: maximum depth increased for Node WS_JCT413
+  WARNING 02: maximum depth increased for Node WS_JCT415
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ YES
+    Water Quality .......... NO
+  Infiltration Method ...... HORTON
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 01/01/2002 00:00:00
+  Ending Date .............. 01/03/2002 00:00:00
+  Antecedent Dry Days ...... 5.0
+  Report Time Step ......... 00:05:00
+  Wet Time Step ............ 00:04:59
+  Dry Time Step ............ 01:00:00
+  Routing Time Step ........ 10.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.000100 ft
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Total Precipitation ......       323.242         1.570
+  Evaporation Loss .........         0.000         0.000
+  Infiltration Loss ........       245.572         1.193
+  Surface Runoff ...........        76.349         0.371
+  Final Storage ............         1.742         0.008
+  Continuity Error (%) .....        -0.130
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......        76.256        24.849
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........       107.068        34.890
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.003         0.001
+  Final Stored Volume ......        20.521         6.687
+  Continuity Error (%) .....       -67.310
+  
+  
+  *************************
+  Highest Continuity Errors
+  *************************
+  Node WS_JCT318 (-268.02%)
+  Node WS_JCT314 (-160.72%)
+  Node WS_JCT308 (-131.26%)
+  Node WS_JCT317 (-129.93%)
+  Node WS_JCT340 (100.00%)
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  Link WS_CDT338 (30.39%)
+  Link WS_CDT131 (19.59%)
+  Link WS_CDT179 (18.95%)
+  Link WS_CDT264 (3.62%)
+  Link WS_CDT133 (2.64%)
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  Link WS_WEIR103 (73)
+  Link WS_WEIR105 (70)
+  Link WS_WEIR107 (67)
+  Link WS_WEIR155 (66)
+  Link WS_WEIR106 (65)
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Node WS_OFALL100 (24.20%)
+  Node WS_OFALL101 (24.20%)
+  Node WS_OFALL102 (24.20%)
+  Node WS_OFALL104 (24.20%)
+  Node WS_JCT154 (18.90%)
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     0.19 sec
+  Average Time Step           :     6.36 sec
+  Maximum Time Step           :    10.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     5.00
+  % of Steps Not Converging   :    24.20
+  Time Step Frequencies       :
+     10.000 -  1.585 sec      :    97.90 %
+      1.585 -  0.251 sec      :     2.04 %
+      0.251 -  0.040 sec      :     0.06 %
+      0.040 -  0.006 sec      :     0.00 %
+      0.006 -  0.001 sec      :     0.00 %
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in         in         in    10^6 gal      CFS
+  ------------------------------------------------------------------------------------------------------------------------------
+  WS_SC100                   1.57       0.00       0.00       0.97       0.58       0.01       0.59        1.97    93.29   0.377
+  WS_SC101                   1.57       0.00       0.00       1.51       0.05       0.01       0.06        0.44    27.88   0.038
+  WS_SC102                   1.57       0.00       0.00       1.04       0.51       0.01       0.52        2.28    95.08   0.330
+  WS_SC103                   1.57       0.00       0.00       0.96       0.59       0.01       0.60        0.43    18.95   0.383
+  WS_SC104                   1.57       0.00       0.00       0.89       0.65       0.01       0.67        0.43    19.57   0.424
+  WS_SC105                   1.57       0.00       0.00       1.47       0.07       0.02       0.10        0.06     4.08   0.061
+  WS_SC106                   1.57       0.00       0.00       1.11       0.42       0.04       0.45        0.12     7.38   0.288
+  WS_SC107                   1.57       0.00       0.00       1.50       0.05       0.02       0.07        0.24    15.54   0.043
+  WS_SC108                   1.57       0.00       0.00       1.06       0.48       0.02       0.50        0.63    34.82   0.321
+  WS_SC109                   1.57       0.00       0.00       1.12       0.41       0.04       0.45        0.14     8.21   0.284
+  WS_SC110                   1.57       0.00       0.00       1.01       0.53       0.02       0.55        0.57    29.38   0.351
+  WS_SC111                   1.57       0.00       0.00       1.15       0.39       0.02       0.41        0.64    33.98   0.261
+  WS_SC112                   1.57       0.00       0.00       0.90       0.63       0.03       0.66        0.17     9.76   0.423
+  WS_SC116                   1.57       0.00       0.00       1.37       0.06       0.14       0.20        0.14     4.93   0.126
+  WS_SC119                   1.57       0.00       0.00       1.36       0.16       0.05       0.21        1.09    49.71   0.134
+  WS_SC122                   1.57       0.00       0.00       1.03       0.52       0.02       0.53        0.47    23.55   0.341
+  WS_SC123                   1.57       0.00       0.00       1.36       0.19       0.02       0.20        0.41    23.98   0.130
+  WS_SC124                   1.57       0.00       0.00       0.91       0.63       0.02       0.65        0.34    16.94   0.413
+  WS_SC125                   1.57       0.00       0.00       1.11       0.43       0.02       0.45        0.37    19.56   0.285
+  WS_SC126                   1.57       0.00       0.00       0.86       0.68       0.02       0.70        0.40    19.44   0.446
+  WS_SC127                   1.57       0.00       0.00       1.01       0.53       0.03       0.55        0.56    28.78   0.352
+  WS_SC128                   1.57       0.00       0.00       1.24       0.31       0.02       0.33        0.54    29.91   0.210
+  WS_SC129                   1.57       0.00       0.00       0.91       0.63       0.01       0.64        0.50    23.33   0.410
+  WS_SC130                   1.57       0.00       0.00       0.92       0.62       0.01       0.63        0.61    28.32   0.404
+  WS_SC131                   1.57       0.00       0.00       0.88       0.66       0.02       0.68        0.28    13.45   0.432
+  WS_SC132                   1.57       0.00       0.00       1.12       0.42       0.02       0.44        0.38    20.93   0.281
+  WS_SC133                   1.57       0.00       0.00       1.30       0.18       0.09       0.27        0.12     7.04   0.169
+  WS_SC134                   1.57       0.00       0.00       1.24       0.25       0.07       0.32        0.09     5.64   0.205
+  WS_SC135                   1.57       0.00       0.00       0.93       0.61       0.01       0.62        0.54    22.89   0.397
+  WS_SC136                   1.57       0.00       0.00       0.94       0.61       0.01       0.62        0.37    17.00   0.393
+  WS_SC137                   1.57       0.00       0.00       1.00       0.54       0.03       0.56        0.12     6.93   0.357
+  WS_SC138                   1.57       0.00       0.00       1.02       0.53       0.02       0.55        0.39    20.14   0.347
+  WS_SC139                   1.57       0.00       0.00       1.02       0.52       0.02       0.54        0.14     7.92   0.345
+  WS_SC140                   1.57       0.00       0.00       1.05       0.49       0.02       0.52        0.13     7.55   0.328
+  WS_SC141                   1.57       0.00       0.00       0.84       0.68       0.04       0.72        0.12     7.03   0.458
+  WS_SC142                   1.57       0.00       0.00       1.10       0.45       0.02       0.47        0.40    21.45   0.297
+  WS_SC143                   1.57       0.00       0.00       0.75       0.79       0.02       0.81        0.81    40.62   0.513
+  WS_SC144                   1.57       0.00       0.00       0.84       0.69       0.02       0.72        0.43    22.77   0.456
+  WS_SC145                   1.57       0.00       0.00       0.73       0.81       0.02       0.83        0.13     6.52   0.527
+  WS_SC146                   1.57       0.00       0.00       0.94       0.60       0.01       0.61        0.23    10.97   0.392
+  WS_SC147                   1.57       0.00       0.00       0.85       0.68       0.02       0.71        0.09     4.89   0.450
+  WS_SC148                   1.57       0.00       0.00       0.93       0.61       0.02       0.63        0.17     8.47   0.400
+  WS_SC149                   1.57       0.00       0.00       0.88       0.66       0.02       0.68        0.20     9.62   0.432
+  WS_SC150                   1.57       0.00       0.00       0.88       0.66       0.02       0.68        0.18     8.94   0.432
+  WS_SC151                   1.57       0.00       0.00       0.89       0.65       0.02       0.67        0.15     7.70   0.428
+  WS_SC152                   1.57       0.00       0.00       0.88       0.66       0.02       0.68        0.14     7.07   0.433
+  WS_SC153                   1.57       0.00       0.00       0.84       0.69       0.03       0.71        0.07     3.61   0.455
+  WS_SC154                   1.57       0.00       0.00       1.04       0.51       0.01       0.52        0.37    16.41   0.333
+  WS_SC155                   1.57       0.00       0.00       0.94       0.60       0.01       0.61        0.31    14.30   0.391
+  WS_SC156                   1.57       0.00       0.00       1.13       0.42       0.01       0.43        0.20    10.27   0.273
+  WS_SC157                   1.57       0.00       0.00       0.99       0.56       0.01       0.57        0.31    14.54   0.362
+  WS_SC158                   1.57       0.00       0.00       0.83       0.70       0.02       0.72        0.09     4.82   0.460
+  WS_SC159                   1.57       0.00       0.00       0.91       0.61       0.04       0.65        0.10     5.84   0.412
+  WS_SC160                   1.57       0.00       0.00       0.90       0.63       0.04       0.66        0.09     5.16   0.423
+  WS_SC161                   1.57       0.00       0.00       0.89       0.62       0.04       0.67        0.06     3.43   0.424
+  WS_SC162                   1.57       0.00       0.00       0.94       0.60       0.01       0.62        0.33    15.40   0.393
+  WS_SC163                   1.57       0.00       0.00       0.94       0.60       0.01       0.61        0.39    17.72   0.391
+  WS_SC164                   1.57       0.00       0.00       0.98       0.57       0.01       0.58        0.30    13.93   0.371
+  WS_SC165                   1.57       0.00       0.00       1.11       0.42       0.03       0.45        0.17     9.84   0.287
+  WS_SC166                   1.57       0.00       0.00       1.15       0.40       0.01       0.41        0.30    15.69   0.263
+  WS_SC167                   1.57       0.00       0.00       1.38       0.17       0.02       0.19        0.57    31.75   0.121
+  WS_SC168                   1.57       0.00       0.00       1.44       0.10       0.03       0.13        0.43    22.03   0.081
+  WS_SC169                   1.57       0.00       0.00       1.23       0.27       0.07       0.34        1.32    57.88   0.217
+  WS_SC170                   1.57       0.00       0.00       1.34       0.19       0.04       0.23        0.27    14.82   0.144
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  WS_JCT101            JUNCTION     0.23     1.88  3954.88     0  12:10        1.88
+  WS_JCT108            JUNCTION     6.27     8.14  4000.14     0  12:21        7.63
+  WS_JCT112            JUNCTION     0.61     1.12  3835.98     0  16:59        1.12
+  WS_JCT115            JUNCTION     0.28     2.63  3946.13     0  12:19        2.63
+  WS_JCT117            JUNCTION     0.00     0.00  3942.43     0  00:00        0.00
+  WS_JCT118            JUNCTION     0.17     1.35  3941.31     0  12:37        1.34
+  WS_JCT119            JUNCTION     0.05     0.78  3966.78     0  12:18        0.77
+  WS_JCT120            JUNCTION     0.26     2.04  3945.54     0  12:18        2.02
+  WS_JCT125            JUNCTION     0.18     1.11  3999.11     0  12:10        1.11
+  WS_JCT126            JUNCTION     0.18     1.60  3950.60     0  12:15        1.59
+  WS_JCT129            JUNCTION     0.08     1.61  4125.23     0  12:13        1.58
+  WS_JCT130            JUNCTION     0.03     0.47  4121.98     0  12:14        0.47
+  WS_JCT132            JUNCTION     0.26     1.89  3942.89     0  12:19        1.89
+  WS_JCT133            JUNCTION     0.13     3.39  4134.55     0  12:10        3.29
+  WS_JCT134            JUNCTION     0.03     0.50  4130.50     0  12:11        0.48
+  WS_JCT135            JUNCTION     0.06     0.26  4041.26     0  12:55        0.26
+  WS_JCT136            JUNCTION     0.04     0.74  3970.74     0  12:12        0.70
+  WS_JCT137            JUNCTION     0.15     1.06  3951.06     0  12:13        1.04
+  WS_JCT138            JUNCTION     0.67     3.05  3901.22     0  12:57        3.04
+  WS_JCT142            JUNCTION     0.29     0.54  3856.54     0  15:46        0.54
+  WS_JCT143            JUNCTION     0.25     2.57  3941.23     0  12:38        2.57
+  WS_JCT145            JUNCTION     3.23     3.93  4013.28     0  12:10        3.90
+  WS_JCT146            JUNCTION     1.46     2.45  4025.27     0  12:14        1.93
+  WS_JCT147            JUNCTION     1.10     1.79  4022.61     0  12:15        1.56
+  WS_JCT148            JUNCTION     1.98     2.60  4021.52     0  12:08        2.43
+  WS_JCT149            JUNCTION     1.75     2.73  4019.23     0  12:16        2.39
+  WS_JCT150            JUNCTION     0.03     0.27  4010.46     0  12:11        0.26
+  WS_JCT151            JUNCTION     1.43     2.19  4007.69     0  12:16        2.07
+  WS_JCT152            JUNCTION     1.94     2.89  4005.89     0  12:10        2.73
+  WS_JCT153            JUNCTION     1.98     3.11  4003.11     0  12:05        2.90
+  WS_JCT154            JUNCTION     6.41     7.39  4003.39     0  12:07        7.30
+  WS_JCT159            JUNCTION     0.06     0.35  3952.35     0  12:15        0.35
+  WS_JCT160            JUNCTION     0.35     2.08  3954.58     0  12:12        2.00
+  WS_JCT161            JUNCTION     0.45     4.38  4055.38     0  12:49        4.38
+  WS_JCT162            JUNCTION     0.07     1.71  4093.47     0  12:26        1.70
+  WS_JCT163            JUNCTION     0.04     0.51  4079.51     0  12:11        0.50
+  WS_JCT164            JUNCTION     2.70     6.40  3926.40     0  12:22        6.16
+  WS_JCT165            JUNCTION     0.78     5.68  3921.18     0  12:22        5.40
+  WS_JCT166            JUNCTION     3.45     7.26  3926.26     0  12:22        7.03
+  WS_JCT167            JUNCTION     1.03     6.15  3921.15     0  12:22        5.88
+  WS_JCT168            JUNCTION     0.42     2.67  3915.67     0  12:23        2.45
+  WS_JCT169            JUNCTION     3.58    11.14  3914.14     0  12:22       10.81
+  WS_JCT170            JUNCTION     0.96     8.45  3908.45     0  12:23        8.34
+  WS_JCT171            JUNCTION     1.42     9.44  3908.44     0  12:23        9.33
+  WS_JCT172            JUNCTION     0.68     4.68  3901.68     0  12:26        4.54
+  WS_JCT173            JUNCTION     2.38     6.20  3926.70     0  12:24        6.19
+  WS_JCT174            JUNCTION     1.40     5.12  3927.12     0  12:24        5.12
+  WS_JCT176            JUNCTION     1.44     5.18  3927.18     0  12:24        5.18
+  WS_JCT177            JUNCTION     0.15     1.56  3927.56     0  12:08        1.55
+  WS_JCT179            JUNCTION     0.24     1.96  3929.46     0  12:20        1.96
+  WS_JCT183            JUNCTION     0.87     4.97  3905.69     0  12:56        4.96
+  WS_JCT185            JUNCTION     1.88     5.09  3905.81     0  12:57        5.08
+  WS_JCT186            JUNCTION     0.23     1.05  3911.05     0  12:52        1.05
+  WS_JCT187            JUNCTION     0.48     1.99  3914.99     0  12:51        1.99
+  WS_JCT188            JUNCTION     1.34    11.18  3926.68     0  12:50       11.18
+  WS_JCT192            JUNCTION     0.82     2.66  3931.66     0  12:32        2.65
+  WS_JCT198            JUNCTION     0.22     1.46  3939.77     0  12:41        1.41
+  WS_JCT199            JUNCTION     0.16     0.97  3944.71     0  12:39        0.97
+  WS_JCT200            JUNCTION     0.58     4.10  3948.29     0  12:38        4.08
+  WS_JCT201            JUNCTION     0.46     4.44  3953.79     0  12:34        4.44
+  WS_JCT202            JUNCTION     0.17     1.11  3948.55     0  12:35        1.09
+  WS_JCT203            JUNCTION     0.50     3.94  3958.78     0  12:27        3.91
+  WS_JCT204            JUNCTION     0.15     1.19  3955.23     0  12:28        1.17
+  WS_JCT205            JUNCTION     0.15     1.25  3960.11     0  12:26        1.18
+  WS_JCT206            JUNCTION     0.36     3.92  3965.30     0  12:25        3.91
+  WS_JCT207            JUNCTION     0.14     1.24  3967.55     0  12:22        1.22
+  WS_JCT208            JUNCTION     0.43     3.49  3970.55     0  12:22        3.46
+  WS_JCT209            JUNCTION     0.16     1.36  3971.51     0  12:21        1.31
+  WS_JCT210            JUNCTION     0.33     4.23  3976.96     0  12:20        4.23
+  WS_JCT211            JUNCTION     0.39     4.45  3983.20     0  12:17        4.44
+  WS_JCT212            JUNCTION     0.13     1.23  3978.86     0  12:18        1.22
+  WS_JCT213            JUNCTION     0.13     1.22  3985.19     0  12:17        1.21
+  WS_JCT216            JUNCTION     0.11     1.59  3988.10     0  12:13        1.57
+  WS_JCT217            JUNCTION     0.07     0.76  3993.02     0  12:11        0.74
+  WS_JCT218            JUNCTION     1.08     1.86  4020.78     0  12:03        1.68
+  WS_JCT219            JUNCTION     7.00     8.53  4020.53     0  12:10        8.32
+  WS_JCT223            JUNCTION     1.55     3.19  3818.19     0  20:02        3.19
+  WS_JCT224            JUNCTION     0.75     1.68  3816.68     0  20:09        1.68
+  WS_JCT225            JUNCTION     0.95     2.25  3816.61     0  20:09        2.25
+  WS_JCT226            JUNCTION     0.34     0.61  3814.41     0  20:13        0.61
+  WS_JCT229            JUNCTION     0.54     2.83  3866.45     0  13:09        2.83
+  WS_JCT230            JUNCTION     0.48     2.60  3866.27     0  13:09        2.60
+  WS_JCT240            JUNCTION     0.73     4.05  3871.03     0  13:08        4.05
+  WS_JCT245            JUNCTION     0.04     0.54  3894.19     0  12:11        0.53
+  WS_JCT247            JUNCTION     0.86     5.75  3895.75     0  12:58        5.74
+  WS_JCT248            JUNCTION     3.37     5.20  3889.20     0  12:58        5.18
+  WS_JCT251            JUNCTION     0.21     2.24  3941.24     0  12:38        2.24
+  WS_JCT254            JUNCTION     0.19     0.95  3935.73     0  12:42        0.94
+  WS_JCT256            JUNCTION     0.50     3.73  3938.73     0  12:22        3.67
+  WS_JCT257            JUNCTION     0.69     4.68  3935.68     0  12:30        4.68
+  WS_JCT258            JUNCTION     0.57     3.77  3936.77     0  12:26        3.76
+  WS_JCT260            JUNCTION     0.04     0.68  3954.68     0  12:12        0.64
+  WS_JCT261            JUNCTION     0.37     3.30  3928.80     0  12:22        3.27
+  WS_JCT262            JUNCTION     0.40     0.72  3809.72     0  20:15        0.72
+  WS_JCT263            JUNCTION     0.34     0.64  3808.64     0  20:25        0.64
+  WS_JCT264            JUNCTION     0.57     1.07  3804.87     0  21:12        1.07
+  WS_JCT265            JUNCTION     1.22     4.03  3866.93     0  13:09        4.03
+  WS_JCT268            JUNCTION     0.59     2.20  3868.17     0  13:09        2.20
+  WS_JCT269            JUNCTION     0.28     2.26  3872.64     0  13:06        2.25
+  WS_JCT270            JUNCTION     0.66     7.70  3878.49     0  13:06        7.70
+  WS_JCT271            JUNCTION     1.09     5.42  3935.50     0  12:30        5.42
+  WS_JCT272            JUNCTION     0.60     2.29  3932.52     0  12:31        2.29
+  WS_JCT273            JUNCTION     1.70     3.11  3838.61     0  16:50        3.11
+  WS_JCT276            JUNCTION     0.04     0.44  4024.44     0  12:11        0.41
+  WS_JCT277            JUNCTION     0.04     0.49  4014.99     0  12:10        0.45
+  WS_JCT278            JUNCTION     0.04     0.62  4015.79     0  12:10        0.53
+  WS_JCT279            JUNCTION     2.53     3.40  4013.47     0  12:10        3.25
+  WS_JCT280            JUNCTION     0.03     5.20  4013.94     0  12:14        4.93
+  WS_JCT281            JUNCTION     0.15     5.84  4013.78     0  12:14        5.74
+  WS_JCT282            JUNCTION     0.33     4.87  3991.26     0  12:19        4.82
+  WS_JCT283            JUNCTION     0.32     5.34  3992.18     0  12:18        5.10
+  WS_JCT284            JUNCTION     0.12     1.72  3993.22     0  12:16        1.47
+  WS_JCT285            JUNCTION     0.14     1.89  3992.54     0  12:18        1.80
+  WS_JCT286            JUNCTION     0.10     1.79  4007.67     0  12:14        1.70
+  WS_JCT287            JUNCTION     0.08     0.98  4004.53     0  12:16        0.85
+  WS_JCT288            JUNCTION     0.21     1.70  3954.59     0  12:12        1.61
+  WS_JCT289            JUNCTION     0.15     7.52  4095.52     0  12:13        4.98
+  WS_JCT290            JUNCTION     1.77    11.00  3928.30     0  12:50       11.00
+  WS_JCT291            JUNCTION     0.83     5.83  3929.52     0  12:46        5.82
+  WS_JCT292            JUNCTION     0.21     1.10  3935.86     0  12:41        1.07
+  WS_JCT293            JUNCTION     0.24     2.85  3987.35     0  12:19        2.85
+  WS_JCT294            JUNCTION     0.30     3.42  3988.90     0  12:19        3.38
+  WS_JCT295            JUNCTION     0.39     4.27  3990.20     0  12:19        4.25
+  WS_JCT298            JUNCTION     0.13     1.08  3876.58     0  12:14        1.08
+  WS_JCT299            JUNCTION     0.16     0.83  3996.83     0  12:10        0.82
+  WS_JCT304            JUNCTION     0.04     3.71  4030.53     0  12:04        0.84
+  WS_JCT305            JUNCTION     0.05     1.34  4024.65     0  12:09        0.67
+  WS_JCT306            JUNCTION     0.95     3.40  4023.40     0  12:07        2.05
+  WS_JCT307            JUNCTION     0.32     7.77  4025.77     0  12:16        1.64
+  WS_JCT308            JUNCTION     0.04     5.00  4025.00     0  12:04        1.52
+  WS_JCT309            JUNCTION     0.05     3.64  4025.64     0  12:15        2.14
+  WS_JCT310            JUNCTION     0.02     0.38  3994.57     0  12:17        0.37
+  WS_JCT311            JUNCTION     0.02     0.41  3994.43     0  12:11        0.37
+  WS_JCT312            JUNCTION     0.03     0.23  4015.58     0  12:11        0.23
+  WS_JCT313            JUNCTION     0.03     0.22  4008.92     0  12:12        0.21
+  WS_JCT314            JUNCTION     0.04     3.17  4013.17     0  12:06        0.83
+  WS_JCT315            JUNCTION     0.03     2.23  4010.23     0  12:09        1.61
+  WS_JCT316            JUNCTION     0.05    13.33  4017.33     0  12:04        3.36
+  WS_JCT317            JUNCTION     0.05     8.40  4014.40     0  12:06        2.93
+  WS_JCT318            JUNCTION     2.48    16.25  4012.25     0  12:16        6.78
+  WS_JCT327            JUNCTION     0.15     0.74  3958.26     0  12:11        0.73
+  WS_JCT328            JUNCTION     0.12     0.57  3968.41     0  12:10        0.56
+  WS_JCT329            JUNCTION     0.13     0.64  3989.20     0  12:10        0.64
+  WS_JCT330            JUNCTION     0.12     5.29  4095.29     0  12:13        3.38
+  WS_JCT331            JUNCTION     0.12     1.22  3930.22     0  12:21        1.21
+  WS_JCT332            JUNCTION     0.03     0.23  3998.23     0  12:12        0.22
+  WS_JCT333            JUNCTION     0.03     0.48  3993.01     0  12:15        0.43
+  WS_JCT334            JUNCTION     0.02     0.38  3993.26     0  12:10        0.35
+  WS_JCT335            JUNCTION     0.33     2.55  3895.99     0  12:04        2.54
+  WS_JCT336            JUNCTION     0.08     2.12  3896.48     0  12:10        2.12
+  WS_JCT339            JUNCTION  3107.36  3944.89  3944.89     0  15:41     3944.89
+  WS_JCT340            JUNCTION   324.41   609.38   609.38     2  00:00      609.38
+  WS_JCT345            JUNCTION     0.46     3.65  3939.15     0  12:41        3.50
+  WS_JCT350            JUNCTION     0.05     0.64  3947.64     0  12:18        0.60
+  WS_JCT354            JUNCTION     1.61     3.22  3818.22     0  20:02        3.22
+  WS_JCT355            JUNCTION     1.87     3.67  3829.17     0  19:12        3.67
+  WS_JCT356            JUNCTION     0.69     1.25  3826.75     0  19:17        1.24
+  WS_JCT358            JUNCTION     0.03     0.55  4011.63     0  12:16        0.41
+  WS_JCT359            JUNCTION     0.03     0.47  3999.35     0  12:17        0.41
+  WS_JCT360            JUNCTION     0.03     0.71  4014.06     0  12:11        0.64
+  WS_JCT361            JUNCTION     0.01     0.18  3980.68     0  12:12        0.17
+  WS_JCT362            JUNCTION     0.01     1.10  4029.74     0  12:12        0.26
+  WS_JCT363            JUNCTION     0.01     6.43  4034.01     0  12:11        1.44
+  WS_JCT364            JUNCTION     0.01     5.40  4030.17     0  12:09        1.47
+  WS_JCT365            JUNCTION     0.01     5.00  4029.08     0  12:08        0.18
+  WS_JCT366            JUNCTION     0.01     6.09  4028.61     0  12:16        0.06
+  WS_JCT367            JUNCTION     0.01     5.00  4030.51     0  12:03        0.06
+  WS_JCT368            JUNCTION     0.01     6.96  4031.02     0  12:09        0.98
+  WS_JCT369            JUNCTION     0.01     0.13  4020.39     0  12:11        0.13
+  WS_JCT370            JUNCTION     0.01     5.00  4018.58     0  12:10        0.90
+  WS_JCT371            JUNCTION     0.01     1.10  4013.01     0  12:04        0.04
+  WS_JCT372            JUNCTION     0.01     5.00  4014.78     0  12:04        0.04
+  WS_JCT373            JUNCTION     0.01     1.86  4012.82     0  12:08        0.05
+  WS_JCT374            JUNCTION     0.01    11.07  4013.69     0  12:02        0.11
+  WS_JCT381            JUNCTION     0.01     0.30  3957.55     0  12:15        0.15
+  WS_JCT382            JUNCTION     0.04     0.59  4086.89     0  12:10        0.58
+  WS_JCT383            JUNCTION     0.00     0.06  3996.30     0  12:10        0.06
+  WS_JCT384            JUNCTION     0.00     0.07  3975.21     0  12:13        0.07
+  WS_JCT385            JUNCTION     0.01     0.07  3965.22     0  12:18        0.07
+  WS_JCT386            JUNCTION     0.02     0.18  3958.08     0  12:11        0.18
+  WS_JCT388            JUNCTION     0.02     1.01  4025.32     0  12:14        0.51
+  WS_JCT389            JUNCTION     0.02     0.71  4022.63     0  12:15        0.42
+  WS_JCT390            JUNCTION     0.02     0.50  4021.47     0  12:08        0.34
+  WS_JCT391            JUNCTION     0.02     0.56  4018.86     0  12:16        0.36
+  WS_JCT392            JUNCTION     0.02     0.41  4019.78     0  12:10        0.38
+  WS_JCT393            JUNCTION     0.02     0.66  4020.66     0  12:03        0.51
+  WS_JCT394            JUNCTION     0.03     0.65  4007.59     0  12:16        0.56
+  WS_JCT395            JUNCTION     0.02     0.37  4005.39     0  12:16        0.33
+  WS_JCT396            JUNCTION     0.02     0.79  4002.84     0  12:05        0.63
+  WS_JCT397            JUNCTION     0.02     0.46  4003.21     0  12:07        0.42
+  WS_JCT398            JUNCTION     0.02     1.25  3999.85     0  12:21        1.05
+  WS_JCT402            JUNCTION     0.00     0.04  4012.11     0  12:13        0.04
+  WS_JCT403            JUNCTION     0.23     1.07  3929.07     0  12:33        1.07
+  WS_JCT404            JUNCTION     0.31     2.91  3866.91     0  13:09        2.91
+  WS_JCT405            JUNCTION     0.24     2.15  3887.15     0  12:27        2.10
+  WS_JCT406            JUNCTION     0.10     1.09  3867.59     0  12:11        1.07
+  WS_JCT407            JUNCTION     0.03     0.70  3908.70     0  12:52        0.69
+  WS_JCT411            JUNCTION     4.83     6.05  3878.20     0  12:50        6.05
+  WS_JCT412            JUNCTION     0.64     3.44  3875.59     0  12:51        3.43
+  WS_JCT413            JUNCTION     3.38     4.47  3871.64     0  15:32        4.47
+  WS_JCT414            JUNCTION     0.06     1.01  3868.18     0  13:07        1.01
+  WS_JCT415            JUNCTION     4.59     5.99  3879.09     0  13:24        5.99
+  WS_JCT416            JUNCTION     0.61     3.00  3876.10     0  13:24        3.00
+  WS_OFALL100          OUTFALL      0.00     0.00  3938.00     0  00:00        0.00
+  WS_OFALL101          OUTFALL      0.09     0.58  3934.08     0  12:42        0.57
+  WS_OFALL102          OUTFALL      0.00     0.00  3976.00     0  00:00        0.00
+  WS_OFALL104          OUTFALL      0.22     0.39  3799.39     0  21:12        0.39
+  WS_NAT_STORAGE_01A   STORAGE      3.02     8.04  3864.04     0  15:34        8.04
+  WS_PND30             STORAGE      3.91     5.14  3871.64     0  15:32        5.14
+  WS_PND31             STORAGE      4.44     7.75  3880.95     0  12:50        7.75
+  WS_PND32             STORAGE      2.67     6.64  3873.14     0  14:05        6.64
+  WS_PND33             STORAGE      5.82     8.84  3880.94     0  13:23        8.84
+  WS_PND34             STORAGE      3.92    13.03  3929.03     0  12:50       13.03
+  WS_PND35             STORAGE      0.92     4.78  3940.28     0  12:41        4.76
+  WS_PND36             STORAGE      0.28     1.80  3946.80     0  12:16        1.79
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  WS_JCT101            JUNCTION     40.62    40.62     0  12:10       0.809       0.809      -0.000
+  WS_JCT108            JUNCTION      0.00    11.92     0  12:19           0      0.0738       0.000
+  WS_JCT112            JUNCTION      0.00    84.45     0  16:50           0        29.9       0.040
+  WS_JCT115            JUNCTION     34.82    44.97     0  12:10       0.626         1.6       0.033
+  WS_JCT117            JUNCTION      0.00     0.00     0  00:00           0           0       0.000 gal
+  WS_JCT118            JUNCTION      0.00    25.69     0  12:34           0        1.59      -0.050
+  WS_JCT119            JUNCTION      8.47   114.26     0  12:17       0.171         2.2      -0.003
+  WS_JCT120            JUNCTION      0.00   308.20     0  12:13           0        6.31       0.110
+  WS_JCT125            JUNCTION      7.55    12.70     0  12:10       0.134       0.886      -0.000
+  WS_JCT126            JUNCTION      0.00   254.98     0  12:12           0         4.1      -0.107
+  WS_JCT129            JUNCTION      0.00    14.77     0  12:11           0       0.236       0.101
+  WS_JCT130            JUNCTION      0.00    12.51     0  12:14           0       0.236      -0.149
+  WS_JCT132            JUNCTION     16.41   355.39     0  12:17       0.371        8.22      -0.123
+  WS_JCT133            JUNCTION     15.54    15.54     0  12:10       0.236       0.236      -0.002
+  WS_JCT134            JUNCTION      0.00    14.96     0  12:10           0       0.236      -0.089
+  WS_JCT135            JUNCTION      0.00     6.63     0  12:50           0       0.752       0.012
+  WS_JCT136            JUNCTION     10.97   233.05     0  12:11       0.228        2.83      -0.013
+  WS_JCT137            JUNCTION      0.00    59.09     0  12:10           0        1.27      -0.009
+  WS_JCT138            JUNCTION     29.38   264.01     0  12:56       0.566        17.3      -0.020
+  WS_JCT142            JUNCTION      0.00    85.22     0  15:36           0          29      -0.082
+  WS_JCT143            JUNCTION      0.00    23.73     0  12:38           0        1.59       0.017
+  WS_JCT145            JUNCTION      0.00     2.83     0  12:10           0      0.0303       5.007
+  WS_JCT146            JUNCTION      0.00    15.14     0  12:14           0       0.057       0.000
+  WS_JCT147            JUNCTION      0.00     9.08     0  12:15           0      0.0747       0.000
+  WS_JCT148            JUNCTION      0.00     5.93     0  12:09           0      0.0575       0.000
+  WS_JCT149            JUNCTION      0.00    17.95     0  12:16           0       0.115       0.000
+  WS_JCT150            JUNCTION      0.00     1.13     0  12:11           0       0.032      -0.001
+  WS_JCT151            JUNCTION      0.00    10.72     0  12:06           0      0.0813       0.000
+  WS_JCT152            JUNCTION      0.00    21.35     0  12:10           0      0.0502       0.000
+  WS_JCT153            JUNCTION      0.00    20.53     0  12:04           0      0.0934       0.000
+  WS_JCT154            JUNCTION      0.00     9.49     0  12:06           0      0.0877       0.000
+  WS_JCT159            JUNCTION      0.00    14.15     0  12:13           0       0.969       0.013
+  WS_JCT160            JUNCTION      0.00    14.07     0  12:12           0       0.969      -0.001
+  WS_JCT161            JUNCTION      0.00    32.28     0  12:10           0       0.759       0.958
+  WS_JCT162            JUNCTION      0.00    12.44     0  12:14           0       0.236       0.168
+  WS_JCT163            JUNCTION      6.93    13.62     0  12:10       0.123       0.359      -0.983
+  WS_JCT164            JUNCTION     17.00   850.52     0  12:21       0.373        13.1       0.297
+  WS_JCT165            JUNCTION      0.00   291.03     0  12:22           0        8.32       0.007
+  WS_JCT166            JUNCTION     13.93   294.92     0  12:22       0.297        8.32       0.014
+  WS_JCT167            JUNCTION      0.00   286.25     0  12:22           0        8.32       0.020
+  WS_JCT168            JUNCTION      0.00   282.62     0  12:22           0        8.32       0.005
+  WS_JCT169            JUNCTION      9.84   683.01     0  12:22        0.17        13.4       0.212
+  WS_JCT170            JUNCTION      0.00   667.09     0  12:22           0        13.4       0.019
+  WS_JCT171            JUNCTION      0.00   639.92     0  12:23           0        13.4       0.033
+  WS_JCT172            JUNCTION      0.00   632.72     0  12:23           0        13.4      -0.065
+  WS_JCT173            JUNCTION     17.72   330.52     0  12:14       0.394        9.95       0.376
+  WS_JCT174            JUNCTION     18.95   283.07     0  12:21       0.425        7.58       0.052
+  WS_JCT176            JUNCTION      0.00   105.46     0  12:08           0        1.94       0.148
+  WS_JCT177            JUNCTION      0.00   277.19     0  12:05           0        1.94       0.020
+  WS_JCT179            JUNCTION     22.89   197.93     0  12:16       0.541        3.55       0.018
+  WS_JCT183            JUNCTION      0.00   263.04     0  12:55           0        16.8      -0.005
+  WS_JCT185            JUNCTION      0.00   156.89     0  12:52           0        15.4       0.006
+  WS_JCT186            JUNCTION      0.00   156.91     0  12:51           0        15.4      -0.000
+  WS_JCT187            JUNCTION      0.00   156.91     0  12:51           0        15.4       0.002
+  WS_JCT188            JUNCTION      0.00   272.13     0  12:48           0        16.6       0.052
+  WS_JCT192            JUNCTION      0.00    88.27     0  12:31           0        8.67       0.008
+  WS_JCT198            JUNCTION      3.43    33.74     0  12:39      0.0566        1.96       0.010
+  WS_JCT199            JUNCTION      0.00    33.91     0  12:38           0         1.9      -0.006
+  WS_JCT200            JUNCTION      0.00    36.59     0  12:35           0         1.9       0.118
+  WS_JCT201            JUNCTION      0.00    49.54     0  12:28           0         1.9       0.180
+  WS_JCT202            JUNCTION      0.00    37.30     0  12:35           0         1.9      -0.105
+  WS_JCT203            JUNCTION      5.16    51.85     0  12:26      0.0874         1.9       0.101
+  WS_JCT204            JUNCTION      0.00    50.41     0  12:28           0         1.9      -0.158
+  WS_JCT205            JUNCTION      0.00    51.88     0  12:25           0        1.81      -0.091
+  WS_JCT206            JUNCTION      0.00    55.10     0  12:22           0        1.81       0.161
+  WS_JCT207            JUNCTION      0.00    55.45     0  12:22           0        1.81      -0.139
+  WS_JCT208            JUNCTION      0.00    55.57     0  12:21           0        1.81       0.062
+  WS_JCT209            JUNCTION      0.00    56.00     0  12:20           0        1.81      -0.053
+  WS_JCT210            JUNCTION      5.84    57.07     0  12:18      0.0991        1.81       0.132
+  WS_JCT211            JUNCTION      0.00    55.21     0  12:17           0        1.72       0.160
+  WS_JCT212            JUNCTION      0.00    55.12     0  12:17           0        1.71      -0.119
+  WS_JCT213            JUNCTION      0.00    55.38     0  12:16           0        1.71      -0.142
+  WS_JCT216            JUNCTION      0.00    21.92     0  12:11           0       0.488       0.066
+  WS_JCT217            JUNCTION      4.82    22.09     0  12:10        0.09       0.488      -0.050
+  WS_JCT218            JUNCTION      0.00     8.25     0  12:15           0      0.0908       0.000
+  WS_JCT219            JUNCTION      0.00    28.02     0  12:10           0        0.12       0.000
+  WS_JCT223            JUNCTION      0.00    77.71     0  19:57           0        30.8       0.032
+  WS_JCT224            JUNCTION      0.00    77.70     0  20:02           0        30.8       0.027
+  WS_JCT225            JUNCTION      0.00    77.68     0  20:05           0        30.8       0.018
+  WS_JCT226            JUNCTION      0.00    77.67     0  20:09           0        30.8       0.164
+  WS_JCT229            JUNCTION      0.00    35.70     0  13:09           0        2.47      -0.001
+  WS_JCT230            JUNCTION      0.00    35.70     0  13:09           0        2.47       0.002
+  WS_JCT240            JUNCTION      0.00   141.36     0  13:06           0        12.1       0.063
+  WS_JCT245            JUNCTION      0.00    20.89     0  12:10           0       0.382      -1.757
+  WS_JCT247            JUNCTION      0.00   263.65     0  12:57           0        17.3       0.028
+  WS_JCT248            JUNCTION      0.00   262.71     0  12:58           0        17.3       0.193
+  WS_JCT251            JUNCTION      0.00    25.04     0  12:35           0         1.6       0.046
+  WS_JCT254            JUNCTION      0.00    28.78     0  12:42           0        2.02       0.004
+  WS_JCT256            JUNCTION      0.00   418.97     0  12:18           0        10.2       0.113
+  WS_JCT257            JUNCTION     14.54   395.21     0  12:25        0.31        14.5       0.121
+  WS_JCT258            JUNCTION     10.27   401.35     0  12:22       0.202        12.2       0.061
+  WS_JCT260            JUNCTION      9.62    94.11     0  12:11         0.2        1.55       0.003
+  WS_JCT261            JUNCTION     15.40   211.93     0  12:20       0.333         5.2      -0.118
+  WS_JCT262            JUNCTION      0.00    77.67     0  20:13           0        30.8       0.248
+  WS_JCT263            JUNCTION      0.00    77.67     0  20:19           0        30.7       0.231
+  WS_JCT264            JUNCTION     22.03    77.83     0  20:24       0.433          31       1.100
+  WS_JCT265            JUNCTION      0.00   141.34     0  13:09           0        12.1       0.054
+  WS_JCT268            JUNCTION      0.00   141.39     0  13:07           0        12.1      -0.017
+  WS_JCT269            JUNCTION      0.00   141.37     0  13:06           0        6.26      -0.056
+  WS_JCT270            JUNCTION      0.00   201.98     0  12:50           0        6.36       0.173
+  WS_JCT271            JUNCTION      0.00   362.13     0  12:29           0        14.5       0.010
+  WS_JCT272            JUNCTION      0.00    88.31     0  12:30           0        8.67       0.000
+  WS_JCT273            JUNCTION     57.88    86.29     0  15:42        1.32        30.3       1.358
+  WS_JCT276            JUNCTION      0.00     8.80     0  12:10           0      0.0265     -18.517
+  WS_JCT277            JUNCTION      0.00     3.61     0  12:10           0      0.0329       0.033
+  WS_JCT278            JUNCTION      0.00     9.41     0  12:08           0      0.0325      -1.272
+  WS_JCT279            JUNCTION      0.00     2.82     0  12:10           0      0.0329       8.726
+  WS_JCT280            JUNCTION      0.00     1.38     0  12:08           0    0.000998      -1.862
+  WS_JCT281            JUNCTION      0.00    15.51     0  12:11           0        0.23       1.256
+  WS_JCT282            JUNCTION      0.00    30.66     0  12:18           0       0.869      -0.768
+  WS_JCT283            JUNCTION      0.00    27.64     0  12:11           0       0.707      -0.011
+  WS_JCT284            JUNCTION      0.00    26.74     0  12:16           0       0.571       0.168
+  WS_JCT285            JUNCTION      0.00    27.14     0  12:16           0        0.57      -0.089
+  WS_JCT286            JUNCTION      0.00    11.55     0  12:13           0       0.226      -0.082
+  WS_JCT287            JUNCTION      0.00    19.63     0  12:16           0       0.376       0.003
+  WS_JCT288            JUNCTION      0.00    14.53     0  12:11           0       0.969       0.003
+  WS_JCT289            JUNCTION      0.00     8.82     0  12:13           0       0.236      -0.084
+  WS_JCT290            JUNCTION      0.00    18.69     0  14:29           0        4.06      -0.016
+  WS_JCT291            JUNCTION      0.00    30.92     0  12:41           0        1.96       0.098
+  WS_JCT292            JUNCTION      0.00    30.93     0  12:41           0        1.95      -0.005
+  WS_JCT293            JUNCTION      0.00    37.39     0  12:19           0        1.23      -0.010
+  WS_JCT294            JUNCTION      0.00    37.99     0  12:18           0        1.23      -0.068
+  WS_JCT295            JUNCTION      0.00    31.84     0  12:18           0        1.04      -0.164
+  WS_JCT298            JUNCTION     31.75    31.75     0  12:10       0.574       0.574      -9.303
+  WS_JCT299            JUNCTION      0.00    12.64     0  12:10           0       0.886       0.001
+  WS_JCT304            JUNCTION      0.00   145.74     0  12:04           0       0.104      14.498
+  WS_JCT305            JUNCTION      0.00    44.56     0  12:09           0      0.0685     -29.240
+  WS_JCT306            JUNCTION      0.00    20.48     0  12:08           0       0.044     -35.761
+  WS_JCT307            JUNCTION      0.00   117.43     0  12:16           0      0.0736     -43.323
+  WS_JCT308            JUNCTION      0.00    24.18     0  12:12           0      0.0633     -56.758
+  WS_JCT309            JUNCTION      0.00    22.85     0  12:10           0      0.0608     -48.521
+  WS_JCT310            JUNCTION      7.70   191.67     0  12:16       0.151        1.85      -0.351
+  WS_JCT311            JUNCTION      8.94   161.28     0  12:08       0.181        1.48      -0.377
+  WS_JCT312            JUNCTION      0.00     1.13     0  12:11           0       0.032      -0.001
+  WS_JCT313            JUNCTION      0.00     1.13     0  12:12           0       0.032       0.006
+  WS_JCT314            JUNCTION      0.00    28.68     0  12:06           0      0.0476     -61.645
+  WS_JCT315            JUNCTION      0.00    11.71     0  12:07           0      0.0264     -49.922
+  WS_JCT316            JUNCTION      0.00   224.20     0  12:04           0      0.0612     -44.081
+  WS_JCT317            JUNCTION      0.00   115.84     0  12:06           0        0.04     -56.508
+  WS_JCT318            JUNCTION      0.00    17.49     0  12:18           0      0.0292     -72.827
+  WS_JCT327            JUNCTION      0.00    13.01     0  12:10           0       0.903      -0.013
+  WS_JCT328            JUNCTION      0.00    12.87     0  12:10           0       0.896       0.012
+  WS_JCT329            JUNCTION      0.00    12.73     0  12:10           0       0.891       0.000
+  WS_JCT330            JUNCTION      0.00    11.82     0  12:11           0       0.236      -0.014
+  WS_JCT331            JUNCTION      0.00    79.44     0  12:16           0        1.32      -0.002
+  WS_JCT332            JUNCTION      0.00     1.12     0  12:12           0       0.032       0.019
+  WS_JCT333            JUNCTION      3.61   234.70     0  12:03      0.0655        2.22      -0.550
+  WS_JCT334            JUNCTION      7.07   143.60     0  12:10       0.137        1.89      -0.544
+  WS_JCT335            JUNCTION      0.00    15.49     0  12:10           0        0.37       0.112
+  WS_JCT336            JUNCTION     20.93    20.93     0  12:10       0.383       0.383      -0.014
+  WS_JCT339            JUNCTION      0.00    13.97     0  12:16           0       0.428     647.248
+  WS_JCT340            JUNCTION      0.00     0.41     0  15:41           0      0.0572   57236.744 gal
+  WS_JCT345            JUNCTION      0.00    28.85     0  12:41           0        2.02      -0.003
+  WS_JCT350            JUNCTION     14.30    88.21     0  12:17       0.313        2.01      -0.006
+  WS_JCT354            JUNCTION      4.93    78.47     0  19:17        0.14        30.9       0.287
+  WS_JCT355            JUNCTION     49.71    85.07     0  16:58        1.09          31       0.558
+  WS_JCT356            JUNCTION      0.00    78.46     0  19:12           0        30.8       0.070
+  WS_JCT358            JUNCTION      4.89   260.76     0  12:15      0.0929        2.37      -0.285
+  WS_JCT359            JUNCTION      0.00   153.90     0  12:16           0        2.23       0.003
+  WS_JCT360            JUNCTION      6.52   437.59     0  12:14       0.131        2.82      -0.461
+  WS_JCT361            JUNCTION     22.77    24.10     0  12:10       0.428       0.457      -0.363
+  WS_JCT362            JUNCTION     13.45    13.45     0  12:10        0.28        0.28     -68.360
+  WS_JCT363            JUNCTION     19.57   172.74     0  12:11       0.426       0.464     -76.241
+  WS_JCT364            JUNCTION     28.32   118.94     0  12:10       0.614        0.64     -71.371
+  WS_JCT365            JUNCTION     21.45    94.42     0  12:10       0.397       0.411     -68.384
+  WS_JCT366            JUNCTION     23.33   105.18     0  12:16       0.504       0.521     -68.318
+  WS_JCT367            JUNCTION     28.78   109.04     0  12:11       0.561       0.589     -72.784
+  WS_JCT368            JUNCTION     29.91   134.17     0  12:09       0.543       0.576     -63.836
+  WS_JCT369            JUNCTION     19.44    19.44     0  12:10       0.398       0.398      -0.023
+  WS_JCT370            JUNCTION     33.98   113.32     0  12:07       0.636       0.687     -76.854
+  WS_JCT371            JUNCTION     16.94    55.76     0  12:10       0.336       0.341     -73.446
+  WS_JCT372            JUNCTION     23.98   156.48     0  12:04       0.413       0.431     -77.640
+  WS_JCT373            JUNCTION     23.55    83.55     0  12:08       0.467       0.477     -74.126
+  WS_JCT374            JUNCTION     19.56   206.93     0  12:11        0.37       0.408     -85.498
+  WS_JCT381            JUNCTION      0.00     8.59     0  12:10           0       0.179     -38.836
+  WS_JCT382            JUNCTION     20.14    20.14     0  12:10       0.393       0.393      -0.819
+  WS_JCT383            JUNCTION      7.92     7.92     0  12:10       0.144       0.144      -0.018
+  WS_JCT384            JUNCTION      0.00     7.30     0  12:10           0       0.138      -0.002
+  WS_JCT385            JUNCTION      0.00     6.13     0  12:13           0       0.134       0.019
+  WS_JCT386            JUNCTION      7.03     8.93     0  12:10       0.118       0.245       0.032
+  WS_JCT388            JUNCTION      0.00  1439.12     0  12:04           0        1.91       4.087
+  WS_JCT389            JUNCTION      0.00  1069.24     0  12:07           0        2.24      -1.616
+  WS_JCT390            JUNCTION      0.00   932.44     0  12:08           0        1.31       0.829
+  WS_JCT391            JUNCTION      0.00  1151.42     0  12:16           0        1.68      -0.835
+  WS_JCT392            JUNCTION      0.00   252.82     0  12:09           0        1.65      -5.813
+  WS_JCT393            JUNCTION      0.00  1017.85     0  12:04           0         2.2       1.935
+  WS_JCT394            JUNCTION      0.00   955.34     0  12:10           0           3      -0.441
+  WS_JCT395            JUNCTION      0.00   390.14     0  12:05           0        1.31      -1.085
+  WS_JCT396            JUNCTION      0.00  2203.98     0  12:04           0        1.96       0.600
+  WS_JCT397            JUNCTION      0.00  1170.96     0  12:06           0        1.89      -0.498
+  WS_JCT398            JUNCTION      0.00  1955.84     0  12:02           0        2.87       1.129
+  WS_JCT402            JUNCTION      0.00     2.82     0  12:10           0      0.0288       0.048
+  WS_JCT403            JUNCTION      0.00    88.19     0  12:32           0        8.67      -0.064
+  WS_JCT404            JUNCTION      0.00    83.24     0  13:06           0        2.33       0.286
+  WS_JCT405            JUNCTION      0.00   512.93     0  12:26           0        13.4       0.516
+  WS_JCT406            JUNCTION     14.82    14.82     0  12:10       0.272       0.273      -2.594
+  WS_JCT407            JUNCTION      9.76   114.18     0  12:50       0.169        1.42       0.080
+  WS_JCT411            JUNCTION      0.00    16.83     0  12:50           0         6.4       0.047
+  WS_JCT412            JUNCTION      0.00    16.83     0  12:50           0         6.4       0.030
+  WS_JCT413            JUNCTION      0.00     2.75     0  12:27           0     0.00225     147.763
+  WS_JCT414            JUNCTION      0.00     0.24     0  12:46           0    0.000988       0.397
+  WS_JCT415            JUNCTION      0.00    15.42     0  13:24           0        3.87       0.063
+  WS_JCT416            JUNCTION      0.00    15.42     0  13:24           0        3.86       0.041
+  WS_OFALL100          OUTFALL      12.29    12.29     0  12:10       0.199       0.199       0.000
+  WS_OFALL101          OUTFALL       0.00    28.66     0  12:42           0        2.02       0.000
+  WS_OFALL102          OUTFALL      93.29    93.29     0  12:10        1.97        1.97       0.000
+  WS_OFALL104          OUTFALL       0.00    76.88     0  21:12           0        30.7       0.000
+  WS_NAT_STORAGE_01A   STORAGE      95.08   232.88     0  13:51        2.28        29.1       0.317
+  WS_PND30             STORAGE       0.00    16.83     0  12:51           0         6.4       0.035
+  WS_PND31             STORAGE       7.04   496.45     0  12:27       0.124        13.5      -0.389
+  WS_PND32             STORAGE       0.00   177.94     0  13:23           0        13.8       0.012
+  WS_PND33             STORAGE       5.64   264.36     0  12:59      0.0931        17.4      -0.182
+  WS_PND34             STORAGE      15.69   291.30     0  12:31       0.304        8.08       0.011
+  WS_PND35             STORAGE       7.38    53.10     0  12:15       0.122        2.01      -0.391
+  WS_PND36             STORAGE      27.88    27.88     0  12:10       0.435       0.435       0.030
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  Surcharging occurs when water rises above the top of the highest conduit.
+  ---------------------------------------------------------------------
+                                               Max. Height   Min. Depth
+                                   Hours       Above Crown    Below Rim
+  Node                 Type      Surcharged           Feet         Feet
+  ---------------------------------------------------------------------
+  WS_JCT108            JUNCTION       43.21          3.141       17.782
+  WS_JCT154            JUNCTION       43.31          2.386       19.050
+  WS_JCT219            JUNCTION       43.26          3.531       17.810
+  WS_JCT229            JUNCTION        0.40          0.080        0.000
+  WS_JCT279            JUNCTION       36.28          1.702        2.074
+  WS_JCT280            JUNCTION        0.18          3.696        0.000
+  WS_JCT281            JUNCTION        0.04          0.835        0.000
+  WS_JCT283            JUNCTION        0.05          0.339        1.844
+  WS_JCT286            JUNCTION        0.01          0.089        3.410
+  WS_JCT289            JUNCTION        0.60          6.023        0.426
+  WS_JCT290            JUNCTION        8.79          9.501        0.115
+  WS_JCT291            JUNCTION        1.85          2.731        0.000
+  WS_JCT307            JUNCTION        0.01          2.774        0.000
+  WS_JCT308            JUNCTION        0.01          0.000        0.000
+  WS_JCT316            JUNCTION        0.03          8.331        0.000
+  WS_JCT317            JUNCTION        0.03          3.396        0.000
+  WS_JCT318            JUNCTION        0.13         11.247        0.000
+  WS_JCT330            JUNCTION        0.52          3.295        0.000
+  WS_JCT335            JUNCTION        0.26          1.053        0.000
+  WS_JCT363            JUNCTION        0.02          1.434       13.566
+  WS_JCT364            JUNCTION        0.02          0.402       14.598
+  WS_JCT365            JUNCTION        0.01          0.000       16.956
+  WS_JCT366            JUNCTION        0.01          1.091       15.719
+  WS_JCT367            JUNCTION        0.01          0.000       17.294
+  WS_JCT368            JUNCTION        0.01          1.960       15.337
+  WS_JCT370            JUNCTION        0.01          0.000       18.083
+  WS_JCT372            JUNCTION        0.01          0.000       16.242
+  WS_JCT374            JUNCTION        0.01          6.072        8.931
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  **********************
+  Storage Volume Summary
+  **********************
+  
+  ------------------------------------------------------------------------------------------------
+                         Average    Avg   Evap  Exfil     Maximum    Max    Time of Max    Maximum
+                          Volume   Pcnt   Pcnt   Pcnt      Volume   Pcnt     Occurrence    Outflow
+  Storage Unit          1000 ft³   Full   Loss   Loss    1000 ft³   Full    days hr:min        CFS
+  ------------------------------------------------------------------------------------------------
+  WS_NAT_STORAGE_01A     141.513    2.3    0.0    0.0     728.478   11.7       0  15:34      85.22
+  WS_PND30                65.330    9.4    0.0    0.0      93.698   13.5       0  15:32      10.19
+  WS_PND31               209.046   27.7    0.0    0.0     503.800   66.8       0  12:50     216.64
+  WS_PND32               124.867   16.2    0.0    0.0     428.838   55.5       0  14:05     139.21
+  WS_PND33               478.011   48.4    0.0    0.0     826.402   83.7       0  13:23     177.94
+  WS_PND34                89.736    8.6    0.0    0.0     494.902   47.5       0  12:50     194.53
+  WS_PND35                 4.234    5.1    0.0    0.0      26.618   32.3       0  12:41      28.85
+  WS_PND36                 1.969    0.4    0.0    0.0      14.333    3.1       0  12:16      13.97
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  WS_OFALL100           63.54      0.40     12.29       0.199
+  WS_OFALL101           95.50      2.70     28.66       2.015
+  WS_OFALL102           94.81      2.59     93.29       1.969
+  WS_OFALL104           92.68     29.63     76.88      30.704
+  -----------------------------------------------------------
+  System                86.63     35.32    114.69      34.887
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  WS_CDT100            CONDUIT      1.38     0  12:08      1.11    0.22    1.00
+  WS_CDT101            CONDUIT     25.36     0  12:18      3.59    1.48    1.00
+  WS_CDT102            CONDUIT     27.14     0  12:16      8.12    0.31    0.50
+  WS_CDT103            CONDUIT     23.69     0  12:17      4.14    0.42    0.82
+  WS_CDT104            CONDUIT     11.55     0  12:13      6.62    1.84    1.00
+  WS_CDT105            CONDUIT     11.33     0  12:14      6.63    1.05    0.93
+  WS_CDT106            CONDUIT     18.99     0  12:16     12.77    0.45    0.48
+  WS_CDT109            CONDUIT     37.39     0  12:19      5.33    1.25    0.97
+  WS_CDT110            CONDUIT     31.44     0  12:20      4.45    1.84    1.00
+  WS_CDT111            CONDUIT     28.85     0  12:18      4.08    1.67    1.00
+  WS_CDT113            CONDUIT     14.96     0  12:10      7.27    0.64    0.62
+  WS_CDT114            CONDUIT      9.77     0  12:10      5.82    1.10    0.90
+  WS_CDT115            CONDUIT      9.41     0  12:08     11.35    0.62    0.48
+  WS_CDT116            CONDUIT      3.61     0  12:10      6.09    0.24    0.37
+  WS_CDT117            CONDUIT      2.82     0  12:10      2.27    0.23    0.66
+  WS_CDT118            CONDUIT      2.83     0  12:10      1.60    0.32    1.00
+  WS_CDT125            CONDUIT     12.97     0  12:11      6.42    0.13    0.40
+  WS_CDT126            CONDUIT     12.90     0  12:10     13.48    0.08    0.19
+  WS_CDT127            CONDUIT      6.63     0  12:50     12.67    0.54    0.63
+  WS_CDT128            CONDUIT     11.82     0  12:11     11.48    0.20    0.93
+  WS_CDT129            CONDUIT      8.82     0  12:13      8.42    0.45    1.00
+  WS_CDT130            CONDUIT      8.29     0  12:13     13.05    0.83    0.76
+  WS_CDT131            CONDUIT      8.51     0  12:14     10.83    1.56    1.00
+  WS_CDT132            CONDUIT     38.25     0  12:19     12.20    1.08    1.00
+  WS_CDT133            CONDUIT     39.06     0  12:20     12.43    3.55    1.00
+  WS_CDT134            CONDUIT     41.51     0  12:21     13.24    1.52    1.00
+  WS_CDT135            CONDUIT     28.47     0  12:08      9.06   24.90    1.00
+  WS_CDT136            CONDUIT     95.48     0  12:56      8.47    0.81    0.84
+  WS_CDT137            CONDUIT     95.48     0  12:56      8.47    0.81    0.84
+  WS_CDT138            CONDUIT    156.91     0  12:51     15.56    0.76    0.75
+  WS_CDT139            CONDUIT     18.69     0  14:28     10.58    1.58    1.00
+  WS_CDT140            CONDUIT     18.69     0  14:29     10.58    1.37    1.00
+  WS_CDT141            CONDUIT     30.93     0  12:41      4.38    2.21    1.00
+  WS_CDT144            CONDUIT     30.92     0  12:41      6.01    0.29    0.68
+  WS_CDT145            CONDUIT     30.93     0  12:41     11.16    0.25    0.41
+  WS_CDT146            CONDUIT     22.17     0  12:39      8.85    0.77    0.74
+  WS_CDT147            CONDUIT     27.14     0  12:35     10.35    0.72    0.78
+  WS_CDT148            CONDUIT     25.15     0  12:28      9.37    0.65    0.80
+  WS_CDT149            CONDUIT     29.01     0  12:26     10.61    0.67    0.81
+  WS_CDT150            CONDUIT     30.97     0  12:21     10.98    0.74    0.84
+  WS_CDT151            CONDUIT     20.07     0  12:14      8.64    0.46    0.69
+  WS_CDT152            CONDUIT      1.12     0  12:12      6.18    0.02    0.11
+  WS_CDT153            CONDUIT      1.12     0  12:12      1.95    0.03    0.25
+  WS_CDT154            CONDUIT     28.02     0  12:10      8.92    0.62    1.00
+  WS_CDT156            CONDUIT     20.36     0  13:09      6.81    1.02    0.90
+  WS_CDT157            CONDUIT      2.75     0  12:27      4.14    0.40    1.00
+  WS_CDT159            CONDUIT     49.93     0  13:07     10.43    1.11    0.94
+  WS_CDT160            CONDUIT     50.32     0  13:08     10.39    1.17    0.96
+  WS_CDT161            CONDUIT     70.13     0  13:06     14.55    1.93    0.95
+  WS_CDT162            CONDUIT     71.24     0  13:06     14.51    2.76    1.00
+  WS_CDT163            CONDUIT     89.39     0  12:59     12.75    1.36    0.97
+  WS_CDT164            CONDUIT     89.41     0  12:59     12.75    1.36    0.97
+  WS_CDT165            CONDUIT     12.64     0  12:10      8.37    0.36    0.48
+  WS_CDT166            CONDUIT     12.51     0  12:10     10.48    0.33    0.40
+  WS_CDT169            CONDUIT      0.41     0  15:41      3.17    0.01    0.08
+  WS_CDT170            CONDUIT     13.97     0  12:16      6.37    0.48    0.66
+  WS_CDT171            CONDUIT      0.00     0  00:00      0.00    0.00    0.00
+  WS_CDT175            CONDUIT     15.42     0  13:24      8.73    1.00    1.00
+  WS_CDT177            CONDUIT     16.83     0  12:50      9.52    0.94    1.00
+  WS_CDT178            CONDUIT     20.18     0  14:05     11.42    1.31    1.00
+  WS_CDT179            CONDUIT     85.22     0  15:36     11.57   20.20    0.57
+  WS_CDT180            CONDUIT     12.71     0  12:10     14.77    0.21    0.32
+  WS_CDT181            CONDUIT     14.15     0  12:13      5.38    0.17    0.40
+  WS_CDT182            CONDUIT     14.07     0  12:12      3.43    0.18    0.63
+  WS_CDT183            CONDUIT      1.13     0  12:12      5.21    0.03    0.12
+  WS_CDT184            CONDUIT      1.13     0  12:11      4.99    0.03    0.13
+  WS_CDT185            CONDUIT     25.69     0  12:34      9.69    0.82    0.82
+  WS_CDT186            CONDUIT     18.76     0  12:49      6.15    0.25    1.00
+  WS_CDT187            CONDUIT      9.93     0  12:12     12.64    3.34    1.00
+  WS_CDT188            CONDUIT     28.78     0  12:42      7.96    0.76    0.69
+  WS_CDT189            CONDUIT     12.51     0  12:14      7.60    0.12    0.52
+  WS_CDT190            CONDUIT     23.84     0  12:22      8.74    0.64    0.81
+  WS_CDT191            CONDUIT     28.42     0  12:18     10.47    0.63    0.81
+  WS_CDT192            CONDUIT     19.74     0  16:55      7.50    1.29    0.78
+  WS_CDT193            CONDUIT     19.63     0  16:55      7.46    1.29    0.78
+  WS_CDT194            CONDUIT     18.31     0  12:14      0.82    0.01    0.41
+  WS_CDT196            CONDUIT      6.62     0  12:55      2.43    0.00    0.02
+  WS_CDT197            CONDUIT     14.77     0  12:11      2.39    0.00    0.10
+  WS_CDT198            CONDUIT    205.78     0  12:12      5.84    0.01    0.11
+  WS_CDT199            CONDUIT     49.66     0  12:13      1.16    0.00    0.13
+  WS_CDT200            CONDUIT    229.16     0  12:15      2.62    0.01    0.18
+  WS_CDT201            CONDUIT    296.10     0  12:18      2.65    0.01    0.20
+  WS_CDT204            CONDUIT    264.09     0  12:59      6.55    0.03    0.24
+  WS_CDT208            CONDUIT      7.50     0  12:11      4.79    0.90    1.00
+  WS_CDT209            CONDUIT      5.27     0  12:05      3.58    0.88    1.00
+  WS_CDT210            CONDUIT      5.93     0  12:09      3.79    1.62    1.00
+  WS_CDT211            CONDUIT     17.95     0  12:16      6.28    1.80    1.00
+  WS_CDT212            CONDUIT    187.65     0  12:16     13.22    0.01    0.05
+  WS_CDT213            CONDUIT     79.95     0  12:17      5.21    0.00    0.05
+  WS_CDT214            CONDUIT    153.40     0  12:08     11.96    0.01    0.04
+  WS_CDT215            CONDUIT     10.72     0  12:06      6.85    1.20    1.00
+  WS_CDT216            CONDUIT     21.35     0  12:10      7.47    1.01    1.00
+  WS_CDT217            CONDUIT     20.53     0  12:04      7.19    1.33    1.00
+  WS_CDT218            CONDUIT      9.49     0  12:06      6.07    0.88    1.00
+  WS_CDT219            CONDUIT     11.92     0  12:19      7.62    1.44    1.00
+  WS_CDT222            CONDUIT     12.44     0  12:14      3.74    0.00    0.10
+  WS_CDT223            CONDUIT     13.04     0  12:11      1.12    0.00    0.24
+  WS_CDT224            CONDUIT    630.49     0  12:21      4.92    0.03    0.38
+  WS_CDT225            CONDUIT    289.44     0  12:22      1.52    0.15    0.68
+  WS_CDT226            CONDUIT    286.25     0  12:22      2.21    0.09    0.59
+  WS_CDT227            CONDUIT    277.55     0  12:23      1.49    0.04    0.63
+  WS_CDT228            CONDUIT    639.92     0  12:23      2.40    0.15    0.89
+  WS_CDT230            CONDUIT    119.84     0  12:08      1.60    0.01    0.32
+  WS_CDT231            CONDUIT    350.81     0  12:26      2.29    0.33    0.62
+  WS_CDT233            CONDUIT    273.96     0  12:25      2.08    0.14    0.57
+  WS_CDT234            CONDUIT    277.19     0  12:05      9.23    0.01    0.10
+  WS_CDT235            CONDUIT    105.46     0  12:08      2.61    0.01    0.23
+  WS_CDT236            CONDUIT     79.44     0  12:16      4.31    0.00    0.08
+  WS_CDT237            CONDUIT    182.80     0  12:16      4.75    0.01    0.13
+  WS_CDT241            CONDUIT    158.19     0  13:01      1.97    0.05    0.44
+  WS_CDT242            CONDUIT    156.89     0  12:52      4.62    0.01    0.24
+  WS_CDT243            CONDUIT    156.91     0  12:51      6.43    0.02    0.15
+  WS_CDT246            CONDUIT     88.19     0  12:32      3.55    0.03    0.19
+  WS_CDT247            CONDUIT     33.46     0  12:39      3.60    0.00    0.12
+  WS_CDT248            CONDUIT     36.59     0  12:35      1.14    0.01    0.26
+  WS_CDT249            CONDUIT     49.54     0  12:28      2.37    0.01    0.27
+  WS_CDT250            CONDUIT     50.90     0  12:26      1.51    0.01    0.26
+  WS_CDT251            CONDUIT     55.10     0  12:22      2.58    0.01    0.26
+  WS_CDT252            CONDUIT     55.57     0  12:21      1.67    0.01    0.24
+  WS_CDT253            CONDUIT     54.97     0  12:18      2.00    0.01    0.27
+  WS_CDT254            CONDUIT     55.21     0  12:17      1.60    0.01    0.28
+  WS_CDT255            CONDUIT     21.92     0  12:11      2.78    0.00    0.12
+  WS_CDT256            CONDUIT      8.25     0  12:15      5.28    1.35    1.00
+  WS_CDT257            CONDUIT    232.55     0  12:03     15.35    0.01    0.05
+  WS_CDT258            CONDUIT    136.70     0  12:10     10.98    0.01    0.04
+  WS_CDT264            CONDUIT     35.70     0  13:09      4.03    2.37    1.00
+  WS_CDT265            CONDUIT     35.70     0  13:09      4.05    1.30    0.97
+  WS_CDT266            CONDUIT     35.70     0  13:09      4.84    1.56    0.73
+  WS_CDT268            CONDUIT     41.30     0  13:09      6.85    2.51    0.86
+  WS_CDT270            CONDUIT     15.49     0  12:10      6.74    0.61    0.68
+  WS_CDT271            CONDUIT     15.49     0  12:10      5.24    0.51    1.00
+  WS_CDT272            CONDUIT    263.65     0  12:57      3.30    0.05    0.44
+  WS_CDT275            CONDUIT      0.00     0  00:00      0.00    0.00    0.11
+  WS_CDT276            CONDUIT     23.73     0  12:38      1.87    0.01    0.24
+  WS_CDT277            CONDUIT     25.04     0  12:35      1.88    0.01    0.18
+  WS_CDT281            CONDUIT     78.49     0  12:18      1.36    0.01    0.21
+  WS_CDT282            CONDUIT    344.66     0  12:19      1.73    0.01    0.28
+  WS_CDT283            CONDUIT    120.69     0  12:15      2.15    0.01    0.24
+  WS_CDT284            CONDUIT    369.78     0  12:26      2.70    0.08    0.42
+  WS_CDT285            CONDUIT    376.12     0  12:23      3.42    0.08    0.37
+  WS_CDT286            CONDUIT     81.10     0  12:10      1.80    0.00    0.20
+  WS_CDT287            CONDUIT     85.28     0  12:11      5.74    0.00    0.05
+  WS_CDT288            CONDUIT     78.47     0  12:12      2.32    0.01    0.12
+  WS_CDT289            CONDUIT     60.40     0  12:21      1.04    0.01    0.23
+  WS_CDT290            CONDUIT    145.16     0  12:20      1.62    0.02    0.26
+  WS_CDT291            CONDUIT    196.47     0  12:22      2.55    0.07    0.42
+  WS_CDT292            CONDUIT     13.66     0  12:15      0.66    0.00    0.15
+  WS_CDT302            CONDUIT    141.34     0  13:09      2.21    0.02    0.31
+  WS_CDT306            CONDUIT    141.36     0  13:06      2.89    0.02    0.32
+  WS_CDT309            CONDUIT     19.06     0  12:11      1.86    0.00    0.39
+  WS_CDT315            CONDUIT    362.13     0  12:29      1.84    0.08    0.51
+  WS_CDT316            CONDUIT     88.27     0  12:31      2.18    0.03    0.25
+  WS_CDT323            CONDUIT     96.34     0  12:18      2.30    0.01    0.14
+  WS_CDT327            CONDUIT     71.30     0  20:02      7.40    6.90    0.61
+  WS_CDT328            CONDUIT     77.67     0  20:09      7.77    0.30    0.36
+  WS_CDT329            CHANNEL     77.71     0  19:57      0.48    0.05    0.25
+  WS_CDT330            CHANNEL     77.68     0  20:05      1.37    0.00    0.15
+  WS_CDT331            CHANNEL     77.67     0  20:13      1.10    0.00    0.06
+  WS_CDT332            CHANNEL     77.67     0  20:19      1.05    0.00    0.06
+  WS_CDT333            CHANNEL     77.65     0  20:25      0.72    0.00    0.08
+  WS_CDT334            CHANNEL     85.18     0  15:46      0.38    0.00    0.13
+  WS_CDT337            CHANNEL     84.39     0  16:59      0.52    0.00    0.19
+  WS_CDT338            CONDUIT     78.46     0  19:12      9.68   15.78    0.61
+  WS_CDT339            CHANNEL     78.45     0  19:17      0.97    0.00    0.17
+  WS_CDT340            CHANNEL     76.88     0  21:12      0.90    0.00    0.07
+  WS_CDT341            CONDUIT     37.21     0  12:19      6.52    0.59    0.75
+  WS_CDT342            CONDUIT     44.28     0  12:30      9.15    2.62    0.96
+  WS_CDT343            CONDUIT     44.03     0  12:30      9.10    3.64    0.96
+  WS_CDT344            CONDUIT    258.14     0  12:15     14.45    0.01    0.06
+  WS_CDT345            CONDUIT    153.90     0  12:16     10.41    0.01    0.05
+  WS_CDT346            CONDUIT    109.76     0  12:17      5.99    0.01    0.06
+  WS_CDT347            CONDUIT    433.18     0  12:14     17.17    0.02    0.08
+  WS_CDT348            CONDUIT    223.56     0  12:11     10.26    0.01    0.07
+  WS_CDT349            CONDUIT      2.03     0  12:13      0.62    0.00    0.01
+  WS_CDT350            CONDUIT     20.37     0  12:12      2.25    0.00    0.03
+  WS_CDT380            CONDUIT    512.93     0  12:26      7.57    0.12    0.34
+  WS_CDT381            CONDUIT     19.54     0  12:10      2.09    0.00    0.23
+  WS_CDT382            CONDUIT      7.30     0  12:10      4.08    0.00    0.01
+  WS_CDT383            CONDUIT      6.13     0  12:13      3.21    0.00    0.01
+  WS_CDT384            CONDUIT      4.60     0  12:18      2.10    0.00    0.01
+  WS_CDT385            CONDUIT      8.59     0  12:10      1.73    0.00    0.02
+  WS_CDT386            CONDUIT     28.66     0  12:42      2.85    0.01    0.08
+  WS_CDT387            CONDUIT     88.15     0  12:33      1.88    0.01    0.55
+  WS_CDT388            CONDUIT    493.87     0  12:27     12.39    0.03    0.27
+  WS_CDT390            CONDUIT     13.55     0  12:12      1.35    0.00    0.17
+  WS_CDT391            CONDUIT     19.27     0  13:06      3.37    0.00    0.02
+  WS_CDT392            CONDUIT      0.00     0  00:00      0.00    0.00    0.03
+  WS_CDT393            CONDUIT    113.28     0  12:52      3.84    0.01    0.12
+  WS_CDT394            CONDUIT     16.65     0  12:11      4.16    0.00    0.01
+  WS_CDT398            CONDUIT     16.83     0  12:51     10.13    0.95    0.92
+  WS_CDT400            CONDUIT      0.24     0  12:46      0.74    0.03    0.73
+  WS_CDT402            CONDUIT     15.62     0  13:31      9.61    0.86    1.00
+  WS_WEIR100           WEIR       273.20     0  12:30                      0.60
+  WS_WEIR101           WEIR       232.09     0  12:13                      0.15
+  WS_WEIR102           WEIR      1437.57     0  12:04                      1.00
+  WS_WEIR103           WEIR      1064.35     0  12:07                      1.00
+  WS_WEIR104           WEIR       926.50     0  12:08                      1.00
+  WS_WEIR105           WEIR      1140.96     0  12:16                      1.00
+  WS_WEIR106           WEIR       241.87     0  12:09                      0.33
+  WS_WEIR107           WEIR      1010.12     0  12:04                      1.00
+  WS_WEIR108           WEIR         0.00     0  00:00                      0.00
+  WS_WEIR109           WEIR         0.00     0  00:00                      0.00
+  WS_WEIR109A          WEIR        22.35     0  12:41                      0.78
+  WS_WEIR110           WEIR         5.21     0  12:38                      0.01
+  WS_WEIR111           WEIR        39.28     0  12:15                      0.06
+  WS_WEIR112           WEIR         0.00     0  00:00                      0.00
+  WS_WEIR113           WEIR         0.00     0  00:00                      0.00
+  WS_WEIR114           WEIR         0.22     0  12:10                      0.01
+  WS_WEIR115           WEIR         0.18     0  12:13                      0.01
+  WS_WEIR116           WEIR         0.20     0  12:18                      0.01
+  WS_WEIR117           WEIR         1.57     0  12:11                      0.04
+  WS_WEIR118           WEIR         0.00     0  00:00                      0.00
+  WS_WEIR119           WEIR         0.00     0  00:00                      0.00
+  WS_WEIR120           WEIR         0.00     0  00:00                      0.00
+  WS_WEIR121           WEIR         0.00     0  00:00                      0.00
+  WS_WEIR122           WEIR         8.80     0  12:10                      0.15
+  WS_WEIR123           WEIR       154.55     0  12:11                      1.00
+  WS_WEIR124           WEIR        92.00     0  12:08                      1.00
+  WS_WEIR125           WEIR        73.21     0  12:10                      1.00
+  WS_WEIR126           WEIR       117.43     0  12:16                      1.00
+  WS_WEIR127           WEIR       108.14     0  12:12                      0.55
+  WS_WEIR128           WEIR        84.13     0  12:05                      1.00
+  WS_WEIR129           WEIR         1.13     0  12:11                      0.03
+  WS_WEIR130           WEIR        85.11     0  12:07                      1.00
+  WS_WEIR131           WEIR        38.88     0  12:10                      0.61
+  WS_WEIR132           WEIR       224.20     0  12:04                      1.00
+  WS_WEIR133           WEIR       115.84     0  12:06                      1.00
+  WS_WEIR134           WEIR       189.58     0  12:11                      1.00
+  WS_WEIR141           WEIR        17.57     0  12:14                      0.22
+  WS_WEIR142           WEIR         7.95     0  12:15                      0.14
+  WS_WEIR143           WEIR         6.61     0  12:04                      0.11
+  WS_WEIR144           WEIR        19.34     0  12:16                      0.20
+  WS_WEIR145           WEIR        34.82     0  12:10                      0.26
+  WS_WEIR146           WEIR        10.46     0  12:03                      0.16
+  WS_WEIR147           WEIR        11.11     0  12:12                      0.15
+  WS_WEIR148           WEIR        21.38     0  12:10                      0.18
+  WS_WEIR149           WEIR        21.35     0  12:05                      0.22
+  WS_WEIR150           WEIR        12.02     0  12:08                      0.14
+  WS_WEIR151           WEIR        17.91     0  12:02                      0.27
+  WS_WEIR155           WEIR       948.04     0  12:10                      1.00
+  WS_WEIR156           WEIR       378.49     0  12:05                      0.61
+  WS_WEIR157           WEIR      2188.08     0  12:04                      1.00
+  WS_WEIR158           WEIR      1159.50     0  12:06                      1.00
+  WS_WEIR159           WEIR      1937.93     0  12:02                      1.00
+  WS_WEIR166           WEIR        30.80     0  12:10                      0.08
+  WS_WEIR167           WEIR         2.82     0  12:10                      0.05
+  WS_WEIR169           WEIR        65.73     0  13:16                      0.41
+  WS_WEIR170           WEIR        61.76     0  13:09                      0.12
+  WS_WEIR171           WEIR       119.03     0  14:05                      0.35
+  WS_WEIR172           WEIR       162.52     0  13:23                      0.43
+  WS_WEIR173           WEIR        10.19     0  15:32                      0.07
+  WS_WEIR174           WEIR       199.82     0  12:50                      0.49
+  WS_WEIR175           WEIR        41.06     0  13:08                      0.17
+  WS_WEIR176           WEIR       594.65     0  12:23                      0.49
+  WS_WEIR177           WEIR       630.88     0  12:22                      0.51
+  WS_WEIR178           WEIR       245.26     0  12:22                      0.27
+  WS_WEIR179           WEIR       284.08     0  12:22                      0.21
+  WS_WEIR180           WEIR       428.97     0  12:22                      0.28
+  WS_WEIR181           WEIR        83.16     0  12:13                      0.14
+  WS_WEIR182           WEIR        83.91     0  12:58                      0.15
+  WS_WEIR183           WEIR        70.90     0  12:56                      0.13
+  WS_WEIR184           WEIR       113.55     0  12:50                      0.34
+  WS_WEIR185           WEIR       184.83     0  12:50                      0.47
+  WS_WEIR186           WEIR        11.88     0  12:38                      0.04
+  WS_WEIR187           WEIR        10.39     0  12:34                      0.04
+  WS_WEIR188           WEIR        25.50     0  12:27                      0.07
+  WS_WEIR189           WEIR        23.15     0  12:25                      0.06
+  WS_WEIR190           WEIR        31.66     0  12:22                      0.08
+  WS_WEIR191           WEIR        25.18     0  12:20                      0.07
+  WS_WEIR192           WEIR        26.73     0  12:17                      0.07
+  WS_WEIR193           WEIR         0.00     0  00:00                      0.00
+  WS_WEIR194           WEIR         8.60     0  12:15                      0.10
+  WS_WEIR195           WEIR         6.16     0  12:10                      0.08
+  WS_WEIR196           WEIR         6.08     0  12:17                      0.08
+  WS_WEIR197           WEIR         6.81     0  12:11                      0.08
+  WS_WEIR198           WEIR         8.37     0  12:17                      0.09
+  WS_WEIR199           WEIR         8.55     0  12:16                      0.11
+  WS_WEIR200           WEIR        15.51     0  12:11                      0.14
+  WS_WEIR201           WEIR         5.48     0  12:10                      0.02
+  WS_WEIR202           WEIR         0.00     0  00:00                      0.00
+  WS_WEIR203           WEIR         6.39     0  20:02                      0.04
+  WS_WEIR204           WEIR         0.00     0  00:00                      0.00
+  WS_WEIR205           WEIR        45.09     0  16:50                      0.06
+  WS_WEIR206           WEIR        16.83     0  12:50                      0.21
+  WS_WEIR207           WEIR         0.00     0  00:00                      0.00
+  WS_WEIR208           WEIR        15.42     0  13:24                      0.20
+  WS_WEIR209           WEIR         0.00     0  00:00                      0.00
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  WS_CDT100               1.00   0.83  0.14  0.00  0.03  0.00  0.00  0.00  0.74  0.00
+  WS_CDT101               1.00   0.00  0.00  0.00  0.49  0.00  0.00  0.51  0.00  0.00
+  WS_CDT102               6.97   0.00  0.00  0.00  0.00  0.01  0.00  0.99  0.00  0.00
+  WS_CDT103               1.00   0.00  0.00  0.00  0.50  0.04  0.00  0.46  0.48  0.00
+  WS_CDT104               1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  WS_CDT105               2.78   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  WS_CDT106               1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  WS_CDT109               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  WS_CDT110               1.00   0.00  0.00  0.00  0.30  0.00  0.00  0.70  0.00  0.00
+  WS_CDT111               1.00   0.00  0.00  0.00  0.56  0.00  0.00  0.43  0.08  0.00
+  WS_CDT113               1.67   0.00  0.00  0.00  0.47  0.53  0.00  0.00  0.08  0.00
+  WS_CDT114               1.33   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  WS_CDT115               1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  WS_CDT116               7.71   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  WS_CDT117               1.00   0.00  0.00  0.00  0.91  0.00  0.00  0.08  0.91  0.00
+  WS_CDT118               1.42   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.07  0.00
+  WS_CDT125               1.25   0.00  0.00  0.00  0.36  0.64  0.00  0.00  1.00  0.00
+  WS_CDT126               2.49   0.00  0.00  0.00  0.00  0.01  0.00  0.99  0.00  0.00
+  WS_CDT127               2.92   0.00  0.00  0.00  0.01  0.99  0.00  0.00  0.00  0.00
+  WS_CDT128              12.26   0.01  0.00  0.00  0.39  0.60  0.00  0.00  0.97  0.00
+  WS_CDT129               3.61   0.02  0.00  0.00  0.40  0.59  0.00  0.00  0.89  0.00
+  WS_CDT130               1.84   0.00  0.01  0.00  0.32  0.66  0.00  0.00  0.33  0.00
+  WS_CDT131               1.70   0.00  0.00  0.00  0.03  0.00  0.00  0.97  0.00  0.00
+  WS_CDT132               2.76   0.01  0.00  0.00  0.02  0.97  0.00  0.00  0.00  0.00
+  WS_CDT133               1.27   0.12  0.00  0.00  0.01  0.00  0.00  0.87  0.00  0.00
+  WS_CDT134               1.40   0.12  0.00  0.00  0.03  0.85  0.00  0.00  0.00  0.00
+  WS_CDT135               2.49   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  WS_CDT136               3.15   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  WS_CDT137               3.15   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  WS_CDT138               2.63   0.08  0.00  0.00  0.01  0.91  0.00  0.00  0.00  0.00
+  WS_CDT139               1.22   0.10  0.05  0.00  0.19  0.13  0.00  0.53  0.18  0.00
+  WS_CDT140               4.07   0.15  0.00  0.00  0.19  0.66  0.00  0.00  0.33  0.00
+  WS_CDT141               1.00   0.01  0.00  0.00  0.09  0.00  0.00  0.90  0.00  0.00
+  WS_CDT144               1.00   0.01  0.00  0.00  0.46  0.19  0.00  0.35  0.59  0.00
+  WS_CDT145               3.04   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  WS_CDT146               7.29   0.02  0.00  0.00  0.02  0.96  0.00  0.00  0.00  0.00
+  WS_CDT147               3.36   0.01  0.00  0.00  0.01  0.98  0.00  0.00  0.00  0.00
+  WS_CDT148               8.63   0.00  0.00  0.00  0.00  0.99  0.00  0.00  0.00  0.00
+  WS_CDT149               3.67   0.02  0.00  0.00  0.01  0.97  0.00  0.00  0.00  0.00
+  WS_CDT150               3.23   0.00  0.00  0.00  0.00  0.99  0.00  0.00  0.00  0.00
+  WS_CDT151               3.67   0.00  0.00  0.00  0.11  0.88  0.00  0.00  0.47  0.00
+  WS_CDT152               1.10   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  WS_CDT153               1.27   0.00  0.00  0.00  0.84  0.16  0.00  0.00  0.99  0.00
+  WS_CDT154               1.31   0.00  0.03  0.00  0.97  0.00  0.00  0.00  0.99  0.00
+  WS_CDT156               1.31   0.01  0.00  0.00  0.07  0.00  0.00  0.92  0.06  0.00
+  WS_CDT157               3.19   0.26  0.00  0.00  0.74  0.00  0.00  0.00  0.00  0.00
+  WS_CDT159               6.98   0.05  0.03  0.00  0.12  0.79  0.00  0.00  0.28  0.00
+  WS_CDT160               6.83   0.03  0.00  0.00  0.00  0.58  0.00  0.39  0.00  0.00
+  WS_CDT161               1.92   0.03  0.83  0.00  0.06  0.07  0.00  0.00  0.67  0.00
+  WS_CDT162               1.67   0.02  0.00  0.00  0.00  0.00  0.00  0.98  0.00  0.00
+  WS_CDT163               2.14   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  WS_CDT164               2.15   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  WS_CDT165               2.62   0.00  0.00  0.00  0.18  0.82  0.00  0.00  0.43  0.00
+  WS_CDT166               1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  WS_CDT169               3.21   0.33  0.00  0.00  0.00  0.00  0.00  0.67  0.00  0.00
+  WS_CDT170               7.85   0.08  0.00  0.00  0.34  0.33  0.00  0.24  0.45  0.00
+  WS_CDT171               2.26   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  WS_CDT175               4.36   0.16  0.00  0.00  0.84  0.00  0.00  0.00  0.00  0.00
+  WS_CDT177               3.13   0.15  0.00  0.00  0.85  0.00  0.00  0.00  0.00  0.00
+  WS_CDT178               2.80   0.27  0.00  0.00  0.00  0.00  0.00  0.73  0.00  0.00
+  WS_CDT179               1.17   0.00  0.00  0.00  0.12  0.88  0.00  0.00  0.00  0.00
+  WS_CDT180               1.04   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  WS_CDT181               8.06   0.00  0.00  0.00  0.00  0.99  0.00  0.00  0.00  0.00
+  WS_CDT182               8.31   0.00  0.00  0.00  0.97  0.02  0.00  0.00  0.93  0.00
+  WS_CDT183               3.72   0.00  0.00  0.00  0.37  0.62  0.00  0.00  0.27  0.00
+  WS_CDT184               1.46   0.00  0.00  0.00  0.29  0.71  0.00  0.00  0.95  0.00
+  WS_CDT185               1.14   0.00  0.00  0.00  0.00  0.99  0.00  0.00  0.00  0.00
+  WS_CDT186               7.73   0.00  0.03  0.00  0.92  0.05  0.00  0.00  0.91  0.00
+  WS_CDT187               7.89   0.06  0.00  0.00  0.80  0.14  0.00  0.00  0.00  0.00
+  WS_CDT188               2.32   0.06  0.00  0.00  0.01  0.93  0.00  0.00  0.00  0.00
+  WS_CDT189              26.74   0.00  0.00  0.00  0.39  0.61  0.00  0.00  0.14  0.00
+  WS_CDT190               8.27   0.01  0.00  0.00  0.01  0.98  0.00  0.00  0.00  0.00
+  WS_CDT191               9.37   0.01  0.00  0.00  0.01  0.98  0.00  0.00  0.00  0.00
+  WS_CDT192               3.15   0.00  0.00  0.00  0.10  0.90  0.00  0.00  0.00  0.00
+  WS_CDT193               3.06   0.00  0.00  0.00  0.11  0.89  0.00  0.00  0.00  0.00
+  WS_CDT194               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00
+  WS_CDT196               1.00   0.01  0.00  0.00  0.00  0.00  0.00  0.99  0.00  0.00
+  WS_CDT197               5.57   0.00  0.20  0.00  0.79  0.00  0.00  0.00  0.99  0.00
+  WS_CDT198               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.99  0.00
+  WS_CDT199               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.91  0.00
+  WS_CDT200               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.91  0.00
+  WS_CDT201               1.00   0.00  0.01  0.00  0.99  0.00  0.00  0.00  0.86  0.00
+  WS_CDT204               1.00   0.03  0.00  0.00  0.73  0.00  0.00  0.24  0.73  0.00
+  WS_CDT208               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00
+  WS_CDT209               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.99  0.00
+  WS_CDT210               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.07  0.00
+  WS_CDT211               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.08  0.00
+  WS_CDT212               1.43   0.00  0.00  0.00  0.51  0.49  0.00  0.00  0.94  0.00
+  WS_CDT213               1.00   0.00  0.00  0.00  0.95  0.04  0.00  0.00  1.00  0.00
+  WS_CDT214               1.48   0.00  0.04  0.00  0.49  0.47  0.00  0.00  0.96  0.00
+  WS_CDT215               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.99  0.00
+  WS_CDT216               1.19   0.00  0.01  0.00  0.99  0.00  0.00  0.00  1.00  0.00
+  WS_CDT217               1.00   0.00  0.11  0.00  0.89  0.00  0.00  0.00  0.99  0.00
+  WS_CDT218               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.99  0.00
+  WS_CDT219               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.09  0.00
+  WS_CDT222               1.00   0.01  0.27  0.00  0.72  0.00  0.00  0.00  0.98  0.00
+  WS_CDT223               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.98  0.00
+  WS_CDT224               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.98  0.00
+  WS_CDT225               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.39  0.00
+  WS_CDT226               2.82   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.61  0.00
+  WS_CDT227               1.00   0.00  0.02  0.00  0.98  0.00  0.00  0.00  0.98  0.00
+  WS_CDT228               2.01   0.12  0.00  0.00  0.88  0.00  0.00  0.00  0.81  0.00
+  WS_CDT230               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.98  0.00
+  WS_CDT231               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.25  0.00
+  WS_CDT233               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.47  0.00
+  WS_CDT234               1.00   0.00  0.06  0.00  0.89  0.05  0.00  0.00  0.95  0.00
+  WS_CDT235               1.96   0.02  0.00  0.00  0.23  0.00  0.00  0.75  0.22  0.00
+  WS_CDT236               1.00   0.00  0.00  0.00  0.95  0.05  0.00  0.00  0.94  0.00
+  WS_CDT237               1.00   0.00  0.00  0.00  0.99  0.00  0.00  0.00  0.97  0.00
+  WS_CDT241               1.00   0.00  0.10  0.00  0.90  0.00  0.00  0.00  0.86  0.00
+  WS_CDT242              10.63   0.10  0.00  0.00  0.90  0.00  0.00  0.01  0.90  0.00
+  WS_CDT243               1.77   0.09  0.00  0.00  0.86  0.04  0.00  0.00  0.00  0.00
+  WS_CDT246               1.00   0.08  0.00  0.00  0.92  0.00  0.00  0.00  0.00  0.00
+  WS_CDT247               2.17   0.00  0.03  0.00  0.96  0.00  0.00  0.00  0.96  0.00
+  WS_CDT248               2.26   0.02  0.00  0.00  0.98  0.00  0.00  0.00  0.96  0.00
+  WS_CDT249               2.40   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.97  0.00
+  WS_CDT250               2.28   0.00  0.03  0.00  0.97  0.00  0.00  0.00  0.97  0.00
+  WS_CDT251               2.34   0.02  0.00  0.00  0.98  0.00  0.00  0.00  0.96  0.00
+  WS_CDT252               2.31   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.97  0.00
+  WS_CDT253               2.54   0.00  0.02  0.00  0.98  0.00  0.00  0.00  0.98  0.00
+  WS_CDT254               2.45   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.97  0.00
+  WS_CDT255               2.52   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.99  0.00
+  WS_CDT256               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.99  0.00
+  WS_CDT257               1.49   0.00  0.00  0.00  0.49  0.50  0.00  0.00  0.92  0.00
+  WS_CDT258               1.48   0.00  0.04  0.00  0.46  0.50  0.00  0.00  0.94  0.00
+  WS_CDT264               2.18   0.33  0.01  0.00  0.66  0.00  0.00  0.00  0.09  0.00
+  WS_CDT265               2.78   0.34  0.02  0.00  0.65  0.00  0.00  0.00  0.10  0.00
+  WS_CDT266               2.31   0.35  0.01  0.00  0.00  0.00  0.63  0.00  0.00  0.00
+  WS_CDT268               1.00   0.05  0.04  0.00  0.02  0.00  0.89  0.00  0.00  0.00
+  WS_CDT270              14.13   0.00  0.02  0.00  0.97  0.00  0.00  0.00  0.00  0.00
+  WS_CDT271               5.05   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.99  0.00
+  WS_CDT272               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.68  0.00
+  WS_CDT275               2.69   0.01  0.99  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  WS_CDT276               4.29   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.87  0.00
+  WS_CDT277               1.14   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.14  0.00
+  WS_CDT281               1.05   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.96  0.00
+  WS_CDT282               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.94  0.00
+  WS_CDT283               1.00   0.00  0.01  0.00  0.99  0.00  0.00  0.00  0.99  0.00
+  WS_CDT284               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.93  0.00
+  WS_CDT285               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.91  0.00
+  WS_CDT286               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.97  0.00
+  WS_CDT287               1.00   0.00  0.00  0.00  0.98  0.01  0.00  0.00  0.96  0.00
+  WS_CDT288               1.00   0.00  0.00  0.00  0.99  0.00  0.00  0.00  0.99  0.00
+  WS_CDT289               1.22   0.00  0.02  0.00  0.98  0.00  0.00  0.00  0.98  0.00
+  WS_CDT290               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00
+  WS_CDT291               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00
+  WS_CDT292               1.00   0.00  0.01  0.00  0.99  0.00  0.00  0.00  0.99  0.00
+  WS_CDT302               1.03   0.05  0.00  0.00  0.95  0.00  0.00  0.00  0.92  0.00
+  WS_CDT306               1.00   0.03  0.00  0.00  0.97  0.00  0.00  0.00  0.92  0.00
+  WS_CDT309               1.00   0.02  0.00  0.00  0.98  0.00  0.00  0.00  0.95  0.00
+  WS_CDT315               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.84  0.00
+  WS_CDT316               1.00   0.08  0.00  0.00  0.92  0.00  0.00  0.00  0.91  0.00
+  WS_CDT323               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.95  0.00
+  WS_CDT327               4.44   0.08  0.00  0.00  0.92  0.00  0.00  0.00  0.00  0.00
+  WS_CDT328               2.02   0.16  0.00  0.00  0.06  0.78  0.00  0.00  0.03  0.00
+  WS_CDT329               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  WS_CDT330               3.82   0.13  0.00  0.00  0.87  0.00  0.00  0.00  0.33  0.00
+  WS_CDT331               1.00   0.13  0.05  0.00  0.82  0.00  0.00  0.00  0.75  0.00
+  WS_CDT332               1.00   0.13  0.00  0.00  0.86  0.00  0.00  0.00  0.00  0.00
+  WS_CDT333               1.00   0.00  0.23  0.00  0.76  0.00  0.00  0.00  0.76  0.00
+  WS_CDT334               1.00   0.00  0.03  0.00  0.96  0.00  0.00  0.00  0.96  0.00
+  WS_CDT337               1.00   0.00  0.06  0.00  0.94  0.00  0.00  0.00  0.94  0.00
+  WS_CDT338               1.63   0.00  0.00  0.00  0.19  0.81  0.00  0.00  0.00  0.00
+  WS_CDT339               1.00   0.00  0.05  0.00  0.95  0.00  0.00  0.00  0.91  0.00
+  WS_CDT340               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  WS_CDT341               3.81   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  WS_CDT342               4.77   0.02  0.06  0.00  0.92  0.00  0.00  0.00  0.00  0.00
+  WS_CDT343               4.24   0.07  0.01  0.00  0.92  0.00  0.00  0.00  0.00  0.00
+  WS_CDT344               3.06   0.00  0.00  0.00  0.47  0.52  0.00  0.00  0.86  0.00
+  WS_CDT345               2.32   0.00  0.00  0.00  0.49  0.51  0.00  0.00  0.89  0.00
+  WS_CDT346               1.00   0.00  0.02  0.00  0.95  0.03  0.00  0.00  0.98  0.00
+  WS_CDT347               3.07   0.00  0.00  0.00  0.76  0.24  0.00  0.00  0.97  0.00
+  WS_CDT348               1.00   0.00  0.00  0.00  0.73  0.27  0.00  0.00  0.94  0.00
+  WS_CDT349               1.00   0.00  0.38  0.00  0.62  0.00  0.00  0.00  0.75  0.00
+  WS_CDT350               1.00   0.00  0.00  0.00  0.01  0.00  0.00  0.99  0.01  0.00
+  WS_CDT380               1.00   0.12  0.00  0.00  0.88  0.00  0.00  0.00  0.00  0.00
+  WS_CDT381               1.00   0.00  0.00  0.00  0.99  0.00  0.00  0.00  0.98  0.00
+  WS_CDT382               7.35   0.00  0.16  0.00  0.28  0.56  0.00  0.00  0.87  0.00
+  WS_CDT383               5.37   0.00  0.00  0.00  0.51  0.49  0.00  0.00  0.90  0.00
+  WS_CDT384               3.82   0.03  0.00  0.00  0.00  0.00  0.00  0.97  0.00  0.00
+  WS_CDT385               2.13   0.00  0.00  0.00  0.36  0.00  0.00  0.64  0.00  0.00
+  WS_CDT386               2.37   0.06  0.00  0.00  0.94  0.00  0.00  0.00  0.00  0.00
+  WS_CDT387               1.52   0.08  0.00  0.00  0.91  0.00  0.00  0.00  0.90  0.00
+  WS_CDT388               5.78   0.13  0.00  0.00  0.74  0.00  0.00  0.14  0.74  0.00
+  WS_CDT390               1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.95  0.00
+  WS_CDT391               1.00   0.99  0.00  0.00  0.00  0.00  0.00  0.01  0.72  0.00
+  WS_CDT392               1.08   0.00  1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  WS_CDT393               1.00   0.00  0.00  0.00  0.03  0.00  0.00  0.97  0.03  0.00
+  WS_CDT394               1.42   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  WS_CDT398               2.59   0.26  0.00  0.00  0.52  0.20  0.00  0.02  0.68  0.00
+  WS_CDT400               3.19   0.94  0.01  0.00  0.06  0.00  0.00  0.00  0.69  0.00
+  WS_CDT402               2.88   0.26  0.00  0.00  0.02  0.08  0.00  0.65  0.02  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  WS_CDT100                   0.18      0.18      0.24      0.01         0.01
+  WS_CDT101                   0.24      0.25      0.24      0.27         0.24
+  WS_CDT103                   0.01      0.01      0.24      0.01         0.01
+  WS_CDT104                   0.01      0.26      0.01      0.28         0.01
+  WS_CDT105                   0.01      0.08      0.01      0.06         0.01
+  WS_CDT109                   0.01      0.15      0.01      0.24         0.01
+  WS_CDT110                   0.12      0.24      0.12      0.38         0.12
+  WS_CDT111                   0.22      0.25      0.22      0.33         0.22
+  WS_CDT113                   0.01      0.11      0.01      0.01         0.01
+  WS_CDT114                   0.01      0.51      0.01      0.31         0.01
+  WS_CDT117                   0.01      0.01     36.28      0.01         0.01
+  WS_CDT118                  36.48     36.48     39.46      0.01         0.01
+  WS_CDT127                   0.01      2.52      0.01      0.01         0.01
+  WS_CDT128                   0.01      0.01      0.52      0.01         0.01
+  WS_CDT129                   0.55      0.55      0.59      0.01         0.01
+  WS_CDT130                   0.01      0.62      0.01      0.01         0.01
+  WS_CDT131                  21.31     30.07     21.31     26.36        21.31
+  WS_CDT132                   0.23      1.42      0.23      0.38         0.23
+  WS_CDT133                   0.81      2.94      0.81      3.03         0.81
+  WS_CDT134                   1.04      3.02      1.04      2.49         1.04
+  WS_CDT135                  11.24     11.35     11.24      7.90         3.75
+  WS_CDT136                   0.01      0.83      0.01      0.01         0.01
+  WS_CDT137                   0.01      0.83      0.01      0.01         0.01
+  WS_CDT138                   0.01      1.63      0.01      0.01         0.01
+  WS_CDT139                   4.75      8.79      5.34      6.48         4.16
+  WS_CDT140                   8.64      8.64      8.79      5.30         8.44
+  WS_CDT141                   1.95      1.95      2.01      1.53         1.56
+  WS_CDT144                   0.01      0.01      1.84      0.01         0.01
+  WS_CDT146                   0.01      1.80      0.01      0.01         0.01
+  WS_CDT147                   0.01      1.33      0.01      0.01         0.01
+  WS_CDT148                   0.01      1.57      0.01      0.01         0.01
+  WS_CDT149                   0.01      1.09      0.01      0.01         0.01
+  WS_CDT150                   0.01      0.99      0.01      0.01         0.01
+  WS_CDT154                   0.04      0.04     44.11      0.01         0.01
+  WS_CDT156                   0.01      1.41      0.01      0.23         0.01
+  WS_CDT157                  35.46     35.46     35.50      0.01         0.01
+  WS_CDT159                   0.01      1.42      0.01      0.91         0.01
+  WS_CDT160                   0.01      1.44      0.01      1.15         0.01
+  WS_CDT161                   0.01      1.44      0.01      1.30         0.01
+  WS_CDT162                   0.74      1.54      0.74      1.56         0.74
+  WS_CDT163                   0.01      1.43      0.01      1.08         0.01
+  WS_CDT164                   0.01      1.43      0.01      1.08         0.01
+  WS_CDT175                  38.10     38.10     39.41      0.01         2.05
+  WS_CDT177                  38.45     38.45     40.70      0.01         0.90
+  WS_CDT178                   6.73     15.85      6.73     10.34         6.73
+  WS_CDT179                   0.01      9.44      0.01     31.61         0.01
+  WS_CDT185                   0.01      0.39      0.01      0.01         0.01
+  WS_CDT186                   0.71      0.71      3.58      0.01         0.01
+  WS_CDT187                   3.64      5.25      3.64      5.01         3.64
+  WS_CDT188                   0.01      0.58      0.01      0.01         0.01
+  WS_CDT190                   0.01      1.30      0.01      0.01         0.01
+  WS_CDT191                   0.01      1.04      0.01      0.01         0.01
+  WS_CDT192                   0.01     16.74      0.01     13.56         0.01
+  WS_CDT193                   0.01     16.74      0.01     13.81         0.01
+  WS_CDT208                   0.03      0.03     44.60      0.01         0.01
+  WS_CDT209                   0.07      0.07     44.81      0.01         0.01
+  WS_CDT210                   0.64      0.64     44.34      0.08         0.05
+  WS_CDT211                   0.11      0.11     44.03      0.08         0.06
+  WS_CDT215                   0.14      0.14     45.28      0.03         0.03
+  WS_CDT216                   0.01      0.01     43.61      0.01         0.01
+  WS_CDT217                   0.08      0.08     44.02      0.06         0.06
+  WS_CDT218                   0.17      0.17     44.29      0.01         0.01
+  WS_CDT219                  43.20     43.20     44.51      0.05         0.04
+  WS_CDT227                   0.01      0.01      0.33      0.01         0.01
+  WS_CDT256                   0.16      0.16     44.60      0.13         0.11
+  WS_CDT264                   0.40      0.40      1.22      1.66         0.01
+  WS_CDT265                   0.01      0.01      0.40      1.25         0.01
+  WS_CDT266                   0.01      0.01      0.01      1.41         0.01
+  WS_CDT268                   0.01      0.01      2.03      3.15         0.01
+  WS_CDT270                   0.01      0.01      0.26      0.01         0.01
+  WS_CDT271                   0.18      0.18      0.26      0.01         0.01
+  WS_CDT327                   0.01      0.01      0.01     28.16         0.01
+  WS_CDT338                   0.01      0.01      0.01     34.20         0.01
+  WS_CDT342                   0.01      0.01      2.55      2.60         0.01
+  WS_CDT343                   0.01      0.01      2.41      3.40         0.01
+  WS_CDT387                   0.01      0.01      0.61      0.01         0.01
+  WS_CDT398                   0.01      1.16     25.95      0.01         0.01
+  WS_CDT402                   0.94      1.61      1.38      0.01         0.68
+  
+
+  Analysis begun on:  Tue Aug  5 12:42:15 2025
+  Analysis ended on:  Tue Aug  5 12:42:35 2025
+  Total elapsed time: 00:00:20

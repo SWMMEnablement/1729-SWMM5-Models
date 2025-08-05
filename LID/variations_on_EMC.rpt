@@ -1,0 +1,427 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+   Example 5 
+   A simple groundwater example. 
+  WARNING 04: minimum elevation drop used for Conduit 1
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 1
+  Number of subcatchments ... 12
+  Number of nodes ........... 2
+  Number of links ........... 1
+  Number of pollutants ...... 1
+  Number of land uses ....... 1
+  
+  
+  *****************
+  Pollutant Summary
+  *****************
+                               Ppt.      GW         Kdecay
+  Name                 Units   Concen.   Concen.    1/days    CoPollutant
+  -----------------------------------------------------------------------
+  TSS                   MG/L      0.00      0.00      0.00
+  
+  
+  ***************
+  Landuse Summary
+  ***************
+                         Sweeping   Maximum      Last
+  Name                   Interval   Removal     Swept
+  ---------------------------------------------------
+  Urban                      0.00      0.00      0.00
+  
+  
+  ****************
+  Raingage Summary
+  ****************
+                                                      Data       Recording
+  Name                 Data Source                    Type       Interval 
+  ------------------------------------------------------------------------
+  1                    Rainfall                       INTENSITY   15 min.
+  
+  
+  ********************
+  Subcatchment Summary
+  ********************
+  Name                       Area     Width   %Imperv    %Slope Rain Gage            Outlet              
+  -----------------------------------------------------------------------------------------------------------
+  wRG_O_100                  5.00    100.00     50.00    1.0000 1                    2                   
+  woRG_O_100                 5.00    100.00     50.00    1.0000 1                    2                   
+  wRG_P_50_50                5.00    100.00     50.00    1.0000 1                    2                   
+  wRG_P_25_50                5.00    100.00     50.00    1.0000 1                    2                   
+  wRG_P_50_100               5.00    100.00     50.00    1.0000 1                    2                   
+  wRG_P_100_50               5.00    100.00     50.00    1.0000 1                    2                   
+  wRG_P_100_WQ               5.00    100.00     50.00    1.0000 1                    2                   
+  wRG_O_100_WQ               5.00    100.00     50.00    1.0000 1                    2                   
+  wRG_P_100_100              5.00    100.00     50.00    1.0000 1                    2                   
+  wRG_P_25_100               5.00    100.00     50.00    1.0000 1                    2                   
+  wRG_P_25_WQ                5.00    100.00     50.00    1.0000 1                    2                   
+  wRG_P_50_WQ                5.00    100.00     50.00    1.0000 1                    2                   
+
+
+  *******************
+  LID Control Summary
+  *******************
+                                   No. of        Unit        Unit      % Area    % Imperv      % Perv
+  Subcatchment     LID Control      Units        Area       Width     Covered     Treated     Treated
+  ---------------------------------------------------------------------------------------------------
+  wRG_O_100        RG                 100       50.00       10.00        2.30       50.00        0.00
+  wRG_P_50_50      RG                 100       50.00       10.00        2.30       50.00        0.00
+  wRG_P_25_50      RG                 100       50.00       10.00        2.30       50.00        0.00
+  wRG_P_50_100     RG                 100       50.00       10.00        2.30      100.00        0.00
+  wRG_P_100_50     RG                 100       50.00       10.00        2.30       50.00        0.00
+  wRG_P_100_50     RG                 100       50.00       10.00        2.30       50.00        0.00
+  wRG_P_100_WQ     RG_WQ              100       50.00       10.00        2.30       50.00        0.00
+  wRG_O_100_WQ     RG_WQ              100       50.00       10.00        2.30       50.00        0.00
+  wRG_P_100_100    RG                 100       50.00       10.00        2.30      100.00        0.00
+  wRG_P_25_100     RG                 100       50.00       10.00        2.30      100.00        0.00
+  wRG_P_25_WQ      RG_WQ              100       50.00       10.00        2.30       50.00        0.00
+  wRG_P_50_WQ      RG_WQ              100       50.00       10.00        2.30       50.00        0.00
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  2                    JUNCTION              0.00      1.00       0.0
+  3                    OUTFALL               0.00      1.00       0.0
+  
+  
+  ************
+  Link Summary
+  ************
+  Name             From Node        To Node          Type            Length    %Slope Roughness
+  ---------------------------------------------------------------------------------------------
+  1                2                3                CONDUIT          400.0    0.0003    0.0100
+  
+  
+  *********************
+  Cross Section Summary
+  *********************
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  1                CIRCULAR             1.00     0.79     0.25     1.00        1     0.07
+  
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... YES
+  Infiltration Method ...... HORTON
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 09/13/2014 00:00:00
+  Ending Date .............. 09/15/2014 00:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:15:00
+  Wet Time Step ............ 00:05:00
+  Dry Time Step ............ 00:05:00
+  Routing Time Step ........ 30.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  *********************
+  Control Actions Taken
+  *********************
+
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Initial LID Storage ......         0.138         0.028
+  Total Precipitation ......         9.999         2.000
+  Evaporation Loss .........         0.000         0.000
+  Infiltration Loss ........         3.823         0.765
+  Surface Runoff ...........         5.930         1.186
+  Final Storage ............         0.386         0.077
+  Continuity Error (%) .....        -0.029
+  
+  
+  **************************           TSS
+  Runoff Quality Continuity            lbs
+  **************************    ----------
+  Initial Buildup ..........         0.000
+  Surface Buildup ..........      1799.776
+  Wet Deposition ...........         0.000
+  Sweeping Removal .........         0.000
+  Infiltration Loss ........         0.000
+  BMP Removal ..............       232.079
+  Surface Runoff ...........      1566.779
+  Remaining Buildup ........         0.000
+  Continuity Error (%) .....         0.051
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         5.930         1.932
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         0.779         0.254
+  Flooding Loss ............         5.151         1.678
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.000         0.000
+  Continuity Error (%) .....         0.000
+  
+  
+  **************************           TSS
+  Quality Routing Continuity           lbs
+  **************************    ----------
+  Dry Weather Inflow .......         0.000
+  Wet Weather Inflow .......      1566.779
+  Groundwater Inflow .......         0.000
+  RDII Inflow ..............         0.000
+  External Inflow ..........         0.000
+  External Outflow .........       204.260
+  Flooding Loss ............      1362.587
+  Exfiltration Loss ........         0.000
+  Mass Reacted .............         0.000
+  Initial Stored Mass ......         0.000
+  Final Stored Mass ........         0.000
+  Continuity Error (%) .....        -0.004
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  None
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Convergence obtained at all time steps.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :    29.50 sec
+  Average Time Step           :    29.99 sec
+  Maximum Time Step           :    30.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     2.00
+  % of Steps Not Converging   :     0.00
+  Time Step Frequencies       :
+     30.000 - 13.228 sec      :   100.00 %
+     13.228 -  5.833 sec      :     0.00 %
+      5.833 -  2.572 sec      :     0.00 %
+      2.572 -  1.134 sec      :     0.00 %
+      1.134 -  0.500 sec      :     0.00 %
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in         in         in    10^6 gal      CFS
+  ------------------------------------------------------------------------------------------------------------------------------
+  wRG_O_100                  2.00       0.00       0.00       0.85       0.96       0.61       1.09        0.15     1.65   0.546
+  woRG_O_100                 2.00       0.00       0.00       0.64       0.98       0.36       1.34        0.18     1.86   0.672
+  wRG_P_50_50                2.00       0.00       0.00       0.86       0.96       0.84       1.08        0.15     1.67   0.541
+  wRG_P_25_50                2.00       0.00       0.00       0.86       0.96       0.72       1.08        0.15     1.69   0.542
+  wRG_P_50_100               2.00       0.00       0.00       0.71       0.96       1.25       1.25        0.17     2.06   0.625
+  wRG_P_100_50               2.00       0.00       0.00       0.71       0.94       1.22       1.22        0.17     2.02   0.611
+  wRG_P_100_WQ               2.00       0.00       0.00       0.71       0.96       1.25       1.25        0.17     2.06   0.625
+  wRG_O_100_WQ               2.00       0.00       0.00       0.71       0.96       1.25       1.25        0.17     2.06   0.625
+  wRG_P_100_100              2.00       0.00       0.00       0.71       0.96       1.25       1.25        0.17     2.06   0.625
+  wRG_P_25_100               2.00       0.00       0.00       0.71       0.96       1.25       1.25        0.17     2.06   0.625
+  wRG_P_25_WQ                2.00       0.00       0.00       0.86       0.96       0.72       1.08        0.15     1.69   0.542
+  wRG_P_50_WQ                2.00       0.00       0.00       0.86       0.96       0.84       1.08        0.15     1.67   0.541
+  
+
+  ***********************
+  LID Performance Summary
+  ***********************
+
+  --------------------------------------------------------------------------------------------------------------------
+                                         Total      Evap     Infil   Surface    Drain    Initial     Final  Continuity
+                                        Inflow      Loss      Loss   Outflow   Outflow   Storage   Storage       Error
+  Subcatchment      LID Control             in        in        in        in        in        in        in           %
+  --------------------------------------------------------------------------------------------------------------------
+  wRG_O_100         RG                   22.88      0.00      9.24     12.05      0.00      1.20      2.81       -0.05
+  wRG_P_50_50       RG                   12.44      0.00      8.66      2.21      0.00      1.20      2.78       -0.05
+  wRG_P_25_50       RG                   17.66      0.00      9.05      7.02      0.00      1.20      2.80       -0.02
+  wRG_P_50_100      RG                    2.00      0.00      0.80      0.00      0.00      1.20      2.40       -0.00
+  wRG_P_100_50      RG                    2.00      0.00      0.80      0.00      0.00      1.20      2.40       -0.00
+  wRG_P_100_50      RG                    2.00      0.00      0.80      0.00      0.00      1.20      2.40       -0.00
+  wRG_P_100_WQ      RG_WQ                 2.00      0.00      0.80      0.00      0.00      1.20      2.40       -0.00
+  wRG_O_100_WQ      RG_WQ                 2.00      0.00      0.80      0.00      0.00      1.20      2.40       -0.00
+  wRG_P_100_100     RG                    2.00      0.00      0.80      0.00      0.00      1.20      2.40       -0.00
+  wRG_P_25_100      RG                    2.00      0.00      0.80      0.00      0.00      1.20      2.40       -0.00
+  wRG_P_25_WQ       RG_WQ                17.66      0.00      9.05      7.02      0.00      1.20      2.80       -0.02
+  wRG_P_50_WQ       RG_WQ                12.44      0.00      8.66      2.21      0.00      1.20      2.78       -0.05
+  
+  ****************************
+  Subcatchment Washoff Summary
+  ****************************
+  
+  ----------------------------------
+                                 TSS
+  Subcatchment                   lbs
+  ----------------------------------
+  wRG_O_100                  120.189
+  woRG_O_100                 151.897
+  wRG_P_50_50                118.824
+  wRG_P_25_50                119.176
+  wRG_P_50_100               137.527
+  wRG_P_100_50               131.056
+  wRG_P_100_WQ               137.527
+  wRG_O_100_WQ               137.527
+  wRG_P_100_100              137.527
+  wRG_P_25_100               137.527
+  wRG_P_25_WQ                119.176
+  wRG_P_50_WQ                118.824
+  ----------------------------------
+  System                    1566.779
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  2                    JUNCTION     0.19     1.00     1.00     0  01:08        1.00
+  3                    OUTFALL      0.08     0.49     0.49     0  01:08        0.49
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  2                    JUNCTION     22.37    22.37     0  03:30        1.93        1.93      -0.000
+  3                    OUTFALL       0.00     1.35     0  01:08           0       0.254       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  Surcharging occurs when water rises above the top of the highest conduit.
+  ---------------------------------------------------------------------
+                                               Max. Height   Min. Depth
+                                   Hours       Above Crown    Below Rim
+  Node                 Type      Surcharged           Feet         Feet
+  ---------------------------------------------------------------------
+  2                    JUNCTION        6.15          0.000        0.000
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  Flooding refers to all water that overflows a node, whether it ponds or not.
+  --------------------------------------------------------------------------
+                                                             Total   Maximum
+                                 Maximum   Time of Max       Flood    Ponded
+                        Hours       Rate    Occurrence      Volume     Depth
+  Node                 Flooded       CFS   days hr:min    10^6 gal      Feet
+  --------------------------------------------------------------------------
+  2                       6.15     21.01      0  03:30       1.678     0.000
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -------------------------------------------------------------------------
+                         Flow       Avg       Max       Total         Total
+                         Freq      Flow      Flow      Volume           TSS
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal           lbs
+  -------------------------------------------------------------------------
+  3                     38.17      0.51      1.35       0.254       204.260
+  -------------------------------------------------------------------------
+  System                38.17      0.51      1.35       0.254       204.260
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  1                    CONDUIT      1.35     0  01:08      2.15   18.48    0.75
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  1                       1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  1                           0.01      6.15      0.01      8.03         0.01
+  
+  
+  ***************************
+  Link Pollutant Load Summary
+  ***************************
+  
+  ----------------------------------
+                                 TSS
+  Link                           lbs
+  ----------------------------------
+  1                          204.260
+  
+
+  Analysis begun on:  Tue Aug  5 11:09:45 2025
+  Analysis ended on:  Tue Aug  5 11:09:45 2025
+  Total elapsed time: < 1 sec

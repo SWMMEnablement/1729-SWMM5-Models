@@ -1,0 +1,115 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+   SW 1 9 8 
+  WARNING 09: time series interval greater than recording interval for Rain Gage GAGE1
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 1
+  Number of subcatchments ... 4
+  Number of nodes ........... 7
+  Number of links ........... 6
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ****************
+  Raingage Summary
+  ****************
+                                                      Data       Recording
+  Name                 Data Source                    Type       Interval 
+  ------------------------------------------------------------------------
+  GAGE1                RainSeries1                    VOLUME      15 min.
+  
+  
+  ********************
+  Subcatchment Summary
+  ********************
+  Name                       Area     Width   %Imperv    %Slope Rain Gage            Outlet              
+  -----------------------------------------------------------------------------------------------------------
+  Wat1                     300.00     10.00      1.00    0.1000 GAGE1                Chan1               
+  Wat2                     500.00     10.00      1.00    0.1000 GAGE1                Chan2               
+  Wat3                     500.00     10.00      1.00    0.1000 GAGE1                Chan6               
+  Wat4                     500.00     10.00      1.00    0.1000 GAGE1                Chan5               
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  Chan1                JUNCTION             40.00     20.00       0.0
+  Chan2                JUNCTION             30.00     20.00       0.0
+  Chan3                JUNCTION             20.00     20.00       0.0
+  Chan4                JUNCTION             10.00     20.00       0.0
+  Chan5                JUNCTION             10.00     20.00       0.0
+  Chan6                JUNCTION             20.00     20.00       0.0
+  Node7                OUTFALL               0.00     10.00       0.0
+  
+  
+  ************
+  Link Summary
+  ************
+  Name             From Node        To Node          Type            Length    %Slope Roughness
+  ---------------------------------------------------------------------------------------------
+  Chan1            Chan1            Chan2            CONDUIT         2000.0    0.5000    0.0200
+  Chan2            Chan2            Chan3            CONDUIT         2000.0    0.5000    0.0200
+  Chan3            Chan3            Chan4            CONDUIT         2000.0    0.5000    0.0200
+  Chan4            Chan4            Node7            CONDUIT         2000.0    0.5000    0.0200
+  Chan5            Chan5            Node7            CONDUIT         2000.0    0.5000    0.0200
+  Chan6            Chan6            Chan5            CONDUIT         2000.0    0.5000    0.0200
+  
+  
+  *********************
+  Cross Section Summary
+  *********************
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  Chan1            PARABOLIC           10.00   133.33     4.51    20.00        1  1911.56
+  Chan2            PARABOLIC           10.00   133.33     4.51    20.00        1  1911.56
+  Chan3            PARABOLIC           10.00   133.33     4.51    20.00        1  1911.56
+  Chan4            PARABOLIC           10.00   133.33     4.51    20.00        1  1911.56
+  Chan5            PARABOLIC           10.00   133.33     4.51    20.00        1  1911.56
+  Chan6            PARABOLIC           10.00   133.33     4.51    20.00        1  1911.56
+  
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ YES
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Infiltration Method ...... GREEN_AMPT
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 07/01/1987 00:00:00
+  Ending Date .............. 07/02/1987 12:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:05:00
+  Wet Time Step ............ 00:05:00
+  Dry Time Step ............ 23:00:00
+  Routing Time Step ........ 30.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  ERROR 141: Outfall Node7 has more than 1 inlet link or an outlet link.
+  
+  ERROR 145: Drainage system has no acceptable outlet nodes.
+
+  Analysis begun on:  Tue Aug  5 10:56:33 2025
+  Analysis ended on:  Tue Aug  5 10:56:33 2025
+  Total elapsed time: < 1 sec

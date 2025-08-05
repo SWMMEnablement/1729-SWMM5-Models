@@ -1,0 +1,505 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  WARNING 04: minimum elevation drop used for Conduit D6S-20DES
+  WARNING 02: maximum depth increased for Node D6S-5
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 1
+  Number of subcatchments ... 7
+  Number of nodes ........... 31
+  Number of links ........... 33
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ****************
+  Raingage Summary
+  ****************
+                                                      Data       Recording
+  Name                 Data Source                    Type       Interval 
+  ------------------------------------------------------------------------
+  1010                 MyStorm                        INTENSITY   60 min.
+  
+  
+  ********************
+  Subcatchment Summary
+  ********************
+  Name                       Area     Width   %Imperv    %Slope Rain Gage            Outlet              
+  -----------------------------------------------------------------------------------------------------------
+  QPE-9#1                   19.30      1.00      0.00  100.0000 1010                 QPE-9               
+  QPE-10#1                  12.41      1.00      0.00  100.0000 1010                 QPE-10              
+  QPE-10#2                  14.97      1.00      0.00  100.0000 1010                 QPE-10              
+  D6S-5#1                   42.48      1.00      0.00  100.0000 1010                 D6S-5               
+  D6S-7#1                   49.44      1.00      0.00  100.0000 1010                 D6S-7               
+  D6S-7#2                   42.57      1.00      0.00  100.0000 1010                 D6S-7               
+  D6S-20#1                  37.50      1.00      0.00  100.0000 1010                 D6S-20              
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  QPE-9                JUNCTION             30.69     39.83       0.0    Yes
+  QPE-10               JUNCTION             21.65      2.79       0.0    Yes
+  D6S-2                JUNCTION             20.69      2.20       0.0    Yes
+  D6S-3                JUNCTION             17.12      3.42       0.0
+  D6S-4                JUNCTION             13.50      3.20       0.0
+  D6S-5                JUNCTION              5.53      3.51       0.0    Yes
+  D6S-6                JUNCTION              4.30      2.20       0.0
+  D6S-7                JUNCTION              3.69      4.96       0.0
+  D6S-8                JUNCTION              3.59      5.06       0.0
+  D6S-9                JUNCTION              3.53      4.96       0.0
+  D6S-10               JUNCTION              3.51      4.79       0.0
+  D6S-11               JUNCTION              3.46      3.51       0.0
+  D6S-12               JUNCTION              3.41      3.56       0.0
+  D6S-14               JUNCTION              3.35      2.50       0.0
+  D6S-15               JUNCTION              3.15      2.50       0.0
+  D6S-16               JUNCTION              3.11      2.50       0.0
+  D6S-17               JUNCTION              1.72      3.14       0.0
+  D6S-18               JUNCTION              0.99      4.53       0.0
+  D6S-19               JUNCTION              0.90      3.68       0.0
+  D6S-20               JUNCTION              0.61      2.38       0.0
+  QPE-9A               JUNCTION             23.30      1.80       0.0
+  D6S-2A               JUNCTION             19.55      3.27       0.0
+  D6S-2B               JUNCTION             18.41      3.27       0.0
+  D6S-3A               JUNCTION             15.91      3.20       0.0
+  D6S-3B               JUNCTION             14.70      3.20       0.0
+  D6S-4A               JUNCTION             12.20      3.37       0.0
+  D6S-4B               JUNCTION             10.89      3.37       0.0
+  D6S-4C               JUNCTION              9.59      3.37       0.0
+  D6S-4D               JUNCTION              8.28      3.37       0.0
+  D6S-4E               JUNCTION              6.98      3.37       0.0
+  D6S-DES              OUTFALL               0.61      2.20       0.0
+  
+  
+  ************
+  Link Summary
+  ************
+  Name             From Node        To Node          Type            Length    %Slope Roughness
+  ---------------------------------------------------------------------------------------------
+  D6S-0102         QPE-10           D6S-2            CONDUIT           19.4    2.5008    0.0150
+  1364.1           D6S-7            D6S-8            CONDUIT            5.3    1.8979    0.0150
+  1364.2           D6S-7            D6S-8            CONDUIT            5.3    1.8979    0.0150
+  D6S-0910         D6S-9            D6S-10           CONDUIT           19.8    0.1012    0.0150
+  1366.1           D6S-18           D6S-19           CONDUIT            8.2    1.0001    0.0150
+  1366.2           D6S-18           D6S-19           CONDUIT            8.2    1.0001    0.0200
+  1455.1           QPE-9            QPE-9A           CONDUIT          410.0    1.8027    0.0200
+  1455.2           QPE-9            QPE-9A           CONDUIT          410.0    1.8027    0.0200
+  D6S-20DES        D6S-20           D6S-DES          CONDUIT          201.5    0.0002    0.0300
+  D6S-1920         D6S-19           D6S-20           CONDUIT           29.3    1.0001    0.0300
+  D6S-1718         D6S-17           D6S-18           CONDUIT           73.2    1.0001    0.0300
+  D6S-0506         D6S-5            D6S-6            CONDUIT          411.1    0.2992    0.0300
+  D6S-0607         D6S-6            D6S-7            CONDUIT          243.4    0.2506    0.0300
+  D6S-1011         D6S-10           D6S-11           CONDUIT            9.1    0.5000    0.0300
+  D6S-1112         D6S-11           D6S-12           CONDUIT           10.8    0.5000    0.0300
+  D6S-1213         D6S-12           D6S-14           CONDUIT           11.7    0.5000    0.0300
+  D6S-1415         D6S-14           D6S-15           CONDUIT           20.0    1.0001    0.0300
+  D6S-1516         D6S-15           D6S-16           CONDUIT            4.3    1.0001    0.0300
+  D6S-1617         D6S-16           D6S-17           CONDUIT          196.4    0.7086    0.0300
+  D6S-0809         D6S-8            D6S-9            CONDUIT           17.1    0.3511    0.0300
+  QPE-09A10        QPE-9A           QPE-10           CONDUIT          165.0    1.0001    0.0150
+  D6S-2A2B         D6S-2A           D6S-2B           CONDUIT           35.0    0.2000    0.0300
+  D6S-2B3          D6S-2B           D6S-3            CONDUIT           35.0    0.2000    0.0300
+  D6S-22A          D6S-2            D6S-2A           CONDUIT           35.0    0.2000    0.0300
+  D6S-3A3B         D6S-3A           D6S-3B           CONDUIT          103.0    0.2000    0.0300
+  D6S-33A          D6S-3            D6S-3A           CONDUIT          103.0    0.2000    0.0300
+  D6S-3B4          D6S-3B           D6S-4            CONDUIT          103.0    0.2000    0.0300
+  D6S-44A          D6S-4            D6S-4A           CONDUIT           68.0    0.2000    0.0300
+  D6S-4A4B         D6S-4A           D6S-4B           CONDUIT           68.0    0.2000    0.0300
+  D6S-4B4C         D6S-4B           D6S-4C           CONDUIT           68.0    0.2000    0.0300
+  D6S-4C4D         D6S-4C           D6S-4D           CONDUIT           68.0    0.2000    0.0300
+  D6S-4D4E         D6S-4D           D6S-4E           CONDUIT           68.0    0.2000    0.0300
+  D6S-4E5          D6S-4E           D6S-5            CONDUIT           68.0    0.2000    0.0300
+  
+  
+  *********************
+  Cross Section Summary
+  *********************
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  D6S-0102         RECT_CLOSED          1.25     7.50     0.52     6.00        1    50.96
+  1364.1           RECT_CLOSED          2.20     6.60     0.63     3.00        1    44.77
+  1364.2           RECT_CLOSED          2.20     6.60     0.63     3.00        1    44.77
+  D6S-0910         RECT_CLOSED          2.20    13.20     0.80     6.00        2    24.22
+  1366.1           RECT_CLOSED          2.20     7.70     0.68     3.50        1    39.53
+  1366.2           RECT_CLOSED          2.20     7.70     0.68     3.50        1    29.64
+  1455.1           RECT_CLOSED          1.25     3.13     0.42     2.50        1    11.71
+  1455.2           RECT_CLOSED          1.25     3.13     0.42     2.50        1    11.71
+  D6S-20DES        TRAPEZOIDAL          2.20    17.82     1.50     9.20        1     0.96
+  D6S-1920         TRAPEZOIDAL          2.20    17.82     1.50     9.20        1    77.68
+  D6S-1718         TRAPEZOIDAL          2.20    17.82     1.50     9.20        1    77.68
+  D6S-0506         TRAPEZOIDAL          2.20    15.62     1.43     8.20        1    36.16
+  D6S-0607         TRAPEZOIDAL          2.20    15.62     1.43     8.20        1    33.10
+  D6S-1011         TRAPEZOIDAL          2.20    17.82     1.50     9.20        1    54.93
+  D6S-1112         TRAPEZOIDAL          2.20    17.82     1.50     9.20        1    54.93
+  D6S-1213         TRAPEZOIDAL          2.20    17.82     1.50     9.20        1    54.93
+  D6S-1415         TRAPEZOIDAL          2.20    17.82     1.50     9.20        1    77.68
+  D6S-1516         TRAPEZOIDAL          2.20    17.82     1.50     9.20        1    77.68
+  D6S-1617         TRAPEZOIDAL          2.20    17.82     1.50     9.20        1    65.39
+  D6S-0809         TRAPEZOIDAL          2.20    15.62     1.43     8.20        1    39.17
+  QPE-09A10        TRAPEZOIDAL          1.80     7.02     1.00     4.80        1    46.79
+  D6S-2A2B         TRAPEZOIDAL          2.20    11.22     1.26     6.20        1    19.49
+  D6S-2B3          TRAPEZOIDAL          2.20    11.22     1.26     6.20        1    19.49
+  D6S-22A          TRAPEZOIDAL          2.20    11.22     1.26     6.20        1    19.49
+  D6S-3A3B         TRAPEZOIDAL          2.20    11.22     1.26     6.20        1    19.49
+  D6S-33A          TRAPEZOIDAL          2.20    11.22     1.26     6.20        1    19.49
+  D6S-3B4          TRAPEZOIDAL          2.20    11.22     1.26     6.20        1    19.49
+  D6S-44A          TRAPEZOIDAL          2.20    11.22     1.26     6.20        1    19.49
+  D6S-4A4B         TRAPEZOIDAL          2.20    11.22     1.26     6.20        1    19.49
+  D6S-4B4C         TRAPEZOIDAL          2.20    11.22     1.26     6.20        1    19.49
+  D6S-4C4D         TRAPEZOIDAL          2.20    11.22     1.26     6.20        1    19.49
+  D6S-4D4E         TRAPEZOIDAL          2.20    11.22     1.26     6.20        1    19.49
+  D6S-4E5          TRAPEZOIDAL          2.20    11.22     1.26     6.20        1    19.49
+  
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CMS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Infiltration Method ...... HORTON
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 01/01/1999 00:05:00
+  Ending Date .............. 01/02/1999 00:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:00:10
+  Wet Time Step ............ 00:01:00
+  Dry Time Step ............ 00:01:00
+  Routing Time Step ........ 10.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.001524 m
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     hectare-m            mm
+  **************************     ---------       -------
+  Total Precipitation ......         3.499        16.000
+  Evaporation Loss .........         0.000         0.000
+  Infiltration Loss ........         3.201        14.639
+  Surface Runoff ...........         0.298         1.361
+  Final Storage ............         0.000         0.000
+  Continuity Error (%) .....         0.000
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        hectare-m      10^6 ltr
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.298         2.975
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........        69.186       691.871
+  External Outflow .........        68.051       680.519
+  Flooding Loss ............         0.553         5.531
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         1.210        12.103
+  Continuity Error (%) .....        -0.476
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  Link D6S-1516 (99.42%)
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  Link D6S-1617 (15)
+  Link D6S-1516 (14)
+  Link D6S-1415 (10)
+  Link 1366.2 (8)
+  Link 1366.1 (7)
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Node D6S-20 (0.80%)
+  Node D6S-DES (0.80%)
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     0.47 sec
+  Average Time Step           :     0.78 sec
+  Maximum Time Step           :    10.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     2.07
+  % of Steps Not Converging   :     0.80
+  Time Step Frequencies       :
+     10.000 -  5.493 sec      :     0.25 %
+      5.493 -  3.017 sec      :     0.27 %
+      3.017 -  1.657 sec      :     0.12 %
+      1.657 -  0.910 sec      :     2.89 %
+      0.910 -  0.500 sec      :    96.47 %
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 mm         mm         mm         mm         mm         mm         mm    10^6 ltr      CMS
+  ------------------------------------------------------------------------------------------------------------------------------
+  QPE-9#1                   16.00       0.00       0.00      13.92       0.00       2.08       2.08        0.40     0.02   0.130
+  QPE-10#1                  16.00       0.00       0.00      13.11       0.00       2.89       2.89        0.36     0.02   0.180
+  QPE-10#2                  16.00       0.00       0.00      13.48       0.00       2.52       2.52        0.38     0.02   0.158
+  D6S-5#1                   16.00       0.00       0.00      14.92       0.00       1.08       1.08        0.46     0.02   0.068
+  D6S-7#1                   16.00       0.00       0.00      15.06       0.00       0.94       0.94        0.47     0.02   0.059
+  D6S-7#2                   16.00       0.00       0.00      14.92       0.00       1.08       1.08        0.46     0.02   0.067
+  D6S-20#1                  16.00       0.00       0.00      14.79       0.00       1.21       1.21        0.45     0.02   0.075
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type       Meters   Meters   Meters  days hr:min      Meters
+  ---------------------------------------------------------------------------------
+  QPE-9                JUNCTION     0.39     0.83    31.52     0  12:31        0.83
+  QPE-10               JUNCTION     0.26     0.69    22.34     0  12:32        0.69
+  D6S-2                JUNCTION     0.80     1.50    22.19     0  12:32        1.50
+  D6S-3                JUNCTION     0.97     1.75    18.87     0  12:33        1.75
+  D6S-4                JUNCTION     0.90     1.64    15.14     0  12:34        1.64
+  D6S-5                JUNCTION     0.84     1.77     7.30     0  12:37        1.77
+  D6S-6                JUNCTION     1.01     1.82     6.12     0  12:40        1.82
+  D6S-7                JUNCTION     0.61     1.25     4.94     0  12:41        1.25
+  D6S-8                JUNCTION     0.72     1.34     4.93     0  12:41        1.34
+  D6S-9                JUNCTION     0.64     1.25     4.78     0  12:41        1.25
+  D6S-10               JUNCTION     0.65     1.26     4.77     0  12:41        1.26
+  D6S-11               JUNCTION     0.64     1.23     4.70     0  12:41        1.23
+  D6S-12               JUNCTION     0.61     1.20     4.62     0  12:41        1.20
+  D6S-14               JUNCTION     0.57     1.16     4.52     0  12:41        1.16
+  D6S-15               JUNCTION     0.57     1.21     4.36     0  12:41        1.21
+  D6S-16               JUNCTION     0.57     1.22     4.33     0  12:41        1.22
+  D6S-17               JUNCTION     1.11     1.31     3.03     0  12:40        1.31
+  D6S-18               JUNCTION     1.83     2.07     3.06     0  14:14        2.07
+  D6S-19               JUNCTION     1.93     2.19     3.09     0  14:14        2.17
+  D6S-20               JUNCTION     2.21     2.38     2.99     0  06:19        2.38
+  QPE-9A               JUNCTION     0.52     1.00    24.30     0  12:31        1.00
+  D6S-2A               JUNCTION     0.80     1.50    21.05     0  12:32        1.50
+  D6S-2B               JUNCTION     0.80     1.50    19.91     0  12:32        1.50
+  D6S-3A               JUNCTION     0.97     1.75    17.66     0  12:33        1.75
+  D6S-3B               JUNCTION     0.97     1.75    16.45     0  12:34        1.75
+  D6S-4A               JUNCTION     0.90     1.64    13.84     0  12:34        1.64
+  D6S-4B               JUNCTION     0.90     1.64    12.53     0  12:34        1.64
+  D6S-4C               JUNCTION     0.90     1.64    11.23     0  12:35        1.64
+  D6S-4D               JUNCTION     0.90     1.64     9.93     0  12:35        1.64
+  D6S-4E               JUNCTION     0.90     1.64     8.62     0  12:35        1.64
+  D6S-DES              OUTFALL      2.17     2.20     2.81     0  01:32        2.20
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CMS      CMS  days hr:min    10^6 ltr    10^6 ltr     Percent
+  -------------------------------------------------------------------------------------------------
+  QPE-9                JUNCTION    17.658   17.658     0  12:30         463         463       0.061
+  QPE-10               JUNCTION     0.588   18.142     0  12:32        10.3         472       0.014
+  D6S-2                JUNCTION     0.824   18.941     0  12:32        14.5         487       0.019
+  D6S-3                JUNCTION     0.000   18.944     0  12:32           0         487       0.069
+  D6S-4                JUNCTION     0.000   18.950     0  12:34           0         485       0.042
+  D6S-5                JUNCTION     6.987   25.679     0  12:36         206         690       0.111
+  D6S-6                JUNCTION     0.000   25.667     0  12:37           0         689       0.241
+  D6S-7                JUNCTION     0.047   25.628     0  12:40       0.926         689       0.050
+  D6S-8                JUNCTION     0.000   25.625     0  12:41           0         688       0.006
+  D6S-9                JUNCTION     0.000   25.625     0  12:41           0         688       0.012
+  D6S-10               JUNCTION     0.000   25.625     0  12:41           0         688       0.011
+  D6S-11               JUNCTION     0.000   25.625     0  12:41           0         688       0.005
+  D6S-12               JUNCTION     0.000   25.625     0  12:41           0         688       0.005
+  D6S-14               JUNCTION     0.000   25.625     0  12:41           0         688       0.007
+  D6S-15               JUNCTION     0.000   25.624     0  12:41           0         688       0.005
+  D6S-16               JUNCTION     0.000   25.624     0  12:41           0         688       0.066
+  D6S-17               JUNCTION     0.000   25.626     0  12:42           0         687       0.138
+  D6S-18               JUNCTION     0.000   26.143     0  14:14           0    1.28e+03       0.045
+  D6S-19               JUNCTION     0.000   25.675     0  12:40           0    1.28e+03       0.022
+  D6S-20               JUNCTION     0.023   25.703     0  12:40       0.452         686       0.008
+  QPE-9A               JUNCTION     0.000   17.633     0  12:31           0         463       0.108
+  D6S-2A               JUNCTION     0.000   18.942     0  12:32           0         487       0.019
+  D6S-2B               JUNCTION     0.000   18.943     0  12:32           0         487       0.019
+  D6S-3A               JUNCTION     0.000   18.946     0  12:33           0         486       0.069
+  D6S-3B               JUNCTION     0.000   18.948     0  12:33           0         486       0.069
+  D6S-4A               JUNCTION     0.000   18.952     0  12:34           0         485       0.042
+  D6S-4B               JUNCTION     0.000   18.955     0  12:34           0         485       0.042
+  D6S-4C               JUNCTION     0.000   18.958     0  12:35           0         485       0.042
+  D6S-4D               JUNCTION     0.000   18.960     0  12:35           0         485       0.042
+  D6S-4E               JUNCTION     0.000   18.963     0  12:35           0         484       0.042
+  D6S-DES              OUTFALL      0.000   23.220     0  13:16           0         681       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  Surcharging occurs when water rises above the top of the highest conduit.
+  ---------------------------------------------------------------------
+                                               Max. Height   Min. Depth
+                                   Hours       Above Crown    Below Rim
+  Node                 Type      Surcharged         Meters       Meters
+  ---------------------------------------------------------------------
+  D6S-20               JUNCTION       22.31          0.180        0.000
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  Flooding refers to all water that overflows a node, whether it ponds or not.
+  --------------------------------------------------------------------------
+                                                             Total   Maximum
+                                 Maximum   Time of Max       Flood    Ponded
+                        Hours       Rate    Occurrence      Volume     Depth
+  Node                 Flooded       CMS   days hr:min    10^6 ltr    Meters
+  --------------------------------------------------------------------------
+  D6S-20                  0.90     4.698      0  14:14       5.531     0.000
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CMS       CMS    10^6 ltr
+  -----------------------------------------------------------
+  D6S-DES               99.23     8.944    23.220     680.516
+  -----------------------------------------------------------
+  System                99.23     8.944    23.220     680.516
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CMS  days hr:min     m/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  D6S-0102             CONDUIT    18.144     0  12:32      3.57    0.36    0.68
+  1364.1               CONDUIT    12.813     0  12:41      3.29    0.29    0.59
+  1364.2               CONDUIT    12.813     0  12:41      3.29    0.29    0.59
+  D6S-0910             CONDUIT    25.625     0  12:41      1.70    0.53    0.57
+  1366.1               CONDUIT    24.801     0  12:36      3.42    0.63    0.97
+  1366.2               CONDUIT    10.597     0  14:22      1.55    0.36    0.97
+  1455.1               CONDUIT     8.817     0  12:31      3.85    0.75    0.73
+  1455.2               CONDUIT     8.817     0  12:31      3.85    0.75    0.73
+  D6S-20DES            CONDUIT    23.220     0  13:16      1.30   24.31    1.00
+  D6S-1920             CONDUIT    25.701     0  12:40      1.48    0.33    1.00
+  D6S-1718             CONDUIT    25.652     0  12:41      1.96    0.33    0.76
+  D6S-0506             CONDUIT    25.667     0  12:37      2.07    0.71    0.82
+  D6S-0607             CONDUIT    25.623     0  12:40      2.46    0.77    0.70
+  D6S-1011             CONDUIT    25.625     0  12:41      2.70    0.47    0.57
+  D6S-1112             CONDUIT    25.625     0  12:41      2.76    0.47    0.55
+  D6S-1213             CONDUIT    25.625     0  12:41      2.85    0.47    0.54
+  D6S-1415             CONDUIT    25.624     0  12:41      2.85    0.33    0.54
+  D6S-1516             CONDUIT    25.624     0  12:41      2.77    0.33    0.55
+  D6S-1617             CONDUIT    25.626     0  12:42      2.65    0.39    0.58
+  D6S-0809             CONDUIT    25.625     0  12:41      2.97    0.65    0.59
+  QPE-09A10            CONDUIT    17.643     0  12:32      6.12    0.38    0.47
+  D6S-2A2B             CONDUIT    18.943     0  12:32      2.95    0.97    0.62
+  D6S-2B3              CONDUIT    18.944     0  12:32      2.95    0.97    0.62
+  D6S-22A              CONDUIT    18.942     0  12:32      2.95    0.97    0.62
+  D6S-3A3B             CONDUIT    18.948     0  12:33      2.66    0.97    0.68
+  D6S-33A              CONDUIT    18.946     0  12:33      2.66    0.97    0.68
+  D6S-3B4              CONDUIT    18.950     0  12:34      2.66    0.97    0.68
+  D6S-44A              CONDUIT    18.952     0  12:34      2.78    0.97    0.66
+  D6S-4A4B             CONDUIT    18.955     0  12:34      2.78    0.97    0.66
+  D6S-4B4C             CONDUIT    18.958     0  12:35      2.78    0.97    0.66
+  D6S-4C4D             CONDUIT    18.960     0  12:35      2.78    0.97    0.66
+  D6S-4D4E             CONDUIT    18.963     0  12:35      2.78    0.97    0.66
+  D6S-4E5              CONDUIT    18.966     0  12:36      2.78    0.97    0.66
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  D6S-0102                1.00   0.00  0.00  0.00  0.00  0.59  0.00  0.41  0.19  0.00
+  1364.1                  1.00   0.03  0.00  0.00  0.96  0.00  0.00  0.00  0.01  0.00
+  1364.2                  1.00   0.03  0.00  0.00  0.96  0.00  0.00  0.00  0.01  0.00
+  D6S-0910                1.00   0.03  0.00  0.00  0.97  0.00  0.00  0.00  0.00  0.00
+  1366.1                  1.00   0.04  0.00  0.00  0.95  0.00  0.00  0.00  0.00  0.00
+  1366.2                  1.00   0.04  0.00  0.00  0.96  0.00  0.00  0.00  0.00  0.00
+  1455.1                  1.00   0.00  0.00  0.00  0.00  1.00  0.00  0.00  0.99  0.00
+  1455.2                  1.00   0.00  0.00  0.00  0.00  1.00  0.00  0.00  0.99  0.00
+  D6S-20DES               1.00   0.04  0.00  0.00  0.96  0.00  0.00  0.00  0.00  0.00
+  D6S-1920                1.00   0.04  0.00  0.00  0.95  0.00  0.00  0.00  0.00  0.00
+  D6S-1718                1.00   0.04  0.00  0.00  0.96  0.00  0.00  0.00  0.00  0.00
+  D6S-0506                1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  D6S-0607                1.00   0.02  0.00  0.00  0.98  0.00  0.00  0.00  0.00  0.00
+  D6S-1011                1.00   0.04  0.00  0.00  0.96  0.00  0.00  0.00  0.00  0.00
+  D6S-1112                1.00   0.04  0.00  0.00  0.96  0.00  0.00  0.00  0.00  0.00
+  D6S-1213                1.00   0.04  0.00  0.00  0.96  0.00  0.00  0.00  0.00  0.00
+  D6S-1415                1.00   0.04  0.00  0.00  0.96  0.00  0.00  0.00  0.00  0.00
+  D6S-1516                1.00   0.04  0.00  0.00  0.96  0.00  0.00  0.00  0.00  0.00
+  D6S-1617                1.00   0.04  0.00  0.00  0.96  0.00  0.00  0.00  0.05  0.00
+  D6S-0809                1.00   0.03  0.00  0.00  0.97  0.00  0.00  0.00  0.00  0.00
+  QPE-09A10               1.00   0.00  0.00  0.00  0.00  0.99  0.00  0.00  0.00  0.00
+  D6S-2A2B                1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  D6S-2B3                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  D6S-22A                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  D6S-3A3B                1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  D6S-33A                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  D6S-3B4                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  D6S-44A                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  D6S-4A4B                1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  D6S-4B4C                1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  D6S-4C4D                1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  D6S-4D4E                1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  D6S-4E5                 1.00   0.00  0.00  0.00  0.00  0.00  0.00  1.00  0.00  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  D6S-20DES                   0.01     22.30      0.01     22.36         0.01
+  D6S-1920                    0.01      0.01     22.30      0.01         0.01
+  
+
+  Analysis begun on:  Tue Aug  5 10:52:40 2025
+  Analysis ended on:  Tue Aug  5 10:52:49 2025
+  Total elapsed time: 00:00:09
