@@ -1,0 +1,108 @@
+EXTR   0B2     0   0        1                                                                            
+SWMM   0MISC   0   0     1                                                                               
+dfie   0dcar   0   0         *                                                                           
+SWMM   0IMP    0   0     11011111                                                                        
+SWMM   0IMP2   0   0     C:\WPS\EXAMPLES\SWMTEST\runoff34.dat                                            
+SWMM   0TEMP   0   0                                                                                    1
+SWMM   0MODE   0   0     0 01                                                                            
+RUNF   2INT    0   0     1000                                                                            
+RUNF   2INT1   0   0     C:\XPS\WORK\aes.rin                                                             
+EXTR   0A1     0   0         RUNOFF EXAMPLE 34 - AES PRECIPITATION INPUT                                 
+RUNF   0A1B    0   0     AES PRECIPITATION INPUT ==> FILE AES.INT CREATED BY RAIN BLOCK                  
+RUNF   0A1     0   0      1 0000 00           0.01                                                       
+RUNF   0B1     0   0     00111        12   30    0    0   00    0    1   10   78    0    0   79          
+RUNF   0B2     0   0          3600.     7200.    86400.                                                  
+SWMM   0MCTL   0 201     1                                                                               
+RUNF   0H1A    0 201     01010000           1                                                            
+RUNF   0H1C    0 201     0100                                               0.000                        
+RUNF   0H1     0 201           300.       20.      100.      .001                                        
+GRUN   1IN2    0   0     0                .04        .3       .05        .1                              
+GRUN   1IN1    0   0     1                                      4.       .34        1.                   
+RUNF   0H1B    0 201     AES                 Infil1                                                      
+RUNF   0M1     0   0     2  100                                                                          
+RUNF   0M1A    0   0     10/1/79   30/3/79                                                               
+SWMM   7TEMP   0   0                                                                                    1
+RAIN   0B0A    0   0     C:\XPS\WORK\aespre.dat                                                          
+RAIN   0B1     0   0     1               1               0061060009  CANAES    0110                      
+SWMM   0UTIL   0   0     1                                                                               
+RAIN   0B0B    0   0     AES.rin                                                                         
+RAIN   0B0C    0   0     AES.REP                                                                         
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZSYM   0NAME   0   0     Pollutant                                   1   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             1   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                1   40    5    0                    
+ZSYM   4OBJ    0   0     Infil1                                                                          
+ZSYM   4VAL    0   0         1                                                                           
+ZSYM   5NAME   0   0     Landuse                                     1   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    1   40    5    0                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              1   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                1   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM   0GLDB   0   0         6                                                                           
+SWMM   0SWMM   0   0           2.23                                                                      
+ZZZC   0CNTL   0   0    1    0    0    999   999   86.09      0    213  swmmxp                           
+ZZZC   0CNTL   1   0    -13.4560            329.8202                                                     
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZN 201NODE   0 201    1              0 0 4.26058  -1  -1  -1  -1  -1  201 134 1   1   0   0   45  1    
+ZZZN 201NODE   1 201    1   2   80  0   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 201NODE   2 201    332.5660            -7.7564             337.2784            -3.0441              
+ZZZS   0SEL    0   0          1     1                                                                    
+ZZZS   0SEL    1   0        0                                                                            
+GRUN   0E1     0   0         10    61060009                                                              
+ZSYM   7OBJ    0   0     AES                                                                             
+ZSYM   7VAL    0   0         0                                                                           
+EXTR   0REVW   0   0      1 1 1 1 1 1 1                                                                  
+SWMM   7TEMP   1   0                                                                                    1
+SWMM   3TEMP   1   0                                                                                    1
+RAIN   0B3     0   0     0    0                                                                          
+RAIN   0B4     0   0                   5              5              5              5              5     
+RAIN   0B4     1   0                   5              5              5              5              5     
+RAIN   0B2     0   0             4.0         101010       0.4    00       1.0      60.0                  
+SRPT   0CNTL   0   0              1         0    0    0    1    0                                        
+SRPT   1GLOB   0   0    0 0                                                                              
+SRPT   1GLOB   1   0    0 0                                                                              
+SRPT   0GLOB   0   0    0.00511302 0.00711579                                                            
+SRPT   0GLOB   1   0    0.44018 0.612598                                                                 
+ZSYM  18NAME   0   0     Gauged Pollutants                           0   40    5    0                    
+ZZZC   0NAME   0   0    0                   1                   1                                        
+QAS    0GLOB   0 201    .014945738 .015180351 -4.1106456 336.232062 1 1 0                              0 
+dfie   2dcar   0   0       RIN                                                                           
+RUNF   0NR01   0 201     104.2121  104.2121  1028.9    1023.828  2.370944  0         0         204.341   
+RUNF   0NR02   0 201     0         0         0         0         0         0         0         0         
+ZSYM  19NAME   0   0     Pump Ratings                                0   40    5    0                    
+PROJ   0TEMP   0   0     C:\WIN\TEMP\xpp36                                                               
+ZRPT   0NAME   0   0     RPT Headings                                0   40    5    0                    
+SWMM   3TEMP   0   0                                                                                    1
+JCTL   0A1     0   0     0                                                                               
+RUNF   0J1     0   0                                0.0                                                  
+GRUN   0J2     0   0     10      1E25        1.       0.0       0.0       0.0                            
+SWMM   5TEMP   5   0                                                                                    1
+GRUN   0D2     0   0     00   mg/l             0.0                           0.0                         
+SWMM   6TEMP   6   0                                                                                    1
+GRUN   0J3     0   0     4 3                                           100.       0.0                    
+GRUN   0D3     0   0     0        5.       0.0       0.0          emc-tss                                
+RUNF   0D3     0   0                                           0.0                                       
+SWMM   6TEMP   0   0                                                                                    1
+RUNF   0L1     0 201     residential         100.                                                        
+ZSYM   0OBJ    0   0     tss                                                                             
+ZSYM   0VAL    0   0         0                                                                           
+ZSYM   1OBJ    0   0     emc-tss                                                                         
+ZSYM   1VAL    0   0         0                                                                           
+ZSYM   5OBJ    0   0     residential                                                                     
+ZSYM   5VAL    0   0         0                                                                           
+ZSYM  14OBJ    0   0     tss                                                                             
+ZSYM  14VAL    0   0         0                                                                           
+ZSYM  15OBJ    0   0     residential                                                                     
+ZSYM  15VAL    0   0         0                                                                           
+RUNF   0RESQ   0 201     1180.175  105       0         31808.49  0         0                             
+ZZZS   1SEL    0   0          0     1                                                                    
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    

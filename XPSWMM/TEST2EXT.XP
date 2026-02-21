@@ -1,0 +1,153 @@
+EXTR   0B2     0   0        0          10.  0.0    0.001    0.001      300.  1 0    1      200.  1000.   
+EXTR   0B0     0   0        0 0                                                         1 0 1 1          
+EXTR   0A1     0   0         Exam2                                                                       
+EXTR   0B1     0   0         8000    60.    0.00    1  1001 100 0      0.0                    00         
+EXTR   0SP1N   0 153         0                    90. 0    489.           1   0 0     irrig              
+EXTR   0SPSC   0 154         chan1     0         0                                                 0     
+EXTR   0SP1N   0 152         0                    91. 1    452.           0   0 0     reserv             
+EXTR   0SPSC   0 156         spill     0         0                                                 0     
+EXTR   0SP1N   0 155         0                   146. 0    441.           1   0 0     o/flow             
+EXTR   0SPSC   0 159         tunnel    0         0                                                 0     
+EXTR   0SP1N   0 157         1                    46. 1    422.           0   0 0     lake A             
+EXTR   0SP1N   0 158         0                   156. 1    409.           0   0 0     lake B             
+EXTR   0SPSC   0 161         river     0         0                                                 0     
+EXTR   0SP1N   0 160         0                   158. 0    381.           1   0 0     ds                 
+ZZZC   0CNTL   0   0    6    5    0    999   999   909.628    0    211  swmmxp                           
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZN 152NODE   0 152    reserv         0 0 4.26058  154 156 162 -1  -1  152 133 1   1   0   0   45  1    
+ZZZN 152NODE   1 152    1   2   0   3   1   1   0   -1  -1  -1  -1  -1  -1                               
+ZZZN 153NODE   0 153    irrig          0 0 4.26058  154 -1  -1  -1  -1  153 134 1   1   0   0   45  1    
+ZZZN 153NODE   1 153    1   2   28  0   0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 155NODE   0 155    o/flow         0 0 4.26058  156 -1  -1  -1  -1  155 134 1   1   0   0   45  1    
+ZZZN 155NODE   1 155    1   2   28  0   0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 157NODE   0 157    lake A         0 0 4.26058  159 162 -1  -1  -1  157 133 1   1   0   0   45  1    
+ZZZN 157NODE   1 157    1   2   0   0   1   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 158NODE   0 158    lake B         0 0 4.26058  159 161 -1  -1  -1  158 133 1   1   0   0   45  1    
+ZZZN 158NODE   1 158    1   2   28  0   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 160NODE   0 160    ds             0 0 4.26058  161 -1  -1  -1  -1  160 134 1   1   0   0   45  1    
+ZZZN 160NODE   1 160    1   2   28  0   0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZE 154EDGE   0 154    chan1          0           152 153 154 136 1   1   0   0   1                     
+ZZZE 154EDGE   1 154    1   0   249 255 0 4.26058   0 0.473398                                           
+ZZZE 156EDGE   0 156    spill          0           152 155 156 136 1   1   0   0   1                     
+ZZZE 156EDGE   1 156    1   0   249 255 0 4.26058   0 0.473398                                           
+ZZZE 159EDGE   0 159    tunnel         0           157 158 159 136 1   1   0   0   1                     
+ZZZE 159EDGE   1 159    1   0   249 255 0 4.26058   0 0.473398                                           
+ZZZE 161EDGE   0 161    river          0           158 160 161 136 1   1   0   0   1                     
+ZZZE 161EDGE   1 161    1   0   249 255 0 4.26058   0 0.473398                                           
+ZZZE 162EDGE   0 162    Pump           0           157 152 162 138 1   1   0   0   1                     
+ZZZE 162EDGE   1 162    1   4   249 255 0 4.26058   0 0.473398                                           
+EXTR   0I1     0 155                 1 0                                                      0          
+EXTR   0J2A    0 155            0.0                                                                      
+EXTR   0D1     0 155                     130.     103.      0.0     0.0 0                                
+EXTR   0I1     0 153                 1 0                                                      0          
+EXTR   0J2A    0 153            0.0                                                                      
+EXTR   0D1     0 153                     130.      99.      0.0     0.0 0                                
+EXTR   0I1     0 160                 1 0                                                      0          
+EXTR   0J2A    0 160            0.0                                                                      
+EXTR   0D1     0 160                     100.      60.      0.0     0.0 0                                
+EXTR   0E2E    0 157     1.      0.      3.      1.      8.      10.     10.     20.     12.     30.     
+EXTR   0E2E    1 157     12.5    50.                                                                     
+EXTR   0E1     0 157                    100.     0.0                                          3          
+EXTR   0K3     0 157     0.      0.      1.      100.    3.      800.    5.      980.    10.     480.    
+EXTR   0K3     1 157     11.     120.    12.     24.     13.     1.      24.     0.                      
+EXTR   0D1     0 157                     100.      50.      0.0     0.0 0                                
+EXTR   0E1     0 152                    150.     10.                                          1          
+EXTR   0D1     0 152                     150.     100.      0.0     0.0 0                                
+EXTR   0E2F    0 158            50.    8.9                                                               
+EXTR   0E1     0 158                    100.                                                  2          
+EXTR   0D1     0 158                     103.      68.      10.      .5 0                                
+EXTR   0C1A    0 156            1.     1.                                                                
+EXTR   0C1     0 156             0.0  6              20.      20.      100.     103.     103.       .005 
+EXTR   0C1     0 154             0.0  7              10.      16.      500.     100.      99.        .02 
+EXTR   0C1     0 159             0.0  3      90.     10.      10.      500.      71.      70.       .005 
+EXTR   0C4     0 161          15.      0.      5.     10.      0.     50.      0.     59.      5.     68.
+EXTR   0C4     1 161           6.    100.     15.    120.                                                
+EXTR   0C3     0 161                         50.    100.             500.    0.0               0.0       
+EXTR   0C1C    0 161             1.   .002        0                                                      
+EXTR   0C1     0 161             0.0  8              15.              500.       68.      60.            
+EXTR   0C2     0 161              .2         .2         .02                                              
+EXTR   1H1H    0 162            40.      35.      10.      1.2       56.      51.                        
+EXTR   1H1     0 162        3                        10.       50.      100.                             
+EXTR   2H1H    0 162            50.      40.      20.      1.2       57.      53.                        
+EXTR   2H1     0 162        3                        10.       50.      100.                             
+EXTR   3H1H    0 162            60.      50.      40.      1.2       58.      54.                        
+EXTR   3H1     0 162        3                        10.       50.      100.                             
+EXTR   4H1H    0 162            60.      50.      40.      1.2       59.      54.                        
+EXTR   4H1     0 162        3                        10.       50.      100.                             
+EXTR   0SP1N   0 162                                                                         1111100000  
+EXTR   5H1H    0 162            80.      75.      62.      1.2       60.      56.                        
+EXTR   5H1     0 162        3                        10.       50.      100.                             
+EXTR   0SPDV   0 162     00000001111100000000000000001                                                   
+ZZZC   0CNTL   1   0    -3.4609             -1.7669                                                      
+ZZZN 152NODE   2 152    46.1479             89.1988             50.8603             93.9112              
+ZZZN 153NODE   2 153    8.6438              87.6438             13.3562             92.3562              
+ZZZN 155NODE   2 155    56.1479             144.1988            60.8603             148.9112             
+ZZZN 157NODE   2 157    75.1479             43.1988             79.8603             47.9112              
+ZZZN 158NODE   2 158    88.1479             153.1988            92.8603             157.9112             
+ZZZN 160NODE   2 160    116.6438            155.6438            121.3562            160.3562             
+ZZZO   0CNTR   0   0         7     1                                                                     
+ZZZO   0CNTR   1   0      -152   157   152   153   155   158   160                                       
+EXTR   0REVW   0   0      0 1 1 1 1 0 1                                                                  
+ZZZD   0DIRT   0   0         1    0                                                                      
+XTN    0XTN    0   0           1.611                                                                     
+EXTR   0B1A    0   0        0   0   0   0    0  22  13  19                                               
+EXTR   0C1C    0 154                              0P                                                     
+EXTR   0C1C    0 156                              0P                                                     
+EXTR   0C1C    0 159                        5     0P                                                     
+EXTR   0BB2    0   0                50    0.001    5000.      1.0        1        1      1.0         0100
+EXTR   0BB1    0   0                                0.85              0.65       2.      1.0        6    
+ZZZS   0SEL    0   0          6     1                                                                    
+ZZZS   1SEL    0   0          5     1                                                                    
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    
+ZZZS   0SEL    1   0        0    1    2    3    4    5                                                   
+ZZZS   1SEL    1   0        0    1    2    3    4                                                        
+EXTR   0RSLT   0 154                                                         363.3013         0          
+EXTR   0RSLT   0 156                                                         73.71616         0          
+EXTR   0RSLT   0 159                                                         292.7086         0          
+EXTR   0RSLT   0 161                                                         302.7085         0          
+EXTR   6H1     0 162                                 0.0       0.0       0.0                             
+EXTR   0MANW   0 159                   0.0       0.0                                                     
+EXTR   0C1A    0 159                                                                                     
+EXTR   0C1A    0 154                            2.                                                       
+EXTR   0E2F    0 157            0.0    0.0                                                               
+EXTR   0E2F    0 152            0.0    0.0                                                               
+PLOT   0SET3   0   0          0.0 INCR                                                                   
+PLOT   0LINE   0   0                                   11        1 10.118TYPE1 ARROW                     
+PLOT   0SET2   0   0                        0 0 0 0                                                      
+PLOT   0HGLF   0   0                         11                                                          
+PLOT   0MANH   0   0     FILLEDCONSTANT 1 10.118  VERTICAL0.079    0                                     
+PLOT   0CONP   0   0      10.118 1                                                                       
+PLOT   0SET0   0   0                                0                                                    
+PLOT   0GRID   0   0      1 1  1 1  1 0.118                                                              
+PLOT   0TITL   0   0                                              10.118                                 
+SWMM   0MCTL   0 152       1                                                                             
+SWMM   0MCTL   0 153       1                                                                             
+SWMM   0MCTL   0 155       1                                                                             
+SWMM   0MCTL   0 157       1                                                                             
+SWMM   0MCTL   0 158       1                                                                             
+SWMM   0MCTL   0 160       1                                                                             
+SWMM   0MCTL   0 154       1                                                                             
+SWMM   0MCTL   0 156       1                                                                             
+SWMM   0MCTL   0 159       1                                                                             
+SWMM   0MCTL   0 161       1                                                                             
+SWMM   0MCTL   0 162       1                                                                             
+SWMM   0MODE   0   0     2 1                                                                             
+ZSYM   0NAME   0   0     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                0   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    0   40    5    0                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM   0GLDB   0   0         0                                                                           
+SWMM   0SWMM   0   0           1.01                                                                      

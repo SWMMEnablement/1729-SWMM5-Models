@@ -1,0 +1,121 @@
+EXTR   0B2     0   0        0          13.  0.0    0.001   0.0001       50.  0 0    1      200.  1000.  0
+SWMM   0MISC   0   0     1                                                                               
+SWMM   0MODE   0   0     201000                                                                          
+ZSYM   0NAME   0   0     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                0   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    0   40    5    0                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM   0GLDB   0   0         0                                                                           
+SWMM   0SWMM   0   0           1.44                                                                      
+ZZZC   0CNTL   0   0    5    5    0    999   999   496.470    0    211  swmmxp                           
+ZZZC   0CNTL   1   0    50.8853             3.6137                                                       
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZZZS   0SEL    0   0          5     1                                                                    
+ZZZS   1SEL    0   0          5     1                                                                    
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    
+SWMM   0MCTL   0 201       1                                                                             
+SWMM   0MCTL   0 202       1                                                                             
+SWMM   0MCTL   0 204       1                                                                             
+SWMM   0MCTL   0 203       1                                                                             
+SWMM   0MCTL   0 208       1                                                                             
+SWMM   0MCTL   0 207       1                                                                             
+SWMM   0MCTL   0 209       1                                                                             
+SWMM   0MCTL   0 213       1                                                                             
+SWMM   0MCTL   0 212       1                                                                             
+SWMM   0MCTL   0 214       1                                                                             
+EXTR   1F1     0 208                           1    25.   1.    100.         5. 1             0          
+EXTR   0SPDV   0 208     00000000000000100000000000001                                                   
+ZZZN 201NODE   0 201    1              0 0 4.26947  214 208 -1  -1  -1  201 134 1   1   0   0   45  1    
+ZZZN 201NODE   1 201    1   2   0   239 1   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 201NODE   2 201    17.6401             57.6401             22.3599             62.3599              
+ZZZN 202NODE   0 202    2              0 0 4.26947  214 204 -1  -1  -1  202 134 1   1   0   0   45  1    
+ZZZN 202NODE   1 202    1   2   8   66  0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 202NODE   2 202    17.6401             97.6401             22.3599             102.3599             
+ZZZN 203NODE   0 203    N2             0 0 4.26947  209 204 213 -1  -1  203 134 1   1   0   0   45  1    
+ZZZN 203NODE   1 203    1   2   20  0   0   0   1   -1  -1  -1  -1  -1  -1                               
+ZZZN 203NODE   2 203    57.6401             97.6401             62.3599             102.3599             
+ZZZN 207NODE   0 207    N1             0 0 4.26947  209 208 -1  -1  -1  207 134 1   1   0   0   45  1    
+ZZZN 207NODE   1 207    1   2   20  0   1   0   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 207NODE   2 207    57.6401             57.6401             62.3599             62.3599              
+ZZZN 212NODE   0 212    outfall        0 0 4.26947  213 -1  -1  -1  -1  212 134 1   1   0   0   45  1    
+ZZZN 212NODE   1 212    1   2   20  0   0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 212NODE   2 212    57.8184             134.8423            62.5381             139.5620             
+ZZZE 204EDGE   0 204    orifice2       0           202 203 204 138 1   1   0   0   1                     
+ZZZE 204EDGE   1 204    1   4   10  0   0 4.26947   0 0.474386                                           
+ZZZE 208EDGE   0 208    orifice1       0           201 207 208 138 1   1   0   0   1                     
+ZZZE 208EDGE   1 208    1   4   10  0   0 4.26947   0 0.474386                                           
+ZZZE 209EDGE   0 209    L1             0           207 203 209 136 1   1   0   0   1                     
+ZZZE 209EDGE   1 209    1   0   0   0   0 4.26947   0 0.474386                                           
+ZZZE 213EDGE   0 213    dorf           0           203 212 213 138 1   1   0   0   1                     
+ZZZE 213EDGE   1 213    1   0   10  0   0 4.26947   0 0.474386                                           
+ZZZE 214EDGE   0 214    overflow       0           201 202 214 136 1   1   0   0   1                     
+ZZZE 214EDGE   1 214    1   0   0   0   0 4.26947   0 0.474386                                           
+ZZZS   1SEL    1   0        0    1    2    3    4                                                        
+ZZZW   0BUFF   0   0    @_@_@_@_@_@_@_@                                                                  
+EXTR   1F1     0 204                           1    25.   1.    99.9         5. 1             0          
+EXTR   0SPDV   0 204     00000000000000100000000000001                                                   
+EXTR   0C1     0 214             0.0  6              20.      50.      100.     100.     99.9      0.015 
+EXTR   0MANW   0 214                   0.0       0.0                                                     
+EXTR   0C1A    0 214            1.     1.               0.1                                              
+EXTR   0D1     0 201                     120.     100.      0.0     0.0 0 0                              
+EXTR   0D1     0 202                     120.     99.9      0.0     0.0 0 0                              
+EXTR   0C1C    0 214                              0P0     0.0                                            
+EXTR   0SPSC   0 214                                                                               0     
+ZZZS   0SEL    1   0        0    1    2    3    4                                                        
+EXTR   0C1     0 209             0.0  1               4.               100.     100.     99.9      0.014 
+EXTR   0MANW   0 209                   0.0       0.0                                                     
+EXTR   0C1A    0 209                                    0.1                                              
+EXTR   0C1C    0 209                              0P0     0.0                                            
+EXTR   0SPSC   0 209                                                                               0     
+EXTR   0C1     0 213             0.0  1               4.      10.      100.     99.9    99.88      0.014 
+EXTR   0MANW   0 213                   0.0       0.0                                                     
+EXTR   0C1A    0 213            1.     1.                .1                                              
+EXTR   0C1C    0 213                              0P0     0.0                                            
+EXTR   0SPSC   0 213                                                                               0     
+EXTR   0SP1N   0 202         0                        0                   0   0 0                        
+EXTR   0D1     0 207                     120.     100.      0.0     0.0 0 0                              
+EXTR   0SP1N   0 207         0                        0                   0   0 0                        
+EXTR   0D1     0 203                     120.     99.9      0.0     0.0 0 0                              
+EXTR   0SP1N   0 203         0                        0                   0   0 0                        
+EXTR   0D1     0 212                     120.    99.88      0.0     0.0 0 0                              
+EXTR   0I1     0 212                 1 0                                                      0          
+EXTR   0J2A    0 212            0.0                                                                      
+EXTR   0SP1N   0 212         0                        0                   1   0 0                        
+EXTR   0B1     0   0                 10.            1  500  500        0.0                    00         
+EXTR   0BB2    0   0                50   0.0033    5000.       1.        0        1       1.           00
+EXTR   0B1A    0   0        0   0   0   0    0   2   0   0                                               
+EXTR   0B0     0   0                                                                    1 0 1 1          
+EXTR   0K3     0 201     0.      0.      0.5     25.     1.      25.     2.      25.                     
+EXTR   0SP1N   0 201         1                        0                   0   0 0                        
+SWMM   0TEMP   0   0                                                                                    1
+EXTR   0RSLT   0 209                                                         10.08879 -.1627674          
+EXTR   0RSLT   0 213                                                         25.00086         0          
+EXTR   0RSLT   0 214                                                         14.93441         0          
+EXTR   0REVW   0   0      0 1 1 1 1 1 1                                                                  
+EXTR   0BB1    0   0                                0.85              0.65       2.       1.        6    
+ZZZS   0PLOT   0   0      view pict    1                                                                 
+ZZZS   2SEL    1   0        0    1    2                                                                  
+SWMM   1MCTL   0 213       1                                                                             
+EXTR   1C1     0 213             0.0  1               4.      10.      100.     99.9    99.88      0.014 
+EXTR   1MANW   0 213                   0.0       0.0                                                     
+EXTR   1C1A    0 213            1.     1.                .1                                              
+EXTR   1C1C    0 213                              0P0     0.0                                            
+EXTR   1SPSC   0 213                                                                               0     
+EXTR   1RSLT   0 213                                                         25.00086         0          
+EXTR   0SPDV   0 213     00000000000000100000000000001                                                   
+EXTR   0SPDN   0 213     213.1                                                                           
+EXTR   1F1     0 213                           1    25.   1.    99.9         5. 1             0          

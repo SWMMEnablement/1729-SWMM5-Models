@@ -1,0 +1,335 @@
+/*******************************************/
+/*                                         */
+/* Test XPX file which creates TEST1EXT.XP */
+/*                                         */
+/*******************************************/
+/*                                         */
+/*                                         */
+/* Define Job Control Information          */
+/*                                         */
+/*******************************************/
+
+
+DATA ALPHA "" 0 1 "This is a test file for XPX"
+
+
+/*********************************************/
+/*                                           */
+/* Define Start Time for Simulation (zero)   */
+/*                                           */
+/*********************************************/
+
+
+DATA DZERO "" 0 1 0                     /* Start Day = zero    */
+DATA HZERO "" 0 1 0                     /* Start Hour = zero   */
+DATA MZERO "" 0 1 0                     /* Start Minute = zero */
+DATA SZERO "" 0 1 0                     /* Start Second = zero */
+
+
+/*********************************************/
+/*                                           */
+/* Define Duration of Simulation (8 hours)   */
+/*                                           */
+/*********************************************/
+
+
+DATA DSL "" 0 1 0                       /* Duration Day    = zero   */
+DATA HSL "" 0 1 8                       /* Duration Hour   = 8      */
+DATA MSL "" 0 1 0                       /* Duration Minute = zero   */
+DATA SSL "" 0 1 0                       /* Duration Second = zero   */
+
+
+/*********************************************/
+/*                                           */
+/* Define Large Time Step (60 seconds)       */
+/*                                           */
+/*********************************************/
+
+
+DATA DELT "" 0 1 60                    /* Time step = 60 seconds   */
+
+
+/*********************************************/
+/*                                           */
+/* Define Printout Intervals                 */
+/*                                           */
+/*********************************************/
+
+DATA NSTART "" 0 1 45	           /* Starting Time step for Printout */		  
+DATA INTER "" 0 1 1000	           /* Intermediate Print Cycle        */
+DATA JNTER "" 0 1 1000	           /* Summary Print Cycle             */		   
+
+
+/*********************************************/
+/*                                           */
+/* Switch off all options in Job Control     */
+/* (Defaults will be used)                   */
+/*                                           */
+/*********************************************/
+
+				   
+DATA CNTLH  "" 0 1 0                       /* Hot Start Off */
+DATA CNTLJD "" 0 1 0                       /* Junction Defaults Off */
+DATA CNTLNS "" 0 1 0                       /* Echo Nat Surface Off */
+DATA CNTLT  "" 0 1 0                       /* Simulation Tolerances Off */
+DATA CNTLR  "" 0 1 0                       /* Routing Control off */
+DATA CNTLMC "" 0 1 0                       /* Modify Conduits Off */
+
+
+/*********************************************/
+/*                                           */
+/* Define Node names and X Y Coordinates     */
+/*                                           */
+/* Note: It is important to place the nodes  */ 
+/*       at the correct X Y location         */
+/*                                           */
+/*********************************************/
+
+/*         Node    X   Y                     */
+
+node 134 "mh a1"  000 200
+node 134 "mh a2"  100 200
+node 134 "mh a3"  100 100
+node 134 "mh a4"  100 000
+node 134 "mh a5"  200 000
+node 134 "mh a6"  300 000
+node 134 "outlet" 400 000
+node 134 "mh b1"  400 100
+node 134 "mh b2"  300 100
+node 134 "mh b3"  200 100
+ 		 		
+
+/*******************************************/
+/*                                         */
+/* Define Link connectivity and names      */
+/*                                         */
+/*******************************************/
+
+/*         Link  U/S Node D/S Node         */
+
+link 136  "LA1"  "mh a1"  "mh a2"
+link 136  "LA2"  "mh a2"  "mh a3"
+link 136  "LA3"  "mh a3"  "mh a4"
+link 136  "LA4"  "mh a4"  "mh a5"
+link 136  "LA5"  "mh a5"  "mh a6"
+link 136  "LA6"  "mh a6"  "outlet"
+link 136  "LB1"  "mh b1"  "mh b2"
+link 136  "LB2"  "mh b2"  "mh b3"
+link 136  "LB3"  "mh b3"  "mh a5"
+ 	       	        
+
+/*******************************************/
+/*                                         */
+/*     Node Surface Levels D1 - GRELEV     */
+/*                                         */
+/*******************************************/
+
+/*                       GRELEV            */
+
+DATA GRELEV "mh a1"  0 1  138
+DATA GRELEV "mh a2"  0 1  135
+DATA GRELEV "mh a3"  0 1  155
+DATA GRELEV "mh a4"  0 1  125
+DATA GRELEV "mh a5"  0 1  120
+DATA GRELEV "mh a6"  0 1  111
+DATA GRELEV "outlet" 0 1  100
+DATA GRELEV "mh b1"  0 1  137
+DATA GRELEV "mh b2"  0 1  130
+DATA GRELEV "mh b3"  0 1  125
+ 		    		   
+
+/*******************************************/
+/*                                         */
+/*     Node Invert Levels D1 - Z           */
+/*                                         */
+/*******************************************/
+
+/*                     Z                   */
+
+DATA Z "mh a1"  0 1  124.6
+DATA Z "mh a2"  0 1  118.3
+DATA Z "mh a3"  0 1  114.5
+DATA Z "mh a4"  0 1  102.8
+DATA Z "mh a5"  0 1  102.0
+DATA Z "mh a6"  0 1  101.6
+DATA Z "outlet" 0 1   89.9
+DATA Z "mh b1"  0 1  128.2
+DATA Z "mh b2"  0 1  117.5
+DATA Z "mh b3"  0 1  111.5
+	            	   
+     
+/*******************************************/
+/*                                         */
+/*        Conduit Inverts  C1 - ZP1 & ZP2  */
+/*                                         */
+/*******************************************/
+
+/*         Link       ZP1 & ZP2            */
+
+DATA ZP1  "LA1"  0 1   124.6
+DATA ZP2  "LA1"  0 1   118.3
+DATA ZP1  "LA2"  0 1   118.3
+DATA ZP2  "LA2"  0 1   114.5
+DATA ZP1  "LA3"  0 1   114.5
+DATA ZP2  "LA3"  0 1   102.8
+DATA ZP1  "LA4"  0 1   102.8
+DATA ZP2  "LA4"  0 1   102.0
+DATA ZP1  "LA5"  0 1   102.0
+DATA ZP2  "LA5"  0 1   101.6
+DATA ZP1  "LA6"  0 1   101.6
+DATA ZP2  "LA6"  0 1    89.9
+DATA ZP1  "LB1"  0 1   128.2
+DATA ZP2  "LB1"  0 1   117.5
+DATA ZP1  "LB2"  0 1   117.5
+DATA ZP2  "LB2"  0 1   111.5
+DATA ZP1  "LB3"  0 1   111.5
+DATA ZP2  "LB3"  0 1   102.0
+ 	 	        
+
+/*******************************************/
+/*                                         */
+/*      Conduit Lengths C1 - LEN           */
+/*                                         */
+/*******************************************/
+
+/*       Link        LEN                   */
+
+DATA LEN "LA1" 0 1  1800
+DATA LEN "LA2" 0 1  2075
+DATA LEN "LA3" 0 1  5000
+DATA LEN "LA4" 0 1  500
+DATA LEN "LA5" 0 1  300
+DATA LEN "LA6" 0 1  4500
+DATA LEN "LB1" 0 1  5100
+DATA LEN "LB2" 0 1  3500
+DATA LEN "LB3" 0 1  5000
+ 		   		  
+
+/*******************************************/
+/*                                         */
+/*  DEFINE CONDUIT TYPES C1 - NKLASS       */
+/*                                         */
+/*******************************************/
+
+/*           Link       NKLASS             */
+
+DATA NKLASS  "LA1"  0 1   1    /* NKLASS = 1 Circular */
+DATA NKLASS  "LA2"  0 1   1
+DATA NKLASS  "LA3"  0 1   1
+DATA NKLASS  "LA4"  0 1   1
+DATA NKLASS  "LA5"  0 1   6    /* NKLASS = 6 Trapezoidal */
+DATA NKLASS  "LA6"  0 1   6
+DATA NKLASS  "LB1"  0 1   1
+DATA NKLASS  "LB2"  0 1   1
+DATA NKLASS  "LB3"  0 1   1
+	      	       
+
+/*******************************************/
+/*                                         */
+/*  DEFINE Diameter / Depth C1 - DEEP      */
+/*                                         */
+/*******************************************/
+
+/*         Link        DEEP                */
+
+DATA DEEP  "LA1"  0 1   4    /* DEEP = Diameter */
+DATA DEEP  "LA2"  0 1   4.5		   
+DATA DEEP  "LA3"  0 1   5
+DATA DEEP  "LA4"  0 1   6
+DATA DEEP  "LA5"  0 1   9    /* DEEP = Depth */
+DATA DEEP  "LA6"  0 1   9
+DATA DEEP  "LB1"  0 1   4.5 
+DATA DEEP  "LB2"  0 1   4.5		   
+DATA DEEP  "LB3"  0 1   5.5
+ 	  	      
+
+/*********************************************/
+/*                                           */
+/* DEFINE Manning's n Roughness C1 - ROUGH   */
+/*                                           */
+/*********************************************/
+
+/*          Link        ROUGH                */
+		       
+DATA ROUGH "LA1" 0 1   0.015   
+DATA ROUGH "LA2" 0 1   0.015	 	   
+DATA ROUGH "LA3" 0 1   0.034
+DATA ROUGH "LA4" 0 1   0.015
+DATA ROUGH "LA5" 0 1   0.015
+DATA ROUGH "LA6" 0 1   0.016
+DATA ROUGH "LB1" 0 1   0.015
+DATA ROUGH "LB2" 0 1   0.015		   
+DATA ROUGH "LB3" 0 1   0.0154
+ 		      		    
+
+/*********************************************/
+/*                                           */
+/* DEFINE Trapezoidal Base Width C1 - WIDE   */
+/*                                           */
+/*********************************************/
+
+/*        Link       WIDE                    */
+
+DATA WIDE "LA5" 0 1  0.0
+DATA WIDE "LA6" 0 1  0.0		   
+
+
+/*********************************************************/
+/*                                                       */
+/* DEFINE Trapezoidal Batter Slopes C1 - STHETA & SPHI   */
+/*                                                       */
+/*********************************************************/
+
+
+DATA TTHETA "LA5" 0 1 3.0      /*  TTHETA = Left Batter Slope   */
+DATA TPHI   "LA5" 0 1 3.0      /*  TPHI   = Right Batter Slope   */
+DATA TTHETA "LA6" 0 1 3.0	 	   
+DATA TPHI   "LA6" 0 1 3.0		   
+
+
+/*********************************************************/
+/*                                                       */
+/* DEFINE Outfall C1 - STHETA & SPHI                     */
+/*                                                       */
+/*********************************************************/
+
+
+DATA FLGOUTF "outlet" 0 1 1         /* Switch Outfall Flag on */
+DATA NTIDE   "outlet" 0 1 1         /* Free Outfall           */
+DATA DEPC    "outlet" 0 1 1         /* Use min of Yc & Yn     */
+DATA GATE    "outlet" 0 1 0         /* Switch Tide Gate off   */
+
+
+/*********************************************************/
+/*                                                       */
+/* DEFINE Inflow Hydrographs K3 - TEO & QCARD   */
+/*                                                       */
+/*********************************************************/
+
+
+/*       mh a1     */
+
+DATA INQ "mh a1" 0 1 1     /* Turn on User Inflow Flag */
+
+DATA TEO   "mh a1" 0 5 0 .25 3  3.25 12    /* Time */
+DATA QCARD "mh a1" 0 5 0 45  45 0    0     /* Flow */
+
+/*       mh a3     */
+
+DATA INQ   "mh a3" 0 1 1     /* Turn on User Inflow Flag */
+
+DATA TEO   "mh a3" 0 5 0 .25 3 3.25 12    /* Time */
+DATA QCARD "mh a3" 0 5 0 40 40 0  0       /* Flow */
+				    
+/*       mh b1     */
+
+DATA INQ   "mh b1" 0 1 1     /* Turn on User Inflow Flag */
+
+DATA TEO   "mh b1" 0 5 0 .25 3  3.25 12     /* Time */
+DATA QCARD "mh b1" 0 5 0 50  50 0    0      /* Flow */
+				    
+
+
+
+/**************     END of DATA    **********************/
+	       

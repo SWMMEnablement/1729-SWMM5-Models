@@ -1,0 +1,212 @@
+/*******************************************/
+/*                                         */
+/* Test XPX file which creates TEST1EXT.XP */
+/*                                         */
+/*******************************************/
+/*                                         */
+/*                                         */
+/* Define Job Control Information          */
+/*                                         */
+/*******************************************/
+
+
+DATA ALPHA "" 0 1 "This is a test file for XPX"
+
+
+/*********************************************/
+/*                                           */
+/* Define Start Time for Simulation (zero)   */
+/*                                           */
+/*********************************************/
+
+
+DATA YZERO "" 0 1 96                    /* Start year    */
+DATA MZERO "" 0 1 1                     /* Start month   */
+DATA DZERO "" 0 1 1                     /* Start Day     */
+DATA HZERO "" 0 1 1                     /* Start Hour    */
+DATA MZERO "" 0 1 0                     /* Start Minute  */
+DATA SZERO "" 0 1 0                     /* Start Second  */
+
+
+/*********************************************/
+/*                                           */
+/* Define Duration of Simulation (8 hours)   */
+/*                                           */
+/*********************************************/
+
+
+DATA YSL "" 0 1 96                      /* Duration Year    */
+DATA MSL "" 0 1 1                       /* Duration Month   */
+DATA DSL "" 0 1 1                       /* Duration Day     */
+DATA HSL "" 0 1 8                       /* Duration Hour    */
+DATA SSL "" 0 1 0                       /* Duration Second  */
+
+
+/*********************************************/
+/*                                           */
+/* Define Large Time Step (60 seconds)       */
+/*                                           */
+/*********************************************/
+
+
+DATA DELT "" 0 1 60                    /* Time step = 60 seconds   */
+
+
+/*********************************************/
+/*                                           */
+/* Define Printout Intervals                 */
+/*                                           */
+/*********************************************/
+
+DATA NSTART "" 0 1 45	           /* Starting Time step for Printout */		  
+DATA INTER "" 0 1 1000	           /* Intermediate Print Cycle        */
+DATA JNTER "" 0 1 1000	           /* Summary Print Cycle             */		   
+
+
+/*********************************************/
+/*                                           */
+/* Switch off all options in Job Control     */
+/* (Defaults will be used)                   */
+/*                                           */
+/*********************************************/
+
+				   
+DATA CNTLH  "" 0 1 0                       /* Hot Start Off */
+DATA CNTLJD "" 0 1 0                       /* Junction Defaults Off */
+DATA CNTLNS "" 0 1 0                       /* Echo Nat Surface Off */
+DATA CNTLT  "" 0 1 0                       /* Simulation Tolerances Off */
+DATA CNTLR  "" 0 1 0                       /* Routing Control off */
+DATA CNTLMC "" 0 1 0                       /* Modify Conduits Off */
+
+
+/*********************************************/
+/*                                           */
+/* Define Node names and X Y Coordinates     */
+/*                                           */
+/* Note: It is important to place the nodes  */ 
+/*       at the correct X Y location         */
+/*                                           */
+/*********************************************/
+
+/*         Node    X   Y                     */
+
+node 134 "mh a1"  000 200
+node 134 "mh a2"  100 200
+node 134 "mh a3"  100 100
+node 134 "mh a4"  100 000
+node 134 "mh a5"  200 000
+node 134 "mh a6"  300 000
+node 134 "outlet" 400 000
+node 134 "mh b1"  400 100
+node 134 "mh b2"  300 100
+node 134 "mh b3"  200 100
+ 		 		
+
+/*******************************************/
+/*                                         */
+/* Define Link connectivity and names      */
+/*                                         */
+/*******************************************/
+
+/*         Link  U/S Node D/S Node         */
+
+link 136  "LA1"  "mh a1"  "mh a2"
+link 136  "LA2"  "mh a2"  "mh a3"
+link 136  "LA3"  "mh a3"  "mh a4"
+link 136  "LA4"  "mh a4"  "mh a5"
+link 136  "LA5"  "mh a5"  "mh a6"
+link 136  "LA6"  "mh a6"  "outlet"
+link 136  "LB1"  "mh b1"  "mh b2"
+link 136  "LB2"  "mh b2"  "mh b3"
+link 136  "LB3"  "mh b3"  "mh a5"
+ 	       	        
+
+/*******************************************/
+/*                                         */
+/*     Node Surface Levels D1 - GRELEV     */
+/*     Node Invert Levels D1 - Z           */
+/*                                         */
+/*******************************************/
+
+$TABLE
+GRELEV,  Z 
+"mh a1"  0 1  138    124.6
+"mh a2"  0 1  135    118.3
+"mh a3"  0 1  155    114.5
+"mh a4"  0 1  125    102.8
+"mh a5"  0 1  120    102.0
+"mh a6"  0 1  111    101.6
+"outlet" 0 1  100     89.9
+"mh b1"  0 1  137    128.2
+"mh b2"  0 1  130    117.5
+"mh b3"  0 1  125    111.5
+$TABLE_END 		    		   
+     
+/*******************************************/
+/*                                         */
+/*        Conduit Inverts  C1 - ZP1 & ZP2  */
+/* DEFINE Trapezoidal Batter Slopes C1 - STHETA & SPHI   */
+/*                                         */
+/*******************************************/
+
+$TABLE
+              ZP1,   ZP2 ,   LEN,DEEP   ROUGH,  WIDE,  TTHETA, TPHI    NKLASS, 
+"LA1"  0 1   124.6  118.3    1800 4      0.015   0.0     0.0    0.0       1    
+"LA2"  0 1   118.3  114.5    2075 4.5	 0.015	 0.0	 0.0    0.0       1	  
+"LA3"  0 1   114.5  102.8    5000 5	 0.034	 0.0	 0.0    0.0       1	  
+"LA4"  0 1   102.8  102.0    500  6	 0.015	 0.0	 0.0    0.0       1	  
+"LA5"  0 1   102.0  101.6    300  9   	 0.015	 0.0	 0.0    0.0       6 	  
+"LA6"  0 1   101.6   89.9    4500 9	 0.016	 0.0	 0.0    0.0       6	  
+"LB1"  0 1   128.2  117.5    5100 4.5 	 0.015	 0.0	 0.0    0.0       1	  
+"LB2"  0 1   117.5  111.5    3500 4.5	 0.015	 0.0	 0.0    0.0       1	  
+"LB3"  0 1   111.5  102.0    5000 5.5	 0.0154	 0.0	 0.0    0.0       1	  
+$TABLE_END 		    		   		
+ 		   		  
+/*********************************************************/
+/*                                                       */
+/* DEFINE Outfall C1 - STHETA & SPHI                     */
+/*                                                       */
+/*********************************************************/
+
+
+DATA FLGOUTF "outlet" 0 1 1         /* Switch Outfall Flag on */
+DATA NTIDE   "outlet" 0 1 1         /* Free Outfall           */
+DATA DEPC    "outlet" 0 1 1         /* Use min of Yc & Yn     */
+DATA GATE    "outlet" 0 1 0         /* Switch Tide Gate off   */
+
+
+/*********************************************************/
+/*                                                       */
+/* DEFINE Inflow Hydrographs K3 - TEO & QCARD   */
+/*                                                       */
+/*********************************************************/
+
+$TABLE
+INQ,          
+"mh a1" 0 1 1     
+"mh a3" 0 1 1 
+"mh b1" 0 1 1   
+$TABLE_END    
+
+
+$TABLE
+            TEO,  QCARD           
+"mh a1" 0 1 0    0
+"mh a3" 0 1 0    0 
+"mh b1" 0 1 0    0 
+"mh a1" 0 2 .25  5
+"mh a3" 0 2 .25  5 
+"mh b1" 0 2 .25  5 
+"mh a1" 0 3 3    45
+"mh a3" 0 3 3    40
+"mh b1" 0 3 3    50
+"mh a1" 0 4 3.25 45
+"mh a3" 0 4 3.25 40
+"mh b1" 0 4 3.25 50
+"mh a1" 0 5 12   0
+"mh a3" 0 5 12   0 
+"mh b1" 0 5 12   0
+$TABLE_END
+
+
+

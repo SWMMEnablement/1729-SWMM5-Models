@@ -1,0 +1,77 @@
+EXTR   0B2     0   0        0                                                                            
+dfie   0dcar   0   0       out                                                                           
+SWMM   0TEMP   0   0                                                                                    1
+RAIN   0B1     0   0     1               1               11080211    NWS80F    1100                      
+RAIN   0B0C    0   0     D:\georain.out                                                                  
+RAIN   0B0A    0   0     D:\geo.dat                                                                      
+RAIN   0B0B    0   0     geo.rin                                                                         
+SWMM   0UTIL   0   0     1                                                                               
+ZSYM   0NAME   0   0     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                1   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    2   40    5    0                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM   0GLDB   0   0         3                                                                           
+SWMM   0SWMM   0   0           1.01                                                                      
+ZZZC   0CNTL   0   0    2    1    0    999   999   317.623    0    211  swmmxp                           
+ZZZC   0CNTL   1   0    39.6300             10.4332                                                      
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZZZS   0SEL    0   0          2     1                                                                    
+ZZZS   1SEL    0   0          1     1                                                                    
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    
+SWMM   0MCTL   0 202     1                                                                               
+SWMM   0MCTL   0 203     1                                                                               
+SWMM   0MCTL   0 205     0                                                                               
+SWMM   0MODE   0   0     001000                                                                          
+SWMM   7TEMP   0   0                                                                                    1
+SWMM   7TEMP   7   0                                                                                    1
+RUNF   2INT    0   0     1000                                                                            
+RUNF   2INT1   0   0     D:\geo.rin                                                                      
+GRUN   0E1     0   0         10    80211                                                                 
+dfie   2dcar   0   0       RIN                                                                           
+GRUN   1E1     0   0         10    80211                                                                 
+SWMM   7TEMP   1   0                                                                                    1
+RUNF   0H1A    0 202     00010000                                                                        
+RUNF   0H1     0 202           100.       10.      100.       0.1                                        
+SWMM   3TEMP   1   0                                                                                    1
+GRUN   0IN1    0   0     0        1.       0.1     0.001                                                 
+GRUN   0IN2    0   0            0.0     0.014      0.03       0.0       0.0                              
+SWMM   3TEMP   3   0                                                                                    1
+RUNF   0H1B    0 202     Storm1              Horton1                                                     
+RUNF   0H1C    0 202     000                                                   00                        
+RUNF   0H1A    0 203     00010000                                                                        
+ZZZW   0BUFF   0   0    @_@_@_@_@_@_@_@                                                                  
+RUNF   0H1     0 203           100.       10.      100.       0.1                                        
+RUNF   0H1B    0 203     Storm2              Horton1                                                     
+RUNF   0H1C    0 203     000                                                   00                        
+RUNF   0B2     0   0          3600.     7200.    86000.                                                  
+RUNF   0B1     0   0       100        12   31    0    0    0    0    1    1   65    0    0   65          
+RUNF   0A1     0   0      0    0 00           0.01                                                       
+ZSYM   4OBJ    0   0     Horton1                                                                         
+ZSYM   4VAL    0   0         0                                                                           
+ZSYM   7OBJ    0   0     Storm1                                  Storm2                                  
+ZSYM   7VAL    0   0         0    1                                                                      
+ZZZN 202NODE   0 202    202            0 0 4.26058  205 -1  -1  -1  -1  202 134 1   1   0   0   45  1    
+ZZZN 202NODE   1 202    1   2   253 37  1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 202NODE   2 202    33.1487             41.6256             37.8610             46.3380              
+ZZZN 203NODE   0 203    203            0 0 4.26058  205 -1  -1  -1  -1  203 134 1   1   0   0   45  1    
+ZZZN 203NODE   1 203    1   2   72  153 0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 203NODE   2 203    34.0955             88.7490             38.8078             93.4613              
+ZZZE 205EDGE   0 205    205            0           202 203 205 136 0   1   0   0   1                     
+ZZZE 205EDGE   1 205    1   0   40  243 0 4.26058   0 0.473398                                           
+ZZZS   0SEL    1   0        0    1                                                                       
+RUNF   0M1     0   0     0    1                                                                          
+ZZZS   1SEL    1   0        0                                                                            

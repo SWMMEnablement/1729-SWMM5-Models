@@ -1,0 +1,59 @@
+EXTR   0B2     0   0        0                                                                            
+SWMM   0IMP    0   0     11001100                                                                        
+SWMM   0IMP2   0   0     RUNOFF9.DAT                                                                     
+RUNF   2INT    0   0     0010                                                                            
+RUNF   2INT1   0   0                                                                                     
+RUNF   2INT3   0   0                                                                                     
+EXTR   0A1     0   0         PCSWMM 3.2 EXERCISE 1A                                                      
+RUNF   0A1B    0   0     SINGLE SUBCATCHMENT SUBJECTED TO A UNIFORM RAINFALL                             
+RUNF   0A1     0   0      0    0 1             .01                                                       
+RUNF   0B1     0   0     1001      5    23   16   10      12    0   23    5   85     0    85             
+RUNF   0B2     0   0           300.      300.    86400.                                                  
+GRUN   1E1     0   0       0000                        12:00     22/06/85                 1.0            
+ZSYM   0NAME   0   0     Pollutant                                   5   40    5    0                    
+ZSYM   0OBJ    0   0     Sediment                                SS                                      
+ZSYM   0OBJ    1   0     TP                                      TN                                      
+ZSYM   0OBJ    2   0     E coli                                                                          
+ZSYM   0VAL    0   0         0    1    2    3    4                                                       
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                1   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    1   40    5    0                    
+ZSYM   7OBJ    0   0     Gauge1                                                                          
+ZSYM   7VAL    0   0         1                                                                           
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+GRUN   1E3A    0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GRUN   1E3A    1   0             1.        1.        1.        1.                                        
+RUNF   0F1     0   0             .1        .1        .1        .1        .1        .1        .1        .1
+RUNF   0F1     1   0             .1        .1        .1        .1                                        
+SWMM   0MCTL   0 201     1                                                                               
+RUNF   0H1A    0 201        1               101                                                          
+RUNF   0H1B    0 201     Gauge1              Infil1                                                      
+RUNF   0H1     0 201            10.       40.      997.       .02                                        
+GRUN   1IN2    0   0                     .017      .025       .05        .2                              
+GRUN   1IN1    0   0     0        3.        .3   .001115                                                 
+ZSYM   4OBJ    0   0     Infil1                                                                          
+ZSYM   4VAL    0   0         1                                                                           
+ZSYM   0GLDB   0   0         0                                                                           
+SWMM   0SWMM   0   0           1.00                                                                      
+ZZZC   0CNTL   0   0    1    0    0    999   999   36.597     0    211  swmmxp                           
+ZZZC   0CNTL   1   0    -36.6540            -306.8127                                                    
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZZZN 201NODE   0 201    301            0 0 4.26058  -1  -1  -1  -1  -1  201 134 1   0   0   0   45  1    
+ZZZN 201NODE   1 201    1   2   128 10  -1  -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 201NODE   2 201    -306.5528           -35.2736            -301.8405           -30.5612             
+ZZZS   0SEL    0   0          0     1                                                                    
+ZZZS   1SEL    0   0          0     1                                                                    
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    

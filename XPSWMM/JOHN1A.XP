@@ -1,0 +1,124 @@
+EXTR   0B2     0   0        0                                                                           2
+SWMM   0MCTL   0 201     101                                                                             
+SWMM   0MCTL   0 203     001                                                                             
+SWMM   0MCTL   0 202     001                                                                             
+RUNF   0H1C    0 201     000                                                   00                        
+RUNF   0H1A    0 201     00010000                                                                        
+RUNF   0H1     0 201          1500.       40.    10000.       .01                                        
+SWMM   0TEMP   0   0                                                                                    1
+SWMM   7TEMP   0   0                                                                                    1
+GRUN   0E1     0   0       10000                       12:00     25/1/94               15.        1.     
+GRUN   0E3A    0   0     0.05      0.05      0.05      0.05      0.06      0.01      0.01      0.01      
+SWMM   7TEMP   7   0                                                                                    1
+SWMM   3TEMP   7   0                                                                                    1
+GRUN   0IN1    0   0     1                                      5.      0.05       0.1                   
+GRUN   0IN2    0   0            25.     0.014      0.03      0.05       0.2                              
+SWMM   3TEMP   3   0                                                                                    1
+RUNF   0B2     0   0           900.      900.    86000.                                                  
+RUNF   0B1     0   0       000         1   25   20    0   12    0   25    1   94    0    0   94          
+RUNF   0A1     0   0      0    0 01           0.01                                                       
+SWMM   3TEMP   0   0                                                                                    1
+RUNF   0H1B    0 201     Storm 1             Green Ampt                                                  
+EXTR   0C1     0 203             0.0  1               5.              1000.      0.0     -10.      0.014 
+EXTR   0MANW   0 203                   0.0       0.0                                                     
+EXTR   0C1A    0 203                                     1.                                              
+EXTR   0D1     0 201                       5.      0.0      0.0     0.0 0 0                              
+EXTR   0D1     0 202                       5.     -10.      0.0     0.0 0 0                              
+EXTR   0C1C    0 203                              0P0     0.0                                            
+EXTR   0SPSC   0 203                                                                               0     
+ZSYM   0NAME   0   0     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                1   40    5    0                    
+ZSYM   4OBJ    0   0     Green Ampt                                                                      
+ZSYM   4VAL    0   0         0                                                                           
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    1   40    5    0                    
+ZSYM   7OBJ    0   0     Storm 1                                                                         
+ZSYM   7VAL    0   0         0                                                                           
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM   0GLDB   0   0         7                                                                           
+SWMM   0SWMM   0   0           1.01                                                                      
+ZZZC   0CNTL   0   0    4    3    0    999   999   154.243    0    211  swmmxp                           
+ZZZC   0CNTL   1   0    46.2974             28.7396                                                      
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZZZN 201NODE   0 201    Filmore        0 0 4.26058  203 -1  -1  -1  -1  201 134 1   1   0   0   45  1    
+ZZZN 201NODE   1 201    1   2   243 37  1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 201NODE   2 201    29.8349             53.7992             34.5472             58.5115              
+ZZZN 202NODE   0 202    202            0 0 4.26058  203 207 -1  -1  -1  202 134 1   1   0   0   45  1    
+ZZZN 202NODE   1 202    1   2   20  0   0   0   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 202NODE   2 202    44.9836             65.5800             49.6959             70.2923              
+ZZZE 203EDGE   0 203    203            0           201 202 203 136 1   1   0   0   1                     
+ZZZE 203EDGE   1 203    1   0   216 10  0 4.26058   0 0.473398                                           
+ZZZS   0SEL    0   0          2     1                                                                    
+ZZZS   1SEL    0   0          1     1                                                                    
+ZZZS   1SEL    1   0        0                                                                            
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    
+RUNF   0H1A    0 202     00000000                                                                        
+ZZZS   0SEL    1   0        1    0                                                                       
+RUNF   0M1     0   0     2    1                                                                          
+EXTR   0REVW   0   0      1 1 1 1 1 1 1                                                                  
+SWMM   0MODE   0   0     200101                                                                          
+RUNF   2INT    0   0     0001                                                                            
+RUNF   2INT4   0   0     temp.int                                                                        
+TRAN   0NOD1   0 201        1900 000                                                                     
+TRAN   0NOD1   0 202        1900 000                                                                     
+TRAN   0JCT2   0   0         4    0.0001       60.        0.    1                                        
+TRAN   0JCT1   0   0     000001   010101                                                                 
+TRAN   1JCT1   0   0                 10                                                                  
+EXTR   1INTI   0   0     temp.int                                                                        
+SWMM   0MCTL   0 204     10                                                                              
+SWMM   0MCTL   0 206     10                                                                              
+SWMM   0MCTL   0 205     10                                                                              
+ZZZN 204NODE   0 204    204            0 0 4.26058  206 -1  -1  -1  -1  204 134 0   0   0   0   45  1    
+ZZZN 204NODE   1 204    1   2   20  0   1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 204NODE   2 204    27.9898             56.2976             32.7022             61.0099              
+ZZZN 205NODE   0 205    205            0 0 4.26058  206 207 -1  -1  -1  205 134 0   0   0   0   45  1    
+ZZZN 205NODE   1 205    1   2   20  0   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 205NODE   2 205    41.9363             67.7454             46.6487             72.4577              
+ZZZE 206EDGE   0 206    206            0           204 205 206 136 0   0   0   0   1                     
+ZZZE 206EDGE   1 206    1   0   216 10  0 4.26058   0 0.473398                                           
+ZZZW   0BUFF   0   0    @_@_@_@_@_@_@_@                                                                  
+TRAN   0NOD1   0 204        1900 000                                                                     
+EXTR   0C1     0 206             0.0  1               5.              1000.      0.0      0.0      0.014 
+EXTR   0MANW   0 206                   0.0       0.0                                                     
+EXTR   0C1A    0 206                                     1.                                              
+EXTR   0C1C    0 206                              0P0     0.0                                            
+EXTR   0SPSC   0 206                                                                               0     
+TRAN   0NOD1   0 205        1900 000                                                                     
+RUNF   0H1A    0 204     00010000                                                                        
+RUNF   0H1C    0 204     000                                                   00                        
+RUNF   0H1     0 204          1500.       40.    10000.       .01                                        
+RUNF   0H1B    0 204     Storm 1             Green Ampt                                                  
+SWMM   0MCTL   0 207     0                                                                               
+ZZZE 207EDGE   0 207    207            0           205 202 207 136 0   0   0   0   1                     
+ZZZE 207EDGE   1 207    1   0   7   0   0 4.26058   0 0.473398                                           
+EXTR   0SP1N   0 201         0                        0                   0   0 0                        
+EXTR   0B1     0   0                 60.            1  500  500                               00         
+EXTR   0BB2    0   0                                                     0                               
+EXTR   0B1A    0   0        0  12   0   0    0   2   0   0                                               
+EXTR   0B0     0   0                                                                    0 0 0 0          
+EXTR   0INTI   0   0     temp.int                                                                        
+EXTR   0I1     0 202                 1 0                                                      0          
+EXTR   0J2A    0 202            0.0                                                                      
+EXTR   0SP1N   0 202         0                        0                   1   0 0                        
+PLOT   0LINE   0   0                                   11        1 10.118TYPE1 ARROW                     
+PLOT   0SET2   0   0                        0 0 0 0                                                      
+PLOT   0HGLF   0   0                         11                                                          
+PLOT   0MANH   0   0     FILLEDCONSTANT 1 10.118  VERTICAL0.079    0                                     
+PLOT   0CONP   0   0      10.118 1                                                                       
+PLOT   0SET0   0   0                                0                                                    
+PLOT   0GRID   0   0      1 1  1 1  1 0.118                                                              
+PLOT   0TITL   0   0                                              10.118                                 
+PLOT   0SET3   0   0          0.0 INCR                                                                   

@@ -1,0 +1,2240 @@
+//
+//
+//
+//
+//
+//  ~~~~~~~~~~~~~~~~~~~~~~
+//     CHs_CalibRef.Cpp
+//  ~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+//  *** Headers ***
+//
+#include "StdAfx.h"
+//
+#include <hn_utilSrv.h>
+#include "Hs_UnitSrv.h"
+#include <hn_appSrv.h>
+#include <hn_srvDef.h>
+#include <hn_services.h>
+//
+#include "Hs_EnumDefine.h"
+#include "Hs_DateTime.h"
+#include "Hs_Network.h"
+//
+#include "hs_CalibRef.h"
+//
+//  Service pointers
+//
+#define mh_pUtil   ((CHnUtilSrv *)      hn_srvRegister()->At(UTILITY_SERVICE))
+#define mh_pState  ((CHnAppSrv *)       hn_srvRegister()->At(APPLICATION_SERVICE))->GetActiveState()
+#define mh_pUnit   ((CHs_UnitService *) hn_srvRegister()->At(UNIT_SERVICE))
+//
+//
+//
+//
+//
+//
+//  ***************************************************************************
+//  ***                           *********************************************
+//  ***   Class CHs_CalibRef      *********************************************
+//  ***                           *********************************************
+//  ***************************************************************************
+//
+//
+//
+//  ****************
+//    CHs_CalibRef
+//  ****************
+//
+CHs_CalibRef::CHs_CalibRef()
+//
+//  Description : constructor
+//
+{
+//
+//
+//  ** Class Data **
+//
+ mv_pNetwork       = NULL;
+ mv_pollutantCount = 0;
+//
+ mv_calibCount  = 0;
+ mv_pCalibIndex = NULL;
+ mv_pCalibData  = NULL;
+//
+ mv_pFile     = NULL;
+ mv_fileCount = 0;
+//
+ mv_errorText = "";
+//
+ mv_validFlag = false;
+//
+//
+//  ** Exit **
+//
+}
+//
+//
+//
+//  *****************
+//    ~CHs_CalibRef
+//  *****************
+//
+CHs_CalibRef::~CHs_CalibRef()
+//
+//  Description : destructor
+//
+{
+//
+//
+//  ** Class Data **
+//
+//  File
+//
+ Fv_CloseFile();
+//
+//  Class resources
+//
+ if (mv_pCalibIndex != NULL)  delete [] mv_pCalibIndex;
+ if (mv_pCalibData  != NULL)  delete [] mv_pCalibData;
+//
+//
+//  ** Exit **
+//
+}
+//
+//
+//
+//  ****************
+//    F_Initialize
+//  ****************
+//
+bool CHs_CalibRef::F_Initialize(CHm_OutFile *pNetwork,
+                                double       finalElapsedTime,
+                                int         &errorCode)
+//
+//  Description : initialise calibration data entry process
+//
+{
+//
+//
+//  ** Initialisation **
+//
+ errorCode = 0;
+//
+ mv_pNetwork         = pNetwork;
+ mv_finalElapsedTime = finalElapsedTime;
+//
+//
+//  ** Get Quality Count **
+//
+ CHs_NetworkOut *pNetworkOut = (CHs_NetworkOut *) mv_pNetwork;
+ mv_pollutantCount = pNetworkOut->F_GetPollutantCount();
+//
+//
+//  ** Get Time Data: assumed in absolute day format **
+//
+ CHs_DateTime *pDateTime = (CHs_DateTime *) mh_pUnit->F_GetDateTime();
+//
+ mv_dateDelimiter   = pDateTime->F_GetTimeDateDelimiter();
+ mv_simStartRefDays = pNetworkOut->F_GetSimStartAbsCalendarDay();  
+ mv_simStartHour    = pNetworkOut->F_GetSimStartDecimalHour();
+//
+//
+//  ** Get Available Data Filenames: from supporting calibration types **
+//
+ Fv_GetCalibFileData();
+ if (mv_fileCount <= 0)  return true;
+//
+//
+//  ** Get Calibration Data **
+//
+ if (!Fv_GetCalibData(errorCode))  return false;
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//  ******************
+//    F_SetTimeRange
+//  ******************
+//
+bool CHs_CalibRef::F_SetTimeRange(double startElapsedTime,
+                                  double endElapsedTime)
+//
+//  Description : set output data elapsed time range
+//
+{
+//
+//
+//  ** Data Loop: for all defined data objects **
+//
+ for (int i = 0;  i < mv_calibCount;  i++)
+  {
+   if (mv_pCalibData[i].F_IsValid())
+    {
+//
+//  Set time indices
+//
+     if (!mv_pCalibData[i].F_SetOutputTime(startElapsedTime,  
+                                           endElapsedTime))  return false;
+//
+//  Set object time range data validity flag
+//
+     bool  validFlag = true;
+//
+     if (mv_pCalibData[i].F_GetOutputStartIndex() < 0)  
+       validFlag = false;
+     if (mv_pCalibData[i].F_GetOutputEndIndex() < 0)
+       validFlag = false;
+//
+     mv_pCalibData[i].F_SetTimeRangeFlag(validFlag);
+    }
+  }
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//  ************************
+//    F_GetValidCalibCount
+//  ************************
+//
+int CHs_CalibRef::F_GetValidCalibCount()
+//
+//  Description : get valid calibration data count
+//
+{
+//
+//
+//  ** Initialisation **
+//
+ int  count = 0;
+//
+//
+//  ** Check Loop: limited to objects with valid data values **
+//
+ for (int i = 0;  i < mv_calibCount;  i++)
+  {
+   if (mv_pCalibData[i].F_CheckValidity())
+     count++;
+  }
+//
+//
+//  ** Exit **
+//
+ return count;
+}
+//
+//
+//
+//  *******************
+//    F_GetCalibIndex
+//  *******************
+//
+int CHs_CalibRef::F_GetCalibIndex(int elementIndex,
+                                  int elementType,
+                                  int calibType,
+                                  int pollutantIndex)
+//
+//  Description : get calibration data element index, default -1
+//
+{
+//
+//
+//  ** Data Loop **
+//
+ for (int i = 0;  i < mv_calibCount;  i++)
+  {
+//
+//  Screening: limited to objects with valid data values
+//
+   if (!mv_pCalibData[i].F_CheckValidity())  continue;
+   if (!mv_pCalibData[i].F_CheckCalibData(elementIndex,
+                                          elementType,
+                                          calibType))  continue;
+//
+//  Additional processing for pollutant type
+//
+   if ((calibType == CHs_CalibData::EN_CalibType_NodePollutant) ||
+       (calibType == CHs_CalibData::EN_CalibType_SubCatchPollutant))
+    {
+     int  calibIndex = i + pollutantIndex;
+     if (!mv_pCalibData[calibIndex].F_CheckValidity())  return -1;
+     return calibIndex;
+    }
+//
+//  Standard Hydraulic types
+//
+   return i;
+  }
+//
+//
+//  ** Exit **
+//
+ return -1;
+}
+//
+//
+//
+//  **********************
+//    F_GetCalibDataSize
+//  **********************
+//
+int CHs_CalibRef::F_GetCalibDataSize(int calibIndex)
+//
+//  Description : get calibration data item size within set time window
+//
+{
+//
+//
+//  ** Check **
+//
+ if (calibIndex <  0)              return 0;
+ if (calibIndex >= mv_calibCount)  return 0;
+//
+//
+//  ** Get Data Item Size: within set time window **
+//
+ int  dataSize = mv_pCalibData[calibIndex].F_GetOutputCount();
+//
+//
+//  ** Exit **
+//
+ return dataSize;
+}
+//
+//
+//
+//  *******************************
+//    F_GetCalibTimeInElapsedHour
+//  *******************************
+//
+bool CHs_CalibRef::F_GetCalibTimeInElapsedHour(int     calibIndex,
+                                               double *pTime)
+//
+//  Description : get calibration time data in elapsed hours
+//
+{
+//
+//
+//  ** Check **
+//
+ if (calibIndex <  0)              return false;
+ if (calibIndex >= mv_calibCount)  return false;
+//
+//
+//  ** Get Time Data **
+//
+ if (!mv_pCalibData[calibIndex].F_GetOutputElapsedTimeInHour(pTime))  return false;
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//  ******************************
+//    F_GetCalibTimeInElapsedDay
+//  ******************************
+//
+bool CHs_CalibRef::F_GetCalibTimeInElapsedDay(int     calibIndex,
+                                              double *pTime)
+//
+//  Description : get calibration time data in elapsed days
+//
+{
+//
+//
+//  ** Check **
+//
+ if (calibIndex <  0)              return false;
+ if (calibIndex >= mv_calibCount)  return false;
+//
+//
+//  ** Get Time Data **
+//
+ if (mv_pCalibData[calibIndex].F_GetOutputElapsedTimeInDay(pTime))  return false;
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//  ********************************
+//    F_GetCalibTimeInCalendarHour
+//  ********************************
+//
+bool CHs_CalibRef::F_GetCalibTimeInCalendarHour(int     calibIndex,
+                                                double  simStartClockHour,
+                                                double *pTime)
+//
+//  Description : get calibration time data in calendar hours
+//
+{
+//
+//
+//  ** Check **
+//
+ if (calibIndex <  0)              return false;
+ if (calibIndex >= mv_calibCount)  return false;
+//
+//
+//  ** Get Time Data **
+//
+ if (mv_pCalibData[calibIndex].F_GetOutputCalendarTimeInHour(pTime,
+                                                             simStartClockHour))  return false;
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//  ***************************************
+//    F_GetCalibTimeInRelativeCalendarDay
+//  ***************************************
+//
+bool CHs_CalibRef::F_GetCalibTimeInRelativeCalendarDay(int     calibIndex,
+                                                       double  simStartClockHour,
+                                                       double *pTime)
+//
+//  Description : get calibration time data in relative calendar day
+//
+{
+//
+//
+//  ** Check **
+//
+ if (calibIndex <  0)              return false;
+ if (calibIndex >= mv_calibCount)  return false;
+//
+//
+//  ** Get Time Data **
+//
+ if (mv_pCalibData[calibIndex].F_GetOutputCalendarTimeInRelativeDay(pTime,
+                                                                    simStartClockHour))  return false;
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//  *************************************
+//    F_GetCalibTimeInEpaAdjCalendarDay
+//  *************************************
+//
+bool CHs_CalibRef::F_GetCalibTimeInEpaAdjCalendarDay(int     calibIndex,
+                                                     double  simStartClockHour,
+                                                     double  epaAdjYearDay,
+                                                     double *pTime)
+//
+//  Description : get calibration time data in Epa adjusted calendar days (1900)
+//
+{
+//
+//
+//  ** Check **
+//
+ if (calibIndex <  0)              return false;
+ if (calibIndex >= mv_calibCount)  return false;
+//
+//
+//  ** Get Time Data **
+//
+ if (!mv_pCalibData[calibIndex].F_GetOutputCalendarTimeInEpaAdjDay(pTime,
+                                                                   simStartClockHour,
+                                                                   epaAdjYearDay))  return false;
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//  **********************************
+//    F_GetCalibTimeInAbsCalendarDay
+//  **********************************
+//
+bool CHs_CalibRef::F_GetCalibTimeInAbsCalendarDay(int     calibIndex,
+                                                  double  simStartClockHour,
+                                                  double  absYearDay,
+                                                  double *pTime)
+//
+//  Description : get calibration time data in absolute reference calendar days (0 AD)
+//
+{
+//
+//
+//  ** Check **
+//
+ if (calibIndex <  0)              return false;
+ if (calibIndex >= mv_calibCount)  return false;
+//
+//
+//  ** Get Time Data **
+//
+ if (!mv_pCalibData[calibIndex].F_GetOutputCalendarTimeInAbsDay(pTime,
+                                                                simStartClockHour,
+                                                                absYearDay))  return false;
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//  ******************
+//    F_GetCalibData
+//  ******************
+//
+bool CHs_CalibRef::F_GetCalibData(int     calibIndex,
+                                  double *pData)
+//
+//  Description : get calibration data
+//
+{
+//
+//
+//  ** Check **
+//
+ if (calibIndex <  0)              return false;
+ if (calibIndex >= mv_calibCount)  return false;
+//
+//
+//  ** Get Data **
+//
+ if (!mv_pCalibData[calibIndex].F_GetOutputData(pData))  return false;
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//  *********************
+//    F_CheckFileChange
+//  *********************
+//
+bool CHs_CalibRef::F_CheckFileChange(int &errorCode)
+//
+//  Description : check potential calibration file change
+//
+{
+//
+//
+//  ** Initialisation **
+//
+ errorCode = 0;
+//
+//
+//  ** Check File Change **
+//
+ if (!Fv_CheckFileChange())  return true;
+//
+//
+//  ** Re-Establish Calibration Files **
+//
+ Fv_SetCalibFileData();
+//
+//
+//  ** Re-Enter Calibration Data **
+//
+ if (!Fv_GetCalibData(errorCode))  return false;
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//
+//
+//
+//  ---------------------------------------------------------------------------
+//  ---                                        --------------------------------
+//  ---   Private Function Implementation      --------------------------------
+//  ---                                        --------------------------------
+//  ---------------------------------------------------------------------------
+//
+//
+//
+//  ***********************
+//    Fv_GetCalibFileData
+//  ***********************
+//
+void CHs_CalibRef::Fv_GetCalibFileData()
+//
+//  Description : get calibration file data
+//
+{
+//
+//
+//  ** Set File Names **
+//
+ Fv_SetCalibFileData();
+ if (mv_fileCount <= 0)  return;
+//
+//
+//  ** Check File Status **
+//
+ Fv_CheckCalibFile();
+ if (mv_fileCount <= 0)  return;
+//
+//
+//  ** Exit **
+//
+}
+//
+//
+//
+//  ***********************
+//    Fv_SetCalibFileData
+//  ***********************
+//
+void CHs_CalibRef::Fv_SetCalibFileData()
+//
+//  Description : set calibration file data
+//
+{
+//
+//
+//  ** Initialisation **
+//
+ mv_fileCount = 0;
+//
+ for (int i = 0;  i < CHs_CalibData::EN_CalibType_Ceiling;  i++)
+  {
+   mv_pFileLowTime[i]  = 0;
+   mv_pFileHighTime[i] = 0;
+  }
+//
+//
+//  ** Get Standard File Names **
+//
+//  Get file names
+//
+ CString  nodeDepthCalFile  = mh_pState->m_PrjDataBag.GetString("Calibration Data",  "Node Depth File",  "");
+ CString  nodePollutCalFile = mh_pState->m_PrjDataBag.GetString("Calibration Data",  "Node Quality",     "");
+ CString  linkFlowCalFile   = mh_pState->m_PrjDataBag.GetString("Calibration Data",  "Link Flow",        "");
+ CString  runoffCalFile     = mh_pState->m_PrjDataBag.GetString("Calibration Data",  "Runoff File",      "");
+ CString  washoffCalFile    = mh_pState->m_PrjDataBag.GetString("Calibration Data",  "Washoff File",     "");
+//
+//  File attributes
+//
+ FILETIME  *pFileTime = NULL;
+ pFileTime = new FILETIME();
+//
+ CString  folderName = ""; 
+ CString  fileName   = "";
+//
+//
+//  ** Compile Available File List **
+//
+//  Node depth 
+//
+ if (!nodeDepthCalFile.IsEmpty())
+  {
+   mv_pFileName[mv_fileCount] = nodeDepthCalFile;
+   mv_pFileType[mv_fileCount] = CHs_CalibData::EN_CalibType_NodeDepth;
+   mv_fileCount++;
+//
+   folderName = mh_pUtil->GetParentDir(nodeDepthCalFile);
+   fileName   = mh_pUtil->GetFileName(nodeDepthCalFile);
+   if (mh_pUtil->GetFilesDate(pFileTime,  folderName,  fileName))
+    {
+     mv_pFileLowTime[CHs_CalibData::EN_CalibType_NodeDepth]  = pFileTime->dwLowDateTime;
+     mv_pFileHighTime[CHs_CalibData::EN_CalibType_NodeDepth] = pFileTime->dwHighDateTime;
+    }
+  }
+//
+//  Node pollutant
+//
+ if (!nodePollutCalFile.IsEmpty())
+  {
+   mv_pFileName[mv_fileCount] = nodePollutCalFile;
+   mv_pFileType[mv_fileCount] = CHs_CalibData::EN_CalibType_NodePollutant;
+   mv_fileCount++;
+//
+   folderName = mh_pUtil->GetParentDir(nodePollutCalFile);
+   fileName   = mh_pUtil->GetFileName(nodePollutCalFile);
+   if (mh_pUtil->GetFilesDate(pFileTime,  folderName,  fileName))
+    {
+     mv_pFileLowTime[CHs_CalibData::EN_CalibType_NodePollutant]  = pFileTime->dwLowDateTime;
+     mv_pFileHighTime[CHs_CalibData::EN_CalibType_NodePollutant] = pFileTime->dwHighDateTime;
+    }
+  }
+//
+//  Link flow
+//
+ if (!linkFlowCalFile.IsEmpty())
+  {
+   mv_pFileName[mv_fileCount] = linkFlowCalFile;
+   mv_pFileType[mv_fileCount] = CHs_CalibData::EN_CalibType_LinkFlow;
+   mv_fileCount++;
+//
+   folderName = mh_pUtil->GetParentDir(linkFlowCalFile);
+   fileName   = mh_pUtil->GetFileName(linkFlowCalFile);
+   if (mh_pUtil->GetFilesDate(pFileTime,  folderName,  fileName))
+    {
+     mv_pFileLowTime[CHs_CalibData::EN_CalibType_LinkFlow]  = pFileTime->dwLowDateTime;
+     mv_pFileHighTime[CHs_CalibData::EN_CalibType_LinkFlow] = pFileTime->dwHighDateTime;
+    }
+  }
+//
+//  Subcatchment runoff
+//
+ if (!runoffCalFile.IsEmpty())
+  {
+   mv_pFileName[mv_fileCount] = runoffCalFile;
+   mv_pFileType[mv_fileCount] = CHs_CalibData::EN_CalibType_SubCatchRunoff;
+   mv_fileCount++;
+//
+   folderName = mh_pUtil->GetParentDir(runoffCalFile);
+   fileName   = mh_pUtil->GetFileName(runoffCalFile);
+   if (mh_pUtil->GetFilesDate(pFileTime,  folderName,  fileName))
+    {
+     mv_pFileLowTime[CHs_CalibData::EN_CalibType_SubCatchRunoff]  = pFileTime->dwLowDateTime;
+     mv_pFileHighTime[CHs_CalibData::EN_CalibType_SubCatchRunoff] = pFileTime->dwHighDateTime;
+    }
+  }
+//
+//  Subcatchment pollutant
+//
+ if (!washoffCalFile.IsEmpty())
+  {
+   mv_pFileName[mv_fileCount] = washoffCalFile;
+   mv_pFileType[mv_fileCount] = CHs_CalibData::EN_CalibType_SubCatchPollutant;
+   mv_fileCount++;
+//
+   folderName = mh_pUtil->GetParentDir(washoffCalFile);
+   fileName   = mh_pUtil->GetFileName(washoffCalFile);
+   if (mh_pUtil->GetFilesDate(pFileTime,  folderName,  fileName))
+    {
+     mv_pFileLowTime[CHs_CalibData::EN_CalibType_SubCatchPollutant]  = pFileTime->dwLowDateTime;
+     mv_pFileHighTime[CHs_CalibData::EN_CalibType_SubCatchPollutant] = pFileTime->dwHighDateTime;
+    }
+  }
+//
+//
+//  ** Exit **
+//
+}
+//
+//
+//
+//  *********************
+//    Fv_CheckCalibFile
+//  *********************
+//
+void CHs_CalibRef::Fv_CheckCalibFile()
+//
+//  Description : check given calibration file status
+//
+{
+//
+//
+//  ** Check File Existence **
+//
+ int  count = 0;
+//
+ for (int i = 0;  i < mv_fileCount;  i++)
+  {
+   if (strlen(mv_pFileName[i]) > 0)
+    {
+     DWORD  attribute = GetFileAttributes(mv_pFileName[i]);
+     if (attribute != 0xFFFFFFFF)
+      {
+       mv_pFileType[count] = mv_pFileType[i];
+       mv_pFileName[count] = mv_pFileName[i];
+       count++;
+      }
+    }
+  }
+//
+ mv_fileCount = count;
+ if (mv_fileCount <= 0)  return;
+//
+//
+//  ** Check Pollutant: screen out pollutant calibration files for no pollutant cases **
+//
+ if (mv_pollutantCount <= 0)
+  {
+   count = 0;
+//
+   for (i = 0;  i < mv_fileCount;  i++)
+    {
+     if (!Fv_CheckPollutantFile(mv_pFileType[i]))
+      {
+       mv_pFileType[count] = mv_pFileType[i];
+       mv_pFileName[count] = mv_pFileName[i];
+       count++;
+      }
+    }
+  }
+//
+ mv_fileCount = count;
+ if (mv_fileCount <= 0)  return;
+//
+//
+//  ** Check Empty Status **
+//
+ count = 0;
+//
+ for (i = 0;  i < mv_fileCount;  i++)
+  {
+   if (Fv_CheckValidFileContent(mv_pFileName[i]))
+    {
+     mv_pFileType[count] = mv_pFileType[i];
+     mv_pFileName[count] = mv_pFileName[i];
+     count++;
+    }
+  }
+//
+ mv_fileCount = count;
+//
+//
+//  ** Exit **
+//
+}
+//
+//
+//
+//  ****************************
+//    Fv_CheckValidFileContent
+//  ****************************
+//
+bool CHs_CalibRef::Fv_CheckValidFileContent(CString fileName)
+//
+//  Description : check given file for valid contents
+//
+{
+//
+//
+//  ** Open File **
+//
+ if (!Fv_OpenFile(fileName))  return false;
+//
+//
+//  ** Search for ID Field **
+//
+ bool  idFlag = false;
+//
+//  Search
+//
+ while (fgets(mv_pLineBuffer,  MAX_LineBuffer,  mv_pFile) != NULL)
+  {
+   if (Fv_CheckBlankLine(mv_pLineBuffer,  false))  continue;
+   if (Fv_GetTokens(mv_pLineBuffer) == 1)
+    {
+     idFlag = true;
+     break;
+    }
+  }
+//
+//  Failure
+//
+ if (!idFlag)  return false;
+//
+//
+//  ** Searh for Calibration Data Fields **
+//
+ bool  dataFlag = false;
+//
+//  Search
+//
+ while (fgets(mv_pLineBuffer,  MAX_LineBuffer,  mv_pFile) != NULL)
+  {
+   if (Fv_CheckBlankLine(mv_pLineBuffer,  false))  continue;
+   if (Fv_GetTokens(mv_pLineBuffer) >= 3)
+    {
+     dataFlag = true;
+     break;
+    }
+  }
+//
+//  Failure
+//
+ if (!dataFlag)  return false;
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//  **********************
+//    Fv_CheckFileChange
+//  **********************
+//
+bool CHs_CalibRef::Fv_CheckFileChange()
+//
+//  Description : check potential calibration file change
+//
+{
+//
+//
+//  ** Get Standard File Names **
+//
+//  Get file names
+//
+ CString  nodeDepthCalFile  = mh_pState->m_PrjDataBag.GetString("Calibration Data",  "Node Depth File",  "");
+ CString  nodePollutCalFile = mh_pState->m_PrjDataBag.GetString("Calibration Data",  "Node Quality",     "");
+ CString  linkFlowCalFile   = mh_pState->m_PrjDataBag.GetString("Calibration Data",  "Link Flow",        "");
+ CString  runoffCalFile     = mh_pState->m_PrjDataBag.GetString("Calibration Data",  "Runoff File",      "");
+ CString  washoffCalFile    = mh_pState->m_PrjDataBag.GetString("Calibration Data",  "Washoff File",     "");
+//
+//  File attributes
+//
+ FILETIME  *pFileTime = NULL;
+ pFileTime = new FILETIME();
+//
+//
+//  ** Compare Node Depth File **
+//
+ if (Fv_CheckIndividualFileChange(nodeDepthCalFile,  
+                                  CHs_CalibData::EN_CalibType_NodeDepth,
+                                  pFileTime))  return true;
+ if (Fv_CheckIndividualFileChange(nodePollutCalFile,
+                                  CHs_CalibData::EN_CalibType_NodePollutant,
+                                  pFileTime))  return true;
+ if (Fv_CheckIndividualFileChange(linkFlowCalFile,
+                                  CHs_CalibData::EN_CalibType_LinkFlow,
+                                  pFileTime))  return true;
+ if (Fv_CheckIndividualFileChange(runoffCalFile,
+                                  CHs_CalibData::EN_CalibType_SubCatchRunoff,
+                                  pFileTime))  return true;
+ if (Fv_CheckIndividualFileChange(washoffCalFile,
+                                  CHs_CalibData::EN_CalibType_SubCatchPollutant,
+                                  pFileTime))  return true;
+
+
+for (int i = 0;  i < CHs_CalibData::EN_CalibType_Ceiling;  i++)
+ {
+  int  testLow = mv_pFileLowTime[i];
+  int  testHigh = mv_pFileHighTime[i];
+
+ UINT  xLow = mv_pFileLowTime[i];
+ UINT  xHigh = mv_pFileHighTime[i];
+ int  debug = 1;
+ }
+
+
+//
+//
+//  ** Exit **
+//
+ return false;
+}
+//
+//
+//
+//  ********************************
+//    Fv_CheckIndividualFileChange
+//  ********************************
+//
+bool CHs_CalibRef::Fv_CheckIndividualFileChange(CString   filePathName,
+                                                int       calibTypeIndex,
+                                                FILETIME *pFileTime)
+//
+//  Description : check potential file definition change 
+//
+{
+//
+//
+//  ** Check Change on File Existences **
+//
+//  From existing to non-existing
+//
+ if (filePathName.IsEmpty())
+  {
+   if (mv_pFileLowTime[calibTypeIndex]  > 0)  return true;
+   if (mv_pFileHighTime[calibTypeIndex] > 0)  return true;
+  }
+//
+//  From non-existing to existing
+//
+ else
+  {
+   if (mv_pFileLowTime[calibTypeIndex] == 0)  return true;
+  }
+//
+//
+//  ** Check Change on File Definitions **
+//
+ CString  folderName = mh_pUtil->GetParentDir(filePathName);
+ CString  fileName   = mh_pUtil->GetFileName(filePathName);
+//
+ if (mh_pUtil->GetFilesDate(pFileTime,  folderName,  fileName))
+  {
+   if (pFileTime->dwLowDateTime  != mv_pFileLowTime[calibTypeIndex])   return true;
+   if (pFileTime->dwHighDateTime != mv_pFileHighTime[calibTypeIndex])  return true;
+  }
+//
+//
+//  ** Exit **
+//
+ return false;  
+}
+//
+//
+//
+//  *******************
+//    Fv_GetCalibData
+//  *******************
+//
+bool CHs_CalibRef::Fv_GetCalibData(int &errorCode)
+//
+//  Description : get calibration data from files
+//  
+{
+//
+//
+//  ** Initialisation **
+//
+ errorCode = 0;
+//
+//
+//  ** Reset **
+//
+//  Calibration data objects
+//
+ mv_calibCount = 0;
+//
+ if (mv_pCalibIndex != NULL)  delete [] mv_pCalibIndex;
+ if (mv_pCalibData  != NULL)  delete [] mv_pCalibData;
+//
+ mv_pCalibIndex = NULL;
+ mv_pCalibData  = NULL;
+//
+//  Status flag
+//
+ mv_validFlag = false;
+//
+//
+//  ** First Pass: setup calibration data object resources **
+//
+//  Parse
+//
+ if (!Fv_FirstPassCalibFile(errorCode))  return false;
+//
+//  Check
+//
+ if (mv_fileCount  <= 0)  return true;
+ if (mv_calibCount <= 0)  return true;
+//
+//
+//  ** Second Pass: setup calibration data detail resources **
+//
+ if (!Fv_SecondPassCalibFile(errorCode))  return false;
+//
+ if (mv_fileCount  <= 0)  return true;
+ if (mv_calibCount <= 0)  return true;
+//
+//
+//  ** Third Pass: retrieve calibration data **
+//
+ if (!Fv_ThirdPassCalibFile(errorCode))  return false;
+//
+ if (mv_fileCount  <= 0)  return true;
+ if (mv_calibCount <= 0)  return true;
+//
+//
+//  ** Close Files **
+//
+ Fv_CloseFile();
+//
+//
+//  ** Debug Check: 1 ** 
+//
+/*
+ for (int k = 0;  k < mv_calibCount;  k++)
+  {
+//
+//  Main data
+//
+   CString  elementID      = mv_pCalibData[k].F_GetElementID();
+   int      elementIndex   = mv_pCalibData[k].F_GetElementIndex();
+   int      elementType    = mv_pCalibData[k].F_GetElementType();
+   int      pollutantIndex = mv_pCalibData[k].F_GetPollutantIndex();
+//
+//  Calibration values
+//
+   int  dataCount = mv_pCalibData[k].F_GetDataCount();
+//
+   for (int j = 0;  j < dataCount;  j++)
+    {
+     double  elapsedHour = mv_pCalibData[k].F_GetElapsedTime(j);
+     double  calibValue  = mv_pCalibData[k].F_GetCalibData(j);
+     int     checkFlag   = 1;
+    }
+  }
+*/
+//
+//
+//  ** Check for Valid Calibration Data Objects ** 
+//
+ Fv_ScreenCalibData(); 
+ if (mv_calibCount <= 0)  return true;
+//
+//
+//  ** Sort Calibration Data ** 
+//
+ Fv_SortCalibData();
+//
+//
+//  ** Set Default Full range Elapsed Time Data ** 
+//
+ F_SetTimeRange(0.0,  mv_finalElapsedTime);
+//
+//
+//  ** Debug Check **  
+//
+ int  validCalibCount = F_GetValidCalibCount();
+//
+ for (int i = 0;  i < mv_calibCount;  i++)
+  {
+//
+//  Check: time range set with default full elapsed time range
+//
+   if (!mv_pCalibData[i].F_IsValid())           continue;
+   if (!mv_pCalibData[i].F_GetDataValueFlag())  continue;
+//
+//  Main data
+//
+   CString  elementID      = mv_pCalibData[i].F_GetElementID();
+   int      elementIndex   = mv_pCalibData[i].F_GetElementIndex();
+   int      elementType    = mv_pCalibData[i].F_GetElementType();
+   int      pollutantIndex = mv_pCalibData[i].F_GetPollutantIndex();
+//
+//  Calibration values
+//
+   int  dataCount = mv_pCalibData[i].F_GetDataCount();
+//
+   for (int j = 0;  j < dataCount;  j++)
+    {
+     double  elapsedHour = mv_pCalibData[i].F_GetElapsedTime(j);
+     double  calibValue  = mv_pCalibData[i].F_GetCalibData(j);
+     int     checkFlag   = 1;
+    }
+  }
+//
+//
+//  ** Set Flag **
+//
+ mv_validFlag = true;
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//  *************************
+//    Fv_FirstPassCalibFile
+//  *************************
+//
+bool CHs_CalibRef::Fv_FirstPassCalibFile(int &errorCode)
+//
+//  Description : process first pass of available files for calibration datum count
+//
+{
+//
+//
+//  ** Initialisation **
+//
+ errorCode     = 0;
+ mv_calibCount = 0;
+//
+//
+//  ** Parse File List **
+//
+ int  count = 0;
+//
+ for (int i = 0;  i < mv_fileCount;  i++)
+  {
+   int calibCount = Fv_GetCalibCount(i);
+   if (calibCount > 0)
+    {
+     mv_pFileName[count] = mv_pFileName[i];
+     mv_pFileType[count] = mv_pFileType[i];
+     mv_calibCount += calibCount;
+     count++;
+    }
+  }
+//
+ mv_fileCount = count;
+//
+ if (mv_fileCount  <= 0)  return true;
+ if (mv_calibCount <= 0)  return true;
+//
+//
+//  ** Set Calibration Object Resources **
+//
+ errorCode = EN_BaseError_Memory;
+//
+ mv_pCalibIndex = new int[mv_calibCount];
+ mv_pCalibData  = new CHs_CalibData[mv_calibCount];
+//
+ if (mv_pCalibIndex == NULL)  return false;
+ if (mv_pCalibData  == NULL)  return false;
+//
+ errorCode = 0;
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//  ********************
+//    Fv_GetCalibCount
+//  ********************
+//
+int CHs_CalibRef::Fv_GetCalibCount(int fileIndex)
+//
+//  Description : get calibration data count in given file
+//
+{
+//
+//
+//  ** Initialisation **
+//
+ int  calibCount = 0;
+//
+//
+//  ** Open File **
+//
+ if (!Fv_OpenFile(mv_pFileName[fileIndex]))  return 0;
+//
+//
+//  ** Data Loop **
+//
+ while (fgets(mv_pLineBuffer,  MAX_LineBuffer,  mv_pFile) != NULL)
+  {
+   if (Fv_CheckBlankLine(mv_pLineBuffer,  false))  continue;
+   int  itemCount = Fv_GetTokens(mv_pLineBuffer);
+//
+//  New data
+//
+   if (itemCount == 1)
+    {
+     if (Fv_CheckPollutantFile(mv_pFileType[fileIndex]))
+      calibCount += mv_pollutantCount;
+     else
+      calibCount++;
+    }
+  }
+//
+//
+//  ** Exit **
+//
+ return calibCount;
+}
+//
+//
+// 
+//  **************************
+//    Fv_SecondPassCalibFile
+//  **************************
+//
+bool CHs_CalibRef::Fv_SecondPassCalibFile(int &errorCode)
+//
+//  Description : process second pass of available files for calibration datum count
+//
+{
+//
+//
+//  ** Initialisation **
+//
+ errorCode    = 0;
+ mv_dataIndex = 0;
+//
+//
+//  ** File Loop **
+//
+ int  count = 0;
+//
+ for (int i = 0;  i < mv_fileCount;  i++)
+  {
+//
+//  Open file
+//
+   if (!Fv_OpenFile(mv_pFileName[i]))  continue;
+//
+   mv_pFileName[count] = mv_pFileName[i];
+   mv_pFileType[count] = mv_pFileType[i];
+   count++;
+//
+//  Set individual file calibration time data detail resources
+//
+   if (!Fv_SetCalibFileProperty(i))
+    {
+     errorCode = EN_BaseError_Memory;
+     return false;
+    }
+  }
+//
+//
+//  ** Update **
+//
+ mv_fileCount  = count;
+ mv_calibCount = mv_dataIndex;
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//  ***************************
+//    Fv_SetCalibFileProperty
+//  ***************************
+//
+bool CHs_CalibRef::Fv_SetCalibFileProperty(int fileIndex)
+//
+//  Description : set calibration file time data resources and file properties
+//
+{
+//
+//
+//  ** Initialisation **
+//
+ int      entryCount     = 0;
+ int      dataCount      = 1;
+ int      elementIndex   = -1;
+ int      elementType    = -1;
+ int      pollutantIndex = -1;
+ CString  elementID      = "";
+//
+//
+//  ** Get File Properties **
+//
+ int   calibType     = mv_pFileType[fileIndex];
+ bool  pollutantFile = Fv_CheckPollutantFile(calibType);
+//
+ if (pollutantFile)
+   dataCount = mv_pollutantCount;
+//
+//
+//  ** Data Loop **
+//
+ while (fgets(mv_pLineBuffer,  MAX_LineBuffer,  mv_pFile) != NULL)
+  {
+   if (Fv_CheckBlankLine(mv_pLineBuffer,  false))  continue;
+   int  itemCount = Fv_GetTokens(mv_pLineBuffer);
+//
+//
+//  -- New Data --
+//
+   if (itemCount == 1)
+    {
+//     
+//  Set data for continuing data entries: for all potential data entries
+// 
+     if (entryCount > 0)    // for continuing data entries
+      {
+       if (elementType >= 0)
+        {
+         if (!Fv_SetCalibDataProperty(elementID,
+                                      elementIndex,
+                                      elementType,
+                                      calibType,
+                                      entryCount,
+                                      dataCount))  return false;
+//
+         elementIndex   = -1;   // reset data
+         elementType    = -1;   // reset data
+         entryCount     = 0;    // reset data  
+         pollutantIndex = -1;
+        }
+      }
+//
+//  Element properties: allowing for infeasible entries
+//
+     elementID    = mv_pBuffer[0];
+     elementIndex = Fv_GetElementIndex(elementID,    calibType);
+     elementType  = Fv_GetElementType(elementIndex,  calibType);
+//
+     if (elementType < 0)  continue; 
+    }
+//
+//
+//  -- Increment Count: only for valid cases --
+//
+   else if (itemCount >= 3)
+    {
+     if (elementType >= 0)
+       entryCount++;
+    }
+  }
+//
+//
+//  ** Single/Last Entry **
+//
+ if (entryCount > 0)
+  {
+   if (elementType >= 0)
+    {
+     if (!Fv_SetCalibDataProperty(elementID,
+                                  elementIndex,
+                                  elementType,
+                                  calibType,
+                                  entryCount,
+                                  dataCount))  return false;
+    }
+  }
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//  **********************
+//    Fv_GetElementIndex
+//  **********************
+//
+int CHs_CalibRef::Fv_GetElementIndex(CString elementID,
+                                     int     calibType)
+//
+//  Description : get data element index for given ID
+//
+{
+//
+//
+//  ** Initialisation **
+//
+ int  elementIndex = -1;
+//
+ CHs_NetworkOut *pNetworkOut = (CHs_NetworkOut *) mv_pNetwork;
+//
+//
+//  ** Categorisation **
+//
+ switch (calibType)
+  {
+//
+//  Node depth/quality
+//
+   case CHs_CalibData::EN_CalibType_NodeDepth:
+   case CHs_CalibData::EN_CalibType_NodePollutant:
+    elementIndex = pNetworkOut->F_GetNodeIndexFromID(elementID);
+    break;
+//
+//  Link flow
+//
+   case CHs_CalibData::EN_CalibType_LinkFlow:
+    elementIndex = pNetworkOut->F_GetLinkIndexFromID(elementID);
+    break;
+//
+//  Subcatchment runoff/quality
+//
+   case CHs_CalibData::EN_CalibType_SubCatchRunoff:
+   case CHs_CalibData::EN_CalibType_SubCatchPollutant:
+    elementIndex = pNetworkOut->F_GetSubCatchIndexFromID(elementID);
+    break;
+  }
+//
+//
+//  ** Exit **
+//
+ return elementIndex;
+}
+//
+//
+//
+//  *********************
+//    Fv_GetElementType
+//  *********************
+//
+int CHs_CalibRef::Fv_GetElementType(int elementIndex,
+                                    int calibType)
+//
+//  Description : get element type flag for given element index & calibration type
+//
+{
+//
+//
+//  ** Check **
+//
+ if (elementIndex < 0)  return -1;
+//
+//
+//  ** Initialisation **
+//
+ int  elementType = -1;
+ int  dataIndex   = -1;
+//
+ CHs_NetworkOut *pNetworkOut = (CHs_NetworkOut *) mv_pNetwork;
+//
+//
+//  ** Categorisation **
+//
+ switch (calibType)
+  {
+//
+//  Node depth/pollutant
+//
+   case CHs_CalibData::EN_CalibType_NodeDepth:
+   case CHs_CalibData::EN_CalibType_NodePollutant:
+    dataIndex = pNetworkOut->F_GetJunctionIndexFromNodeIndex(elementIndex);
+    if (dataIndex >= 0)  return HEN_ElementType_Junction;
+    dataIndex = pNetworkOut->F_GetOutfallIndexFromNodeIndex(elementIndex);
+    if (dataIndex >= 0)  return HEN_ElementType_Outfall;
+    dataIndex = pNetworkOut->F_GetDividerIndexFromNodeIndex(elementIndex);
+    if (dataIndex >= 0)  return HEN_ElementType_Divider;
+    dataIndex = pNetworkOut->F_GetStorageIndexFromNodeIndex(elementIndex);
+    if (dataIndex >= 0)  return HEN_ElementType_Storage;
+    break;
+//
+//  Link flow
+//
+   case CHs_CalibData::EN_CalibType_LinkFlow:
+    dataIndex = pNetworkOut->F_GetConduitIndexFromLinkIndex(elementIndex);
+    if (dataIndex >= 0)  return HEN_ElementType_Conduit;
+    dataIndex = pNetworkOut->F_GetPumpIndexFromLinkIndex(elementIndex);
+    if (dataIndex >= 0)  return HEN_ElementType_Pump;
+    dataIndex = pNetworkOut->F_GetOrificeIndexFromLinkIndex(elementIndex);
+    if (dataIndex >= 0)  return HEN_ElementType_Orifice;
+    dataIndex = pNetworkOut->F_GetWeirIndexFromLinkIndex(elementIndex);
+    if (dataIndex >= 0)  return HEN_ElementType_Weir;
+    dataIndex = pNetworkOut->F_GetOutletIndexFromLinkIndex(elementIndex); 
+    if (dataIndex >= 0)  return HEN_ElementType_Outlet;
+    break;
+//
+//  Subcatchment runoff/pollutant
+//
+   case CHs_CalibData::EN_CalibType_SubCatchRunoff:
+   case CHs_CalibData::EN_CalibType_SubCatchPollutant:
+    elementType = HEN_ElementType_SubCatchment;
+    break;
+  }
+//
+//
+//  ** Exit **
+//
+ return elementType;
+}
+//
+//
+//
+//  ***************************
+//    Fv_SetCalibDataProperty
+//  ***************************
+//
+bool CHs_CalibRef::Fv_SetCalibDataProperty(CString elementID,
+                                           int     elementIndex,
+                                           int     elementType,
+                                           int     calibType,
+                                           int     entryCount,
+                                           int     dataCount)
+//
+//  Description : set calibration data properties
+// 
+{
+//
+//
+//  ** Set Pollutant File Flag **
+//
+ bool  pollutantFile = Fv_CheckPollutantFile(calibType);
+//
+//
+//  ** Data Loop **
+//
+ for (int i = 0;  i < dataCount;  i++)
+  {
+//
+//  Main data
+//
+   int  defaultIndex = mv_dataIndex;
+   int  dataIndex    = Fv_GetCalibIndex(elementID,  calibType,  i,  defaultIndex);
+   if (!mv_pCalibData[dataIndex].F_InitDataCount(entryCount))      return false;
+   if (!mv_pCalibData[dataIndex].F_SetCalibType(calibType))        return false;
+   if (!mv_pCalibData[dataIndex].F_SetElementID(elementID))        return false;
+   if (!mv_pCalibData[dataIndex].F_SetElementIndex(elementIndex))  return false;
+   if (!mv_pCalibData[dataIndex].F_SetElementType(elementType))    return false;
+//
+//  Pollutant index data
+//
+   if (pollutantFile)
+    { if (!mv_pCalibData[dataIndex].F_SetPollutantIndex(i))  return false; }
+//
+//  Increment index pointer
+//
+   mv_dataIndex++;
+  }
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//  *************************
+//    Fv_ThirdPassCalibFile
+//  *************************
+//
+bool CHs_CalibRef::Fv_ThirdPassCalibFile(int &errorCode)
+//
+//  Description : process third pass of available files for calibration data values
+//
+{
+//
+//
+//  ** Initialisation **
+//
+ errorCode    = 0;
+ mv_dataIndex = 0;
+//
+ for (int i = 0;  i < mv_calibCount;  i++)
+  mv_pCalibIndex[i] = 0;
+//
+//
+//  ** File Loop **
+//
+ int  count = 0;
+//
+ for (i = 0;  i < mv_fileCount;  i++)
+  {
+//
+//  Open file
+//
+   if (!Fv_OpenFile(mv_pFileName[i]))  continue;
+//
+   mv_pFileName[count] = mv_pFileName[i];
+   mv_pFileType[count] = mv_pFileType[i];
+   count++;
+//
+//  Get individual file data values
+//
+   if (!Fv_GetCalibDataValue(i))
+    {
+     errorCode = EN_BaseError_Application;
+     return false;
+    }
+  }
+//
+//
+//  ** Update **
+//
+ mv_fileCount  = count;
+ mv_calibCount = mv_dataIndex;
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//  ************************
+//    Fv_GetCalibDataValue
+//  ************************
+//
+bool CHs_CalibRef::Fv_GetCalibDataValue(int fileIndex)
+//
+//  Description : parse to retrieve individual calibration object data values
+//
+{
+//
+//
+//  ** Initialisation **
+//
+ int   entryCount    = 0;
+ int   elementIndex  = -1;
+ int   elementType   = -1;
+ int   dataCount     = 1;
+ int   calibType     = mv_pFileType[fileIndex];
+ bool  pollutantFile = Fv_CheckPollutantFile(calibType);
+//
+ if (pollutantFile)
+   dataCount = mv_pollutantCount;
+//
+//
+//  ** Data Loop **
+//
+ bool     skipFlag  = false;
+ CString  elementID = "";
+//
+ while (fgets(mv_pLineBuffer,  MAX_LineBuffer,  mv_pFile) != NULL)
+  {
+   if (Fv_CheckBlankLine(mv_pLineBuffer,  false))  continue;
+   int  itemCount = Fv_GetTokens(mv_pLineBuffer);
+//
+//
+//  -- New Data --
+//
+   if (itemCount == 1)
+    {
+//
+//  Increment/reset: continuing entries
+//
+     if (entryCount > 0)
+      {
+       if (elementType >= 0)
+        {
+         for (int i = 0;  i < dataCount;  i++)
+          mv_dataIndex++;
+//
+         entryCount  = 0;
+         elementType = -1;
+        }
+      }
+//
+//  Element ID
+//
+     skipFlag     = false;
+     elementID    = mv_pBuffer[0];
+     elementIndex = Fv_GetElementIndex(elementID,    calibType);
+     elementType  = Fv_GetElementType(elementIndex,  calibType);
+//
+     if (elementType < 0) 
+      {
+       skipFlag = true;
+       continue; 
+      }
+//
+//  Check for preparing data set: to make sure correct match for ID and calibration type
+//
+     for (int i = 0;  i < dataCount;  i++)
+      {
+       int  defaultIndex = mv_dataIndex + i; 
+       int  dataIndex    = Fv_GetCalibIndex(elementID,  calibType,  i,  defaultIndex);
+       if (!mv_pCalibData[dataIndex].F_CheckCalibData(elementID,  calibType))  return false;
+      }         
+    }
+//
+//
+//  -- Data Entry --
+//
+   else if (itemCount >= 3)
+    {
+     if (skipFlag)  continue;
+//
+//  Set entry count
+//
+     if (elementType >= 0)
+       entryCount++;
+//
+//  Get time data
+//
+     double  elapsedTime = Fv_GetElapsedTime();
+//
+//  Process calibration data values
+//
+     for (int i = 2;  i < itemCount;  i++)
+      {
+       double  dataValue    = atof(mv_pBuffer[i]);
+       int     defaultIndex = mv_dataIndex + i - 2; 
+       int     dataIndex    = Fv_GetCalibIndex(elementID,  calibType,  (i-2),  defaultIndex);
+       int     itemIndex    = mv_pCalibIndex[dataIndex];
+//
+       if (!mv_pCalibData[dataIndex].F_SetElapsedTime(itemIndex,  elapsedTime))  return false;
+       if (!mv_pCalibData[dataIndex].F_SetCalibData(itemIndex,    dataValue))    return false;
+//
+       mv_pCalibIndex[dataIndex] = mv_pCalibIndex[dataIndex] + 1;
+      }
+    }
+  }
+//
+//
+//  ** Set Index Pointer Upon Single/Last Entry **
+//
+ if (elementType >= 0)
+   mv_dataIndex += dataCount;
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//  *********************
+//    Fv_GetElapsedTime
+//  *********************
+//
+double CHs_CalibRef::Fv_GetElapsedTime()
+//
+//  Description : parse for elapsed time value, in decimal hour format
+//
+{
+//
+//
+//  ** Initialisation **
+//
+ double  elapsedTime = 0.0;
+//
+//
+//  ** Get Calendar/Elapsed Mode Flag **
+//
+ bool     calendarFlag = false;
+ CString  dayString    = mv_pBuffer[0];
+//
+ if (dayString.Find(mv_dateDelimiter) > 0)
+   calendarFlag = true;
+//
+//
+//  ** Hour **
+//
+ CHs_DateTime *pDateTime = (CHs_DateTime *) mh_pUnit->F_GetDateTime();
+ double  elapsedHours    = pDateTime->F_GetDecimalHour(mv_pBuffer[1]);
+//
+//
+//  ** Date **
+//  
+ int  elapsedDays = 0;
+//
+//  Calendar date format
+//
+ if (calendarFlag)
+  {
+   int  dataDays = pDateTime->F_GetAbsCalendarDayFromDate(dayString);
+   elapsedDays   = dataDays - mv_simStartRefDays;
+//
+   if (elapsedHours < mv_simStartHour)
+    {
+     elapsedDays--;
+     elapsedHours = (24.0 - mv_simStartHour) - elapsedHours;
+    }
+   else
+    {
+     elapsedHours = elapsedHours - mv_simStartHour;
+    }
+  }
+//
+//  Elapsed day format
+//
+ else
+  {
+   elapsedDays = atoi(mv_pBuffer[0]);
+  }
+//
+//
+//  ** Elapsed Time **
+//
+ elapsedTime = 24.0*((double) elapsedDays) + elapsedHours;
+//
+//
+//  ** Exit **
+//
+ return elapsedTime; 
+}
+//
+//
+//
+//  **********************
+//    Fv_ScreenCalibData
+//  **********************
+//
+void CHs_CalibRef::Fv_ScreenCalibData()
+//
+//  Description : screen calibration data for applicability
+//  Note : not in use
+//
+{
+//
+//
+//  ** Screen for Valid Data Definition: especially for pollutant types **
+//
+ for (int i = 0;  i < mv_calibCount;  i++)
+  {
+//
+//  Set valid data value flag
+//
+   bool  dataValueFlag = mv_pCalibData[i].F_CheckValidData();
+   mv_pCalibData[i].F_SetDataValueFlag(dataValueFlag);
+   if (!dataValueFlag)  continue;
+//
+//  Set valid time range flag: for default time range data
+//
+   int  startTimeIndex = mv_pCalibData[i].F_GetOutputStartIndex();
+   int  endTimeIndex   = mv_pCalibData[i].F_GetOutputEndIndex();
+//
+   if ((startTimeIndex < 0) || (endTimeIndex < 0))
+    mv_pCalibData[i].F_SetTimeRangeFlag(false);
+   else
+    mv_pCalibData[i].F_SetTimeRangeFlag(true);
+  }
+//
+//
+//  ** Exit **
+//
+}
+//
+//
+//
+//  ********************
+//    Fv_SortCalibData
+//  ********************
+//
+void CHs_CalibRef::Fv_SortCalibData()
+//
+//  Description : sort calibration data in ascending time format
+//
+{
+//
+//
+//  ** Data Loop: limited to objects with valid data values **
+//
+ for (int i = 0;  i < mv_calibCount;  i++)
+  {
+   if (mv_pCalibData[i].F_IsValid())
+    {
+     if (mv_pCalibData[i].F_GetDataValueFlag())
+       mv_pCalibData[i].F_SortCalibData();
+    }
+  }
+//
+//
+//  ** Exit **
+//
+}
+//
+//
+//
+//  ********************
+//    Fv_GetCalibIndex
+//  ********************
+//
+int CHs_CalibRef::Fv_GetCalibIndex(CString elementID,
+                                   int     calibType,
+                                   int     dataColumnIndex,
+                                   int     defaultIndex)
+//
+//  Description : get calibration data object index for matching ID/type
+//
+{
+//
+//
+//  ** Set Pollutant File Flag **
+//
+ bool  pollutantFile = Fv_CheckPollutantFile(calibType);
+//
+//
+//  ** Search: for all objects with matching ID/type **
+//
+ for (int i = 0;  i < mv_calibCount;  i++)
+  {
+   if (mv_pCalibData[i].F_CheckCalibData(elementID,  calibType))
+    {
+//
+//  Non-pollutant data
+//
+     if (!pollutantFile)
+      return i;
+//
+//  Pollutant data
+//
+     else
+      return (i+dataColumnIndex);
+    }
+  }
+//
+//
+//  ** With Default Index **
+//
+ if (defaultIndex >= 0)
+   return defaultIndex;
+//
+//
+//  ** Exit **
+//
+ return -1;
+}
+//
+//
+//
+//  *************************
+//    Fv_CheckPollutantFile
+//  *************************
+//
+bool CHs_CalibRef::Fv_CheckPollutantFile(int fileType)
+//
+//  Description : check given file type for element pollutant data
+//
+{
+//
+//
+//  ** Categorisation **
+//
+ switch (fileType)
+  {
+   case CHs_CalibData::EN_CalibType_NodeDepth:
+    return false;
+    break;
+//
+   case CHs_CalibData::EN_CalibType_NodePollutant:
+    return true;
+    break;
+//
+   case CHs_CalibData::EN_CalibType_LinkFlow:
+   case CHs_CalibData::EN_CalibType_SubCatchRunoff:
+    return false;
+    break;
+//
+   case CHs_CalibData::EN_CalibType_SubCatchPollutant:
+    return true;
+    break;
+  }
+//
+//
+//  ** Exit **
+//
+ return false;
+}
+//
+//
+//
+//  *********************
+//    Fv_CheckBlankLine
+//  *********************
+//
+bool CHs_CalibRef::Fv_CheckBlankLine(const char *pLineText,
+                                     bool        allBlankCheck)
+//
+//  Description : check given line for Blank/Commented Epanet line entries
+//  Return value : status flag
+//         true  : checked as blank/commented line
+//         false : checked as potential data line
+//
+{
+//
+//
+//  ** Check for Blank Line **
+//
+ CString  lineText = pLineText;
+ lineText.TrimLeft();
+ lineText.TrimRight();
+//
+ if (lineText.IsEmpty())  return true;
+ if (allBlankCheck)       return false;
+//
+//
+//  ** Check for EpaApp Commented Line **
+//
+ for (int i = 0;  i < lineText.GetLength();  i++)
+  {
+   char  ch1 = lineText.GetAt(i);
+   if (ch1 == '\t')  continue;
+   if (ch1 == ';')   return true;
+   if (ch1 != ' ')   break;
+  }
+//
+//
+//  ** Exit **
+//
+ return false;
+}
+//
+//
+//
+//  ***********************
+//    Fv_CheckCommentLine
+//  ***********************
+//
+bool CHs_CalibRef::Fv_CheckCommentLine(const char *pLineText,
+                                       char        commentChar)
+//
+//  Description : check given text line for comment entry, starting from beginning
+//
+{
+//
+//
+//  ** Get Line Data **
+//
+ CString  lineText = pLineText;
+ lineText.TrimLeft();
+ lineText.TrimRight();
+//
+//
+//  ** Check for EpaApp Commented Line **
+//
+ for (int i = 0;  i < lineText.GetLength();  i++)
+  {
+   char  ch1 = lineText.GetAt(i);
+   if (ch1 == '\t')         continue;
+   if (ch1 == commentChar)  return true;
+   if (ch1 != ' ')          break;
+  }
+//
+//
+//  ** Exit **
+//
+ return false;
+}
+//
+//
+//
+//  ****************
+//    Fv_GetTokens
+//  ****************
+//
+int CHs_CalibRef::Fv_GetTokens(char *pLineText)   // i/p: line from input file, string to be tokenized
+//
+//  Description : scans string for tokens, saving pointers to them in module 
+//                global variable hm_pToken[], based on Epanet gettokens()
+//  Return data : number of tokens in s
+//  Note : Tokens can be separated by the characters (spaces, tabs, newline, carriage return) 
+//  
+{
+//
+//
+//  ** Initialisation **
+//
+ char  pWorkBuffer[MAX_LineBuffer];
+ strcpy(pWorkBuffer,  pLineText);
+//
+ char  *pLineBuffer;
+ pLineBuffer = pWorkBuffer;
+//
+//
+//  ** Initialisation: begin with no tokens **
+//
+ for (int i = 0;  i < MAX_Field;  i++) 
+  mv_pBuffer[i] = NULL;
+//
+ int  count = 0;
+//
+//
+//  ** Truncate String at Start of Comment **
+//
+ char *pChar;
+ pChar = strchr(pLineBuffer,  ';');
+ if (pChar)  *pChar = '\0';
+//
+ int  length = strlen(pLineBuffer);
+//
+//
+//  ** Scan Line Buffer for Tokens Until Nothing Left **
+//
+ while ((length > 0) && (count < MAX_Field))
+  {
+   int  m = strcspn(pLineBuffer,  " \t\n\r"); // Find token length 
+   length -= m + 1;                           // Update length of pLine 
+//
+   if (m == 0)
+    {
+     pLineBuffer++;                           // No token found 
+    }
+   else
+    {
+     if (*pLineBuffer == '"')                 // Token begins with quote 
+      {
+       pLineBuffer++;                         // Start token after quote 
+       m = strcspn(pLineBuffer,  "\"\n\r");   // Find end quote (or EOL) 
+      }                            
+     pLineBuffer[m] = '\0';                   // Null-terminate the token 
+     mv_pBuffer[count] = pLineBuffer;         // Save pointer to token 
+     count++;                                 // Update token count 
+     pLineBuffer += m + 1;                    // Begin next token 
+    }
+  }
+//
+//
+//  ** Exit **
+//
+ return count;
+}      
+//
+//
+//
+//  ***************
+//    Fv_OpenFile
+//  ***************
+//
+bool CHs_CalibRef::Fv_OpenFile(CString fileName)
+//
+//  Description : open object file 
+//
+{
+//
+//
+//  ** Check **
+//
+ if (fileName.IsEmpty())  return false;
+//
+//
+//  ** Close File: if open **
+//
+ Fv_CloseFile();
+//
+//
+//  ** Open File **
+//
+ mv_pFile = fopen(fileName,  "r");
+ if (mv_pFile == NULL)  return false;
+//
+//
+//  ** Exit **
+//
+ return true;
+}
+//
+//
+//
+//  ****************
+//    Fv_CloseFile
+//  ****************
+//
+void CHs_CalibRef::Fv_CloseFile()
+//
+//  Description : close object file pointer
+//
+{
+//
+//
+//  ** Close File **
+//
+ if (mv_pFile != NULL)
+  {
+   fclose(mv_pFile);
+   mv_pFile = NULL;
+  }
+//
+//
+//  ** Exit **
+//
+}

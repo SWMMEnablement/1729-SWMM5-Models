@@ -1,0 +1,72 @@
+EXTR   0B2     0   0        0                                                                           0
+SWMM   0MCTL   0 201     1                                                                               
+SWMM   0MCTL   0 202     1                                                                               
+SWMM   0MCTL   0 203     1                                                                               
+RUNF   0HC1    0 201             1.           72.       0.2                           484.       71.00   
+RUNF   0H1C    0 201     000                                                   10                        
+RUNF   0H1A    0 201     00010000                                                                        
+RUNF   0H1     0 201         490.66       40.     1200.        5.                                        
+EXTR   0C1     0 203             0.0  1              24.               120.     985.     980.      0.025 
+EXTR   0C1C    0 203                             10P0     0.0111                                         
+EXTR   0SPSC   0 203                                                                               0     
+EXTR   0MANW   0 203                   0.0       0.0                                                     
+EXTR   0C1A    0 203                                4.16667                                              
+EXTR   0D1     0 201                               0.0                                                   
+EXTR   0D1     0 202                      0.0                                                            
+SWMM   0TEMP   0   0                                                                                    1
+SWMM   7TEMP   0   0                                                                                    1
+GRUN   0E1     0   0     0000010                       0:00      1-1-94                60.        1.     
+GRUN   0E3A    0   0     0.        3.08      1.91      1.41      1.15      0.96      0.84      0.66      
+SWMM   7GD     0   0     50 year rainfall hydrograph                                                     
+RUNF   0H1B    0 201     50 year rainfall                                                                
+RUNF   0B2     0   0           300.      300.    86000.                                                  
+RUNF   0B1     0   0       000         1    2    0    0    0    0    1    1   94    0    0   94          
+RUNF   0C1A    0   0                                 1.                                                  
+RUNF   0A1     0   0      0    0 01           0.01                                                       
+RUNF   0M1     0   0     0    1                                                                          
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZSYM   0NAME   0   0     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                0   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    1   40    5    0                    
+ZSYM   7OBJ    0   0     50 year rainfall                                                                
+ZSYM   7VAL    0   0         0                                                                           
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM   0GLDB   0   0         7                                                                           
+SWMM   0SWMM   0   0           1.01                                                                      
+ZZZC   0CNTL   0   0    2    1    0    999   999   1000.000   0    211  swmmxp                           
+ZZZC   0CNTL   1   0    0.0000              0.0000                                                       
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZN 201NODE   0 201    201            0 0 4.26058  203 -1  -1  -1  -1  201 134 1   1   0   0   45  1    
+ZZZN 201NODE   1 201    1   2   249 37  1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 201NODE   2 201    42.6166             60.0823             47.3289             64.7946              
+ZZZN 202NODE   0 202    202            0 0 4.26058  203 -1  -1  -1  -1  202 134 1   0   0   0   45  1    
+ZZZN 202NODE   1 202    1   2   152 140 0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 202NODE   2 202    72.4407             93.4613             77.1530             98.1736              
+ZZZE 203EDGE   0 203    203            0           201 202 203 136 1   0   0   0   1                     
+ZZZE 203EDGE   1 203    1   0   0   0   0 4.26058   0 0.473398                                           
+ZZZS   0SEL    0   0          1     1                                                                    
+ZZZS   1SEL    0   0          0     1                                                                    
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    
+EXTR   0REVW   0   0      1 1 1 1 1 1 1                                                                  
+ZZZS   0SEL    1   0        0                                                                            
+SWMM   0MODE   0   0     000100                                                                          
+dfie   2dcar   0   0       RIN                                                                           
+RUNF   2INT    0   0     0000                                                                            
+SWMM   0UTIL   0   0     1                                                                               
+GRUN   0E3A    1   0     0.55      0.47      0.33      0.25                                              
+GRUN   0E3B    0   0     5.        5.        10.00     20.       20.       5.78                          
+GRUN   0E3B    1   0     60.       60.       3.08      1440.     1440.     0.25                          
+ZZZS   1SEL    1   0        0                                                                            

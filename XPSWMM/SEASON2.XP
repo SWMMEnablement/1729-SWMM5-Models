@@ -1,0 +1,121 @@
+EXTR   0B2     0   0        0                                                                            
+SWMM   0MCTL   0 201     1                                                                               
+SWMM   0TEMP   0   0                                                                                    1
+SWMM   0MODE   0   0     000100                                                                          
+ZSYM   0NAME   0   0     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                1   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    3   40    5    2                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM   0GLDB   0   0         7                                                                           
+SWMM   0SWMM   0   0           1.40                                                                      
+ZZZC   0CNTL   0   0    3    2    0    999   999   104.731    0    211  swmmxp                           
+ZZZC   0CNTL   1   0    20.6206             16.0514                                                      
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZZZN 201NODE   0 201    Calibrate      0 0 4.26058  205 -1  -1  -1  -1  201 134 1   0   0   0   45  1    
+ZZZN 201NODE   1 201    1   2   9   0   1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 201NODE   2 201    19.8168             21.2786             24.5291             25.9910              
+ZZZS   0SEL    0   0          0     1                                                                    
+ZZZS   0SEL    1   0        2                                                                            
+ZZZS   1SEL    0   0          0     1                                                                    
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    
+RUNF   0B1     0   0     00100         6    1    3    0    0    0    1    6   95    0    0   95          
+RUNF   0M1     0   0     0    1                                                                          
+RUNF   0B2     0   0           900.      900.    86000.                                                  
+RUNF   0A1     0   0      0    0 01           0.01                                                       
+SWMM   7TEMP   0   0                                                                                    1
+GRUN   0E1     0   0       0000                        0:0am     1/1/92                 5.        1.     
+GRUN   0E3A    0   0     0.0                                                                             
+ZSYM   7OBJ    0   0     dummy storm                             Gauge1                                  
+ZSYM   7VAL    0   0         0    1    2                                                                 
+SWMM   3TEMP   0   0                                                                                    1
+GRUN   0IN1    0   0     0        5.        1.     0.001                                                 
+GRUN   0IN2    0   0            0.0     0.014      0.03      0.25       0.5                              
+SWMM   3TEMP   3   0                                                                                    1
+ZSYM   4OBJ    0   0     Horton A                                                                        
+ZSYM   4VAL    0   0         0                                                                           
+RUNF   0H1B    0 201     dummy storm         Horton A                                                    
+RUNF   0H1C    0 201     000                                                   00                        
+RUNF   0H1A    0 201     00011100                                                                        
+RUNF   0H1     0 201            1.1       1.2       0.4        2.        2.        2.        2.        2.
+ZZZS   1SEL    1   0        1                                                                            
+RUNF   1H1B    0 201     dummy storm         Horton A                                                    
+RUNF   1H1C    0 201     000                                                   00                        
+RUNF   2H1B    0 201     dummy storm         Horton A                                                    
+RUNF   2H1C    0 201     000                                                   00                        
+RUNF   0H1     1 201             2.        2.        2.        2.                                        
+SWMM   0MCTL   0 204     1                                                                               
+ZZZN 204NODE   0 204    204            0 0 4.26058  205 210 -1  -1  -1  204 134 1   0   0   0   45  1    
+ZZZN 204NODE   1 204    1   2   200 154 0   0   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 204NODE   2 204    18.0386             35.4085             22.7510             40.1208              
+ZZZW   0BUFF   0   0    @_@_@_@_@_@_@_@                                                                  
+RUNF   0H1B    0 204     Gauge1.1            Horton A                                                    
+RUNF   0H1C    0 204     000                                                   00                        
+RUNF   0H1A    0 204     00010000                                                                        
+RUNF   0H1     0 204            10.       10.     1000.        1.                                        
+SWMM   0MCTL   0 205     0                                                                               
+ZZZE 205EDGE   0 205    205            0           201 204 205 136 0   0   0   0   1                     
+ZZZE 205EDGE   1 205    1   0   43  18  0 4.26058   0 0.473398                                           
+dfie   0dcar   0   0       dat                                                                           
+SWMM   0IMP    0   0     100010000000100000                                                              
+SWMM   0IMP2   0   0     C:\SWTEST\RUNOFF1.DAT                                                           
+RUNF   2INT    0   0     0                                                                               
+GRUN   1E1     0   0     10  01                        00:00     1/1/95                                  
+GRUN   1E3B    0   0     0.        15.       2.        30.       15.       2.                            
+GRUN   1E3B    1   0     60.       15.       2.        90.       15.       2.                            
+GRUN   1E3B    2   0     120.      15.       2.        150.      15.       2.                            
+SWMM   0MCTL   0 207     1                                                                               
+ZZZN 207NODE   0 207    SEASONAL       0 0 4.26058  210 -1  -1  -1  -1  207 134 1   0   0   0   45  1    
+ZZZN 207NODE   1 207    1   2   6   241 1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 207NODE   2 207    21.4989             24.2028             26.2112             28.9151              
+RUNF   0H1B    0 207     dummy storm         Horton A                                                    
+RUNF   0H1C    0 207     000                                                   00                        
+RUNF   0H1A    0 207     00010000                                                                        
+RUNF   0H1     0 207             1.        1.        1.        1.                                        
+RUNF   1H1B    0 207     dummy storm         Horton A                                                    
+RUNF   1H1C    0 207     000                                                   00                        
+RUNF   2H1B    0 207     dummy storm         Horton A                                                    
+RUNF   2H1C    0 207     000                                                   00                        
+SWMM   0MCTL   0 210     0                                                                               
+ZZZE 210EDGE   0 210    Specialdat     0           207 204 210 136 0   0   0   0   1                     
+ZZZE 210EDGE   1 210    1   0   22  0   0 4.26058   0 0.473398                                           
+GRUN   2E1     0   0     10  01                        00:00     6/1/95                                  
+GRUN   2E3B    0   0     0.        15.       2.        30.       15.       2.                            
+GRUN   2E3B    1   0     60.       15.       2.        90.       15.       2.                            
+GRUN   2E3B    2   0     120.      15.       2.        150.      15.       2.                            
+SWMM   7TEMP   1   0                                                                                    1
+GRUN   3E1     0   0     10  01                        00:00     1/1/95                                  
+GRUN   3E3B    0   0     0.        15.       2.        30.       15.       2.                            
+GRUN   3E3B    1   0     60.       15.       2.        90.       15.       2.                            
+GRUN   3E3B    2   0     120.      15.       2.        150.      15.       2.                            
+SWMM   7TEMP   2   0                                                                                    1
+GRUN   4E1     0   0     10  01                        00:00     1/1/95                                  
+GRUN   4E3B    0   0     0.        15.       2.        30.       15.       2.                            
+GRUN   4E3B    1   0     60.       15.       2.        90.       15.       2.                            
+GRUN   4E3B    2   0     120.      15.       2.        150.      15.       2.                            
+SWMM   7TEMP   3   0                                                                                    1
+SWMM   7TEMP   4   0                                                                                    1
+ZSYM   7OBJ    1   0     Gauge1.1                                                                        
+EXTR   0REVW   0   0      1 1 1 1 1 1 1                                                                  
+EXTR   0C5     4 210     .09     1.      1.      1.      .10     1.      1.      1.                      
+EXTR   0C1     0 210             0.0 13                                 33.      0.0      0.0      0.014 
+EXTR   0C5     0 210     .01     1.      1.      1.      .02     1.      1.      1.                      
+EXTR   0C5     1 210     .03     1.      1.      1.      .04     1.      1.      1.                      
+EXTR   0C5     2 210     .05     1.      1.      1.      .06     1.      1.      1.                      
+EXTR   0C5     3 210     .07     1.      1.      1.      .08     1.      1.      1.                      
+EXTR   0C5     5 210     .11     1.      1.      1.      .12     1.      1.      1.                      
+EXTR   0C1C    0 210                              0P0     0.0                                            
+EXTR   0SPSC   0 210                                                                               0     

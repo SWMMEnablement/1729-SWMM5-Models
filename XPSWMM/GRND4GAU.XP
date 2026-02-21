@@ -1,0 +1,212 @@
+EXTR   0B2     0   0        0                                                                            
+SWMM   0MISC   0   0     1                                                                               
+dfie   0dcar   0   0       dat                                                                           
+SWMM   0IMP    0   0     11011111                                                                        
+SWMM   0IMP2   0   0     C:\WPS\EXAMPLES\SWMTEST\runoff26.dat                                            
+SWMM   0TEMP   0   0                                                                                    1
+SWMM   0MODE   0   0     0 01                                                                            
+RUNF   2INT    0   0     0000                                                                            
+EXTR   0A1     0   0         RUNOFF EXAMPLE 26, PARABOLIC CHANNELS, GROUNDWATER                          
+RUNF   0A1B    0   0     HEAVY RAIN CAUSES WATER TABLE TO REACH SURFACE - 4 RAINGAGES                    
+RUNF   0A1     0   0      0    0 00           0.01                                                       
+RUNF   0B1     0   0     1011      7    2    12   0       00    0    1    7   87     0    87             
+RUNF   0B2     0   0           900.     1800.    86400.                                                  
+GRUN   1E1     0   0     10  01                        00:00     07/01/87                                
+GRUN   2E1     0   0     10  01                        00:00     07/01/87                                
+GRUN   3E1     0   0     10  01                        00:00     07/01/87                                
+GRUN   4E1     0   0     10  01                        00:00     07/01/87                                
+ZSYM   0NAME   0   0     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 1   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                1   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    8   40    5    2                    
+ZSYM   7OBJ    0   0     Gauge1                                  Gauge2                                  
+ZSYM   7OBJ    1   0     Gauge3                                  Gauge4                                  
+ZSYM   7VAL    0   0         1    2    3    4    5    6    7    8                                        
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+GRUN   1E3B    0   0     0.        15.       2.        30.       15.       2.                            
+GRUN   1E3B    1   0     60.       15.       2.        90.       15.       2.                            
+GRUN   1E3B    2   0     120.      15.       2.        150.      15.       2.                            
+GRUN   2E3B    0   0     0.        15.       1.        30.       15.       1.                            
+GRUN   2E3B    1   0     60.       15.       1.        90.       15.       1.                            
+GRUN   2E3B    2   0     120.      15.       1.        150.      15.       1.                            
+GRUN   3E3B    0   0     0.        15.       3.        30.       15.       3.                            
+GRUN   3E3B    1   0     60.       15.       3.        90.       15.       3.                            
+GRUN   3E3B    2   0     120.      15.       3.        150.      15.       3.                            
+GRUN   4E3B    0   0             0.15                .5       30.15                .5                    
+GRUN   4E3B    1   0            60.15                .5       90.15                .5                    
+GRUN   4E3B    2   0           120.15                .5      150.15                .5                    
+RUNF   0F1     0   0             .1        .1        .1        .1        .1        .1        .1        .1
+RUNF   0F1     1   0             .1        .1        .1        .1                                        
+SWMM   0MCTL   0 201     1                                                                               
+RUNF   0H1A    0 201     00000000                                                                        
+SWMM   0MCTL   0 202     1                                                                               
+RUNF   0H1A    0 202     01000000                                                                        
+SWMM   0MCTL   0 203     1                                                                               
+RUNF   0H1A    0 203     00000000                                                                        
+SWMM   0MCTL   0 204     1                                                                               
+RUNF   0H1A    0 204     00010000           4                                                            
+SWMM   0MCTL   0 205     1                                                                               
+RUNF   0H1A    0 205     00010000           1                                                            
+SWMM   0MCTL   0 206     1                                                                               
+EXTR   0SPDV   0 206     0000000       00000001000000                                                    
+EXTR   0WRNM   0 206     1                                                                               
+SWMM   0MCTL   0 207     1                                                                               
+SWMM   0MCTL   0 208     1                                                                               
+RUNF   0H1A    0 208     00010000           2                                                            
+SWMM   0MCTL   0 209     1                                                                               
+SWMM   0MCTL   0 210     1                                                                               
+SWMM   0MCTL   0 211     1                                                                               
+SWMM   0MCTL   0 212     1                                                                               
+RUNF   0H1A    0 212     00010000           3                                                            
+SWMM   0MCTL   0 213     1                                                                               
+EXTR 201C1     0 206                 7               10.      20.     2000.                          .02 
+EXTR 201C1A    0 206                        2      1           0        1.        3.       0.0       0.0 
+EXTR 201C1C    0 206                             1  10                 3.3                               
+EXTR   0C1     0 207                 7               10.      20.     2000.                          .02 
+EXTR   0C1A    0 207                        2      1                                                     
+EXTR   0C1C    0 207                             1  10                                                   
+EXTR   0C1     0 209                 7               10.      20.     2000.                          .02 
+EXTR   0C1A    0 209                        2      1                                                     
+EXTR   0C1C    0 209                             1  10                                                   
+EXTR   0C1     0 210                 7               10.      20.     2000.                          .02 
+EXTR   0C1A    0 210                        2      1                                                     
+EXTR   0C1C    0 210                             1  10                                                   
+EXTR   0C1     0 211                 7               10.      20.     2000.                          .02 
+EXTR   0C1A    0 211                        2      1                                                     
+EXTR   0C1C    0 211                             1  10                                                   
+EXTR   0C1     0 213                 7               10.      20.     2000.                          .02 
+EXTR   0C1A    0 213                        2      1                                                     
+EXTR   0C1C    0 213                             1  10                                                   
+RUNF   0H1C    0 205     100 1                                                  0                        
+RUNF   0H1B    0 205     Gauge5              Infil1                                  Groundwater1        
+RUNF   0H1     0 205           300.       10.       10.      .001                                        
+GRUN   1IN2    0   0     0                .04        .6        0.        0.                              
+GRUN   1IN1    0   0     1                                      5.      .001        5.                   
+GRUN   1H2     0   0     1                                   8.55     11.45      8.55        0.          
+GRUN   1H3     0   0                   4.5E-5       2.6        0.        1.        0.       .46       14.
+GRUN   1H4     0   0            .15        .3        5.      .301       10.       15.       .35      .002
+RUNF   0H1C    0 208     100 3                                                 00                        
+RUNF   0H1B    0 208     Gauge6              Infil1                                  Groundwater1        
+RUNF   0H1     0 208           500.       10.       10.      .001                                        
+GRUN   2IN2    0   0     0                .04        .6        0.        0.                              
+GRUN   2IN1    0   0     1                                      5.      .001        5.                   
+GRUN   2H2     0   0     1                             8.55      11.45     8.55      0                   
+GRUN   2H3     0   0                   4.5E-5       2.6        0.        1.        0.       .46       14.
+GRUN   2H4     0   0            .15        .3        5.      .301       10.       15.       .35      .002
+RUNF   0H1C    0 212     000                                                   00                        
+RUNF   0H1B    0 212     Gauge7              Infil1                                                      
+RUNF   0H1     0 212           500.       10.       10.      .001                                        
+RUNF   0H1C    0 204     000                                                                             
+RUNF   0H1B    0 204     Gauge8              Infil1                                                      
+RUNF   0H1     0 204           500.       10.       10.      .001                                        
+RUNF   0M1     0   0     210                                                                             
+GRUN   5E1     0   0     10  01                        00:00     07/01/87                                
+GRUN   6E1     0   0     10  01                        00:00     07/01/87                                
+GRUN   7E1     0   0     10  01                        00:00     07/01/87                                
+GRUN   8E1     0   0     10  01                        00:00     07/01/87                                
+ZSYM   3OBJ    0   0     Groundwater1                                                                    
+ZSYM   3VAL    0   0         1                                                                           
+ZSYM   4OBJ    0   0     Infil1                                                                          
+ZSYM   4VAL    0   0         1                                                                           
+ZSYM   7OBJ    2   0     Gauge5                                  Gauge6                                  
+ZSYM   7OBJ    3   0     Gauge7                                  Gauge8                                  
+GRUN   5E3B    0   0             0.15                2.       30.15                2.                    
+GRUN   5E3B    1   0            60.15                2.       90.15                2.                    
+GRUN   5E3B    2   0           120.15                2.      150.15                2.                    
+GRUN   6E3B    0   0             0.15                1.       30.15                1.                    
+GRUN   6E3B    1   0            60.15                1.       90.15                1.                    
+GRUN   6E3B    2   0           120.15                1.      150.15                1.                    
+GRUN   7E3B    0   0             0.15                3.       30.15                3.                    
+GRUN   7E3B    1   0            60.15                3.       90.15                3.                    
+GRUN   7E3B    2   0           120.15                3.      150.15                3.                    
+GRUN   8E3B    0   0             0.15                .5       30.15                .5                    
+GRUN   8E3B    1   0            60.15                .5       90.15                .5                    
+GRUN   8E3B    2   0           120.15                .5      150.15                .5                    
+SWMM   1TEMP   0   0                                                                                    1
+SWMM   0TEMP   1   0                                                                                    1
+SWMM   2TEMP   1   0                                                                                    1
+SWMM   3TEMP   1   0                                                                                    1
+SWMM   4TEMP   1   0                                                                                    1
+SWMM   5TEMP   1   0                                                                                    1
+SWMM   6TEMP   1   0                                                                                    1
+SWMM   7TEMP   1   0                                                                                    1
+SWMM   7TEMP   0   0                                                                                    1
+SWMM   7TEMP   2   0                                                                                    1
+SWMM   7TEMP   3   0                                                                                    1
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZSYM   0GLDB   0   0         7                                                                           
+SWMM   0SWMM   0   0           2.04                                                                      
+ZZZC   0CNTL   0   0    7    6    0    999   999   417.55205520    213  swmmxp                           
+ZZZC   0CNTL   1   0    -21.6364            411.6990                                                     
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZN 201NODE   0 201    DUMMY1         0 0 4.26058  207 206 -1  -1  -1  201 134 1   0   0   0   45  1    
+ZZZN 201NODE   1 201    1   2   0   0   1   0   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 201NODE   2 201    434.3886            1.9053              439.1010            6.6177               
+ZZZN 202NODE   0 202    7              0 0 4.26058  207 210 211 -1  -1  202 134 1   1   0   0   45  1    
+ZZZN 202NODE   1 202    1   2   200 0   0   0   0   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 202NODE   2 202    454.3886            1.9053              459.1010            6.6177               
+ZZZN 203NODE   0 203    DUMMY2         0 0 4.26058  209 210 -1  -1  -1  203 134 1   0   0   0   45  1    
+ZZZN 203NODE   1 203    1   2   200 0   0   1   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 203NODE   2 203    440.2465            16.0475             444.9588            20.7598              
+ZZZN 204NODE   0 204    DUMMY3         0 0 4.26058  211 213 -1  -1  -1  204 134 1   0   0   0   45  1    
+ZZZN 204NODE   1 204    1   2   200 0   1   0   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 204NODE   2 204    435.1634            7.4181              439.8757            12.1304              
+ZZZN 205NODE   0 205    DUMMY4         0 0 4.26058  206 -1  -1  -1  -1  205 134 1   0   0   0   45  1    
+ZZZN 205NODE   1 205    1   2   202 0   1   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 205NODE   2 205    414.3886            1.9053              419.1010            6.6177               
+ZZZN 208NODE   0 208    DUMMY5         0 0 4.26058  209 -1  -1  -1  -1  208 134 1   0   0   0   45  1    
+ZZZN 208NODE   1 208    1   2   255 0   1   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 208NODE   2 208    426.1044            30.1896             430.8167            34.9019              
+ZZZN 212NODE   0 212    DUMMY6         0 0 4.26058  213 -1  -1  -1  -1  212 134 1   0   0   0   45  1    
+ZZZN 212NODE   1 212    1   2   255 0   1   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 212NODE   2 212    415.9382            12.9308             420.6505            17.6432              
+ZZZE 206EDGE   0 206    1              0           205 201 206 138 1   0   0   0   1                     
+ZZZE 206EDGE   1 206    2   0   120 1   0 4.26058   0 0.473398                                           
+ZZZE 207EDGE   0 207    2              0           201 202 207 136 1   0   0   0   1                     
+ZZZE 207EDGE   1 207    2   0   10  1   0 4.26058   0 0.473398                                           
+ZZZE 209EDGE   0 209    3              0           208 203 209 136 1   0   0   0   1                     
+ZZZE 209EDGE   1 209    2   0   120 1   0 4.26058   0 0.473398                                           
+ZZZE 210EDGE   0 210    4              0           203 202 210 136 1   0   0   0   1                     
+ZZZE 210EDGE   1 210    2   0   60  1   0 4.26058   0 0.473398                                           
+ZZZE 211EDGE   0 211    5              0           204 202 211 136 1   0   0   0   1                     
+ZZZE 211EDGE   1 211    2   0   60  1   0 4.26058   0 0.473398                                           
+ZZZE 213EDGE   0 213    6              0           212 204 213 136 1   0   0   0   1                     
+ZZZE 213EDGE   1 213    2   0   120 1   0 4.26058   0 0.473398                                           
+EXTR   0REVW   0   0      1 1 1 1 1 1 1                                                                  
+SRPT   0CNTL   0   0              1         0    0    0    1    0                                        
+SRPT   1GLOB   0   0    0.00488727 0.007                                                                 
+SRPT   1GLOB   1   0    2.04069 2.92286                                                                  
+SRPT   0GLOB   0   0    0.00488727 0.007                                                                 
+SRPT   0GLOB   1   0    2.04069 2.92286                                                                  
+ZSYM  18NAME   0   0     Gauged Pollutants                           0   40    5    0                    
+ZZZC   0NAME   0   0    0                   1                   1                                        
+QAS    0GLOB   0 201    .014906181 .015119997 10.5045258 443.032134 1 1 0                              0 
+QAS    0GLOB   0 202    .014906181 .015119997 10.5045258 463.024527 1 1 0                              0 
+QAS    0GLOB   0 203    .014906181 .015119997 24.5852921 448.877863 1 1 0                              0 
+QAS    0GLOB   0 204    .014906181 .015119997 16.0143908 443.850536 1 1 0                              0 
+QAS    0GLOB   0 205    .014906181 .015119997 10.5045258 423.039742 1 1 0                              0 
+QAS    0GLOB   0 208    .014906181 .015119997 38.768093 434.731199 1 1 0                               0 
+QAS    0GLOB   0 212    .014906181 .015119997 21.5242559 424.559631 1 1 0                              0 
+QAS    0GLOB   0 206    -.00513163 0 2.13769364 426.781008 1 1 0                                       0 
+QAS    0GLOB   0 207    -.00513163 0 2.13769364 446.773401 1 1 0                                       0 
+QAS    0GLOB   0 209    -.00342109 -.00392000 24.0751194 433.912797 1 1 0                              0 
+QAS    0GLOB   0 210    -.00342109 -.00392000 9.89231858 448.059461 1 1 0                              0 
+QAS    0GLOB   0 211    -.00488726 -.00139999 4.99466072 446.539571 1 1 0                              0 
+QAS    0GLOB   0 213    -.00488726 -.00139999 10.5045258 427.365581 1 1 0                              0 
+ZZZS   0SEL    0   0          1     1                                                                    
+JCTL   0A1     0   0     0                                                                               
+ZZZS   0SEL    1   0        1                                                                            
+ZZZS   1SEL    0   0          0     1                                                                    
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    

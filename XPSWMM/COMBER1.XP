@@ -1,0 +1,61 @@
+EXTR   0B2     0   0        0                                                                           0
+SWMM   0MCTL   0 201     1 1                                                                             
+SWMM   0MCTL   0 203     1 1                                                                             
+SWMM   0MCTL   0 202     1 1                                                                             
+RUNF   0H1A    0 202     00000000                                                                        
+SWMM   0TEMP   0   0                                                                                    1
+SWMM   0MODE   0   0     201000                                                                          
+EXTR   0I1     0 202                 1 0                                                      0          
+EXTR   0J2A    0 202            0.0                                                                      
+EXTR   0D1     0 202                       9.      0.0      0.0     0.0 0 0                              
+EXTR   0SP1N   0 202         0                        0                   1   0 0                        
+EXTR   0D1     0 201                       9.       1.      10.     0.0 0 0                              
+EXTR   0SP1N   0 201         0                        0                   0   0 0                        
+EXTR   0C1     0 203             0.0  2               5.       5.       55.       1.      0.0      0.014 
+EXTR   0MANW   0 203                   0.0       0.0                                                     
+EXTR   0C1A    0 203                                    0.0                                              
+EXTR   0C1C    0 203                              0P0     0.0                                            
+EXTR   0SPSC   0 203                                                                               0     
+EXTR   0B1     0   0                 15.            1  500  500                               00         
+EXTR   0BB2    0   0                                                     0                               
+EXTR   0B1A    0   0        0   0   0   0    0   1   0   0                                               
+EXTR   0B0     0   0                                                                    0 0 0 0          
+ZSYM   0NAME   0   0     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                0   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    0   40    5    0                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM   0GLDB   0   0         0                                                                           
+SWMM   0SWMM   0   0           1.00                                                                      
+ZZZC   0CNTL   0   0    2    1    0    999   999   1000.000   0    211  swmmxp                           
+ZZZC   0CNTL   1   0    0.0000              0.0000                                                       
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZD   0DIRT   0   0         1    0                                                                      
+ZZZN 201NODE   0 201    A              0 0 4.26058  203 -1  -1  -1  -1  201 134 1   1   0   0   45  1    
+ZZZN 201NODE   1 201    1   2   8   9   1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 201NODE   2 201    34.0955             49.4795             38.8078             54.1918              
+ZZZN 202NODE   0 202    B              0 0 4.26058  203 -1  -1  -1  -1  202 134 1   1   0   0   45  1    
+ZZZN 202NODE   1 202    1   2   176 10  0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 202NODE   2 202    50.6644             91.8905             55.3767             96.6029              
+ZZZE 203EDGE   0 203    203            0           201 202 203 136 1   1   0   0   1                     
+ZZZE 203EDGE   1 203    1   0   9   0   0 4.26058   0 0.473398                                           
+ZZZS   0SEL    0   0          2     1                                                                    
+ZZZS   0SEL    1   0        0    1                                                                       
+ZZZS   1SEL    0   0          1     1                                                                    
+ZZZS   1SEL    1   0        0                                                                            
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    
+TRAN   0JCT1   0   0                 01                                                                  
+EXTR   0INTO   0   0     COMBER1.INT                                                                     
+EXTR   0INTI   0   0     AQA                                                                             

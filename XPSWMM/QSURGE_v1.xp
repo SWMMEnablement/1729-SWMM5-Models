@@ -1,0 +1,120 @@
+EXTR   0B2     0   0        0                                                                           0
+XTN    0XTN    0   0               11                                                                    
+SWMM   0MCTL   0 201     1                                                                               
+SWMM   0MCTL   0 203     11                                                                              
+SWMM   0MCTL   0 202     11                                                                              
+ZSYM   0NAME   0   0     Pollutant                                   5   40    5    0                    
+ZSYM   0OBJ    0   0     Sediment                                SS                                      
+ZSYM   0OBJ    1   0     TP                                      TN                                      
+ZSYM   0OBJ    2   0     E coli                                                                          
+ZSYM   0VAL    0   0         0    1    2    3    4                                                       
+ZSYM   1NAME   0   0     Buildup/Washoff                             1   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                1   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     1   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    1   40    5    0                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              2   40    5    1                    
+ZSYM  15NAME   0   0     Landuse List                                1   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM   0GLDB   0   0         7                                                                           
+SWMM   0SWMM   0   0           1.00                                                                      
+ZZZC   0CNTL   0   0    2    1    0    999   999   347.243    0    211  swmmxp                           
+ZZZC   0CNTL   1   0    64.6223             -4.8220                                                      
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         1    1               
+ZZZD   0DIRT   0   0         0    0                                                                      
+ZZZN 201NODE   0 201    201            0 0 4.26058  203 -1  -1  -1  -1  201 134 1   1   0   0   45  1    
+ZZZN 201NODE   1 201    1   2   248 8   1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 201NODE   2 201    -2.3562             97.6438             2.3562              102.3562             
+ZZZN 202NODE   0 202    202            0 0 4.26058  203 -1  -1  -1  -1  202 134 1   1   0   0   45  1    
+ZZZN 202NODE   1 202    1   2   144 10  0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 202NODE   2 202    37.6438             97.6438             42.3562             102.3562             
+ZZZE 203EDGE   0 203    203            0           201 202 203 136 1   1   0   0   1                     
+ZZZE 203EDGE   1 203    1   0   9   0   0 4.26058   0 0.473398                                           
+ZZZS   0SEL    0   0          2     1                                                                    
+ZZZS   0SEL    1   0        0    1                                                                       
+ZZZS   1SEL    0   0          1     1                                                                    
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    
+EXTR   0C1     0 203             0.0  1               4.                10.      0.0      0.0      0.015 
+EXTR   0MANW   0 203                   0.0       0.0                                                     
+EXTR   0C1C    0 203                             10P0     0.0100                                         
+EXTR   0SPSC   0 203                                                                               0     
+EXTR   0C1A    0 203                                   0.01                                              
+EXTR   0D1     0 201                      0.0      0.0                                                   
+EXTR   0D1     0 202                      0.0      0.0                                                   
+ZZZW   0BUFF   0   0    @_@_@_@_@_@_@_@                                                                  
+RUNF   0H1A    0 201     01110000                                                                        
+SWMM   0TEMP   0   0                                                                                    1
+SWMM   7TEMP   0   0                                                                                    1
+GRUN   0E1     0   0       1000                        0:00      1-1-92                 5.      0.25     
+GRUN   0E3A    0   0     1.        1.        1.        1.        1.        1.        1.        1.        
+GRUN   0E3A    1   0     1.        1.        1.        1.        1.        1.        1.        1.        
+SWMM   3TEMP   0   0                                                                                    1
+GRUN   0IN1    0   0     1                                   0.100       0.3        4.                   
+GRUN   0IN2    0   0            30.     0.014      0.03      0.05       0.1                              
+SWMM   3TEMP   3   0                                                                                    1
+RUNF   0H1B    0 201     Storm1 - constant   Gamp #1                                                     
+RUNF   0H1C    0 201     0100                                               0.00                         
+RUNF   0H1     0 201           100.       10.     2000.      0.05                                        
+ZSYM   4OBJ    0   0     Gamp #1                                                                         
+ZSYM   4VAL    0   0         0                                                                           
+ZSYM   7OBJ    0   0     Storm1 - constant                                                               
+ZSYM   7VAL    0   0         0                                                                           
+RUNF   0B2     0   0            60.       60.    86000.                                                  
+RUNF   0B1     0   0       000         1    1    6    0    0    0    1    1   92    0    0   92          
+RUNF   0M1     0   0     2    1                                                                          
+RUNF   0A1     0   0      1 0000 01           0.01                                                       
+EXTR   0A1     0   0         Example of runoff confluence using wieghted areas for dividing              
+RUNF   0A1B    0   0     the flow between two diverging conduits.                                        
+RUNF   0H1A    0 202     01100000                                                                        
+EXTR   0REVW   0   0      0 1 1 1 1 1 1                                                                  
+ZZZS   1SEL    1   0        0                                                                            
+EXTR   0C1     0 203             0.0  1                                10.0      0.0      0.0            
+EXTR   0C1A    0 203                                    0.0                                              
+EXTR   0C1C    0 203                              0P0     0.0                                            
+EXTR   0SPSC   0 203                                                                               0     
+ZZZS   0ATTR   0   2                            4.26058    0             .473398    0    4    1    1     
+ZZZS   0PLOT   0   0      view pict    1                                                                 
+SWMM   0MODE   0   0     001100                                                                          
+RUNF   0J1     0   0                                 1.                                                  
+GRUN   0J3     0   0     4 3                                           200.       40.                    
+SWMM   0TEMP   4   0                                                                                    1
+SWMM   6TEMP   4   0                                                                                    1
+GRUN   3D3     0   0     0       0.0       0.0       0.0          EMC # 1                                
+RUNF   3D3     0   0                                           0.0                                       
+GRUN   3D2     0   0     00   mg/l             0.0                           0.0                         
+SWMM   6TEMP   3   0                                                                                    1
+SWMM   5TEMP   3   0                                                                                    1
+GRUN   0J2     0   0     10      1E25        1.       0.0       0.0       0.0                            
+SWMM   5TEMP   5   0                                                                                    1
+GRUN   2D3     0   0     0       0.0       0.0       0.0          EMC # 1                                
+RUNF   2D3     0   0                                           0.0                                       
+GRUN   2D2     0   0     00   mg/l             0.0                           0.0                         
+SWMM   6TEMP   2   0                                                                                    1
+RUNF   0L1     0 201     Canberra Subdivision100.                                                        
+ZSYM   1OBJ    0   0     EMC # 1                                                                         
+ZSYM   1VAL    0   0         0                                                                           
+ZSYM   5OBJ    0   0     Canberra Subdivision                                                            
+ZSYM   5VAL    0   0         0                                                                           
+ZSYM  14OBJ    0   0     TN                                      TP                                      
+ZSYM  14VAL    0   0         3    2                                                                      
+ZSYM  15OBJ    0   0     Canberra Subdivision                                                            
+ZSYM  15VAL    0   0         0                                                                           
+SWMM   6TEMP   0   0                                                                                    1
+RUNF   0H1C    0 202     0100                                               0.00                         
+RUNF   0L1     0 202     Canberra Subdivision100.                                                        
+RUNF   0H1B    0 202     Storm1 - constant   Gamp #1                                                     
+SWMM   0TEMP   0 202                                                                                    1
+RAIN   0B3     0 202     0    0                                                                          
+RAIN   0B4     0 202                   5              5              5              5              5     
+RAIN   0B4     1 202                   5              5              5              5              5     
+SWMM   0GG1    0 202                    2                                                                
+RAIN   0B1     0 202                                                 NWS80F                              
+RUNF   0H1     0 202           100.       50.     1000.      0.05                                        

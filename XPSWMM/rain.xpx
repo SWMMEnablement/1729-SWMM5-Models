@@ -1,0 +1,43 @@
+/*   Constant rainfall data   */
+GLDB "Rainfall" 0 "Constant"      /* Global data type & name   */
+DATA R_ROPT   ""  0  1  0         /* User defined rainfall     */
+DATA R_KTYPE  ""  0  1  0         /* Constant rainfall         */ 
+DATA R_KPREPC ""  0  1  1         /* Absolute Depth            */ 
+DATA R_RMULT  ""  0  1  1.0       /* Rainfall Multiplier       */   
+DATA R_HOFF   ""  0  1  0         /* Time interval             */ 
+DATA R_KTIMEC ""  0  1  1         /* Time interval in hours    */ 
+DATA R_THISTO ""  0  1  1.0       /* Actual Rainfall increment */       
+DATA R_TZRDT  ""  0  1  "1/1/98"  /* Actual Rainfall increment */       
+DATA R_TZRTM  ""  0  1  "0:0"     /* Actual Rainfall increment */       
+/*                                   Rainfall values           */ 
+DATA R_REIN   ""  0  5  1.0  0.5  0.25  0.5  1.0
+
+/*   Variable rainfall data   */
+GLDB "Rainfall" 1 "Variable"      /* Global data type & name   */
+DATA R_ROPT   ""  1  1  0         /* User defined rainfall     */
+DATA R_KTYPE  ""  1  1  1         /* Variable rainfall         */ 
+DATA R_KPREPV ""  1  1  1         /* Absolute Depth            */ 
+DATA R_RMULTV ""  1  1  1.0       /* Rainfall Multiplier       */   
+DATA R_KTIMEV ""  1  1  1         /* Time interval in hours    */ 
+DATA R_TZRDT  ""  1  1  "1/1/98"  /* Actual Rainfall increment */       
+DATA R_TZRTM  ""  1  1  "0:0"     /* Actual Rainfall increment */       
+/*                                   Rainfall values           */ 
+DATA R_RAIN   ""  1  5  1.0  0.5  0.25  0.5  1.0
+/*                                   Time values           */ 
+DATA R_TRAIN  ""  1  5  0.0  0.5  0.75  2.0  3.0
+/*                                   Time values           */ 
+DATA R_DRAIN  ""  1  5  0.25 0.25 0.25 0.5  0.5
+
+/*    Tipping bucket rainfall data   */
+GLDB "Rainfall" 2 "Tipping"       /* Global data type & name   */
+DATA R_ROPT   ""  2  1  0         /* User defined rainfall     */
+DATA R_KTYPE  ""  2  1  2         /* Variable rainfall         */ 
+DATA R_TZRDT  ""  2  1  "1/1/98"  /* Actual Rainfall increment */       
+DATA R_TZRTM  ""  2  1  "0:0"     /* Actual Rainfall increment */       
+/*                                   Rainfall values           */ 
+DATA R_BDATE  ""  2  5  '01/01/98' '01/01/98' '01/01/98' '01/01/98' '01/01/98'
+/*                                   Time values           */ 
+DATA R_BTIME  ""  2  5  '00:00:00'  '00:01:00' '00:02:00'  '00:03:00'  '00:05:00'
+/*                                   Time values           */ 
+DATA R_BVOL   ""  2  5  0.1  0.1  0.1  0.1  0.1
+

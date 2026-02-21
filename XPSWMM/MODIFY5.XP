@@ -1,0 +1,103 @@
+EXTR   0B2     0   0        0               0.0    0.001  0.00001      980.  0 0   10      200.  1000.  1
+SWMM   0MISC   0   0     1                                                                               
+SWMM   0MODE   0   0     201000                                                                          
+SWMM   0TEMP   0   0                                                                                    1
+SWMM   0MCTL   0 201       1                                                                             
+SWMM   0MCTL   0 203       1                                                                             
+SWMM   0MCTL   0 202       1                                                                             
+SWMM   0MCTL   0 205       1                                                                             
+SWMM   0MCTL   0 204       1                                                                             
+SWMM   0MCTL   0 207       1                                                                             
+SWMM   0MCTL   0 206       1                                                                             
+EXTR   0I1     0 206                 1 0                                                      0          
+EXTR   0J2A    0 206            0.0                                                                      
+EXTR   0D1     0 206                     250.     200.      0.0     0.0 0 0                              
+EXTR   0SP1N   0 206         0                        0                   1   0 0                        
+EXTR   0C1A    0 207            1.     1.                .1                                              
+EXTR   0C1     0 207             0.0  6               6.       1.      100.    200.1     200.      0.014 
+EXTR   0D1     0 204                     250.    200.1                                                   
+EXTR   0C1C    0 207                              0P0     0.0                                            
+EXTR   0SPSC   0 207                                                                               0     
+EXTR   0C1     0 205             0.0  1               6.                 1.   200.11    200.1      0.014 
+EXTR   0C1A    0 205                                     1.                                              
+EXTR   0D1     0 202                     250.   200.11                                                   
+EXTR   0C1C    0 205                              0P0     0.0                                            
+EXTR   0SPSC   0 205                                                                               0     
+ZSYM   0NAME   0   0     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                0   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    0   40    5    0                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM   0GLDB   0   0         0                                                                           
+SWMM   0SWMM   0   0           1.43                                                                      
+ZZZC   0CNTL   0   0    4    3    3    999   999   593.047    0    211  swmmxp                           
+ZZZC   0CNTL   1   0    12.7847             -12.6075                                                     
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZZZN 201NODE   0 201    in             0 0 4.2714   203 -1  -1  -1  -1  201 134 1   0   0   0   45  1    
+ZZZN 201NODE   1 201    1   2   22  0   1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 201NODE   2 201    22.3198             16.5161             27.0386             21.2350              
+ZZZN 202NODE   0 202    2              0 0 4.2714   203 205 -1  -1  -1  202 134 1   0   0   0   45  1    
+ZZZN 202NODE   1 202    1   2   20  0   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 202NODE   2 202    30.7412             68.0442             35.4601             72.7631              
+ZZZN 204NODE   0 204    4              0 0 4.2714   205 207 -1  -1  -1  204 134 1   0   0   0   45  1    
+ZZZN 204NODE   1 204    1   2   20  0   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 204NODE   2 204    34.0634             87.3861             38.7823             92.1050              
+ZZZN 206NODE   0 206    out            0 0 4.2714   207 -1  -1  -1  -1  206 134 1   0   0   0   45  1    
+ZZZN 206NODE   1 206    1   2   20  0   0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 206NODE   2 206    38.9308             121.9044            43.6496             126.6233             
+ZZZE 203EDGE   0 203    longin         0           201 202 203 136 1   0   0   0   1                     
+ZZZE 203EDGE   1 203    1   0   10  0   0 4.2714    0 0.4746                                             
+ZZZE 205EDGE   0 205    short          0           202 204 205 136 1   0   0   0   1                     
+ZZZE 205EDGE   1 205    1   0   10  0   0 4.2714    0 0.4746                                             
+ZZZE 207EDGE   0 207    long1          0           204 206 207 136 1   0   0   0   1                     
+ZZZE 207EDGE   1 207    1   0   10  0   0 4.2714    0 0.4746                                             
+ZZZS   0SEL    0   0          0     1                                                                    
+ZZZS   1SEL    0   0          0     1                                                                    
+ZZZS   1SEL    1   0        0    1    2                                                                  
+ZZZS   2SEL    0   0          1     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    
+ZZZW   0BUFF   0   0    @_@_@_@_@_@_@_@                                                                  
+EXTR   0C1A    0 203            1.     1.                .1                                              
+EXTR   0C1     0 203             0.0  6               6.       1.      100.   200.21   200.11      0.014 
+EXTR   0C1C    0 203                              0P0     0.0                                            
+EXTR   0SPSC   0 203                                                                               0     
+EXTR   0D1     0 201                     250.   200.21      0.0     0.0 0 0                              
+EXTR   0B1     0   0                 10.            1  500  500        0.0                    00         
+EXTR   0BB2    0   0                50                                   0        1       1.           00
+EXTR   0B1A    0   0        0   0   0   0    0   1   0   0                                               
+EXTR   0B0     0   0                                                                    0 0 1 1          
+EXTR   0K3     0 201     0.      0.      .1      5.      .2      6.      .3      7.      .4      15.     
+EXTR   0K3     1 201     .45     15.     .5      50.     .55     15.     .6      15.     .7      7.      
+EXTR   0K3     2 201     .8      6.      .9      5.      1.      0.                                      
+EXTR   0SP1N   0 201         1                        0                   0   0 0                        
+ZZZS   0SEL    1   0        0    1    2    3                                                             
+EXTR   0MANW   0 205                   0.0       0.0                                                     
+EXTR   0RSLT   0 203                                                         49.08891         0          
+EXTR   0RSLT   0 205                                                         46.60598         0          
+EXTR   0RSLT   0 207                                                         46.32566-.07226849          
+EXTR   0REVW   0   0      0 1 1 1 1 0 1                                                                  
+EXTR   0BB1    0   0                                0.65              0.95      20.       1.        6    
+ZZZS   0ATTR   0   3                             4.2714    0                             4         211111
+ZZZS   0TEXT   0   3     Tighter Tolerances                                                              
+ZZZT 208text   0 208    0    6.0000         208 131 1   0   0   0   2   0   13  4                        
+ZZZT 208text   1 208    Modify Conduits of 0 seconds                                                     
+ZZZT 208text   2 208    7.9391              30.5086             13.0054             111.6657             
+ZZZS   2SEL    1   0        2                                                                            
+ZZZT 209text   0 209    0    5.0000         209 131 1   0   11  0   2   0   11  4                        
+ZZZT 209text   1 209    Courant Factor of 20                                                             
+ZZZT 209text   2 209    14.1312             59.6599             18.3531             108.8671             
+ZZZT 210text   0 210    0    4.2714         210 131 1   1   0   0   2   0   9   4                        
+ZZZT 210text   1 210    Tighter Tolerances                                                               
+ZZZT 210text   2 210    18.6346             60.3595             22.2936             96.5070              

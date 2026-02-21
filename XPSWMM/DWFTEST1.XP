@@ -1,0 +1,287 @@
+EXTR   0B2     0   0        0                                                                           0
+XTN    0XTN    0   0               11                                                                    
+SWMM   0MCTL   0 201     01                                                                              
+SWMM   0MCTL   0 203     01                                                                              
+SWMM   0MCTL   0 202     01                                                                              
+SWMM   0MCTL   0 204     01                                                                              
+SWMM   0MCTL   0 205     01                                                                              
+SWMM   0MCTL   0 207     01                                                                              
+SWMM   0MCTL   0 206     01                                                                              
+EXTR   0C1     0 203             0.0  2               4.       4.      100.      0.0      0.0      0.014 
+EXTR   0MANW   0 203                   0.0       0.0                                                     
+EXTR   0C1A    0 203                                   0.05                                              
+EXTR   0D1     0 201                      0.0      0.0                                                   
+EXTR   0D1     0 202                      0.0      0.0                                                   
+EXTR   0C1C    0 203                              0P0     0.0                                            
+EXTR   0SPSC   0 203                                                                               0     
+SWMM   0TEMP   0   0                                                                                    1
+SWMM   0MODE   0   0     101010                                                                          
+ZZZW   0BUFF   0   0    @_@_@_@_@_@_@_@                                                                  
+EXTR   0C1     0 205             0.0  2               4.       4.      100.      0.0      0.0      0.014 
+EXTR   0MANW   0 205                   0.0       0.0                                                     
+EXTR   0C1A    0 205                                   0.05                                              
+EXTR   0C1C    0 205                              0P0     0.0                                            
+EXTR   0SPSC   0 205                                                                               0     
+EXTR   0C1     0 207             0.0  2               4.       4.      100.      0.0      0.0      0.014 
+EXTR   0MANW   0 207                   0.0       0.0                                                     
+EXTR   0C1A    0 207                                   0.05                                              
+EXTR   0C1C    0 207                              0P0     0.0                                            
+EXTR   0SPSC   0 207                                                                               0     
+TRAN   0JCT2   0   0         4     0.001      900.        0.   10                                        
+RUNF   0B1     0   0                   1    2    0    0    0    0    1    1   92    0    0   92          
+TRAN   0JCT1   0   0     000101   010  1                         DWF 1                                   
+SWMM  13TEMP   0   0                                                                                    1
+SWMM  11TEMP   0   0                                                                                    1
+GTRN   5DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN   5DWF4   0   0             1.        2.        2.        2.        1.        2.        1.        1.
+GTRN   5DWF4   1   0             1.        2.        1.        1.        1.        2.        1.        1.
+GTRN   5DWF4   2   0             1.        2.        1.        1.        1.        2.        1.        1.
+GTRN   0DWF3   0   0             2.        2.        1.        2.        1.        2.        1.          
+GTRN   0DWF4   0   0             2.       1.2       1.3       1.4       1.1       1.2       1.3       1.4
+GTRN   0DWF4   1   0            1.1       1.2       1.3       1.4       1.1       1.2       1.3       1.4
+GTRN   0DWF4   2   0            1.1       1.2       1.3       1.4       1.1       1.2       1.3       1.4
+GTRN   0DWF2   0   0             0.        0.        0.        0.       0.1                              
+GTRN1001O1     0   0     1.        1.        1.        1.        10000.    1.        1.        1.        
+GTRN   0DWF1   0   0     1        1        1.      350.      350.        0.        0.        0.        0.
+SWMM  11TEMP  11   0                                                                                    1
+ZSYM   0NAME   0   0     Pollutant                                  21   40    5   12                    
+ZSYM   0OBJ    0   0     E coli                                  P1                                      
+ZSYM   0OBJ    1   0     P2                                      P3                                      
+ZSYM   0OBJ    2   0     P4                                      P5                                      
+ZSYM   0VAL    0   0         4   12   13   14   15   16   17   18   19   20    5    6    7    8    9   10
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                0   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    0   40    5    0                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            2   40    5    0                    
+ZSYM  11OBJ    0   0     DWF 1                                   DWF 2                                   
+ZSYM  11VAL    0   0         0    1                                                                      
+ZSYM  12NAME   0   0     Sewer infiltration                          1   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                             14   40    5   13                    
+ZSYM  14OBJ    0   0     E coli                                  P1                                      
+ZSYM  14VAL    0   0         4   12   13   14   15   16   17   18   19    9   10   11    0    1          
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM   0GLDB   0   0        11                                                                           
+SWMM   0SWMM   0   0           1.01                                                                      
+ZZZC   0CNTL   0   0    4    3    0    999   999   635.945    0    211  swmmxp                           
+ZZZC   0CNTL   1   0    11.6450             5.8989                                                       
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZD   0DIRT   0   0         1    0                                                                      
+ZZZN 201NODE   0 201    201            0 0 4.26058  203 -1  -1  -1  -1  201 134 1   0   0   0   45  1    
+ZZZN 201NODE   1 201    1   2   0   9   1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 201NODE   2 201    26.9945             32.5936             31.7068             37.3060              
+ZZZN 202NODE   0 202    202            0 0 4.26058  203 205 207 -1  -1  202 134 1   0   0   0   45  1    
+ZZZN 202NODE   1 202    1   2   152 10  0   0   1   -1  -1  -1  -1  -1  -1                               
+ZZZN 202NODE   2 202    53.0314             75.3974             57.7437             80.1097              
+ZZZN 204NODE   0 204    204            0 0 4.26058  205 -1  -1  -1  -1  204 134 1   1   0   0   45  1    
+ZZZN 204NODE   1 204    1   2   152 10  1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 204NODE   2 204    16.5797             106.8129            21.2921             111.5253             
+ZZZN 206NODE   0 206    206            0 0 4.26058  207 -1  -1  -1  -1  206 134 1   0   0   0   45  1    
+ZZZN 206NODE   1 206    1   2   152 10  0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 206NODE   2 206    87.5894             76.9681             92.3017             81.6805              
+ZZZE 203EDGE   0 203    203            0           201 202 203 136 1   0   0   0   1                     
+ZZZE 203EDGE   1 203    1   0   9   0   0 4.26058   0 0.473398                                           
+ZZZE 205EDGE   0 205    205            0           204 202 205 136 1   0   0   0   1                     
+ZZZE 205EDGE   1 205    1   0   152 10  0 4.26058   0 0.473398                                           
+ZZZE 207EDGE   0 207    207            0           202 206 207 136 1   0   0   0   1                     
+ZZZE 207EDGE   1 207    1   0   9   0   0 4.26058   0 0.473398                                           
+ZZZS   0SEL    0   0          1     1                                                                    
+ZZZS   0SEL    1   0        2                                                                            
+ZZZS   1SEL    0   0          0     1                                                                    
+ZZZS   1SEL    1   0        0    1                                                                       
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    
+TRAN   0NOD1   0 201        1901 000  0010 5001                                                          
+RUNF   0H1A    0 201     0                                                                               
+TRAN   0NOD1   0 202        1900 000                                                                     
+RUNF   0H1A    0 202     0                                                                               
+TRAN   0NOD1   0 206        1910 001                                                                     
+RUNF   0H1A    0 206     0                                                                               
+TRAN   0NOD1   0 204        1901 000  0110 5001                                                          
+RUNF   0H1A    0 204     0                                                                               
+SWMM  10TEMP   0   0                                                                                    1
+GRUN   1D2     0   0     0    mg/l             0.0                                                       
+GTRN   1POL1   0   0     0       0.05          0                                                         
+SWMM  10TEMP   1   0                                                                                    1
+GRUN   3D2     0   0     0    mg/l             0.0                                                       
+GTRN   3POL1   0   0     0       0.01          1                                                         
+SWMM  10TEMP   3   0                                                                                    1
+GRUN   2D2     0   0     0    mg/l             0.0                                                       
+GTRN   2POL1   0   0     0         0.          1                                                         
+SWMM  10TEMP   2   0                                                                                    1
+GTRN   2DWF3   0   0             2.       0.9       0.9       0.8       0.7       0.5        1.          
+GTRN   2DWF4   0   0             2.       1.2       1.3       1.4       0.8       0.9       0.9       0.9
+GTRN   2DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   2DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   4DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN   4DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   4DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   4DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   3DWF3   0   0             1.        1.        1.        1.        1.        1.        2.          
+GTRN   3DWF4   0   0             2.        1.        1.        1.        1.        1.        1.        1.
+GTRN   3DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   3DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+TRAN   0NOD2   0 204                       0.       0.5        .1        0.        0.        .1        0.
+TRAN   0NOD2   0 201                       0.        0.        .1        0.        0.        .1        0.
+TRAN 204PC1    0 204               10.       10.       10.                                               
+GRUN   0D2     0   0     0                     0.0                                                       
+GTRN   0POL1   0   0     0                     0                                                         
+SWMM  10TEMP   4   0                                                                                    1
+GRUN   4D2     0   0     0                     0.0                                                       
+GTRN   4POL1   0   0     0                     0                                                         
+TRAN   0Q2     0 201               0        0.        0.        3.                  3.2          0       
+EXTR   0REVW   0   0      1 1 1 1 1 1 1                                                                  
+SWMM  11TEMP   2   0                                                                                    1
+EXTR   0RSLT   0 203                                                         .3146601         0          
+EXTR   0RSLT   0 205                                                         .3146601         0          
+EXTR   0RSLT   0 207                                                         .6212916         0          
+SWMM  10TEMP   5   0                                                                                    1
+SWMM  10TEMP   6   0                                                                                    1
+SWMM  10TEMP   7   0                                                                                    1
+SWMM  10TEMP   8   0                                                                                    1
+SWMM  10TEMP   9   0                                                                                    1
+SWMM  10TEMP  10   0                                                                                    1
+SWMM  10TEMP  11   0                                                                                    1
+ZSYM   0OBJ    3   0     P6                                      P7                                      
+ZSYM   0OBJ    4   0     P8                                      P9                                      
+ZSYM   0OBJ    5   0     Q1                                      Q2                                      
+GRUN   5D2     0   0     0                     0.0                                                       
+GTRN   5POL1   0   0     0                     0                                                         
+GRUN   6D2     0   0     0                     0.0                                                       
+GTRN   6POL1   0   0     0                     0                                                         
+GRUN   7D2     0   0     0                     0.0                                                       
+GTRN   7POL1   0   0     0                     0                                                         
+GRUN   8D2     0   0     0                     0.0                                                       
+GTRN   8POL1   0   0     0                     0                                                         
+GRUN   9D2     0   0     0                     0.0                                                       
+GTRN   9POL1   0   0     0                     0                                                         
+GRUN  10D2     0   0     0                     0.0                                                       
+GTRN  10POL1   0   0     0                     0                                                         
+GRUN  11D2     0   0     0                     0.0                                                       
+GTRN  11POL1   0   0     0                     0                                                         
+GTRN   1DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN   1DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   1DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   1DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  12DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN  12DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  12DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  12DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  11DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN  11DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  11DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  11DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  10DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN  10DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  10DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  10DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   6DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN   6DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   6DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   6DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   7DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN   7DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   7DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   7DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   8DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN   8DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   8DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   8DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   9DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN   9DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   9DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   9DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+ZSYM  14OBJ    1   0     P2                                      P3                                      
+ZSYM  14OBJ    2   0     P4                                      P5                                      
+ZSYM  14OBJ    3   0     P6                                      P7                                      
+ZSYM  14OBJ    4   0     P8                                      Q5                                      
+GTRN1001O1     1   0     1.        1.        1.        1.        1.        1.        1.        1.        
+TRAN   0COND   0 205     00000                                                                           
+SWMM  10TEMP  12   0                                                                                    1
+SWMM  10TEMP  13   0                                                                                    1
+SWMM  10TEMP  14   0                                                                                    1
+SWMM  10TEMP  15   0                                                                                    1
+SWMM  10TEMP  16   0                                                                                    1
+SWMM  10TEMP  17   0                                                                                    1
+SWMM  10TEMP  18   0                                                                                    1
+SWMM  10TEMP  19   0                                                                                    1
+SWMM  10TEMP  20   0                                                                                    1
+GRUN  12D2     0   0     0                     0.0                                                       
+GTRN  12POL1   0   0     0                     0                                                         
+GRUN  13D2     0   0     0                     0.0                                                       
+GTRN  13POL1   0   0     0                     0                                                         
+GRUN  14D2     0   0     0                     0.0                                                       
+GTRN  14POL1   0   0     0                     0                                                         
+GRUN  15D2     0   0     0                     0.0                                                       
+GTRN  15POL1   0   0     0                     0                                                         
+GRUN  16D2     0   0     0                     0.0                                                       
+GTRN  16POL1   0   0     0                     0                                                         
+GRUN  17D2     0   0     0                     0.0                                                       
+GTRN  17POL1   0   0     0                     0                                                         
+GRUN  18D2     0   0     0                     0.0                                                       
+GTRN  18POL1   0   0     0                     0                                                         
+GRUN  19D2     0   0     0                     0.0                                                       
+GTRN  19POL1   0   0     0                     0                                                         
+GRUN  20D2     0   0     0                     0.0                                                       
+GTRN  20POL1   0   0     0                     0                                                         
+GTRN  21DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN  21DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  21DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  21DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  13DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN  13DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  13DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  13DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  14DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN  14DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  14DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  14DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  15DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN  15DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  15DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  15DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  16DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN  16DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  16DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  16DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  17DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN  17DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  17DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  17DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  18DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN  18DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  18DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  18DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  19DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN  19DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  19DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  19DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  20DWF3   0   0             1.        1.        1.        1.        1.        1.        1.          
+GTRN  20DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  20DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN  20DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN1001O1     2   0     1.        1.        1.        1.        1.                                      
+ZSYM   0OBJ    6   0     Q3                                      Q4                                      
+ZSYM   0OBJ    7   0     Q5                                      Q6                                      
+ZSYM   0OBJ    8   0     Q7                                      Sediment                                
+ZSYM   0OBJ    9   0     SS                                      TN                                      
+ZSYM   0OBJ   10   0     TP                                                                              
+ZSYM   0VAL    1   0        11    0    1    3    2                                                       
+ZSYM  14OBJ    5   0     Q6                                      Q7                                      
+ZSYM  14OBJ    6   0     Sediment                                SS                                      
+SWMM  12TEMP   0   0                                                                                    1
+GTRN 200DWF3   0   0             2.        2.        2.        2.        2.        1.        1.          
+GTRN 200DWF4   0   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN 200DWF4   1   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN 200DWF4   2   0             1.        1.        1.        1.        1.        1.        1.        1.
+GTRN   1DWF1   0   0     0                                                                               
+ZSYM  12OBJ    0   0     infil1                                                                          
+ZSYM  12VAL    0   0         0                                                                           
+SWMM  11TEMP   1   0                                                                                    1

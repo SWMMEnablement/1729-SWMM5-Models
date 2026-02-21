@@ -1,0 +1,178 @@
+EXTR   0B2     0   0        0                                                                           0
+SWMM   0MCTL   0 201     100                                                                             
+SWMM   0MCTL   0 202     100                                                                             
+SWMM   0MCTL   0 203     010                                                                             
+SWMM   0TEMP   0   0                                                                                    1
+SWMM   0MODE   0   0     110110                                                                          
+RUNF   0B1     0   0     01000         1    4    0    0    0    0    1    1   94    0    0   94          
+RUNF   0F1     0   0            2.2       2.4       4.6       6.6       7.2       8.1      10.2      11.1
+RUNF   0F1     1   0           10.9       4.4       3.3       2.5                                        
+RUNF   0A1     0   0      1 0010 11           0.01                                                       
+RUNF   0J1     0   0                1 1 1 4        20.0                                              45.0
+EXTR   0A1     0   0         WOLFRD2A                                                                    
+ZSYM   0NAME   0   0     Pollutant                                   2   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             4   40    5    3                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                0   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     2   40    5    1                    
+ZSYM   6NAME   0   0     Initial Loads                               1   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    1   40    5    0                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              2   40    5    1                    
+ZSYM  15NAME   0   0     Landuse List                                2   40    5    1                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM   0GLDB   0   0        10                                                                           
+SWMM   0SWMM   0   0           1.01                                                                      
+ZZZC   0CNTL   0   0    2    1    0    999   999   1000.000   0    211  swmmxp                           
+ZZZC   0CNTL   1   0    0.0000              0.0000                                                       
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZZZN 201NODE   0 201    1              0 0 4.26058  203 -1  -1  -1  -1  201 134 0   1   0   0   45  1    
+ZZZN 201NODE   1 201    1   2   243 37  1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 201NODE   2 201    35.5156             34.9498             40.2280             39.6622              
+ZZZN 202NODE   0 202    2              0 0 4.26058  203 -1  -1  -1  -1  202 134 0   1   0   0   45  1    
+ZZZN 202NODE   1 202    1   2   200 63  0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 202NODE   2 202    73.3874             136.2650            78.0998             140.9774             
+ZZZE 203EDGE   0 203    A              0           201 202 203 136 1   1   0   0   1                     
+ZZZE 203EDGE   1 203    1   0   0   0   0 4.26058   0 0.473398                                           
+SWMM   6TEMP   0   0                                                                                    1
+SWMM   7TEMP   0   0                                                                                    1
+SWMM   5TEMP   0   0                                                                                    1
+SWMM   6TEMP   6   0                                                                                    1
+SWMM   5TEMP   6   0                                                                                    1
+SWMM   5TEMP   5   0                                                                                    1
+SWMM   0TEMP   5   0                                                                                    1
+ZSYM   0OBJ    0   0     Pb                                      TSS                                     
+ZSYM   0VAL    0   0         0    1                                                                      
+ZSYM   1OBJ    0   0     SA-Pb,COMM                              SA-Pb,RES                               
+ZSYM   1OBJ    1   0     SA-TSS,COMM                             SA-TSS,RES                              
+ZSYM   1VAL    0   0         0    1    2    3                                                            
+ZSYM   5OBJ    0   0     COMMERCIAL                              RESIDENTIAL                             
+ZSYM   5VAL    0   0         0    1                                                                      
+SWMM   0TEMP   3   0                                                                                    1
+SWMM   0TEMP   1   0                                                                                    1
+SWMM   6TEMP   1   0                                                                                    1
+SWMM   5TEMP   1   0                                                                                    1
+SWMM   5TEMP   3   0                                                                                    1
+GRUN   0J3     0   0     4 3                                            .02       10.                    
+GRUN   1J3     0   0     4 3                                           100.       20.                    
+GRUN   2J3     0   0     4 3                                            50.       25.                    
+SWMM   0TEMP   2   0                                                                                    1
+GRUN   3J3     0   0     4 3                                           100.       50.                    
+SWMM   7TEMP   3   0                                                                                    1
+SWMM   7TEMP   7   0                                                                                    1
+GRUN   0E1     0   0     00  010                       10:00AM   1/1/94                                  
+GRUN   0E3B    0   0     0.        30.       4.2       30.       120.      1.1                           
+GRUN   0E3B    1   0     150.      1290.     0.                                                          
+SWMM   4TEMP   0   0                                                                                    1
+SWMM   4TEMP   4   0                                                                                    1
+SWMM   4TEMP   1   0                                                                                    1
+GRUN1001L1A    0   0     0.        0.                                                                    
+GRUN1002L1A    0   0     0.        0.                                                                    
+RUNF   0HC1    0 201             1.           85.       0.2                           484.       28.00   
+RUNF   0H1C    0 201     0100                                               0.010                        
+RUNF   0L1     0 201     RESIDENTIAL         70.                           SAN ANTONIO                   
+RUNF   0H1B    0 201     SAN ANTONIO                                                                     
+RUNF   0H1A    0 201     01010000                                                                        
+RUNF   0H1     0 201            79.       20.     2000.       .01                                        
+RUNF   0HC1    0 202             1.           87.       0.2                           484.       31.00   
+RUNF   0H1C    0 202     0100                                               0.010                        
+RUNF   0L1     0 202     COMMERCIAL          70.                           SAN ANTONIO                   
+RUNF   0H1B    0 202     SAN ANTONIO                                                                     
+RUNF   0H1A    0 202     01011100                                                                        
+RUNF   0H1     0 202            61.       35.     1500.      .005       30.       10.     1000.      .008
+ZSYM   6OBJ    0   0     SAN ANTONIO                                                                     
+ZSYM   6VAL    0   0         2                                                                           
+ZSYM   7OBJ    0   0     SAN ANTONIO                                                                     
+ZSYM   7VAL    0   0         0                                                                           
+ZSYM  14OBJ    0   0     Pb                                      TSS                                     
+ZSYM  14VAL    0   0         0    1                                                                      
+ZSYM  15OBJ    0   0     COMMERCIAL                              RESIDENTIAL                             
+ZSYM  15VAL    0   0         0    1                                                                      
+SWMM   4TEMP   2   0                                                                                    1
+GRUN1003L1A    0   0     0.        0.                                                                    
+EXTR   0C1     0 203              0.  8               3.              1900.    1000.     990.      0.014 
+EXTR   0MANW   0 203                    6.        6.                                                     
+EXTR   0C1A    0 203                                1.38889                                              
+EXTR   0D1     0 201                      0.0      0.0                                                   
+EXTR   0D1     0 202                      0.0      0.0                                                   
+EXTR   0C1C    0 203             1.   .005       10P0     0.0111                                         
+EXTR   0SPSC   0 203                                                                               0     
+RUNF   0B2     0   0           900.      900.    86400.                                                  
+RUNF   0M1     0   0     2    1                                                                          
+RUNF   0M1A    0   0     1/1/94    1/4/94                                                                
+GRUN   0D3     0   0     0       0.0       0.0       0.0          SA-Pb,COMM                             
+RUNF   0D3     0   0                                           0.0                                       
+GRUN   0D3     1   0     0       0.0       0.0       20.          SA-Pb,RES                              
+RUNF   0D3     1   0                                           0.0                                       
+GRUN   0D2     0   0     00   mg/l             0.0                           0.0                         
+GRUN   1D3     0   0     0       0.0       0.0       0.0          SA-TSS,COMM                            
+RUNF   1D3     0   0                                           0.0                                       
+GRUN   1D3     1   0     0       0.0       0.0       35.          SA-TSS,RES                             
+RUNF   1D3     1   0                                           0.0                                       
+GRUN   1D2     0   0     00   mg/l             0.0                           0.0                         
+SWMM   7TEMP   1   0                                                                                    1
+GRUN   0J2     0   0     10     1000.        1.        .2       0.0       0.0        1.       10.        
+GRUN   1J2     0   0     10     2000.        1.        .4       0.0       0.0        1.        5.        
+EXTR   0RSLT   0 203                                                                0         0          
+EXTR   0REVW   0   0      1 1 1 1 1 1 1                                                                  
+SWMM   6TEMP   2   0                                                                                    1
+ZZZS   0SEL    0   0          2     1                                                                    
+ZZZS   1SEL    0   0          1     1                                                                    
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    
+ZZZS   0SEL    1   0        0    1                                                                       
+ZZZW   0BUFF   0   0    @_@_@_@_@_@_@_@                                                                  
+TRAN   0JCT2   0   0         4     0.001       60.        0.    1                                        
+TRAN   0JCT1   0   0     100001   010  1                                                                 
+SWMM   6TEMP   3   0                                                                                    1
+ZZZS   1SEL    1   0        0                                                                            
+SWMM   1TEMP   3   0                                                                                    1
+SWMM   1TEMP   2   0                                                                                    1
+SWMM   1TEMP   1   0                                                                                    1
+SWMM   1TEMP   0   0                                                                                    1
+SWMM  12TEMP   0   0                                                                                    1
+SWMM  13TEMP   0   0                                                                                    1
+SWMM  13TEMP   1   0                                                                                    1
+SWMM  13TEMP   2   0                                                                                    1
+SWMM  13TEMP   3   0                                                                                    1
+SWMM   5TEMP   2   0                                                                                    1
+EXTR   0C4     0 203     1005.   950.    1004.   990.    1001.   996.    1000.   1000.   1001.   1004.   
+EXTR   0C4     1 203     1004.   1018.   1005.   1050.                                                   
+EXTR   0C3     0 203                        990.   1018.                     0.0               0.0       
+EXTR   0C2     0 203             .05        .05         .02                                              
+STOR   0D1     0   0            2.2       2.4       4.6       6.6       7.2       8.1      10.2      11.1
+STOR   0D1     1   0           10.9       4.4       3.3       2.5                                        
+SWMM   4TEMP   3   0                                                                                    1
+SWMM   8TEMP   0   0                                                                                    1
+SWMM  10TEMP   0   0                                                                                    1
+SWMM  11TEMP   0   0                                                                                    1
+SWMM   8TEMP   2   0                                                                                    1
+SWMM   8TEMP   3   0                                                                                    1
+GRUN   0J2A    0   0             1.                                                                      
+GRUN   1J2A    0   0             1.                                                                      
+RUNF   0L1     1 201     COMMERCIAL          30.                           SAN ANTONIO                   
+RUNF   1H1C    0 202     0100                                               0.010                        
+RUNF   1L1     0 202     RESIDENTIAL         100.                          SAN ANTONIO                   
+RUNF   1HC1    0 202             1.           79.       0.2                           484.       19.00   
+RUNF   1H1B    0 202     SAN ANTONIO                                                                     
+RUNF   2H1C    0 202     0100                                               0.010                        
+RUNF   2L1     0 202     COMMERCIAL          50.                           SAN ANTONIO                   
+RUNF   2L1     1 202     RESIDENTIAL         50.                           SAN ANTONIO                   
+RUNF   2HC1    0 202             1.           83.       0.2                           484.       19.00   
+RUNF   2H1B    0 202     SAN ANTONIO                                                                     
+RUNF   0H1     1 202            62.       15.     1600.      .009                                        
+RUNF   0L1     1 202     RESIDENTIAL         30.                           SAN ANTONIO                   
+SWMM  11TEMP   1   0                                                                                    1
+GTRN   1POL1   0   0     0                     0                                                         
+SWMM  10TEMP   1   0                                                                                    1
+GTRN   0POL1   0   0     0                     0                                                         
+TRAN   0NOD1   0 201        1900 000                                                                     
+TRAN   0NOD1   0 202        1900 000                                                                     
+RUNF   2INT    0   0     0000                                                                            
+TRAN   1JCT1   0   0                 00                                                                  

@@ -1,0 +1,237 @@
+EXTR   0B2     0   0        0               0.0    0.001   0.0001      980.  0 1   10      200.  1000.  0
+ZSYM   0NAME   0   0     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 1   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                2   40    5    1                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    1   40    5    0                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              0   40    5    1                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM   0GLDB   0   0         7                                                                           
+SWMM   0SWMM   0   0           1.01                                                                      
+ZZZC   0CNTL   0   0    5    4    0    999   999   377.352    0    211  swmmxp                           
+ZZZC   0CNTL   1   0    21.8621             54.0872                                                      
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         1    0               
+ZZZD   0DIRT   0   0         1    1                                                                      
+SWMM   0MCTL   0 249     001                                                                             
+SWMM   0MCTL   0 252     0 1                                                                             
+SWMM   0MCTL   0 251     111                                                                             
+ZZZN 249NODE   0 249    b1             0 0 4.26058  252 -1  -1  -1  -1  249 134 0   0   0   0   45  1    
+ZZZN 249NODE   1 249    1   2   20  0   1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 249NODE   2 249    97.6439             77.6438             102.3562            82.3562              
+ZZZN 251NODE   0 251    HOSMER         0 0 4.26058  252 337 -1  -1  -1  251 134 1   0   0   0   95  1    
+ZZZN 251NODE   1 251    1   2   20  0   0   0   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 251NODE   2 251    94.6439             54.6438             105.3562            65.3562              
+ZZZE 252EDGE   0 252    BB10           0           249 251 252 136 0   0   0   0   1                     
+ZZZE 252EDGE   1 252    1   0   71  11  0 4.26058   0 0.473398                                           
+SWMM   0MCTL   0 295     11                                                                              
+SWMM   0MCTL   0 297     01                                                                              
+SWMM   0MCTL   0 296     011                                                                             
+SWMM   0MCTL   0 298     0 1                                                                             
+ZZZN 295NODE   0 295    f1             0 0 4.26058  297 -1  -1  -1  -1  295 134 1   0   0   0   4   1    
+ZZZN 295NODE   1 295    1   2   174 247 1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 295NODE   2 295    57.6438             37.6439             62.3562             42.3562              
+ZZZN 296NODE   0 296    f2             0 0 4.26058  297 298 -1  -1  -1  296 134 0   0   0   0   85  1    
+ZZZN 296NODE   1 296    1   2   20  0   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 296NODE   2 296    77.6439             37.6439             82.3562             42.3562              
+ZZZE 297EDGE   0 297    FF1            0           295 296 297 136 0   0   0   0   1                     
+ZZZE 297EDGE   1 297    1   0   71  11  0 4.26058   0 0.473398                                           
+ZZZE 298EDGE   0 298    FF2            0           296 336 298 136 0   0   0   0   1                     
+ZZZE 298EDGE   1 298    1   0   75  119 0 4.26058   0 0.473398                                           
+ZZZS   0ATTR   0   1                         4.26057894    0  10.71233  10.71233    0    2    1    111111
+RUNF   0H1A    0 249     00011000                                                                        
+RUNF   0H1     0 249            43.       13.     1764.     0.027       8.8       35.     1000.      0.01
+RUNF   0H1A    0 295     00010000                                                                        
+RUNF   0H1     0 295            74.       60.     4000.      0.02                                        
+RUNF   0H1A    0 296     00010000                                                                        
+RUNF   0H1     0 296            84.       55.     3600.      0.02                                        
+ZZZS   0ATTR   0   3                             4.2606    0                             7         111111
+ZZZS   0TEXT   0   3     slope                                                                           
+SWMM   0TEMP   0   0                                                                                    1
+SWMM   0MODE   0   0     010001                                                                          
+EXTR   0E1     0 251                    289.     0.0                                          3          
+EXTR   0E2F    0 251            0.0    0.0                                                               
+EXTR   0D1     0 251                     289.     274.      0.0     0.0 1 0                              
+EXTR   0SP1N   0 251         0                        0                   0   0 0                        
+EXTR   0C1     0 297             0.0  1               3.              1892.   291.04   287.06      0.013 
+EXTR   0MANW   0 297                   0.0       0.0                                                     
+EXTR   0C1C    0 297                              0P0     0.0                                            
+EXTR   0SPSC   0 297                                                                               0     
+EXTR   0D1     0 296                   309.06   287.06      0.0     0.0 1 0                              
+EXTR   0SP1N   0 296         0                        0                   0   0 0                        
+ZZZS   0SEL    0   0          0     1                                                                    
+ZZZS   0SEL    1   0        4    0    1    3                                                             
+ZZZS   1SEL    0   0          0     1                                                                    
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    
+EXTR   0C1     0 298             0.0  1               3.               718.   287.06   285.96      0.013 
+EXTR   0MANW   0 298                   0.0       0.0                                                     
+EXTR   0C6     0 298                       1.      0.0      0.0      0.0     0.65      0.0       1. 0    
+EXTR   0C1C    0 298                              0P0     0.0                                            
+EXTR   0SPSC   0 298                                                                               0     
+EXTR   0C1     0 252             0.0  1              5.5               445.   281.64   278.93      0.013 
+EXTR   0MANW   0 252                   0.0       0.0                                                     
+EXTR   0C1C    0 252                              1P0     0.0                                            
+EXTR   0SPSC   0 252                   0         0                                                 0     
+ZZZS   1SEL    1   0        0    2                                                                       
+RUNF   0A1     0   0      0    0 01           0.01                                                       
+ZZZS   0SEL    2   0       54   55   59                                                                  
+ZZZS   1SEL    2   0       58                                                                            
+RUNF   2INT    0   0     0001                                                                            
+RUNF   2INT4   0   0     runoff1.INT                                                                     
+TRAN   0JCT1   0   0     000001   100100                                                                 
+EXTR   0INTI   0   0     trans1.int                                                                      
+SWMM   7TEMP   0   0                                                                                    1
+GRUN   0E1     0   0     0010000                       0:0       1-1-94                10.        5.     
+GRUN   0E3B    0   0     0.0       5.        1.        20.       10.       1.                            
+GRUN   0E3B    1   0     30.       5.        1.        40.       10.       1.                            
+GRUN   0E3B    2   0     60.       5.        1.        90.       10.       1.                            
+ZSYM   7OBJ    0   0     type1a                                                                          
+ZSYM   7VAL    0   0         0                                                                           
+SWMM   6TEMP   0   0                                                                                    1
+SWMM   3TEMP   0   0                                                                                    1
+SWMM   2TEMP   0   0                                                                                    1
+SWMM   1TEMP   0   0                                                                                    1
+GRUN   0IN2    0   0             5.     0.014      0.03     0.025       0.1                              
+GRUN   0IN1    0   0     1       1.0       0.6   0.00115        8.       0.1       0.6                   
+SWMM   3TEMP   3   0                                                                                    1
+ZSYM   4OBJ    0   0     infilGA                                 infilHT                                 
+ZSYM   4VAL    0   0         0    1                                                                      
+SWMM   3TEMP   1   0                                                                                    1
+GRUN   1IN2    0   0             5.     0.014      0.03     0.025       0.1                              
+GRUN   1IN1    0   0     0        1.       0.6   0.00115                                                 
+SWMM   2TEMP   1   0                                                                                    1
+SWMM   2TEMP   2   0                                                                                    1
+SWMM   4TEMP   1   0                                                                                    1
+SWMM   5TEMP   1   0                                                                                    1
+SWMM   0TEMP   1   0                                                                                    1
+SWMM  10TEMP   0   0                                                                                    1
+SWMM  11TEMP   0   0                                                                                    1
+SWMM  12TEMP   0   0                                                                                    1
+SWMM  13TEMP   0   0                                                                                    1
+SWMM  13TEMP   1   0                                                                                    1
+ZSYM   3OBJ    0   0     GW1                                                                             
+ZSYM   3VAL    0   0         0                                                                           
+RUNF   0H1A    0 251     00010000                                                                        
+RUNF   0H1B    0 249     type1a              infilHT                                                     
+RUNF   0H1B    0 251     type1a              infilHT                                                     
+RUNF   0H1B    0 295     type1a              infilHT                                                     
+RUNF   0H1B    0 296     type1a              infilHT                                                     
+RUNF   0B1     0   0     00100         1    1    5    0    0    0    1    1   94    0    0   94          
+RUNF   0B2     0   0           300.      600.    86400.                                                  
+RUNF   0M1     0   0     0    1                                                                          
+EXTR   0A1     0   0         test run, type IA rainfall, dummy outlet                                    
+TRAN   0JCT2   0   0         8    0.0001       60.        0.    1                                        
+STOR   0D1     0   0            0.1       0.1       0.1                                                  
+EXTR   0BB1    0   0                                0.65              0.65       1.       1.        6    
+EXTR   0BB2    0   0                50                                   0        1       1.           00
+EXTR   0B1     0   0                 10.            1  500   10        0.0                    01         
+EXTR   0B1A    0   0        0   0   0   0    0   5   0   0                                               
+EXTR   0B0     0   0                                                                    0 1 1 1          
+RUNF   0H1C    0 249     000                                                   00                        
+RUNF   0H1C    0 295     000                                                   00                        
+RUNF   0H1C    0 296     000                                                   00                        
+SWMM   0MCTL   0 336     111                                                                             
+SWMM   0MCTL   0 337      10                                                                             
+RUNF   0H1B    0 336     type1a              infilHT                                                     
+RUNF   0H1C    0 336     000                                                   00                        
+RUNF   0H1A    0 336     00010000                                                                        
+RUNF   0H1     0 336           16.5       80.     1200.      0.01                                        
+EXTR   0C1A    0 298                                  .1532                                              
+EXTR   0D1     0 336                   295.96   285.96      0.0     0.0 1 0                              
+EXTR   0C1     0 337             0.0  1               3.              1007.   285.96   283.89      0.013 
+EXTR   0MANW   0 337                   0.0       0.0                                                     
+EXTR   0C1C    0 337                              1P0     0.0                                            
+EXTR   0SPSC   0 337                                                                               0     
+EXTR   0D1     0 249                   299.64   281.64      0.0     0.0 1 0                              
+EXTR   0SP1N   0 249         0                        0                   1   0 0                        
+RUNF   1H1B    0 249     type1a              infilHT                                                     
+RUNF   1H1C    0 249     000                                                   00                        
+ZZZN 336NODE   0 336    f3             0 0 4.26058  298 337 -1  -1  -1  336 134 1   0   0   0   45  1    
+ZZZN 336NODE   1 336    1   2   8   128 0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 336NODE   2 336    77.6439             57.6439             82.3562             62.3562              
+ZZZE 337EDGE   0 337    FF3            0           336 251 337 136 0   0   0   0   1                     
+ZZZE 337EDGE   1 337    1   0   176 245 0 4.26058   0 0.473398                                           
+EXTR   0C1A    0 252                      0          .60899                                              
+EXTR   0C1A    0 297                                 .21036                                              
+EXTR   0D1     0 295                   298.54   291.04                                                   
+EXTR   0C1A    0 337                                 .20556                                              
+EXTR   0SP1N   0 336         0                        0                   1   0 0                        
+TRAN   0NOD1   0 295        1900 000                                                                     
+TRAN   0NOD1   0 296        1900 010                                                                     
+EXTR   0E2E    0 251     0.042   0.      0.480   1.      1.520   2.      2.880   3.      4.072   4.      
+EXTR   0E2E    1 251     5.841   5.      6.808   6.      7.143   7.      7.305   8.      7.460   9.      
+EXTR   0E2E    2 251     7.618   10.     7.779   11.     7.955   12.     8.276   13.     15.182  14.     
+EXTR   0E2E    3 251     15.865  15.                                                                     
+RUNF   0H1C    0 251     000                                                   00                        
+RUNF   0H1     0 251          8.276      100.   360506.       0.1     22.32        5.      900.      0.05
+RUNF   1H1B    0 251     type1a              infilHT                                                     
+RUNF   1H1C    0 251     000                                                   00                        
+EXTR   0C6     0 337                       1.      0.0      0.0      0.0     0.65      1.0       1. 0    
+EXTR   0C6     0 252                       1.      0.0      0.0      0.0     0.65      1.0       1. 0    
+dfie   0dcar   0   0       dat                                                                           
+SWMM   0IMP    0   0     01001111                                                                        
+SWMM   0IMP1   0   0     C:\XPS\HOSMER\type1a.dat                                                        
+SWMM   7TEMP   7   0                                                                                    1
+SWMM   7TEMP   1   0                                                                                    1
+GRUN   1E1     0   0       00  0                                                       60.        1.     
+RUNF   1H1B    0 295     type1a                                                                          
+RUNF   1H1B    0 296     type1a                                                                          
+RUNF   1H1B    0 336     type1a                                                                          
+RUNF   2H1B    0 249     type1a                                                                          
+RUNF   2H1B    0 251     type1a                                                                          
+RUNF   2H1B    0 295     type1a                                                                          
+RUNF   2H1B    0 296     type1a                                                                          
+RUNF   2H1B    0 336     type1a                                                                          
+RUNF   3H1B    0 249     type1a                                                                          
+RUNF   3H1B    0 251     type1a                                                                          
+RUNF   3H1B    0 295     type1a                                                                          
+RUNF   3H1B    0 296     type1a                                                                          
+RUNF   3H1B    0 336     type1a                                                                          
+RUNF   4H1B    0 249     type1a                                                                          
+RUNF   4H1B    0 251     type1a                                                                          
+RUNF   4H1B    0 295     type1a                                                                          
+RUNF   4H1B    0 296     type1a                                                                          
+RUNF   4H1B    0 336     type1a                                                                          
+EXTR   0RSLT   0 252                                                                0 -4.224973          
+EXTR   0RSLT   0 298                                                         9.845638         0          
+EXTR   0RSLT   0 337                                                         17.80384         0          
+EXTR   0REVW   0   0      0 1 1 1 1 1 1                                                                  
+GRUN   0E3A    0   0     0.        .0033     .0034     .0033     .0033     .0034     .0033     .005      
+GRUN   0E3A    1   0     .005      .005      .005      .005      .005      .0058     .0059     .0058     
+GRUN   0E3A    2   0     .0058     .0059     .0058     .0058     .0059     .0058     .0058     .0059     
+GRUN   0E3A    3   0     .0058     .0067     .0066     .0067     .0067     .0066     .0067     .01       
+GRUN   0E3A    4   0     .01       .01       .01       .01       .01       .0092     .0092     .0091     
+GRUN   0E3A    5   0     .0092     .0092     .0091     .02       .02       .02       .035      .035      
+GRUN   0E3A    6   0     .035      .015      .015      .015      .0133     .0134     .0133     .0092     
+GRUN   0E3A    7   0     .0091     .0092     .0092     .0091     .0092     .0083     .0084     .0083     
+GRUN   0E3A    8   0     .0083     .0084     .0083     .0067     .0066     .0067     .0067     .0066     
+GRUN   0E3A    9   0     .0067     .0067     .0066     .0067     .0067     .0066     .0067     .005      
+GRUN   0E3A   10   0     .005      .005      .005      .005      .005      .0058     .0059     .00582    
+GRUN   0E3A   11   0     .00578    .0059     .0058     .0058     .0059     .0058     .0058     .0059     
+GRUN   0E3A   12   0     .0058     .0033     .0034     .0033     .0033     .0034     .0033     .005      
+GRUN   0E3A   13   0     .005      .005      .005      .005      .005      .0042     .0041     .0042     
+GRUN   0E3A   14   0     .0072     .0011     .0042     .0042     .0041     .0042     .0042     .0041     
+GRUN   0E3A   15   0     .0042     .0042     .0041     .0042     .0042     .0041     .0042     .0042     
+GRUN   0E3A   16   0     .0041     .0042     .0042     .0041     .0042     .0033     .0034     .0033     
+GRUN   0E3A   17   0     .0033     .0034     .0033     .0033     .0034     .0033     .0033     .0034     
+GRUN   0E3A   18   0     .0033                                                                           
+TRAN   0NOD1   0 249        1900 010                                                                     
+TRAN   0NOD1   0 251        1900 010                                                                     
+TRAN   0NOD1   0 336        1900 010                                                                     
+TRAN   1JCT1   0   0                 11                                                                  
+EXTR   1INTI   0   0     runoff1.int                                                                     
+EXTR   1INTO   0   0     trans1.int                                                                      
+ZZZS   0PLOT   0   0      view pict    1                                                                 
+EXTR   0I1     0 249                 1 0                                                      0          
+EXTR   0J2A    0 249            0.0                                                                      
+EXTR   0I1     0 336                 1 0                                                      0          
+EXTR   0J2A    0 336            0.0                                                                      

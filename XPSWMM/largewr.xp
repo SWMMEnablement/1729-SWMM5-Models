@@ -1,0 +1,144 @@
+EXTR   0B2     0   0        0               0.0    0.001  0.00001      100.                             0
+SWMM   0MISC   0   0     1                                                                               
+FONT   0LIST   0   0         -101        Arial                                                           
+SWMM   0MCTL   0 201     0 1                                                                             
+SWMM   0MCTL   0 202     0 1                                                                             
+SWMM   0MCTL   0 203     0 1                                                                             
+SWMM   0MCTL   0 204     0 1                                                                             
+SWMM   0MCTL   0 205     0 1                                                                             
+NOTE   0NAME   0 201     Notes                                       0   40    5    0                    
+SRPT   0CNTL   0   0              1         0    0    0    1    0                                        
+SRPT   1GLOB   0   0    0.00501125 0.00711                                                               
+SRPT   1GLOB   1   0    2.2959 3.25744                                                                   
+SRPT   0GLOB   0   0    0.00501125 0.00711                                                               
+SRPT   0GLOB   1   0    2.2959 3.25744                                                                   
+ZRPT   0NAME   0   0     RPT Headings                                0   40    5    0                    
+ZSYM   0NAME   0   0     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                0   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    0   40    5    0                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM  18NAME   0   0     Gauged Pollutants                           0   40    5    0                    
+ZSYM  19NAME   0   0     Pump Ratings                                0   40    5    0                    
+ZSYM   0GLDB   0   0         0                                                                           
+SWMM   0SWMM   0   0           6.00                                                                      
+ZZZC   0CNTL   0   0    3    2    2    999   999   458.14942160    213  swmmxp                           
+ZZZC   0CNTL   1   0    43.6061             0.9575                                                       
+ZZZC   0NAME   0   0    1    N              1    L              1                                        
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZZZN 201NODE   0 201    POND           0 0 2.38125  204 -1  -1  -1  -1  201 133 1   0   0   0   45  1    
+ZZZN 201NODE   1 201    1   2   94  0   1   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 201NODE   2 201    12.0859             132.2127            15.2546             135.3815             
+QAS    0GLOB   0 201    .015051562 .015081250 140.638138 20.5021543 1 1 0                              0 
+ZZZN 202NODE   0 202    StandPipe      0 0 2.38125  205 204 -1  -1  -1  202 134 1   0   0   0   45  1    
+ZZZN 202NODE   1 202    1   2   78  0   1   0   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 202NODE   2 202    25.4358             89.6683             28.6045             92.8371              
+QAS    0GLOB   0 202    .015051562 .015081250 98.1035463 33.8938619 1 1 0                              0 
+ZZZN 203NODE   0 203    CatchBasin     0 0 2.38125  205 -1  -1  -1  -1  203 134 1   0   0   0   45  1    
+ZZZN 203NODE   1 203    1   2   229 0   0   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 203NODE   2 203    39.5583             45.4187             42.7270             48.5875              
+QAS    0GLOB   0 203    .015051562 .015081250 53.8772373 48.0094455 1 1 0                              0 
+ZZZE 204EDGE   0 204    OutletWork     0           201 202 204 138 1   1   0   0   1                     
+ZZZE 204EDGE   1 204    1   4   0   1   0 2.38125   0 0.264583                                           
+QAS    0GLOB   0 204    0 -.00529165 112.483138 17.968588 1 1 0                                        0 
+ZZZE 205EDGE   0 205    PondOut        0           202 203 205 136 1   0   0   0   1                     
+ZZZE 205EDGE   1 205    1   0   0   1   0 2.38125   0 0.264583                                           
+QAS    0GLOB   0 205    -5.2812E-4 -.00529165 68.8610141 31.7222336 1 1 0                              0 
+ZZZS   0ATTR   0   3                             .09375    0                             0      -10100000
+ZZZS   0TEXT   0   3     Routing of 100-yr Event Dekalb Runoff Hydrograph                                
+SWMM   0TEMP   0   0                                                                                    1
+SWMM   0MODE   0   0     200001                                                                          
+EXTR   0D1     0 203                   1000.8    993.0      0.0     0.0 0 0                              
+EXTR   0SP1N   0 203         0                        0                   1   0 0                        
+ZZZT 206text   0 206    0    2.3813         206 131 1   0   1   336199691   9   9                        
+ZZZT 206text   1 206    Fair Oaks Recreation Center                                                      
+ZZZT 206text   2 206    37.9731             76.1249             39.4208             90.6253              
+ZZZT 207text   0 207    0    2.3812         207 131 1   0   1   33619969-1019   9                        
+ZZZT 207text   1 207    Routing of 100-yr Event Dekalb Runoff Hydrograph                                 
+ZZZT 207text   2 207    39.6167             78.0037             41.0644             104.4669             
+EXTR   0D1     0 202                   1006.0    999.0      0.0     0.0 0 0                              
+EXTR   0SP1N   0 202         0                        0                   0   0 0                        
+EXTR   0C6     0 205                      1.0      0.0      0.0      0.5     0.65      1.0      1.0 0  0 
+EXTR   0C1     0 205             0.0  1              2.0               115.    999.0    993.0      0.014 
+EXTR   0C1A    0 205                                5.21739                                              
+EXTR   0C1C    0 205                              1P0     0.0                                            
+EXTR   0SPSC   0 205                                                                               0     
+EXTR   0E2E    0 201     0.0028  0.      0.0091  2.      0.0178  4.      0.0287  6.                      
+EXTR   0E1     0 201                   1006.     0.0                                          3          
+EXTR   0E2F    0 201            0.0    0.0                                                               
+EXTR   0D1     0 201                   1006.0   1000.0      0.0     0.0 0 0                              
+EXTR   0SP1N   0 201         1                        1                   0   1 0                 0 0    
+EXTR   0K3     0 201     0.      0.      0.0833  1.41    0.1667  1.68    0.2500  2.39    0.3333  3.98    
+EXTR   0K3     1 201     0.4167  8.84    0.500   3.00    0.5833  2.39    0.6667  1.68    0.7500  1.06    
+EXTR   0K3     2 201     0.8333  0.                                                                      
+EXTR   0B1A    0   0       30   0   0   0   30   3   0   0  98 71  98 7                                  
+EXTR   0B1     0   0                  5.            1  500  500        0.0                    000        
+EXTR   0B0     0   0                                                                    0 0 1 1          
+JCTL   0A1     0   0     0                                                                               
+EXTR   0A1     0   0         100-yr Flood Routing                                                        
+EXTR   0SPDV   0 204     00000000000000000000011100001         0000000                                   
+EXTR   1F1     0 204                           1     1.  .70   1000.        0.0 0             0          
+PROJ   0TEMP   0   0     C:\WINDOWS\TEMP\xpp2                                                            
+PEST   0MAIN   0   0                        1                                                            
+EXTR   0MANW   0 205                   0.0       0.0                                                     
+EXTR   0RSLT   0 205                                                       29.11088210                   
+EXTR   0LR01   0 205                         11.71945240         15.34018883.6097908011.73039802.56528726
+EXTR   0LR02   0 205     .5695925521.97859902.0028580790         47.982256715.2732269.6075483962.41666666
+EXTR   0LR03   0 205     104.833333.418055555.470833333.1666666665.01688410177.5625  1.262418182.08333333
+EXTR   0NR01   0 201     1.033762651001.03376264.258663273.180736.5045879280         13865     5.72224515
+EXTR   0NR02   0 201     31714.33620         0         1001.033764.966237344.96623734                    
+EXTR   0NR01   0 202     2.029168611001.0291612.566    25.4985328.1328793290         7736      3.19273627
+EXTR   0NR02   0 202     0         0         2.083333331001.029164.970831384.97083138                    
+EXTR   0NR01   0 203     1.12696541994.12696512.566    14.1614473.09299691631291.34717188      2.96657036
+EXTR   0NR02   0 203     0         0         0         996.2238304.576169236.67303458                    
+EXTR   1SC1    0 204     0.        0.                            0.2       0.1                           
+EXTR   1SC1    1 204     0.4       0.3                           0.5       0.5                           
+EXTR   1SC1    2 204     0.6       0.6                           0.8       0.7                           
+EXTR   1SC1    3 204     1.0       0.8                           1.2       0.9                           
+EXTR   1SC1    4 204     1.4       1.0                           1.6       1.1                           
+EXTR   1SC1    5 204     1.8       1.2                           2.0       1.3                           
+EXTR   1SC1    6 204     2.2       1.3                           2.4       1.4                           
+EXTR   1SC1    7 204     2.6       1.4                           2.8       1.5                           
+EXTR   1SC1    8 204     3.0       1.6                           3.2       1.6                           
+EXTR   1SC1    9 204     3.4       1.7                           3.5       1.7                           
+EXTR   1SC1   10 204     3.6       1.8                           3.8       2.0                           
+EXTR   1SC1   11 204     4.0       2.4                           4.2       2.7                           
+EXTR   1SC1   12 204     4.4       2.9                           4.6       3.1                           
+EXTR   1SC1   13 204     4.8       3.3                           5.0       3.5                           
+EXTR   1SC1   14 204     5.2       3.6                           5.4       3.8                           
+EXTR   1SC1   15 204     5.6       4.9                           5.8       9.                            
+EXTR   1SPEC   0 204     Rating        5                                                                 
+EXTR   0I1     0 203                 1 0                                                      0          
+EXTR   0J2A    0 203            0.0                                                                      
+EXTR   1G1     0 204                          1    1001.    1006.    1000.    3.1             0          
+FONT   0LIST   1   0         9969        Arial                                                           
+FONT   0LIST   2   0            1        Arial                                                           
+ZSYM  21NAME   0   0     Pit Rating Curves                           0   40    5    0                    
+ZSYM  20NAME   0   0     User Defined File Types                     0   40    5    0                    
+TRAN   0JCT1   0   0                 00                                                                  
+EXTR   0INTI   0   0     DATA.INT                                                                        
+EXTR   0JCTL   0   0         0                                                                           
+EXTR   0DR01   0 205                                                                 17.8932069          
+EXTR   0BB2    0   0               100                                   0        1       4.           00
+CONF   0PAR1   0   0         1    1    0                                                                 
+CONF   0PAR    0   0     #NEWEIR             USE_ORF_EQN                                                 
+EXTR   2G1     0 204                          1    1001.    1006.    1000.    3.1             0          
+EXTR   3G1     0 204                          1    1001.    1006.     100.    3.1             0          
+EXTR   0BB1    0   0                                0.65              0.65      1.0      1.0        6    
+ZZZS   1SEL    0   0          1     1                                                                    
+ZZZS   0SEL    0   0          0     1                                                                    
+ZZZS   1SEL    1   0        0                                                                            
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    

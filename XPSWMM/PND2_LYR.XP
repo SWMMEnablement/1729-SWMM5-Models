@@ -1,0 +1,179 @@
+EXTR   0B2     0   0        0                                                                           0
+SWMM   0MISC   0   0     1                                                                               
+FONT   0LIST   0   0         -101        Arial                                                           
+SWMM   0MCTL   0 202     0 1                                                                             
+SWMM   0MCTL   0 203     0 1                                                                             
+SWMM   0MCTL   0 204     0 1                                                                             
+SWMM   0MCTL   0 205     0 1                                                                             
+SRPT   0CNTL   0   0              1         0    0    0    1    0                                        
+SRPT   1GLOB   0   0    0.00501125 0.00711                                                               
+SRPT   1GLOB   1   0    1.99159 2.82568                                                                  
+SRPT   0GLOB   0   0    0.00501125 0.00711                                                               
+SRPT   0GLOB   1   0    1.99159 2.82568                                                                  
+ZRPT   0NAME   0   0     RPT Headings                                0   40    5    0                    
+ZSYM   0NAME   0   0     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                0   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    0   40    5    0                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM  18NAME   0   0     Gauged Pollutants                           0   40    5    0                    
+ZSYM  19NAME   0   0     Pump Ratings                                0   40    5    0                    
+ZSYM   0GLDB   0   0         0                                                                           
+SWMM   0SWMM   0   0           5.62                                                                      
+ZZZC   0CNTL   0   0    3    2    1    999   999   397.42383260    213  swmmxp                           
+ZZZC   0CNTL   1   0    47.4916             6.1872                                                       
+ZZZC   0NAME   0   0    1    N              1    L              1                                        
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZZZN 202NODE   0 202    Riser          0 0 2.38125  204 205 -1  -1  -1  202 134 1   0   0   0   45  1    
+ZZZN 202NODE   1 202    1   2   0   0   1   0   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 202NODE   2 202    24.5843             84.9765             27.7531             88.1453              
+QAS    0GLOB   0 202    .015051562 .015081250 92.5644304 32.1416257 1 1 0                              0 
+ZZZN 203NODE   0 203    Outfall        0 0 2.38125  204 -1  -1  -1  -1  203 134 1   0   0   0   45  1    
+ZZZN 203NODE   1 203    1   2   0   0   0   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 203NODE   2 203    28.5533             49.0639             31.7220             52.2327              
+QAS    0GLOB   0 203    .015051562 .015081250 56.6109866 36.1185135 1 1 0                              0 
+ZZZE 204EDGE   0 204    OutPipe        0           202 203 204 136 1   0   0   0   1                     
+ZZZE 204EDGE   1 204    1   0   0   1   0 2.38125   0 0.264583                                           
+QAS    0GLOB   0 204    -5.2812E-4 -.00529165 68.3508866 26.0716390 1 1 0                              0 
+ZZZE 205EDGE   0 205    OutWorks       0           209 202 205 138 1   0   0   0   1                     
+ZZZE 205EDGE   1 205    1   4   0   1   0 2.38125   0 0.264583                                           
+QAS    0GLOB   0 205    -2.6406E-4 -.00529165 105.352535 22.3040611 1 1 0                              0 
+SWMM   0TEMP   0   0                                                                                    1
+SWMM   0MODE   0   0     201000                                                                          
+EXTR   0I1     0 203                 1 0                                                      0          
+EXTR   0J2A    0 203            0.0                                                                      
+EXTR   0D1     0 203                     948.   943.09      0.0     0.0 0 0                              
+EXTR   0SP1N   0 203         0                        0                   1   1 1                        
+EXTR   0D1     0 202                   959.75   944.65      0.0     0.0 0 0                              
+EXTR   0SP1N   0 202         0                        0                   0   1 1                        
+EXTR   0C1     0 204             0.0  1              3.5                30.   944.65   943.09      0.025 
+EXTR   0C1A    0 204                      0             5.2                                              
+EXTR   0C6     0 204                      1.0      0.0      0.0      0.5       1.      1.0      1.0 0  0 
+EXTR   0MANW   0 204                   0.0       0.0                                                     
+EXTR   0C1C    0 204                              1P0     0.0                                            
+EXTR   0SPSC   0 204                   1         1                                                 0     
+EXTR   0B1     0   0                 10.            1   60   60                               000        
+EXTR   0BB2    0   0                50                                   0        1      1.0           00
+EXTR   0B1A    0   0       24   0   0   0   24   5   0   0  98 61  98 6                                  
+EXTR   0B0     0   0                                                                    0 0 0 1          
+JCTL   0A1     0   0     0                                                                               
+EXTR   1F1     0 205                           1 3.1416  0.6  946.65        0.0 0             0          
+EXTR   1G1     0 205                          1   959.75   962.00   12.566    3.2             0          
+EXTR   0SPDV   0 205     00000000000000100000010000001         0000000                                   
+PROJ   0TEMP   0   0     C:\WINDOWS\TEMP\xpp66                                                           
+PEST   0MAIN   0   0                        1                                                            
+EXTR   0RSLT   0 204                                                       47.01495  0                   
+EXTR   0LR01   0 204                         8.117209  0         283.966   1.843193  282.1228  5.792061  
+EXTR   0LR02   0 204     .9297248  3.427015  3307.207  2.524697  119.3012  12.39992  .3940862  .04166667 
+EXTR   0LR03   0 204     0         1.727778  1.733333  0         1.238138  298.1625  .7487612  0         
+EXTR   0NR01   0 202     2.463049  947.1131  12.566    30.95068  .03678265 0         7899      1.114733  
+EXTR   0NR02   0 202     0         0         0         952.1177  7.632324  12.6369                       
+EXTR   0NR01   0 203     1.526666  944.6167  12.566    19.18409  .009334227413539.4  14440     2.037821  
+EXTR   0NR02   0 203     0         0         0         945.6398  2.360168  3.383301                      
+ZZZS   0MERG   0   0     110                                                                             
+ZSYM   0NAME   0   1     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0   1     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   1     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   1     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   1     Infiltration                                0   40    5    0                    
+ZSYM   5NAME   0   1     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   1     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   1     Rainfall                                    0   40    5    0                    
+ZSYM   8NAME   0   1     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   1     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   1     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   1     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   1     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   1     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0   1     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   1     StatPollutants                              0   40    5    0                    
+ZSYM  18NAME   0   1     Gauged Pollutants                           0   40    5    0                    
+ZSYM  19NAME   0   1     Pump Ratings                                0   40    5    0                    
+ZSYM   0GLDB   0   1         0                                                                           
+ZZZS   0ATTR   0   3                         .093751968    0                             9      -10100000
+ZZZS   0TEXT   0   3     100-year Event Model                                                            
+SWMM   0MCTL   0 209     0 1                                                                             
+ZZZN 209NODE   0 209    Pond2_Ly       0 0 2.38125  205 -1  -1  -1  -1  209 133 1   0   0   0   45  1    
+ZZZN 209NODE   1 209    1   2   0   0   1   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 209NODE   2 209    21.1449             122.6843            24.3136             125.8532             
+QAS    0GLOB   0 209    .015051562 .015081250 130.195002 28.6880126 1 1 0                              0 
+RUNF   0H1A    0 209      0000000                                                                        
+EXTR   0E1     0 209                  962.00     0.0                                          3          
+EXTR   0E2F    0 209            0.0    0.0                                                               
+EXTR   0D1     0 209                   962.00   946.65      0.0     0.0 0 0                              
+EXTR   0SP1N   0 209         1                        1                   0   1 1                        
+EXTR   0E2E    0 209     0.0001  0.      0.0096  1.35    0.0682  3.35    0.1789  5.35    0.3535  7.35    
+EXTR   0E2E    1 209     0.4281  9.35    0.4823  11.35   0.4823  12.05   0.5488  15.35                   
+EXTR   0K3     0 209     0.      0.      0.1467  9.      0.2933  18.1    0.4400  19.7    0.5850  21.4    
+EXTR   0K3     1 209     0.7317  25.9    0.8783  30.5    1.0250  40.6    1.1717  50.8    1.3183  81.8    
+EXTR   0K3     2 209     1.4650  112.8   1.6100  75.6    1.7567  38.4    1.9033  34.4    2.0500  30.5    
+EXTR   0K3     3 209     2.1967  25.9    2.3433  21.4    2.4883  17.5    2.6350  13.5    2.7817  6.8     
+ZSYM   0NAME   0 208     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0 208     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0 208     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0 208     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0 208     Infiltration                                0   40    5    0                    
+ZSYM   5NAME   0 208     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0 208     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0 208     Rainfall                                    0   40    5    0                    
+ZSYM   8NAME   0 208     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0 208     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0 208     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0 208     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0 208     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0 208     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0 208     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0 208     StatPollutants                              0   40    5    0                    
+ZSYM  18NAME   0 208     Gauged Pollutants                           0   40    5    0                    
+ZSYM  19NAME   0 208     Pump Ratings                                0   40    5    0                    
+ZSYM   0GLDB   0 208         0                                                                           
+ZSYM   0NAME   0 210     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0 210     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0 210     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0 210     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0 210     Infiltration                                0   40    5    0                    
+ZSYM   5NAME   0 210     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0 210     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0 210     Rainfall                                    0   40    5    0                    
+ZSYM   8NAME   0 210     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0 210     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0 210     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0 210     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0 210     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0 210     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0 210     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0 210     StatPollutants                              0   40    5    0                    
+ZSYM  18NAME   0 210     Gauged Pollutants                           0   40    5    0                    
+ZSYM  19NAME   0 210     Pump Ratings                                0   40    5    0                    
+ZSYM   0GLDB   0 210         0                                                                           
+ZZZS   0ATTR   0 211                         .093751968    0                             9      -10100000
+ZZZS   0TEXT   0 211     25-year Event Model                                                             
+ZZZT 216text   0 216    0    2.3813         216 131 1   0   1   336199691   9   9                        
+ZZZT 216text   1 216    50-Year Event Model                                                              
+ZZZT 216text   2 216    35.4877             57.5745             36.7435             66.7988              
+EXTR   0NR01   0 209     10.12336  956.7734  19560.97  198022.7  .8004563  0         10091     1.424076  
+EXTR   0NR02   0 209     407926.1  0         0         956.7734  5.226624  5.226624                      
+FONT   0LIST   1   0         9969        Arial                                                           
+FONT   0LIST   2   0            1        Arial                                                           
+ZSYM  21NAME   0   0     Pit Rating Curves                           0   40    5    0                    
+ZSYM  20NAME   0   0     User Defined File Types                     0   40    5    0                    
+CONF   0PAR1   0   0         1    2    0                                                                 
+CONF   0PAR    0   0     HALF_AREA           QCOMPARE                                                    
+EXTR   0BB1    0   0                                0.85              0.65      1.0      1.0        6    
+EXTR   0JCTL   0   0         0                                                                           
+ZZZS   0SEL    0   0          0     1                                                                    
+ZZZS   1SEL    0   0          0     1                                                                    
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    

@@ -1,0 +1,317 @@
+EXTR   0B2     0   0        0               0.0    0.001   0.0001     1000.                             0
+SWMM   0MISC   0   0     1                                                                               
+SWMM   0MCTL   0 201     1 1                                                                             
+SWMM   0MCTL   0 203     1 1                                                                             
+SWMM   0MCTL   0 202     1 1                                                                             
+SWMM   0MODE   0   0     200001                                                                          
+SWMM   0TEMP   0   0                                                                                    1
+SWMM  14TEMP   0   0                                                                                    1
+EXTR   0PRAT   0   0     0.      0.      5.      5.      10.     20.     15.     25.     20.123  30.     
+SWMM  14TEMP  14   0                                                                                    1
+EXTR   0SPDV   0 203     000000010000000000000000000011     33.1000000                                   
+SRPT   0CNTL   0   0              1         0    0    0    1    000                                      
+SRPT   1GLOB   0   0    0.0409041 0.0431691                                                              
+SRPT   1GLOB   1   0    7.02937 7.4186                                                                   
+SRPT   0GLOB   0   0    0.038151 0.0118596                                                               
+SRPT   0GLOB   1   0    6.55624 2.03808                                                                  
+ZSYM   0NAME   0   0     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                0   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    0   40    5    0                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM  18NAME   0   0     Gauged Pollutants                           0   40    5    0                    
+ZSYM  19NAME   0   0     Pump Ratings                                1   40    5    0                    
+ZSYM  19OBJ    0   0     one                                                                             
+ZSYM  19VAL    0   0         0                                                                           
+ZSYM   0GLDB   0   0        14                                                                           
+SWMM   0SWMM   0   0           2.23                                                                      
+ZZZC   0CNTL   0   0    6    5    2    999   999   171.84974670    213  swmmxp                           
+ZZZC   0CNTL   1   0    56.7106             19.0821                                                      
+ZZZC   0NAME   0   0    1    N              1    L              1                                        
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZZZN 201NODE   0 201    1              0 0 4.26947  205 203 -1  -1  -1  201 133 1   0   0   0   45  1    
+ZZZN 201NODE   1 201    1   2   215 0   0   1   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 201NODE   2 201    29.0949             67.7649             33.8146             72.4846              
+QAS    0GLOB   0 201    .014945738 .015180351 72.6618559 34.0823518 0 0 0                              0 
+ZZZN 202NODE   0 202    2              0 0 4.26947  210 203 -1  -1  -1  202 134 1   0   0   0   45  1    
+ZZZN 202NODE   1 202    1   2   232 0   1   0   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 202NODE   2 202    28.9496             81.7605             33.6693             86.4802              
+QAS    0GLOB   0 202    -.02045205 .016129123 80.6374839 34.0823518 0 0 0                              0 
+ZZZE 203EDGE   0 203    3              0           201 202 203 138 1   0   0   0   1                     
+ZZZE 203EDGE   1 203    1   4   4   1   0 4.26947   0 0.474386                                           
+QAS    0GLOB   0 203    -.02123869 .030835088 73.4729367 36.6910913 1 1 0                              0 
+EXTR   0D1     0 201                      50.      0.0      0.0     0.0 0 0                              
+EXTR   0SP1N   0 201         0                        1                   0   1 0                        
+EXTR   0D1     0 202                     500.      30.      0.0     0.0 0 0                              
+EXTR   0SP1N   0 202         0                        0                   0   0 0                        
+EXTR   1H1A    0 203      3      1.      4.      2.   1000.    100.      1.one                           
+EXTR   1H1B    0 203     depth in node pump                                pump one                      
+EXTR   0I1     0 202                 1 0                                                      0          
+EXTR   0J2A    0 202            0.0                                                                      
+EXTR   0K3     0 201     0.      0.      1.      5.      2.      5.                                      
+EXTR   0B1A    0   0        1   0   0   0    1   2   0   0  95 11  95 1                                  
+EXTR   0B1     0   0                  4.            1  100  300        0.0                    00         
+EXTR   0B0     0   0                                                                    0 0 1 1          
+JCTL   0A1     0   0     0                                                                               
+ZZZW   0BUFF   0   0    @_@_@_@_@_@_@_@                                                                  
+EXTR   0NR01   0 201     6.865674  6.865674  448.166   3076.962  .2447303  0         9398      5.06904   
+EXTR   0NR02   0 201     0         0         0         7.014146  12.98585  13.13433                      
+EXTR   0NR01   0 202     2.323002  32.323    512.566   1190.692  .1517135  0         6832      3.685005  
+EXTR   0NR02   0 202     0         0         0         2.844507  497.1555  467.677                       
+EXTR   0REVW   0   0      1 0 1 1 1 0 1                                                                  
+PLOT   0LINE   0   0                                   11        1 1 0.12TYPE1 ARROW                     
+PLOT   0SET2   0   0                        0 0 0 0                                                      
+PLOT   0HGLF   0   0                         11                                                          
+PLOT   0MANH   0   0     FILLEDCONSTANT 1 1 0.12  VERTICAL 0.08    0                                     
+PLOT   0CONP   0   0      1 0.12 1                                                                       
+PLOT   0SET0   0   0                                0                                                    
+PLOT   0GRID   0   0      1 1  1 1  1  0.12                                                              
+PLOT   0TITL   0   0                                              1 0.12                                 
+PLOT   0SET3   0   0          0.0 INCR                                                                   
+EXTR   2H1A    0 203      3      1.      5.      2.     0.0     0.0      1.one                           
+EXTR   1F1     0 203                           2   0.55  1.0     0.0        0.0 0             0          
+EXTR   2H1B    0 203     depth in node pump                                pump 2                        
+EXTR   3H1A    0 203      1     0.0     0.0     0.0   1000.    100.     3.3one                           
+EXTR   3H1B    0 203                                                       pump 3                        
+EXTR   0E1     0 202                     0.0    500.                                          1          
+EXTR   0E2F    0 202            0.0    0.0                                                               
+SWMM   0MCTL   0 204       1                                                                             
+SWMM   0MCTL   0 205       1                                                                             
+EXTR   0D1     0 204                      20.      0.0      0.0     0.0 0 0                              
+EXTR   0SP1N   0 204         1                        0                   0   0 0                        
+EXTR   0K3     0 204     0.      0.      1.      5.      1.5     5.      1.51    10.     2.      10.     
+EXTR   0C1     0 205             0.0  1               2.               100.      0.0      0.0      0.014 
+EXTR   0MANW   0 205                   0.0       0.0                                                     
+EXTR   0C1A    0 205                                     0.                                              
+EXTR   0C1C    0 205                              0P0     0.0                                            
+EXTR   0SPSC   0 205                                                                               0     
+ZZZN 204NODE   0 204    4              0 0 4.26947  205 -1  -1  -1  -1  204 134 1   0   0   0   45  1    
+ZZZN 204NODE   1 204    1   2   232 0   1   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 204NODE   2 204    28.8334             57.7244             33.5531             62.4441              
+QAS    0GLOB   0 204    .017305599 .021821754 63.0640663 34.979106 0 0 0                               0 
+ZZZE 205EDGE   0 205    5              0           204 201 205 136 1   0   0   0   1                     
+ZZZE 205EDGE   1 205    1   0   236 1   0 4.26947   0 0.474386                                           
+QAS    0GLOB   0 205    .023205235 -.03320701 69.0795823 25.6039486 1 0 0                              0 
+EXTR   0RSLT   0 205                                                       11.5285   -3.1640E-4          
+EXTR   0LR01   0 205                         3.971845  -.7611975 388.0312  0         388.0312  3.293318  
+EXTR   0LR02   0 205     .6084316  1.9984    1037.14   0         .6642842  .2114482  17.35477  0         
+EXTR   0LR03   0 205     0         1.774444  1.777778  12.93333  .2843253  4.4       1360.637  74.13334  
+EXTR   0NR01   0 204     7.092465  7.092465  12.566    89.12392  .06285691 0         13723     7.401834  
+EXTR   0NR02   0 204     35928.86  0         74.13334  7.24895   12.75105  12.90753                      
+EXTR   0E2E    0 201     0.01    0.      0.01    1.      0.01    2.      0.01    3.      0.01    3.      
+EXTR   0E2E    1 201     0.01    20.                                                                     
+EXTR   0E1     0 201                     0.0     0.0                                          3          
+EXTR   0E2F    0 201            0.0    0.0                                                               
+ZZZS   0ATTR   0   3                         .168090551    0                             0      -10300000
+ZZZS   0TEXT   0   3     These pumps have 5 data points. Heads and Flows Increase.                       
+ZZZT 206text   0 206    0    4.2695         206 131 1   0   11  0   -1030   9   4                        
+ZZZT 206text   1 206    Test of DYNAMIC head in a node pump.                                             
+ZZZT 206text   2 206    25.0232             63.5122             26.0830             79.2607              
+SWMM 198GD1    0 204     E:\XPS\WORK\501flow.his                                                         
+SWMM 198GD2    0 204     501         stdRaf-Hydsys                                                      1
+SWMM 198GD3    0 204     d/m/y          d/m/y                                                            
+SWMM   0GD     0 204         0    1    0                                                                 
+TRAN   0NOD1   0 204        1900 000                                                                     
+SRPT  68ROW    0   1         2     0.005          -101      avg P          0.1184011                     
+SRPT   0ROW    0   1                              -102                      0.152111                     
+SRPT  64ROW    0   1         2     0.005          -101      total vol      0.1184011                     
+SRPT  65ROW    0   1         2     0.005          -101      max P          0.1184011                     
+SRPT  67ROW    0   1         2     0.005          -101      min P          0.1184011                     
+SRPT  62ROW    0   1         2     0.005          -101      runtime        0.1184011                     
+SRPT  63ROW    0   1         2     0.005          -101      initial D      0.1184011                     
+SRPT  59ROW    0   1         2     0.005          -101      stop           0.1184011                     
+SRPT  54ROW    0   1         2     0.005          -101      wet well       0.1184011                     
+SRPT  60ROW    0   1                                                       0.1184                        
+SRPT  61ROW    0   1         2     0.005          -101      spped fact     0.1184011                     
+SRPT  56ROW    0   1                                                       0.1184                        
+SRPT  55ROW    0   1                                                       0.1184                        
+SRPT 179ROW    0   1                                                       0.1184                        
+SRPT   0DD2    0   0          8     1                                                                    
+SRPT   0DD2    1   0      4144  7  8  3  2 92 84                                                         
+SRPT   1DD2    0   0          8     1                                                                    
+SRPT   1DD2    1   0      0  0  0  0  0  0  0  0                                                         
+SRPT   2DD2    0   0          8     1                                                                    
+SRPT   2DD2    1   0     -1 -1 -1 -1 -1 -1 -1 -1                                                         
+SRPT   0VIEW   0   0                   0    10        1                                                  
+QAS    0SIZE   0 201    .005113018 .007115789 .776824951 1.08110761                                      
+QAS    0SIZE   0 202    .005113018 .007115789 .776824951 1.08110761                                      
+QAS    0SIZE   0 204    .005113018 .007115789 .776824951 1.08110761                                      
+QAS    0SIZE   0 203    .051130183 .048387367 7.76824951 7.35153150                                      
+QAS    0TEXT   0 203        24   40()\00()\00()\00()\00()\00()\00()\00()\00.00\002.00\001000.00\00depth i
+QAS    0TEXT   1 203    n node pump\001.00\00pump one\00Well dynamic head\00\00d\00                      
+QAS    0SIZE   0 205    .002359854 .001423157 .358534574 .216221511                                      
+QAS    0TEXT   0 205        47   632.00\00Circular\000.02\00100.00\000.00\000.00\0011.53\003.97\0000     
+EXTR   0DR01   0 205     9.998895  9.998895  9.998895  9.998895  9.998895                                
+NOTE   0NAME   0 203     Notes                                       1   40    5    0                    
+NOTE   0OBJ    0 203     THOS DL;SL;                                                                     
+NOTE   0VAL    0 203         0                                                                           
+NOTE   0NAME   0 201     Notes                                       1   40    5    0                    
+NOTE   0OBJ    0 201     blah blah                                                                       
+NOTE   0VAL    0 201         0                                                                           
+NOTE   0NAME   0 204     Notes                                       3   40    5    2                    
+NOTE   0OBJ    0 204     more blah                               extra more blah                         
+NOTE   0VAL    0 204         0    1    2                                                                 
+PROJ   0TEMP   0   0     d:\xpp4                                                                         
+NOTE   0OBJ    1 204     dddd                                                                            
+NOTE   0NAME   0 205     Notes                                       0   40    5    2                    
+EXTR   1DR01   0 203     53.50608  33197.49  64.82518  1E-5      26.11104  6                             
+ZRPT   0NAME   0   0     RPT Headings                                9   40    5    8                    
+EXTR   0BB1    0   0                                0.85              0.65       1.      1.0        6    
+EXTR   0BB2    0   0                50                                   0        1       1.           00
+ZRPT   0RPT2   0   0         0    0       0.4       .15     0.001         3      0.47          4         
+ZRPT   0RPT5   0   0                        0                                                            
+ZRPT   1RPT2   0   0         1    0       0.4       .15                          0.47          3         
+ZRPT   1RPT4   0   0     Node Name                                                                       
+ZRPT   1RPT5   0   0              1  900    0                                                            
+ZRPT   2RPT2   0   0         1    0       0.4       .15     0.001         3       .75ft        3         
+ZRPT   2RPT4   0   0     Ground Elevation (feet, metres)                                                 
+ZRPT   2RPT5   0   0              1   54    0                                                            
+ZRPT   0RPT3   0   0          -101              3.        .52                 .54                .15     
+ZRP2   0RPT    0   0         1                                                                           
+ZRPT   0OBJ    0   0     $$t10100,Node Data                      $$t10001,Node Name                      
+ZRPT   0OBJ    1   0     $$t10001,Node Ground Elevation          $$t10001,Node Invert Elevation          
+ZRPT   0VAL    0   0         0    1    2    3    4    5    6    7    8                                   
+EXTR   2DR01   0 203     7.866667  9622.785  62.58546  1E-5      20.00527  4                             
+SRPT  89ROW    0   1         4   0.00005          -101      wobble            .24111                     
+SRPT   8ROW    0   1         2     0.005ft        -102      len             0.152001                     
+SRPT 589ROW    0   1         2     0.005          3         wobble          0.122111                     
+SRPT  78ROW    0   0         2     0.005ft        -102      max elev        0.154111                     
+SRPT   0ROW    0   0                              -101                      0.154111                     
+SRPT   0DD1    0   0          2     1                                                                    
+SRPT   0DD1    1   0    129145                                                                           
+SRPT   1DD1    0   0          2     1                                                                    
+SRPT   1DD1    1   0     -1 -1                                                                           
+SRPT   2DD1    0   0          2     1                                                                    
+SRPT   2DD1    1   0     -1 -1                                                                           
+SRPT   1BOX    0   0     0              10   0         0         0         000                           
+SRPT  54ROW    0   0         2     0.005          -102      ground          0.154111                     
+SRPT  56ROW    0   0         2     0.005          -102      invert          0.154111                     
+SRPT 207ROW    0   0         2     0.005          -102      EGL             0.154111                     
+SRPT   2ROW    0   1         2     0.005ft        -102      Up IE           0.152111                     
+SRPT   3ROW    0   1         2     0.005ft        -102      Dn IE           0.152111                     
+SRPT   7ROW    0   1         2     0.005          -102      roughness       0.152001                     
+SRPT   4ROW    0   1         2     0.005ft        -102      dia/depth       0.152111                     
+SRPT 144ROW    0   1                              -102                      0.152                        
+SRPT   0BOX    0   0     0              10   0         0         0         000                           
+SRPT  92ROW    0   1         2     0.005cfs       -102      max q           0.152111                     
+SRPT  84ROW    0   1         2     0.005ft/s      -102      max v           0.152111                     
+SRPT 145ROW    0   0         3    0.0005percent   -101      CE              0.154111                     
+SRPT 129ROW    0   0         2     0.005          -101      mean iter       0.154111                     
+QAS    0TEXT   0 201        11   155.07\000.245\000                                                      
+QAS    0TEXT   0 202        11   153.69\000.152\0000                                                     
+QAS    0TEXT   0 204        11   157.40\000.063\000                                                      
+ZZZT 207text   0 207    0    4.2695         207 131 1   0   240 0   -1030   9   0                        
+ZZZT 207text   1 207    These pumps have 5 data points. Heads and Flows Increase.                        
+ZZZT 207text   2 207    26.6457             60.5580             27.7056             84.8228              
+ZRPT   3RPT2   0   0         1    0       0.4       .15     0.001         3       .75ft        3         
+ZRPT   3RPT4   0   0     Invert Elevation (feet, metres)                                                 
+ZRPT   3RPT5   0   0              1   56    0                                                            
+ZRPT   4RPT2   0   0         1    0       0.4       .15     0.001         3       .75          7         
+ZRPT   4RPT4   0   0     Node X Coord                                                                    
+ZRPT   4RPT5   0   0              1  901    0                                                            
+ZRPT   5RPT2   0   0         1    0       0.4       .15     0.001         3       .75          7         
+ZRPT   5RPT4   0   0     Node Y Coord                                                                    
+ZRPT   5RPT5   0   0              1  902    0                                                            
+ZRPT   0OBJ    2   0     $$t10001,Node X Coordinate              $$t10001,Node Y Coordinate              
+ZRPT   6RPT2   0   0         1    0       0.4       .15     0.001         3       .75ft        12        
+ZRPT   6RPT4   0   0     EXT:Max Water Elevation (ft, m)                                                 
+ZRPT   6RPT5   0   0              1   78    0                                                            
+ZRPT   0OBJ    3   0     $$t10001,Node Max Elevation             $$t10001,Node Continuity Error          
+ZRPT   7RPT2   0   0         1    0       0.4       .15     0.001         3       .75ft^3      3         
+ZRPT   7RPT4   0   0     EXT:Continuity Error (%)                                                        
+ZRPT   7RPT5   0   0              1  145    0                                                            
+ZRPT   8RPT2   0   0         1    0       0.4       .15     0.001         3       .75          3         
+ZRPT   8RPT4   0   0     EXT:Mean Nodal Iterations                                                       
+ZRPT   8RPT5   0   0              1  129    0                                                            
+ZRPT   0OBJ    4   0     $$t10001,Node Number of Iterations                                              
+ZXPX   0XPXO   0   0     11212                                                                           
+EXTR   1SC0    0 203     check                                           5000                            
+EXTR   1SC1    0 203     35.                                                                             
+EXTR   1SPEC   0 203     checkvalve  999                                                                 
+SWMM   0MCTL   0 210       1                                                                             
+SWMM   0MCTL   0 209       1                                                                             
+EXTR   0C1     0 210             0.0  1               3.               100.      30.      30.      0.014 
+EXTR   0MANW   0 210                   0.0       0.0                                                     
+EXTR   0C1A    0 210                                    0.0                                              
+EXTR   0D1     0 209                     500.      30.      0.0     0.0 0 0                              
+EXTR   0C1C    0 210                              0P0     0.0                                            
+EXTR   0SPSC   0 210                                                                               0     
+EXTR   0I1     0 209                 1 0                                                      0          
+EXTR   0J2A    0 209            0.0                                                                      
+EXTR   0SP1N   0 209         0                        0                   1   0 0                        
+ZZZN 209NODE   0 209    9              0 0 4.26947  210 212 -1  -1  -1  209 134 1   0   0   0   45  1    
+ZZZN 209NODE   1 209    1   2   49  0   0   1   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 209NODE   2 209    35.2251             85.4340             39.9448             90.1537              
+QAS    0GLOB   0 209    .014945738 .015180351 90.3704536 40.1965849 1 0 0                              0 
+QAS    0TEXT   0 209        11   153.27\000.065\00                                                       
+ZZZE 210EDGE   0 210    10             0           202 209 210 136 1   0   0   0   1                     
+ZZZE 210EDGE   1 210    1   0   4   1   0 4.26947   0 0.474386                                           
+QAS    0GLOB   0 210    -.00786617 0 84.6252979 34.4084442 1 0 0                                       0 
+QAS    0TEXT   0 210        49   653.00\00Circular\000.02\00100.00\0030.00\0030.00\0030.44\005.91\000    
+EXTR   0RSLT   0 210                                                       30.43528  0                   
+EXTR   0LR01   0 210                         5.908768  0         2.474915  0         2.474915  5.19956   
+EXTR   0LR02   0 210     .8732895  2.994915  .014      0         1.958532  .2770756  15.53985  29.66667  
+EXTR   0LR03   0 210     90.33334  1.773333  1.776667  0         .4529173  0         256.3126  0         
+EXTR   0NR01   0 209     1.786658  31.78666  12.566    22.45115  .06466284 31127.63  6059      3.268069  
+EXTR   0NR02   0 209     0         0         0         2.3222    497.6778  468.2133                      
+ZZZR   0TMPF   0   0     c:\win\temp\LOG144                                                              
+ZZZR   0USER   0   0     ROBERT                                                                          
+ZZZS   1SEL    0   0          1     1                                                                    
+SWMM   0MCTL   0 212     1 1                                                                             
+SWMM   0MCTL   0 211       1                                                                             
+SWMM   0MCTL   0 214       1                                                                             
+SWMM   0MCTL   0 213       1                                                                             
+SWMM   1MCTL   0 212       1                                                                             
+EXTR   0SPDV   0 212     000000000000000000000000000011     33.1000000                                   
+EXTR   0SPDN   0 212     212.1                                                                           
+ZZZN 211NODE   0 211    11             0 0 4.26947  212 214 -1  -1  -1  211 134 1   0   0   0   45  1    
+ZZZN 211NODE   1 211    1   2   49  0   0   1   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 211NODE   2 211    36.2063             80.5757             40.9260             85.2954              
+QAS    0GLOB   0 211    .014945745 .015180351 85.5039688 41.1748622 1 1 0                              0 
+QAS    0TEXT   0 211         2    6\00\00)\00                                                            
+ZZZN 213NODE   0 213    13             0 0 4.26947  214 -1  -1  -1  -1  213 134 1   0   0   0   45  1    
+ZZZN 213NODE   1 213    1   2   49  0   0   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 213NODE   2 213    36.6139             70.9103             41.3336             75.6300              
+QAS    0GLOB   0 213    .014945745 .015180351 75.8385891 41.5824777 1 1 0                              0 
+QAS    0TEXT   0 213         6   10()\00()\00                                                            
+ZZZE 212EDGE   0 212    12             0           209 211 212 138 1   1   0   0   1                     
+ZZZE 212EDGE   1 212    1   0   4   1   0 4.26947   0 0.474386                                           
+QAS    0GLOB   0 212    -.00157323 -.00948771 85.0984284 36.4465219 1 1 0                              0 
+QAS    0TEXT   0 212        24   40()\00()\00()\00()\00()\00()\00()\00()\00.00\002.00\001000.00\00depth i
+ZZZE 214EDGE   0 214    14             0           211 213 214 136 1   0   0   0   1                     
+ZZZE 214EDGE   1 214    1   0   4   1   0 4.26947   0 0.474386                                           
+QAS    0GLOB   0 214    0 -.00948771 78.1366514 37.1802299 1 1 0                                       0 
+QAS    0TEXT   0 214        12   28\00\00\00\00\00\00()\00()\00                                          
+ZZZS   1SEL    1   0        3                                                                            
+EXTR   1H1A    0 212      3      1.      4.      2.   1000.    100.      1.one                           
+EXTR   1H1B    0 212     depth in node pump                                pump one                      
+EXTR   2H1A    0 212      3      1.      5.      2.     0.0     0.0      1.one                           
+EXTR   1F1     0 212                           2   0.55  1.0     0.0        0.0 0             0          
+EXTR   2H1B    0 212     depth in node pump                                pump 2                        
+EXTR   3H1A    0 212      1     0.0     0.0     0.0   1000.    100.     3.3one                           
+EXTR   3H1B    0 212                                                       pump 3                        
+QAS    0SIZE   0 212    .051130183 .048387367 7.76824951 7.35153150                                      
+QAS    0TEXT   1 212    n node pump\001.00\00pump one\00Well dynamic head\00\00d\00                      
+NOTE   0NAME   0 212     Notes                                       1   40    5    0                    
+NOTE   0OBJ    0 212     THOS DL;SL;                                                                     
+NOTE   0VAL    0 212         0                                                                           
+EXTR   1DR01   0 212     53.50608  33197.49  64.82518  1E-5      26.11104  6                             
+EXTR   2DR01   0 212     7.866667  9622.785  62.58546  1E-5      20.00527  4                             
+EXTR   1SC0    0 212     check                                           5000                            
+EXTR   1SC1    0 212     35.                                                                             
+EXTR   1SPEC   0 212     checkvalve  999                                                                 
+ZZZS   0SEL    0   0          0     1                                                                    
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    

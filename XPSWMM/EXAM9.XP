@@ -1,0 +1,97 @@
+EXTR   0B2     0   0        1           0.           .01     .001      300.    0    0                   0
+SWMM   0MISC   0   0     1                                                                               
+SWMM   0IMP    0   0     11011111                                                                        
+SWMM   0IMP2   0   0     c:\swtest\exam9.dat                                                             
+SWMM   0TEMP   0   0                                                                                    1
+SWMM   0MODE   0   0     2 0  1                                                                          
+EXTR   0HOT    0   0                                                                                     
+EXTR   0INTI   0   0                                                                                     
+TRAN   0JCT1   0   0                 00                                                                  
+EXTR   0INTO   0   0                                                                                     
+EXTR   0A1     0   0         EXTRAN EXAMPLE 9. FLOW ROUTING THROUGH A DETENTION POND.                    
+EXTR   0A1B    0   0         USE THE BEDIENT-HUBER EXAMPLE 6.10 ON PAGE 378.                             
+EXTR   0BB2    0   0                10                                                               012 
+EXTR   0B0     0   0                                                                    1 1 1 1          
+EXTR   0B1     0   0                300.            1   10   10 0       0.                    0          
+EXTR   0B1A    0   0        0   0   0   0    0  10   0   0                                               
+EXTR   0TMP1   0   0     30001     30002                                                                 
+EXTR   0TMP2   0   0     90001                                                                           
+EXTR   0TMP3   0   0     30001                                                                           
+EXTR   0TMP4   0   0     90001                                                                           
+SWMM   0MCTL   0 201       1                                                                             
+EXTR   0D1     0 201                      10.       0.       0.      .5 0                                
+SWMM   0MCTL   0 202       1                                                                             
+EXTR   0D1     0 202                      10.      -1.       0.      0. 0 0                              
+EXTR   0SP1N   0 201         1                        1                       1 1                        
+EXTR   0E1     0 201                     10.      0.                                          3          
+EXTR   0E2E    0 201         .013      0.   .0246      .2    .034      .5     .04      .8    .053      1.
+EXTR   0E2E    1 201         .065     1.5    .076      2.    .086     2.5    .096      3.    .106     3.5
+EXTR   0E2E    2 201      .114633      4. .123407     4.5 .131921      5.     .14     5.5    .148      6.
+EXTR   0E2E    3 201         .156     6.5    .164      7.    .171     7.5    .179      8.    .186     8.5
+EXTR   0E2E    4 201         .193      9.      .2     9.5      .2     10.                                
+SWMM   0MCTL   0 203       1                                                                             
+EXTR   0SPDV   0 203     00000000000000100000000000001                                                   
+EXTR   1F1     0 203                           1 .03976   .9      0.         0. 0             0          
+EXTR   0I1     0 202                 1 0                                                      0          
+EXTR   1I1     0 202                   0                                                                 
+EXTR   0SP1N   0 202         0                        0                   1   1 0                        
+EXTR   0K3     0 201           0.      0.      2.     1.2      5.      0.     10.      0.                
+SWMM   0MCTL   0 204       1                                                                             
+ZSYM   0NAME   0   0     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                0   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    0   40    5    0                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM   0GLDB   0   0         0                                                                           
+SWMM   0SWMM   0   0           1.40                                                                      
+ZZZC   0CNTL   0   0    3    2    0    999   999   241.412    0    211  swmmxp                           
+ZZZC   0CNTL   1   0    -25.6301            328.7173                                                     
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZZZN 201NODE   0 201    30001          0 0 4.26058  203 205 -1  -1  -1  201 133 1   0   0   0   45  1    
+ZZZN 201NODE   1 201    1   2   248 153 1   0   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 201NODE   2 201    336.8045            -8.9397             341.5168            -4.2273              
+ZZZN 202NODE   0 202    30002          0 0 4.26058  203 -1  -1  -1  -1  202 134 1   0   0   0   45  1    
+ZZZN 202NODE   1 202    1   2   248 153 0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 202NODE   2 202    356.8045            -8.9397             361.5168            -4.2273              
+ZZZN 204NODE   0 204    4              0 0 4.26058  205 -1  -1  -1  -1  204 133 1   0   0   0   45  1    
+ZZZN 204NODE   1 204    1   2   188 247 1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 204NODE   2 204    336.8753            0.7386              341.5876            5.4509               
+ZZZE 203EDGE   0 203    MUL1           0           201 202 203 138 1   0   0   0   1                     
+ZZZE 203EDGE   1 203    1   4   88  11  0 4.26058   0 0.473398                                           
+ZZZS   0SEL    0   0          0     1                                                                    
+ZZZS   0SEL    1   0        2                                                                            
+ZZZS   1SEL    0   0          1     1                                                                    
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    
+ZZZW   0BUFF   0   0    @_@_@_@_@_@_@_@                                                                  
+EXTR   0D1     0 204                      10.     0.01       0.      .5 0 0                              
+EXTR   0SP1N   0 204         1                        1                   0   1 1                        
+EXTR   0E1     0 204                     10.      0.                                          3          
+EXTR   0E2E    0 204     .013    0.      .0246   .2      .034    .5      .04     .8      .053    1.      
+EXTR   0E2E    1 204     .065    1.5     .076    2.      .086    2.5     .096    3.      .106    3.5     
+EXTR   0E2E    2 204     .114633 4.      .123407 4.5     .131921 5.      .14     5.5     .148    6.      
+EXTR   0E2E    3 204     .156    6.5     .164    7.      .171    7.5     .179    8.      .186    8.5     
+EXTR   0E2E    4 204     .193    9.      .2      9.5     .2      10.                                     
+EXTR   0K3     0 204           0.      0.      2.     1.2      5.      0.     10.      0.                
+SWMM   0MCTL   0 205       1                                                                             
+EXTR   0C1     0 205             0.0  1               1.                50.     0.01      0.0      0.014 
+EXTR   0MANW   0 205                   0.0       0.0                                                     
+EXTR   0C1A    0 205                                    .02                                              
+EXTR   0C1C    0 205                              0P0     0.0                                            
+EXTR   0SPSC   0 205                                                                               0     
+ZZZE 205EDGE   0 205    5              0           204 201 205 136 1   1   0   0   1                     
+ZZZE 205EDGE   1 205    1   0   233 18  0 4.26058   0 0.473398                                           
+ZZZS   1SEL    1   0        1                                                                            
+EXTR   0E2F    0 204            0.0    0.0                                                               

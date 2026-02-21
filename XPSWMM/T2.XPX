@@ -1,0 +1,439 @@
+/*******************************************/
+/* Test XPX file which creates TEST1EXT.XP */
+/*******************************************/
+/*                                         */
+/*                                         */
+/* Define Job Control Information          */
+/*                                         */
+/*******************************************/
+
+DATA ALPHA "" 0 1 "This is an XPX file for building Test2ext.xp"
+
+/*********************************************/
+/*                                           */
+/* Define Start Time for Simulation (zero)   */
+/*                                           */
+/*********************************************/
+
+
+DATA DZERO "" 0 1 0
+DATA HZERO "" 0 1 0
+DATA MZERO "" 0 1 0
+DATA SZERO "" 0 1 0
+
+/*********************************************/
+/*                                           */
+/* Define Duration of Simulation (1 Day)   */
+/*                                           */
+/*********************************************/
+
+
+DATA DSL "" 0 1 1
+DATA HSL "" 0 1 0
+DATA MSL "" 0 1 0
+DATA SSL "" 0 1 0
+
+/*********************************************/
+/*                                           */
+/* Define Large Time Step (60 seconds)       */
+/*                                           */
+/*********************************************/
+
+
+DATA DELT "" 0 1 60
+
+
+/*********************************************/
+/*                                           */
+/* Define Printout Intervals                 */
+/*                                           */
+/*********************************************/
+
+
+DATA NSTART "" 0 1 45
+DATA INTER  "" 0 1 1000
+DATA JNTER  "" 0 1 1000
+
+
+/*********************************************/
+/*                                           */
+/* Switch off all options in Job Control     */
+/* (Defaults will be used)                   */
+/*                                           */
+/*********************************************/
+
+
+DATA CNTLH  "" 0 1 0                   /* Hot Start Off */
+DATA CNTLJD "" 0 1 0                   /* Junction Defaults Off */
+DATA CNTLNS "" 0 1 0                   /* Echo Nat Surface Off */
+DATA CNTLT  "" 0 1 0                   /* Simulation Tolerances Off */
+DATA CNTLR  "" 0 1 0                   /* Routing Control off */
+DATA CNTLMC "" 0 1 0                   /* Modify Conduits Off */
+			     
+
+/*********************************************/
+/*                                           */
+/* Define Node names and X Y Coordinates     */
+/*                                           */
+/* Note: It is important to place the nodes  */ 
+/*       at the correct X Y location         */
+/*                                           */
+/*********************************************/
+
+/*         Node        X      Y              */
+				     
+node 134 "IRRIG"    90.000 489.000
+node 133 "RESERV"   91.555 451.496
+node 134 "O/FLOW"  146.523 441.496
+node 133 "LAKE A"   45.289 422.109
+node 133 "LAKE B"  155.768 409.388
+node 134 "D/S"     158.000 381.000
+
+
+/*******************************************/
+/*                                         */
+/* Define Link connectivity and names      */
+/*                                         */
+/*******************************************/
+
+/*         Link   U/S Node  D/S Node       */
+
+link 136 "CHAN1"  "RESERV" "IRRIG"
+link 136 "SPILL"  "RESERV" "O/FLOW"
+link 138 "PUMPS"  "LAKE A" "RESERV"
+link 136 "TUNNEL" "LAKE A" "LAKE B"
+link 136 "RIVER"  "LAKE B" "D/S"
+
+
+/*******************************************/
+/*                                         */
+/*     Node Surface Levels D1 - GRELEV     */
+/*                                         */
+/*******************************************/
+
+/*           Node        GRELEV            */
+
+DATA GRELEV "IRRIG"  0 1  130
+DATA GRELEV "RESERV" 0 1  150
+DATA GRELEV "O/FLOW" 0 1  130
+DATA GRELEV "LAKE A" 0 1  100
+DATA GRELEV "LAKE B" 0 1  103
+DATA GRELEV "D/S"    0 1  100
+ 			 			
+
+/*******************************************/
+/*                                         */
+/*     Node Invert Levels D1 - Z           */
+/*                                         */
+/*******************************************/
+
+/*      Node           Z                   */
+
+
+DATA Z "IRRIG"  0 1   99
+DATA Z "RESERV" 0 1  100
+DATA Z "O/FLOW" 0 1  103
+DATA Z "LAKE A" 0 1   50
+DATA Z "LAKE B" 0 1   68
+DATA Z "D/S"    0 1   60
+      		    		   
+
+/*******************************************/
+/*                                         */
+/*        Conduit Inverts  C1 - ZP1 & ZP2  */
+/*                                         */
+/*******************************************/
+
+/*         Link       ZP1 & ZP2            */
+
+DATA ZP1 "CHAN1"  0 1   100
+DATA ZP2 "CHAN1"  0 1    99
+DATA ZP1 "SPILL"  0 1   103
+DATA ZP2 "SPILL"  0 1   103
+DATA ZP1 "TUNNEL" 0 1    71
+DATA ZP2 "TUNNEL" 0 1    70
+DATA ZP1 "RIVER"  0 1    68
+DATA ZP2 "RIVER"  0 1    60
+		       
+
+/*******************************************/
+/*                                         */
+/*      Conduit Lengths C1 - LEN           */
+/*                                         */
+/*******************************************/
+
+/*          Link        LEN                   */
+
+
+DATA LEN  "CHAN1"  0 1  500
+DATA LEN  "SPILL"  0 1  100
+DATA LEN  "TUNNEL" 0 1  500
+DATA NLEN "RIVER"  0 1  500
+		      
+
+/*******************************************/
+/*                                         */
+/*  DEFINE CONDUIT TYPES C1 - NKLASS       */
+/*                                         */
+/*******************************************/
+
+/*           Link       NKLASS             */
+
+
+DATA NKLASS "CHAN1"  0 1 7
+DATA NKLASS "SPILL"  0 1 6
+DATA NKLASS "TUNNEL" 0 1 3      /* Switch on Special*/
+DATA NKCTL  "TUNNEL" 0 1 5      /* Baskethandle*/
+DATA NKLASS "RIVER"  0 1 8
+			 
+
+/*******************************************/
+/*                                         */
+/*  DEFINE Diameter / Depth C1 - DEEP      */
+/*                                         */
+/*******************************************/
+
+/*         Link        DEEP                */
+
+
+DATA DEEP "CHAN1"  0 1 10
+DATA DEEP "SPILL"  0 1 20
+DATA DEEP "TUNNEL" 0 1 10
+DATA DEEP "RIVER"  0 1 15
+		       
+
+/*********************************************/
+/*                                           */
+/* DEFINE Manning's n Roughness C1 - ROUGH   */
+/*                                           */
+/*********************************************/
+
+/*          Link        ROUGH                */
+
+DATA ROUGH "CHAN1"  0 1 0.020
+DATA ROUGH "SPILL"  0 1 0.005
+DATA ROUGH "TUNNEL" 0 1 0.005
+
+/*********************************************/
+/*                                           */
+/* DEFINE Natural Channel Data for RIVER     */
+/*                                           */
+/*********************************************/
+
+DATA SECNO "RIVER" 0 1 1.0              /* C3 - SECNO */
+
+/* Overbank Stations                         */
+
+DATA STCHL "RIVER" 0 1 50              /* C3 - STCHL and STCHR */
+DATA STCHR "RIVER" 0 1 100
+
+/* Mannings Roughness                        */
+
+DATA XNL  "RIVER"  0 1 0.20             /* C3 - XNL & XNR & XNCH */
+DATA XNR  "RIVER"  0 1 0.20
+DATA XNCH "RIVER"  0 1 0.020
+
+/* Cross Section Profile                      */
+   
+DATA STA "RIVER" 0 7  0  10  50  59  68  100 120  /* C4 - STA */
+DATA EL  "RIVER" 0 7 15   5   0   0   5    6  15  /* C4 - EL */
+
+/* Starting Slope for computations */
+
+DATA NPHI "RIVER" 0 1 0.001
+
+/* Set Horiz and Vert Distortion Factors to 0.0 */
+
+DATA PXSECR "RIVER" 0 1 0.0
+DATA PXSECE "RIVER" 0 1 0.0
+			
+/*********************************************/
+/*                                           */
+/* DEFINE Trapezoidal Base Width C1 - WIDE   */
+/* DEFINE Parabolic Max Width    C1 - WIDE   */
+/* DEFINE Baskethandle  Width    C1 - WIDE   */
+/*                                           */
+/*********************************************/
+
+DATA WIDE "SPILL"  0 1 20
+DATA WIDE "CHAN1"  0 1 16
+DATA WIDE "TUNNEL" 0 1 10
+
+/* DEFINE Baskethandle  Area    C1 - AFULL   */
+
+DATA AFULL "TUNNEL" 0 1 90
+    
+
+/*********************************************************/
+/*                                                       */
+/* DEFINE Trapezoidal Batter Slopes C1 - STHETA & SPHI   */
+/*                                                       */
+/*********************************************************/
+
+
+DATA TTHETA "SPILL" 0 1 1.0      /*  TTHETA = Left Batter Slope   */
+DATA TPHI   "SPILL" 0 1 1.0      /*  TPHI   = Right Batter Slope   */
+
+
+/*********************************************************/
+/*                                                       */
+/* DEFINE Outfall C1 - STHETA & SPHI                     */
+/*                                                       */
+/*********************************************************/
+
+
+DATA FLGOUTF "IRRIG" 0 1 1         /* Switch Outfall Flag on */
+DATA NTIDE   "IRRIG" 0 1 1         /* Free Outfall */
+DATA DEPC    "IRRIG" 0 1 0         /* Use min of Yc & Yn */
+DATA GATE    "IRRIG" 0 1 0         /* Switch Tide Gate off */
+
+DATA FLGOUTF "O/FLOW" 0 1 1        /* Switch Outfall Flag on */
+DATA NTIDE   "O/FLOW" 0 1 1        /* Free Outfall */
+DATA DEPC    "O/FLOW" 0 1 0        /* Use min of Yc & Yn */
+DATA GATE    "O/FLOW" 0 1 0        /* Switch Tide Gate off */
+
+DATA FLGOUTF "D/S" 0 1 1           /* Switch Outfall Flag on */
+DATA NTIDE   "D/S" 0 1 1           /* Free Outfall */
+DATA DEPC    "D/S" 0 1 0           /* Use min of Yc & Yn */
+DATA GATE    "D/S" 0 1 0           /* Switch Tide Gate off */
+
+/*********************************************************/
+/*                                                       */
+/* DEFINE Inflow Hydrographs K3 - TEO & QCARD   */
+/*                                                       */
+/*********************************************************/
+
+
+/*       LAKE A     */
+
+DATA INQ   "LAKE A" 0 1 1     /* Turn on User Inflow Flag */
+DATA TEO   "LAKE A" 0 9 0   1   3   5  10  11 12 13 24   /* Time (hours) */
+DATA QCARD "LAKE A" 0 9 0 100 800 980 480 120 24  1  0   /* Flow (cfs) */
+			
+/*********************************************************/
+/*                                                       */
+/* DEFINE Constant Inflow D1 - QINST                     */
+/*                                                       */
+/*********************************************************/
+
+DATA QINST "LAKE B" 0 1 10
+
+/*********************************************************/
+/*                                                       */
+/*                  DEFINE Storage Nodes                 */
+/*                                                       */
+/*********************************************************/
+
+DATA NODST  "RESERV" 0 1 1     /* Switch on Storage Flag */
+DATA CNTLS  "RESERV" 0 1 1     /* Choose Constant Area   */
+DATA ASTORE "RESERV" 0 1 10    /* Set Area = 10 */
+DATA ZTOP   "RESERV" 0 1 150   /* Set surcharge elevation to spill crest */
+
+DATA NODST  "LAKE B" 0 1 1     /* Switch on Storage Flag */
+DATA CNTLS  "LAKE B" 0 1 2     /* Choose Power Function Area   */
+DATA CONST  "LAKE B" 0 1 50    /* Set constant = 50 */
+DATA EXPO   "LAKE B" 0 1 8.9   /* Set Exponent = 8.9 */
+DATA ZTOP   "LAKE B" 0 1 103   /* Set surcharge elevation to spill crest */
+
+DATA NODST  "LAKE A" 0 1 1                     /* Switch on Storage Flag */
+DATA CNTLS  "LAKE A" 0 1 3                     /* Choose Stepwise Linear Area */
+DATA QCURA  "LAKE A" 0 6 1  3  8  10  12  12.5 /* Area                  */
+DATA QCURRL "LAKE A" 0 6 0  1 10  20  30  50   /* Stage                 */
+DATA ZTOP   "LAKE A" 0 1 100                   /* Set surcharge elevation to spill crest */
+
+
+/*********************************************************/
+/*                                                       */
+/*                  DEFINE Pumps                         */
+/*                                                       */
+/*********************************************************/
+
+/* Switch on Pump flag */
+
+DATA PUMP1 "PUMPS" 0 1 1          /* Pump No. 1 */
+DATA PUMP2 "PUMPS" 0 1 1	  /* Pump No. 2 */   
+DATA PUMP3 "PUMPS" 0 1 1          /* Pump No. 3 */	  
+DATA PUMP4 "PUMPS" 0 1 1          /* Pump No. 4 */
+DATA PUMP5 "PUMPS" 0 1 1          /* Pump No. 5 */
+				  
+/* Set Pumping rate for low rate pumping */
+
+DATA PRATE1 "PUMPS" 1 1 10      /* Pump No. 1 */		  
+DATA PRATE1 "PUMPS" 2 1 10	/* Pump No. 2 */
+DATA PRATE1 "PUMPS" 3 1 10	/* Pump No. 3 */
+DATA PRATE1 "PUMPS" 4 1 10	/* Pump No. 4 */
+DATA PRATE1 "PUMPS" 5 1 10	/* Pump No. 5 */
+			  	  			  
+/* Set Pumping rate for mid rate pumping (PRATE2 = 50) */
+
+DATA PRATE2 "PUMPS" 1 1 50      /* Pump No. 1 */	 		  
+DATA PRATE2 "PUMPS" 2 1 50	/* Pump No. 2 */ 
+DATA PRATE2 "PUMPS" 3 1 50	/* Pump No. 3 */
+DATA PRATE2 "PUMPS" 4 1 50	/* Pump No. 4 */
+DATA PRATE2 "PUMPS" 5 1 50	/* Pump No. 5 */
+			  
+/* Set Pumping rate for high rate pumping (PRATE3 = 100) */
+
+DATA PRATE3 "PUMPS" 1 1 100     /* Pump No. 1 */   	  		   
+DATA PRATE3 "PUMPS" 2 1 100	/* Pump No. 2 */
+DATA PRATE3 "PUMPS" 3 1 100	/* Pump No. 3 */
+DATA PRATE3 "PUMPS" 4 1 100	/* Pump No. 4 */
+DATA PRATE3 "PUMPS" 5 1 100	/* Pump No. 5 */
+			   
+/* set pump type to offline dynamic head (IPTYP = 3) */
+
+DATA IPTYP "PUMPS" 1 1 3        /* Pump No. 1 */     
+DATA IPTYP "PUMPS" 2 1 3	/* Pump No. 2 */    
+DATA IPTYP "PUMPS" 3 1 3	/* Pump No. 3 */
+DATA IPTYP "PUMPS" 4 1 3	/* Pump No. 4 */
+DATA IPTYP "PUMPS" 5 1 3	/* Pump No. 5 */
+			
+/* Set Pump Start for each of the pumps (PON) */
+
+DATA PON "PUMPS" 1 1 56        /* Pump No. 1 */
+DATA PON "PUMPS" 2 1 57	       /* Pump No. 2 */
+DATA PON "PUMPS" 3 1 58	       /* Pump No. 3 */
+DATA PON "PUMPS" 4 1 59	       /* Pump No. 4 */
+DATA PON "PUMPS" 5 1 60	       /* Pump No. 5 */
+		       
+/* Set Pump Stop for each of the pumps (POFF) */
+
+DATA POFF "PUMPS" 1 1 51         /* Pump No. 1 */
+DATA POFF "PUMPS" 2 1 53         /* Pump No. 2 */
+DATA POFF "PUMPS" 3 1 54         /* Pump No. 3 */
+DATA POFF "PUMPS" 4 1 54         /* Pump No. 4 */
+DATA POFF "PUMPS" 5 1 56         /* Pump No. 5 */
+			      
+/* Set Initial Depth for each of the pumps (VWELL = 1.2) */
+
+DATA VWELL "PUMPS" 1 1 1.2         /* Pump No. 1 */  
+DATA VWELL "PUMPS" 2 1 1.2         /* Pump No. 2 */  		 
+DATA VWELL "PUMPS" 3 1 1.2         /* Pump No. 3 */
+DATA VWELL "PUMPS" 4 1 1.2         /* Pump No. 4 */
+DATA VWELL "PUMPS" 5 1 1.2         /* Pump No. 5 */
+			   
+/* Set Dynamic Head for Low Rate Pumping */
+
+DATA VRATE1 "PUMPS" 1 1 40         /* Pump No. 1 */
+DATA VRATE1 "PUMPS" 2 1 50         /* Pump No. 2 */		 
+DATA VRATE1 "PUMPS" 3 1 60         /* Pump No. 3 */
+DATA VRATE1 "PUMPS" 4 1 60         /* Pump No. 4 */
+DATA VRATE1 "PUMPS" 5 1 80         /* Pump No. 5 */
+			   
+/* Set Dynamic Head for Mid Rate Pumping */
+
+DATA VRATE2 "PUMPS" 1 1 35         /* Pump No. 1 */ 
+DATA VRATE2 "PUMPS" 2 1 40         /* Pump No. 2 */ 		 		  
+DATA VRATE2 "PUMPS" 3 1 50         /* Pump No. 3 */
+DATA VRATE2 "PUMPS" 4 1 50         /* Pump No. 4 */
+DATA VRATE2 "PUMPS" 5 1 75         /* Pump No. 5 */
+			  
+/* Set Dynamic Head for High Rate Pumping */
+
+DATA VRATE3 "PUMPS" 1 1 10          /* Pump No. 1 */    
+DATA VRATE3 "PUMPS" 2 1 20          /* Pump No. 2 */    		 		  
+DATA VRATE3 "PUMPS" 3 1 40          /* Pump No. 3 */
+DATA VRATE3 "PUMPS" 4 1 40          /* Pump No. 4 */
+DATA VRATE3 "PUMPS" 5 1 62          /* Pump No. 5 */
+			   
+

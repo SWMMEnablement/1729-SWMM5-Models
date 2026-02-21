@@ -1,0 +1,480 @@
+EXTR   0B2     0   0        1                                                                           0
+XTN    0XTN    0   0               11                                                                    
+SWMM   0TEMP   0   0                                                                                    1
+SWMM   0MODE   0   0     101010                                                                          
+SWMM   0MCTL   0 201      1                                                                              
+SWMM   0MCTL   0 203      1                                                                              
+SWMM   0MCTL   0 202      1                                                                              
+SWMM   0MCTL   0 205      1                                                                              
+SWMM   0MCTL   0 204      1                                                                              
+SWMM   0MCTL   0 209      1                                                                              
+SWMM   0MCTL   0 208      1                                                                              
+SWMM   0MCTL   0 210      1                                                                              
+SWMM   0MCTL   0 211      1                                                                              
+SWMM   0MCTL   0 212      1                                                                              
+SWMM   0MCTL   0 213      1                                                                              
+EXTR   0A1     0   0         Storage/Treatment Master Example                                            
+TRAN   0JCT1   0   0     110011010010  1                                                 1.0E-2    10000.
+ZSYM   0NAME   0   0     Pollutant                                   5   40    5    1                    
+ZSYM   0OBJ    0   0     Sediment                                SS                                      
+ZSYM   0OBJ    1   0     TP                                      TN                                      
+ZSYM   0OBJ    2   0     E coli                                                                          
+ZSYM   0VAL    0   0         0    1    2    3    4                                                       
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                0   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    0   40    5    0                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            1   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             1   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              3   40    5    1                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM   0GLDB   0   0        13                                                                           
+SWMM   0SWMM   0   0           1.00                                                                      
+ZZZC   0CNTL   0   0    6    5    0    999   999   806.235    0    211  swmmxp                           
+ZZZC   0CNTL   1   0    -0.6516             -18.7758                                                     
+ZZZG   0GRID   0   0    5.0000         5.0000         0.0000         0.0000         1    0               
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZZZN 201NODE   0 201    BMPb           0 0 4.26058  203 213 -1  -1  -1  201 133 1   0   0   0   45  1    
+ZZZN 201NODE   1 201    1   2   248 8   1   0   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 201NODE   2 201    17.6438             57.6438             22.3562             62.3562              
+ZZZN 202NODE   0 202    BMPe           0 0 4.26058  203 205 209 -1  -1  202 133 1   0   0   0   45  1    
+ZZZN 202NODE   1 202    1   2   144 10  0   0   1   -1  -1  -1  -1  -1  -1                               
+ZZZN 202NODE   2 202    37.6438             77.6438             42.3562             82.3562              
+ZZZN 204NODE   0 204    BMPc           0 0 4.26058  205 211 -1  -1  -1  204 133 1   0   0   0   45  1    
+ZZZN 204NODE   1 204    1   2   144 10  1   0   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 204NODE   2 204    17.6438             97.6438             22.3562             102.3562             
+ZZZN 208NODE   0 208    Outlet         0 0 4.26058  209 -1  -1  -1  -1  208 134 1   0   0   0   45  1    
+ZZZN 208NODE   1 208    1   2   144 10  0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 208NODE   2 208    57.6438             77.6438             62.3562             82.3562              
+ZZZN 210NODE   0 210    BMPd           0 0 4.26058  211 -1  -1  -1  -1  210 134 1   0   0   0   45  1    
+ZZZN 210NODE   1 210    1   2   144 10  1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 210NODE   2 210    17.6438             137.6438            22.3562             142.3562             
+ZZZN 212NODE   0 212    BMPa           0 0 4.26058  213 -1  -1  -1  -1  212 133 1   0   0   0   45  1    
+ZZZN 212NODE   1 212    1   2   144 10  1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 212NODE   2 212    17.6438             17.6438             22.3562             22.3562              
+ZZZE 203EDGE   0 203    be             0           201 202 203 136 1   0   0   0   1                     
+ZZZE 203EDGE   1 203    1   0   9   0   0 4.26058   0 0.473398                                           
+ZZZE 205EDGE   0 205    ce             0           204 202 205 136 1   0   0   0   1                     
+ZZZE 205EDGE   1 205    1   0   9   0   0 4.26058   0 0.473398                                           
+ZZZE 209EDGE   0 209    GoOut          0           202 208 209 136 1   0   0   0   1                     
+ZZZE 209EDGE   1 209    1   0   9   0   0 4.26058   0 0.473398                                           
+ZZZE 211EDGE   0 211    dc             0           210 204 211 136 1   0   0   0   1                     
+ZZZE 211EDGE   1 211    1   0   144 10  0 4.26058   0 0.473398                                           
+ZZZE 213EDGE   0 213    ab             0           212 201 213 136 1   0   0   0   1                     
+ZZZE 213EDGE   1 213    1   0   144 10  0 4.26058   0 0.473398                                           
+ZZZS   0SEL    0   0          0     1                                                                    
+ZZZS   1SEL    0   0          0     1                                                                    
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    
+TRAN   0JCT2   0   0         4     0.001      900.        1.   20                                        
+RUNF   0B1     0   0                   1    2    0    0    0    0    1    1   92    0    0   92          
+STOR   0D1     0   0            0.1       0.1      0.10       0.2       0.2       0.2       0.3       0.2
+STOR   0D1     1   0            0.1       0.1       0.1       0.1                                        
+ZSYM  14OBJ    0   0     SS                                      TN                                      
+ZSYM  14OBJ    1   0     TP                                                                              
+ZSYM  14VAL    0   0         1    3    2                                                                 
+EXTR   0C1     0 213             0.0  2               3.       3.      100.      0.0      0.0      0.012 
+EXTR   0MANW   0 213                   0.0       0.0                                                     
+EXTR   0C1A    0 213                                   0.01                                              
+EXTR   0D1     0 212                      0.0      0.0                                                   
+EXTR   0D1     0 201                      0.0      0.0                                                   
+TRAN   0COND   0 213     1111                                                                            
+EXTR   0C1C    0 213                              0P0     0.0                                            
+EXTR   0SPSC   0 213                                                                               0     
+ZZZW   0BUFF   0   0    @_@_@_@_@_@_@_@                                                                  
+EXTR   0C1     0 203             0.0  2               3.       3.      100.      0.0      0.0      0.012 
+EXTR   0MANW   0 203                   0.0       0.0                                                     
+EXTR   0C1A    0 203                                   0.01                                              
+TRAN   0COND   0 203     1111                                                                            
+EXTR   0C1C    0 203                              0P0     0.0                                            
+EXTR   0SPSC   0 203                                                                               0     
+EXTR   0C1     0 205             0.0  2               3.       3.      100.      0.0      0.0      0.012 
+EXTR   0MANW   0 205                   0.0       0.0                                                     
+EXTR   0C1A    0 205                                   0.01                                              
+TRAN   0COND   0 205     1111                                                                            
+EXTR   0C1C    0 205                              0P0     0.0                                            
+EXTR   0SPSC   0 205                                                                               0     
+EXTR   0C1     0 211             0.0  2               3.       3.      100.      0.0      0.0      0.012 
+EXTR   0MANW   0 211                   0.0       0.0                                                     
+EXTR   0C1A    0 211                                   0.01                                              
+TRAN   0COND   0 211     1111                                                                            
+EXTR   0C1C    0 211                              0P0     0.0                                            
+EXTR   0SPSC   0 211                                                                               0     
+EXTR   0C1     0 209             0.0  2               3.       3.      100.      0.0      0.0      0.012 
+EXTR   0MANW   0 209                   0.0       0.0                                                     
+EXTR   0C1A    0 209                                   0.01                                              
+TRAN   0COND   0 209     1111                                                                            
+EXTR   0C1C    0 209                              0P0     0.0                                            
+EXTR   0SPSC   0 209                                                                               0     
+TRAN   0NOD1   0 208        1910 001  0001     1                                                         
+RUNF   0H1A    0 208     0                                                                               
+STOR   1F2     0 212     0       10.      0.100                                                          
+STOR   1F1     0 212                                                 0                                   
+STOR   2F2     0 212     1       10.          01111        1.        1.1     1000.1                      
+STOR   2H3     0 212     0.        1000.               1.        1.                                      
+STOR   2H3     1 212     1.        2000.               2.        1.                                      
+STOR   2H3     2 212     2.        3000.               2.        1.                                      
+STOR   2H3     3 212     3.        5000.               2.        1.                                      
+STOR   2H3     4 212     4.        7500.               2.        1.                                      
+STOR   2H3     5 212     5.        9000.               2.        1.                                      
+STOR   2H3     6 212     6.        11000.              2.        1.                                      
+STOR   2G1     0 212               1        0.        0.        0.                                       
+STOR   2G1     2 212           0.751       10.        0.      100.                                       
+STOR   2F1     0 212                                                 1                                   
+STOR   3F2     0 212     3                                                                               
+STOR   3F1     0 212                                                 3                                   
+STOR   0F1     0 212     1   Screen Process      2   3   4   50  50  0                                   
+STOR   0F1     1 212     2   Storage Process     3   3   4   100 100 1                                   
+STOR   0F1     2 212     4   Disposal                        200 100 2                                   
+STOR   0C1     0 212     1 2    50 Hot Water                                                             
+STOR   2POL1   0 212     01                                                                              
+TRAN   0NOD1   0 212        2610 001  1001     1                                                         
+RUNF   0H1A    0 212     0                                                                               
+ZZZS   0SEL    1   0        0    2    4    5                                                             
+STOR   1F2     0 201     0       10.      0.100                                                          
+STOR   1F1     0 201                                                 0                                   
+STOR   2F2     0 201     1       10.          01111        1.        1.1     1000.1                      
+STOR   2H3     0 201     0.        1000.               1.        1.                                      
+STOR   2H3     1 201     1.        2000.               2.        1.                                      
+STOR   2H3     2 201     2.        3000.               2.        1.                                      
+STOR   2H3     3 201     3.        5000.               2.        1.                                      
+STOR   2H3     4 201     4.        7500.               2.        1.                                      
+STOR   2H3     5 201     5.        9000.               2.        1.                                      
+STOR   2H3     6 201     6.        11000.              2.        1.                                      
+STOR   2G1     0 201               1        0.        0.        0.                                       
+STOR   2G1     2 201           0.751       10.        0.      100.                                       
+STOR   2F1     0 201                                                 1                                   
+STOR   3F2     0 201     3                                                                               
+STOR   3F1     0 201                                                 3                                   
+STOR   0F1     0 201     1   Screen Process      2   3   4   50  50  0                                   
+STOR   0F1     1 201     2   Storage Process     3   3   4   100 100 1                                   
+STOR   0F1     2 201     4   Disposal                        200 100 2                                   
+STOR   0C1     0 201     1 2    50 Hot Water                                                             
+STOR   2POL1   0 201     01                                                                              
+TRAN   0NOD1   0 201        2610 001  0001     1                                                         
+RUNF   0H1A    0 201     0                                                                               
+EXTR   0D1     0 204                      0.0      0.0                                                   
+STOR   1F2     0 204     0       10.      0.100                                                          
+STOR   1F1     0 204                                                 0                                   
+STOR   2F2     0 204     1       10.          01111        1.        1.1     1000.1                      
+STOR   2H3     0 204     0.        1000.               1.        1.                                      
+STOR   2H3     1 204     1.        2000.               2.        1.                                      
+STOR   2H3     2 204     2.        3000.               2.        1.                                      
+STOR   2H3     3 204     3.        5000.               2.        1.                                      
+STOR   2H3     4 204     4.        7500.               2.        1.                                      
+STOR   2H3     5 204     5.        9000.               2.        1.                                      
+STOR   2H3     6 204     6.        11000.              2.        1.                                      
+STOR   2G1     0 204               1        0.        0.        0.                                       
+STOR   2G1     2 204           0.751       10.        0.      100.                                       
+STOR   2F1     0 204                                                 1                                   
+STOR   3F2     0 204     3                                                                               
+STOR   3F1     0 204                                                 3                                   
+STOR   0F1     0 204     1   Screen Process      2   3   4   50  50  0                                   
+STOR   0F1     1 204     2   Storage Process     3   3   4   100 100 1                                   
+STOR   0F1     2 204     4   Disposal                        200 100 2                                   
+STOR   0C1     0 204     1 2    50 Hot Water                                                             
+STOR   2POL1   0 204     01                                                                              
+TRAN   0NOD1   0 204        2610 001  0001     1                                                         
+RUNF   0H1A    0 204     0                                                                               
+EXTR   0D1     0 202                      0.0      0.0                                                   
+STOR   1F2     0 202     0       10.      0.100                                                          
+STOR   1F1     0 202                                                 0                                   
+STOR   2F2     0 202     1       10.          01111        1.        1.1     1000.1                      
+STOR   2H3     0 202     0.        1000.               1.        1.                                      
+STOR   2H3     1 202     1.        2000.               2.        1.                                      
+STOR   2H3     2 202     2.        3000.               2.        1.                                      
+STOR   2H3     3 202     3.        5000.               2.        1.                                      
+STOR   2H3     4 202     4.        7500.               2.        1.                                      
+STOR   2H3     5 202     5.        9000.               2.        1.                                      
+STOR   2H3     6 202     6.        11000.              2.        1.                                      
+STOR   2G1     0 202               1        0.        0.        0.                                       
+STOR   2G1     2 202           0.751       10.        0.      100.                                       
+STOR   2F1     0 202                                                 1                                   
+STOR   3F2     0 202     3                                                                               
+STOR   3F1     0 202                                                 3                                   
+STOR   0F1     0 202     1   Screen Process      2   3   4   50  50  0                                   
+STOR   0F1     1 202     2   Storage Process     3   3   4   100 100 1                                   
+STOR   0F1     2 202     4   Disposal                        200 100 2                                   
+STOR   0C1     0 202     1 2    50 Hot Water                                                             
+STOR   2POL1   0 202     01                                                                              
+TRAN   0NOD1   0 202        2610 001  0001     1                                                         
+RUNF   0H1A    0 202     0                                                                               
+EXTR   0D1     0 210                      0.0      0.0                                                   
+STOR   1F2     0 210     0       10.      0.100                                                          
+STOR   1F1     0 210                                                 0                                   
+STOR   2F2     0 210     1       10.          01111        1.        1.1     1000.1                      
+STOR   2H3     0 210     0.        1000.               1.        1.                                      
+STOR   2H3     1 210     1.        2000.               2.        1.                                      
+STOR   2H3     2 210     2.        3000.               2.        1.                                      
+STOR   2H3     3 210     3.        5000.               2.        1.                                      
+STOR   2H3     4 210     4.        7500.               2.        1.                                      
+STOR   2H3     5 210     5.        9000.               2.        1.                                      
+STOR   2H3     6 210     6.        11000.              2.        1.                                      
+STOR   2G1     0 210               1        0.        0.        0.                                       
+STOR   2G1     2 210           0.751       10.        0.      100.                                       
+STOR   2F1     0 210                                                 1                                   
+STOR   3F2     0 210     3                                                                               
+STOR   3F1     0 210                                                 3                                   
+STOR   0F1     0 210     1   Screen Process      2   3   4   50  50  0                                   
+STOR   0F1     1 210     2   Storage Process     3   3   4   100 100 1                                   
+STOR   0F1     2 210     4   Disposal                        200 100 2                                   
+STOR   0C1     0 210     1 2    50 Hot Water                                                             
+STOR   2POL1   0 210     01                                                                              
+TRAN   0NOD1   0 210        1911 001  1000     1                                                         
+RUNF   0H1A    0 210     0                                                                               
+TRAN   0R1     0 212     0.        1.        2.        12.       24.                                     
+TRAN   0R2     0 212     0.        5.        20.       20.       20.                                     
+TRAN   1R3     0 212     100.      100.      100.      100.      100.                                    
+TRAN   3R3     0 212     1.        1.        1.        1.        1.                                      
+TRAN   2R3     0 212     0.100     0.100     0.100     0.100     0.100                                   
+TRAN   0NOD2   0 212                      20.        0.                                                  
+TRAN   0R1     0 210     0.        1.        2.        12.       24.                                     
+TRAN   0R2     0 210     0.        5.        20.       20.       20.                                     
+TRAN   1R3     0 210     100.      100.      100.      100.      100.                                    
+TRAN   3R3     0 210     1.        1.        1.        1.        1.                                      
+TRAN   2R3     0 210     0.100     0.100     0.100     0.100     0.100                                   
+TRAN   0NOD2   0 210                      20.        0.                                                  
+SWMM   0TEMP   4   0                                                                                    1
+SWMM   9TEMP   4   0                                                                                    1
+SWMM   9TEMP   0   0                                                                                    1
+SWMM  12TEMP   0   0                                                                                    1
+SWMM  13TEMP   0   0                                                                                    1
+SWMM  11TEMP   0   0                                                                                    1
+SWMM  11TEMP   1   0                                                                                    1
+SWMM  10TEMP   1   0                                                                                    1
+GRUN   1D2     0   0     0    mg/l                                                                       
+GTRN   1POL1   0   0     0       0.01                                                                    
+GRUN   3D2     0   0     0    mg/l                                                                       
+GTRN   3POL1   0   0     0       0.01                                                                    
+SWMM  10TEMP   3   0                                                                                    1
+GRUN   2D2     0   0     0    mg/l                                                                       
+GTRN   2POL1   0   0     0       0.01                                                                    
+SWMM  10TEMP   2   0                                                                                    1
+STOR   3POL1   0 212     01                                                                              
+STOR   1POL1   0 212     01                                                                              
+STOR   1G1     0 212               1        0.        0.                                                 
+STOR   1G1     1 212           0.751       10.        0.                                                 
+STOR   1G2     1 212     0.50*rmax                                                                       
+STOR   1G1     3 212           0.751       10.        0.                                                 
+STOR   1G2     3 212     0.5*rmax                                                                        
+STOR   1G1     2 212           0.751       10.        0.                                                 
+STOR   1G2     2 212     0.5*rmax                                                                        
+TRAN   0R1     0 201     0.        1.        2.        12.       24.                                     
+TRAN   0R2     0 201     0.        5.        20.       20.       20.                                     
+TRAN   1R3     0 201     100.      100.      100.      100.      100.                                    
+TRAN   3R3     0 201     1.        1.        1.        1.        1.                                      
+TRAN   2R3     0 201     0.100     0.100     0.100     0.100     0.100                                   
+TRAN   0NOD2   0 201                       0.        0.                                                  
+STOR   3POL1   0 201     01                                                                              
+STOR   1POL1   0 201     01                                                                              
+STOR   1G1     0 201               1        0.        0.                                                 
+STOR   1G1     1 201           0.751       10.        0.                                                 
+STOR   1G2     1 201     0.50*rmax                                                                       
+STOR   1G1     3 201           0.751       10.        0.                                                 
+STOR   1G2     3 201     0.5*rmax                                                                        
+STOR   1G1     2 201           0.751       10.        0.                                                 
+STOR   1G2     2 201     0.5*rmax                                                                        
+TRAN   0R1     0 202     0.        1.        2.        12.       24.                                     
+TRAN   0R2     0 202     0.        5.        20.       20.       20.                                     
+TRAN   1R3     0 202     100.      100.      100.      100.      100.                                    
+TRAN   3R3     0 202     1.        1.        1.        1.        1.                                      
+TRAN   2R3     0 202     0.100     0.100     0.100     0.100     0.100                                   
+TRAN   0NOD2   0 202                       0.        0.                                                  
+STOR   3POL1   0 202     01                                                                              
+STOR   1POL1   0 202     01                                                                              
+STOR   1G1     0 202               1        0.        0.                                                 
+STOR   1G1     1 202           0.751       10.        0.                                                 
+STOR   1G2     1 202     0.50*rmax                                                                       
+STOR   1G1     3 202           0.751       10.        0.                                                 
+STOR   1G2     3 202     0.5*rmax                                                                        
+STOR   1G1     2 202           0.751       10.        0.                                                 
+STOR   1G2     2 202     0.5*rmax                                                                        
+TRAN   0R1     0 204     0.        1.        2.        12.       24.                                     
+TRAN   0R2     0 204     0.        5.        20.       20.       20.                                     
+TRAN   1R3     0 204     100.      100.      100.      100.      100.                                    
+TRAN   3R3     0 204     1.        1.        1.        1.        1.                                      
+TRAN   2R3     0 204     0.100     0.100     0.100     0.100     0.100                                   
+TRAN   0NOD2   0 204                       0.        0.                                                  
+STOR   3POL1   0 204     01                                                                              
+STOR   1POL1   0 204     01                                                                              
+STOR   1G1     0 204               1        0.        0.                                                 
+STOR   1G1     1 204           0.751       10.        0.                                                 
+STOR   1G2     1 204     0.50*rmax                                                                       
+STOR   1G1     3 204           0.751       10.        0.                                                 
+STOR   1G2     3 204     0.5*rmax                                                                        
+STOR   1G1     2 204           0.751       10.        0.                                                 
+STOR   1G2     2 204     0.5*rmax                                                                        
+STOR   3POL1   0 210     01                                                                              
+STOR   1POL1   0 210     01                                                                              
+STOR   1G1     0 210               1        0.        0.                                                 
+STOR   1G1     1 210           0.751       10.        0.                                                 
+STOR   1G2     1 210     0.50*rmax                                                                       
+STOR   1G1     3 210           0.751       10.        0.                                                 
+STOR   1G2     3 210     0.5*rmax                                                                        
+STOR   1G1     2 210           0.751       10.        0.                                                 
+STOR   1G2     2 210     0.5*rmax                                                                        
+STOR   1REV    0   0               icon1     con1      rmax1               icon2     con2      rmax2     
+STOR   1REV    1   0               icon3     con3      rmax3               icon4     con4      rmax4     
+STOR   1REV    2   0               icon5     con5      rmax5                                             
+STOR   2G2     2 212     0.5*rmax                                                                        
+STOR   2G1     3 212           0.751       10.        0.        0.                                       
+STOR   2G2     3 212     0.5*rmax                                                                        
+STOR   2G1     1 212           0.751       10.        0.        0.                                       
+STOR   2G2     1 212     0.5*rmax                                                                        
+STOR   2G2     2 201     0.5*rmax                                                                        
+STOR   2G1     3 201           0.751       10.        0.        0.                                       
+STOR   2G2     3 201     0.5*rmax                                                                        
+STOR   2G1     1 201           0.751       10.        0.        0.                                       
+STOR   2G2     1 201     0.5*rmax                                                                        
+STOR   2G2     2 202     0.5*rmax                                                                        
+STOR   2G1     3 202           0.751       10.        0.        0.                                       
+STOR   2G2     3 202     0.5*rmax                                                                        
+STOR   2G1     1 202           0.751       10.        0.        0.                                       
+STOR   2G2     1 202     0.5*rmax                                                                        
+STOR   2G2     2 204     0.5*rmax                                                                        
+STOR   2G1     3 204           0.751       10.        0.        0.                                       
+STOR   2G2     3 204     0.5*rmax                                                                        
+STOR   2G1     1 204           0.751       10.        0.        0.                                       
+STOR   2G2     1 204     0.5*rmax                                                                        
+STOR   2G2     2 210     0.5*rmax                                                                        
+STOR   2G1     3 210           0.751       10.        0.        0.                                       
+STOR   2G2     3 210     0.5*rmax                                                                        
+STOR   2G1     1 210           0.751       10.        0.        0.                                       
+STOR   2G2     1 210     0.5*rmax                                                                        
+ZZZS   1SEL    1   0        3    4                                                                       
+STOR   2H2     0 212           100.      0.021SS                        500.      10.0                   
+STOR   2H2     0 201           100.      0.021SS                        500.      10.0                   
+STOR   2H2     0 202           100.      0.021SS                        500.      10.0                   
+STOR   2H2     0 204           100.      0.021SS                        500.      10.0                   
+STOR   2H2     0 210           100.      0.021SS                        500.      10.0                   
+STOR   2H4     0 212                      1.5        1.       2.0      0.15       0.1       1.5          
+STOR   2H4     0 201                      1.5        1.       2.0      0.15       0.1       1.5          
+STOR   2H4     0 202                      1.5        1.       2.0      0.15       0.1       1.5          
+STOR   2H4     0 204                      1.5        1.       2.0      0.15       0.1       1.5          
+STOR   2H4     0 210                      1.5        1.       2.0      0.15       0.1       1.5          
+EXTR   0REVW   0   0      1 1 1 1 1 1 1                                                                  
+SWMM  10TEMP   0   0                                                                                    1
+SWMM  11TEMP   2   0                                                                                    1
+GTRN   0DWF2   0   0             0.        0.        0.        0.        0.                              
+GTRN   0DWF1   0   0     1                                               0.        0.        0.        0.
+SWMM  11TEMP  11   0                                                                                    1
+ZSYM  11OBJ    0   0     DWF1                                                                            
+ZSYM  11VAL    0   0         0                                                                           
+EXTR   0D1     0 208                      0.0      0.0                                                   
+STOR   4F2     0 212     2                                                                               
+STOR   4F1     0 212                                                 2                                   
+STOR   0F1     3 212     3   Node Outflow                    150 50  3                                   
+STOR   4F2     0 201     2                                                                               
+STOR   4F1     0 201                                                 2                                   
+STOR   0F1     3 201     3   Node Outflow                    150 50  3                                   
+STOR   4F2     0 202     2                                                                               
+STOR   4F1     0 202                                                 2                                   
+STOR   0F1     3 202     3   Node Outflow                    150 50  3                                   
+STOR   4F2     0 204     2                                                                               
+STOR   4F1     0 204                                                 2                                   
+STOR   0F1     3 204     3   Node Outflow                    150 50  3                                   
+STOR   4F2     0 210     2                                                                               
+STOR   4F1     0 210                                                 2                                   
+STOR   0F1     3 210     3   Node Outflow                    150 50  3                                   
+STOR   1POL2   0 201     0.        100.      1.        90.       10.       80.       100.      0.        
+STOR   1POL3   0 201     1.2       1.5       1.6                                                         
+STOR   3POL2   0 201     0.        100.      1.        90.       10.       35.       100.      10.       
+STOR   3POL2   1 201     1000.     0.                                                                    
+STOR   3POL3   0 201     2.        2.        2.        2.                                                
+STOR   2POL2   0 201     0.        100.      1.        50.       2.        25.       10.       0.        
+STOR   2POL3   0 201     3.        3.        3.                                                          
+STOR   1POL2   0 202     0.        100.      1.        90.       10.       80.       100.      0.        
+STOR   1POL3   0 202     1.2       1.5       1.6                                                         
+STOR   3POL2   0 202     0.        100.      1.        90.       10.       35.       100.      10.       
+STOR   3POL2   1 202     1000.     0.                                                                    
+STOR   3POL3   0 202     2.        2.        2.        2.                                                
+STOR   2POL2   0 202     0.        100.      1.        50.       2.        25.       10.       0.        
+STOR   2POL3   0 202     3.        3.        3.                                                          
+STOR   1POL2   0 204     0.        100.      1.        90.       10.       80.       100.      0.        
+STOR   1POL3   0 204     1.2       1.5       1.6                                                         
+STOR   3POL2   0 204     0.        100.      1.        90.       10.       35.       100.      10.       
+STOR   3POL2   1 204     1000.     0.                                                                    
+STOR   3POL3   0 204     2.        2.        2.        2.                                                
+STOR   2POL2   0 204     0.        100.      1.        50.       2.        25.       10.       0.        
+STOR   2POL3   0 204     3.        3.        3.                                                          
+STOR   1F2     0 208     0       10.      0.100                                                          
+STOR   1F1     0 208                                                 0                                   
+STOR   2F2     0 208     1       10.          01111        1.        1.1     1000.1                      
+STOR   2H3     0 208     0.        1000.               1.        1.                                      
+STOR   2H3     1 208     1.        2000.               2.        1.                                      
+STOR   2H3     2 208     2.        3000.               2.        1.                                      
+STOR   2H3     3 208     3.        5000.               2.        1.                                      
+STOR   2H3     4 208     4.        7500.               2.        1.                                      
+STOR   2H3     5 208     5.        9000.               2.        1.                                      
+STOR   2H3     6 208     6.        11000.              2.        1.                                      
+STOR   2G1     0 208               1        0.        0.        0.                                       
+STOR   2G1     2 208           0.751       10.        0.      100.                                       
+STOR   2F1     0 208                                                 1                                   
+STOR   3F2     0 208     3                                                                               
+STOR   3F1     0 208                                                 3                                   
+STOR   0F1     0 208     1   Screen Process      2   3   4   50  50  0                                   
+STOR   0F1     1 208     2   Storage Process     3   3   4   100 100 1                                   
+STOR   0F1     2 208     4   Disposal                        200 100 2                                   
+STOR   0C1     0 208     1 2    50 Hot Water                                                             
+STOR   2POL1   0 208     01                                                                              
+TRAN   0R1     0 208     0.        1.        2.        12.       24.                                     
+TRAN   0R2     0 208     0.        5.        20.       20.       20.                                     
+TRAN   1R3     0 208     100.      100.      100.      100.      100.                                    
+TRAN   3R3     0 208     1.        1.        1.        1.        1.                                      
+TRAN   2R3     0 208     0.100     0.100     0.100     0.100     0.100                                   
+TRAN   0NOD2   0 208                       0.        0.                                                  
+STOR   3POL1   0 208     01                                                                              
+STOR   1POL1   0 208     01                                                                              
+STOR   1G1     0 208               1        0.        0.                                                 
+STOR   1G1     1 208           0.751       10.        0.                                                 
+STOR   1G2     1 208     0.50*rmax                                                                       
+STOR   1G1     3 208           0.751       10.        0.                                                 
+STOR   1G2     3 208     0.5*rmax                                                                        
+STOR   1G1     2 208           0.751       10.        0.                                                 
+STOR   1G2     2 208     0.5*rmax                                                                        
+STOR   2G2     2 208     0.5*rmax                                                                        
+STOR   2G1     3 208           0.751       10.        0.        0.                                       
+STOR   2G2     3 208     0.5*rmax                                                                        
+STOR   2G1     1 208           0.751       10.        0.        0.                                       
+STOR   2G2     1 208     0.5*rmax                                                                        
+STOR   2H2     0 208           100.      0.021SS                        500.      10.0                   
+STOR   2H4     0 208                      1.5        1.       2.0      0.15       0.1       1.5          
+STOR   4F2     0 208     2                                                                               
+STOR   4F1     0 208                                                 2                                   
+STOR   0F1     3 208     3   Node Outflow                    150 50  3                                   
+STOR   1POL2   0 208     0.        100.      1.        90.       10.       80.       100.      0.        
+STOR   1POL3   0 208     1.2       1.5       1.6                                                         
+STOR   3POL2   0 208     0.        100.      1.        90.       10.       35.       100.      10.       
+STOR   3POL2   1 208     1000.     0.                                                                    
+STOR   3POL3   0 208     2.        2.        2.        2.                                                
+STOR   2POL2   0 208     0.        100.      1.        50.       2.        25.       10.       0.        
+STOR   2POL3   0 208     3.        3.        3.                                                          
+STOR   1POL2   0 210     0.        100.      1.        90.       10.       80.       100.      0.        
+STOR   1POL3   0 210     1.2       1.5       1.6                                                         
+STOR   3POL2   0 210     0.        100.      1.        90.       10.       35.       100.      10.       
+STOR   3POL2   1 210     1000.     0.                                                                    
+STOR   3POL3   0 210     2.        2.        2.        2.                                                
+STOR   2POL2   0 210     0.        100.      1.        50.       2.        25.       10.       0.        
+STOR   2POL3   0 210     3.        3.        3.                                                          
+STOR   1POL2   0 212     0.        100.      1.        90.       10.       80.       100.      0.        
+STOR   1POL3   0 212     1.2       1.5       1.6                                                         
+STOR   3POL2   0 212     0.        100.      1.        90.       10.       35.       100.      10.       
+STOR   3POL2   1 212     1000.     0.                                                                    
+STOR   3POL3   0 212     2.        2.        2.        2.                                                
+STOR   2POL2   0 212     0.        100.      1.        50.       2.        25.       10.       0.        
+STOR   2POL3   0 212     3.        3.        3.                                                          
+STOR   0E5     0   0            22.       22.       22.       22.       22.       22.       22.       22.
+STOR   0E5     1   0            22.       22.       22.       22.                                        
+SWMM  13TEMP  13   0                                                                                    1
+ZSYM  13OBJ    0   0     Hot Water                                                                       
+ZSYM  13VAL    0   0         0                                                                           
+TRAN   0A1B    0   0     Particle Size Distributions with detention basins                               
+TRAN 212CON    0 212               100.      .1        1.                                                
+TRAN 210CON    0 210               100.      .1        1.                                                

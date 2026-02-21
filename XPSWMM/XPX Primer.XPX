@@ -1,0 +1,78 @@
+/* XPX files are free format text files that a read left to right on rows
+and top to bottom on lines.  Any number of spaces or a comma can seperate
+the items in the active lines.  Comments can be included such as this line
+by enclosing between.  XPX files can be created from Spread-
+sheets, text editors, programming scripts etc. */
+
+
+/* Import Node names and X Y Coordinates                    */
+/* Node command syntax is:                                  */
+/* Node Shape "Name"   X   Y                                */
+/* Shape of 134 is red circle                               */            
+
+ NODE 134 "113" 30 470 
+ NODE 134 "313" 50 490 
+
+
+/* Import Link names and direction                          */
+/* Link command syntax is:                                  */
+/* Link Shape "Name" "Upstream_Node" "Downstream Node"      */            
+/* Shape of 136 is single and 138 is multi-link             */
+
+ LINK 136 "213"   "113"    "313"
+
+ 
+/* Import single types of data                              */
+/* Data command syntax is:                                  */
+/* DATA Field_Name "Object_Name" Instance Count Data_Values */            
+/* Instance is always zero for nodes and single conduits    */ 
+/* Instance is 1-7 for multi-links depending on the row     */
+/* Count indicates the number of values for the field type  */  
+
+ DATA R_WAREA "113" 0 5 1.079 "" "" "" "" /* This line imports area */
+ DATA TEO "213" 0 5 0 1 2 3 4             /* This line imports 5 time values of a hydrograph */
+ DATA QCARD "213" 0 5 2.1 3.2 4.1 3.1 1.7 /* This line imports the flows of the hydrograph   */
+ 
+ 
+/* Table commands can be used to import all an objects data */
+/* Start and end tables with $Table and $Table_end          */            
+/* 2nd line has field names in the same order of the values */ 
+/* Syntax if Table lines are:                               */
+/* "Object_Name" Instance Count Data_Value1, Data_Value2,...*/
+/* Items in tables are separated by commas                  */  
+ 
+ $Table
+ GRELEV, Z
+ "113", 0, 1, 134.2, 123.21
+ "313", 0, 1, 132.7, 124.20
+ $Table_End
+
+/* Import Global Data Records                               */
+/* GLDBITEM imports the record name and has syntax:         */
+/* GLDBITEM "Record Type" "Record Name"                     */
+/* Record types are exactly as shown in the Global Database */
+/* Record Names can be up to 20 characters alphanumeric     */           
+
+ GLDBITEM "Rainfall" "Small Storm"
+
+
+/* Import Global Data in to the Records                     */ 
+/* GLDBITEM is a command to import data fields to records   */
+/* GLDBITEM Field "Record_Type" "Record_Name" Count Data    */
+
+/* Line below imports start date to the record called Small Storm */
+ GLDBDATA R_TZRDT "Rainfall" "Small Storm" 1 "10/23/2002"
+ 
+ 
+/* Additional Data Below */ 
+   
+ DATA LEN "213" 0 1 110. 
+ DATA ROUGH "213" 0 1 .022 
+ DATA ZP1 "213" 0 1 4.318 
+ DATA ZP2 "213" 0 1 3.568 
+ DATA NKLASS "213" 0 1 1 
+ DATA SLOPE "213" 0 1 .682 
+ DATA DEEP "213" 0 1 1.75 
+
+
+

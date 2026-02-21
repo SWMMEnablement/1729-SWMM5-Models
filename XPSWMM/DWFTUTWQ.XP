@@ -1,0 +1,169 @@
+EXTR   0B2     0   0        0                                                                            
+SWMM   0MISC   0   0     1                                                                               
+SWMM   0MODE   0   0     101000                                                                          
+SWMM   0MCTL   0 201      1                                                                              
+TRAN   0NOD1   0 201        1901 001  0 10 1000                                                          
+TRAN   0JCT2   0   0         4     0.001     3600.        0.    1                                        
+RUNF   0B1     0   0                   1    7    0    0    0    0    1    1   92    0    0   92          
+TRAN   0JCT1   0   0     110101010000  1                         DWF                   1.1E-005      100.
+JCTL   0A1     0   0     0                                                                               
+SWMM   0TEMP   0   0                                                                                    1
+SWMM   9TEMP   0   0                                                                                    1
+SWMM  13TEMP   0   0                                                                                    1
+SWMM  11TEMP  11   0                                                                                    1
+GTRN   0DWF3   0   0            0.5       1.5      0.75       1.5      0.75       1.5       0.5          
+GTRN   0DWF4   0   0            1.0       1.0       1.0       1.0       1.0       1.0       1.0       1.0
+GTRN   0DWF4   1   0            1.0       1.0       1.0       1.0       1.0       1.0       1.0       1.0
+GTRN   0DWF4   2   0            1.0       1.0       1.0       1.0       1.0       1.0       1.0       1.0
+GTRN   0DWF1   0   0     0        1        1.      350.      350.                                        
+SWMM  11TEMP   0   0                                                                                    1
+TRAN   0NOD2   0 201                       0.                 10.        0.      100.               1234.
+SRPT   0CNTL   0   0              1         0    0    0    1    000                                      
+SRPT   1GLOB   0   0    0.00511302 0.00711579                                                            
+SRPT   1GLOB   1   0    6.99497 9.7349                                                                   
+SRPT   0GLOB   0   0    0.0971473 0.0583495                                                              
+SRPT   0GLOB   1   0    132.904 79.8262                                                                  
+ZSYM   0NAME   0   0     Pollutant                                   1   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                0   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    0   40    5    0                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            1   40    5    0                    
+ZSYM  11OBJ    0   0     DWF                                                                             
+ZSYM  11VAL    0   0         0                                                                           
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              1   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM  18NAME   0   0     Gauged Pollutants                           0   40    5    0                    
+ZSYM   0GLDB   0   0        10                                                                           
+SWMM   0SWMM   0   0           2.23                                                                      
+ZZZC   0CNTL   0   0    4    3    1    999   999   1368.0698730    213  swmmxp                           
+ZZZC   0CNTL   1   0    51.2555             -33.8811                                                     
+ZZZC   0NAME   0   0    1    N              1    L              1                                        
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZZZN 201NODE   0 201    FLOW           0 0 5.70399  203 -1  -1  -1  -1  201 134 1   0   0   0   45  1    
+ZZZN 201NODE   1 201    1   2   204 0   0   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 201NODE   2 201    95.8155             145.7074            102.3165            152.2085             
+QAS    0GLOB   0 201    .083972118 .008239094 264.332929 110.195378 0 0 0                              0 
+SWMM   0MCTL   0 202      0                                                                              
+SWMM   0MCTL   0 203      0                                                                              
+ZZZN 202NODE   0 202    DWF=3          0 0 5.70399  203 206 208 -1  -1  202 134 0   1   0   0   45  1    
+ZZZN 202NODE   1 202    1   2   159 0   1   0   0   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 202NODE   2 202    -5.4198             196.6156            1.0812              203.1167             
+QAS    0GLOB   0 202    .015169152 .015210635 220.748910 18.6873448 1 1 0                              0 
+ZZZE 203EDGE   0 203    3              0           202 201 203 136 0   0   0   0   1                     
+ZZZE 203EDGE   1 203    1   0   233 1   0 5.70399   0 0.633777                                           
+QAS    0GLOB   0 203    -.00920983 -.00697153 162.098809 38.8061324 1 1 0                              0 
+TRAN   0NOD1   0 202        1900 00000                                                                   
+GTRN   0DWF5   0   0             0.        0.                                                            
+TRAN   0LR01   0 202     0         0         0         0         0         0         0         0         
+TRAN   0LR02   0 202     0         0         0         0         0                                       
+TRAN   0LR01   0 201     15        0         0         0         0         0         0         0         
+TRAN   0LR02   0 201     0         0         0         0         0                                       
+TRAN   0NR01   0 202     0         0         0         0         0         0         0         0         
+TRAN   0NR01   0 201     0         0         0         0         0         0         0         0         
+ZZZT 204text   0 204    0    5.7040         204 131 1   0   239 0   1   0   12  0                        
+ZZZT 204text   1 204    Transport DWF Options                                                            
+ZZZT 204text   2 204    23.0467             107.8422            34.7286             222.4520             
+EXTR   0REVW   0   0      1 1 1 1 1 1 1                                                                  
+SRPT 130ROW    0   0         2     0.005cfs       -101      tot dwf           .34111                     
+SRPT   0ROW    0   0                              -101                       0.34111                     
+SRPT  47ROW    0   0         2     0.005          -101      pop den          0.34111                     
+SRPT 168ROW    0   0         2     0.005          -101      dwf flag         0.34111                     
+SRPT  46ROW    0   0         2     0.005acres     -101      dwf area         0.34111                     
+SRPT  44ROW    0   0         2     0.005cfs       -101      sewage Q         0.34111                     
+SRPT   0DD1    0   0          5     1                                                                    
+SRPT   0DD1    1   0    195 47168 46 44                                                                  
+SRPT   1DD1    0   0          5     1                                                                    
+SRPT   1DD1    1   0     -1 -1 -1 -1 -1                                                                  
+SRPT   2DD1    0   0          5     1                                                                    
+SRPT   2DD1    1   0     -1 -1 -1 -1 -1                                                                  
+SRPT   1BOX    0   0     6              10   0         0         0         000                           
+SRPT   0VIEW   0   0                   1    01        0                                                  
+QAS    0TEXT   0 201        30   4015.00\001234.00\00On\00100.00\0010.00\0000                            
+QAS    0TEXT   0 202        19   29(0.00)\00()\00()\00()\00()\00                                         
+SRPT 195ROW    0   0         2     0.005cfs       -101      max q            0.34111                     
+ZZGE   0DLI2   0   0     0    4                                                                          
+ZZGE   0CONT   0   0     10000                                                                           
+ZZGE   0ENT    0   0     110000                                                                          
+ZZGE   0DESC   0   0     Dry weather flow flag                                                           
+ZZGE   0VARS   0   0       168    0  168    0                                                            
+ZZGE   0VARI   0   0         0         0                                                                 
+ZZGE   0LGND   0   0     0    .20     10    -97.37     -0.06011         0         0  0.16011             
+ZZGE   1SIZE   0   0      0                                                                              
+ZZGE   1DSC2   0   0     .2        2.                                                                    
+ZZGE   0DESC   1   0     Dry weather flow flag                                                           
+ZZGE   0LGN2   0   0         123.89     86.34                                                            
+GRPH   0TMP    0   0       01 1                                                                          
+TRAN   0NOD2   0 202             0.                                                                      
+TRAN   0G2     0 202     0.        1.                  0.        1.        1.                  1.5       
+TRAN   0G2     1 202     2.        1.                  0.75      3.        1.                  1.        
+TRAN   0G2     2 202     4.        1.                  1.25      5.        1.                  0.5       
+TRAN   0G2     3 202     6.        1.2                 1.        7.        0.8                 1.        
+TRAN   0G2     4 202     8.        1.                            9.        1.                            
+TRAN   0G2     5 202     10.       1.                            11.       1.                            
+TRAN   0G2     6 202     12.       1.                            13.       1.                            
+TRAN   0G2     7 202     14.       1.                            15.       1.                            
+TRAN   0G2     8 202     16.       1.                            17.       1.                            
+TRAN   0G2     9 202     18.       1.                            19.       1.                            
+TRAN   0G2    10 202     20.       1.                            21.       1.                            
+TRAN   0G2    11 202     22.       1.                            23.       1.                            
+TRAN   0G2    12 202     24.       1.                                                                    
+ZSYM  19NAME   0   0     Pump Ratings                                0   40    5    0                    
+PROJ   0TEMP   0   0     c:\win\temp\xpp2                                                                
+ZRPT   0NAME   0   0     RPT Headings                                0   40    5    0                    
+SWMM   0MCTL   0 205      1                                                                              
+ZZZN 205NODE   0 205    NO FLOW        0 0 4.26947  206 -1  -1  -1  -1  205 134 1   0   0   0   45  1    
+ZZZN 205NODE   1 205    1   2   82  0   1   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 205NODE   2 205    5.2578              103.0551            9.9775              107.7748             
+QAS    0GLOB   0 205    .014945738 .015180351 126.047830 28.4222420 1 0 0                              0 
+QAS    0TEXT   0 205        28   380.00\001234.00\00On\00100.00\000.00\000\00                            
+ZZZW   0BUFF   0   0    @_@_@_@_@_@_@_@                                                                  
+TRAN   0NOD1   0 205        1901 001  0 10 1000                                                          
+TRAN   0NOD2   0 205                       0.                  0.        0.      100.               1234.
+TRAN   0LR01   0 205     0         0         0         0         0         0         0         0         
+TRAN   0LR02   0 205     0         0         0         0         0                                       
+TRAN   0NR01   0 205     0         0         0         0         0         0         0         0         
+SWMM   0MCTL   0 206      0                                                                              
+ZZZE 206EDGE   0 206    6              0           205 202 206 136 0   0   0   0   1                     
+ZZZE 206EDGE   1 206    1   0   11  1   0 4.26947   0 0.474386                                           
+QAS    0GLOB   0 206    -3.9329E-4 -.00948769 151.875397 -10.517346 1 1 0                              0 
+TRAN   0Q2     0 201               1        1.        2.        3.        4.        5.1      987.0       
+TRAN   0Q2     0 205               1        1.        2.        3.        4.        5.1      987.0       
+ZZZS   0SEL    0   0          1     1                                                                    
+ZZZS   0SEL    1   0        1                                                                            
+SWMM   0MCTL   0 207      1                                                                              
+SWMM   0MCTL   0 208      0                                                                              
+ZZZN 207NODE   0 207    PROCESS Q      0 0 4.26947  208 -1  -1  -1  -1  207 134 1   0   0   0   45  1    
+ZZZN 207NODE   1 207    1   2   49  0   1   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 207NODE   2 207    53.4075             101.0079            58.1272             105.7276             
+QAS    0GLOB   0 207    .014945738 .015180351 123.895532 76.4477349 1 0 0                              0 
+QAS    0TEXT   0 207        30   4018.00\001234.00\00On\00100.00\0010.00\0000                            
+ZZZE 208EDGE   0 208    8              0           207 202 208 136 0   0   0   0   1                     
+ZZZE 208EDGE   1 208    1   0   11  1   0 4.26947   0 0.474386                                           
+QAS    0GLOB   0 208    -.00393308 -.00853892 146.494654 14.7933860 1 1 0                              0 
+TRAN   0NOD1   0 207        1901 001  0 10 1001                                                          
+TRAN   0NOD2   0 207                       0.                 10.        0.      100.        1.     1234.
+TRAN   0LR01   0 207     18        0         0         0         0         0         0         0         
+TRAN   0LR02   0 207     0         0         0         0         0                                       
+TRAN   0NR01   0 207     0         0         0         0         0         0         0         0         
+TRAN   0Q2     0 207               1        1.        2.        3.        4.        5.1      987.0       
+SWMM  10TEMP  10   0                                                                                    1
+GRUN   0D2     0   0     0                     0.0                                                       
+GTRN   0POL1   0   0     0                     0                                                         
+SWMM  10TEMP   0   0                                                                                    1
+ZSYM   0OBJ    0   0     srp                                                                             
+ZSYM   0VAL    0   0         0                                                                           
+ZSYM  14OBJ    0   0     srp                                                                             
+ZSYM  14VAL    0   0         0                                                                           
+ZZZS   1SEL    0   0          0     1                                                                    
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    

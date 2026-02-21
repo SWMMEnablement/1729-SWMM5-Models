@@ -1,0 +1,116 @@
+EXTR   0B2     0   0        0                                                                           0
+SWMM   0MISC   0   0     1                                                                               
+SWMM   0MODE   0   0     2                                                                               
+FONT   0LIST   0   0            1        Arial                                                           
+FONT   0LIST   1   0         -101        Arial                                                           
+SWMM   0MCTL   0 201       1                                                                             
+SWMM   0MCTL   0 203       1                                                                             
+SWMM   0MCTL   0 202       1                                                                             
+SWMM   0MCTL   0 205       1                                                                             
+SWMM   0MCTL   0 204       1                                                                             
+ZZZS   0ATTR   0   1                         .167739370    0.185523622.185527559    0    4    1    111111
+ZZZS   0ATTR   0   2                                 .1    0                  .1    0    4   10    110111
+SRPT   0CNTL   0   0              1         0    0    0    1    0                                        
+SRPT   1GLOB   0   0    0.00500977 0.0068724                                                             
+SRPT   1GLOB   1   0    2.39426 3.28445                                                                  
+SRPT   0GLOB   0   0    0.00500977 0.0068724                                                             
+SRPT   0GLOB   1   0    2.39426 3.28445                                                                  
+ZRPT   0NAME   0   0     RPT Headings                                0   40    5    0                    
+ZSYM   0NAME   0   0     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5   -1                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                0   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    0   40    5    0                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM  18NAME   0   0     Gauged Pollutants                           0   40    5    0                    
+ZSYM  19NAME   0   0     Pump Ratings                                1   40    5    0                    
+ZSYM   0GLDB   0   0        14                                                                           
+SWMM   0SWMM   0   0           6.00                                                                      
+ZZZC   0CNTL   0   0    3    2    0    999   999   477.91914700    213  swmmxp                           
+ZZZC   0CNTL   1   0    41.2489             0.4291                                                       
+ZZZC   0NAME   0   0    1    N              1    L              1                                        
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZZZN 201NODE   0 201    wet well       0 0 4.26058  -1  203 -1  -1  -1  201 133 1   0   0   0   45  1    
+ZZZN 201NODE   1 201    1   4   0   0   -1  1   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 201NODE   2 201    22.1365             157.4543            26.8489             162.1666             
+QAS    0GLOB   0 201    .015033748 .015010000 167.010702 31.6313651 1 1 0                              0 
+ZZZN 202NODE   0 202    mid pt         0 0 4.26058  205 203 -1  -1  -1  202 134 1   0   0   0   45  1    
+ZZZN 202NODE   1 202    1   4   0   0   1   0   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 202NODE   2 202    44.2858             98.1690             48.9982             102.8813             
+QAS    0GLOB   0 202    .015033748 .015010000 107.658184 53.8645621 1 1 0                              0 
+ZZZN 204NODE   0 204    outfall        0 0 4.26058  205 -1  -1  -1  -1  204 134 1   0   0   0   45  1    
+ZZZN 204NODE   1 204    1   4   0   0   0   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 204NODE   2 204    50.6058             43.1391             55.3182             47.8513              
+QAS    0GLOB   0 204    .015033748 .015010000 52.7161516 60.1808112 1 1 0                              0 
+ZZZE 203EDGE   0 203    the pump       0           201 202 203 138 1   1   0   0   1                     
+ZZZE 203EDGE   1 203    10  4   0   1   0 2.54      0 2.54                                               
+QAS    0GLOB   0 203    -.00263744 -.00473998 128.954523 33.2735898 1 1 0                              0 
+ZZZE 205EDGE   0 205    dnpipe         0           202 204 205 136 1   0   0   0   1                     
+ZZZE 205EDGE   1 205    10  4   244 1   0 2.54      0 2.54                                               
+QAS    0GLOB   0 205    -5.2750E-4 -.00526665 72.7523518 47.2956629 1 1 0                              0 
+EXTR   0E1     0 201                     0.0    100.                                          1       1  
+EXTR   0E2F    0 201            0.0    0.0                                                               
+EXTR   0K3     0 201     0.      0.      1.      10.     2.      10.                                     
+EXTR   0D1     0 201                     510.     500.      0.0     0.0 0 0                              
+EXTR   0SP1N   0 201         1                        1                   0   0 0                 0 0    
+EXTR   1H1A    0 203      3     0.0    502.    501.     0.0     0.0      2.pumpdata                      
+EXTR   1H1B    0 203                                                       dynamic                       
+EXTR   0SPDV   0 203     000000010000000000000000000011    100.0000000                                   
+EXTR   0C1     0 205             0.0  1               2.               100.     510.     510.      0.011 
+EXTR   0MANW   0 205                   0.0       0.0                                                     
+EXTR   0C1A    0 205                                    0.0                                              
+EXTR   0D1     0 202                     520.     510.                                                   
+EXTR   0D1     0 204                     520.     510.      0.0     0.0 0 0                              
+EXTR   0C1C    0 205                              0P0     0.0                                            
+EXTR   0SPSC   0 205                                                                               0     
+EXTR   1I1     0 204                   0                                                                 
+EXTR   0I1     0 204                 2                                                        0          
+EXTR   0J2A    0 204           515.                                                                      
+EXTR   0SP1N   0 204         0                        0                   1   0 0                 0 0    
+EXTR   0BB1    0   0                                0.85              0.65       1.      1.0        6    
+EXTR   0BB2    0   0                50                                   0        1      1.0           00
+EXTR   0B1A    0   0        1   0   0   0    1   3   0   0  95 11  95 1                                  
+EXTR   0B1     0   0                 60.            1  500   10                               000        
+EXTR   0B0     0   0                                                                    0 0 0 1          
+JCTL   0A1     0   0     0                                                                               
+SWMM   0TEMP   0   0                                                                                    1
+EXTR   0PRAT   0   0     20.     0.      15.     5.      10.     10.     5.      20.     0.      30.     
+SWMM  14TEMP  14   0                                                                                    1
+ZSYM  19OBJ    0   0     pumpdata                                                                        
+ZSYM  19VAL    0   0         0                                                                           
+PLOT   0SET3   0   0          0.0 INCR                                                                   
+CONF   0PAR1   0   0         1    0    0                                                                 
+CONF   0PAR    0   0     DJREF=10.0          NOQMOD              PUMPOMEGA                               
+PEST   0MAIN   0   0                        1                                                            
+EXTR   0RSLT   0 205                                                       40.2209337-3.8186606          
+EXTR   0LR01   0 205                         12.6120009-1.201870134.42252190         34.42252193.18913361
+EXTR   0LR02   0 205     .5        1.10362   640.2751634.35245901.845452700.2691159575534.609280         
+EXTR   0LR03   0 205     179.9999991.016666661.016666660         .2606645350         3389.01808355.579670
+EXTR   0NR01   0 201     6.94140817506.941408100       723.4442245.333045940         29528     12.1016393
+EXTR   0NR02   0 201     90029.06620         0         506.9414083.058591823.05859182                    
+EXTR   0NR01   0 202     8.18927455518.18927412.566    125.66    .0618007920         17085     7.00204918
+EXTR   0NR02   0 202     0         0         175.579670518.1892741.810725441.81072544                    
+EXTR   0NR01   0 204     5         515       12.566    62.83     .03526025599521.813411356     4.65409836
+EXTR   0NR02   0 204     253.7422360         179.999999517.4699672.530032445                             
+ZSYM  20NAME   0   0     User Defined File Types                     0   40    5    0                    
+ZSYM  21NAME   0   0     I/I Infiltration                            0   40    5    0                    
+EXTR   0DR01   0 205                                                                 83.1715716          
+EXTR   1HX     0 203              0 0 0     0 0 1                                                        
+EXTR   0JCTL   0   0         0                                                                           
+EXTR   0BB3    0   0               000 0000                                                              
+ZZZS   1SEL    0   0          1     1                                                                    
+ZZZS   0SEL    0   0          0     1                                                                    
+ZZZS   1SEL    1   0        0                                                                            
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    

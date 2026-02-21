@@ -1,0 +1,128 @@
+SWMM   0MODE   0   0     2                                                                               
+EXTR   0B2     0   0        1          1.2  0.0   0.0001  0.00001      300.  0 1    1      200.  1000.  0
+SWMM   0MISC   0   0     1                                                                               
+ZSYM   0NAME   0   0     Pollutant                                   0   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             0   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                0   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     0   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               0   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    0   40    5    0                    
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              0   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                0   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+ZSYM   0GLDB   0   0         0                                                                           
+SWMM   0SWMM   0   0           2.01                                                                      
+ZZZC   0CNTL   0   0    3    2    0    999   999   770.85987470    213  swmmxp                           
+ZZZC   0CNTL   1   0    76.0519             119.0906                                                     
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZZZS   0ATTR   0   1                             4.2588    0   4.70496   4.70496    0    2    1    111111
+ZZZW   0BUFF   0   0    @_@_@_@_@_@_@_@                                                                  
+EXTR   0B1     0   0                 5.0            1  500  500 1      0.0                    00         
+EXTR   0BB2    0   0               500   0.0001     10.0      1.0        0        1      1.0           00
+EXTR   0B1A    0   0        0   0   0   0    0   2  30   0  95 11                                        
+EXTR   0B0     0   0                                                                    1 0 1 1          
+GRPH   0COLS   0   0           33      33      33     205      33     205      69                        
+GRPH   0OPTS   0   0           24      24     .87    1.74       1       1     .87               111101111
+PLOT   0LINE   0   0                                   11        1 1 3.00TYPE1 ARROW                     
+PLOT   0SET2   0   0                        1 1 1 1                                                      
+PLOT   0HGLF   0   0                         11                                                          
+PLOT   0MANH   0   0     FILLEDCONSTANT 1 1 3.00  VERTICAL   2.    0                                     
+PLOT   0CONP   0   0      1 3.00 1                                                                       
+PLOT   0SET0   0   0                                0                                                    
+PLOT   0GRID   0   0      1 1  1 1  1  3.00                                                              
+PLOT   0TITL   0   0                                              1 3.00                                 
+PLOT   0SET3   0   0          0.0 INCR                                                                   
+EXTR   0REVW   0   0      1 1 1 1 1 1 1                                                                  
+ZZZS   0PLOT   0   0      view pict    1                                                                 
+TRAN   0JCT1   0   0                 00                                                                  
+EXTR   0BB1    0   0                                0.65              0.65      0.5      1.0        6    
+GRPH   0TMP    0   0     1                                                                               
+GRPH   0A1     0   0     EDCB Infiltration                                                               
+JCTL   0A1     0   0     0                                                                               
+SRPT   0CNTL   0   0              1         0    0    0    1    0                                        
+SRPT   1GLOB   0   0    0.00511302 0.00711579 0 0                                                        
+SRPT   1GLOB   1   0    3.94142 5.48528 0 0                                                              
+SRPT   0GLOB   0   0    0.00511302 0.00711579 0 0                                                        
+SRPT   0GLOB   1   0    3.94142 5.48528 0 0                                                              
+ZSYM  18NAME   0   0     Gauged Pollutants                           0   40    5    0                    
+ZZZC   0NAME   0   0    0                   1                   1                                        
+GRPH   0OPT2   0   0         1    1    3                                                                0
+SWMM   0MCTL   0 445       1                                                                             
+ZZZN 445NODE   0 445    Outlet         0 0 4.26947  448 -1  -1  -1  -1  445 134 1   0   0   0   45  1    
+ZZZN 445NODE   1 445    1   2   232 0   0   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 445NODE   2 445    183.9287            80.9029             188.6484            85.6226              
+QAS    0GLOB   0 445    .014945738 .015180351 94.8494441 198.078582 1 1 0                              0 
+EXTR   0I1     0 445                 1 0                                                      0          
+EXTR   0J2A    0 445            0.0                                                                      
+EXTR   0D1     0 445                     5.00     0.00      0.0     0.0 0 0                              
+EXTR   0SP1N   0 445         0                        0                   1   0 0                        
+EXTR   0NR01   0 445     .5        .5        1.2       .6        .00166617 358.1547  4473      1.920567  
+EXTR   0NR02   0 445     0         0         0         2.211943  2.788057  4.5                           
+SWMM   0MCTL   0 446       1                                                                             
+ZZZN 446NODE   0 446    Tank           0 0 4.2588   448 449 -1  -1  -1  446 133 1   0   0   0   45  1    
+ZZZN 446NODE   1 446    1   7   170 0   1   0   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 446NODE   2 446    183.8900            127.8484            188.5950            132.5534             
+EXTR   0D1     0 446                 5.00         0.00      0.0   1.324 0 0                              
+EXTR   0SP1N   0 446         0                        1                   0   0 0                        
+EXTR   0K3     0 446     0.      0.      1.      3.      2.      3.      3.      0.      6.      0.      
+EXTR   0I1     0 446                 1 0                                                      0          
+EXTR   0J2A    0 446            0.0                                                                      
+QAS    0GLOB   0 446    .014945738 .015180351 141.843304 198.078582 1 1 0                              0 
+EXTR   0NR01   0 446     1.324     1.324     531.5352  703.7526  469.5809  0         6205      2.664234  
+EXTR   0NR02   0 446     0         0         0         2.982086  2.017914  3.676                         
+EXTR   0E2E    0 446     0.0001  0.00    0.200   5.00                                                    
+EXTR   0E1     0 446                    5.00   100.0                                          3          
+EXTR   0E2F    0 446            0.0    0.0                                                               
+SWMM   0MCTL   0 447       1                                                                             
+EXTR   0E1     0 447                    5.00     0.0                                          1          
+EXTR   0E2F    0 447            0.0    0.0                                                               
+EXTR   0D1     0 447                     5.00     2.00      0.0     0.0 0 0                              
+EXTR   0SP1N   0 447         0                        0                   0   0 0                        
+ZZZN 447NODE   0 447    Inflow         0 0 4.2588   449 -1  -1  -1  -1  447 134 1   0   0   0   45  1    
+ZZZN 447NODE   1 447    1   2   143 0   1   -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1       
+ZZZN 447NODE   2 447    150.9893            206.8725            155.6943            211.5775             
+EXTR   0E2E    0 447     35.00   0.      35.00   2.677                                                   
+QAS    0GLOB   0 447    .014945738 .015180351 220.671715 165.166923 1 1 0                              0 
+EXTR   0NR01   0 447     1E-4      2.0001    1.2       1.2E-4    0         0         2330      1.000429  
+EXTR   0NR02   0 447     0         0         0         1E-4      4.9999    2.9999                        
+SWMM   0MCTL   0 448       1                                                                             
+ZZZE 448EDGE   0 448    Pipe2a         0           446 445 448 136 1   0   0   0   1                     
+ZZZE 448EDGE   1 448    1   0   33  1   0 4.26947   0 0.474386                                           
+QAS    0GLOB   0 448    0 -.00948769 106.673705 179.062957 1 1 0                                       0 
+EXTR   0C1A    0 448           1.5    1.5                0.                                              
+EXTR   0C1     0 448             0.0  1             0.50     3.00     10.00     0.00     0.00      0.012 
+EXTR   0RSLT   0 448        0.28924     1.472         0    Q               1.143853  0                   
+EXTR   0C1C    0 448                              1P0     0.0                                            
+EXTR   0SPSC   0 448                                                                               0     
+EXTR   0C6     0 448                      1.0      0.0      0.0      0.0     0.65      0.0      1.0 0    
+EXTR   0LR01   0 448                         5.794362  0         .6418219  0         .6418219  .1982725  
+EXTR   0LR02   0 448     .1510105  .4983971  512.4098  .5023615  .01293566 .06588078 88.4263   0         
+EXTR   0LR03   0 448     122.5     .01805556 .01805556 0         .6932455  6.416667  29.85168  0         
+EXTR   0MANW   0 448                   0.0       0.0                                                     
+SWMM   0MCTL   0 449       1                                                                             
+EXTR   0C1A    0 449           1.5    1.5                .5                                              
+EXTR   0C1     0 449             0.0  1            0.500     3.00     10.00     4.00     3.95      0.012 
+EXTR   0RSLT   0 449        0.28877     1.472         0    Q               0         0                   
+EXTR   0C1C    0 449                              1P0     0.0                                            
+EXTR   0SPSC   0 449                                                                               0     
+ZZZE 449EDGE   0 449    Pipe1          0           447 446 449 136 1   0   0   0   1                     
+ZZZE 449EDGE   1 449    1   0   6   1   0 4.2588    0 0.4732                                             
+EXTR   0C6     0 449                      1.0      0.0      0.0      0.0     0.65      0.0      1.0 0    
+QAS    0GLOB   0 449    .002753162 -.00901332 171.858738 162.972812 1 1 0                              0 
+EXTR   0LR01   0 449                         0         0         0         0         0         1E-4      
+EXTR   0LR02   0 449     .001      0         .012      0         .28925    1.473138  0         150       
+EXTR   0LR03   0 449     0         0         0         0         0         0         0         0         
+EXTR   0MANW   0 449                   0.0       0.0                                                     
+EXTR   0K3     0 447     0.00    0.00    1.00    0.10    2.00    0.00    2.50    0.00                    
+ZZZS   0SEL    0   0          0     1                                                                    
+ZZZS   1SEL    0   0          0     1                                                                    
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    

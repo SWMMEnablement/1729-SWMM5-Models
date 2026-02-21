@@ -1,0 +1,763 @@
+EXTR   0B2     0   0        0       12.566  0.0      .01     .001      300.  0 1    1      200.  1000.   
+SWMM   0MISC   0   0     1                                                                               
+dfie   0dcar   0   0       dat                                                                           
+SWMM   0IMP    0   0     11011111                                                                        
+SWMM   0IMP2   0   0     C:\BOBXP\ncb1rs1.dat                                                            
+SWMM   0TEMP   0   0                                                                                    1
+SWMM   0MODE   0   0     000101                                                                          
+RUNF   2INT    0   0     0001                                                                            
+RUNF   2INT4   0   0     TEMPSWM1.INT                                                                    
+EXTR   0A1     0   0         REGULATOR NC-B1 SEWER SYSTEM - 28-29 AUGUST 1990                            
+RUNF   0A1B    0   0     28-29 AUGUST 1990 STORM                                                         
+RUNF   0A1     0   0      1 0110                                                                         
+RUNF   0B1     0   0     0001      8    29   5    0       23    0   28    8   90     0    90             
+RUNF   0B2     0   0           300.     3600.    86400.                                                  
+GRUN   1E1     0   0       0100                        23:00     08/28/90       1         1.0            
+ZSYM   0NAME   0   0     Pollutant                                   1   40    5    0                    
+ZSYM   1NAME   0   0     Buildup/Washoff                             1   40    5    0                    
+ZSYM   2NAME   0   0     Erosion                                     0   40    5    0                    
+ZSYM   3NAME   0   0     Groundwater                                 0   40    5    0                    
+ZSYM   4NAME   0   0     Infiltration                                1   40    5    0                    
+ZSYM   5NAME   0   0     Landuse                                     1   40    5    0                    
+ZSYM   6NAME   0   0     Initial Loads                               1   40    5    0                    
+ZSYM   7NAME   0   0     Rainfall                                    1   40    5    0                    
+ZSYM   7OBJ    0   0     Gauge1                                                                          
+ZSYM   7VAL    0   0         1                                                                           
+ZSYM   8NAME   0   0     Snow Melt                                   0   40    5    0                    
+ZSYM  10NAME   0   0     BMP                                         0   40    5    0                    
+ZSYM  11NAME   0   0     DW Sewer Inflows                            0   40    5    0                    
+ZSYM  12NAME   0   0     Sewer infiltration                          0   40    5    0                    
+ZSYM  13NAME   0   0     WS Temperatures                             0   40    5    0                    
+ZSYM  14NAME   0   0     Pollutant List                              1   40    5    0                    
+ZSYM  15NAME   0   0     Landuse List                                1   40    5    0                    
+ZSYM  17NAME   0   0     StatPollutants                              0   40    5    0                    
+GRUN   1E3A    0   0             0.       .37        .2       .01        0.        0.                    
+SWMM   0MCTL   0 201     1 1                                                                             
+RUNF   0H1A    0 201     01010000           21                                                           
+RUNF   0H1C    0 201     010                                                                             
+RUNF   0H1B    0 201     Gauge1              Infil1                                                      
+RUNF   0H1     0 201            94.       70.     1440.     .0111                                        
+GRUN   1IN2    0   0     0               .013       .03        .1        .6                              
+GRUN   1IN1    0   0     0       12.        .7    1.9E-4                                                 
+SWMM   0MCTL   0 202     1 1                                                                             
+RUNF   0H1A    0 202     01010000           23                                                           
+RUNF   0H1C    0 202     010                                                                             
+RUNF   0H1B    0 202     Gauge1              Infil1                                                      
+RUNF   0H1     0 202          174.1       65.     1350.     .0071                                        
+GRUN   2IN2    0   0     0               .013       .03        .1        .6                              
+GRUN   2IN1    0   0     0       12.        .7    1.9E-4                                                 
+SWMM   0MCTL   0 203     1 1                                                                             
+RUNF   0H1A    0 203     01010000           24                                                           
+RUNF   0H1C    0 203     010                                                                             
+RUNF   0H1B    0 203     Gauge1              Infil1                                                      
+RUNF   0H1     0 203           39.1       60.      720.     .0071                                        
+SWMM   0MCTL   0 204     1 1                                                                             
+RUNF   0H1A    0 204     01010000           25                                                           
+RUNF   0H1C    0 204     010                                                                             
+RUNF   0H1B    0 204     Gauge1              Infil1                                                      
+RUNF   0H1     0 204          111.2       70.     2520.     .0147                                        
+SWMM   0MCTL   0 205     1 1                                                                             
+RUNF   0H1A    0 205     01010000           26                                                           
+RUNF   0H1C    0 205     010                                                                             
+RUNF   0H1B    0 205     Gauge1              Infil1                                                      
+RUNF   0H1     0 205           197.       45.     1980.     .0194                                        
+SWMM   0MCTL   0 206     1 1                                                                             
+RUNF   0H1A    0 206     01011000           27          28                                               
+RUNF   0H1C    0 206     010                                                                             
+RUNF   0H1B    0 206     Gauge1              Infil1                                                      
+RUNF   0H1     0 206          156.9       70.      720.     .0147      69.3       65.      720.      .005
+RUNF   1H1C    0 206     010                                                                             
+RUNF   1H1B    0 206     Gauge1              Infil1                                                      
+SWMM   0MCTL   0 207     1 1                                                                             
+RUNF   0H1A    0 207     01010000           30                                                           
+RUNF   0H1C    0 207     010                                                                             
+RUNF   0H1B    0 207     Gauge1              Infil1                                                      
+RUNF   0H1     0 207           62.7       70.     1080.      .005                                        
+SWMM   0MCTL   0 208     1 1                                                                             
+RUNF   0H1A    0 208     01010000           31                                                           
+RUNF   0H1C    0 208     010                                                                             
+RUNF   0H1B    0 208     Gauge1              Infil1                                                      
+RUNF   0H1     0 208           84.4       65.     1800.     .0115                                        
+SWMM   0MCTL   0 209     1 1                                                                             
+RUNF   0H1A    0 209     01010000           32                                                           
+RUNF   0H1C    0 209     010                                                                             
+RUNF   0H1B    0 209     Gauge1              Infil1                                                      
+RUNF   0H1     0 209           31.7       70.      540.     .0115                                        
+SWMM   0MCTL   0 210     1 1                                                                             
+RUNF   0H1A    0 210     01010000           33                                                           
+RUNF   0H1C    0 210     010                                                                             
+RUNF   0H1B    0 210     Gauge1              Infil1                                                      
+RUNF   0H1     0 210          149.2       70.     1440.       .01                                        
+SWMM   0MCTL   0 211     1 1                                                                             
+RUNF   0H1A    0 211     01010000           34                                                           
+RUNF   0H1C    0 211     010                                                                             
+RUNF   0H1B    0 211     Gauge1              Infil1                                                      
+RUNF   0H1     0 211           80.4       70.     1800.      .015                                        
+SWMM   0MCTL   0 212     1 1                                                                             
+RUNF   0H1A    0 212     01010000           35                                                           
+RUNF   0H1C    0 212     010                                                                             
+RUNF   0H1B    0 212     Gauge1              Infil1                                                      
+RUNF   0H1     0 212           69.6       75.     3060.     .0068                                        
+SWMM   0MCTL   0 213     1 1                                                                             
+RUNF   0H1A    0 213     01010000           36                                                           
+RUNF   0H1C    0 213     010                                                                             
+RUNF   0H1B    0 213     Gauge1              Infil1                                                      
+RUNF   0H1     0 213          100.4       65.     1890.     .0068                                        
+SWMM   0MCTL   0 214     1 1                                                                             
+RUNF   0H1A    0 214     01010000           37                                                           
+RUNF   0H1C    0 214     010                                                                             
+RUNF   0H1B    0 214     Gauge1              Infil1                                                      
+RUNF   0H1     0 214          127.3       70.     1080.      .015                                        
+SWMM   0MCTL   0 215     1 1                                                                             
+RUNF   0H1A    0 215     01010000           38                                                           
+RUNF   0H1C    0 215     010                                                                             
+RUNF   0H1B    0 215     Gauge1              Infil1                                                      
+RUNF   0H1     0 215           77.4       80.     1260.     .0143                                        
+SWMM   0MCTL   0 216     1 1                                                                             
+RUNF   0H1A    0 216     01010000           39                                                           
+RUNF   0H1C    0 216     010                                                                             
+RUNF   0H1B    0 216     Gauge1              Infil1                                                      
+RUNF   0H1     0 216           46.6       80.     1080.     .0125                                        
+SWMM   0MCTL   0 217     1 1                                                                             
+RUNF   0H1A    0 217     01010000           40                                                           
+RUNF   0H1C    0 217     010                                                                             
+RUNF   0H1B    0 217     Gauge1              Infil1                                                      
+RUNF   0H1     0 217            15.       65.      600.     .0069                                        
+SWMM   0MCTL   0 218     1 1                                                                             
+RUNF   0H1A    0 218     01010000           41                                                           
+RUNF   0H1C    0 218     010                                                                             
+RUNF   0H1B    0 218     Gauge1              Infil1                                                      
+RUNF   0H1     0 218          111.6       65.     1800.     .0238                                        
+RUNF   0J1     0   0               1 1 1231          7.        0.        1.        0.          0         
+GRUN   1J2     0   0     11      200.                                      .7        0.0                 
+GRUN   1J2A    0   0             0.                                                                      
+GRUN   1D2     0   0     0    mg/l                                                                       
+GRUN   1J3     0   0     0 0                        1.7       13.                                        
+GRUN1002J3B    0   0                     100.                                                            
+GRUN   1D3     1   0     010                  0                   Buildup1                               
+RUNF   1D3     1   0                                    0                                                
+RUNF   0L1     0 201     MIXED URBAN         100               0.        0.InitLoad1                     
+GRUN1002L1A    0   0                       0.                                                            
+RUNF   0L1     0 202     MIXED URBAN         100               0.        0.InitLoad1                     
+GRUN1003L1A    0   0                       0.                                                            
+RUNF   0L1     0 203     MIXED URBAN         100               0.        0.InitLoad1                     
+RUNF   0L1     0 204     MIXED URBAN         100               0.        0.InitLoad1                     
+RUNF   0L1     0 205     MIXED URBAN         100               0.        0.InitLoad1                     
+RUNF   0L1     0 206     MIXED URBAN         100               0.        0.InitLoad1                     
+RUNF   1L1     0 206     MIXED URBAN         100               0.        0.InitLoad1                     
+RUNF   0L1     0 207     MIXED URBAN         100               0.        0.InitLoad1                     
+RUNF   0L1     0 208     MIXED URBAN         100               0.        0.InitLoad1                     
+RUNF   0L1     0 209     MIXED URBAN         100               0.        0.InitLoad1                     
+RUNF   0L1     0 210     MIXED URBAN         100               0.        0.InitLoad1                     
+RUNF   0L1     0 211     MIXED URBAN         100               0.        0.InitLoad1                     
+RUNF   0L1     0 212     MIXED URBAN         100               0.        0.InitLoad1                     
+RUNF   0L1     0 213     MIXED URBAN         100               0.        0.InitLoad1                     
+RUNF   0L1     0 214     MIXED URBAN         100               0.        0.InitLoad1                     
+RUNF   0L1     0 215     MIXED URBAN         100               0.        0.InitLoad1                     
+RUNF   0L1     0 216     MIXED URBAN         100               0.        0.InitLoad1                     
+RUNF   0L1     0 217     MIXED URBAN         100               0.        0.InitLoad1                     
+RUNF   0L1     0 218     MIXED URBAN         100               0.        0.InitLoad1                     
+RUNF   0M1     0   0     21                                                                              
+EXTR   0HOT    0   0                                                                                     
+EXTR   0INTI   0   0     TEMPSWM1.INT                                                                    
+TRAN   0JCT1   0   0                 10                                                                  
+EXTR   0A1B    0   0         XYS=C:\MTVE\DATA\NCB1REX1.XYS                                               
+EXTR   0BB2    0   0                60   0.0033    5000.       1.        0        1       1.         0020
+EXTR   0B0     0   0                                                                    1 1 1 1          
+EXTR   0B1     0   0                  1.            1  600  600 0       0.                    00         
+EXTR   0B1A    0   0        0   0   0   0    0   6   0   0                                               
+EXTR   0TMP1   0   0     42        46        48        56        59        62        70        75        
+EXTR   0TMP1   1   0     76        77                                                                    
+EXTR   0TMP2   0   0     560       590       610       690       760       810       830       505       
+EXTR   0TMP2   1   0     555       840                                                                   
+EXTR   0TMP3   0   0     42        46        48        56        59        62        70        75        
+EXTR   0TMP3   1   0     76        77                                                                    
+SWMM   0MCTL   0 219       1                                                                             
+SWMM   0MCTL   0 220       1                                                                             
+EXTR   0C1     0 220            2.87 1        0.      4.               500.     33.6     32.9       .015 
+EXTR   0SPSC   0 220                                                                               0     
+SWMM   0MCTL   0 221       1                                                                             
+SWMM   0MCTL   0 222       1                                                                             
+EXTR   0C1     0 222            2.87 1        0.      4.               900.     32.9     31.5       .015 
+EXTR   0SPSC   0 222                                                                               0     
+SWMM   0MCTL   0 223       1                                                                             
+SWMM   0MCTL   0 224       1                                                                             
+EXTR   0C1     0 224            2.87 1        0.      4.               230.     31.5      30.       .015 
+EXTR   0SPSC   0 224                                                                               0     
+SWMM   0MCTL   0 225       1                                                                             
+EXTR   0C1     0 225            2.87 1        0.      4.               740.      30.     29.1       .015 
+EXTR   0SPSC   0 225                                                                               0     
+SWMM   0MCTL   0 226       1                                                                             
+SWMM   0MCTL   0 227       1                                                                             
+EXTR   0C1     0 227             5.9 1        0.     4.5              1080.     29.1     28.6       .015 
+EXTR   0SPSC   0 227                                                                               0     
+SWMM   0MCTL   0 228       1                                                                             
+EXTR   0C1     0 228             5.9 1        0.      5.               750.     28.6     26.3       .015 
+EXTR   0SPSC   0 228                                                                               0     
+SWMM   0MCTL   0 229       1                                                                             
+EXTR   0C1     0 229            6.06 1        0.      5.               710.     26.3     20.7       .015 
+EXTR   0SPSC   0 229                   1                                                           0     
+SWMM   0MCTL   0 230       1                                                                             
+EXTR   0C1     0 230             9.2 1        0.     5.5              1250.     20.7     20.2       .015 
+EXTR   0SPSC   0 230                                                                               0     
+SWMM   0MCTL   0 231       1                                                                             
+SWMM   0MCTL   0 232       1                                                                             
+EXTR   0C1     0 232           13.53 1        0.      6.               660.     20.2     19.3       .015 
+EXTR   0SPSC   0 232                                                                               0     
+SWMM   0MCTL   0 233       1                                                                             
+EXTR   0C1     0 233           13.53 1        0.     6.5              1810.     19.3     17.5       .015 
+EXTR   0SPSC   0 233                   1                                                           0     
+SWMM   0MCTL   0 234       1                                                                             
+SWMM   0MCTL   0 235       1                                                                             
+EXTR   0C1     0 235            18.5 1        0.      7.               610.     17.5     16.2       .015 
+EXTR   0SPSC   0 235                                                                               0     
+SWMM   0MCTL   0 236       1                                                                             
+SWMM   0MCTL   0 237       1                                                                             
+EXTR   0C1     0 237            18.5 1        0.      7.              1800.     16.2      13.       .015 
+EXTR   0SPSC   0 237                   1                                                           0     
+SWMM   0MCTL   0 238       1                                                                             
+EXTR   0C1     0 238            18.5 1        0.      7.               610.      13.      12.       .015 
+EXTR   0SPSC   0 238                                                                               0     
+SWMM   0MCTL   0 239       1                                                                             
+EXTR   0C1     0 239            1.77 1        0.      4.              1600.      14.      12.       .015 
+EXTR   0SPSC   0 239                                                                               0     
+SWMM   0MCTL   0 240       1                                                                             
+EXTR   0C1     0 240           23.55 1        0.     7.5              1220.      12.     9.73       .015 
+EXTR   0SPSC   0 240                                                                               0     
+SWMM   0MCTL   0 241       1                                                                             
+SWMM   0MCTL   0 242       1                                                                             
+EXTR   0C1     0 242            1.38 1        0.     3.5               800.     46.5      40.       .015 
+EXTR   0SPSC   0 242                                                                               0     
+SWMM   0MCTL   0 243       1                                                                             
+EXTR   0C1     0 243            1.38 1        0.      4.              1070.      40.      31.       .015 
+EXTR   0SPSC   0 243                                                                               0     
+SWMM   0MCTL   0 244       1                                                                             
+EXTR   0C1     0 244            3.23 1        0.      4.              1420.      31.      20.       .015 
+EXTR   0SPSC   0 244                                                                               0     
+SWMM   0MCTL   0 245       1                                                                             
+EXTR   0C1     0 245            3.93 1        0.      4.              1320.      20.     9.73       .015 
+EXTR   0SPSC   0 245                                                                               0     
+SWMM   0MCTL   0 246       1                                                                             
+EXTR   0C1     0 246           29.69 1        0.     7.5              1820.     9.73      5.8       .015 
+EXTR   0SPSC   0 246                   1                                                           0     
+SWMM   0MCTL   0 247       1                                                                             
+SWMM   0MCTL   0 248       1                                                                             
+EXTR   0C1     0 248           10.83 2        0.    9.17    13.08      680.       0.       0.       .015 
+EXTR   0SPSC   0 248                                                                               0     
+SWMM   1MCTL   0 248       1                                                                             
+EXTR   1C1     0 248           10.83 2        0.    9.17    13.08      680.      5.8     4.78       .015 
+EXTR   1SPSC   0 248                                                                               0     
+EXTR   0SPDV   0 248     111                                                                             
+EXTR   0SPDN   0 248     700       702       704                                                         
+EXTR   2C1     0 248           10.83 2        0.    9.17    13.08      680.      5.8     4.78       .015 
+EXTR   2SPSC   0 248                                                                               0     
+EXTR   3C1     0 248           10.83 2        0.    9.17     9.92      680.      5.8     4.78       .015 
+EXTR   3SPSC   0 248                                                                               0     
+SWMM   0MCTL   0 249       1                                                                             
+SWMM   0MCTL   0 250       1                                                                             
+EXTR   0C1     0 250            11.4 2        0.    9.17    13.08      560.       0.       0.       .015 
+EXTR   0SPSC   0 250                                                                               0     
+SWMM   1MCTL   0 250       1                                                                             
+EXTR   1C1     0 250            11.4 2        0.    9.17    13.08      560.     4.78     3.92       .015 
+EXTR   1SPSC   0 250                                                                               0     
+EXTR   0SPDV   0 250     111                                                                             
+EXTR   0SPDN   0 250     710       712       714                                                         
+EXTR   2C1     0 250            11.4 2        0.    9.17    13.08      560.     4.78     3.92       .015 
+EXTR   2SPSC   0 250                                                                               0     
+EXTR   3C1     0 250            11.4 2        0.    9.17     9.92      560.     4.78     3.92       .015 
+EXTR   3SPSC   0 250                                                                               0     
+SWMM   0MCTL   0 251       1                                                                             
+SWMM   0MCTL   0 252       1                                                                             
+EXTR   0C1     0 252            1.02 1        0.      5.               471.     1.11     -.79       .015 
+EXTR   0SPSC   0 252                                                                               0     
+SWMM   0MCTL   0 253       1                                                                             
+SWMM   0MCTL   0 254       1                                                                             
+EXTR   0C1     0 254            1.02 1        0.      5.               420.      2.8     1.11       .015 
+EXTR   0SPSC   0 254                                                                               0     
+SWMM   0MCTL   0 255       1                                                                             
+SWMM   0MCTL   0 256       1                                                                             
+EXTR   0C1     0 256            1.02 2        0.    4.25     3.83      690.     3.39      2.8       .015 
+EXTR   0SPSC   0 256                                                                               0     
+SWMM   0MCTL   0 257       1                                                                             
+EXTR   0C1     0 257            1.02 2        0.      4.     3.67      720.       4.     3.39       .015 
+EXTR   0SPSC   0 257                                                                               0     
+SWMM   0MCTL   0 258       1                                                                             
+SWMM   0MCTL   0 259       1                                                                             
+EXTR   0C1     0 259            1.02 2        0.    5.25     7.17      798.     -.79      -4.       .015 
+EXTR   0SPSC   0 259                                                                               0     
+SWMM   0MCTL   0 260       1                                                                             
+SWMM   0MCTL   0 261       1                                                                             
+EXTR   0C1     0 261            11.4 2        0.    9.17    13.08      540.       0.       0.       .015 
+EXTR   0SPSC   0 261                                                                               0     
+SWMM   1MCTL   0 261       1                                                                             
+EXTR   1C1     0 261            11.4 2        0.    9.17    13.08      540.     3.92     -2.9       .015 
+EXTR   1SPSC   0 261                                                                               0     
+EXTR   0SPDV   0 261     111                                                                             
+EXTR   0SPDN   0 261     737       738       739                                                         
+EXTR   2C1     0 261            11.4 2        0.    9.17    13.08      540.     3.92     -2.9       .015 
+EXTR   2SPSC   0 261                                                                               0     
+EXTR   3C1     0 261            11.4 2        0.    9.17     9.92      540.     3.92     -2.9       .015 
+EXTR   3SPSC   0 261                                                                               0     
+SWMM   0MCTL   0 262       1                                                                             
+EXTR   0C1     0 262            17.1 2        0.     10.      16.      470.       0.       0.       .015 
+EXTR   0SPSC   0 262                                                                               0     
+SWMM   1MCTL   0 262       1                                                                             
+EXTR   1C1     0 262            17.1 2        0.     10.      16.      470.     -2.9      -4.       .015 
+EXTR   1SPSC   0 262                                                                               0     
+EXTR   0SPDV   0 262     11                                                                              
+EXTR   0SPDN   0 262     740       742                                                                   
+EXTR   2C1     0 262            17.1 2        0.     10.      16.      470.     -2.9      -4.       .015 
+EXTR   2SPSC   0 262                                                                               0     
+SWMM   0MCTL   0 263       1                                                                             
+SWMM   0MCTL   0 264       1                                                                             
+EXTR   0C1     0 264              0. 2        0.      6.       6.      521.     1.67       .6       .015 
+EXTR   0SPSC   0 264                                                                               0     
+SWMM   0MCTL   0 265       1                                                                             
+SWMM   0MCTL   0 266       1                                                                             
+EXTR   0C1     0 266              0. 2        0.      7.       7.      560.       .6     -.56       .015 
+EXTR   0SPSC   0 266                                                                               0     
+SWMM   0MCTL   0 267       1                                                                             
+EXTR   0C1     0 267              0. 2        0.      7.       7.      560.     -.56     -2.9       .015 
+EXTR   0SPSC   0 267                                                                               0     
+SWMM   0MCTL   0 268       1                                                                             
+SWMM   0MCTL   0 269       1                                                                             
+SWMM   0MCTL   0 270       1                                                                             
+EXTR   0C1     0 270             .33 1        0.      2.              1350.    -4.91    -8.05       .015 
+EXTR   0SPSC   0 270                                                                               0     
+SWMM   0MCTL   0 271       1                                                                             
+SWMM   0MCTL   0 272       1                                                                             
+EXTR   0C1     0 272             .33 1        0.      3.              1350.    -8.05   -10.64       .015 
+EXTR   0SPSC   0 272                   1                                                           0     
+SWMM   0MCTL   0 273       1                                                                             
+SWMM   0MCTL   0 274       1                                                                             
+EXTR   0C1     0 274             .33 1        0.      3.               200.   -10.64   -10.91       .015 
+EXTR   0SPSC   0 274                                                                               0     
+SWMM   0MCTL   0 275       1                                                                             
+SWMM   0MCTL   0 276       1                                                                             
+EXTR   0C1     0 276            1.53 2        0.    7.83     8.08      500.      -.7     -1.1       .015 
+EXTR   0SPSC   0 276                                                                               0     
+SWMM   0MCTL   0 277       1                                                                             
+SWMM   0MCTL   0 278       1                                                                             
+EXTR   0C1     0 278            1.53 2        0.    7.83     8.08      900.     -1.1    -2.55       .015 
+EXTR   0SPSC   0 278                                                                               0     
+SWMM   0MCTL   0 279       1                                                                             
+EXTR   0C1     0 279            1.53 2        0.    7.83     8.08      850.    -2.55      -4.       .015 
+EXTR   0SPSC   0 279                                                                               0     
+SWMM   0MCTL   0 280       1                                                                             
+SWMM   0MCTL   0 281       1                                                                             
+SWMM   0MCTL   0 282       1                                                                             
+EXTR   0C1     0 282           37.07 2        0.    6.75     6.75      530.   -13.86   -16.16       .015 
+EXTR   0SPSC   0 282                   1                                                           0     
+SWMM   0MCTL   0 283       1                                                                             
+EXTR   0C1     0 283             .33 1        0.      3.               850.   -10.91   -13.86       .015 
+EXTR   0SPSC   0 283                                                                               0     
+SWMM   0MCTL   0 284       1                                                                             
+SWMM   0MCTL   0 285       1                                                                             
+EXTR   0C1     0 285              0. 2        0.     10.      32.      100.      -2.      -5.       .015 
+EXTR   0SPSC   0 285                   1                                                           0     
+SWMM   0MCTL   0 286       1                                                                             
+SWMM   0MCTL   0 287       1                                                                             
+EXTR   0C1     0 287              0. 1        0.      3.               100.    -2.91     -5.5       .015 
+EXTR   0SPSC   0 287                   1                                                           0     
+SWMM   0MCTL   0 288       1                                                                             
+SWMM   0MCTL   0 289       1                                                                             
+SWMM   0MCTL   0 290       1                                                                             
+EXTR   0C1     0 290              0. 1        0.     9.5               500.     32.9     30.8       .015 
+EXTR   0SPSC   0 290                   1                                                           0     
+SWMM   0MCTL   0 291       1                                                                             
+SWMM   0MCTL   0 292       1                                                                             
+SWMM   0MCTL   0 293       1                                                                             
+EXTR   0C1     0 293              0. 1        0.     6.5               500.     26.3     24.8       .015 
+EXTR   0SPSC   0 293                   1                                                           0     
+SWMM   0MCTL   0 294       1                                                                             
+SWMM   0MCTL   0 295       1                                                                             
+SWMM   0MCTL   0 296       1                                                                             
+EXTR   0C1     0 296              0. 1        0.     3.5               500.      40.      39.       .015 
+EXTR   0SPSC   0 296                                                                               0     
+EXTR   0D1     0 201                      60.     33.6     2.87      0. 0                                
+EXTR   0D1     0 219                      57.     32.9       0.      0. 0                                
+EXTR   0D1     0 288                      57.     32.9       0.      0. 0                                
+EXTR   0D1     0 221                      50.     31.5       0.      0. 0                                
+EXTR   0D1     0 223                      50.      30.       0.      0. 0                                
+EXTR   0D1     0 202                      50.     29.1     3.03      0. 0                                
+EXTR   0D1     0 226                      50.     28.6       0.      0. 0                                
+EXTR   0D1     0 203                      50.     26.3      .16      0. 0                                
+EXTR   0D1     0 291                      50.     26.3       0.      0. 0                                
+EXTR   0D1     0 204                      52.     20.7     3.14      0. 0                                
+EXTR   0D1     0 205                      40.     20.2     4.33      0. 0                                
+EXTR   0D1     0 231                      42.     19.3       0.      0. 0                                
+EXTR   0D1     0 206                      38.     17.5     4.97      0. 0                                
+EXTR   0D1     0 234                      34.     16.2       0.      0. 0                                
+EXTR   0D1     0 236                      40.      13.       0.      0. 0                                
+EXTR   0D1     0 211                      40.      14.     1.77      0. 0                                
+EXTR   0D1     0 210                      36.      12.     3.28      0. 0                                
+EXTR   0D1     0 207                      57.     46.5     1.38      0. 0                                
+EXTR   0D1     0 241                      60.      40.       0.      0. 0                                
+EXTR   0D1     0 294                      60.      40.       0.      0. 0                                
+EXTR   0D1     0 208                      57.      31.     1.85      0. 0                                
+EXTR   0D1     0 209                      44.      20.       .7      0. 0                                
+EXTR   0D1     0 213                      27.     9.73     2.21      0. 0                                
+EXTR   0D1     0 214                      27.      5.8      1.8      0. 0                                
+EXTR   0D1     0 247                      25.     4.78      1.7      0. 0                                
+EXTR   0D1     0 260                      16.     -2.9       0.      0. 0                                
+EXTR   0D1     0 251                      25.     1.11       0.      0. 0                                
+EXTR   0D1     0 215                      25.     -.79       0.      0. 0                                
+EXTR   0D1     0 217                      10.    -2.91       .5      0. 0                                
+EXTR   0D1     0 268                      10.    -4.91       0.      0. 0                                
+EXTR   0D1     0 269                      22.    -8.05       0.      0. 0                                
+EXTR   0D1     0 275                      13.      -.7       0.      0. 0                                
+EXTR   0D1     0 212                      13.     -1.1       0.      0. 0                                
+EXTR   0D1     0 271                      17.   -10.64       0.      0. 0                                
+EXTR   0D1     0 277                     14.5    -2.55       0.      0. 0                                
+EXTR   0D1     0 258                     16.4      -4.       0.      0. 0                                
+EXTR   0D1     0 280                      13.   -13.86       0.      0. 0                                
+EXTR   0D1     0 281                      22.   -16.16       0.      0. 0                                
+EXTR   0D1     0 273                      17.   -10.91       0.      0. 0                                
+EXTR   0D1     0 284                      12.      -5.       0.      0. 0                                
+EXTR   0D1     0 286                      10.     -5.5       0.      0. 0                                
+EXTR   0D1     0 289                      57.     30.8       0.      0. 0                                
+EXTR   0D1     0 292                      50.     24.8       0.      0. 0                                
+EXTR   0D1     0 295                      57.      39.       0.      0. 0                                
+EXTR   0D1     0 265                      15.     -.56       0.      0. 0                                
+EXTR   0D1     0 263                      15.       .6       0.      0. 0                                
+EXTR   0D1     0 218                     15.4     1.67       1.      0. 0                                
+EXTR   0D1     0 253                      30.      2.8       0.      0. 0                                
+EXTR   0D1     0 255                      20.     3.39       0.      0. 0                                
+EXTR   0D1     0 216                      18.       4.     1.02      0. 0                                
+EXTR   0D1     0 249                    17.74     3.92       0.      0. 0                                
+SWMM   0MCTL   0 297       1                                                                             
+EXTR   0SPDV   0 297                   1                                                                 
+EXTR   1F1     0 297                           2    21.  .85     -4.         0. 0             0          
+SWMM   0MCTL   0 298       1                                                                             
+EXTR   0SPDV   0 298                   1                                                                 
+EXTR   1F1     0 298                           2     1.  .65   -2.91         0. 0             0          
+SWMM   0MCTL   0 299       1                                                                             
+EXTR   0SPDV   0 299                          1                                                          
+EXTR   1G1     0 299                          3    34.23    37.23       4.    4.1             0          
+SWMM   0MCTL   0 300       1                                                                             
+EXTR   0SPDV   0 300                          1                                                          
+EXTR   1G1     0 300                          3    27.63    32.55     13.7    4.1             0          
+SWMM   0MCTL   0 301       1                                                                             
+EXTR   0SPDV   0 301                          1                                                          
+EXTR   1G1     0 301                          3     40.5      44.      3.5    4.1             0          
+EXTR   0I1     0 281                 1 0                                                      0          
+EXTR   1I1     0 281                   0                                                                 
+EXTR   0SP1N   0 281                                                      1   1 1                        
+EXTR   0I1     0 286                 1 0                                                      0          
+EXTR   1I1     0 286                   0                                                                 
+EXTR   0SP1N   0 286                                                      1                              
+EXTR   0I1     0 289                 1 0                                                      0          
+EXTR   1I1     0 289                   0                                                                 
+EXTR   0SP1N   0 289                                                      1                              
+EXTR   0I1     0 292                 1 0                                                      0          
+EXTR   1I1     0 292                   0                                                                 
+EXTR   0SP1N   0 292                                                      1                              
+EXTR   0I1     0 295                 1 0                                                      0          
+EXTR   1I1     0 295                   0                                                                 
+EXTR   0SP1N   0 295                                                      1                              
+EXTR   0I1     0 284                 5 0                                                      1          
+EXTR   1I1     0 284                   0                                                                 
+EXTR   0SP1N   0 284                                                      1                              
+EXTR   0J3     0 284        0    1                                                                       
+EXTR   0J4     0 284           1.   -2.97      5.     .03      6.     .54      7.     .66      8.     .27
+EXTR   0J4     1 284           9.    -.53     10.   -1.52     11.   -2.39     15.   -1.56                
+EXTR   0SP1N   0 275         1                                                                           
+EXTR   0K3     0 275           0.    22.4   24.17   22.76   24.25   24.06   24.33   26.85   24.42   33.03
+EXTR   0K3     1 275         24.5   44.54   24.58   62.45   24.67   75.89   24.75   90.22   24.83     95.
+EXTR   0K3     2 275        24.92   97.46     25.   99.08   25.08  100.11   25.17  100.21   25.25   99.52
+EXTR   0K3     3 275        25.33   98.51   25.42   97.59    25.5   96.87   25.58   96.32   25.67   95.89
+EXTR   0K3     4 275        25.75   95.52   25.83   95.21   25.92   94.95     26.   94.74   26.08   94.44
+EXTR   0K3     5 275        26.17   93.62   26.25   92.16   26.33   90.36   26.42   88.43    26.5   86.57
+EXTR   0K3     6 275        26.58   84.83   26.67   82.97   26.75   80.58   26.83   76.91   26.92   73.21
+EXTR   0K3     7 275          27.   69.36   27.08    62.4   27.17   56.57   27.25   51.95   27.33   48.24
+EXTR   0K3     8 275        27.42   45.08    27.5   42.48   27.58   40.08   27.67   37.95   27.75   36.15
+EXTR   0K3     9 275        27.83   34.69   27.92   33.43     28.   32.33   28.08   31.36   28.17    30.5
+EXTR   0K3    10 275        28.25   29.72   28.33     29.   28.42   28.34    28.5   27.77   28.58   27.25
+EXTR   0K3    11 275        28.67   26.79   28.75   26.37   28.83   25.99   28.92   25.65     29.   25.34
+EXTR   0SP1N   0 288                                                          1 1                        
+EXTR   0SP1N   0 226                                                          1 1                        
+EXTR   0SP1N   0 291                                                          1 1                        
+EXTR   0SP1N   0 210                                                          1 1                        
+EXTR   0SP1N   0 294                                                          1 1                        
+EXTR   0SP1N   0 213                                                          1 1                        
+EXTR   0SP1N   0 269                                                          1 1                        
+EXTR   0SP1N   0 258                                                          1 1                        
+EXTR   0SP1N   0 280                                                          1 1                        
+EXTR   0BB1    0   0                                0.65              0.65       2.       1.        6    
+ZSYM   0OBJ    0   0     TSS                                                                             
+ZSYM   0VAL    0   0         1                                                                           
+ZSYM   1OBJ    0   0     Buildup1                                                                        
+ZSYM   1VAL    0   0         1                                                                           
+ZSYM   4OBJ    0   0     Infil1                                                                          
+ZSYM   4VAL    0   0         1                                                                           
+ZSYM   5OBJ    0   0     MIXED URBAN                                                                     
+ZSYM   5VAL    0   0         1                                                                           
+ZSYM   6OBJ    0   0     InitLoad1                                                                       
+ZSYM   6VAL    0   0         1                                                                           
+ZSYM  14OBJ    0   0     TSS                                                                             
+ZSYM  14VAL    0   0         1                                                                           
+ZSYM  15OBJ    0   0     MIXED URBAN                                                                     
+ZSYM  15VAL    0   0         1                                                                           
+ZSYM   0GLDB   0   0         0                                                                           
+SWMM   0SWMM   0   0           1.31                                                                      
+ZZZC   0CNTL   0   0    51   50   0    999   999   4642.617   0    211  swmmxp                           
+ZZZC   0CNTL   1   0    -399.5959           355.6924                                                     
+ZZZG   0GRID   0   0    20.0000        20.0000        0.0000         0.0000         0    0               
+ZZZD   0DIRT   0   0         1    1                                                                      
+ZZZN 201NODE   0 201    40             0 0 4.26058  220 -1  -1  -1  -1  201 134 1   0   0   0   45  1    
+ZZZN 201NODE   1 201    1   2   106 207 1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 201NODE   2 201    401.7498            114.2497            406.4622            118.9620             
+ZZZN 202NODE   0 202    45             0 0 4.26058  225 227 -1  -1  -1  202 134 1   0   0   0   45  1    
+ZZZN 202NODE   1 202    1   2   136 4   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 202NODE   2 202    481.7498            114.2497            486.4622            118.9620             
+ZZZN 203NODE   0 203    47             0 0 4.26058  228 229 300 -1  -1  203 134 1   0   0   0   45  1    
+ZZZN 203NODE   1 203    1   2   136 4   0   1   1   -1  -1  -1  -1  -1  -1                               
+ZZZN 203NODE   2 203    521.7498            114.2497            526.4622            118.9620             
+ZZZN 204NODE   0 204    49             0 0 4.26058  229 230 -1  -1  -1  204 134 1   0   0   0   45  1    
+ZZZN 204NODE   1 204    1   2   136 4   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 204NODE   2 204    541.7498            114.2497            546.4622            118.9620             
+ZZZN 205NODE   0 205    50             0 0 4.26058  230 232 -1  -1  -1  205 134 1   0   0   0   45  1    
+ZZZN 205NODE   1 205    1   2   136 4   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 205NODE   2 205    561.7498            114.2497            566.4622            118.9620             
+ZZZN 206NODE   0 206    52             0 0 4.26058  233 235 -1  -1  -1  206 134 1   0   0   0   45  1    
+ZZZN 206NODE   1 206    1   2   136 4   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 206NODE   2 206    601.7498            114.2497            606.4622            118.9620             
+ZZZN 207NODE   0 207    57             0 0 4.26058  242 -1  -1  -1  -1  207 134 1   0   0   0   45  1    
+ZZZN 207NODE   1 207    1   2   136 4   1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 207NODE   2 207    681.7498            34.2497             686.4622            38.9620              
+ZZZN 208NODE   0 208    60             0 0 4.26058  243 244 -1  -1  -1  208 134 1   0   0   0   45  1    
+ZZZN 208NODE   1 208    1   2   136 4   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 208NODE   2 208    681.7498            74.2497             686.4622            78.9620              
+ZZZN 209NODE   0 209    61             0 0 4.26058  244 245 -1  -1  -1  209 134 1   0   0   0   45  1    
+ZZZN 209NODE   1 209    1   2   136 4   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 209NODE   2 209    701.7498            74.2497             706.4622            78.9620              
+ZZZN 210NODE   0 210    56             0 0 4.26058  238 239 240 -1  -1  210 134 1   0   0   0   45  1    
+ZZZN 210NODE   1 210    1   2   136 4   0   0   1   -1  -1  -1  -1  -1  -1                               
+ZZZN 210NODE   2 210    661.7498            114.2497            666.4622            118.9620             
+ZZZN 211NODE   0 211    55             0 0 4.26058  239 -1  -1  -1  -1  211 134 1   0   0   0   45  1    
+ZZZN 211NODE   1 211    1   2   136 4   1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 211NODE   2 211    661.7498            134.2497            666.4622            138.9620             
+ZZZN 212NODE   0 212    72             0 0 4.26058  276 278 -1  -1  -1  212 134 1   0   0   0   45  1    
+ZZZN 212NODE   1 212    1   2   136 4   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 212NODE   2 212    821.7498            114.2497            826.4622            118.9620             
+ZZZN 213NODE   0 213    62             0 0 4.26058  240 245 246 -1  -1  213 134 1   0   0   0   45  1    
+ZZZN 213NODE   1 213    1   2   136 4   0   0   1   -1  -1  -1  -1  -1  -1                               
+ZZZN 213NODE   2 213    721.7498            74.2497             726.4622            78.9620              
+ZZZN 214NODE   0 214    63             0 0 4.26058  246 248 -1  -1  -1  214 134 1   0   0   0   45  1    
+ZZZN 214NODE   1 214    1   2   136 4   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 214NODE   2 214    741.7498            74.2497             746.4622            78.9620              
+ZZZN 215NODE   0 215    67             0 0 4.26058  252 259 -1  -1  -1  215 134 1   0   0   0   45  1    
+ZZZN 215NODE   1 215    1   2   136 4   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 215NODE   2 215    807.6077            60.1075             812.3200            64.8199              
+ZZZN 216NODE   0 216    89             0 0 4.26058  257 -1  -1  -1  -1  216 134 1   0   0   0   45  1    
+ZZZN 216NODE   1 216    1   2   136 4   1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 216NODE   2 216    751.0391            3.5390              755.7515            8.2513               
+ZZZN 217NODE   0 217    68             0 0 4.26058  287 298 -1  -1  -1  217 134 1   0   0   0   45  1    
+ZZZN 217NODE   1 217    1   2   136 4   1   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 217NODE   2 217    955.7191            108.4517            960.4314            113.1640             
+ZZZN 218NODE   0 218    86             0 0 4.26058  264 -1  -1  -1  -1  218 134 1   0   0   0   45  1    
+ZZZN 218NODE   1 218    1   2   136 4   1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 218NODE   2 218    801.7498            134.2497            806.4622            138.9620             
+ZZZN 219NODE   0 219    41             0 0 4.26058  220 222 299 -1  -1  219 134 0   0   0   0   45  1    
+ZZZN 219NODE   1 219    1   2   88  11  0   1   1   -1  -1  -1  -1  -1  -1                               
+ZZZN 219NODE   2 219    421.7498            114.2497            426.4622            118.9620             
+ZZZN 221NODE   0 221    43             0 0 4.26058  222 224 -1  -1  -1  221 134 0   0   0   0   45  1    
+ZZZN 221NODE   1 221    1   2   0   0   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 221NODE   2 221    441.7498            114.2497            446.4622            118.9620             
+ZZZN 223NODE   0 223    44             0 0 4.26058  224 225 -1  -1  -1  223 134 0   0   0   0   45  1    
+ZZZN 223NODE   1 223    1   2   0   0   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 223NODE   2 223    461.7498            114.2497            466.4622            118.9620             
+ZZZN 226NODE   0 226    46             0 0 4.26058  227 228 -1  -1  -1  226 134 0   0   0   0   45  1    
+ZZZN 226NODE   1 226    1   2   0   0   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 226NODE   2 226    501.7498            114.2497            506.4622            118.9620             
+ZZZN 231NODE   0 231    51             0 0 4.26058  232 233 -1  -1  -1  231 134 0   0   0   0   45  1    
+ZZZN 231NODE   1 231    1   2   0   0   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 231NODE   2 231    581.7498            114.2497            586.4622            118.9620             
+ZZZN 234NODE   0 234    53             0 0 4.26058  235 237 -1  -1  -1  234 134 0   0   0   0   45  1    
+ZZZN 234NODE   1 234    1   2   0   0   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 234NODE   2 234    621.7498            114.2497            626.4622            118.9620             
+ZZZN 236NODE   0 236    54             0 0 4.26058  237 238 -1  -1  -1  236 134 0   0   0   0   45  1    
+ZZZN 236NODE   1 236    1   2   0   0   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 236NODE   2 236    641.7498            114.2497            646.4622            118.9620             
+ZZZN 241NODE   0 241    58             0 0 4.26058  242 243 301 -1  -1  241 134 0   0   0   0   45  1    
+ZZZN 241NODE   1 241    1   2   88  11  0   1   1   -1  -1  -1  -1  -1  -1                               
+ZZZN 241NODE   2 241    681.7498            54.2497             686.4622            58.9620              
+ZZZN 247NODE   0 247    64             0 0 4.26058  248 250 -1  -1  -1  247 134 0   0   0   0   45  1    
+ZZZN 247NODE   1 247    1   2   0   0   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 247NODE   2 247    761.7498            74.2497             766.4622            78.9620              
+ZZZN 249NODE   0 249    91             0 0 4.26058  250 261 -1  -1  -1  249 134 0   0   0   0   45  1    
+ZZZN 249NODE   1 249    1   2   0   0   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 249NODE   2 249    781.7498            74.2497             786.4622            78.9620              
+ZZZN 251NODE   0 251    66             0 0 4.26058  252 254 -1  -1  -1  251 134 0   0   0   0   45  1    
+ZZZN 251NODE   1 251    1   2   248 153 1   0   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 251NODE   2 251    793.4656            45.9654             798.1779            50.6777              
+ZZZN 253NODE   0 253    87             0 0 4.26058  254 256 -1  -1  -1  253 134 0   0   0   0   45  1    
+ZZZN 253NODE   1 253    1   2   248 153 1   0   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 253NODE   2 253    779.3234            31.8233             784.0358            36.5356              
+ZZZN 255NODE   0 255    88             0 0 4.26058  256 257 -1  -1  -1  255 134 0   0   0   0   45  1    
+ZZZN 255NODE   1 255    1   2   248 153 1   0   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 255NODE   2 255    765.1813            17.6811             769.8936            22.3935              
+ZZZN 258NODE   0 258    75             0 0 4.26058  259 262 279 285 297 258 134 0   0   0   0   45  1    
+ZZZN 258NODE   1 258    1   2   0   0   0   0   0   1   1   -1  -1  -1  -1                               
+ZZZN 258NODE   2 258    821.7498            74.2497             826.4622            78.9620              
+ZZZN 260NODE   0 260    65             0 0 4.26058  261 262 267 -1  -1  260 134 0   0   0   0   45  1    
+ZZZN 260NODE   1 260    1   2   0   0   0   1   0   -1  -1  -1  -1  -1  -1                               
+ZZZN 260NODE   2 260    801.7498            74.2497             806.4622            78.9620              
+ZZZN 263NODE   0 263    85             0 0 4.26058  264 266 -1  -1  -1  263 134 0   0   0   0   45  1    
+ZZZN 263NODE   1 263    1   2   88  11  0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 263NODE   2 263    801.7498            114.2497            806.4622            118.9620             
+ZZZN 265NODE   0 265    84             0 0 4.26058  266 267 -1  -1  -1  265 134 0   0   0   0   45  1    
+ZZZN 265NODE   1 265    1   2   0   0   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 265NODE   2 265    801.7498            94.2497             806.4622            98.9620              
+ZZZN 268NODE   0 268    69             0 0 4.26058  270 298 -1  -1  -1  268 134 0   0   0   0   45  1    
+ZZZN 268NODE   1 268    1   2   248 153 1   0   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 268NODE   2 268    936.9252            101.6113            941.6376            106.3236             
+ZZZN 269NODE   0 269    70             0 0 4.26058  270 272 -1  -1  -1  269 134 0   0   0   0   45  1    
+ZZZN 269NODE   1 269    1   2   0   11  0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 269NODE   2 269    918.1314            94.7709             922.8437            99.4832              
+ZZZN 271NODE   0 271    73             0 0 4.26058  272 274 -1  -1  -1  271 134 0   0   0   0   45  1    
+ZZZN 271NODE   1 271    1   2   0   0   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 271NODE   2 271    899.3375            87.9305             904.0499            92.6428              
+ZZZN 273NODE   0 273    78             0 0 4.26058  274 283 -1  -1  -1  273 134 0   0   0   0   45  1    
+ZZZN 273NODE   1 273    1   2   0   0   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 273NODE   2 273    861.7498            74.2497             866.4622            78.9620              
+ZZZN 275NODE   0 275    71             0 0 4.26058  276 -1  -1  -1  -1  275 134 0   0   0   0   45  1    
+ZZZN 275NODE   1 275    1   2   248 153 1   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 275NODE   2 275    821.7498            134.2497            826.4622            138.9620             
+ZZZN 277NODE   0 277    74             0 0 4.26058  278 279 -1  -1  -1  277 134 0   0   0   0   45  1    
+ZZZN 277NODE   1 277    1   2   0   0   0   1   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 277NODE   2 277    821.7498            94.2497             826.4622            98.9620              
+ZZZN 280NODE   0 280    76             0 0 4.26058  282 283 297 -1  -1  280 134 0   0   0   0   45  1    
+ZZZN 280NODE   1 280    1   2   248 153 1   0   0   -1  -1  -1  -1  -1  -1                               
+ZZZN 280NODE   2 280    881.7498            74.2497             886.4622            78.9620              
+ZZZN 281NODE   0 281    77             0 0 4.26058  282 -1  -1  -1  -1  281 134 0   0   0   0   45  1    
+ZZZN 281NODE   1 281    1   2   0   11  0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 281NODE   2 281    901.7498            74.2497             906.4622            78.9620              
+ZZZN 284NODE   0 284    79             0 0 4.26058  285 -1  -1  -1  -1  284 134 0   0   0   0   45  1    
+ZZZN 284NODE   1 284    1   2   0   0   0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 284NODE   2 284    841.7498            74.2497             846.4622            78.9620              
+ZZZN 286NODE   0 286    80             0 0 4.26058  287 -1  -1  -1  -1  286 134 0   0   0   0   45  1    
+ZZZN 286NODE   1 286    1   2   88  11  0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 286NODE   2 286    394.8999            111.1216            399.6122            115.8339             
+ZZZN 288NODE   0 288    42             0 0 4.26058  290 299 -1  -1  -1  288 134 0   0   0   0   45  1    
+ZZZN 288NODE   1 288    1   2   248 153 1   0   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 288NODE   2 288    961.7498            74.2497             966.4622            78.9620              
+ZZZN 289NODE   0 289    81             0 0 4.26058  290 -1  -1  -1  -1  289 134 0   0   0   0   45  1    
+ZZZN 289NODE   1 289    1   2   0   11  0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 289NODE   2 289    981.7498            74.2497             986.4622            78.9620              
+ZZZN 291NODE   0 291    48             0 0 4.26058  293 300 -1  -1  -1  291 134 0   0   0   0   45  1    
+ZZZN 291NODE   1 291    1   2   248 153 1   0   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 291NODE   2 291    921.7498            74.2497             926.4622            78.9620              
+ZZZN 292NODE   0 292    82             0 0 4.26058  293 -1  -1  -1  -1  292 134 0   0   0   0   45  1    
+ZZZN 292NODE   1 292    1   2   0   11  0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 292NODE   2 292    941.7498            74.2497             946.4622            78.9620              
+ZZZN 294NODE   0 294    59             0 0 4.26058  296 301 -1  -1  -1  294 134 0   0   0   0   45  1    
+ZZZN 294NODE   1 294    1   2   248 153 1   0   -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 294NODE   2 294    400.3004            116.4423            405.0127            121.1547             
+ZZZN 295NODE   0 295    83             0 0 4.26058  296 -1  -1  -1  -1  295 134 0   0   0   0   45  1    
+ZZZN 295NODE   1 295    1   2   0   11  0   -1  -1  -1  -1  -1  -1  -1  -1                               
+ZZZN 295NODE   2 295    397.6847            120.9087            402.3971            125.6210             
+ZZZE 220EDGE   0 220    500            0           201 219 220 136 0   0   0   0   1                     
+ZZZE 220EDGE   1 220    1   0   175 0   0 4.26058   0 0.473398                                           
+ZZZE 222EDGE   0 222    510            0           219 221 222 136 0   0   0   0   1                     
+ZZZE 222EDGE   1 222    1   0   179 0   0 4.26058   0 0.473398                                           
+ZZZE 224EDGE   0 224    520            0           221 223 224 136 0   0   0   0   1                     
+ZZZE 224EDGE   1 224    1   0   183 0   0 4.26058   0 0.473398                                           
+ZZZE 225EDGE   0 225    530            0           223 202 225 136 0   0   0   0   1                     
+ZZZE 225EDGE   1 225    1   0   0   11  0 4.26058   0 0.473398                                           
+ZZZE 227EDGE   0 227    540            0           202 226 227 136 0   0   0   0   1                     
+ZZZE 227EDGE   1 227    1   0   190 0   0 4.26058   0 0.473398                                           
+ZZZE 228EDGE   0 228    550            0           226 203 228 136 0   0   0   0   1                     
+ZZZE 228EDGE   1 228    1   0   0   11  0 4.26058   0 0.473398                                           
+ZZZE 229EDGE   0 229    560            0           203 204 229 136 0   0   0   0   1                     
+ZZZE 229EDGE   1 229    1   0   0   11  0 4.26058   0 0.473398                                           
+ZZZE 230EDGE   0 230    570            0           204 205 230 136 0   0   0   0   1                     
+ZZZE 230EDGE   1 230    1   0   0   11  0 4.26058   0 0.473398                                           
+ZZZE 232EDGE   0 232    580            0           205 231 232 136 0   0   0   0   1                     
+ZZZE 232EDGE   1 232    1   0   203 0   0 4.26058   0 0.473398                                           
+ZZZE 233EDGE   0 233    590            0           231 206 233 136 0   0   0   0   1                     
+ZZZE 233EDGE   1 233    1   0   0   11  0 4.26058   0 0.473398                                           
+ZZZE 235EDGE   0 235    600            0           206 234 235 136 0   0   0   0   1                     
+ZZZE 235EDGE   1 235    1   0   210 0   0 4.26058   0 0.473398                                           
+ZZZE 237EDGE   0 237    610            0           234 236 237 136 0   0   0   0   1                     
+ZZZE 237EDGE   1 237    1   0   214 0   0 4.26058   0 0.473398                                           
+ZZZE 238EDGE   0 238    620            0           236 210 238 136 0   0   0   0   1                     
+ZZZE 238EDGE   1 238    1   0   0   11  0 4.26058   0 0.473398                                           
+ZZZE 239EDGE   0 239    630            0           211 210 239 136 0   0   0   0   1                     
+ZZZE 239EDGE   1 239    1   0   0   11  0 4.26058   0 0.473398                                           
+ZZZE 240EDGE   0 240    640            0           210 213 240 136 0   0   0   0   1                     
+ZZZE 240EDGE   1 240    1   0   0   11  0 4.26058   0 0.473398                                           
+ZZZE 242EDGE   0 242    650            0           207 241 242 136 0   0   0   0   1                     
+ZZZE 242EDGE   1 242    1   0   227 0   0 4.26058   0 0.473398                                           
+ZZZE 243EDGE   0 243    660            0           241 208 243 136 0   0   0   0   1                     
+ZZZE 243EDGE   1 243    1   0   0   11  0 4.26058   0 0.473398                                           
+ZZZE 244EDGE   0 244    670            0           208 209 244 136 0   0   0   0   1                     
+ZZZE 244EDGE   1 244    1   0   0   11  0 4.26058   0 0.473398                                           
+ZZZE 245EDGE   0 245    680            0           209 213 245 136 0   0   0   0   1                     
+ZZZE 245EDGE   1 245    1   0   0   11  0 4.26058   0 0.473398                                           
+ZZZE 246EDGE   0 246    690            0           213 214 246 136 0   0   0   0   1                     
+ZZZE 246EDGE   1 246    1   0   0   11  0 4.26058   0 0.473398                                           
+ZZZE 248EDGE   0 248    MUL1           0           214 247 248 138 0   0   0   0   1                     
+ZZZE 248EDGE   1 248    1   4   243 0   0 4.26058   0 0.473398                                           
+ZZZE 250EDGE   0 250    MUL2           0           247 249 250 138 0   0   0   0   1                     
+ZZZE 250EDGE   1 250    1   4   0   1   0 4.26058   0 0.473398                                           
+ZZZE 252EDGE   0 252    720            0           251 215 252 136 0   0   0   0   1                     
+ZZZE 252EDGE   1 252    1   0   13  1   0 4.26058   0 0.473398                                           
+ZZZE 254EDGE   0 254    722            0           253 251 254 136 0   0   0   0   1                     
+ZZZE 254EDGE   1 254    1   0   17  1   0 4.26058   0 0.473398                                           
+ZZZE 256EDGE   0 256    724            0           255 253 256 136 0   0   0   0   1                     
+ZZZE 256EDGE   1 256    1   0   21  1   0 4.26058   0 0.473398                                           
+ZZZE 257EDGE   0 257    726            0           216 255 257 136 0   0   0   0   1                     
+ZZZE 257EDGE   1 257    1   0   0   11  0 4.26058   0 0.473398                                           
+ZZZE 259EDGE   0 259    730            0           215 258 259 136 0   0   0   0   1                     
+ZZZE 259EDGE   1 259    1   0   28  1   0 4.26058   0 0.473398                                           
+ZZZE 261EDGE   0 261    MUL3           0           249 260 261 138 0   0   0   0   1                     
+ZZZE 261EDGE   1 261    1   4   32  1   0 4.26058   0 0.473398                                           
+ZZZE 262EDGE   0 262    MUL4           0           260 258 262 138 0   0   0   0   1                     
+ZZZE 262EDGE   1 262    1   4   0   11  0 4.26058   0 0.473398                                           
+ZZZE 264EDGE   0 264    744            0           218 263 264 136 0   0   0   0   1                     
+ZZZE 264EDGE   1 264    1   0   55  1   0 4.26058   0 0.473398                                           
+ZZZE 266EDGE   0 266    746            0           263 265 266 136 0   0   0   0   1                     
+ZZZE 266EDGE   1 266    1   0   59  1   0 4.26058   0 0.473398                                           
+ZZZE 267EDGE   0 267    748            0           265 260 267 136 0   0   0   0   1                     
+ZZZE 267EDGE   1 267    1   0   0   11  0 4.26058   0 0.473398                                           
+ZZZE 270EDGE   0 270    750            0           268 269 270 136 0   0   0   0   1                     
+ZZZE 270EDGE   1 270    1   0   67  1   0 4.26058   0 0.473398                                           
+ZZZE 272EDGE   0 272    760            0           269 271 272 136 0   0   0   0   1                     
+ZZZE 272EDGE   1 272    1   0   71  1   0 4.26058   0 0.473398                                           
+ZZZE 274EDGE   0 274    770            0           271 273 274 136 0   0   0   0   1                     
+ZZZE 274EDGE   1 274    1   0   75  1   0 4.26058   0 0.473398                                           
+ZZZE 276EDGE   0 276    780            0           275 212 276 136 0   0   0   0   1                     
+ZZZE 276EDGE   1 276    1   0   79  1   0 4.26058   0 0.473398                                           
+ZZZE 278EDGE   0 278    790            0           212 277 278 136 0   0   0   0   1                     
+ZZZE 278EDGE   1 278    1   0   83  1   0 4.26058   0 0.473398                                           
+ZZZE 279EDGE   0 279    800            0           277 258 279 136 0   0   0   0   1                     
+ZZZE 279EDGE   1 279    1   0   0   11  0 4.26058   0 0.473398                                           
+ZZZE 282EDGE   0 282    810            0           280 281 282 136 0   0   0   0   1                     
+ZZZE 282EDGE   1 282    1   0   91  1   0 4.26058   0 0.473398                                           
+ZZZE 283EDGE   0 283    820            0           273 280 283 136 0   0   0   0   1                     
+ZZZE 283EDGE   1 283    1   0   0   11  0 4.26058   0 0.473398                                           
+ZZZE 285EDGE   0 285    830            0           258 284 285 136 0   0   0   0   1                     
+ZZZE 285EDGE   1 285    1   0   98  1   0 4.26058   0 0.473398                                           
+ZZZE 287EDGE   0 287    840            0           217 286 287 136 0   0   0   0   1                     
+ZZZE 287EDGE   1 287    1   0   102 1   0 4.26058   0 0.473398                                           
+ZZZE 290EDGE   0 290    505            0           288 289 290 136 0   0   0   0   1                     
+ZZZE 290EDGE   1 290    1   0   107 1   0 4.26058   0 0.473398                                           
+ZZZE 293EDGE   0 293    555            0           291 292 293 136 0   0   0   0   1                     
+ZZZE 293EDGE   1 293    1   0   112 1   0 4.26058   0 0.473398                                           
+ZZZE 296EDGE   0 296    655            0           294 295 296 136 0   0   0   0   1                     
+ZZZE 296EDGE   1 296    1   0   117 1   0 4.26058   0 0.473398                                           
+ZZZE 297EDGE   0 297    MUL5           0           258 280 297 138 0   0   0   0   1                     
+ZZZE 297EDGE   1 297    1   4   88  11  0 4.26058   0 0.473398                                           
+ZZZE 298EDGE   0 298    MUL6           0           217 268 298 138 0   0   0   0   1                     
+ZZZE 298EDGE   1 298    1   4   32  32  0 4.26058   0 0.473398                                           
+ZZZE 299EDGE   0 299    MUL7           0           219 288 299 138 0   0   0   0   1                     
+ZZZE 299EDGE   1 299    1   4   88  11  0 4.26058   0 0.473398                                           
+ZZZE 300EDGE   0 300    MUL8           0           203 291 300 138 0   0   0   0   1                     
+ZZZE 300EDGE   1 300    1   4   32  32  0 4.26058   0 0.473398                                           
+ZZZE 301EDGE   0 301    MUL9           0           241 294 301 138 0   0   0   0   1                     
+ZZZE 301EDGE   1 301    1   4   32  32  0 4.26058   0 0.473398                                           
+ZZZS   0SEL    0   0          0     1                                                                    
+ZZZS   1SEL    0   0          0     1                                                                    
+ZZZS   2SEL    0   0          0     1                                                                    
+ZZZS   3SEL    0   0          0     1                                                                    
