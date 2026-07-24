@@ -54,3 +54,7 @@ In addition to the above directories, the root folder includes:
 ---
 
 For more detailed information on individual files or directories, please refer to the corresponding documents in each folder.
+
+## License and provenance
+
+This repository is dedicated to the public domain under The Unlicense (see LICENSE), matching EPA SWMM5's own public-domain status. Most models here are OWA SWMM5 example and regression models, EPA public-domain examples, or Bob's own XPSWMM-to-SWMM5 conversions. A handful of folders, including Greenville, Simon_EPA, and Special, are contributed or special-case models from colleagues; confirm provenance before assuming the same public-domain terms apply if you plan to redistribute those specifically
